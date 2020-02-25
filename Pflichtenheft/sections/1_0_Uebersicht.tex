@@ -1,17 +1,28 @@
 	\clearpage
 \section{Übersicht}\label{sec:Uebersicht}
 
-In diesem Kapitel soll eine Übersicht über den Inhalt des Projekts 5 des Studiengangs Elektro- und Informationstechnik gegeben werden. Dabei soll auch aufgezeigt werden, welche Ziele erreicht werden sollen und welche Lieferobjekte erstellt werden müssen.
+Das vorliegende Dokument stellt das Pflichtenheft der Bachelorthesen von Raffael Anklin, Robin Bobst und Cyrill Horath an der Fachhochschule Nordwestschweiz Brugg-Windisch im Studiengang Elektro- und Informationstechnik dar. 
+Im ersten Kapitel soll eine Übersicht über die Ausgangslage sowie das Ziel dieser Arbeit gegeben werden und somit die Rahmenbedingungen definieren.
 
 \subsection{Ausgangslage}\label{subsec:Ausgangslage}
 \todo[inline]{Cyrill}
 
-Die Bluetooth Technik wurde im Jahr 1998 von der "Bluetooth Special Interest Group" (SIG) als Industriestandart für Datenübertragung herausgebracht. Ursprünglich wurde das Funkverfahren jedoch von Jaap Hartsen und Sven Mattisson für die Firma Ericsson entwickelt. Der Hauptzweck dieser Methode zur Datenübermittlung war das Ersetzen von Kabelverbindungen von Mobiltelefone, Peripheriegeräte oder Computer. Der Name Bluetooth oder auf Deutsch Blauzahn kommt vom dänischen König Harald Blauzahn. Diesem König gelang es die verfeindeten Länder Dänemark und Norwegen dank seiner Kommunikationsfreudigkeit zu vereinen. Da die skandinavischen Firmen Nokia und Ericsson viel Aufwand in die Bluetooth Technologie gesteckt haben, wurde dieser Name sowie die Runen H (Harald) und B (Blauzahn) für das Logo übernommen.\cite{michna_entwicklungsgeschichte_2019} Seit dem Start von Bluetooth gab es eine Vielzahl von Versionen, die von mehreren Firmen ständig weiterentwickelt werden. Im Dezember 2009 wurde von der SIG die Version 4.0 Smart vorgestellt. Mit dieser Version von Bluetooth war es möglich kleine und sparsame Geräte wie z.B. smarte Uhren, Brillen oder sogar Ringe herzustellen.\cite{bluetooth_sig_our_2019} Ab dem Jahre 2017 ist es möglich Bluetooth Komponenten in einem Mesh-Netzwerk zu konfigurieren.\cite{eckstein_neue_2019} Dieses Netzwerk basiert auf einem "many-to-many pairing system" d.h. jeder Teilnehmer ist mit den anderen Teilnehmern verbunden. Dieses dezentralisierte System hat den Vorteil, dass es kein Master Element benötigt. Fällt ein Teilnehmer aus besteht das Netzwerk trotzdem weiter.\cite{woolley_intro_2017} Genau hier soll das Projekt 5 ansetzten. Da die Programmierung eines Mesh-Netzwerkes sehr kompliziert ist, wird dafür eine "'Open Source Software"' geschrieben, die es ermöglicht ein Netzwerk vereinfacht aufzubauen und zu konfigurieren.
+Unter den standardisierten Low Power Mesh Netzwerk Protokollen im
+freien GHz ISM-Band konkurrenzieren sich derzeit vorrangig Bluetooth Mesh, Zigbee sowie Thread.
+Bezüglich MAC und Physical Layer basieren Zigbee und Thread auf IEEE 802.15.4 wogegen Bluetooth Mesh auf Bluetooth Low Energy (BLE)
+basiert.
+Jedes dieser Netzwerkprotokolle hat gewisse Vorzüge: Bluetooth Mesh, dass BLE mittlerweile von jedem Smartphone und Notebook unterstützt wird, Thread aufgrund seiner IPv6 Basis und damit einfachem Übergang ins Internet sowie Zigbee aufgrund seiner etablierten Verbreitung im Smart-Lampenbereich durch Philips, IKEA und Osram.
+Hauptproblem aller drei Mesh Netzwerkprotokolle ist nebst physikalisch und distanzbedingter Absorption und Reflexion die Störbeeinflussung durch WLAN (WiFi) und andere Netzwerke im GHz Frequenzbereich.
 
+Im Vorprojekt \textit{P5 - Bluetooth-Mesh Plattform für IoT Anwendungen} zu dieser Arbeit wurde das Bluetooth-Mesh Protokoll bereits vertieft betrachtet und dessen Vor- und Nachteile aufgezeigt. Basierend auf diesen Erkenntnissen und der oben beschriebenen Problematik soll das Bluetooth-Mesh Protokoll mit den Alternativen Thread sowie Zigbee verglichen werden.
 
 \subsection{Ziel der Arbeit}\label{subsec:ZielderArbeit}
 \todo[inline]{Cyrill}
 
+In der vorliegenden Arbeit soll zuerst ein praxistaugliches, einheitliches Testframework für alle drei Mesh Netzwerke erstellt werden, wonach die Tauglichkeit aller drei Mesh Netzwerke unter realitätsnahen Bedingungen ermittelt und verglichen werden soll.
+Zwecks besserer Vergleichbarkeit sollen alle drei Testnetze das gleiche Radio-Interface als Grundlage verwenden. Aufgrund der guten
+Unterstützung aller drei Mesh Protokolle als auch dem im vergangenen P5 gesammelten Wissens, sollen hierfür die nRF52840 SoCs der Firma Nordic eingesetzt werden. Die zu erstellende Testinfrastruktur soll jeweils aus folgenden Teilen
+bestehen:
 
 
 
