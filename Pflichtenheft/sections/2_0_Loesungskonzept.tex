@@ -15,7 +15,7 @@ Das Testframework besteht aus folgenden physikalisch getrennten Teilsystemen:
 
 \begin{itemize}
 	\item \textbf{TMS} Test Management Station \\ 
-	Dient zur Verwaltung und Konfiguration des Testframeworks. Beinhaltet einen Webserver um dem Endanwender die Bedienung zu ermöglichen. Realisiert wird das TMS durch einen Raspberry Pi 4 Model B. Als Webserver wird das Python-Framework \textit{Django} angedacht. 
+	Dient zur Verwaltung und Konfiguration des Testframeworks. Beinhaltet einen Webserver um dem Endanwender die Bedienung zu ermöglichen. Realisiert wird das TMS durch einen Raspberry Pi 4 Model B. Als Webserver wird das Python-Framework \textit{Django} eingesetzt. 
 	\item \textbf{TMN} Test Management Node \\ 
 	Dient als Zugangspunkt der im Testframework gefahrenen Tests und lässt sich über eine Serielle Verbindung ansprechen. In der Aufgabenstellung \ref{app:Aufgabenstellung} wird von einem Master gesprochen. Realisiert wird der TMN über einen nRF52840 oder nRF5340 von \textit{Nordic}. 
 	\item \textbf{FTN} Field Test Node \\ 
