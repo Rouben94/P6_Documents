@@ -37,16 +37,16 @@ Die logischen Komponenten des Testframeworks lassen sich wie folgt aufteilen:
 
 \subsection{Punkt zu Punkt Testinfrastruktur}\label{subsec:PunktzuPunktTestinfrastruktur}
 
-Der Punkt zu Punkt Benchmark (P2P) soll unabhängig vom Mesh-Protokoll statt finden. Damit soll es möglich sein auf MAC-Ebene BLE-Mesh (BLE) mit Thread und Zigbee (IEEE 802.11.15) zu vergleichen. Der nRF52840 sowie nRF5340 unterstützen das Arbeiten auf der MAC-Schicht. Zur Realisierung wird ein bereits bestehendes Beispiel (Radio-Example) aus der nRF Connect SDK genutzt.
+Der Punkt zu Punkt Benchmark (P2P) soll unabhängig vom Mesh-Protokoll statt finden. Damit soll es möglich sein die beiden MAC-Ebenen \textit{BLE} und \textit{IEEE802.11.15} zu vergleichen. Der nRF52840 sowie nRF5340 unterstützen das Arbeiten auf der MAC-Schicht. Zur Realisierung wird ein bereits bestehendes Beispiel (Radio-Example) aus der nRF Connect SDK genutzt.
 
 
 \subsection{Test Mesh Netzwerke}\label{subsec:TestMeshNetzwerke}
 
-Der Mesh-Benchmark soll die verschiedenen Mesh-Netzwerke möglichst identisch ausmessen. Dazu dient bei allen Mesh-Netzwerken die Applikations-Schicht.  
+Der Mesh-Benchmark soll die verschiedenen Mesh-Netzwerke möglichst identisch ausmessen. Dazu dient bei allen Mesh-Netzwerken die Applikations-Schicht. Ein Mesh Netzwerk wird zwischen dem BMN und den BSN aufgebaut. Dazu werden die einzelnen Nodes über die BMS mit der entsprechenden Firmware geladen und anschliessend im Raum verteilt. Das Laden ist Anfangs über eine Kabelverbindung (UART) vorgesehen. Zu einem späteren Zeitpunkt soll dies drahtlos mithilfe eines Bootloaders geschehen. 
 
 \subsubsection{Bluetooth Mesh}\label{subsubsection:Bluetooth Mesh}
 
-Ein BLE-Mesh Netzwerk soll mit ca. 10 Knoten realisiert werden. 
+Die BLE-Mesh Firmware der Nodes werden aus Beispielen der nRF Connect SDK und Zephyr abgeleitet. Das Mesh-Demo Beispiel erlaubt es die essentiellen Netzwerk Parameter fix vorzugeben. Dadurch müssen die Nodes nicht mehr Provisioniert werden und sind sofort einsatzbereit.
 
 \subsubsection{Thread}\label{subsubsection:Thread} 
 \todo[inline]{Robin}
@@ -56,5 +56,6 @@ Ein BLE-Mesh Netzwerk soll mit ca. 10 Knoten realisiert werden.
 
 
 \subsection{Steuer und Auswertesoftware}\label{subsec:SteuerundAuswertesoftware}
-\todo[inline]{Raffael}
+
+Das Steuern des Testframeworks findet über eine Weboberfläche statt. Diese wird von der BMS mittels WLAN auf den Benutzergeräten zur anzeige gebracht. Als Webserver dient das Python-Framework \textit{Django}. Zur Steuerung der Benchmarks dienen Schrittketten, welche mit der Firmware auf dem BMN kommunizieren. Als letzter Schritt eines Benchmarks werden die Ergebnisse geloggt, nachbearbeitet und zur Anzeige gebracht.
 
