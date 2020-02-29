@@ -11,29 +11,29 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in drei verschi
 		\multicolumn{4}{|l|}{\textbf{Projektziele}}\\ \hline
 		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}& \textbf{\begin{tabular}[b]{@{}c@{}}Pflicht- oder\\Wunschziel\end{tabular}}\\ \hline
 		
-		P1 & Kommunikation mit Leitrechner & Das Master Funkmodul kommuniziert via USB oder UART mit dem Leitrechner.  & Pflichtziel\\ \hline
+		P1 & Kommunikation mit BMS & Das BMN kommuniziert via USB oder UART mit dem BMS.  & Pflichtziel\\ \hline
 		
-		P2 & Absenden von MAC-Frames & Das Master-Funkmodul sendet gemäss den Vorgaben des Leitrechners regelmässig MAC-Frames an einen oder mehrere Slave-Funkknoten. & Pflichtziel\\ \hline
+		P2 & Absenden von MAC-Frames & Das BMN sendet gemäss den Vorgaben des BMS regelmässig MAC-Frames an einen oder mehrere BSN. & Pflichtziel\\ \hline
 		
-		P3 & Rückbestätigung der MAC-Frames & Der oder die batteriebetriebenen Slave-Funkknoten, bestätigen die MAC-Frames zurück. & Pflichtziel\\ \hline
+		P3 & Rückbestätigung der MAC-Frames & Der oder die batteriebetriebenen BSN, bestätigen die MAC-Frames zurück. & Pflichtziel\\ \hline
 		
-		P4 & Konfiguration der Anzahl Slave-Knoten & Die Anzahl der Slave-Funkknoten ist über eine Steuer- und Auswertesoftware konfigurierbar & Pflichtziel\\ \hline
+		P4 & Konfiguration der Anzahl BSN & Die Anzahl der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar. & Pflichtziel\\ \hline
 		
-		P5 & Konfiguration der ID der Slave-Knoten & Die ID der Slave-Funkknoten ist über eine Steuer- und Auswertesoftware konfigurierbar & Pflichtziel\\ \hline
+		P5 & Konfiguration der ID der BSN & Die ID der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar. & Pflichtziel\\ \hline
 		
 		P6 &Konfiguration der Kanäle & Die BLE resp. 802.15.4 Kanäle können über eine Steuer- und Auswertesoftware ausgewählt werden. & Pflichtziel\\ \hline
 		
-		P7 & Einstellbare Framelänge & Die Framelänge der MAC-Frames ist über eine Steuer- und Auswertesoftware konfigurierbar & Pflichtziel\\ \hline
+		P7 & Einstellbare Framelänge & Die Framelänge der MAC-Frames ist über eine Steuer- und Auswertesoftware konfigurierbar. & Pflichtziel\\ \hline
 		
-		P8 & Einstellbare Frame- und Kanalwechselrate& Die Frame- und Kanalwechselrate der Funkknoten ist über eine Steuer- und Auswertesoftware konfigurierbar & Pflichtziel\\ \hline
+		P8 & Einstellbare Frame- und Kanalwechselrate& Die Frame- und Kanalwechselrate der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar. & Pflichtziel\\ \hline
 		
-		P9 & Einstellbare Sendeleistung & Die Sendeleistung der Funkknoten ist über eine Steuer- und Auswertesoftware konfigurierbar & Pflichtziel\\ \hline
+		P9 & Einstellbare Sendeleistung & Die Sendeleistung der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar. & Pflichtziel\\ \hline
 		
-		P10 & Anpassung der Modulationsart& In BLE soll die Modulationsart über eine Steuer- und Auswertesoftware konfigurierbar sein, um die Datenrate von 125kbps auf 2Mbps und die Long Range Funktion einzustellen & Pflichtziel\\ \hline
+		P10 & Anpassung der Modulationsart& In BLE soll die Modulationsart über eine Steuer- und Auswertesoftware konfigurierbar sein, um die Datenrate von 125kbps auf 2Mbps und die Long Range Funktion einzustellen. & Pflichtziel\\ \hline
 		
-		P11 & Ein- und Ausschalten der Collision Avoidance (CSMA/CA)& Beim 802.15.4 Protokoll soll die Collision Avoidance über eine Steuer- und Auswertesoftware ein- und ausgeschaltete werden können& Pflichtziel\\ \hline
+		P11 & Ein- und Ausschalten der Collision Avoidance (CSMA/CA)& Beim 802.15.4 Protokoll soll die Collision Avoidance über eine Steuer- und Auswertesoftware ein- und ausgeschaltete werden können. & Pflichtziel\\ \hline
 		
-		P12 & Erfassen der Verbindungsqualität & Sowohl master- wie auch slaveseitige Erfassung der Verbindungsqualität (RSSI, Package Loss, Collisions, Noise Level, …). Die Slaves senden hierzu die erfassen Werte im Rückantwortframe dem Master zurück. & Pflichtziel\\ \hline
+		P12 & Erfassen der Verbindungsqualität & Sowohl master- wie auch slaveseitige Erfassung der Verbindungsqualität (RSSI, Package Loss, Collisions, Noise Level, …). Die BSN senden hierzu die erfassten Werte im Rückantwortframe dem BMN zurück. & Pflichtziel\\ \hline
 		
 	\end{tabular}\\
 	\caption{Projektziele der Punkt zu Punkt Testinfrastruktur}
@@ -42,43 +42,46 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in drei verschi
 
 
 \subsection{Test Mesh Netzwerke}\label{subsec:TestMeshNetzwerke}
-\todo[inline]{Robin}
 \begin{table}[H]
 	\begin{tabular}{ | C{0.7cm} | p{2.8cm} | p{8.2cm} | C{2.5cm} |}
 		\hline
 		\multicolumn{4}{|l|}{\textbf{Projektziele}}\\ \hline
 		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}& \textbf{\begin{tabular}[b]{@{}c@{}}Pflicht- oder\\Wunschziel\end{tabular}}\\ \hline
 		
-		P1 & Ansteuerung Funkmodul & Der Leitrechner steuert via USB oder UART ein Master-Funkmodul an.  & Pflichtziel\\ \hline
+		P1 & Kommunikation mit BMS & Das BMN kommuniziert via USB oder UART mit dem BMS. & Pflichtziel\\ \hline
 		
-		P1 &Konfiguration Mesh Netzwerk &Das Master-Funkmodul konfiguriert über das Mesh-Netzwerk die verschiedenen Nodes anhand der Daten vom Leitrechner. & Pflichtziel\\ \hline
+		P1 &Konfiguration BSN &Die BSN lassen sich frei zu einem Routing-Knoten, End-Knoten oder einem Low-Power Knoten konfigurieren. & Pflichtziel\\ \hline
 		
-		P1 &Konfiguration Mesh Netzwerk & Der Leitrechner steuert via USB oder UART ein Master Funkmodul an.  & Pflichtziel\\ \hline
+		P1 & Mesh-Netzwerk & Alle drei Technologien Bluetooth, Thread und Zigbee müssen als Mesh-Netzwerk mit mindestens 10 BSN aufgebaut werden. & Pflichtziel\\ \hline
+		
+		P1 & Simulation Sensorwerte & Die BSN sollen in einem vom BMS vorgegebenen parametrisierbaren Intervall Sensorwerte Simulieren& Pflichtziel\\ \hline
+		
+		P4 & Sensordaten & Als Sensordaten sollen die Netzzustandsdaten übermittelt werden: Paketnummer, Anzahl Retries, Paketverluste, RSSI, Strombedarf und aktive CPU- und Radio-Zeiten. & Pflichtziel\\ \hline
+		
+		P1 & Störimmunität & Um die Störimmunität der Netzwerke zu ermitteln sollen gezielt Fremdstörungen mit eingebracht werden, mit definierbarer Tastung und Störframelänge. Hierfür sollen die Punkt zu Punkt Testinfrastrukturen auf MAC-Ebene eingesetzt werden & Pflichtziel\\ \hline
+		
+		P1 & Test und Validierung & Umfassende Gegenüberstellung und Validierung aller drei Netzwerke in einem FHNW Gebäude, insbesondere Durchsatz, Antwortzeit, Zuverlässigkeit, Einfachheit der Konfiguration (inkl. Routing), Einfachheit der Ermittlung geeigneter Router-Standorte, Sicherheit und Energieverbrauch. & Pflichtziel\\ \hline
 		
 	\end{tabular}\\
 	\caption{Projektziele der Test Mesh Netzwerke}
 	\label{tab:ProjektzielederTestMeshNetzwerke}
 \end{table}
 
+
 \subsection{Steuer- und Auswertesoftware}\label{subsec:SteuerundAuswertesoftware}
-\todo[inline]{Robin}
 \begin{table}[H]
 	\begin{tabular}{ | C{0.7cm} | p{2.8cm} | p{8.2cm} | C{2.5cm} |}
 		\hline
 		\multicolumn{4}{|l|}{\textbf{Projektziele}}\\ \hline
 		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}& \textbf{\begin{tabular}[b]{@{}c@{}}Pflicht- oder\\Wunschziel\end{tabular}}\\ \hline
 		
-		P1 & Ansteuerung Funkmodul & Der Leitrechner steuert via USB oder UART ein Master Funkmodul an.  & Pflichtziel\\ \hline
+		P1 & Ansteuerung Funkmodul & Das BMS steuert via USB oder UART ein BMN an.  & Pflichtziel\\ \hline
 		
-		P2 & Visualisierung Parameter& Die Parameter der Ziele von Kapitel \ref{subsec:TestMeshNetzwerke} und \ref{subsec:PunktzuPunktTestinfrastruktur} sollen vom Leitrechner visualisiert und eingestellt werden können. & Pflichtziel\\ \hline
+		P2 & Visualisierung Parameter& Die Parameter der Ziele von Kapitel \ref{subsec:TestMeshNetzwerke} und \ref{subsec:PunktzuPunktTestinfrastruktur} sollen vom BMS visualisiert und eingestellt werden können. & Pflichtziel\\ \hline
 		
-		P3 & Konfiguration Mesh-Netzwerk& Der Leitrechner verwaltet und konfiguriert über einen Master-Funkmodul das Mesh-Netzwerk. & Pflichtziel\\ \hline
+		P3 & Konfiguration Mesh-Netzwerk& Das BMS verwaltet und konfiguriert über einen BMN das Mesh-Netzwerk. & Pflichtziel\\ \hline
 		
-		P4 & Auswertung der gemessenen Daten & Der Leitrechner soll die erhaltenen Daten auswerten und anzeigen.  & Pflichtziel\\ \hline
-		
-		P2 & Gliederfüßler & Das Glied muss unbedingt eingeführt werden & Pflichtziel\\ \hline
-		
-		
+		P3 & Einheitliche Kommunikation von BMS & Das Protokoll und Interface zum BMS soll für alle drei Mesh-Netzwerke einheitlich sein & Pflichtziel\\ \hline
 		
 	\end{tabular}\\
 	\caption{Projektziele der Steuer- und Auswertesoftware}
@@ -86,13 +89,7 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in drei verschi
 \end{table}
 
 
-
-
-
-\clearpage
 \subsection{Lieferobjekte}\label{subsec:Lieferobjekte}
-\todo[inline]{Robin}
-
 Zusätzlich zu den Projektzielen, folgen in diesem Kapitel die Lieferobjekte  mit dem jeweiligen Datum. In der Tabelle \ref{tbl:Lieferobjekte} sind diese  aufgelistet.  
 
 
@@ -107,8 +104,6 @@ Zusätzlich zu den Projektzielen, folgen in diesem Kapitel die Lieferobjekte  mi
    4 & 14.08.2020 & Abgabe Paper \\ \hline
    5 & 14.08.2020 & Abgabe Testaufbau \\ \hline
    6 & 01.09.2020 & Projektpräsentation \\ \hline
-   
-   
    
  \end{tabular}
      \caption{Lieferobjekte}
