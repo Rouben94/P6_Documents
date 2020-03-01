@@ -34,8 +34,7 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in drei verschi
 		P11 & Ein- und Ausschalten der Collision Avoidance (CSMA/CA)& Beim 802.15.4 Protokoll soll die Collision Avoidance über eine Steuer- und Auswertesoftware ein- und ausgeschaltete werden können. & Pflichtziel\\ \hline
 		
 		P12 & Erfassen der Verbindungsqualität & Sowohl master- wie auch slaveseitige Erfassung der Verbindungsqualität (RSSI, Package Loss, Collisions, Noise Level, …). Die BSN senden hierzu die erfassten Werte im Rückantwortframe dem BMN zurück. & Pflichtziel\\ \hline
-		
-		W1 & Testmodul BMN/BSN & Entwickeln einer Hardware mit unabhängiger Stromversorgung und dezidierter Strommessung, um den Stromverbrauch aufzuzeichnen. \\ \hline
+
 		
 	\end{tabular}\\
 	\caption{Projektziele der Punkt zu Punkt Testinfrastruktur}
@@ -88,6 +87,25 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in drei verschi
 	\end{tabular}\\
 	\caption{Projektziele der Steuer- und Auswertesoftware}
 	\label{tab:ProjektzielederSteuerundAuswertesoftware}
+\end{table}
+
+\subsection{Zusatzziele}\label{subsec:Zusatzziele}
+\begin{table}[H]
+	\begin{tabular}{ | C{0.7cm} | p{2.8cm} | p{8.2cm} | C{2.5cm} |}
+		\hline
+		\multicolumn{4}{|l|}{\textbf{Projektziele}}\\ \hline
+		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}& \textbf{\begin{tabular}[b]{@{}c@{}}Pflicht- oder\\Wunschziel\end{tabular}}\\ \hline
+		
+		
+		W1 & Testmodul BMN/BSN & Entwickeln eines Testmoduls mit unabhängiger Stromversorgung und dezidierter Strommessung um den Stromverbrauch aufzuzeichnen. & Wunschziel\\ \hline
+		
+		W2 & Vergleich SOC & Vergleichen zwischen nRF52840, nRF5340 und weiterer kompatibler SOCs.  & Wunschziel\\ \hline
+		
+		W3 & Drahtlos Konfiguration & Konfiguration der BSN / BMN Firmware drahtlos über Bootloader.  & Wunschziel\\ \hline
+		
+	\end{tabular}\\
+	\caption{Zusatzziele des Gesamtprojektes}
+	\label{tab:ZusatzzieledesGesamtprojektes}
 \end{table}
 
 
