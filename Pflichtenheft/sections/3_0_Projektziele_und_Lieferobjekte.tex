@@ -26,7 +26,7 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile u
 		
 		P7 & Einstellbare Framelänge & Die Framelänge der MAC-Frames ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
 		
-		P8 & Einstellbare Frame- und Kanalwechselrate& Die Frame- und Kanalwechselrate der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
+		P8 & Einstellbare Frame- und Kanalwechselrate& Die Frame- und Kanalwechselrate der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\todo[inline]{nicht nur beim BSN}\\ \hline
 		
 		P9 & Einstellbare Sendeleistung & Die Sendeleistung der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
 		
@@ -103,7 +103,7 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile u
 		
 		W1 & Testmodul BMN/BSN & Entwickeln eines Testmoduls mit unabhängiger Stromversorgung und dezidierter Strommessung um den Stromverbrauch aufzuzeichnen.\\ \hline
 		
-		W2 & Vergleich SOC & Vergleichen zwischen nRF52840, nRF5340 und weiterer kompatibler SOCs.\\ \hline
+		W2 & Vergleich SOC & Vergleichen zwischen nRF52840, nRF5340 und weiterer kompatibler SOCs.\todo[inline]{Evtl. nicht ein Bootloader sondern zusammenführen der 3 Mesh Protokolle und Softwaremässig umschaltbar machen.}\\ \hline
 		
 		W3 & Drahtlos Konfiguration & Konfiguration der BSN / BMN Firmware drahtlos über Bootloader.\\ \hline
 		
@@ -111,6 +111,9 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile u
 	\caption{Zusatzziele des Gesamtprojektes}
 	\label{tab:ZusatzzieledesGesamtprojektes}
 \end{table}
+
+\todo[inline]{Portierbares Framework für die Ausmessung eines Netzes. Mit Darstellung der Signal Qualität auf den verschiedenen Kanälen.}
+\todo[inline]{GUI für Mesh Test als Zusatzziel}
 
 
 \subsection{Lieferobjekte}\label{subsec:Lieferobjekte}
