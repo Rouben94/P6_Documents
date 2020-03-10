@@ -35,7 +35,9 @@ Die logischen Komponenten des Testframeworks lassen sich wie folgt aufteilen:
 
 \subsection{Punkt zu Punkt Testinfrastruktur}\label{subsec:PunktzuPunktTestinfrastruktur}
 
-Der Punkt zu Punkt Benchmark (P2P) soll unabhängig vom Mesh-Protokoll stattfinden. Damit soll es möglich sein die beiden MAC-Ebenen \textit{BLE} und \textit{IEEE802.15.4} zu vergleichen. Der nRF52840 sowie nRF5340 unterstützen das Arbeiten auf der MAC-Schicht. Zur Realisierung wird ein bereits bestehendes Beispiel (Radio-Example) aus der nRF Connect SDK genutzt.
+Die Punkt zu Punkt Testinfrastruktur (P2P) ermöglicht es ein Benchmark auf physikalischer Ebene durchzuführen. Dies soll unabhängig vom Mesh-Protokoll und basierend auf den beiden MAC-Ebenen \textit{BLE} und \textit{IEEE802.15.4} möglich sein. Somit ist ein Vergleich der beiden MAC-Ebenen machbar. Weiter soll diese Infrastruktur einem Endanwender die Möglichkeit bieten ein Gebiet respektive ein Gebäude auf physikalischer Ebene auszumessen um geeignete Standorte für die Mesh Router zu bestimmen. Die Datenerfassung und grafische Aufbereitung erfolgt dabei auf der BMS. Im Anhang xx werden die Testkriterien für die P2P Infrastruktur aufgeführt und beschrieben.
+
+Der nRF52840 sowie nRF5340 unterstützen das Arbeiten auf der MAC-Schicht. Zur Realisierung wird ein bereits bestehendes Beispiel (Radio-Example) aus der nRF Connect SDK genutzt.
 
 
 \subsection{Test Mesh Netzwerke}\label{subsec:TestMeshNetzwerke}
