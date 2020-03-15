@@ -17,7 +17,7 @@ Das Testframework besteht aus folgenden physikalisch getrennten Teilsystemen:
 	\item \textbf{BMN} Benchmark Master Node \\ 
 	Dient als Zugangspunkt der BMS für die im Testframework gefahrenen Tests und lässt sich über eine Serielle Schnittstelle ansprechen. In der Aufgabenstellung \ref{app:Aufgabenstellung} wird der BMN als Master bezeichnet. Realisiert wird der BMN über einen nRF52840 oder nRF5340 von \textit{Nordic}. 
 	\item \textbf{BSN} Benchmark Slave Node \\ 
-	Dient als Zugriffspunkt der im Testframework gefahrenen Tests und kann frei in der Testumgebung platziert werden. Daher muss die Energieversorgung über einen Akku oder Batterie erfolgen. In der Aufgabenstellung  \ref{app:Aufgabenstellung} wird von einem Slave gesprochen. Realisiert wird der BSN über einen nRF52840 oder nRF5340 von \textit{Nordic}. In einem Test Netzwerk werden unterschiedliche Arten wie von BSN eingesetzt wie zum Beispiel Mesh Router oder sogenannte End Devices. Letztere werden häufig auch als Low Power Nodes (LPN) bezeichnet.
+	Dient als Zugriffspunkt der im Testframework gefahrenen Tests und kann frei in der Testumgebung platziert werden, daher muss die Energieversorgung über einen Akku oder Batterie erfolgen. In der Aufgabenstellung  \ref{app:Aufgabenstellung} wird von einem Slave gesprochen. Realisiert wird der BSN über einen nRF52840 oder nRF5340 von \textit{Nordic}. In einem Test Netzwerk werden unterschiedliche Arten von BSN eingesetzt wie zum Beispiel Mesh Router oder sogenannte End Devices. Letztere werden häufig auch als Low Power Nodes (LPN) bezeichnet.
 \end{itemize}
 
 Die logischen Komponenten des Testframeworks lassen sich wie folgt aufteilen:
@@ -52,20 +52,28 @@ Die BLE-Mesh Firmware der Nodes werden aus Beispielen der nRF Connect SDK und Ze
 
 
 \subsubsection{Thread}\label{subsubsection:Thread} 
-Die Abbildung \ref{fig:ThreadKonzept} zeigt das Framework des Openthread Netzwerkes auf. Die BMS kommuniziert via UART mit dem wpantund Protokoll von Google. Die Daten zum NCP, welcher auf dem BMN realisiert wird, werden mit Hilfe von Spinel übertragen. Der BMN sendet die erhaltenen Daten danach in das Thread Netzwerk.
+Die OpenThread Firmware wird mit Hilfe der API und den Tutorials von der offiziellen OpenThread Webseite erstellt. Die offizielle Seite von Google beschreibt das Netzwerk und alle Informationen die benötigt werden, um eine Firmware zu schreiben.
 
+Die Abbildung \ref{fig:ThreadKonzept} zeigt das Framework des Openthread Netzwerkes auf. Die Kommunikation von der BMS zum BMN findet Seriell mit UART over USB statt. Der Serielle Kanal wird mit Hilfe eines Python-Skripts ausgeführt. Zudem wird das Python-Skript vom Django-Webserver aufgerufen. Somit können die Daten vom Thread-Netzwerk zum Webserver übermittelt und dargestellt werden. Die Auswertung der gemessenen Daten findet direkt auf der BMS statt.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Thread-Konzept.jpg}
+	\includegraphics[width=1.0\textwidth]{Thread-Konzept.png}
 	\caption{Konzept OpenThread Framework}\label{fig:ThreadKonzept}
 \end{figure}
-
 
 
 \subsubsection{Zigbee}\label{subsubsection:Zigbee}
 Das Zigbee Test Mesh Netzwerk wird mithilfe der \textit{nRF SDK for Thread and Zigbee} eingerichtet und für die Messungen vorbereitet. Der BMN wird dabei als Zigbee Coordinator und gleichzeitig als Zigbee Router eingesetzt. Die BSN können wieder als Router oder aber als Zigbee End Device betrieben werden.
 
-
+\newpage
 \subsection{Steuer und Auswertesoftware}\label{subsec:SteuerundAuswertesoftware}
 Die Steuerung des Testframeworks erfolgt über eine Weboberfläche. Diese wird von der BMS mittels WLAN auf den Benutzergeräten zur Anzeige gebracht. Als Webserver dient das Python-Framework \textit{Django}. Zur Steuerung der Benchmarks dienen Schrittketten, welche mit der Firmware auf dem BMN kommunizieren. Als letzter Schritt eines Benchmarks werden die Ergebnisse geloggt, nachbearbeitet und wiederum zur Anzeige gebracht.
+
+Die Abbildung \ref{fig:KonzeptWebserver} stellt ein erstes Konzept dar, wie der Webserver für die Punkt zu Punkt Verbindung aussehen kann. Die vom BMN ersichtlichen BSN werden aufgelistet und es können verschiedene  Aktionen durchgeführt werden. Mit Reitern soll auf verschiedene Seiten gewechselt werden, bei denen die Resultate oder die Logs der Kommunikation ersichtlich sind.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Web_Mochup_BMS.jpg}
+	\caption{Konzept Webserver}\label{fig:KonzeptWebserver}
+\end{figure}
 
