@@ -69,11 +69,11 @@ Das Zigbee Test Mesh Netzwerk wird mithilfe der \textit{nRF SDK for Thread and Z
 \subsection{Steuer und Auswertesoftware}\label{subsec:SteuerundAuswertesoftware}
 Die Steuerung des Testframeworks erfolgt über eine Weboberfläche. Diese wird von der BMS mittels WLAN auf den Benutzergeräten zur Anzeige gebracht. Als Webserver dient das Python-Framework \textit{Django}. Zur Steuerung der Benchmarks dienen Schrittketten, welche mit der Firmware auf dem BMN kommunizieren. Als letzter Schritt eines Benchmarks werden die Ergebnisse geloggt, nachbearbeitet und wiederum zur Anzeige gebracht.
 
-Die Abbildung \ref{fig:KonzeptWebserver} stellt ein erstes Konzept dar, wie der Webserver für die Punkt zu Punkt Verbindung aussehen kann. Die vom BMN ersichtlichen BSN werden aufgelistet und es können verschiedene  Aktionen durchgeführt werden. Mit Reitern soll auf verschiedene Seiten gewechselt werden, bei denen die Resultate oder die Logs der Kommunikation ersichtlich sind.
+Die Abbildung \ref{fig:EntwurfWebserver} stellt ein erstes Konzept dar, wie der Webserver für das P2P Test Framework aussehen kann. Die vom BMN ersichtlichen BSN werden aufgelistet und es können verschiedene  Aktionen durchgeführt werden. Mit Reitern soll auf verschiedene Seiten gewechselt werden auf welchen wiederum Resultate oder Logs der Kommunikation ersichtlich sein sollen.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Web_Mochup_BMS.jpg}
-	\caption{Konzept Webserver}\label{fig:KonzeptWebserver}
+	\caption{Entwurf Webserver}\label{fig:EntwurfWebserver}
 \end{figure}
 
