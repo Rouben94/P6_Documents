@@ -1,7 +1,7 @@
 \clearpage
 \section{Projektziele und Lieferobjekte}\label{sec:ProjektzieleundLieferobjekte}
 
-Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile unterteilt. Die ersten drei Teile sind entsprechend den Hauptzielen die in Kapitel \ref{subsec:ZielderArbeit} definiert. Die Tabelle \ref{tab:ZusatzzieledesGesamtprojektes} zeigt zusätzliche Ziele die als Wunschziele betrachtet werden und somit nicht im Fokus der Arbeit stehen.
+Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile unterteilt. Die ersten drei Teile entsprechen den Hauptzielen die in Kapitel \ref{subsec:ZielderArbeit} bereits erwähnt wurden. Die Tabelle \ref{tab:ZusatzzieledesGesamtprojektes} zeigt zusätzliche Ziele die als Wunschziele betrachtet werden und somit nicht im Fokus der Arbeit stehen. Wie bereits unter Kapitel \ref{subsec:PunktzuPunktTestinfrastruktur} sowie \ref{subsec:TestMeshNetzwerke} erwähnt, sind ergänzende Beschreibungen von Testkriterien in den Anhängen \ref{app:TestKriterienP2P} und \ref{app:TestKriterienMesh} zu finden.
 
 \subsection{Punkt zu Punkt Testinfrastruktur}\label{subsec:PunktzuPunktTestinfrastruktur}
 
@@ -12,21 +12,21 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile u
 		\multicolumn{3}{|l|}{\textbf{Projektziele}}\\ \hline
 		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}\\ \hline
 		
-		P1 & Kommunikation mit BMS & Das BMN kommuniziert via USB oder UART mit dem BMS.\\ \hline
+		P1 & Kommunikation mit BMS & Der BMN kommuniziert via USB oder UART mit dem BMS.\\ \hline
 		
-		P2 & Absenden von MAC-Frames & Das BMN sendet gemäss den Vorgaben des BMS regelmässig MAC-Frames an einen oder mehrere BSN.\\ \hline
+		P2 & Senden von MAC-Frames & Das BMN sendet gemäss den Vorgaben der Testkriterien und gesteuert durch das BMS MAC-Frames an einen oder mehrere BSN.\\ \hline
 		
-		P3 & Rückbestätigung der MAC-Frames & Der oder die batteriebetriebenen BSN, bestätigen die MAC-Frames zurück.\\ \hline
+		P3 & Rückbestätigung der MAC-Frames & Der oder die batteriebetriebenen BSN, bestätigen die MAC-Frames mit entsprechender Payload zurück.\\ \hline
 		
 		P4 & Konfiguration der Anzahl BSN & Die Anzahl der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
 		
-		P5 & Konfiguration der ID der BSN & Die ID der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
+		P5 & Adressierung der BSN & Die Adressierung der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
 		
-		P6 &Konfiguration der Kanäle & Die BLE resp. 802.15.4 Kanäle können über eine Steuer- und Auswertesoftware ausgewählt werden.\\ \hline
+		P6 & Konfiguration der Kanäle & Die BLE resp. 802.15.4 Kanäle können über eine Steuer- und Auswertesoftware ausgewählt werden.\\ \hline
 		
 		P7 & Einstellbare Framelänge & Die Framelänge der MAC-Frames ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
 		
-		P8 & Einstellbare Frame- und Kanalwechselrate& Die Frame- und Kanalwechselrate der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\todo[inline]{nicht nur beim BSN}\\ \hline
+		P8 & Einstellbare Frame- und Kanalwechselrate & Die Frame- und Kanalwechselrate ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
 		
 		P9 & Einstellbare Sendeleistung & Die Sendeleistung der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
 		
@@ -34,7 +34,11 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile u
 		
 		P11 & Ein- und Ausschalten der Collision Avoidance (CSMA/CA)& Beim 802.15.4 Protokoll soll die Collision Avoidance über eine Steuer- und Auswertesoftware ein- und ausgeschaltete werden können.\\ \hline
 		
-		P12 & Erfassen der Verbindungsqualität & Sowohl master- wie auch slaveseitige Erfassung der Verbindungsqualität (RSSI, Package Loss, Collisions, Noise Level, …). Die BSN senden hierzu die erfassten Werte im Rückantwortframe dem BMN zurück.\\ \hline
+		P12 & Erfassen der Verbindungsqualität & Sowohl master- wie auch slaveseitige Erfassung der Verbindungsqualität (RSSI, Package Loss, Collisions, Noise Level, …). Die BSN senden hierzu die erfassten Werte im Rückantwortframe dem BMN zurück. (Siehe auch Anhang \ref{app:TestKriterienP2P})\\ \hline
+		
+		P13 & User Interface (UI) & Die Testinfrastruktur beinhaltet ein benutzerfreundliches UI.\\ \hline
+		
+		P14 & Tool für Feldtests & Es soll ein Tool entstehen, welches dem Anwender die Möglichkeit gibt Messungen durchzuführen und somit sein Mesh Netzwerk zu planen.\\ \hline
 
 		
 	\end{tabular}\\
@@ -57,13 +61,17 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile u
 		
 		P3 & Mesh-Netzwerk & Alle drei Technologien Bluetooth, Thread und Zigbee müssen als Mesh-Netzwerk mit mindestens 10 BSN aufgebaut werden.\\ \hline
 		
-		P4 & Simulation Sensorwerte & Die BSN sollen in einem vom BMS vorgegebenen parametrisierbaren Intervall Sensorwerte Simulieren\\ \hline
+		P4 & Simulation Sensorwerte & Die BSN sollen in einem vom BMS vorgegebenen parametrisierbaren Intervall Sensorwerte simulieren\\ \hline
 		
 		P5 & Sensordaten & Als Sensordaten sollen die Netzzustandsdaten übermittelt werden: Paketnummer, Anzahl Retries, Paketverluste, RSSI, Strombedarf und aktive CPU- und Radio-Zeiten.\\ \hline
 		
-		P6 & Störimmunität & Um die Störimmunität der Netzwerke zu ermitteln sollen gezielt Fremdstörungen mit eingebracht werden, mit definierbarer Tastung und Störframelänge. Hierfür sollen die Punkt zu Punkt Testinfrastrukturen auf MAC-Ebene eingesetzt werden.\\ \hline
+		P6 & Datenauswertung & Die Auswertung der gemessenen Daten soll entweder direkt auf dem BMS oder alternativ auf einem Client Rechner erfolgen. Eine Gegenüberstellung der Daten der drei Mesh Protokolle ist dabei ebenfalls gewünscht.\\ \hline
+				
+		P7 & Störimmunität & Um die Störimmunität der Netzwerke zu ermitteln sollen gezielt Fremdstörungen  mit definierbarer Tastung und Störframelänge eingebracht werden. Hierfür soll die Punkt zu Punkt Testinfrastruktur auf MAC-Ebene eingesetzt werden.\\ \hline
 		
-		P7 & Test und Validierung & Umfassende Gegenüberstellung und Validierung aller drei Netzwerke in einem FHNW Gebäude, insbesondere Durchsatz, Antwortzeit, Zuverlässigkeit, Einfachheit der Konfiguration (inkl. Routing), Einfachheit der Ermittlung geeigneter Router-Standorte, Sicherheit und Energieverbrauch.\\ \hline
+		P8 & Unterschiedliche Test Bedingungen & Die Messungen und Tests an den Mesh Netzwerken sollen unter unterschiedlichen Bedingungen bezüglich Testumgebung durchgeführt werden. Einerseits soll dies in einem Gebäude der FHNW sein und andererseits in einer Umgebung im Heimbereich. \\ \hline
+				
+		P9 & Test und Validierung & Umfassende Gegenüberstellung und Validierung der Messresultate aller drei Netzwerke. Insbesondere Durchsatz, Antwortzeit, Zuverlässigkeit, Einfachheit der Konfiguration (inkl. Routing), Einfachheit der Ermittlung geeigneter Router-Standorte, Sicherheit und Energieverbrauch.\\ \hline
 		
 	\end{tabular}\\
 	\caption{Projektziele der Test Mesh Netzwerke}
@@ -101,19 +109,19 @@ Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile u
 		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}\\ \hline
 		
 		
-		W1 & Testmodul BMN/BSN & Entwickeln eines Testmoduls mit unabhängiger Stromversorgung und dezidierter Strommessung um den Stromverbrauch aufzuzeichnen.\\ \hline
+		W1 & Hardware Testmodul BMN/BSN & Entwickelung einer eigenen Hardware für das Testmodul mit unabhängiger Stromversorgung und dezidierter Strommessung um den Stromverbrauch aufzuzeichnen.\\ \hline
 		
-		W2 & Vergleich SOC & Vergleichen zwischen nRF52840, nRF5340 und weiterer kompatibler SOCs.\todo[inline]{Evtl. nicht ein Bootloader sondern zusammenführen der 3 Mesh Protokolle und Softwaremässig umschaltbar machen.}\\ \hline
+		W2 & Vergleich SOC & Vergleichen zwischen nRF52840, nRF5340 und weiterer kompatibler SOCs.\\ \hline
 		
-		W3 & Drahtlos Konfiguration & Konfiguration der BSN / BMN Firmware drahtlos über Bootloader.\\ \hline
+		W3 & Drahtlos Konfiguration & Drahtlose Konfiguration der BSN / BMN Firmware. Somit könnte ein Wechsel zwischen BLE Mesh, Thread und Zigbee während der Runtime möglich werden.\\ \hline
+		W4 & UI für Mesh Test & Für die Mesh Tests soll analog zu den P2P Tests ein User Interface implementiert werden.\\ \hline
+	
 		
 	\end{tabular}\\
 	\caption{Zusatzziele des Gesamtprojektes}
 	\label{tab:ZusatzzieledesGesamtprojektes}
 \end{table}
 
-\todo[inline]{Portierbares Framework für die Ausmessung eines Netzes. Mit Darstellung der Signal Qualität auf den verschiedenen Kanälen.}
-\todo[inline]{GUI für Mesh Test als Zusatzziel}
 
 
 \subsection{Lieferobjekte}\label{subsec:Lieferobjekte}
