@@ -1,4 +1,4 @@
-	\clearpage
+\clearpage
 \section{Konzept}\label{sec:Konzept}
 
 Für den Vergleich der 3 Mesh Netzwerkstacks Bluetooth Mesh (BT Mesh), Thread und Zigbee wird ein vom Mesh Protokoll unabhängiges Testkonzept umgesetzt welches in der Abbildung \ref{fig:MeshTestKonzept} als Konzeptschema dargestellt ist. Die Benchmark Slave Nodes (BSN) in der Abbildung als Sensoren und Aktoren mit unterschiedlichen Funktionalitäten dargestellt, bilden zusammen mit dem Benchmark Master Node (BMN) das zu testende Mesh Netzwerk. Innerhalb des Netzwerks wird dessen Organisation vom jeweiligen Protokoll sichergestellt. Das Testnetzwerk soll ein realitätsnahes Netzwerk nachbilden. Beispielsweise wird eine Hausautomation in einem Einfamilienhaus als Referenz angenommen in welchem jeweils nur gewisse Nodes untereinander Applikationsdaten austauschen. Ein Lichtschalter kommuniziert nur mit einer Lichtquelle und umgekehrt. Der selbe Lichtschalter tauscht jedoch keine Applikationsdaten mit dem Temperatursensor aus. Trotzdem bilden die Nodes zusammen ein Mesh Netzwerk. Diese unterschiedlichen Beziehungen innerhalb des Mesh Netzwerks sind in der Abbildung \ref{fig:MeshTestKonzept} bereits angedeutet und werden im Abschnitt \ref{subsec:MeshBeziehungen} noch genauer beschrieben.
@@ -9,65 +9,34 @@ Die Benchmark Management Station (BMS) welche mit dem BMN via USB/UART kommunizi
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Mesh_Testkonzept.png}
+	\includegraphics[width=0.7\textwidth]{Mesh_Testkonzept.png}
 	\caption{Konzeptschema für den Ablauf eines Mesh Benchmarks.}\label{fig:MeshTestKonzept}
 \end{figure}
 
 
-In der Abbildung \ref{fig:MeshTestKonzept} sind verschiedene Messages. Dabei handelt es sich um die Nachrichten die zwischen den einzelnen Teilen des Testaufbaus versendet werden. 
+In der Abbildung \ref{fig:MeshTestKonzept} sind verschiedene Messages dargestellt. Dabei handelt es sich um die Nachrichten die zwischen den einzelnen Teilen des Testaufbaus versendet werden und schliesslich einen Benchmark ausmachen. Die Messages besitzen Funktionen:
 
-\subsection{Mesh Benchmark Message (MBM)}\label{subsec:MeshBenchmarkMessage}
-Die MBM ist jene Message welche die eigentlichen Messdaten produziert und diese sogleich unter den BSN (Mesh Knoten) überträgt. Anhand dieser Message werden die Parameter gemäss der Kennwerttabelle in Anhang xx erfasst.
-
-\todo[inline]{Achtung Dummy Bild ;-)}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{MeshBenchmarkMessagePaketdefinition.png}
-	\caption{Packet Definition der Mesh Benchmark Message (MBM)}\label{fig:MeshBenchmarkMessagePaketdefinition}
-\end{figure}
+\paragraph{Mesh Benchmark Message (MBM)}
+Die MBM ist jene Message welche die eigentlichen Messdaten produziert und diese sogleich unter den BSN (Mesh Knoten) überträgt. Anhand dieser Messages werden die Parameter gemäss der Messwerttabelle in Anhang \ref{app:MesswerteBenchmarkMeshNetzwerke} erfasst. Bei den MBM handelt es sich also eigentlich um eine Sammlung von Messages welche je nach gewünschtem Messwert in Form und Anzahl unterschiedlich ausfallen können.
 
 
-\subsection{Mesh Control Message (MCM)}\label{subsec:MeshControlMessage}
+
+\paragraph{Mesh Control Message (MCM)}
+Die MCM beinhaltet die Parameter für die Benchmarks welche vom BMN an die BSN übertragen werden. Ausserdem werden damit Kontrollbefehle für die Benchmarks wie beispielsweise \textit{Start/Stop} sowie \textit{Laufzeit, Wiederholrate usw.} übertragen.
 
 
-\todo[inline]{Achtung Dummy Bild ;-)}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{MeshControlMessagePaketdefinition.png}
-	\caption{Packet Definition der Mesh Control Message (MCM)}\label{fig:MeshControlMessagePaketdefinition}
-\end{figure}
-
-\subsection{Mesh Report Message (MRM)}\label{subsec:MeshReportMessage}
 
 
-\todo[inline]{Achtung Dummy Bild ;-)}
+\paragraph{Mesh Report Message (MRM)}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{MeshReportMessagePaketdefinition.png}
-	\caption{Packet Definition der Mesh Report Message (MRM))}\label{fig:MeshReportMessagePaketdefinition}
-\end{figure}
 
-\subsection{Benchmark Control Message (BCM)}\label{subsec:BenchmarkControlMessage}
 
-\todo[inline]{Achtung Dummy Bild ;-)}
+\paragraph{Benchmark Control Message (BCM)}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{BenchmarkControlMessagePaketdefinition.png}
-	\caption{Packet Definition der Benchmark Control Message (BCM)}\label{fig:BenchmarkControlMessagePaketdefinition}
-\end{figure}
 
-\subsection{Benchmark Report Message (BRM)}\label{subsec:BenchmarkReportMessage}
 
-\todo[inline]{Achtung Dummy Bild ;-)}
+\paragraph{Benchmark Report Message (BRM)}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{BenchmarkReportMessagePaketdefinition.png}
-	\caption{Packet Definition der Benchmark Report Message (BRM)}\label{fig:BenchmarkReportMessagePaketdefinition}
-\end{figure}
+
 
 
