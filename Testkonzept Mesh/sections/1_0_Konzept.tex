@@ -19,24 +19,17 @@ In der Abbildung \ref{fig:MeshTestKonzept} sind verschiedene Messages dargestell
 \paragraph{Mesh Benchmark Message (MBM)}
 Die MBM ist jene Message welche die eigentlichen Messdaten produziert und diese sogleich unter den BSN (Mesh Knoten) überträgt. Anhand dieser Messages werden die Parameter gemäss der Messwerttabelle in Anhang \ref{app:MesswerteBenchmarkMeshNetzwerke} erfasst. Bei den MBM handelt es sich also eigentlich um eine Sammlung von Messages welche je nach gewünschtem Messwert in Form und Anzahl unterschiedlich ausfallen können.
 
-
-
 \paragraph{Mesh Control Message (MCM)}
-Die MCM beinhaltet die Parameter für die Benchmarks welche vom BMN an die BSN übertragen werden. Ausserdem werden damit Kontrollbefehle für die Benchmarks wie beispielsweise \textit{Start/Stop} sowie \textit{Laufzeit, Wiederholrate usw.} übertragen.
-
-
-
+Die MCM beinhaltet die Parameter für die Benchmarks welche vom BMN an alle BSN übertragen werden. Ausserdem werden damit Kontrollbefehle für die Benchmarks wie beispielsweise \textit{Start/Stop} sowie \textit{Laufzeit, Wiederholrate usw.} übertragen.
 
 \paragraph{Mesh Report Message (MRM)}
-
-
+Die MRM ist jene Message welche die Messwerte von den BSN an den BMN übertragen. Gleichzeitig wird damit auch gleich signalisiert, dass die Messung abgeschlossen wurde und mögliche Fehler oder sonstige Stati übermittelt.
 
 \paragraph{Benchmark Control Message (BCM)}
-
-
+Die BCM beschreibt die Nachrichten welche zur Steuerung eines Benchmarks von der BMS her dienen. Dabei handelt es sich um Befehle wie beispielsweise \textit{Start/Stop}. Die BCM werden via serieller USB-UART Schnittstelle von der BMS zum BMN übertragen.
 
 \paragraph{Benchmark Report Message (BRM)}
-
+Die BRM beschreiben Nachrichten welche den Status oder die Ergebnisse eines Benchmarks aus dem Mesh zurück an die BMS melden. Sie werden vom BMN initiiert und gelangen über eine die selbe USB-UART Schnittstelle wie die BCM zum BMS. Die BRM wird erst nach Abschluss des Benchmarks initiiert. Zuvor werden die Messdaten auf dem BMN zwischen gespeichert.
 
 
 
