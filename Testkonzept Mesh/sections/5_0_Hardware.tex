@@ -4,6 +4,5 @@
 \todo[inline]{Eine Hardwareplattform. Dongle mit Akku für die BSN und DK für den BMN. Firmware dementsprechend gibt es folgende: BMN, BSN Sensor, BSN Aktor}
 
 
-
-
+Für den Benchmark und den Vergleich der drei Mesh Protokolle wird mit dem nRF52840 SoC eine gemeinsame Hardwareplattform eingesetzt. Es werden die Entwicklungsboards nRF52840-Dongle für die Benchmark Slave Nodes und das nRF52840-DK für den Benchmark Master Node verwendet. Damit ist der Test einfach nachvollziehbar und kann einfach nachgebaut werden ohne dass dafür spezielle Hardware benötigt wird. Zumindest beim DK trifft dies zu 100\% zu. Bei den Dongle hingegen fehlt die Speisung da diese verteilt und unabhängig von einer fixen Spannungsversorgung betrieben werden sollen. Die Speisung wird daher mit einem 500mAh Li-Po Akkupaket realisiert. Mit einem konservativ berechneten Strombedarf von 20mA ist damit also ein Testbetrieb des Mesh Netzwerks über 24 Stunden möglich.
 
