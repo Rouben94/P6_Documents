@@ -9,6 +9,7 @@
 
 \subsection{Durchsatz Messung}\label{subsec:DurchsatzMessung}
 \todo[inline]{Robin: Mesh-1, 3, 4}
+Der Durchsatz wird gemessen, indem ein Client eine fixe vordefinierte Payload an den Server schickt. Die Zeit, die das Paket braucht um Vollständig übertragen zu werden, wird gemessen. Aus dieser Zeit und der Payload wird der Durchsatz berechnet. Für die Durchsatzmessung sind zwei verschiedene Modi vorgesehen. Der erste Modus misst den Durchsatz ohne applikations Acknowledgment vom Server und der zweite Modus mit Acknowledgement. Im Bild \ref{fig:KonzeptDurchsatzmessung} sind beide Varianten beschrieben. Die Anzahl Messungen kann vor dem Test definiert werden. 
 
 \begin{figure}[H]
 	\centering
@@ -17,6 +18,7 @@
 \end{figure}
 
 \subsection{Latenz Messung}\label{subsec:LatenzMessung}
+Die Latenz beschreibt die Zeit, wie lange ein Paket hat bis es vollständig übertragen wurde. Da die Messung auf applikations Ebene stattfindet, wird die Zeit vom Funktionsaufruf des Clients bis zur Bestätigung vom Server gemessen. 
 
 \begin{figure}[H]
 	\centering
