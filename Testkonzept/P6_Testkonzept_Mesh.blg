@@ -1,9 +1,0 @@
-[0] Config.pm:304> INFO - This is Biber 2.14
-[0] Config.pm:307> INFO - Logfile is 'P6_Testkonzept_Mesh.blg'
-[92] biber-MSWIN64:322> INFO - === 
-[118] Biber.pm:415> INFO - Reading 'P6_Testkonzept_Mesh.bcf'
-[250] Biber.pm:943> INFO - Found 0 citekeys in bib section 0
-[258] Utils.pm:304> WARN - The file 'P6_Testkonzept_Mesh.bcf' does not contain any citations!
-[278] bbl.pm:652> INFO - Writing 'P6_Testkonzept_Mesh.bbl' with encoding 'UTF-8'
-[278] bbl.pm:755> INFO - Output to P6_Testkonzept_Mesh.bbl
-[283] Biber.pm:128> INFO - WARNINGS: 1
