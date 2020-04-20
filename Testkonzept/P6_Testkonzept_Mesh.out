@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{1 Konzept}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{1.1 Mesh Benchmark Message \(MBM\)}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{1.2 Mesh Control Message \(MCM\)}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{1.3 Mesh Report Message \(MRM\)}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{1.4 Benchmark Control Message \(BCM\)}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{1.5 Benchmark Report Message \(BRM\)}{section.1}% 6
+\BOOKMARK [1][-]{section.2}{2 Ablauf}{}% 7
+\BOOKMARK [1][-]{section.3}{3 Testszenarien}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{3.1 Mesh Beziehungen}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{3.2 Testumgebungen}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{4 Hardware und Firmware}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{4.1 Parameter Mesh Test}{section.4}% 12

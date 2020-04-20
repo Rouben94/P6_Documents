@@ -4,6 +4,23 @@
 \todo[inline]{Eine Hardwareplattform. Dongle mit Akku für die BSN und DK für den BMN. Firmware dementsprechend gibt es folgende: BMN, BSN Sensor, BSN Aktor}
 
 \todo[inline]{Räffu: Mesh-5, 7, 8, 9}
+
+\subsection{Signal to Noise Ratio}\label{subsec:SignaltoNoiseRatio}
+
+Das Signal to Noise Ratio beschreibt die Übertragungsqualität eines Kanals. Dabei muss das Rauschen ohne Übertragung von der Gegenseite gemessen werden $P_{rauschen}$. Anschliessend wird die Signalstärke von der Gegenseite gemessen $P_{signal}$. Der SNR wird gemäss der Formel \ref{eq:SNR} berechnet.
+
+\begin{equation} \label{eq:SNR}
+ SNR = P_{signal}/P_{rauschen}
+\end{equation}
+
+Gemessen wird das Signal to Noise Ratio über die verschiedenen Kanäle, welche zur Übertragung in BLE oder IEEE802.15.4 verwendet werden (siehe Abbildung \ref{fig:BLEIEEE802_15_4_Kanaele}). 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{24-GHz-ISM-band-IEEE-802154-BLE-and-IEEE-80211-channels_W640.jpg}
+	\caption{BLE und IEEE802.15.4 Kanäle}\label{fig:BLEIEEE802_15_4_Kanaele}
+\end{figure}
+
 \newpage
 
 
