@@ -1,0 +1,149 @@
+\clearpage
+\section{Projektziele und Lieferobjekte}\label{sec:ProjektzieleundLieferobjekte}
+
+Nachfolgend sind alle Projektziele aufgelistet. Die Ziele wurden in vier Teile unterteilt. Die ersten drei Teile entsprechen den Hauptzielen die in Kapitel \ref{subsec:ZielderArbeit} bereits erwähnt wurden. Die Tabelle \ref{tab:ZusatzzieledesGesamtprojektes} zeigt zusätzliche Ziele die als Wunschziele betrachtet werden und somit nicht im Fokus der Arbeit stehen. Wie bereits unter Kapitel \ref{subsec:KonzeptPunktzuPunktTestinfrastruktur} sowie \ref{subsec:KonzeptTestMeshNetzwerke} erwähnt, sind ergänzende Beschreibungen von Testkriterien in den Anhängen \ref{app:TestKriterienP2P} und \ref{app:TestKriterienMesh} zu finden.
+
+\subsection{Punkt zu Punkt Testinfrastruktur}\label{subsec:PunktzuPunktTestinfrastruktur}
+
+\begin{table}[H]
+    \centering
+	\begin{tabular}{ | C{0.7cm} | p{3.7cm} | p{10.2cm} |}
+		\hline
+		\multicolumn{3}{|l|}{\textbf{Projektziele}}\\ \hline
+		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}\\ \hline
+		
+		P1 & Kommunikation mit BMS & Der BMN kommuniziert via USB oder UART mit dem BMS.\\ \hline
+		
+		P2 & Senden von MAC-Frames & Das BMN sendet gemäss den Vorgaben der Testkriterien und gesteuert durch das BMS MAC-Frames an einen oder mehrere BSN.\\ \hline
+		
+		P3 & Rückbestätigung der MAC-Frames & Der oder die batteriebetriebenen BSN, bestätigen die MAC-Frames mit entsprechender Payload zurück.\\ \hline
+		
+		P4 & Konfiguration der Anzahl BSN & Die Anzahl der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
+		
+		P5 & Adressierung der BSN & Die Adressierung der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
+		
+		P6 & Konfiguration der Kanäle & Die BLE resp. 802.15.4 Kanäle können über eine Steuer- und Auswertesoftware ausgewählt werden.\\ \hline
+		
+		P7 & Einstellbare Framelänge & Die Framelänge der MAC-Frames ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
+		
+		P8 & Einstellbare Frame- und Kanalwechselrate & Die Frame- und Kanalwechselrate ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
+		
+		P9 & Einstellbare Sendeleistung & Die Sendeleistung der BSN ist über eine Steuer- und Auswertesoftware konfigurierbar.\\ \hline
+		
+		P10 & Anpassung der Modulationsart& In BLE soll die Modulationsart über eine Steuer- und Auswertesoftware konfigurierbar sein, um die Datenrate von 125kbps auf 2Mbps und die Long Range Funktion einzustellen.\\ \hline
+		
+		P11 & Ein- und Ausschalten der Collision Avoidance (CSMA/CA)& Beim 802.15.4 Protokoll soll die Collision Avoidance über eine Steuer- und Auswertesoftware ein- und ausgeschaltete werden können.\\ \hline
+		
+		P12 & Erfassen der Verbindungsqualität & Sowohl master- wie auch slaveseitige Erfassung der Verbindungsqualität (RSSI, Package Loss, Collisions, Noise Level, …). Die BSN senden hierzu die erfassten Werte im Rückantwortframe dem BMN zurück. (Siehe auch Anhang \ref{app:TestKriterienP2P})\\ \hline
+				
+		P13 & Tool für Feldtests & Es soll ein Tool entstehen, welches dem Anwender die Möglichkeit gibt Messungen durchzuführen und somit sein Mesh Netzwerk zu planen.\\ \hline
+
+		
+	\end{tabular}\\
+	\caption{Projektziele der Punkt zu Punkt Testinfrastruktur}
+	\label{tab:ProjektzielederPunktzuPunktTestinfrastruktur}
+\end{table}
+
+
+\subsection{Test Mesh Netzwerke}\label{subsec:TestMeshNetzwerke}
+\begin{table}[H]
+\centering
+	\begin{tabular}{| C{0.7cm} | p{3.7cm} | p{10.2cm} |}
+		\hline
+		\multicolumn{3}{|l|}{\textbf{Projektziele}}\\ \hline
+		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}\\ \hline
+		
+		P1 & Kommunikation mit BMS & Das BMN kommuniziert via USB oder UART mit dem BMS.\\ \hline
+		
+		P2 &Konfiguration BSN &Die BSN lassen sich frei zu einem Routing-Knoten, End-Knoten oder einem Low-Power Knoten konfigurieren.\\ \hline
+		
+		P3 & Mesh-Netzwerk & Alle drei Technologien Bluetooth, Thread und Zigbee müssen als Mesh-Netzwerk mit mindestens 10 BSN aufgebaut werden.\\ \hline
+		
+		P4 & Simulation Sensorwerte & Die BSN sollen in einem vom BMS vorgegebenen parametrisierbaren Intervall Sensorwerte simulieren\\ \hline
+		
+		P5 & Sensordaten & Als Sensordaten sollen die Netzzustandsdaten übermittelt werden: Paketnummer, Anzahl Retries, Paketverluste, RSSI, Strombedarf und aktive CPU- und Radio-Zeiten.\\ \hline
+		
+		P6 & Datenauswertung & Die Auswertung der gemessenen Daten soll entweder direkt auf dem BMS oder alternativ auf einem Client Rechner erfolgen. Eine Gegenüberstellung der Daten der drei Mesh Protokolle ist dabei ebenfalls gewünscht.\\ \hline
+				
+		P7 & Störimmunität & Um die Störimmunität der Netzwerke zu ermitteln sollen gezielt Fremdstörungen  mit definierbarer Tastung und Störframelänge eingebracht werden. Hierfür soll die Punkt zu Punkt Testinfrastruktur auf MAC-Ebene eingesetzt werden.\\ \hline
+		
+		P8 & Unterschiedliche Test Bedingungen & Die Messungen und Tests an den Mesh Netzwerken sollen unter unterschiedlichen Bedingungen bezüglich Testumgebung durchgeführt werden. Einerseits soll dies in einem Gebäude der FHNW sein und andererseits in einer Umgebung im Heimbereich. \\ \hline
+				
+		P9 & Test und Validierung & Umfassende Gegenüberstellung und Validierung der Messresultate aller drei Netzwerke. Insbesondere Durchsatz, Antwortzeit, Zuverlässigkeit, Einfachheit der Konfiguration (inkl. Routing), Einfachheit der Ermittlung geeigneter Router-Standorte, Sicherheit und Energieverbrauch.\\ \hline
+		
+	\end{tabular}\\
+	\caption{Projektziele der Test Mesh Netzwerke}
+	\label{tab:ProjektzielederTestMeshNetzwerke}
+\end{table}
+
+
+\subsection{Steuer- und Auswertesoftware}\label{subsec:SteuerundAuswertesoftware}
+\begin{table}[H]
+\centering
+	\begin{tabular}{| C{0.7cm} | p{3.7cm} | p{10.2cm} |}
+		\hline
+		\multicolumn{3}{|l|}{\textbf{Projektziele}}\\ \hline
+		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}\\ \hline
+		
+		P1 & Ansteuerung Funkmodul & Das BMS steuert via USB oder UART ein BMN an.\\ \hline
+		
+		P2 & Visualisierung Parameter& Die Parameter der Ziele von Kapitel \ref{subsec:TestMeshNetzwerke} und \ref{subsec:PunktzuPunktTestinfrastruktur} sollen vom BMS visualisiert und eingestellt werden können.\\ \hline
+		
+		P3 & User Interface (UI) & Die Testinfrastruktur beinhaltet ein benutzerfreundliches UI.\\ \hline
+
+		
+		P4 & Konfiguration Mesh-Netzwerk& Das BMS verwaltet und konfiguriert über einen BMN das Mesh-Netzwerk.\\ \hline
+		
+		P5 & Einheitliche Kommunikation von BMS & Das Protokoll und Interface zum BMS soll für alle drei Mesh-Netzwerke einheitlich sein.\\ \hline
+		
+	\end{tabular}\\
+	\caption{Projektziele der Steuer- und Auswertesoftware}
+	\label{tab:ProjektzielederSteuerundAuswertesoftware}
+\end{table}
+
+\subsection{Zusatzziele}\label{subsec:Zusatzziele}
+\begin{table}[H]
+\centering
+	\begin{tabular}{| C{0.7cm} | p{3.7cm} | p{10.2cm} |}
+		\hline
+		\multicolumn{3}{|l|}{\textbf{Projektziele}}\\ \hline
+		\textbf{Nr.}& \textbf{Ziel}& \textbf{Beschrieb}\\ \hline
+		
+		
+		W1 & Hardware Testmodul BMN/BSN & Entwickelung einer eigenen Hardware für das Testmodul mit unabhängiger Stromversorgung und dezidierter Strommessung um den Stromverbrauch aufzuzeichnen.\\ \hline
+		
+		W2 & Vergleich SOC & Vergleichen zwischen nRF52840, nRF5340 und weiterer kompatibler SOCs.\\ \hline
+		
+		W3 & Drahtlos Konfiguration & Drahtlose Konfiguration der BSN / BMN Firmware. Somit könnte ein Wechsel zwischen BLE Mesh, Thread und Zigbee während der Runtime möglich werden.\\ \hline
+		W4 & UI für Mesh Test & Für die Mesh Tests soll analog zu den P2P Tests ein User Interface implementiert werden.\\ \hline
+	
+		
+	\end{tabular}\\
+	\caption{Zusatzziele des Gesamtprojektes}
+	\label{tab:ZusatzzieledesGesamtprojektes}
+\end{table}
+
+
+
+\subsection{Lieferobjekte}\label{subsec:Lieferobjekte}
+Zusätzlich zu den Projektzielen, folgen in diesem Kapitel die Lieferobjekte  mit dem jeweiligen Fälligkeitsdatum. In der Tabelle \ref{tbl:Lieferobjekte} sind diese  aufgelistet.  
+
+
+\begin{table}[H]
+     \centering
+\begin{tabular}{|c|c|l|}\hline
+   \textbf{Nr.} & \textbf{Datum} & \textbf{Lieferobjekt} \\ \hline
+   
+   1 & 02.03.2020 & Abgabe Pflichtenheft, 1. Version\\ \hline
+   2 & 08.03.2020 & Abgabe Pflichtenheft, definitive Version\\ \hline
+   3 & 14.08.2020 & Abgabe Fachbericht \\ \hline
+   4 & 14.08.2020 & Abgabe Paper \\ \hline
+   5 & 14.08.2020 & Abgabe Testaufbau \\ \hline
+   6 & 14.08.2020 & Abgabe Factsheet \\ \hline
+   7 & 14.08.2020 & Abgabe Poster \\ \hline
+   8 & 01.09.2020 & Projektpräsentation \\ \hline
+   
+ \end{tabular}
+     \caption{Lieferobjekte}
+     \label{tbl:Lieferobjekte}
+\end{table}
