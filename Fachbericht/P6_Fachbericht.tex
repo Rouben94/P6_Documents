@@ -21,7 +21,7 @@
 		{\huge{\textbf{\thetitle}}}\\
 		\vspace*{1cm}
 		
-		{\huge{Testumgebung und Perfomancevergleich von Zigbee, Thread und Bluetooth Mesh Netzwerken}}\\
+		{\huge{Testumgebung und Performancevergleich von Zigbee, Thread und Bluetooth Mesh Netzwerken}}\\
 		\vspace*{0.5cm}
 		
 		{\scshape\Large Bachelor Thesis - \theauthor \\} \Large{\today}
@@ -46,6 +46,11 @@
 	\end{center}
 \clearpage
 
+%%---ABSTRACT----------------------------------------------------------------------------
+\selectlanguage{english}				%ngerman or english
+\thispagestyle{empty}
+\include{sections/0_0_Abstract}
+
 
 %%---TABLE OF CONTENTS-------------------------------------------------------------------
 \pagenumbering{Roman}		
@@ -55,14 +60,14 @@
 
 %%---TEXT--------------------------------------------------------------------------------
 \pagenumbering{arabic}
+
+%%Part 0
+
 \input{sections/0_1_Einleitung}
 \pagebreak
 
 
-%%Part 1
-
-\input{sections/1_0_Abstract}
-\pagebreak
+%%Part 1 Bluetooth Mesh
 
 \input{sections/1_1_Uebersicht}
 \pagebreak
@@ -76,10 +81,7 @@
 \input{sections/1_4_Projektmanagement}
 \pagebreak
 
-%%Part 2
-
-\input{sections/2_0_Abstract}
-\pagebreak
+%%Part 2 Thread
 
 \input{sections/2_1_Uebersicht}
 \pagebreak
@@ -93,6 +95,20 @@
 \input{sections/2_4_Projektmanagement}
 \pagebreak
 
+%%Part 3 Zigbee
+
+%\input{sections/3_1_Uebersicht}
+%\pagebreak
+%
+%\input{sections/3_2_Loesungskonzept}
+%\pagebreak
+%
+%\input{sections/3_3_Projektziele_und_Lieferobjekte}
+%\pagebreak
+%
+%\input{sections/3_4_Projektmanagement}
+%\pagebreak
+
 \clearpage
 %%---BIBLIOGRAPHY------------------------------------------------------------------------
 {\sloppypar
@@ -101,6 +117,9 @@
 %\selectlanguage{ngerman}				%ngerman or english
 %\printbibliography
 }
+
+%%---List of Figures------------------------------------------------------------------------
+\listoffigures
 
 %%---APPENDIX----------------------------------------------------------------------------
 \include{sections/appendix}
