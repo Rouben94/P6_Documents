@@ -72,6 +72,8 @@
 % Add additional packages here if required
 \usepackage{siunitx}
 
+\usepackage[textsize=footnotesize]{todonotes}
+
 % Update article type if known
 \papertype{FHNW Paper}
 
@@ -100,12 +102,15 @@
 \runningauthor{Perfomancevergleich Zigbee, Thread, Bluetooth}
 
 \begin{document}
+\begin{figure}
+	\includegraphics[scale=1]{graphics/fhnw_ht_logo_de.pdf}
+\end{figure}
 
 \begin{frontmatter}
 \maketitle
 
 \begin{abstract}
-Hier kommt der Abstract.
+\todo[inline]{Abstract hinzufügen}
 
 % Please include a maximum of seven keywords
 \keywords{keyword 1, \emph{keyword 2}, keyword 3, keyword 4, keyword 5, keyword 6, keyword 7}
@@ -113,48 +118,66 @@ Hier kommt der Abstract.
 \end{frontmatter}
 
 \section{Einleitung}
-Einleitung
+\todo[inline]{In der Einleitung sollen die drei verschiedenen Stacks kurz und knapp erläutert werden und welche Vor- und Nachteile diese haben.}
+
+\subsection{Bluetooth Mesh}
+\todo[inline]{Kurze Beschreibung vom Stack}
+
+\subsection{OpenThread}
+\todo[inline]{Kurze Beschreibung vom Stack}
+
+\subsection{ZigBee}
+\todo[inline]{Kurze Beschreibung vom Stack}
 
 \section{Methode}
-Einleitung
+\todo[inline]{Hier sollen die Messmethoden dargelegt werden. (Wie wurde gemessen, Programmablauf, Genauigkeit, Wie wurden die Messungen aufgezeichnet und gespeichert usw.)}
+\todo[inline]{Die drei Stacks müssen vielleicht nicht unterteilt werden.}
+\subsection{Bluetooth Mesh}
+\todo[inline]{Messmethode Bluetooth Mesh}
+
+\subsection{OpenThread}
+\todo[inline]{Messmethode OpenThread}
+
+\subsection{ZigBee}
+\todo[inline]{Messmethode ZigBee}
 
 \section{Ergebnisse}
-Einleitung
+\todo[inline]{Die Ergebnisse sollen hier nach verschiedenen Kriterien dargestellt werden (Anzahl Nodes, Anzahl Hops, usw.)}
 
 \section{Interpretation}
-Einleitung
+\todo[inline]{Interpretation der Ergebnisse (Was fällt besonders auf, wo sind die stärken und schwächen der einzelnen Netzwerke, usw.)}
 
-\begin{figure}[bt]
-\centering
-\includegraphics[width=6cm]{Graphics/example-image-rectangle}
-\caption{Although we encourage authors to send us the highest-quality figures possible, for peer-review purposes we can accept a wide variety of formats, sizes, and resolutions. Legends should be concise but comprehensive -- the figure and its legend must be understandable without reference to the text. Include definitions of any symbols used and define/explain all abbreviations and units of measurement.}
-\end{figure}
+%\begin{figure}[bt]
+%\centering
+%\includegraphics[width=6cm]{Graphics/example-image-rectangle}
+%\caption{Testbild}
+%\end{figure}
 
-\begin{table}[bt]
-\caption{This is a table. Tables should be self-contained and complement, but not duplicate, information contained in the text. They should be not be provided as images. Legends should be concise but comprehensive – the table, legend and footnotes must be understandable without reference to the text. All abbreviations must be defined in footnotes.}
-\begin{threeparttable}
-\begin{tabular}{lccrr}
-\headrow
-\thead{Variables} & \thead{JKL ($\boldsymbol{n=30}$)} & \thead{Control ($\boldsymbol{n=40}$)} & \thead{MN} & \thead{$\boldsymbol t$ (68)}\\
-Age at testing & 38 & 58 & 504.48 & 58 ms\\
-Age at testing & 38 & 58 & 504.48 & 58 ms\\
-Age at testing & 38 & 58 & 504.48 & 58 ms\\
-Age at testing & 38 & 58 & 504.48 & 58 ms\\
-\hiderowcolors
-stop alternating row colors from here onwards\\
-Age at testing & 38 & 58 & 504.48 & 58 ms\\
-Age at testing & 38 & 58 & 504.48 & 58 ms\\
-\hline  % Please only put a hline at the end of the table
-\end{tabular}
+%\begin{table}[bt]
+%\caption{Test Tabelle}
+%\begin{threeparttable}
+%\begin{tabular}{lccrr}
+%\headrow
+%\thead{Variables} & \thead{JKL ($\boldsymbol{n=30}$)} & \thead{Control ($\boldsymbol{n=40}$)} & \thead{MN} & \thead{$\boldsymbol t$ (68)}\\
+%Age at testing & 38 & 58 & 504.48 & 58 ms\\
+%Age at testing & 38 & 58 & 504.48 & 58 ms\\
+%Age at testing & 38 & 58 & 504.48 & 58 ms\\
+%Age at testing & 38 & 58 & 504.48 & 58 ms\\
+%\hiderowcolors
+%stop alternating row colors from here onwards\\
+%Age at testing & 38 & 58 & 504.48 & 58 ms\\
+%Age at testing & 38 & 58 & 504.48 & 58 ms\\
+%\hline  % Please only put a hline at the end of the table
+%\end{tabular}
+%
+%\begin{tablenotes}
+%\item JKL, just keep laughing; MN, merry noise.
+%\end{tablenotes}
+%\end{threeparttable}
+%\end{table}
 
-\begin{tablenotes}
-\item JKL, just keep laughing; MN, merry noise.
-\end{tablenotes}
-\end{threeparttable}
-\end{table}
-
-\section*{Supporting Information}
-Supporting information is information that is not essential to the article, but provides greater depth and background. It is hosted online and appears without editing or typesetting. It may include tables, figures, videos, datasets, etc. More information can be found in the journal's author guidelines or at \url{http://www.wileyauthors.com/suppinfoFAQs}. Note: if data, scripts, or other artefacts used to generate the analyses presented in the paper are available via a publicly available data repository, authors should include a reference to the location of the material within their paper.
+\section*{Ergänzende Informationen}
+\todo[inline]{Infos die evtl. wichtig sind aber nicht unbedingt in den Kontext gehören}
 
 % Submissions are not required to reflect the precise reference formatting of the journal (use of italics, bold etc.), however it is important that all key elements of each reference are included.
 \bibliography{bibliography}

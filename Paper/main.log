@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.18)  19 JUL 2020 11:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.18)  19 JUL 2020 23:07
 entering extended mode
 **./main.tex
 (main.tex
@@ -1311,43 +1311,69 @@ Package: siunitx 2020/02/25 v2.8b A comprehensive (SI) units package
 tor.sty"
 Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
 ))
+("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/todonotes\todonote
+s.sty"
+Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
+Package: todonotes 2018/11/22
+
+("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarypositioning.code.tex"
+File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibraryshadows.code.tex"
+File: tikzlibraryshadows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibraryfadings.code.tex"
+File: tikzlibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
+flibraryfadings.code.tex"
+File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+\c@@todonotes@numberoftodonotes=\count370
+)
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 102.
+h' as default language. on input line 104.
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 102.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 104.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
-102.
+104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls1stix.fd"
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 104.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
-102.
+104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls2stix.fd"
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    ... okay on input line 104.
 LaTeX Font Info:    Trying to load font information for T1+stix on input line 1
-02.
+04.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\t1stix.fd"
 File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
@@ -1355,16 +1381,16 @@ File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count370
+\scratchcounter=\count371
 \scratchdimen=\dimen333
 \scratchbox=\box82
-\nofMPsegments=\count371
-\nofMParguments=\count372
+\nofMPsegments=\count372
+\nofMParguments=\count373
 \everyMPshowfont=\toks61
-\MPscratchCnt=\count373
+\MPscratchCnt=\count374
 \MPscratchDim=\dimen334
-\MPnumerator=\count374
-\makeMPintoPDFobject=\count375
+\MPnumerator=\count375
+\makeMPintoPDFobject=\count376
 \everyMPtoPDFconversion=\toks62
 )
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
@@ -1373,18 +1399,18 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 ) ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 102.
+LaTeX Info: Redefining \selectfont on input line 104.
 \AtBeginShipoutBox=\box83
 
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \microtypecontext on input line 102.
+LaTeX Info: Redefining \microtypecontext on input line 104.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 102.
+LaTeX Info: Redefining \showhyphens on input line 104.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1392,8 +1418,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `stix' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\c@mv@tabular=\count376
-\c@mv@boldtabular=\count377
+\c@mv@tabular=\count377
+\c@mv@boldtabular=\count378
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1440,7 +1466,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 102.
+or `english'. on input line 104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-basic-dictionary-English.dict"
@@ -1451,14 +1477,14 @@ breviations.cfg"
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 102.
+ne 104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls1stixscr.fd
 "
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 102.
+e 104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls2stixex.fd"
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
@@ -1470,21 +1496,21 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 102.
+ine 104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls1stixfrak.f
 d"
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 102.
+e 104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls1stixbb.fd"
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 102.
+ne 104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls2stixcal.fd
 "
@@ -1492,63 +1518,54 @@ File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 102.
+e 104.
 
 ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls1stixsf.fd"
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 102.
+e 104.
  ("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ls2stixtt.fd
 "
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 113--113
+<graphics/fhnw_ht_logo_de.pdf, id=28, 183.81773pt x 28.4543pt>
+File: graphics/fhnw_ht_logo_de.pdf Graphic file (type pdf)
+<use graphics/fhnw_ht_logo_de.pdf>
+Package pdftex.def Info: graphics/fhnw_ht_logo_de.pdf  used on input line 106.
+(pdftex.def)             Requested size: 183.81728pt x 28.45421pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--113
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 
  []
 
 \wiley@abstractbox=\box84
-Package mdframed Info: mdframed works in twoside mode on input line 113.
+Package mdframed Info: mdframed works in twoside mode on input line 118.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 113.
+ mdframed uses option nobreak mdframed on input line 118.
 Package marginnote Info: Margin note 1.1 is on absolute page 1 on input line 11
-3.
-Package marginnote Info: xpos seems to be 40.68744pt on input line 113.
-Package mdframed Info: mdframed works in twoside mode on input line 113.
+8.
+Package marginnote Info: xpos seems to be 40.68744pt on input line 118.
+Package mdframed Info: mdframed works in twoside mode on input line 118.
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 115.
+(Font)              size <7> substituted on input line 120.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 115.
+(Font)              size <7> substituted on input line 120.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 115.
+(Font)              size <7> substituted on input line 120.
 
-<Graphics/example-image-rectangle.png, id=4, 401.5pt x 301.125pt>
-File: Graphics/example-image-rectangle.png Graphic file (type png)
-<use Graphics/example-image-rectangle.png>
-Package pdftex.def Info: Graphics/example-image-rectangle.png  used on input li
-ne 129.
-(pdftex.def)             Requested size: 170.71652pt x 128.03845pt.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-57.
-("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][] 
@@ -1556,11 +1573,22 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [1
 
-{C:/Users/robin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (main.bbl
+{C:/Users/robin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./graphics/
+fhnw_ht_logo_de.pdf>] (main.bbl
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+1.
+
+("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
 
 LaTeX Font Warning: Font shape `T1/cmtt/m/n' in size <7.5> not available
 (Font)              size <7> substituted on input line 11.
 
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 11.
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <3.75> not available
@@ -1574,7 +1602,7 @@ LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <3.75> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <3.75> not available
 (Font)              size <5> substituted on input line 11.
 
-) [2 <./Graphics/example-image-rectangle.png>] (main.aux)
+) [2] (main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.25pt have occurred.
@@ -1584,26 +1612,22 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 30076 strings out of 480795
- 592308 string characters out of 2895574
- 831643 words of memory out of 3000000
- 45427 multiletter control sequences out of 15000+200000
- 676577 words of font info for 213 fonts, out of 3000000 for 9000
+ 30522 strings out of 480795
+ 604345 string characters out of 2895574
+ 840775 words of memory out of 3000000
+ 45872 multiletter control sequences out of 15000+200000
+ 674824 words of font info for 204 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,20n,110p,843b,1145s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 81i,20n,110p,843b,1212s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\robin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi525\
-ectt0800.pk> <C:\Users\robin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
-ec/dpi600\ectt0800.pk>{C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/stix/stix-t1.enc}<C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/stix/STIXGeneral-Bold.pfb><C:/Users/robin/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/stix/STIXGeneral-Italic.pfb><C:/Users/robin/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/stix/STIXGeneral-Regular.pfb>
-<C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmbx8.pfb><C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cmextra/cmmib8.pfb>
-Output written on main.pdf (2 pages, 157890 bytes).
+ectt0800.pk>{C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/s
+tix/stix-t1.enc}<C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/stix/STIXGeneral-Bold.pfb><C:/Users/robin/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/stix/STIXGeneral-Italic.pfb><C:/Users/robin/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/stix/STIXGeneral-Regular.pfb>
+Output written on main.pdf (2 pages, 250726 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
+ 97 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26130 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 24178 words of extra memory for PDF output out of 24883 (max. 10000000)
 
