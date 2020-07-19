@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{}
+
+\bibitem[{KG(????)Reichelt Elektronik GmbH \& Co
+  KG}]{reichelt_elektronik_gmbh_&_co_kg_rasp_nodate}
+KG REGC, {RASP} {PI} 4 {B} 4GB - {Raspberry} {Pi} 4 {B}, 4x 1,5 {GHz}, 4 {GB}
+  {RAM}, {WLAN}, {BT};.
+\newblock
+  \urlprefix\url{https://www.reichelt.de/raspberry-pi-4-b-4x-1-5-ghz-4-gb-ram-wlan-bt-rasp-pi-4-b-4gb-p259920.html}.
+
+\end{thebibliography}
