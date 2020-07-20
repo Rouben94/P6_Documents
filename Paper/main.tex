@@ -109,6 +109,8 @@
 \begin{frontmatter}
 \maketitle
 
+% Document abstract:
+% ==========================================
 \begin{abstract}
 \todo[inline]{Abstract hinzufügen}
 
@@ -117,69 +119,25 @@
 \end{abstract}
 \end{frontmatter}
 
-\section{Einleitung}
-\todo[inline]{In der Einleitung sollen die drei verschiedenen Stacks kurz und knapp erläutert werden und welche Vor- und Nachteile diese haben.}
+% Document sections:
+% ==========================================
 
-\subsection{Bluetooth Mesh}
-\todo[inline]{Kurze Beschreibung vom Stack}
+\input{sections/1_0_Einleitung}
 
-\subsection{OpenThread}
-\todo[inline]{Kurze Beschreibung vom Stack}
+\input{sections/2_0_Methode}
 
-\subsection{ZigBee}
-\todo[inline]{Kurze Beschreibung vom Stack}
+\input{sections/3_0_Ergebnisse}
 
-\section{Methode}
-\todo[inline]{Hier sollen die Messmethoden dargelegt werden. (Wie wurde gemessen, Programmablauf, Genauigkeit, Wie wurden die Messungen aufgezeichnet und gespeichert usw.)}
-\todo[inline]{Die drei Stacks müssen vielleicht nicht unterteilt werden.}
-\subsection{Bluetooth Mesh}
-\todo[inline]{Messmethode Bluetooth Mesh}
+\input{sections/4_0_Interpretation}
 
-\subsection{OpenThread}
-\todo[inline]{Messmethode OpenThread}
-
-\subsection{ZigBee}
-\todo[inline]{Messmethode ZigBee}
-
-\section{Ergebnisse}
-\todo[inline]{Die Ergebnisse sollen hier nach verschiedenen Kriterien dargestellt werden (Anzahl Nodes, Anzahl Hops, usw.)}
-
-\section{Interpretation}
-\todo[inline]{Interpretation der Ergebnisse (Was fällt besonders auf, wo sind die stärken und schwächen der einzelnen Netzwerke, usw.)}
-
-%\begin{figure}[bt]
-%\centering
-%\includegraphics[width=6cm]{Graphics/example-image-rectangle}
-%\caption{Testbild}
-%\end{figure}
-
-%\begin{table}[bt]
-%\caption{Test Tabelle}
-%\begin{threeparttable}
-%\begin{tabular}{lccrr}
-%\headrow
-%\thead{Variables} & \thead{JKL ($\boldsymbol{n=30}$)} & \thead{Control ($\boldsymbol{n=40}$)} & \thead{MN} & \thead{$\boldsymbol t$ (68)}\\
-%Age at testing & 38 & 58 & 504.48 & 58 ms\\
-%Age at testing & 38 & 58 & 504.48 & 58 ms\\
-%Age at testing & 38 & 58 & 504.48 & 58 ms\\
-%Age at testing & 38 & 58 & 504.48 & 58 ms\\
-%\hiderowcolors
-%stop alternating row colors from here onwards\\
-%Age at testing & 38 & 58 & 504.48 & 58 ms\\
-%Age at testing & 38 & 58 & 504.48 & 58 ms\\
-%\hline  % Please only put a hline at the end of the table
-%\end{tabular}
-%
-%\begin{tablenotes}
-%\item JKL, just keep laughing; MN, merry noise.
-%\end{tablenotes}
-%\end{threeparttable}
-%\end{table}
+% Document "Appendix":
+% ==========================================
 
 \section*{Ergänzende Informationen}
 \todo[inline]{Infos die evtl. wichtig sind aber nicht unbedingt in den Kontext gehören}
 
-% Submissions are not required to reflect the precise reference formatting of the journal (use of italics, bold etc.), however it is important that all key elements of each reference are included.
-\bibliography{bibliography}
+% Document "References":
+% ==========================================
+%\bibliography{literature/bibliography}
 
 \end{document}

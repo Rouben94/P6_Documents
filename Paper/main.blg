@@ -3,54 +3,54 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 21 items.
 The style file: vancouver-authoryear.bst
-Reallocating 'name_of_file' (item size: 1) to 13 items.
-Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "urmson2008autonomous"
-Warning--I didn't find a database entry for "lees2010theoretical"
-Warning--I didn't find a database entry for "geiger2012we"
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+Database file #1: literature/bibliography.bib
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
-Warning--empty author and editor in reichelt_elektronik_gmbh_&_co_kg_rasp_nodate
-Warning--missing publisher in reichelt_elektronik_gmbh_&_co_kg_rasp_nodate
-Warning--there's a month but no year in reichelt_elektronik_gmbh_&_co_kg_rasp_nodate
-You've used 1 entry,
+Warning--empty author and editor in bluetooth_sig_our_2019
+You can't pop an empty literal stack for entry bluetooth_sig_our_2019
+while executing---line 1804 of file vancouver-authoryear.bst
+Warning--missing publisher in bluetooth_sig_our_2019
+Warning--empty author and editor in eckstein_neue_2019
+Warning--missing publisher in eckstein_neue_2019
+You've used 2 entries,
             3097 wiz_defined-function locations,
-            679 strings with 5418 characters,
-and the built_in function-call counts, 707 in all, are:
-= -- 69
-> -- 4
-< -- 1
-+ -- 2
-- -- 1
-* -- 59
-:= -- 92
-add.period$ -- 2
-call.type$ -- 1
+            683 strings with 5423 characters,
+and the built_in function-call counts, 1227 in all, are:
+= -- 127
+> -- 8
+< -- 2
++ -- 4
+- -- 2
+* -- 93
+:= -- 155
+add.period$ -- 4
+call.type$ -- 2
 change.case$ -- 0
-chr.to.int$ -- 1
-cite$ -- 4
-duplicate$ -- 40
-empty$ -- 73
-format.name$ -- 2
-if$ -- 151
+chr.to.int$ -- 2
+cite$ -- 6
+duplicate$ -- 105
+empty$ -- 125
+format.name$ -- 4
+if$ -- 270
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 6
-newline$ -- 10
-num.names$ -- 2
-pop$ -- 14
+missing$ -- 12
+newline$ -- 14
+num.names$ -- 4
+pop$ -- 31
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 17
+skip$ -- 28
 stack$ -- 0
-substring$ -- 114
-swap$ -- 10
+substring$ -- 148
+swap$ -- 26
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
-warning$ -- 3
-while$ -- 4
+type$ -- 12
+warning$ -- 4
+while$ -- 8
 width$ -- 0
-write$ -- 16
-(There were 6 warnings)
+write$ -- 28
+(There was 1 error message)

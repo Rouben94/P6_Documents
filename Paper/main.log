@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.18)  19 JUL 2020 23:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.18)  20 JUL 2020 10:14
 entering extended mode
 **./main.tex
 (main.tex
@@ -1537,34 +1537,38 @@ File: graphics/fhnw_ht_logo_de.pdf Graphic file (type pdf)
 Package pdftex.def Info: graphics/fhnw_ht_logo_de.pdf  used on input line 106.
 (pdftex.def)             Requested size: 183.81728pt x 28.45421pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 
  []
 
 \wiley@abstractbox=\box84
-Package mdframed Info: mdframed works in twoside mode on input line 118.
+Package mdframed Info: mdframed works in twoside mode on input line 120.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 118.
-Package marginnote Info: Margin note 1.1 is on absolute page 1 on input line 11
-8.
-Package marginnote Info: xpos seems to be 40.68744pt on input line 118.
-Package mdframed Info: mdframed works in twoside mode on input line 118.
+ mdframed uses option nobreak mdframed on input line 120.
+Package marginnote Info: Margin note 1.1 is on absolute page 1 on input line 12
+0.
+Package marginnote Info: xpos seems to be 40.68744pt on input line 120.
+Package mdframed Info: mdframed works in twoside mode on input line 120.
+(sections/1_0_Einleitung.tex
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 120.
+(Font)              size <7> substituted on input line 1.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 120.
+(Font)              size <7> substituted on input line 1.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 120.
+(Font)              size <7> substituted on input line 1.
+
+) (sections/2_0_Methode.tex
+Underfull \vbox (badness 1184) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1574,60 +1578,32 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [1
 
 {C:/Users/robin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./graphics/
-fhnw_ht_logo_de.pdf>] (main.bbl
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-1.
-
-("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-
-LaTeX Font Warning: Font shape `T1/cmtt/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 11.
-
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 11.
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 11.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <3.75> not available
-(Font)              size <5> substituted on input line 11.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 11.
-
-) [2] (main.aux)
+fhnw_ht_logo_de.pdf>]) (sections/3_0_Ergebnisse.tex)
+(sections/4_0_Interpretation.tex) [2] (main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.25pt have occurred.
+(Font)              up to 0.5pt have occurred.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 30522 strings out of 480795
- 604345 string characters out of 2895574
- 840775 words of memory out of 3000000
- 45872 multiletter control sequences out of 15000+200000
- 674824 words of font info for 204 fonts, out of 3000000 for 9000
+ 30441 strings out of 480795
+ 602439 string characters out of 2895574
+ 841624 words of memory out of 3000000
+ 45785 multiletter control sequences out of 15000+200000
+ 658875 words of font info for 178 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,20n,110p,843b,1212s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\robin\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi525\
-ectt0800.pk>{C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/s
-tix/stix-t1.enc}<C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/stix/STIXGeneral-Bold.pfb><C:/Users/robin/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/stix/STIXGeneral-Italic.pfb><C:/Users/robin/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/stix/STIXGeneral-Regular.pfb>
-Output written on main.pdf (2 pages, 250726 bytes).
+{C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/stix/stix-t
+1.enc}<C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/stix
+/STIXGeneral-Bold.pfb><C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/stix/STIXGeneral-Italic.pfb><C:/Users/robin/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/stix/STIXGeneral-Regular.pfb>
+Output written on main.pdf (2 pages, 241852 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 24178 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23154 words of extra memory for PDF output out of 24883 (max. 10000000)
 
