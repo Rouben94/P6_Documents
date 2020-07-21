@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.18)  20 JUL 2020 10:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.18)  21 JUL 2020 09:02
 entering extended mode
 **./main.tex
 (main.tex
@@ -1579,7 +1579,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 {C:/Users/robin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./graphics/
 fhnw_ht_logo_de.pdf>]) (sections/3_0_Ergebnisse.tex)
-(sections/4_0_Interpretation.tex) [2] (main.aux)
+(sections/4_0_Interpretation.tex) (sections/5_0_Validierung.tex) [2] (main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1589,10 +1589,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 30441 strings out of 480795
- 602439 string characters out of 2895574
- 841624 words of memory out of 3000000
- 45785 multiletter control sequences out of 15000+200000
+ 30450 strings out of 480795
+ 602692 string characters out of 2895574
+ 841722 words of memory out of 3000000
+ 45791 multiletter control sequences out of 15000+200000
  658875 words of font info for 178 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,20n,110p,843b,1212s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1601,7 +1601,7 @@ Here is how much of TeX's memory you used:
 /STIXGeneral-Bold.pfb><C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/stix/STIXGeneral-Italic.pfb><C:/Users/robin/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/stix/STIXGeneral-Regular.pfb>
-Output written on main.pdf (2 pages, 241852 bytes).
+Output written on main.pdf (2 pages, 242343 bytes).
 PDF statistics:
  64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
