@@ -3,17 +3,18 @@
 
 Im Nachfolgenden Abschnitt wird auf die Point to Point (P2P) Messung eingegangen. Ziel ist es die Verbindung auf MAC-Layer auszumessen und die aus Abschnitt ... aufgelisteten Messdaten zu erfassen. Dazu wird im folgenden auf das Messkonzept, den Messablauf und technische Einzelheiten eingegangen. 
 
-\subsection{Konzeptschema}\label{sec:KonzeptschemaP2P}
-\todo[inline]{Erläuterung des Konzeptschemas}
+\subsection{Konzept}\label{sec:KonzeptP2P}
+
+Zur Realisierung der Point to Point Testinfrastruktur wurde auf eine \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Broadcasting bekannt). Dies hat den Vorteil das mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass die Messpfade nur unidirektional charakterisiert werden (nur über den Uplink Pfad). Die Abweichung zwischen Up- und Downlink Pfad können durch wiederholen der Messung mit vertauschten Standorten verifiziert werden. 
 
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Konzeptschema_P2P.png}
-	\caption{Konzeptschema P2P}
+	\caption{Konzeptschema P2P Testinfrastruktur}
 	\label{fig:KonzeptschemaP2P}
 \end{figure}
 
-Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Managment Station, einem Master- und mehreren Slavesnodes. Über die Management Station können Messresultate angezeigt, sowie Messparameter eingestellt werden.  
+Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Managment Station, einem Master- und mehreren Slave Nodes. Über die Management Station können Messresultate angezeigt, sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node). Er koordiniert den Messablauf und sendet \textit{Probe Packets} an alle SN (Slave Nodes). Diese Protokollieren die Anzahl empfangener \textit{Probe Packets} und melden ihre Messresultate an den MN zurück. Nach Empfang aller Resultate leitet der MN alle Messergebnisse an die MS weiter. Dort werden dem Benutzer die Messdaten dargestellt. Details zum Ablauf sind in Abschnitt \ref{sec:SoftundFirmware} aufgeführt. 
 
 \subsection{Testszenarien}\label{sec:TestszenarienP2P}
 \todo[inline]{Testumgebungen sowie die Beziehungen der Knoten innerhalb der Point to Point Messung beschreiben.}
@@ -35,6 +36,9 @@ Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer M
 
 \subsection{Soft- und Firmware}\label{sec:SoftundFirmware}
 \todo[inline]{Beschreibung der Node-Firmware sowie der Auswertesoftware auf dem Raspi.}
+
+
+
 
 \subsection{Zeitsynchronisation}\label{sec:Zeitsynchronisation}
 \todo[inline]{Wie wurde die Zeitsynchronisation umgesetzt? Wie relevant ist diese für die Messungen?}
