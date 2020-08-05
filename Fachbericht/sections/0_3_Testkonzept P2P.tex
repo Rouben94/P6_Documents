@@ -18,7 +18,7 @@ Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer M
 
 \subsection{Testszenarien}\label{sec:TestszenarienP2P}
 
-Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kann eingesetzt werden um den Aufbau von 
+Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kann eingesetzt werden um den Aufbau von PAN-Netzwerken zu optimieren. Mithilfe des Tools können zu Beispiel die Standorte der Teilnehmer eines Zigbee, Thread oder Bluetooth Mesh Netzwerks optimal gewählt werden. Zudem lassen sich während eines Messvorgangs gezielt Störungen in ein solches Netzwerk einbringen. Dadurch können die Netzwerke auf Störsicherheit geprüft werden. 
 
 \todo[inline]{Testumgebungen sowie die Beziehungen der Knoten innerhalb der Point to Point Messung beschreiben.}
 
@@ -29,6 +29,14 @@ Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kan
 \todo[inline]{Erläuterung der Messgrössen die erfasst werden sollen. Inkl. Beschreibung wie dies technisch umgesetzt wird.}
 
 \subsection{Messaufbau}\label{sec:Messaufbau}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Messaufbau_P2P.png}
+	\caption{Messaufbau P2P Testinfrastruktur}
+	\label{fig:MessaufbauP2P}
+\end{figure}
+
 \todo[inline]{Schema inkl. Beschreibung.}
 
 \subsection{Aufbau und Bedienung der Messinfrastruktur}\label{sec:AufbauundBedienungderMessinfrastruktur}
@@ -38,10 +46,17 @@ Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kan
 \todo[inline]{Wie sind die Resultate zu interpretieren. Welche Schlüsse können/müssen aus den Resultaten gezogen werden. Welche Resultate bedeuten was?}
 
 \subsection{Soft- und Firmware}\label{sec:SoftundFirmware}
+
+Die Software ist als zeit-diskrete Schrittkette aufgebaut. Jeder Schritt ist über ein fixes Zeitfenster definiert, wodurch der Ablauf rein zeitabhängig vorgegeben ist. Damit alle Teilnehmer synchron ihre Schrittketten abarbeiten, muss mithilfe einer Zeitsynchronisation auf den Master der exakte Startzeitpunkt kommuniziert werden. Unabhängig vom Zustand des aktiven Schrittes, muss die Zeit immer eingehalten werden, ansonsten fällt die Schrittkette ausser Takt. 
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Software_Flowgraph_P2P.png}
+	\caption{Schrittkette P2P Testinfrastruktur}
+	\label{fig:FlowgraphP2P}
+\end{figure}
+
 \todo[inline]{Beschreibung der Node-Firmware sowie der Auswertesoftware auf dem Raspi.}
-
-
-
 
 \subsection{Zeitsynchronisation}\label{sec:Zeitsynchronisation}
 \todo[inline]{Wie wurde die Zeitsynchronisation umgesetzt? Wie relevant ist diese für die Messungen?}
