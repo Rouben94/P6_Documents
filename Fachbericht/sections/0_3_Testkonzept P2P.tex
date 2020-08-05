@@ -5,7 +5,7 @@ Im Nachfolgenden Abschnitt wird auf die Point to Point (P2P) Messung eingegangen
 
 \subsection{Konzept}\label{sec:KonzeptP2P}
 
-Zur Realisierung der Point to Point Testinfrastruktur wurde auf eine \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Broadcasting bekannt). Dies hat den Vorteil das mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass die Messpfade nur unidirektional charakterisiert werden (nur über den Uplink Pfad). Die Abweichung zwischen Up- und Downlink Pfad können durch wiederholen der Messung mit vertauschten Standorten verifiziert werden. 
+Zur Realisierung der Point to Point Testinfrastruktur wurde auf eine \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Broadcasting bekannt). Dies hat den Vorteil das mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass die Messpfade nur unidirektional charakterisiert werden (nur von Master zu Slave oder Uplink-Pfad). Die Abweichung zwischen Up- und Downlink Pfad können durch wiederholen der Messung mit vertauschten Standorten verifiziert werden. 
 
 \begin{figure} [H]
 	\centering
@@ -14,9 +14,12 @@ Zur Realisierung der Point to Point Testinfrastruktur wurde auf eine \textit{One
 	\label{fig:KonzeptschemaP2P}
 \end{figure}
 
-Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Managment Station, einem Master- und mehreren Slave Nodes. Über die Management Station können Messresultate angezeigt, sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node). Er koordiniert den Messablauf und sendet \textit{Probe Packets} an alle SN (Slave Nodes). Diese Protokollieren die Anzahl empfangener \textit{Probe Packets} und melden ihre Messresultate an den MN zurück. Nach Empfang aller Resultate leitet der MN alle Messergebnisse an die MS weiter. Dort werden dem Benutzer die Messdaten dargestellt. Details zum Ablauf sind in Abschnitt \ref{sec:SoftundFirmware} aufgeführt. 
+Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Managment Station, einem Master- und mehreren Slave Nodes. Über die Management Station können Messresultate angezeigt, sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node). Er koordiniert den Messablauf und sendet \textit{Probe Packets} an alle SN (Slave Nodes). Diese Protokollieren die Anzahl empfangener \textit{Probe Packets} und melden ihre Messresultate an den MN zurück. Nach Empfang aller Resultate leitet der MN alle Messergebnisse an die MS weiter. Dort werden dem Benutzer die Messdaten dargestellt. Details zum Ablauf sind in Abschnitt \ref{sec:SoftundFirmware} aufgeführt. Eine mögliche Anwendung der Testinfrastruktur wird im folgenden Abschnitt \ref{sec:TestszenarienP2P} beschrieben.  
 
 \subsection{Testszenarien}\label{sec:TestszenarienP2P}
+
+Die P2P Testinfrastruktur ist als Tool konzipiert. 
+
 \todo[inline]{Testumgebungen sowie die Beziehungen der Knoten innerhalb der Point to Point Messung beschreiben.}
 
 \subsection{Ablauf}\label{sec:AblaufP2P}
