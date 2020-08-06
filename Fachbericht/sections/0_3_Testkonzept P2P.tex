@@ -47,7 +47,7 @@ Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kan
 
 \subsection{Soft- und Firmware}\label{sec:SoftundFirmware}
 
-Die Software ist als zeit-diskrete Schrittkette aufgebaut. Jeder Schritt ist über ein fixes Zeitfenster definiert, wodurch der Ablauf rein zeitabhängig vorgegeben ist. Damit alle Teilnehmer synchron ihre Schrittketten abarbeiten, muss mithilfe einer Zeitsynchronisation auf den Master der exakte Startzeitpunkt kommuniziert werden. Unabhängig vom Zustand des aktiven Schrittes, muss die Zeit immer eingehalten werden, ansonsten fällt die Schrittkette ausser Takt. 
+Die Software ist als zeit-diskrete Schrittkette aufgebaut. Jeder Schritt ist über ein fixes Zeitfenster definiert, wodurch der Ablauf rein zeitabhängig vorgegeben ist. Damit alle Teilnehmer synchron ihre Schrittketten abarbeiten, muss mithilfe einer Zeitsynchronisation auf den Master der exakte Startzeitpunkt kommuniziert werden. Unabhängig vom Zustand des aktiven Schrittes, darf dieser sein Zeitfenster nicht überschreiten, ansonsten fällt die Schrittkette ausser Takt. 
 
 \begin{figure} [H]
 	\centering
@@ -55,6 +55,10 @@ Die Software ist als zeit-diskrete Schrittkette aufgebaut. Jeder Schritt ist üb
 	\caption{Schrittkette P2P Testinfrastruktur}
 	\label{fig:FlowgraphP2P}
 \end{figure}
+
+Abbildung \ref{fig:FlowgraphP2P} zeigt die Schrittkette für den Master, sowie für die Slave-Nodes. Der Ablauf zeigt die Schritte, sowie die Bedingungen der Transitionen zwischen den Schritten. Jedoch muss beachtet werden das jeder Schritt immer eine bestimmte Zeit aktiv bleibt. Somit ist ersichtlich das der \textit{Packets-State} nach Ablauf seines Zeitfensters immer zum \textit{ReportsReq-State} führt. Wobei der Wechsel nach dem \textit{Discovery-State} von verschiedenen Bedingungen abhängig ist. \\
+
+Mithilfe des Konzepts bleiben Master und die Slaves nach der Zeitsynchronisation immer Synchron. Der 
 
 \todo[inline]{Beschreibung der Node-Firmware sowie der Auswertesoftware auf dem Raspi.}
 
