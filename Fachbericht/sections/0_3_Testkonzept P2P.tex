@@ -87,8 +87,40 @@ Die Kommunikation über das Radio-Interface wurde mittels einem eigens entwickel
 	\label{fig:RadioStatesP2P}
 \end{figure}
 
-Das Radio-Interface verfügt über verschiedene Zustände (siehe Abbildung \ref{fig:RadioStatesP2P}). Diese 
+Die Radio Hardware der nRF52 und nRF53 SOCs verfügt über verschiedene Zustände (siehe Abbildung \ref{fig:RadioStatesP2P}). Abhängig von der gewünschten Operation (Senden oder Empfangen), werden die States abgearbeitet. Um Energie zu sparen wird nach Abschluss der gewünschten Tätigkeit immer in den Disabled-State gewechselt. Zusätzlich erfolgt das Benachrichtigen des Radio Drivers von der Hardware mittels Interrupts, wodurch der Energieverbrauch zusätzlich minimiert wird.
 
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{nRF52840_Radio_Transmit_Sequence_with_Shorts.png}
+	\caption{Sende-Ablauf mit Verknüpfungen \cite{nordic_semi_nrf_infocenter_radio_transmit_sequence_2020}}
+	\label{fig:RadioTransmitSequP2P}
+\end{figure}
+
+Abbildung \ref{fig:RadioTransmitSequP2P} zeigt den Ablauf beim Senden eines Pakets. Die zu sendenden Daten (Payload) müssen vorgängig im RAM vorliegen. Anschliessend wird der Packet Pointer des Radio-Interface auf die entsprechende Speicher-Adresse eingestellt. Zu beachten gilt es das im ersten Byte die Länge der Payload angegeben sein muss. Diese wird vom Radio Driver automatisch ergänzt. Zusätzlich kann ein Adress-Feld den Sende-Daten mitgegeben werden. Nach dem vollständigen Konfigurieren des Radio-Interface wird das Senden durch den Befehl TXEN initiiert. Mithilfe von Verknüpfungen (Shorts) wird nach dem Ready-Event automatisch der Start-Task ausgelöst. Das Senden läuft also nach dem Initiieren vollautomatisch ab. Der Radio-Driver wartet lediglich auf das auslösen des Disabled-Events. Das Senden ist erfolgreich abgeschlossen und der Funktionsaufruf kehrt zum Hauptprogramm zurück. Das Senden mittels CCA wird im \textit{IEEE802.15.4-Mode} unterstützt. Dazu wird vor dem Senden der Kanal abgehört um Kollisionen zu vermeiden. Mittels Verknüpfungen zwischen den Events wie in Abbildung  \cite{nordic_semi_nrf_infocenter_radio_transmit_sequence_2020}
+
+\begin{figure}[!htbp]
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{cca.png}
+		\caption[Sende-Ablauf mit CCA Idle]{Sende-Ablauf mit CCA Idle \cite{nordic_semi_nrf_infocenter_radio_ieee_operation_2020}}
+		\label{fig:CCAIDLEP2P}
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{cca_busy.png}
+		\caption[Sende-Ablauf mit CCA Busy]{Sende-Ablauf mit CCA Busy \cite{nordic_semi_nrf_infocenter_radio_ieee_operation_2020}}
+		\label{fig:CCABUSYP2P}
+	\end{minipage}
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{nRF52840_Radio_Receive_Sequence_with_Shorts.png}
+	\caption{Empfangs-Ablauf mit Verknüpfungen \cite{nordic_semi_nrf_infocenter_radio_receive_sequence_2020}}
+	\label{fig:RadioReceiveSequP2P}
+\end{figure}
+
+Der Ablauf zum Empfangen eines Pakets wird in Abbildung \ref{fig:RadioReceiveSequP2P} dargestellt. Grundsätzlich ist der Ablauf gleich Aufgebaut wie beim Senden von einem Paket. Nach Initiieren mittels dem RXEN-Befehl fährt der Empfänger hoch und wartet auf den Empfang eines Pakets. Nach eingehen einer Preamble-Sequenz wird das Address-Feld geprüft. Dieses kann vorgängig festgelegt werden um nur Pakete mit übereinstimmender Adresse zu empfangen. Bei allen BLE-Modes erfolgt die Prüfung auf Hardware-Ebene (ohne Interaktion der CPU) ab. Beim \textit{IEEE802.15.4-Mode} steht dieses Feature nicht zur Verfügung. Das vergleichen des Adress-Feldes muss der Radio-Driver selbst übernehmen. Um die Signalstärke (RSSI) vom eingehenden Paket zu messen, wird eine Verknüpfung zwischen dem \textit{Address-Event} und dem \textit{RSSIStart-Task} aktiviert. Nach erfolgreichem Prüfen der CRC Checksumme wird mittels einer Verknüpfung des CRCOK-Event der Disable-Task ausgeführt. Beim Empfangen eines Pakets wartet der Radio-Driver während eines gewissen Timeouts auf den Disabled-Event. Die Empfangsfunktion gibt die Restzeit des Timeouts in Millisekunden zurück, wodurch sich ein erfolgreiches Empfangen prüfen lässt. Das Bufferhandling übernimmt der Radio-Driver und erwartet beim Senden und Empfangen von Daten eine vordefinierte \textit{Radio-Packet-Structure}. Zu beachten gilt es das die Daten erst nach dem End-Event  vollständig abgearbeitet wurden, da der Zugriff von der Hardware über DMA erfolgt. Ebenfalls wurde festgestellt das beim wechseln auf oder von dem \textit{IEEE802.15.4-Mode} der Kanalwechsel vor dem Modewechsel erfolgen muss. Ansonsten werden keine Pakete empfangen. 
 
 
 \subsection{Broadcasting Collissions Probability}\label{sec:BroadcastingCollissionsProbability}
