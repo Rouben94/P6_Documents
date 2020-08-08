@@ -62,11 +62,12 @@ Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Unters
 
 \begin{itemize}
 	\item \textbf{\textit{Discovery:}} Der Master verteilt die Zeitsynchronisation an die Slaves. Die Slaves synchronisieren sich auf das Signal des Masters auf, sofern sie in seiner Reichweite liegen. Hat ein Slave sich nicht Synchronisieren können verweilt dieser im \textit{Discovery-State}. Der Master darf immer zum nächsten Schritt voranschreiten. 
-	\item \textbf{\textit{Mockup:}} Der Master wartet auf eine Antwort der einzelnen Slaves. Jeder Slave würfelt einen zufälligen Timeslot um sich beim Master anzumelden. Der Master führt alle Slaves, welche sich gemeldet haben in einer Liste auf. Ist diese Liste leer (hat sich kein Slave gemeldet), so wird der Master zum \textit{Discovery State} zurückkehren. 
+	\item \textbf{\textit{Mockup:}} Der Master wartet auf eine Antwort der einzelnen Slaves. Jeder Slave würfelt einen zufälligen Timeslot um sich beim Master anzumelden. Der Master führt alle Slaves, welche sich gemeldet haben in einer Liste auf. Ist diese Liste leer (hat sich kein Slave gemeldet), so wird der Master zum \textit{Discovery State} zurückkehren. Ist ein Slave bereits beim Master angemeldet, so muss sich dieser nicht erneut anmelden. 
 	\item \textbf{\textit{Param:}} Der Master versendet die Packets-Parameter (Mode, StartChannel, StopChannel, etc) auf welchen er die Probe-Packets versendet. Erhält ein Slave keine Daten so kehrt er in den \textit{Discovery-State} zurück. 
 	\item \textbf{\textit{Packets:}} Der Master versendet \textit{Probe Packets} auf den zuvor Kommunizierten Einstellungen. Die Slaves empfangen diese Daten und zählen die Anzahl erfolgreich empfangener Pakete und erfassen weitere Messdaten. 
 	\item  \textbf{\textit{Reports Req:}} Nach dem ausmessen beginnt der Master mit dem einsammeln der einzelnen Slave Reports. Dazu sendet er an jeden Slave in seiner Liste (aus dem \textit{Mockup-State}) Report-Anfragen, sogenannte \textit{Reports-Requests}. Die Slaves warten auf einen \textit{Report Request} vom Master. 
-	\item  \textbf{\textit{Reports:}} 
+	\item  \textbf{\textit{Reports:}} Der Slave, welcher den Request bekommen hat, sendet seinen Report zum Master. Dies muss innerhalb einer gewissen Zeit erfolgen. Sendet ein Slave nach einer gewissen Anzahl von Versuchen keine Reports, wo wird er aus der Liste der gemeldeten Slaves entfernt. Sobald der Master alle Reports von allen Slaves empfangen hat, meldet er über eine spezielle \textit{Reports-Request-Message} an alle Slaves, dass das Reporting beendet ist.
+	\item  \textbf{\textit{Publish:}} Im \textit{Publishing-State} hat der Master Zeit die Daten an die Übergeordnete stelle zu Übermitteln (USB-UART). Die Slaves können in diesem State Energie Sparen. Alle Teilnehmer beginnen wieder im \textit{Discovery-State}, wo sie sich neu Synchronisieren. 
 \end{itemize}
 
 
