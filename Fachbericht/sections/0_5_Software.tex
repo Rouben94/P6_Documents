@@ -5,36 +5,40 @@
 \url{https://github.com/Rouben94/P6_Software}
 
 
-\begin{table}
+\newcommand{\rotcells}[1]{%
+  \rotatebox[origin=c]{90}{ #1 }%
+}
+
+\begin{table}[h]
 \centering
-\caption{Übersicht Shared Lib und Benchmark Management Module}
-\begin{tabular}{|l|l|l|c|c|c|} 
+\begin{tabular}{|c|l|l|c|c|c|} 
 \hline
-                                                & \multicolumn{2}{l|}{\diagbox{Software Module}{Mesh-Protokoll}} & BLE Mesh & Zigbee & Thread  \\ 
+\multicolumn{1}{|l|}{}                                                                    & \multicolumn{2}{l|}{}                                & \multicolumn{1}{l|}{BLE Mesh} & Zigbee & Thread  \\ 
 \hline
-\multirow{8}{*}{\rotcell{SharedLib~ }}     & Statemachine    & bm\_statemachine.c                           & x        & x      &         \\ 
+\multirow{8}{*}{\rotcells{SharedLib}}                                                      & Statemachine    & bm\_statemachine.c                 & x                             & x      &         \\ 
 \cline{2-6}
-                                                & Timesync        & bm\_timesync.c                               & x        & x      &         \\ 
+                                                                                          & Timesync        & bm\_timesync.c                     & x                             & x      &         \\ 
 \cline{2-6}
-                                                & Control         & bm\_control.c                                & x        & x      &         \\ 
+                                                                                          & Control         & bm\_control.c                      & x                             & x      &         \\ 
 \cline{2-6}
-                                                & Report          & bm\_report.c                                 & x        & x      &         \\ 
+                                                                                          & Report          & bm\_report.c                       & x                             & x      &         \\ 
 \cline{2-6}
-                                                & Logging         & bm\_log.c                                    & x        & x      &         \\ 
+                                                                                          & Logging         & bm\_log.c                          & x                             & x      &         \\ 
 \cline{2-6}
-                                                & Flash Save      & bm\_flash\_save.c                            & x        & x      &         \\ 
+                                                                                          & Flash Save      & bm\_flash\_ave.c                   & x                             & x      &         \\ 
 \cline{2-6}
-                                                & CLI             & bm\_cli.c                                    & x        & x      &         \\ 
+                                                                                          & CLI             & bm\_cli.c                          & x                             & x      &         \\ 
 \cline{2-6}
-                                                & Low Layer radio & bm\_radio.c                                  & x        & x      &         \\ 
+                                                                                          & Low Layer radio & bm\_radio.c                        & x                             & x      &         \\ 
 \hline
-\multirow{4}{*}{\rotcell{Benchmark Management}} & Flash           & Flasher\_v1\_0.py                            & x        & x      & x       \\ 
+\multirow{4}{*}{\rotcells{\begin{tabular}[c]{@{}c@{}}Benchmark\\Management \end{tabular}}} & Flash           & Flasher.py                  & x                             & x      & x       \\ 
 \cline{2-6}
-                                                & Configurator    & Configurator\_v1\_0.py                       & x        & x      &         \\ 
+                                                                                          & Configurator    & Configurator.py             & x                             & x      &         \\ 
 \cline{2-6}
-                                                & Benchmark       & Benchmark\_And\_Reporter\_v1\_2.py           & x        & x      &         \\ 
+                                                                                          & Benchmark       & Benchmark\_and\_Reporter.py & x                             & x      &         \\ 
 \cline{2-6}
-                                                & Analysis        & Analysis\_v1\_0.py                           & x        & x      & x       \\
+                                                                                          & Analysis        & Analysis.py                 & x                             & x      & x       \\
 \hline
 \end{tabular}
+\caption{Übersicht Shared Lib und Benchmark Management Module}\label{tab:Uebersicht Software}
 \end{table}
