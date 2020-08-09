@@ -58,11 +58,11 @@ Die Software ist als zeit-diskrete Schrittkette aufgebaut. Jeder Schritt ist üb
 
 Abbildung \ref{fig:FlowgraphP2P} zeigt die Schrittkette für den Master, sowie für die Slave-Nodes. Der Ablauf zeigt die Schritte, sowie die Bedingungen der Transitionen zwischen den Schritten. Jedoch muss beachtet werden das jeder Schritt immer eine bestimmte Zeit aktiv bleibt. Somit ist ersichtlich das der \textit{Packets-State} nach Ablauf seines Zeitfensters immer zum \textit{ReportsReq-State} führt. Wobei der Wechsel nach dem \textit{Discovery-State} von verschiedenen Bedingungen abhängig ist. \\
 
-Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Untersuchung ist der Source Code unter \cite{github_p6_software_p2p_2020} verfügbar. \\
+Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Untersuchung ist der Source Code unter \cite{github_p6_software_p2p_2020} verfügbar.  \\
 
 \begin{itemize}
 	\item \textbf{\textit{Discovery:}} Der Master verteilt die Zeitsynchronisation an die Slaves. Die Slaves synchronisieren sich auf das Signal des Masters auf, sofern sie in seiner Reichweite liegen. Hat ein Slave sich nicht Synchronisieren können verweilt dieser im \textit{Discovery-State}. Der Master darf immer zum nächsten Schritt voranschreiten. 
-	\item \textbf{\textit{Mockup:}} Der Master wartet auf eine Antwort der einzelnen Slaves. Jeder Slave würfelt einen zufälligen Timeslot um sich beim Master anzumelden. Der Master führt alle Slaves, welche sich gemeldet haben in einer Liste auf. Ist diese Liste leer (hat sich kein Slave gemeldet), so wird der Master zum \textit{Discovery State} zurückkehren. Ist ein Slave bereits beim Master angemeldet, so muss sich dieser nicht erneut anmelden. 
+	\item \textbf{\textit{Mockup:}} Der Master wartet auf eine Antwort der einzelnen Slaves. Jeder Slave generiert einen zufälligen Timeslot um sich beim Master anzumelden. Der Master führt alle Slaves, welche sich gemeldet haben in einer Liste auf. Ist diese Liste leer (hat sich kein Slave gemeldet), so wird der Master zum \textit{Discovery State} zurückkehren. Ist ein Slave bereits beim Master angemeldet, so muss sich dieser nicht erneut anmelden. 
 	\item \textbf{\textit{Param:}} Der Master versendet die Packets-Parameter (Mode, StartChannel, StopChannel, etc) auf welchen er die Probe-Packets versendet. Erhält ein Slave keine Daten so kehrt er in den \textit{Discovery-State} zurück. 
 	\item \textbf{\textit{Packets:}} Der Master versendet \textit{Probe Packets} auf den zuvor Kommunizierten Einstellungen. Die Slaves empfangen diese Daten und zählen die Anzahl erfolgreich empfangener Pakete und erfassen weitere Messdaten. 
 	\item  \textbf{\textit{Reports Req:}} Nach dem ausmessen beginnt der Master mit dem einsammeln der einzelnen Slave Reports. Dazu sendet er an jeden Slave in seiner Liste (aus dem \textit{Mockup-State}) Report-Anfragen, sogenannte \textit{Reports-Requests}. Die Slaves warten auf einen \textit{Report Request} vom Master. 
@@ -75,6 +75,59 @@ Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Unters
 
 
 \todo[inline]{Beschreibung der Node-Firmware sowie der Auswertesoftware auf dem Raspi.}
+
+\subsection{Low Level Radio Driver}\label{sec:LowLevelRadioDriver}
+
+Die Kommunikation über das Radio-Interface wurde mittels einem eigens entwickeltem Radio-Driver, speziell für die nRF52 / nRF53 SOCs ermöglicht. Dieser stellt die nötigen Funktionen für die P2P Testinfrastruktur zur Verfügung. Zum Beispiel kann die Mode- und Kanalwahl sowie das Senden und Empfangen von Daten mittels simplen Kommandos erfolgen. Zur Entwicklung diente das \textit{Radio Test Example} \cite{nrf_connect_sdk_radio_test_example_2020} als Vorlage. Der Radio-Driver steuert mithilfe der \textit{NRF-HAL Radio Library} oder über direkten Zugriff auf die Peripherie-Register das Radio-Interface an.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{nRF52840_Radio_states.png}
+	\caption{Radio States \cite{nordic_semi_nrf_infocenter_radio_states_2020}}
+	\label{fig:RadioStatesP2P}
+\end{figure}
+
+Die Radio Hardware der nRF52 und nRF53 SOCs verfügt über verschiedene Zustände (siehe Abbildung \ref{fig:RadioStatesP2P}). Abhängig von der gewünschten Operation (Senden oder Empfangen), werden die States abgearbeitet. Um Energie zu sparen wird nach Abschluss der gewünschten Tätigkeit immer in den Disabled-State gewechselt. Zusätzlich erfolgt das Benachrichtigen des Radio Drivers von der Hardware mittels Interrupts, wodurch der Energieverbrauch zusätzlich minimiert wird.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{nRF52840_Radio_Transmit_Sequence_with_Shorts.png}
+	\caption{Sende-Ablauf mit Verknüpfungen \cite{nordic_semi_nrf_infocenter_radio_transmit_sequence_2020}}
+	\label{fig:RadioTransmitSequP2P}
+\end{figure}
+
+Abbildung \ref{fig:RadioTransmitSequP2P} zeigt den Ablauf beim Senden eines Pakets. Die zu sendenden Daten (Payload) müssen vorgängig im RAM vorliegen. Anschliessend wird der Packet Pointer des Radio-Interface auf die entsprechende Speicher-Adresse eingestellt. Zu beachten gilt es das im ersten Byte die Länge der Payload angegeben sein muss. Diese wird vom Radio Driver automatisch ergänzt. Zusätzlich kann ein Adress-Feld den Sende-Daten mitgegeben werden. Nach dem vollständigen Konfigurieren des Radio-Interface wird das Senden durch den Befehl TXEN initiiert. Mithilfe von Verknüpfungen (Shorts) wird nach dem Ready-Event automatisch der Start-Task ausgelöst. Das Senden läuft also nach dem Initiieren vollautomatisch ab. Der Radio-Driver wartet lediglich auf das auslösen des Disabled-Events. Das Senden ist erfolgreich abgeschlossen und der Funktionsaufruf kehrt zum Hauptprogramm zurück. Das Senden mittels CCA wird im \textit{IEEE802.15.4-Mode} unterstützt. Dazu wird vor dem Senden der Kanal abgehört um Kollisionen zu vermeiden. Mittels dem RXEN Befehl wird der CCAStart-Task aktiv. Dieser führt abhängig vom Konfigurierten CCA-Modus eine Prüfung des Kanals durch. Ist der Kanal nicht belegt wird ein CCAIdle-Event generiert, welcher mittels Verknüpfung automatisch den TXEN-Task Startet (siehe Abbildung \ref{fig:CCAIDLEP2P}). Sendet ein andere Teilnehmer momentan auf dem Kanal wird ein CCABusy-Event generiert, welcher ebenfalls den Disable-Taks ausführt (siehe Abbildung \ref{fig:CCABUSYP2P}). Somit Enden beide Varianten (Idle und Busy) im Disabled-State, wobei beim einen keine Daten gesendet werden konnten. \cite{nordic_semi_nrf_infocenter_radio_transmit_sequence_2020}
+
+\begin{figure}[!htbp]
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{cca.png}
+		\caption[Sende-Ablauf mit CCA Idle]{CCA Prüfung (Idle Event) \cite{nordic_semi_nrf_infocenter_radio_ieee_operation_2020}}
+		\label{fig:CCAIDLEP2P}
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{cca_busy.png}
+		\caption[Sende-Ablauf mit CCA Busy]{CCA Prüfung (Busy Event) \cite{nordic_semi_nrf_infocenter_radio_ieee_operation_2020}}
+		\label{fig:CCABUSYP2P}
+	\end{minipage}
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{nRF52840_Radio_Receive_Sequence_with_Shorts.png}
+	\caption{Empfangs-Ablauf mit Verknüpfungen \cite{nordic_semi_nrf_infocenter_radio_receive_sequence_2020}}
+	\label{fig:RadioReceiveSequP2P}
+\end{figure}
+
+Der Ablauf zum Empfangen eines Pakets wird in Abbildung \ref{fig:RadioReceiveSequP2P} dargestellt. Grundsätzlich ist der Ablauf gleich Aufgebaut wie beim Senden von einem Paket. Nach Initiieren mittels dem RXEN-Befehl fährt der Empfänger hoch und wartet auf den Empfang eines Pakets. Nach eingehen einer Preamble-Sequenz wird das Address-Feld geprüft. Dieses kann vorgängig festgelegt werden um nur Pakete mit übereinstimmender Adresse zu empfangen. Bei allen BLE-Modes erfolgt die Prüfung auf Hardware-Ebene (ohne Interaktion der CPU) ab. Beim \textit{IEEE802.15.4-Mode} steht dieses Feature nicht zur Verfügung. Das vergleichen des Adress-Feldes muss der Radio-Driver selbst übernehmen. Um die Signalstärke (RSSI) vom eingehenden Paket zu messen, wird eine Verknüpfung zwischen dem \textit{Address-Event} und dem \textit{RSSIStart-Task} aktiviert. Nach erfolgreichem Prüfen der CRC Checksumme wird mittels einer Verknüpfung des CRCOK-Event der Disable-Task ausgeführt. Beim Empfangen eines Pakets wartet der Radio-Driver während eines gewissen Timeouts auf den Disabled-Event. Die Empfangsfunktion gibt die Restzeit des Timeouts in Millisekunden zurück, wodurch sich ein erfolgreiches Empfangen prüfen lässt. Das Bufferhandling übernimmt der Radio-Driver und erwartet beim Senden und Empfangen von Daten eine vordefinierte \textit{Radio-Packet-Structure}. Zu beachten gilt es das die Daten erst nach dem End-Event  vollständig abgearbeitet wurden, da der Zugriff von der Hardware über DMA erfolgt. Ebenfalls wurde festgestellt das beim wechseln auf oder von dem \textit{IEEE802.15.4-Mode} der Kanalwechsel vor dem Modewechsel erfolgen muss. Ansonsten werden keine Pakete empfangen. \cite{nordic_semi_nrf_infocenter_radio_receive_sequence_2020}
+
+
+\subsection{Broadcasting Collisions Probability}\label{sec:BroadcastingCollissionsProbability}
+
+Kollisionen entstehen wenn mehrere Teilnehmer gleichzeitig auf dem selben Kanal (Frequenz) senden. Dabei stören sich die beiden Sender und es kann sein das der Empfänger keine Daten empfangen kann. Dies ist leider nicht immer zu vermeiden, zum Beispiel wenn sich mehrere Teilnehmer neu mit dem Netz verbinden möchten. Im Fall der P2P-Testinfrastruktur entsteht ein solcher Fall im Mockup-State. Hier soll sich jeder Slave, welcher dem Master noch unbekannt ist, auf die Discovery-Anfrage des Masters melden. Die Lösung ist das jeder Slave einen zufälligen Zeitpunkt zum Antworten auswählt. Doch wie lange muss das Zeitfenster sein in welchem ein Slave einen Zeitpunkt zufällig auswählen darf? \\
+
+
 
 \subsection{Zeitsynchronisation}\label{sec:Zeitsynchronisation}
 \todo[inline]{Wie wurde die Zeitsynchronisation umgesetzt? Wie relevant ist diese für die Messungen?}
