@@ -8,9 +8,8 @@ Für den Benchmark und den Vergleich der drei Mesh Protokolle sowie die P2P Test
 
 
 \subsection{System on Chip}\label{subsec:SystemonChip}
-\todo[inline]{Kurze Beschreibung des nRF52840.}
 
-Der nRF52840 \ref{fig:nRF52840SoCimQFN73Gehäuse} ist ein Highend System-on-Chip welcher gleichermassen Bluetooth 5 wie auch den IEEE 802.15.4 Wireless-Personal-Area-Network (WPAN) Standard unterstützt. Auf Wunsch sogar als Multiprotocol Lösung.
+Der nRF52840 ist ein Highend System-on-Chip welcher gleichermassen Bluetooth 5 wie auch den IEEE 802.15.4 Wireless-Personal-Area-Network (WPAN) Standard unterstützt. Auf Wunsch sogar als Multiprotocol Lösung.
 Entscheidend für die vorliegende Anwendung ist, dass der SoC von den drei Organisationen Bluetooth SIG, Openthread und der Zigbee Alliance offiziell für das jeweilige Protokoll zertifiziert ist.
 Die Eckdaten des nRF52840 SoC sind in der Tabelle \ref{tab:EigenschaftennRF52840SoC} kurz zusammengefasst.
 
@@ -24,17 +23,9 @@ RAM                & 1MB                                          \\
 Frequency Band     & 2.4GHz                                       \\
 Wireless protocols & IEEE 802.15.4 (Thread, Zigbee), Bluetooth 5 
 \end{tabular}
-\caption{Eigenschaften nRF52840 SoC}
+\caption{Eigenschaften nRF52840 SoC \cite{nordic_semiconductor_asa_nrf52840_2020}}
 \label{tab:EigenschaftennRF52840SoC}
 \end{table}
-
-\begin{figure} [H]
-	\centering
-	\includegraphics[width=0.4\textwidth]{nRF52840.png}
-	\caption{nRF52840 SoC im QFN73 Gehäuse.}
-	\label{fig:nRF52840SoCimQFN73Gehäuse}
-\end{figure}
-
 
 
 \subsection{Hardware Development Kits}\label{subsec:HardwareDevelopmentKits}
@@ -71,6 +62,8 @@ Der Aufbau des Testnodes wie er in Abbildung \ref{fig:TestnodenRF52840-Dongleink
 Das Batteriepaket besteht aus zwei Standard Mignon Einwegzellen vom Typ AA mit je 1.5V Spannung. In Serieschaltung betrieben wird die Speisespannung von 3V erreicht welche für den Dongle ausreichend ist. Mit fortschreitender Entladung der Zellen sinkt die Spannung. Da der SoC einen Betriebsspannungsbereich von 1.7V bis 5.5V hat stellt die sinkende Spannung jedoch kein Problem dar.
 Die Speisung des nRF52840-Dongle erfolgt über einen 2-poligen JST Header der gemäss Datenblatt xx mit dem VDD OUT und GND Anschluss verbunden ist. Am VDD OUT Anschluss ist ein Betriebsspannungsbereich von 1.8V bis 3.6V zulässig.
 Das Batteriegehäuse verfügt ausserdem über einen Schalter um den Testnode nach Belieben ein- und auszuschalten.
+Mit den verwendeten Batterien welche je eine Kapazität von 2000mAh besitzen, können die Nodes im Mesh Benchmark Betrieb über mehrere Tage betrieben werden. Wird von einem durchschnittlichen Strombedarf von 10mA ausgegangen, wäre eine Einsatzdauer von bis zu 200 Stunden möglich.
+\todo{Strombedarf messen und anpassen}
 
 Die Befestigung des Dongles am Batteriepaket erfolgte so dass die PCB Antenne welche sich am Ende des PCB's befindet möglichst frei liegt und sich dadurch die bestmöglichen Abstrahlungseigenschaften ergeben. Ein weiterer Vorteil der in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} dargestellten Montage ist die Zugänglichkeit des USB Ports. So können die Benchmark Nodes auf einfachste Arte und Weise mit einer neuen Software geflasht werden.
 
@@ -129,18 +122,9 @@ Die gemessenen Abstrahleigenschaften der beiden Antennen bestätigen schliesslic
 \end{figure}
 
 
+Die Erkenntnisse aus den vorliegenden Messungen waren hilfreich bei der Planung und Durchführung der Mesh Benchmarks. Beim Aufbau der Testnodes \ref{subsec:AufbauTestnode} flossen diese beispielsweise ein um die Ausrichtung der Antenne zu optimieren. Weiter halfen die Ergebnisse bei der Interpretation der weiteren Messungen da auch dort klar aufgezeigt werden konnte, dass die Positionierung und Ausrichtung der Antenne von entscheidender Bedeutung für die Performance ist.
 
 \subsection{Benchmark Management Station}\label{subsec:BenchmarkManagementStation}
-\todo[inline]{Raspberry Pi4}
 
-
-
-
-welcher in Form von zwei unterschiedlichen Entwicklungsboards nRF52840-
-Dongle für die Benchmark Slave Nodes und das nRF52840-DK für den Benchmark Master Node
-verwendet. Damit ist der Test einfach nachvollziehbar und kann einfach nachgebaut werden
-ohne dass dafür spezielle Hardware benötigt wird. Zumindest beim DK trifft dies zu 100% zu.
-Bei den Dongle hingegen fehlt die Speisung da diese verteilt und unabhängig von einer fixen
-Spannungsversorgung betrieben werden sollen. Die Speisung wird daher mit einem 500mAh Li-
-Po Akkupaket realisiert. Mit einem konservativ berechneten Strombedarf von 20mA ist damit
-also ein Testbetrieb des Mesh Netzwerks über 24 Stunden möglich.
+Die Benchmark Management Station (BMS) ist im Mesh Benchmark und in der P2P Testinfrastruktur unterschiedlich ausgeführt. Im Mesh Benchmark handelt es sich um einen PC welcher via USB UART Verbindung mit dem Benchmark Master Node (BMN) verbunden ist. Dazu kann jeder PC verwendet.
+Bei der P2P Testinfrastruktur stellt die BMS ein Raspberry Pi4 dar. Dieser wird ebenfalls wia USB UART mit dem BMN verbunden. Mit dem Einsatz eines Raspberry Pi's als BMS wird diese unabhängiger und kann einfach portiert werden. So kann die Testinfrastruktur als Messinstrument eingesetzt werden.

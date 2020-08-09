@@ -1,44 +1,82 @@
 \clearpage
-\section{Software}\label{sec:Software}
+\section{Soft- und Firmware}\label{sec:Soft-undFirmware}
 \todo[inline]{Tabelle welche Software zu welchem Stack, Referenzen zu Parts}
 \todo[inline]{Cyrill Tabelle und subsections, Raffel und Robin Text}
 \url{https://github.com/Rouben94/P6_Software}
+
+Die Software und Firmware für die Mesh Benchmarks sowie für die P2P Testinfrastruktur wird aus diversen Modulen zusammengesetzt. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 4 Benchmark Teilen: BLE Mesh, Zigbee, Thread sowie P2P.
+Gemeinsame Module auf Firmware Ebene sind im Ordner SharedLib im Github Repository zusammengefasst. Jene Python Scripts für das Benchmark Management hingegen im gleichnamigen Ordner auf dem Github Repository \cite{anklin_bobst_horath_rouben94p6_software_nodate}.
+Die individuellen Firmware Teile werden in den jeweiligen Teilen \ref{part:BluetoothMesh}, \ref{part:Thread} und \ref{part:Zigbee} beschrieben.
 
 
 \newcommand{\rotcells}[1]{%
   \rotatebox[origin=c]{90}{ #1 }%
 }
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|l|l|c|c|c|} 
+\begin{tabular}{|c|l|l|c|c|c|c|} 
+\cline{4-7}
+\multicolumn{1}{l}{} & \multicolumn{2}{l|}{} & \multicolumn{1}{l|}{BT Mesh} & Zigbee & Thread & P2P \\ 
 \hline
-\multicolumn{1}{|l|}{}                                                                    & \multicolumn{2}{l|}{}                                & \multicolumn{1}{l|}{BLE Mesh} & Zigbee & Thread  \\ 
+\multirow{8}{*}{\rotcells{SharedLib}} & Statemachine & bm\_statemachine.c [\ref{subsubsec:Statemachine}]& x & x &  &  \\ 
+\cline{2-7}
+ & Timesync & bm\_timesync.c [\ref{subsubsec:Timesync}] & x & x &  & x \\ 
+\cline{2-7}
+ & Control & bm\_control.c [\ref{subsubsec:Control}] & x & x &  & x \\ 
+\cline{2-7}
+ & Report & bm\_report.c [\ref{subsubsec:Report}] & x & x &  & x \\ 
+\cline{2-7}
+ & Logging & bm\_log.c [\ref{subsubsec:Logging}]& x & x &  & x \\ 
+\cline{2-7}
+ & Flash Save & bm\_flash\_save.c [\ref{subsubsec:FlashSave}]& x & x &  &  \\ 
+\cline{2-7}
+ & CLI & bm\_cli.c [\ref{subsubsec:CLI}]& x & x &  & x \\ 
+\cline{2-7}
+ & Low Layer Radio & bm\_radio.c [\ref{subsubsec:LowLevelRadio}]& x & x &  &  \\ 
 \hline
-\multirow{8}{*}{\rotcells{SharedLib}}                                                      & Statemachine    & bm\_statemachine.c                 & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & Timesync        & bm\_timesync.c                     & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & Control         & bm\_control.c                      & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & Report          & bm\_report.c                       & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & Logging         & bm\_log.c                          & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & Flash Save      & bm\_flash\_ave.c                   & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & CLI             & bm\_cli.c                          & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & Low Layer radio & bm\_radio.c                        & x                             & x      &         \\ 
-\hline
-\multirow{4}{*}{\rotcells{\begin{tabular}[c]{@{}c@{}}Benchmark\\Management \end{tabular}}} & Flash           & Flasher.py                  & x                             & x      & x       \\ 
-\cline{2-6}
-                                                                                          & Configurator    & Configurator.py             & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & Benchmark       & Benchmark\_and\_Reporter.py & x                             & x      &         \\ 
-\cline{2-6}
-                                                                                          & Analysis        & Analysis.py                 & x                             & x      & x       \\
+\multirow{4}{*}{\rotcells{\begin{tabular}[c]{@{}c@{}}Benchmark\\Management \end{tabular}}} & Flash & Flasher.py [\ref{subsubsec:Flash}]& x & x & x &  \\ 
+\cline{2-7}
+ & Configurator & Configurator.py [\ref{subsubsec:Configurator}]& x & x &  &  \\ 
+\cline{2-7}
+ & Benchmark & \begin{tabular}[c]{@{}l@{}}Benchmark\_and\_\\Reporter.py [\ref{subsubsec:Report}] \end{tabular} & x & x &  &  \\ 
+\cline{2-7}
+ & Analysis & Analysis.py [\ref{subsubsec:Analysis}]& x & x & x &  \\
 \hline
 \end{tabular}
-\caption{Übersicht Shared Lib und Benchmark Management Module}\label{tab:Uebersicht Software}
+\caption{Übersicht Shared Lib und Benchmark Management Module}
+\label{tab:UebersichtSoftware}
 \end{table}
+
+
+
+
+\subsection{Shared Library}\label{subsec:SharedLibrary}
+
+\subsubsection{Statemachine}\label{subsubsec:Statemachine}
+
+\subsubsection{Timesync}\label{subsubsec:Timesync}
+
+\subsubsection{Control}\label{subsubsec:Control}
+
+\subsubsection{Report}\label{subsubsec:Report}
+
+\subsubsection{Logging}\label{subsubsec:Logging}
+
+\subsubsection{Flash Save}\label{subsubsec:FlashSave}
+
+\subsubsection{CLI}\label{subsubsec:CLI}
+
+\subsubsection{Low Level Radio}\label{subsubsec:LowLevelRadio}
+
+
+
+\subsection{Benchmark Management}\label{subsec:Benchmark Management}
+
+\subsubsection{Flash}\label{subsubsec:Flash}
+
+\subsubsection{Configurator}\label{subsubsec:Configurator}
+
+\subsubsection{Benchmark}\label{subsubsec:Benchmark}
+
+\subsubsection{Analysis}\label{subsubsec:Analysis}
+
