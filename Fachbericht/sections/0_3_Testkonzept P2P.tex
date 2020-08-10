@@ -164,7 +164,24 @@ Wie in Abbildung \ref{fig:TimesyncBasicwithErrorP2P} ersichtlich entsteht beim A
 	\label{fig:TimesyncwithPPIP2P}
 \end{figure}
 
-Die Lösung wird in Abbildung \ref{fig:TimesyncwithPPIP2P} gezeigt. Der nRF52840 SOC verfügt über ein PPI (Programmable peripheral interconnect). Mithilfe des PPI lassen sich verschiedene Events und Tasks direkt Verknüpfen, ohne das die CPU dabei involviert ist. Dies erlaubt uns das Erfassen des Zeitwerts (Task) mit dem Erfolgreichen Senden des "Probe Packets" (Event) zu verbinden. Dazu wurde der Timer-Capture-Task des Synctimers und der Radio-End-Event über ein PPI miteinander verknüpft. Beim Slave wird der Event das ein Packet erfolgreich Empfangen wurde (Radio-CRCOK-Event) mit dem Erfassen des Synctimers (Synctimer-Capture-Task) verknüpft. 
+Die Lösung wird in Abbildung \ref{fig:TimesyncwithPPIP2P} gezeigt. Der nRF52840 SOC verfügt über ein PPI (Programmable peripheral interconnect). Mithilfe des PPI lassen sich verschiedene Events und Tasks direkt Verknüpfen, ohne das die CPU dabei involviert ist. Dies führt zu minimalen Verzögerung (ca. 1/16 us) zwischen Event und Task. Dazu wird der Event, dass ein Packet erfolgreich Gesendet wurde (Radio-End-Event), mit dem Task zum Erfassen des Synctimers (Synctimer-Capture-Task) verknüpft. Beim Slave wird der Event, dass ein Packet erfolgreich Empfangen wurde (Radio-CRCOK-Event), mit dem Task zum Erfassen des Synctimers (Synctimer-Capture-Task) verknüpft. Nach dem empfangen muss der Slave diesen PPI sofort deaktivieren, da ein direkt folgendes Paket ebenfalls ein Erfassen des Timers auslöst. Der Master wird nach deaktivieren des PPI mit einem Folge-Paket seine Master-Zeit dem Slave mitteilen, welche zum Zeitpunkt des Probe-Packets registriert wurde. Der Slave errechnet den Offset gemäss Formel \ref{eq:TimesyncOffsetSynctimeCalc} und die Synchronisierte-Zeit mit der Formel \ref{eq:TimesyncSynctimeCalc}. \cite{nordic_semi_nrf_infocenter_ppi_2020}
+
+\begin{equation}\label{eq:TimesyncOffsetSynctimeCalc}
+T_{Offset} =  T_{Master} - T_{Slave} 
+\end{equation}
+
+\begin{equation}\label{eq:TimesyncSynctimeCalc}
+T_{Sync} =  T_{Slave} + T_{Offset} 
+\end{equation}
+
+Zur Verifikation der Zeitsynchronisation wurde ein Oszilloskop an jeweils einen GPIO-Pin am Master und einen am Slave angeschlossen. Auf dem Master und Slave wurden nacheinander Timer-Interrupts registriert, welche relativ zur synchronisierten Zeit auf dem Master und Slave genau gleichzeitig auslösen. Mithilfe eines PPI-Kanals wurde der Interrupt-Event auf den GPIO-Pin Verknüpft. Beim auslösen des Interrupts wird der Zustand des GPIO-Pins getoggelt. Somit wird die Abweichung Präzise auf dem Oszilloskop ersichtlich.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Messungen Timesync (100ns 1200ns).png}
+	\caption{Verifikation Zeitsynchronisation}
+	\label{fig:TimesyncVerifikationP2P}
+\end{figure}
 
 
 \todo[inline]{Wie wurde die Zeitsynchronisation umgesetzt? Wie relevant ist diese für die Messungen?}
