@@ -1,12 +1,15 @@
 \clearpage
 \section{Soft- und Firmware}\label{sec:Soft-undFirmware}
 \todo[inline]{Tabelle welche Software zu welchem Stack, Referenzen zu Parts}
-\todo[inline]{Cyrill Tabelle und subsections, Raffel und Robin Text}
-\url{https://github.com/Rouben94/P6_Software}
 
-Die Software und Firmware für die Mesh Benchmarks sowie für die P2P Testinfrastruktur wird aus diversen Modulen zusammengesetzt. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 4 Benchmark Teilen: BLE Mesh, Zigbee, Thread sowie P2P.
-Gemeinsame Module auf Firmware Ebene sind im Ordner SharedLib im Github Repository zusammengefasst. Jene Python Scripts für das Benchmark Management hingegen im gleichnamigen Ordner auf dem Github Repository \cite{anklin_bobst_horath_rouben94p6_software_nodate}.
-Die individuellen Firmware Teile werden in den jeweiligen Teilen \ref{part:BluetoothMesh}, \ref{part:Thread} und \ref{part:Zigbee} beschrieben.
+\todo[inline]{Cyrill Tabelle und subsections, Raffel und Robin Text}
+
+
+
+Die Software und Firmware für die Mesh Benchmarks sowie für die P2P Testinfrastruktur setzt sich aus diversen Modulen zusammen. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 4 Benchmark Teilen: BLE Mesh, Zigbee, Thread sowie P2P.
+Gemeinsame Module auf Firmware Ebene für die BT Mesh und Zigbee Firmware sind im Ordner SharedLib im Github Repository\footnotemark\ zusammengefasst. Aus diversen Gründen wurde die Thread Firmware zu einem grossen Teil in separaten Modulen realisiert. Die nicht Stack spezifischen Teile der Thread Lösung werden als Thread Common zusammengefasst.
+Jene Python Scripts für das Benchmark Management stehen im gleichnamigen Ordner auf dem Github Repository zur Verfügung.
+Die Stack bezogenen Implementationen der Benchmark Firmware werden in den individuellen Teilen \ref{part:BluetoothMesh}, \ref{part:Thread} und \ref{part:Zigbee} behandelt.
 
 
 \newcommand{\rotcells}[1]{%
@@ -34,13 +37,13 @@ Die individuellen Firmware Teile werden in den jeweiligen Teilen \ref{part:Bluet
 \cline{2-7}
  & Low Layer Radio & bm\_radio.c [\ref{subsubsec:LowLevelRadio}]& x & x &  &  \\ 
 \hline
-\multirow{4}{*}{\rotcells{\begin{tabular}[c]{@{}c@{}}Thread\\Common\end{tabular}}} & Statemachine  &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ 
+\multirow{4}{*}{\rotcells{\begin{tabular}[c]{@{}c@{}}Thread\\Common \end{tabular}}} & Statemachine &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & x & \multicolumn{1}{l|}{} \\ 
 \cline{2-7}
- &  &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ 
+ &  &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & x & \multicolumn{1}{l|}{} \\ 
 \cline{2-7}
- &  &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ 
+ &  &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & x & \multicolumn{1}{l|}{} \\ 
 \cline{2-7}
- &  &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\
+ &  &  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & x & \multicolumn{1}{l|}{} \\ 
 \hline
 \multirow{4}{*}{\rotcells{\begin{tabular}[c]{@{}c@{}}Benchmark\\Management \end{tabular}}} & Flash & Flasher.py [\ref{subsubsec:Flash}]& x & x & x &  \\ 
 \cline{2-7}
@@ -54,6 +57,10 @@ Die individuellen Firmware Teile werden in den jeweiligen Teilen \ref{part:Bluet
 \caption{Übersicht Shared Lib und Benchmark Management Module}
 \label{tab:UebersichtSoftware}
 \end{table}
+
+Sämtliche Firm- und Software Komponenten die für Mesh Benchmark sowie die P2P Testinfrastruktur nötig sind, können auf dem Github Repository zum Projekt unter folgendem \href{https://github.com/Rouben94/P6_Software}{Link\footnotemark[\value{footnote}]}  eingesehen werden.
+
+\footnotetext{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}}
 
 
 
@@ -75,6 +82,12 @@ Die individuellen Firmware Teile werden in den jeweiligen Teilen \ref{part:Bluet
 \subsubsection{CLI}\label{subsubsec:CLI}
 
 \subsubsection{Low Level Radio}\label{subsubsec:LowLevelRadio}
+
+
+
+\subsection{Thread Common}\label{subsec:ThreadCommon}
+
+\subsubsection{Statemachine}\label{subsubsec:Statemachine}
 
 
 
