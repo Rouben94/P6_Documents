@@ -74,6 +74,8 @@ Unterschiedliche Testumgebungen sollen die Benchmarks und schlussendlich den Ver
 	\caption{Mesh Netzwerk Testumgebungen}\label{fig:MeshNetzwerkTestumgebungen}
 \end{figure}
 
+\todo[inline]{Bild anpassen.}
+
 \paragraph{Haus}
 Die Testgeräte werden in einem Einfamilienhaus installiert und repräsentieren damit eine flächendeckende Heim-Automatisierung.
 	\begin{itemize}
@@ -159,6 +161,8 @@ Benchmark Duration & 600s & 600s & 600s \\
 Group addressing mode & Broadcast & Multicast & Directional \\
 Message Ack (Appl. Layer) & No & No & No \\
 Mesh Node Cnt. & 50 & 50 & 50 \\
+Payload Size Small (Byte) & 8 & 8 & 8 \\
+Payload Size Large (Byte) & 32 & 50 & 50 \\
 \bottomrule
 \end{tabular}
 \caption{Allgemeine Benchmark Parameter}
@@ -172,25 +176,42 @@ Mesh Node Cnt. & 50 & 50 & 50 \\
 \cline{2-6}
 \multicolumn{1}{c|}{} & \multicolumn{5}{c|}{Benchmark Parameter} \\ 
 \hline
-\textbf{Index} & \textbf{Msg. Gen.} & \textbf{Msg. Cnt.} & \textbf{Payload } & \textbf{Disturbance} & \textbf{Msg. Density} \\ 
+\textbf{Index}  & \textbf{Msg. Gen.}  & \textbf{Msg. Cnt.}  & \textbf{Payload }  & \textbf{Disturbance}  & \textbf{Msg. Density}  \\ 
 \hline
 1 & Seq. & 60 & Small & No & 0.1 \\ 
 \hline
 2 & Rand. & 60 & Small & No & 0.1 \\ 
 \hline
-3 & Rand. & 600 & Small & No & 1 \\ 
+3 & Seq. & 60 & Large & No & 0.1 \\ 
 \hline
-4 & Seq. & 60 & Large & No & 0.1 \\ 
+4 & Rand. & 60 & Large & No & 0.1 \\ 
 \hline
-5 & Rand. & 60 & Large & No & 0.1 \\ 
+5 & Rand. & 600 & Small & No & 1 \\ 
 \hline
-6 & Rand. & 600 & Large & No & 1 \\ 
-\hline
-7 & Seq. & 60 & Small & Yes & 0.1 \\
+6 & Seq. & 60 & Small & Yes & 0.1 \\
 \hline
 \end{tabular}
 \caption{Parameter Benchmark Messreihe}
 \label{tab:ParameterBenchmarkMessreihe}
+\end{table}
+
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll} 
+\toprule
+Parameter: & Gültige Werte: & Bedeutung: \\ 
+\hline
+Msg. Gen & Seq./Rand. & Nachrichten Generierung sequentiell oder pseudozufällig. \\
+Msg. Count & Ganze Zahlen & \begin{tabular}[c]{@{}l@{}}Anzahl der Nachrichten die pro Client Node\\versendet werden. \end{tabular} \\
+Payload & Small/Large & \begin{tabular}[c]{@{}l@{}}Grosse oder Kleine Payload gemäss Definition\\in Tabelle xy.~\end{tabular} \\
+Disturbance & Yes/No & \begin{tabular}[c]{@{}l@{}}Gewollte Störung durch P2P Testinfrastruktur auf\\dem selben Channel. \end{tabular} \\
+Msg. Density & - & \begin{tabular}[c]{@{}l@{}}Dichte der Nachrichten. Verhältnis zwischen\\Benchmark Duration und Msg. Count. \end{tabular} \\
+\bottomrule
+\end{tabular}
+\caption{Bedeutung Benchmark Parameter}
+\label{tab:BedeutungBenchmarkParameter}
 \end{table}
 
 
