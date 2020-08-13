@@ -25,7 +25,11 @@ Bluetooth Mesh ist ein auf dem Bluetooth-Standard aufbauendes Mesh-Netzwerk. Der
 \end{figure}
 
 
-Die Technologie baut auf den weit verbreitetem BLE-Standard auf, welcher in einer viel zahl von Endgeräten verbaut ist. Ab BLE-Version 4.2 könnten sich die Geräte zu einem Mesh-Netzwerk verbinden. Bisher wurde der BLE-Standard nur für Point-to-Point Verbindung konzipiert. Das Netzwerk basiert auf dem Managed-Flooding Prinzip. Einfach erklärt wiederholen alle Teilnehmer, bedingt durch verschiedene Abhängigkeiten, jede empfangende Nachricht (Relaying). Somit gelangen die Daten über Zwischenstationen (Hops) zum Ziel. 
+Die Technologie baut auf den weit verbreitetem BLE-Standard auf, welcher in einer viel zahl von Endgeräten verbaut ist. Ab BLE-Version 4.2 könnten sich die Geräte zu einem Mesh-Netzwerk verbinden. Das Einbinden neuer Teilnehmer findet über den Provisioning-Prozess statt. Die Rolle des Provisioner kann ein Smartphone, Laptop oder ein berechtigter Mesh-Teilnehmer übernehmen. Ähnlich wie beim anmelden bei einem WLAN-Netzwerk teilt der Provisioner dem neuen Teilnehmer die Zugangsdaten (Netzwerkschlüssel, etc.) mit. Abschliessend beginnt das neue Gerät im Netzwerk als Node zu operieren. \\  
+
+Bluetooth-Mesh basiert auf dem Managed-Flooding Prinzip. Einfach erklärt wiederholen alle Nodes, abhängig von verschiedenen Bedingungen, jede empfangende Nachricht (Relaying). Somit gelangen die Daten über Zwischenstationen (Hops) zum Ziel. Nachrichten welche nicht für den einzelnen Node relevant sind oder bereits verarbeitet wurden werden verworfen. \\
+
+
 
 \todo[inline]{Bild Managed Flooding}
 
