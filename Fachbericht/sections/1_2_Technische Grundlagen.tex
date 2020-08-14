@@ -23,7 +23,7 @@ Nebst dem Funktionellen Aspekt übernehmen Nodes unterschiedliche Rollen im Netz
 
 \subsection{Bluetooth Mesh Protokoll Stack}\label{sec:ZigbeeProtokollStack}
 
-In diesem Abschnitt wird die Architektur des Mesh-Stacks genauer untersucht. Wie in Kapitel \ref{sec:EinleitungBluetooth} bereits erwähnt basiert der Stack auf Bluetooth Low Energy. Der BLE-Layer dient zur Grundlegenden Schicht des Stacks. 
+In diesem Abschnitt wird die Architektur des Mesh-Stacks genauer untersucht. Wie in Kapitel \ref{sec:EinleitungBluetooth} bereits erwähnt basiert der Stack auf Bluetooth Low Energy. Der BLE-Layer dient zur Grundlegenden Schicht des Stacks. Der Zugriff für Mesh-Traffic erfolgt über das GAP-Profil, der für Proxy Traffic über das GATT-Profil. 
 
 \begin{figure} [H]
 	\centering
