@@ -68,34 +68,14 @@ Innerhalb eines Mesh Netzwerks können 4 Beziehungen zwischen den Nodes für die
 \end{figure}
 
 
-\subsubsection{Testumgebungen}\label{subsubsec:Testumgebungen}
+\subsubsection{Testumgebungen und Messaufbau}\label{subsubsec:TestumgebungenundMessaufbau}
 
 Unterschiedliche Testumgebungen sollen die Benchmarks und schlussendlich den Vergleich der 3 Mesh Protokolle aussagekräftiger machen.
-Folgende Umgebungen mit den entsprechenden Eigenschaften sollen getestet werden:
-
-
-\paragraph{Einfamilienhaus}
-Die Testgeräte werden in einem Einfamilienhaus installiert und repräsentieren damit eine flächendeckende Heim-Automatisierung.
-\begin{itemize}
-	\item Einfamilienhaus über mehrere Etagen.
-	\item Anzahl Sensoren und Aktoren vergleichbar gross.
-	\item Node-Dichte relativ gering.
-	\item Kleine Beeinflussung durch Nachbarsysteme sind zu erwarten.
-	\item Sämtliche Mesh-Beziehungen gemäss \ref{subsubsec:MeshBeziehungen} kommen vor und werden durch die bestehende Infrastruktur bestimmt.
-\end{itemize}
-	
-\paragraph{Wohnung}
-Ebenfalls als Heim-Automatisierung gedacht werden die Messungen in einer Wohnung durchgeführt.
-\begin{itemize}
-	\item Wohnung über eine Etage in einem Mehrfamilienhaus
-	\item Anzahl Sensoren und Aktoren vergleichbar gross.
-	\item Node-Dichte höher als im Haus.
-	\item Mögliche Störeinflüsse durch andere Systeme von Nachbarn sind zu erwarten.
-	\item Sämtliche Mesh-Beziehungen gemäss \ref{subsec:MeshBeziehungen} kommen vor und werden durch die bestehende Infrastruktur bestimmt.
-\end{itemize}
+Nachfolgende Umgebungen mit den entsprechenden Eigenschaften sollen getestet werden.
+Die Abbildungen zu den Testumgebungen zeigen jeweils die Platzierung der Nodes sowie deren Funktion und Gruppen Zugehörigkeit. Die Farbe Grün identifiziert den Node als Client Node während Blau für einen Server Nodes steht. Die Nummerierung zeigt welcher Node zu welcher Adressgruppe gehört. Ein Client Node in Gruppe 1 sendet jeweils Nachrichten zu allen Server Nodes in der selben Gruppe.
 
 \paragraph{Labor}
-Der Laboraufbau ist ein Extremtest welcher die Leistungsgrenzen der Protokollstacks ausloten soll. Dabei werden die Nodes auf einem Raster gemäss Abbildung \ref{fig:AnordnungLaborTestumgebung} angeordnet.
+Der Laboraufbau ist ein Extremtest welcher die Leistungsgrenzen der Protokollstacks ausloten soll. Dabei werden die Nodes auf einem Raster gemäss Abbildung \ref{fig:AnordnungLaborTestumgebungMessumgebung1} angeordnet. Die genauen Abmessungen sind der Abbildung zu entnehmen.
 \begin{itemize}
 	\item Testaufbau unter Laborbedingungen auf engstem Raum.
 	\item Ausgeglichene Anzahl Sensoren und Aktoren.
@@ -104,14 +84,51 @@ Der Laboraufbau ist ein Extremtest welcher die Leistungsgrenzen der Protokollsta
 	\item Die Mesh-Beziehungen werden künstlich bestimmt sodass einfache P2P Verbindungen mit oder ohne Hop entstehen.
 \end{itemize}
 
-Die Abbildung \ref{fig:AnordnungLaborTestumgebung} zeigt Client Nodes in grün und Server Nodes in blau. Die Nummerierung stellt die Gruppenzugehörigkeit dar. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{Testaufbau_Labor.png}
-\caption{Anordnung Labor Testumgebung}\label{fig:AnordnungLaborTestumgebung}
+\caption{Anordnung Labor Testumgebung, Messumgebung 1}\label{fig:AnordnungLaborTestumgebungMessumgebung1}
 \end{figure}
 	
+
+
+\paragraph{Einfamilienhaus}
+Die Testgeräte werden in einem Einfamilienhaus installiert und repräsentieren damit eine flächendeckende Heim-Automatisierung. Folgende Eingenschaften soll diese Messung abdecken:
+\begin{itemize}
+	\item Einfamilienhaus über mehrere Etagen.
+	\item Anzahl Sensoren und Aktoren vergleichbar gross.
+	\item Node-Dichte relativ gering.
+	\item Kleine Beeinflussung durch Nachbarsysteme sind zu erwarten.
+	\item Sämtliche Mesh-Beziehungen gemäss \ref{subsubsec:MeshBeziehungen} kommen vor und werden durch die bestehende Infrastruktur bestimmt.
+\end{itemize}
+
+Die Abbildung \ref{fig:Messumgebung2Einfamilienhaus} zeigt den Schnitt des Einfamilienhauses in welchem der Benchmark durchgeführt wurde. Die genaue Platzierung der Nodes pro Etage ist im Anhang xy einsehbar.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Testaufbau_Haus_Schnitt.png}
+	\caption{Messumgebung 2 Einfamilienhaus}\label{fig:Messumgebung2Einfamilienhaus}
+\end{figure}
+	
+\paragraph{Wohnung}
+Ebenfalls als Heim-Automatisierung gedacht werden die Messungen in einer Wohnung durchgeführt.
+\begin{itemize}
+	\item Wohnung über eine Etage in einem Mehrfamilienhaus
+	\item Anzahl Sensoren und Aktoren vergleichbar gross.
+	\item Node-Dichte höher als im Haus.
+	\item Mögliche Störeinflüsse durch andere Systeme von Nachbarn sind zu erwarten.
+	\item Sämtliche Mesh-Beziehungen gemäss \ref{subsubsec:MeshBeziehungen} kommen vor und werden durch die bestehende Infrastruktur bestimmt.
+\end{itemize}
+
+Bei der Wohnung handelt es sich um eine 3.5 Zimmer Wohnung mit einer Wohnfläche von 122 Quadratmetern. Die genauen Abmessungen sowie die Platzierung der Nodes ist in Abbildung \ref{fig:PlatzierungderNodesinMessumgebung3} zu sehen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Plan_Wohnung_Cyrill_Nodes_Placement.png}
+	\caption{Platzierung der Nodes in Messumgebung 3 (Wohnung)}\label{fig:PlatzierungderNodesinMessumgebung3}
+\end{figure}
+
 
 
 
@@ -134,42 +151,124 @@ Ein Mesh Benchmark folgt einem klar definierten Ablauf. Die Abbildung \ref{fig:M
 	Das BMS beendet den Benchmark Vorgang, speichert die Messdaten in seiner Datenbank ab und bereitet diese grafisch auf. 
 \end{enumerate}
 
-\subsection{Messaufbau}\label{subsec:Messaufbau}
-\todo[inline]{Wenn möglich Schema mit dem Aufbau der Messumgebung. Beschreibung der unterschiedlichen Standorte.}
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{Plan_Wohnung_Cyrill_Nodes_Placement.png}
-	\caption{Platzierung der Nodes in Messumgebung 1 (Wohnung)}\label{fig:PlatzierungderNodesinMessumgebung1}
-\end{figure}
 
 \subsection{Messgrössen}\label{subsec:MessgrössenMesh}
 \todo[inline]{Erläuterung der Messgrössen die erfasst werden sollen. Inkl. Beschreibung wie dies technisch umgesetzt wird.}
 
-\begin{table}[h]
-\centering
-\caption{Messgrössen Gewinnung und Verwendung}
-\label{tab:MessgrössenGewinnungundVerwendung}
-\begin{tabular}{lll} 
-\toprule
-Messgrösse & Generierung & Verwendung Auswertung \\ 
-\hline
-Message Timestamp & Timesync Timestamp & Bestimmung der Latenzzeit eines Pakets \\
-Number of Hops & Mesh Message Header & Bestimmung der Latenzzeit pro Hop \\
-Data size & Definition via BCM &  \\
-Source address & Mesh Message Header & Identifikation des Mesh Pakets \\
-Destination address & Mesh Message Header & Identifikation des Mesh Pakets \\
-Group address & Definition via BCM & Identifikation des Mesh Pakets \\
-Message ID & Transport in Payload & Identifikation des Mesh Pakets \\
-RSSI & Diagnosedaten beim Server Node & Empfangsstärke im Mesh \\
-\bottomrule
-\end{tabular}
-\caption{Messgrössen Gewinnung und Verwendung}
-\label{tab:MessgrössenGewinnungundVerwendung}
-\end{table}
+Zur Bestimmung der Performance eines Mesh Protokolls und dem Vergleich mit den anderen Protokollstacks werden verschiedene Vergleichswerte erfasst.
+Im Pflichtenheft zu dieser Arbeit (Anhang \ref{app:Pflichtenheft}) wurden diese Testkriterien bereits ausführlich behandelt. Wichtigster Vergleichswert ist dabei die Latenz sowie der Paketverlust bei unterschiedlicher Belastung.
+Um diese und weitere Werte zu erfassen sind spezifische Messgrössen gefragt.
+Die untenstehende Auflistung zeigt die auf den Mesh Nodes erfassten Messgrössen, deren Generierung und wie diese in der Auswertung verwendet werden.
+
+%\begin{table}[h]
+%\centering
+%\begin{tabular}{lll} 
+%\toprule
+%Messgrösse & Generierung & Verwendung in der Auswertung \\ 
+%\hline
+%Message Timestamp & Timesync Timestamp & \begin{tabular}[c]{@{}l@{}}Bestimmung der Latenzzeit\\eines Mesh Pakets \end{tabular} \\
+%Number of Hops & Mesh Message Header & Bestimmung der Latenzzeit pro Hop \\
+%Data size & Definition via BCM & \begin{tabular}[c]{@{}l@{}}Performance in Abhängigkeit\\zur Paketgrösse \end{tabular} \\
+%Source address & Mesh Message Header & Identifikation des Mesh Pakets \\
+%Destination address & Mesh Message Header & Identifikation des Mesh Pakets \\
+%Group address & Definition via BCM & Identifikation des Mesh Pakets \\
+%Message ID & Transport in der Payload & Identifikation des Mesh Pakets \\
+%RSSI & \begin{tabular}[c]{@{}l@{}}Diagnosedaten beim\\Server Node \end{tabular} & Empfangsstärke im Mesh \\
+%\bottomrule
+%\end{tabular}
+%\caption{Messgrössen Gewinnung und Verwendung}
+%\label{tab:MessgrössenGewinnungundVerwendung}
+%\end{table}
+
+\paragraph{Message Timestamp}
+Zur Bestimmung der Latenzzeit eines Pakets das über das Mesh Netzwerk versendet wird, wird beim senden sowie beim empfangen ein Message Timestamp erfasst.
+Die unter den Nodes synchronisierte Zeit gibt Aufschluss darüber wie lange das Paket unterwegs war. Die Berechnung der Latenzzeit wird jedoch erst bei der Analyse auf dem BMS durchgeführt.
+
+\paragraph{Number of Hops}
+Die oben erwähnte Latenzzeit ist in einem Mesh Netzwerk abhängig vom Weg den ein Paket bei der Übermittlung genommen hat. Mit jedem Hop nimmt die Latenzzeit zu.
+Deshalb wird beim Server Node die Anzahl Hops die das Paket genommen hat aus dem Message Header ausgelesen und für die Bestimmung der Latenzzeit abgespeichert.
+
+\paragraph{Source-, Destination-, Group-Address}
+Aufgrund der veränderlichen Beziehungen von Client und Server Nodes ist die Zuordnung von Quell- und Zieladresse eines Pakets ebenfalls nicht statisch. Aus diesem Grund werden auf allen Nodes die Quell-, Ziel- und Gruppenadressen der Pakete ausgelesen. 
+Somit kann das Benchmark Paket eindeutig identifiziert und in der Auswertung erfasst werden.
+Die Adressinformationen werden aus dem Message Header des Mesh Pakets ausgelesen oder im Falle des Client Nodes mit der Benchmark Control Message übermittelt.
+
+\paragraph{Message ID}
+Als Payload im Mesh Paket versendet, identifiziert die Message ID das Paket zusammen mit den Adressinformationen eindeutig. So kann Paketverlust wie auch die Latenzzeit erfasst werden.
+
+\paragraph{RSSI}
+Der RSSI (Received Signal Strength Indication) wird auf dem Server Node auf MAC Ebene erfasst und zeigt die Empfangsstärke zum zuletzt passierten Hop. Dies gibt Aufschluss über die Empfangsqualität und kann bei der Analyse des Benchmarks als weiterer Indikator für Paketverlust und Latenzzeit verwendet werden.
+
+
 
 \subsection{Messreihe}\label{subsec:Messreihe}
+Um die Mesh Protokolle einem möglichst fairen Vergleich zu unterziehen, werden pro Testumgebung eine Reihe an Messungen durchgeführt. Die Tabelle \ref{tab:ParameterBenchmarkMessreihe} zeigt 6 Messreihen mit den entsprechenden Parametern.
+
+Bei der Messung mit dem Index 6 handelt es sich um ein Benchmark welcher mit der P2P Testinfrastruktur gestört wird womit die Störimmunität des Mesh Stacks getestet werden soll. Dieser Test wird nur im Labormessaufbau durchgeführt da eine Störung im weit verteilten Netzwerk nur einzelne Nodes stören würde und somit nicht sehr aussagekräftig wäre.
+
+\todo[inline]{Wieso 32 und 50 Byte Unterschied erläutern}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|} 
+\cline{2-8}
+\multicolumn{1}{c|}{} & \multicolumn{4}{c|}{Benchmark Parameter} & \multicolumn{3}{c|}{Messaufbau} \\ 
+\hline
+\textbf{\#}  & \textbf{Msg. Gen.}  & \textbf{Msg. Cnt.}  & \textbf{Payload }  & \textbf{Disturbance}  & \textbf{Labor} & \textbf{Haus} & \textbf{Wohnung} \\ 
+\hline
+1 & Rand. & 60 & Small & No & x & x & x \\ 
+\hline
+2 & Seq. & 60 & Small & No & x & x & x \\ 
+\hline
+3 & Rand. & 60 & Large & No & x & x & x \\ 
+\hline
+4 & Seq. & 60 & Large & No & x & x & x \\ 
+\hline
+5 & Rand. & 600 & Small & No & x & x & x \\ 
+\hline
+6 & Seq. & 60 & Small & Yes & x &  &  \\
+\hline
+\end{tabular}
+\caption{Parameter Benchmark Messreihe}
+\label{tab:ParameterBenchmarkMessreihe}
+\end{table}
+
+Die Erläuterungen über die Bedeutung der Parameter ist in der folgenden Tabelle \ref{tab:BedeutungBenchmarkParameter} zu finden. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll} 
+\toprule
+Parameter: & Gültige Werte: & Bedeutung: \\ 
+\hline
+Msg. Gen & Seq./Rand. & Nachrichten Generierung sequentiell oder pseudozufällig. \\
+Msg. Count & Ganze Zahlen & \begin{tabular}[t]{@{}l@{}}Anzahl der Nachrichten die pro Client Node\\versendet werden. \end{tabular} \\
+Payload & Small/Large & \begin{tabular}[t]{@{}l@{}}Grosse oder Kleine Payload gemäss Definition\\in Tabelle \ref{tab:AllgemeineBenchmarkParameter}.~\end{tabular} \\
+Disturbance & Yes/No & \begin{tabular}[t]{@{}l@{}}Gewollte Störung durch P2P Testinfrastruktur auf\\dem selben Channel. \end{tabular} \\
+Msg. Density & - & \begin{tabular}[t]{@{}l@{}}Dichte der Nachrichten. Verhältnis zwischen\\Benchmark Duration und Msg. Count. \end{tabular} \\
+\bottomrule
+\end{tabular}
+\caption{Bedeutung Benchmark Parameter}
+\label{tab:BedeutungBenchmarkParameter}
+\end{table}
+
+\subsection{Allgemeine Benchmark Parameter}\label{subsec:AllgemeineBenchmarkParameter}
+Die oben erwähnten Messreihen haben nebst den variablen Parametern einige allgemein gültige Benchmark Paramter die in der Tabelle \ref{tab:AllgemeineBenchmarkParameter} aufgeführt sind.
+Diese sind für sämtliche Messungen innerhalb des jeweiligen Mesh Protokolls gültig.
+In den Punkten \textit{Benchmark Duration, Message Ack, Mesh Node Cnt.}, sowie \textit{Payload Size Small} unterscheiden sich die Benchmarks der drei Protokolle nicht.
+Die Parameter \textit{Group addressing mode} sowie \textit{Payload Size Large} hingegen unterscheiden sich aufgrund der Eigenschaften der Protokolle leicht.
+Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Directional bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
+Aufgrund von dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen nur sehr selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet vorgenommen.
+Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
+
+Die \textit{Payload Size Large} soll eine vergleichsweise grosse Payload simulieren die über das Mesh übertragen wird.
+Die beiden Protokollstacks Thread und Zigbee erlauben dank IEEE 802.15.4 beide eine totale Framegrösse von 127 Byte.
+Abzüglich der Grösse der Header bieten die Protokolle noch Platz für eine Payload von ca. 50 Byte. Je nach Implementation der Protokolle variiert die Header Grösse und die Payload kann entsprechend erhöht werden.
+BT Mesh hingegen beginnt bereits bei einer Payload Grösse von 8 Byte mit der Fragmentierung. Somit werden bei den 32 Byte für die \textit{Payload Size Large} bereits 4 Frames versendet. Diverse Tests haben ergeben, dass hier der BT Mesh Stack an seine Leistungsgrenze stösst.
+Aus diesem Grund ist eine weitere Erhöhung der Payload nicht sinnvoll.
+
 
 
 \begin{table}[h]
@@ -188,51 +287,6 @@ Payload Size Large (Byte) & 32 & 50 & 50 \\
 \end{tabular}
 \caption{Allgemeine Benchmark Parameter}
 \label{tab:AllgemeineBenchmarkParameter}
-\end{table}
-\todo[inline]{Wieso 32 und 50 Byte Unterschied erläutern}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|} 
-\cline{2-6}
-\multicolumn{1}{c|}{} & \multicolumn{5}{c|}{Benchmark Parameter} \\ 
-\hline
-\textbf{Index}  & \textbf{Msg. Gen.}  & \textbf{Msg. Cnt.}  & \textbf{Payload }  & \textbf{Disturbance}  & \textbf{Msg. Density}  \\ 
-\hline
-1 & Rand. & 60 & Small & No & 0.1 \\ 
-\hline
-2 & Seq. & 60 & Small & No & 0.1 \\ 
-\hline
-3 & Rand. & 60 & Large & No & 0.1 \\ 
-\hline
-4 & Seq. & 60 & Large & No & 0.1 \\ 
-\hline
-5 & Rand. & 600 & Small & No & 1 \\ 
-\hline
-6 & Seq. & 60 & Small & Yes & 0.1 \\
-\hline
-\end{tabular}
-\caption{Parameter Benchmark Messreihe}
-\label{tab:ParameterBenchmarkMessreihe}
-\end{table}
-
-
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lll} 
-\toprule
-Parameter: & Gültige Werte: & Bedeutung: \\ 
-\hline
-Msg. Gen & Seq./Rand. & Nachrichten Generierung sequentiell oder pseudozufällig. \\
-Msg. Count & Ganze Zahlen & \begin{tabular}[t]{@{}l@{}}Anzahl der Nachrichten die pro Client Node\\versendet werden. \end{tabular} \\
-Payload & Small/Large & \begin{tabular}[t]{@{}l@{}}Grosse oder Kleine Payload gemäss Definition\\in Tabelle \ref{tab:AllgemeineBenchmarkParameter}.~\end{tabular} \\
-Disturbance & Yes/No & \begin{tabular}[t]{@{}l@{}}Gewollte Störung durch P2P Testinfrastruktur auf\\dem selben Channel. \end{tabular} \\
-Msg. Density & - & \begin{tabular}[t]{@{}l@{}}Dichte der Nachrichten. Verhältnis zwischen\\Benchmark Duration und Msg. Count. \end{tabular} \\
-\bottomrule
-\end{tabular}
-\caption{Bedeutung Benchmark Parameter}
-\label{tab:BedeutungBenchmarkParameter}
 \end{table}
 
 
