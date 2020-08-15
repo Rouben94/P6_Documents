@@ -6,7 +6,15 @@ Um die Performance der drei Mesh Stacks zu vergleichen wurde ein einheitliches B
 
 \subsection{Konzeptschema}\label{subsec:KonzeptschemaMesh}
 
-Für den Vergleich der 3 Mesh Netzwerkstacks Bluetooth Mesh (BT Mesh), Thread und Zigbee wird ein vom Mesh Protokoll unabhängiges Testkonzept umgesetzt welches in der Abbildung \ref{fig:MeshTestKonzept} als Konzeptschema dargestellt ist. Die Benchmark Slave Nodes (BSN) in der Abbildung als Sensoren und Aktoren mit unterschiedlichen Funktionalitäten dargestellt, bilden zusammen mit dem Benchmark Master Node (BMN) das zu testende Mesh Netzwerk. Innerhalb des Netzwerks wird dessen Organisation vom jeweiligen Protokoll sichergestellt. Das Testnetzwerk soll ein realitätsnahes Netzwerk nachbilden. Beispielsweise wird eine Hausautomation in einem Einfamilienhaus als Referenz angenommen in welchem jeweils nur gewisse Nodes untereinander Applikationsdaten austauschen. Ein Lichtschalter kommuniziert nur mit einer Lichtquelle und umgekehrt. Der selbe Lichtschalter tauscht jedoch keine Applikationsdaten mit dem Temperatursensor aus. Trotzdem bilden die Nodes zusammen ein Mesh Netzwerk. Diese unterschiedlichen Beziehungen innerhalb des Mesh Netzwerks sind in der Abbildung \ref{fig:MeshTestKonzept} bereits angedeutet und werden im Abschnitt \ref{subsec:MeshBeziehungen} noch genauer beschrieben.
+Für den Vergleich der 3 Mesh Netzwerkstacks Bluetooth Mesh (BT Mesh), Thread und Zigbee wird ein vom Mesh Protokoll unabhängiges Testkonzept umgesetzt welches in der Abbildung \ref{fig:MeshTestKonzept} als Konzeptschema dargestellt ist.
+Die Benchmark Slave Nodes (BSN) in der Abbildung als Sensoren und Aktoren mit unterschiedlichen Funktionalitäten dargestellt, bilden zusammen mit dem Benchmark Master Node (BMN) das zu testende Mesh Netzwerk.
+Innerhalb des Netzwerks wird dessen Organisation vom jeweiligen Protokoll sichergestellt.
+Das Testnetzwerk soll ein realitätsnahes Netzwerk nachbilden.
+Beispielsweise wird eine Hausautomation in einem Einfamilienhaus als Referenz angenommen in welchem jeweils nur gewisse Nodes untereinander Applikationsdaten austauschen.
+Ein Lichtschalter kommuniziert nur mit einer Lichtquelle und umgekehrt.
+Der selbe Lichtschalter tauscht jedoch keine Applikationsdaten mit dem Temperatursensor aus.
+Trotzdem bilden die Nodes zusammen ein Mesh Netzwerk.
+Diese unterschiedlichen Beziehungen innerhalb des Mesh Netzwerks sind in der Abbildung \ref{fig:MeshTestKonzept} bereits angedeutet und werden im Abschnitt \ref{subsubsec:MeshBeziehungen} noch genauer beschrieben.
 
 \begin{figure}[h]
 	\centering
@@ -96,7 +104,7 @@ Der Laboraufbau ist ein Extremtest welcher die Leistungsgrenzen der Protokollsta
 	\item Die Mesh-Beziehungen werden künstlich bestimmt sodass einfache P2P Verbindungen mit oder ohne Hop entstehen.
 \end{itemize}
 
-Die Abbildung \ref{fig:AnordnungLaborTestumgebung} zeigt Client Nodes in grün und Server Nodes in blau. Die Zahlen stellen die Gruppenzugehörigkeit dar. 
+Die Abbildung \ref{fig:AnordnungLaborTestumgebung} zeigt Client Nodes in grün und Server Nodes in blau. Die Nummerierung stellt die Gruppenzugehörigkeit dar. 
 
 \begin{figure}[H]
 \centering
@@ -138,6 +146,28 @@ Ein Mesh Benchmark folgt einem klar definierten Ablauf. Die Abbildung \ref{fig:M
 
 \subsection{Messgrössen}\label{subsec:MessgrössenMesh}
 \todo[inline]{Erläuterung der Messgrössen die erfasst werden sollen. Inkl. Beschreibung wie dies technisch umgesetzt wird.}
+
+\begin{table}[h]
+\centering
+\caption{Messgrössen Gewinnung und Verwendung}
+\label{tab:MessgrössenGewinnungundVerwendung}
+\begin{tabular}{lll} 
+\toprule
+Messgrösse & Generierung & Verwendung Auswertung \\ 
+\hline
+Message Timestamp & Timesync Timestamp & Bestimmung der Latenzzeit eines Pakets \\
+Number of Hops & Mesh Message Header & Bestimmung der Latenzzeit pro Hop \\
+Data size & Definition via BCM &  \\
+Source address & Mesh Message Header & Identifikation des Mesh Pakets \\
+Destination address & Mesh Message Header & Identifikation des Mesh Pakets \\
+Group address & Definition via BCM & Identifikation des Mesh Pakets \\
+Message ID & Transport in Payload & Identifikation des Mesh Pakets \\
+RSSI & Diagnosedaten beim Server Node & Empfangsstärke im Mesh \\
+\bottomrule
+\end{tabular}
+\caption{Messgrössen Gewinnung und Verwendung}
+\label{tab:MessgrössenGewinnungundVerwendung}
+\end{table}
 
 \subsection{Messreihe}\label{subsec:Messreihe}
 
