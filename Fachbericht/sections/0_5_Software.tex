@@ -1,6 +1,57 @@
 \clearpage
 \section{Soft- und Firmware}\label{sec:Soft-undFirmware}
+
+
+Im folgenden Abschnitt werden Anforderungen, Konzept, Entscheidung und die Umsetzung der Software dokumentiert. Die Lösungsfindung und ihre Prozess wird nachfolgend beschrieben. 
+
+\subsection{Anforderungen}\label{subsec:Software_Anforderungen}
+
+Wie bereits im Abschnitt \ref{sec:Abgrenzung} wurden die Anforderungen in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) vorgängig festgelegt. Im Fokus steht das erfassen der wichtigsten Messgrössen welche nachfolgend aufgeführt werden. \\
+
+\begin{itemize}
+	\item \textbf{Latenzzeit}: Bestimmung der Latenzzeit in Millisekunden zwischen den Teilnehmern. Die Genauigkeit sollte bei $+/-$1 ms liegen.  
+	\item \textbf{Anzahl Hops}: Bestimmung der Anzahl Hops, über welche eine Nachricht übermittelt wird.
+	\item \textbf{Datenrate}: Messen der Datenrate in Bytes/s, welche zwischen zwei Teilnehmern erreicht wurde. 
+	\item \textbf{RSSI}: Erfassen des RSSI-Werts der eingehenden Pakete.
+	\item \textbf{Paketverlust}: Pakete zählen, welche ihr Ziel nicht erreicht haben.  
+	\item \textbf{Aktive Radio Zeit}: Erfassen der aktiven Radio-Zeit um den Energieverbrauch abschätzen zu können. 
+\end{itemize}
+
+
+Die Erfassung muss in allen Mesh-Netzwerken möglich sein. Um die Messresultate vergleichen zu können müssen die gleichen Ausgangslagen vorliegen, sowie die selben Messmethoden angewendet werden. 
+
+\todo[inline]{Beschreiben der Anforderungen an die Software. Einzelne Teilprobleme Beschreiben}
+
+
+\subsection{Konzept}\label{subsec:Software_Konzept}
+
+Um die Messdaten erfassen zu können müssen alle Teilnehmer im Netzwerk eine eigenes Log führen. Dieses wird im Anschluss an eine Auswerte-Stelle übermittelt. Einzelne Messgrössen sind direkt ablesbar, andere werden bei der Auswertung errechnet. Folgende Messgrössen müssen von allen Teilnehmern der Messung erfasst werden. 
+
+\begin{itemize}
+	\item \textbf{Message-ID}: Eindeutige Kennung der Nachricht welche beim Senden und Empfangen eines Pakets übereinstimmen muss.  
+	\item \textbf{Timestamp}: Erfassen der Sende- / Empfangszeit über synchronisierten Zeitwert. 
+	\item \textbf{Anzahl Hops}: 
+	\item \textbf{Datenrate}: Messen der Datenrate in Bytes/s, welche zwischen zwei Teilnehmern erreicht wurde. 
+	\item \textbf{RSSI}: Erfassen des RSSI-Werts der eingehenden Pakete.
+	\item \textbf{Paketverlust}: Pakete zählen, welche ihr Ziel nicht erreicht haben.  
+	\item \textbf{Aktive Radio Zeit}: Erfassen der aktiven Radio-Zeit um den Energieverbrauch abschätzen zu können. 
+\end{itemize}
+
+
+\todo[inline]{Konzept zur Lösung der Teilprobleme grob beschreiben}
+
+
+\subsection{Entscheidung}\label{subsec:Software_Entscheidung}
+
+\todo[inline]{Warum wurde die Software so umgesetzt?}
+
+\todo[inline]{Tabelle der SDKs und Stacks und ihren Möglichkeiten aufzeigen. -> Gesamtheitliche Lösung mittels eigener Verwaltungsschicht und P2P}
+
+
 \todo[inline]{Tabelle welche Software zu welchem Stack, Referenzen zu Parts}
+
+
+\subsection{Umsetzung}\label{subsec:Software_Umsetzung}
 
 \todo[inline]{Cyrill Tabelle und subsections, Raffel und Robin Text}
 
