@@ -162,36 +162,43 @@ Ein Mesh Benchmark folgt einem klar definierten Ablauf. Die Abbildung \ref{fig:M
 	Das BMS beendet den Benchmark Vorgang, speichert die Messdaten in seiner Datenbank ab und bereitet diese grafisch auf. 
 \end{enumerate}
 
+%\subsection{Anforderungen}\label{subsec:SoftwareAnforderungen}
+%\todo[inline]{Titel ändern. Und Text an restliches Kapitel anpassen.}
+%Wie bereits im Abschnitt \ref{sec:Abgrenzung} wurden die Anforderungen in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) vorgängig festgelegt. Im Fokus steht das erfassen der wichtigsten Messgrössen welche nachfolgend aufgeführt werden.
+%
+%\begin{itemize}
+%	\item \textbf{Latenzzeit}: Bestimmung der Latenzzeit in Millisekunden zwischen den Teilnehmern. Die Genauigkeit sollte bei $+/-$1 ms liegen.  
+%	\item \textbf{Anzahl Hops}: Bestimmung der Anzahl Hops, über welche eine Nachricht übermittelt wird.
+%	\item \textbf{Datenrate}: Messen der Datenrate in Bytes/s, welche zwischen zwei Teilnehmern erreicht wurde. 
+%	\item \textbf{RSSI}: Erfassen des RSSI-Werts der eingehenden Pakete.
+%	\item \textbf{Paketverlust}: Pakete zählen, welche ihr Ziel nicht erreicht haben.  
+%	\item \textbf{Aktive Radio Zeit}: Erfassen der aktiven Radio-Zeit um den Energieverbrauch abschätzen zu können. 
+%\end{itemize}
+%
+%
+%Die Erfassung muss in allen Mesh-Netzwerken möglich sein. Um die Messresultate vergleichen zu können müssen die gleichen Ausgangslagen vorliegen, sowie die selben Messmethoden angewendet werden. 
 
 
 
-\subsection{Messgrössen}\label{subsec:MessgrössenMesh}
-\todo[inline]{Erläuterung der Messgrössen die erfasst werden sollen. Inkl. Beschreibung wie dies technisch umgesetzt wird. Von Raffi -> Software Teil?}
+\subsection{Vergleichswerte und Messgrössen}\label{subsec:VergleichswerteundMessgrössenMesh}
 
 Zur Bestimmung der Performance eines Mesh Protokolls und dem Vergleich mit den anderen Protokollstacks werden verschiedene Vergleichswerte erfasst.
-Im Pflichtenheft zu dieser Arbeit (Anhang \ref{app:Pflichtenheft}) wurden diese Testkriterien bereits ausführlich behandelt. Wichtigster Vergleichswert ist dabei die Latenz sowie der Paketverlust bei unterschiedlicher Belastung.
-Um diese und weitere Werte zu erfassen sind spezifische Messgrössen gefragt.
+Im Pflichtenheft zu dieser Arbeit (Anhang \ref{app:Pflichtenheft}) wurden diese Testkriterien bereits ausführlich behandelt.
+Folgende Vergleichswerte kommen nun in der Auswertung effektiv zum Tragen:
+
+\begin{itemize}
+	\item \textbf{Latenzzeit}: Bestimmung der Latenzzeit in Millisekunden eines Pakets das über das Mesh vom Client zum Server versendet wird.  
+	\item \textbf{Anzahl Hops}: Bestimmung der Anzahl Hops, über welche eine Nachricht übermittelt wird.
+	\item \textbf{Datenrate}: Messen der Datenrate in Bytes/s, welche zwischen zwei Teilnehmern erreicht wurde. 
+	\item \textbf{RSSI}: Erfassen des RSSI-Werts der eingehenden Pakete.
+	\item \textbf{Paketverlust}: Pakete welche ihr Ziel nicht erreichen konnten werden gezählt um so eine Paketverlustrate zu ermitteln.
+	\item \textbf{Aktive Radio Zeit}: Zur Abschätzung des Energieverbrauchs der Nodes im Mesh Betrieb, wird die Aktivdauer der Radio Schnittstelle gemessen.
+\end{itemize}
+
+
+Um diese Werte zu erfassen sind spezifische Messgrössen gefragt die auf den Nodes direkt erfasst werden können.
 Die untenstehende Auflistung zeigt die auf den Mesh Nodes erfassten Messgrössen, deren Generierung und wie diese in der Auswertung verwendet werden.
 
-%\begin{table}[h]
-%\centering
-%\begin{tabular}{lll} 
-%\toprule
-%Messgrösse & Generierung & Verwendung in der Auswertung \\ 
-%\hline
-%Message Timestamp & Timesync Timestamp & \begin{tabular}[c]{@{}l@{}}Bestimmung der Latenzzeit\\eines Mesh Pakets \end{tabular} \\
-%Number of Hops & Mesh Message Header & Bestimmung der Latenzzeit pro Hop \\
-%Data size & Definition via BCM & \begin{tabular}[c]{@{}l@{}}Performance in Abhängigkeit\\zur Paketgrösse \end{tabular} \\
-%Source address & Mesh Message Header & Identifikation des Mesh Pakets \\
-%Destination address & Mesh Message Header & Identifikation des Mesh Pakets \\
-%Group address & Definition via BCM & Identifikation des Mesh Pakets \\
-%Message ID & Transport in der Payload & Identifikation des Mesh Pakets \\
-%RSSI & \begin{tabular}[c]{@{}l@{}}Diagnosedaten beim\\Server Node \end{tabular} & Empfangsstärke im Mesh \\
-%\bottomrule
-%\end{tabular}
-%\caption{Messgrössen Gewinnung und Verwendung}
-%\label{tab:MessgrössenGewinnungundVerwendung}
-%\end{table}
 
 \paragraph{Message Timestamp}
 Zur Bestimmung der Latenzzeit eines Pakets das über das Mesh Netzwerk versendet wird, wird beim Senden sowie beim Empfangen ein Message Timestamp erfasst.
@@ -212,6 +219,8 @@ Als Payload im Mesh Paket versendet, identifiziert die Message ID das Paket zusa
 \paragraph{RSSI}
 Der RSSI (Received Signal Strength Indication) wird auf dem Server Node auf MAC Ebene erfasst und zeigt die Empfangsstärke zum zuletzt passierten Hop. Dies gibt Aufschluss über die Empfangsqualität und kann bei der Analyse des Benchmarks als weiterer Indikator für Paketverlust und Latenzzeit verwendet werden.
 
+\paragraph{Aktive Radio Zeit}
+Die Zeit in der die Radio Schnittstelle aktiv ist wird auf dem Node direkt gestoppt und gespeichert.
 
 
 \subsection{Messreihe}\label{subsec:Messreihe}

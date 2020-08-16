@@ -31,7 +31,6 @@ Wireless protocols & IEEE 802.15.4 (Thread, Zigbee), Bluetooth 5  \\
 
 
 \subsection{Hardware Development Kits}\label{subsec:HardwareDevelopmentKits}
-\todo[inline]{Kurze Beschreibung der nRF52840 DK's. Dongle und DK. Was wird wo eingesetzt?}
 
 Der Hersteller Nordic Semiconductor bietet gleich zwei Entwicklungsboards für den SoC an. Einerseits das umfangreiche nRF52840-DK (pca10056) \ref{fig:nrf52840-DK} welches zusammen mit dem Software Development Kit von Nordic Semiconductor eine vollumfängliche Entwicklungsumgebung bietet.
 Auf dem Board ist nebst diverser Peripherie auch ein Segger J-Link Debugger integriert.
@@ -62,7 +61,6 @@ Im Abschnitt \ref{subsec:AntenneundStrahlungscharakteristik} wird näher auf die
 
 
 \subsection{Aufbau Testnode}\label{subsec:AufbauTestnode}
-\todo[inline]{Dongle mit Batteriehalter. Wie wird der Dongle geflasht? Benchmark Master mit einem DK umgesetzt.}
 
 Der Aufbau des Testnodes wie er in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} wurde so einfach wie möglich gehalten. Ein externes Batteriepaket wird eingesetzt, damit der Benchmark Slave Node unabhängig von einer externen Stromversorgung betrieben werden kann. So kann der Einsatzort frei gewählt und auch kurzfristig geändert werden.
 Das Batteriepaket besteht aus zwei Standard Mignon Einwegzellen vom Typ AA mit je 1.5V Spannung. In Serieschaltung betrieben wird die Speisespannung von 3V erreicht welche für den Dongle ausreichend ist. Mit fortschreitender Entladung der Zellen sinkt die Spannung. Da der SoC einen Betriebsspannungsbereich von 1.7V bis 5.5V hat stellt die sinkende Spannung jedoch kein Problem dar.
@@ -81,7 +79,7 @@ Die Befestigung des Dongles am Batteriepaket erfolgte so dass die PCB Antenne we
 	\caption{Testnode: nRF52840-Dongle inkl. Batteriepack}
 	\label{fig:TestnodenRF52840-DongleinklBatteriepack}
 \end{figure}
-\todo{Bild anpassen}
+\todo[inline]{Bild anpassen}
 
 \subsection{Antenne und Strahlungscharakteristik}\label{subsec:AntenneundStrahlungscharakteristik}
 
@@ -110,24 +108,25 @@ Bei den durchgeführten Messungen lag das Hauptaugenmerk auf der Erfassung der A
 Die in den beiden Abbildungen \ref{fig:PCA10056Peak} und \ref{fig:PCA10059Peak} dargestellten Abstrahlcharakteristiken der jeweiligen Development Boards zeigen deutliche Unterschiede auf. Während das pca10056 eine sehr gleichmässige Verteilung der Sendeleistung über die gesamte Halbkugeloberfläche ausweist, zeigt das pca10059 deutliche Schwachstellen in Form von Dellen in der Halbkugel auf.
 Weiter unterscheidet sich der maximal Wert in Z-Richtung zwar optisch nur minimal, in Wirklichkeit bedeutet dies jedoch eine 2 bis 4 fach höhere Dämpfung und somit eine deutlich kleinere Reichweite.
 
-Die gemessenen Abstrahleigenschaften der beiden Antennen bestätigen schliesslich unsere Erfahrungen die wir mit den Boards bereits gemacht haben. Die MIFA Antenne des pca10059 weisst einige klare Nachteile gegenüber der IFA Antenne des pca10056 auf. Bei eingeschränkten Platzverhältnissen wie sie auf dem pca10059 und bei vielen Low-Power Mesh Anwendungen herrschen, ist jedoch eine MIFA eine solide Alternative.
+
 
 \begin{figure}[!htbp]
 \centering
 \begin{minipage}[b]{0.49\linewidth}
 	\centering
 	\includegraphics[width=\textwidth]{PCA10056_Peak.png}
-	\caption{Abtrahlung in Z-Richtung PCA10056}
+	\caption{Abstrahlung in Z-Richtung PCA10056}
 	\label{fig:PCA10056Peak}
 \end{minipage}
 \begin{minipage}[b]{0.49\linewidth}
 	\centering
 	\includegraphics[width=\textwidth]{PCA10059_Peak.png}
-	\caption{Abtrahlung in Z-Richtung PCA10059}
+	\caption{Abstrahlung in Z-Richtung PCA10059}
 	\label{fig:PCA10059Peak}
 \end{minipage}
 \end{figure}
 
+Die gemessenen Abstrahleigenschaften der beiden Antennen bestätigen schliesslich unsere Erfahrungen die wir mit den Boards bereits gemacht haben. Die MIFA Antenne des pca10059 weisst einige klare Nachteile gegenüber der IFA Antenne des pca10056 auf. Bei eingeschränkten Platzverhältnissen wie sie auf dem pca10059 und bei vielen Low-Power Mesh Anwendungen herrschen, ist jedoch eine MIFA eine solide Alternative.
 
 Die Erkenntnisse aus den vorliegenden Messungen waren hilfreich bei der Planung und Durchführung der Mesh Benchmarks. Beim Aufbau der Testnodes \ref{subsec:AufbauTestnode} flossen diese beispielsweise ein um die Ausrichtung der Antenne zu optimieren. Weiter halfen die Ergebnisse bei der Interpretation der weiteren Messungen da auch dort klar aufgezeigt werden konnte, dass die Positionierung und Ausrichtung der Antenne von entscheidender Bedeutung für die Performance ist.
 
@@ -135,3 +134,4 @@ Die Erkenntnisse aus den vorliegenden Messungen waren hilfreich bei der Planung 
 
 Die Benchmark Management Station (BMS) ist im Mesh Benchmark und in der P2P Testinfrastruktur unterschiedlich ausgeführt. Im Mesh Benchmark handelt es sich um einen PC welcher via USB UART Verbindung mit dem Benchmark Master Node (BMN) verbunden ist. Dazu kann jeder PC verwendet.
 Bei der P2P Testinfrastruktur stellt die BMS ein Raspberry Pi4 dar. Dieser wird ebenfalls wia USB UART mit dem BMN verbunden. Mit dem Einsatz eines Raspberry Pi's als BMS wird diese unabhängiger und kann einfach portiert werden. So kann die Testinfrastruktur als Messinstrument eingesetzt werden.
+
