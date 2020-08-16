@@ -43,9 +43,20 @@ Die BCM beschreibt die Nachrichten welche zur Steuerung eines Benchmarks von der
 Die BRM beschreiben Nachrichten welche den Status oder die Ergebnisse eines Benchmarks aus dem Mesh zurück an die BMS melden. Sie werden vom BMN initiiert und gelangen über eine die selbe USB-UART Schnittstelle wie die BCM zum BMS. Die BRM wird erst nach Abschluss des Benchmarks initiiert. Zuvor werden die Messdaten auf dem BMN zwischen gespeichert.
 
 
+\subsubsection{Nodes}\label{subsubsec:Nodes}
+Wie bereits angedeutet und in Abbildung \ref{fig:MeshTestKonzept} gezeigt, kann im Mesh Benchmark zwischen den folgenden 3 Node Typen unterschieden werden.
+
+\paragraph{Benchmark Master Node (BMN)}
+Der Benchmark Master Node bildet den zentralen Zugriffspunkt zum Mesh Netzwerk für den Benchmark. Über ihn werden Control und Report Messages versendet und empfangen. Je nach Mesh Protokoll fungiert er zugleich als Mesh Leader (Thread) respektive Coordinator (Zigbee).
+
+\paragraph{Benchmark Client Node (BCN)}
+Der Benchmark Client Node repräsentiert beispielsweise einen Schalter in einer Lichtsteuerung. Im Benchmark Kontext ist er jene Instanz die MBM versendet.
+
+\paragraph{Benchmark Server Node (BSN)}
+Das Pendant zum BCN stellt der BSN dar. Er steht beispielsweise für eine Lichtquelle. Im Benchmark Kontext empfängt er die MBM die vom BCN versendet werden.
+
 
 \subsection{Testszenarien}\label{subsec:TestszenarienMesh}
-\todo[inline]{Testumgebungen sowie die Beziehungen der Knoten innerhalb der Mesh Netze beschreiben.}
 
 Die Benchmarks der Mesh Protokolle sollen mit unterschiedlichen Bedingungen getestet werden wobei grundsätzlich eine reelle Anwendung nachgebaut werden soll. Zum einen gibt es unterschiedliche Beziehungen innerhalb des Mesh Netzwerks, zum anderen werden Testumgebungen unterschieden.
 
@@ -183,7 +194,7 @@ Die untenstehende Auflistung zeigt die auf den Mesh Nodes erfassten Messgrössen
 %\end{table}
 
 \paragraph{Message Timestamp}
-Zur Bestimmung der Latenzzeit eines Pakets das über das Mesh Netzwerk versendet wird, wird beim senden sowie beim empfangen ein Message Timestamp erfasst.
+Zur Bestimmung der Latenzzeit eines Pakets das über das Mesh Netzwerk versendet wird, wird beim Senden sowie beim Empfangen ein Message Timestamp erfasst.
 Die unter den Nodes synchronisierte Zeit gibt Aufschluss darüber wie lange das Paket unterwegs war. Die Berechnung der Latenzzeit wird jedoch erst bei der Analyse auf dem BMS durchgeführt.
 
 \paragraph{Number of Hops}
@@ -207,8 +218,6 @@ Der RSSI (Received Signal Strength Indication) wird auf dem Server Node auf MAC 
 Um die Mesh Protokolle einem möglichst fairen Vergleich zu unterziehen, werden pro Testumgebung eine Reihe an Messungen durchgeführt. Die Tabelle \ref{tab:ParameterBenchmarkMessreihe} zeigt 6 Messreihen mit den entsprechenden Parametern.
 
 Bei der Messung mit dem Index 6 handelt es sich um ein Benchmark welcher mit der P2P Testinfrastruktur gestört wird womit die Störimmunität des Mesh Stacks getestet werden soll. Dieser Test wird nur im Labormessaufbau durchgeführt da eine Störung im weit verteilten Netzwerk nur einzelne Nodes stören würde und somit nicht sehr aussagekräftig wäre.
-
-\todo[inline]{Wieso 32 und 50 Byte Unterschied erläutern}
 
 \begin{table}[h]
 \centering
@@ -255,12 +264,12 @@ Msg. Density & - & \begin{tabular}[t]{@{}l@{}}Dichte der Nachrichten. Verhältni
 \end{table}
 
 \subsection{Allgemeine Benchmark Parameter}\label{subsec:AllgemeineBenchmarkParameter}
-Die oben erwähnten Messreihen haben nebst den variablen Parametern einige allgemein gültige Benchmark Paramter die in der Tabelle \ref{tab:AllgemeineBenchmarkParameter} aufgeführt sind.
+Die oben erwähnten Messreihen haben nebst den variablen Parametern einige allgemeingültige Benchmark Parameter die in der Tabelle \ref{tab:AllgemeineBenchmarkParameter} aufgeführt sind.
 Diese sind für sämtliche Messungen innerhalb des jeweiligen Mesh Protokolls gültig.
 In den Punkten \textit{Benchmark Duration, Message Ack, Mesh Node Cnt.}, sowie \textit{Payload Size Small} unterscheiden sich die Benchmarks der drei Protokolle nicht.
 Die Parameter \textit{Group addressing mode} sowie \textit{Payload Size Large} hingegen unterscheiden sich aufgrund der Eigenschaften der Protokolle leicht.
 Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Directional bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
-Aufgrund von dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen nur sehr selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet vorgenommen.
+Aufgrund von dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen \footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur sehr selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet vorgenommen.
 Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
 
 Die \textit{Payload Size Large} soll eine vergleichsweise grosse Payload simulieren die über das Mesh übertragen wird.
@@ -291,7 +300,12 @@ Payload Size Large (Byte) & 32 & 50 & 50 \\
 
 
 \subsection{Messdatenerfassung und Auswertung}\label{subsec:MessdatenerfassungundAuswertung}
-\todo[inline]{Beschreibung der Hard und Software für die Datenerfassung und die Auswertung.}
+
+Für die Messdatenerfassung und Auswertung wird keine dedizierte Hardware verwendet. Die eigentlichen Messwerte die in Abschnitt \ref{subsec:MessgrössenMesh} erläutert sind, werden auf den Mesh Nodes direkt erfasst und erst im RAM und später im Flash des Microcontrollers zwischen gespeichert. Von dort werden sie mittels BRM (Benchmark Report Message) an den BMN übertragen.
+Auf den Mesh Nodes inkl. BMN findet noch keine Auswertung der Daten statt.
+Diese wird an das BMS ausgelagert.
+Das BMS empfängt die BRM via CLI (Command Line Interface) und speichert die Messwerte in einem Excel CSV File ab. Dazu kommt ein Python Skript zum Einsatz (siehe \ref{subsubsec:Benchmark}).
+Mittels einem weiteren Python Skript und manueller Bearbeitung in Excel können die so erfassten Daten ausgewertet werden.
 
 \subsection{Messerwartung}\label{subsec:Messerwartung}
 \todo[inline]{Welche Resultate werden erwartet. Welcher der drei Stacks ist vermeintlich der Beste?}
