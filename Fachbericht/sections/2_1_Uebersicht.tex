@@ -5,7 +5,7 @@ Robin Bobst
 \clearpage
 
 \section{Einleitung}\label{sec:EinleitungThread}
-Thread ist ein auf IPv6 basiertes Netzwerkprotokoll, das speziell für Internet of Things (IoT) Anwendungen entwickelt wurde. Die einzelnen Teilnehmer im Netzwerk verbinden sich zu einem Mesh-Netzwerk. Wie in der Abbildung \ref{fig:ThreadProtokollLayer} ersichtlich verwendet Thread für eine effiziente Kommunikation mit IPv6-Paketen das Kommunikationsprotokoll 6LoWPAN (IPv6 over Low Power Personal Area Network). 6LoWPAN wendet ein Header-Kompressionsverfahren an, welches es ermöglicht die IPv6-Pakete über den Standard IEEE-802.15.4 zu übermitteln. Dank diesem Standard ist es machbar, die mit Thread entwickelten Geräte so energieeffizient zu gestalten, dass ein Batteriebetrieb realisierbar ist. In der Tabelle \ref{table:MerkmaleThread} sind die wichtigsten Merkmale von Thread aufgelistet. \\
+Thread ist ein auf IPv6 basiertes Netzwerkprotokoll, das speziell für Internet of Things (IoT) Anwendungen entwickelt wurde. Die einzelnen Teilnehmer im Netzwerk verbinden sich zu einem Mesh-Netzwerk. Wie in der Abbildung \ref{fig:ThreadProtokollLayer} ersichtlich verwendet Thread für eine effiziente Kommunikation mit IPv6-Paketen das Kommunikationsprotokoll 6LoWPAN (IPv6 over Low Power Personal Area Network). 6LoWPAN wendet ein Header-Kompressionsverfahren an, welches es ermöglicht die IPv6-Pakete über den Standard IEEE-802.15.4 zu übermitteln. Dank diesem Standard ist es machbar, die mit Thread entwickelten Geräte so energieeffizient zu gestalten, dass ein Batteriebetrieb realisierbar ist. In der Tabelle \ref{table:MerkmaleThread} sind die wichtigsten Merkmale von Thread aufgelistet. Im Juli 2014 wurde die Thread Working Group ins Leben gerufen, bei der folgende Firmen Bestandteil der Gruppe sind: Nest Labs, Samsung, ARRM Holdings, Qualcom, NXP Semiconductors, Silicon Labs, Big Ass Solutions, Somfy, OSRAM Tyco International und Yale. Ab August 2018 Apple trat auch Apple der Arbeitsgruppe bei, um das Prokoll populär zu machen. \\
 
 \begin{figure}[H]
 	\centering
@@ -14,8 +14,6 @@ Thread ist ein auf IPv6 basiertes Netzwerkprotokoll, das speziell für Internet 
 	\label{fig:ThreadProtokollLayer}
 \end{figure}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
 \begin{table}[H]
 	\centering
 	\begin{adjustbox}{width=1\textwidth}
@@ -35,14 +33,7 @@ Thread ist ein auf IPv6 basiertes Netzwerkprotokoll, das speziell für Internet 
 		\multicolumn{1}{|l|}{wpantund}              & \multicolumn{1}{l|}{Interface Treiber}                 & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Inform previous parent on reattach} & \multicolumn{1}{l|}{Endgerät Menagement}                  \\ \cmidrule(r){1-2} \cmidrule(l){4-5} 
 	\end{tabular}
 	\end{adjustbox}
-	\caption{Merkmale Thread}
+	\caption{Merkmale Thread \cite{thread_group_what_2020}}
 	\label{table:MerkmaleThread}
 \end{table}
-
-	
-
-	
-
-
-In dieser Arbeit wird OpenThread verwendet. OpenThread ist eine open-sorce Implementation von Thread, die von Google umgesetzt und weiterentwickelt wird. 
 

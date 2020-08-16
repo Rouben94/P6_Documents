@@ -1,5 +1,50 @@
 \clearpage
 \section{Technische Grundlagen Thread}\label{sec:TechnischeGrundlagenThread}
+In der Abbildung \ref{fig:ÜbersichtThreadProtokoll} ist zu sehen, wie das Thread Protokoll aufgebaut ist. In den folgenden Unterkapiteln wird auf die verschiedenen Layer des Stacks eingegangen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Overview Thread.png}
+	\caption{Übersicht Thread Protokoll}\label{fig:ÜbersichtThreadProtokoll}
+\end{figure}
+
+\subsection{Application Layer}\label{subsec:CoAP}
+Da das Thread Protokoll auf einer UDP Kommunikation basiert, ist die Wahl des Applikation Layers, dem Entwickler freigestellt. Grundsätzlich ist jedes Protokoll einsetzbar, dass auf einer UDP-Kommunikation basiert. Da Thread das Netzwerkmanagement über das Constrained Application Protocol (CoAP) abfertigt, wird CoAP in diesem Kapitel etwas näher erläutert.
+
+\subsubsection{CoAP}\label{subsubsec:CoAP}
+Das Constrained Application Protocol (CoAP) ist ein spezialisiertes Web-Übertragungsprotokoll das dafür entwickelt wurde, um eingeschränkten Geräten die Teilnahme am IoT zu ermöglichen. CoAP ist durch seinen niedrigen Stromverbrauch und geringen Netzwerk-Overhead dafür ausgelegt bei einem Netzwerk mit kleiner Bandbreite und hoher Auslastung zu funktionieren.  UDP wird als grundlegendes Netzwerkprotokoll verwendet, das bedeutet das CoAP ein Client-Server-IoT Protokoll ist, welches die gleichen Methoden wie HTTP verwendet. Das Protokoll wird für Machine-to-Machine (M2M)-Anwendungen wie intelligente Energie- und Gebäudeautomatisierung verwendet. Dank diesen Eigenschaften ist es möglich CoAP bei Stromsparenden Modulen einzusetzen, während TCP-basierte Protokolle nicht in der Lage sind Informationen auszutauschen. Das Protokoll wurde von der Internet Engineering Task Force (IETF) entworfen, CoAP ist in IETF RFC 75852 spezifiziert. In der Tabelle \ref{table:FeaturesCoAP} sind einige Features aufgelistet. \cite{shelby_constrained_2014}
+
+\begin{table}[H]
+	\centering
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{@{}|l|l|l|@{}}
+			\toprule
+			\multicolumn{3}{|c|}{\textbf{Features}}                                                             \\ \midrule
+			Web-Protokoll M2M                & Geringer Overhead               & Proxy- und Caching Fähigkeiten \\ \midrule
+			Asynchroner Nachrichtenaustausch & URI Uniform Resource Identifier & User Datagram  Protocol  (UDP) \\ \bottomrule
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Features CoAP}
+	\label{table:FeaturesCoAP}
+\end{table}
+\newpage
+
+
+\subsection{Thread Protokoll Stack}\label{subsec:ThreadProtokollStack}
+Der Thread Stack besteht im Grunde aus den beiden Transport und Network Layer (Abbildung \ref{fig:ÜbersichtThreadProtokoll}). Dank dieser Schicht ist es möglich eine geroutete IPv6-Verbindung mit verschiedenen IoT fähigen Geräten aufzubauen. Nachfolgend wird erläutert, wie der Stack aufgebaut ist.
+
+\subsubsection{UDP}\label{subsubsec:UDP}
+Das Thread Protokoll schreibt vor, dass ein User Datagram Protocol (UDP) nach dem Standard \cite{postel_user_1980} implementiert werden muss. UDP ist ein minimales und verbindungsloses Netzwerkprotokoll, das ein Versand von Datagrammen innerhalb IP-basierten Netzwerken ermöglicht. Das Protokoll verwendet Ports um die Nachrichten an die richtigen Empfänger zu versenden. Zusätzlich besteht die Möglichkeit eine Prüfsumme mit der Nachricht zu versenden, um Fehlerhafte Nachrichten zu identifizieren.
+\subsubsection{IP Routing}\label{subsubsec:IPRouting}
+Das Thread Routing-Protokoll ist ein einfaches Distanz-Vektor-Routing-Protokoll. Das Ziel ist es die Routing-Information, die mit einer Nachricht versendet werden kann, zu erhöhen. Aus diesem Grund ist die Anzahl Router im Netzwerk limitiert. Alle Router versenden periodisch ihre Link-Kosten und die Verbindungsqualitäten zu direkt erreichbaren Routern im ganzen Netz. Die endgültigen Routing-Kosten zu einem Ziel, sind demnach die Kosten von allen Routern zum Ziel plus die Kosten zum direkten Nachbarn. Mit dem Trickle-Algorithmus \cite{levis_trickle_2011} wird die Rate festgelegt mit der ein Router seine Informationen ins Netz sendet.
+
+\subsubsection{6LoWPAN}\label{subsubsec:6LoWPAN}
+\cite{thubert_compression_2011}
+
+\newpage
+
+\subsection{Link und Physical Layer}\label{subsec:IEE802154}
+\cite{ieee_computer_society_ieee_2020}
+\newpage
 
 \subsection{Netzaufbau und Topologie}\label{subsec:NetzaufbauundTopologie}
 \todo[inline]{Welchen Aufbau? Welche Art von Mesh? Welche Nodetypen gibt es? Welche typischen Eigenschaften besitzt das Protokoll?}
@@ -23,16 +68,10 @@
 \subsubsection{Netzwerk Aufbau}\label{subsubsec:NetzwerkAufbau}
 
 \subsubsection{Router Auswahl}\label{subsubsec:RouterAuswahl}
+\newpage
 
-\subsection{Application Layer}\label{subsec:CoAP}
-
-\subsection{Thread Protokoll Stack}\label{subsec:ThreadProtokollStack}
-\todo[inline]{Erläuterung des Protokoll Stacks. Möglichst viel Grafiken und nur so viel als nötig Prosa.}
-\subsubsection{UDP}\label{subsubsec:UDP}
-\subsubsection{IP Routing}\label{subsubsec:IPRouting}
-\subsubsection{6LoWPAN}\label{subsubsec:6LoWPAN}
-
-\subsection{Link und Physical Layer}\label{subsec:IEE802154}
+\subsection{Sicherheit}\label{subsec:Sicherheit}
 
 \subsection{Thread Software Development Kit}\label{subsec:ThreadSoftwareDevelopmentKit}
 \todo[inline]{Eingesetzte SDK und deren Aufbau beschreiben. Allenfalls die wichtigsten API Funktionen genauer erläutern.}
+In dieser Arbeit wird OpenThread verwendet. OpenThread ist eine open-sorce Implementation von Thread, die von Google umgesetzt und weiterentwickelt wird. 
