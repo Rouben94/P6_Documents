@@ -1,6 +1,70 @@
 \clearpage
 \section{Soft- und Firmware}\label{sec:Soft-undFirmware}
+
+
+Im folgenden Abschnitt werden Anforderungen, Konzept, Entscheidung und die Umsetzung der Software dokumentiert. Die Lösungsfindung und ihre Prozess wird nachfolgend beschrieben. 
+
+\subsection{Anforderungen}\label{subsec:Software_Anforderungen}
+
+Wie bereits im Abschnitt \ref{sec:Abgrenzung} wurden die Anforderungen in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) vorgängig festgelegt. Im Fokus steht das erfassen der wichtigsten Messgrössen welche nachfolgend aufgeführt werden. \\
+
+\begin{itemize}
+	\item \textbf{Latenzzeit}: Bestimmung der Latenzzeit in Millisekunden zwischen den Teilnehmern. Die Genauigkeit sollte bei $+/-$1 ms liegen.  
+	\item \textbf{Anzahl Hops}: Bestimmung der Anzahl Hops, über welche eine Nachricht übermittelt wird.
+	\item \textbf{Datenrate}: Messen der Datenrate in Bytes/s, welche zwischen zwei Teilnehmern erreicht wurde. 
+	\item \textbf{RSSI}: Erfassen des RSSI-Werts der eingehenden Pakete.
+	\item \textbf{Paketverlust}: Pakete zählen, welche ihr Ziel nicht erreicht haben.  
+	\item \textbf{Aktive Radio Zeit}: Erfassen der aktiven Radio-Zeit um den Energieverbrauch abschätzen zu können. 
+\end{itemize}
+
+
+Die Erfassung muss in allen Mesh-Netzwerken möglich sein. Um die Messresultate vergleichen zu können müssen die gleichen Ausgangslagen vorliegen, sowie die selben Messmethoden angewendet werden. 
+
+\todo[inline]{Beschreiben der Anforderungen an die Software. Einzelne Teilprobleme Beschreiben}
+
+
+\subsection{Konzept}\label{subsec:Software_Konzept}
+
+Um die Messdaten erfassen zu können müssen alle Teilnehmer im Netzwerk eine eigenes Log führen. Dieses wird im Anschluss an eine zentrale Auswerte-Stelle übermittelt um ausgewertet zu werden (wie in Abschnitt ... beschrieben). Folgende Daten müssen pro eingehende oder gesendete Nachricht von allen Teilnehmern der Messung erfasst werden. 
+
+\begin{itemize}
+	\item \textbf{Message-ID}: Eindeutige Kennung (Laufnummer) welche beim Senden einer Nachricht mitgegeben wird. Somit können die Nachrichten anschliessend zugeordnet werden. 
+	\item \textbf{Timestamp}: Erfassen der Sende- / Empfangszeit über synchronisierten Zeitwert. Relevant zur Bestimmung der Latenzzeit und Datenrate. 
+	\item \textbf{Hops}: Auslesen der Anzahl Hops des Pakets beim Empfangen. Beim Senden kann dieser Wert ignoriert werden.
+	\item \textbf{Source Address}: Erfassen der Teilnehmer-Addresse welcher die Nachricht sendet oder gesendet hat. Wichtig für die korrekte Zuordnung der Pakete. 
+	\item \textbf{Destination Address}: Erfassen der Teilnehmer-Addresse welcher die Nachricht empfangen hat. Ebenfalls für Zuordnung der Nachrichten relevant. 
+	\item \textbf{Group Address}: Erfassen der Gruppen-Adresse in welcher die Nachricht unterwegs war. Notwendig zur Erfassung des Paketverlustes. 
+	\item \textbf{RSSI}: Erfassen des RSSI-Werts der eingehenden Pakete. Beim senden soll dieser Wert 0 sein. 
+	\item \textbf{Paketgrösse}: Erfassen der Paketgrösse um die Datenrate zu berechnen. 
+\end{itemize}
+
+Zur Steuerung der Messungen wird eine zentrale Stelle (Master) verwendet (Wie in Abschnitt ... beschrieben). Diese soll einzelne Teilnehmer Konfigurieren, eine Messung starten, sowie die Reports  einsammeln können. 
+
+
+\todo[inline]{Konzept zur Lösung der Teilprobleme grob beschreiben}
+
+
+\subsection{Entscheidung}\label{subsec:Software_Entscheidung}
+
+Zur Umsetzung der Mesh-Stacks mittles der \textit{NRF-Platform} sind folgende SDKs vorhanden: 
+
+\begin{itemize}
+	\item \textit{\textbf{nRF Connect SDK}}: Auf dem Zephyr-RTOS aufbauende SDK. Diese soll in Zukunft alle drei Mesh-Protokolle (Bluetooth-Mesh, Openthread und Zigbee) unterstützen. Wird jedoch noch nicht zum Einsatz in End-Produkten empfohlen. \cite{nordic_semi_welcome_to_the_nrf_connect_sdk_2020}
+	\item \textit{\textbf{nRF SDK for Thread and Zigbee}}: Proprietäre SDK Library von Nordic Semiconductor. Thread integration mittels Openthread, Zigbee einbindung mittels ZBOSS. \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}
+	\item \textit{\textbf{nRF SDK for Mesh}}: Proprietäre SDK Library von Nordic Semiconductor für Bluetooth-Mesh. Ist zur Produktion freigegeben. \cite{nordic_semi_nrf_sdk_for_mesh_2020}
+\end{itemize}
+
+Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlich sein, um die Vergleichbarkeit nicht zu beeinträchtigen. Daher musste ... Das Erfassen der Daten erfolgt Um eine möglichst unabhängig von der verwendeten Library zu sein wurde auf eine selbst entwickelte Kommunikation über die P2P-Testinfrastruktur gesetzt. 
+
+\todo[inline]{Warum wurde die Software so umgesetzt?}
+
+\todo[inline]{Tabelle der SDKs und Stacks und ihren Möglichkeiten aufzeigen. -> Gesamtheitliche Lösung mittels eigener Verwaltungsschicht und P2P}
+
+
 \todo[inline]{Tabelle welche Software zu welchem Stack, Referenzen zu Parts}
+
+
+\subsection{Umsetzung}\label{subsec:Software_Umsetzung}
 
 \todo[inline]{Cyrill Tabelle und subsections, Raffel und Robin Text}
 

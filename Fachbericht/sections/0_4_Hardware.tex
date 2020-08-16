@@ -33,8 +33,12 @@ Wireless protocols & IEEE 802.15.4 (Thread, Zigbee), Bluetooth 5  \\
 \subsection{Hardware Development Kits}\label{subsec:HardwareDevelopmentKits}
 \todo[inline]{Kurze Beschreibung der nRF52840 DK's. Dongle und DK. Was wird wo eingesetzt?}
 
-Der Hersteller Nordic Semiconductor bietet gleich zwei Entwicklungsboards für den SoC an. Einerseits das umfangreiche nRF52840-DK (pca10056) \ref{fig:nrf52840-DK} welches zusammen mit dem Software Development Kit von Nordic Semiconductor eine vollumfängliche Entwicklungsumgebung bietet. Auf dem Board ist nebst diverser Peripherie auch ein Segger J-Link Debugger integriert. Dieser erleichtert das flashen und debuggen ungemein. Im Benchmark Betrieb fungiert ein nRF52840-DK als Benchmark Master Node \ref{subsubsec:Nodes} wobei die USB-UART Schnittstelle als Interface zur Benchmark Management Station verwendet wird.
-Als einfachere Alternative zum voll umfänglichen Development Kit werden als Benchmark Slave Nodes \ref{subsubsec:Nodes} die einfacheren und günstigeren nRF52840-Dongle (pca10059) \ref{fig:nrf52840-Dongle} verwendet. Offensichtlich als USB-Dongle entworfen können die Dongles flexibel eingesetzt werden. Die fehlende Peripherie macht die Hardware jedoch unpassend für die Entwicklung neuer Firmware.
+Der Hersteller Nordic Semiconductor bietet gleich zwei Entwicklungsboards für den SoC an. Einerseits das umfangreiche nRF52840-DK (pca10056) \ref{fig:nrf52840-DK} welches zusammen mit dem Software Development Kit von Nordic Semiconductor eine vollumfängliche Entwicklungsumgebung bietet.
+Auf dem Board ist nebst diverser Peripherie auch ein Segger J-Link Debugger integriert.
+Dieser erleichtert das flashen und debuggen ungemein.
+Im Benchmark Betrieb fungiert ein nRF52840-DK als Benchmark Master Node \ref{subsubsec:Nodes} wobei die USB-UART Schnittstelle als Interface zur Benchmark Management Station verwendet wird.
+Als einfachere Alternative zum voll umfänglichen Development Kit werden als Benchmark Slave Nodes \ref{subsubsec:Nodes} die einfacheren und günstigeren nRF52840-Dongle (pca10059) \ref{fig:nrf52840-Dongle} verwendet.
+Offensichtlich als USB-Dongle entworfen können die Dongles flexibel eingesetzt werden. Die fehlende Peripherie macht die Hardware jedoch unpassend für die Entwicklung neuer Firmware.
 Beide Typen von Entwicklungsboards besitzen eine integrierte PCB Antenne wenn auch in unterschiedlichen Ausführungen.
 Im Abschnitt \ref{subsec:AntenneundStrahlungscharakteristik} wird näher auf die Ausführung der Antennen und deren Strahlungscharakteristik eingegangen.
 
@@ -110,7 +114,7 @@ Die gemessenen Abstrahleigenschaften der beiden Antennen bestätigen schliesslic
 
 \begin{figure}[!htbp]
 \centering
-\begin{minipage}[b][]{0.49\linewidth}
+\begin{minipage}[b]{0.49\linewidth}
 	\centering
 	\includegraphics[width=\textwidth]{PCA10056_Peak.png}
 	\caption{Abtrahlung in Z-Richtung PCA10056}
