@@ -34,20 +34,31 @@ Der Thread Stack besteht im Grunde aus den beiden Transport und Network Layer (A
 
 \subsubsection{UDP}\label{subsubsec:UDP}
 Das Thread Protokoll schreibt vor, dass ein User Datagram Protocol (UDP) nach dem Standard \cite{postel_user_1980} implementiert werden muss. UDP ist ein minimales und verbindungsloses Netzwerkprotokoll, das ein Versand von Datagrammen innerhalb IP-basierten Netzwerken ermöglicht. Das Protokoll verwendet Ports um die Nachrichten an die richtigen Empfänger zu versenden. Zusätzlich besteht die Möglichkeit eine Prüfsumme mit der Nachricht zu versenden, um Fehlerhafte Nachrichten zu identifizieren.
+
 \subsubsection{IP Routing}\label{subsubsec:IPRouting}
 Das Thread Routing-Protokoll ist ein einfaches Distanz-Vektor-Routing-Protokoll. Das Ziel ist es die Routing-Information, die mit einer Nachricht versendet werden kann, zu erhöhen. Aus diesem Grund ist die Anzahl Router im Netzwerk limitiert. Alle Router versenden periodisch ihre Link-Kosten und die Verbindungsqualitäten zu direkt erreichbaren Routern im ganzen Netz. Die endgültigen Routing-Kosten zu einem Ziel, sind demnach die Kosten von allen Routern zum Ziel plus die Kosten zum direkten Nachbarn. Mit dem Trickle-Algorithmus \cite{levis_trickle_2011} wird die Rate festgelegt mit der ein Router seine Informationen ins Netz sendet.
 
 \subsubsection{6LoWPAN}\label{subsubsec:6LoWPAN}
-\cite{thubert_compression_2011}
-
-\newpage
+6LoWPAN (IPv6 over Low-Power Wireless Personal Area Networks) ist ein drahtloses Low-Power-Mesh-Netzwerk, bei dem alle Knoten über IPv6-Adressen kommunizieren. Ein Thread Gerät muss das Protokoll implementiert haben. 6LoWPAN dient als Anpassungsschicht zwischen dem MAC Layer und dem Netzwerk Layer. Das Protokoll fragmentiert und setzt die IPv6-Pakete wieder zusammen, damit die grösse der payload vom IEEE 802.15.4 Protokoll übereinstimmt. 6LoWPAN adaptiert somit die IPv6-Pakete auf die IEEE 802.15.4 Pakete, die von der Radioschnittstelle gesendet werden. \cite{thubert_compression_2011} In der Tabelle \ref{table:Features6LoWPAN} sind einige Features aufgelistet.
+\begin{table}[H]
+	\centering
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{@{}|l|l|l|@{}}
+			\toprule
+			\multicolumn{3}{|c|}{\textbf{Features}}                                                      \\ \midrule
+			Offene IP Standards         & Unterstützt Schlafende Endgeräte & Skalierbares Mesh-Routing   \\ \midrule
+			End-Zu-End IP Kommunikation & Selbst Heilendes Netzwerk        & Offener Standard (RFC 6282) \\ \bottomrule
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Features 6LoWPAN}
+	\label{table:Features6LoWPAN}
+\end{table}
 
 \subsection{Link und Physical Layer}\label{subsec:IEE802154}
 \cite{ieee_computer_society_ieee_2020}
 \newpage
 
 \subsection{Netzaufbau und Topologie}\label{subsec:NetzaufbauundTopologie}
-\todo[inline]{Welchen Aufbau? Welche Art von Mesh? Welche Nodetypen gibt es? Welche typischen Eigenschaften besitzt das Protokoll?}
 \subsubsection{Node Typen}\label{subsubsec:NodeTypen}
 \textbf{Full Thread Device (FTD)}
 
