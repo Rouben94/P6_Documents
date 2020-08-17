@@ -66,9 +66,9 @@ Der Aufbau des Testnodes wie er in Abbildung \ref{fig:TestnodenRF52840-Dongleink
 Das Batteriepaket besteht aus zwei Standard Mignon Einwegzellen vom Typ AA mit je 1.5V Spannung. In Serieschaltung betrieben wird die Speisespannung von 3V erreicht welche für den Dongle ausreichend ist. Mit fortschreitender Entladung der Zellen sinkt die Spannung. Da der SoC einen Betriebsspannungsbereich von 1.7V bis 5.5V hat stellt die sinkende Spannung jedoch kein Problem dar.
 Die Speisung des nRF52840-Dongle erfolgt über einen 2-poligen JST Header der gemäss Datenblatt xx mit dem VDD OUT und GND Anschluss verbunden ist. Am VDD OUT Anschluss ist ein Betriebsspannungsbereich von 1.8V bis 3.6V zulässig.
 Das Batteriegehäuse verfügt ausserdem über einen Schalter um den Testnode nach Belieben ein- und auszuschalten.
-Mit den verwendeten Batterien welche je eine Kapazität von 2000mAh besitzen, können die Nodes im Mesh Benchmark Betrieb über mehrere Tage betrieben werden.
+Mit den verwendeten Batterien welche je eine Kapazität von 2900mAh besitzen, können die Nodes im Mesh Benchmark Betrieb über mehrere Tage betrieben werden \cite{distrelec_schweiz_ag_rnd_2020} .
 Eine Messung des Stromverbrauches im Benchmark Betrieb hat gezeigt, dass dieser bei 3V Batteriespannung durchschnittlich 15mA beträgt. Dieser relativ hohe Wert wird einerseits verursacht durch die LED's die geschaltet werden und andererseits durch das Radio Interface welches im Leerlauf permanent im Empfangsmodus ist um allfällige Start Messages empfangen zu können. 
-Dieser Verbrauch ermöglicht eine Betriebsdauer von bis zu 130 Stunden. 
+Dieser Verbrauch ermöglicht eine Betriebsdauer von rund 190 Stunden was mehr als ausreichend ist für diese Verwendung.
 
 Die Befestigung des Dongles am Batteriepaket erfolgte so dass die PCB Antenne welche sich am Ende des PCB's befindet möglichst frei liegt und sich dadurch die bestmöglichen Abstrahlungseigenschaften ergeben. Ein weiterer Vorteil der in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} dargestellten Montage ist die Zugänglichkeit des USB Ports. So können die Benchmark Nodes auf einfachste Arte und Weise mit einer neuen Software geflasht werden.
 
