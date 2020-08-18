@@ -1,5 +1,11 @@
+\vspace*{4cm}
+\begin{center}
+\part{Point to Point Testinfrastruktur}\label{PointtoPointTestinfrastruktur}
+\end{center}
+\vspace*{\fill}
 \clearpage
-\section{Point to Point Testinfrastruktur}\label{sec:PointtoPointTestinfrastruktur}
+
+\section{P2P Konzept}\label{sec:P2PKonzept}
 
 Im Nachfolgenden Abschnitt wird auf die Point to Point (P2P) Messung eingegangen. Ziel ist es die Verbindung auf MAC-Layer auszumessen und die aus Abschnitt ... aufgelisteten Messdaten zu erfassen. Dazu wird im folgenden auf das Messkonzept, den Messablauf und technische Einzelheiten eingegangen. 
 
@@ -43,11 +49,18 @@ Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kan
 
 \todo[inline]{Schema inkl. Beschreibung.}
 
+
+\section{Bedienung Messinfrastruktur}\label{sec:BedienungMessinfrastruktur}
+
+
 \subsection{Aufbau und Bedienung der Messinfrastruktur}\label{sec:AufbauundBedienungderMessinfrastruktur}
 \todo[inline]{Bedienungsanleitung des Messaufbaus.}
 
 \subsection{Interpretation der Messresultate für den Anwender}\label{sec:InterpretationderMessresultatefürdenAnwender}
 \todo[inline]{Wie sind die Resultate zu interpretieren. Welche Schlüsse können/müssen aus den Resultaten gezogen werden. Welche Resultate bedeuten was?}
+
+
+\section{Soft- und Firmware}\label{sec:P2PSoft-undFirmware}
 
 \subsection{Soft- und Firmware}\label{sec:SoftundFirmware}
 
@@ -150,7 +163,7 @@ Die folgenden Werte wurden zur Berechnung des Zeitfensters im Mockup-State verwe
 
 Somit liegt die Wahrscheinlichkeit das alle 50 Nodes sich verfehlen bei 85\%. 
 
-\subsection{Zeitsynchronisation}\label{sec:Zeitsynchronisation}
+\subsection{Zeitsynchronisation}\label{sec:ZeitsynchronisationP2P}
 
 Die Zeitsynchronisation wurde mittels einer Offset Kompensation gelöst. Der Zeitgeber (Master) sendet seine Zeit (Timestamp) über einen Broadcast an alle Teilnehmer in der Umgebung. Die Slaves vergleichen den empfangene Master-Zeit mit ihrer lokalen Zeit und errechnen den Unterschied (Offset) zwischen dem Master-Timestamp und Slave-Timestamp. Somit können sie ihre Zeit mittels an die des Masters angleichen. Das Prinzip ist realtiv simpel birgt jedoch einige Ungenauigkeiten. Die Verzögerungszeit zwischen dem auslesen des Master-Timestamp bis zum empfangen und vergleichen mit dem Slave-Timestamp ist sehr relevant.  
 
