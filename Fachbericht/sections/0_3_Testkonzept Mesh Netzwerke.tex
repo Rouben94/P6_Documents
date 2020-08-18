@@ -1,4 +1,10 @@
+\vspace*{4cm}
+\begin{center}
+\part{Mesh Benchmark Konzept und Testumgebung}\label{MeshBenchmarkKonzeptundTestumgebung}
+\end{center}
+\vspace*{\fill}
 \clearpage
+
 \section{Benchmark Konzept Mesh Netzwerke}\label{sec:BenchmarkKonzeptMeshNetzwerke}
 \todo[inline]{Cyrill}
 
@@ -228,27 +234,36 @@ Um die Mesh Protokolle einem möglichst fairen Vergleich zu unterziehen, werden 
 
 Bei der Messung mit dem Index 6 handelt es sich um ein Benchmark welcher mit der P2P Testinfrastruktur gestört wird womit die Störimmunität des Mesh Stacks getestet werden soll. Dieser Test wird nur im Labormessaufbau durchgeführt da eine Störung im weit verteilten Netzwerk nur einzelne Nodes stören würde und somit nicht sehr aussagekräftig wäre.
 
+
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|} 
-\cline{2-8}
-\multicolumn{1}{c|}{} & \multicolumn{4}{c|}{Benchmark Parameter} & \multicolumn{3}{c|}{Messaufbau} \\ 
+\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} 
+\cline{2-9}
+\multicolumn{1}{c|}{} & \multicolumn{5}{c|}{Benchmark Parameter} & \multicolumn{3}{c|}{Messaufbau} \\ 
 \hline
-\textbf{\#}  & \textbf{Msg. Gen.}  & \textbf{Msg. Cnt.}  & \textbf{Payload }  & \textbf{Disturbance}  & \textbf{Labor} & \textbf{Haus} & \textbf{Wohnung} \\ 
+\textbf{\#}  & \textbf{Msg. Gen.}  & \textbf{Duration} & \textbf{Msg. Cnt.}  & \textbf{Payload }  & \textbf{Disturbance}  & \textbf{Labor}  & \textbf{Haus}  & \textbf{Wohnung}  \\ 
 \hline
-1 & Rand. & 60 & Small & No & x & x & x \\ 
+1 & Rand & 600s & 60 & Small & No & x & x & x \\ 
 \hline
-2 & Seq. & 60 & Small & No & x & x & x \\ 
+2 & Seq & 600s & 60 & Small & No & x & x & x \\ 
 \hline
-3 & Rand. & 60 & Large & No & x & x & x \\ 
+3 & Rand & 600s & 60 & Large & No & x & x & x \\ 
 \hline
-4 & Seq. & 60 & Large & No & x & x & x \\ 
+4 & Seq & 600s & 60 & Large & No & x & x & x \\ 
 \hline
-5 & Rand. & 600 & Small & No & x & x & x \\ 
+5 & Rand & 600s & 600 & Small & No & x & x & x \\ 
 \hline
-6 & Seq. & 60 & Small & Yes & x &  &  \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\hline
+6 & Rand & 600s & 60 & Small & Yes & x &  &  \\ 
+\hline
+7 & Seq & 750s & 60 & Small & No & x &  &  \\ 
+\hline
+8 & Seq & 750s & 60 & Large & No & x &  &  \\
 \hline
 \end{tabular}
+\end{adjustbox}
 \caption{Parameter Benchmark Messreihe}
 \label{tab:ParameterBenchmarkMessreihe}
 \end{table}
@@ -281,7 +296,7 @@ Diese sind für sämtliche Messungen innerhalb des jeweiligen Mesh Protokolls g�
 In den Punkten \textit{Benchmark Duration, Message Ack, Mesh Node Cnt.}, sowie \textit{Payload Size Small} unterscheiden sich die Benchmarks der drei Protokolle nicht.
 Die Parameter \textit{Group addressing mode} sowie \textit{Payload Size Large} hingegen unterscheiden sich aufgrund der Eigenschaften der Protokolle leicht.
 Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Directional bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
-Aufgrund von dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen \footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur sehr selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet vorgenommen.
+Aufgrund von dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur sehr selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet vorgenommen.
 Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
 
 Die \textit{Payload Size Large} soll eine vergleichsweise grosse Payload simulieren die über das Mesh übertragen wird.
@@ -298,10 +313,10 @@ Aus diesem Grund ist eine weitere Erhöhung der Payload nicht sinnvoll.
 \toprule
  & BT Mesh & Thread & Zigbee \\ 
 \hline
-Benchmark Duration & 600s & 600s & 600s \\
 Group addressing mode & Broadcast & Multicast & Directional \\
 Message Ack (Appl. Layer) & No & No & No \\
 Mesh Node Cnt. & 50 & 50 & 50 \\
+Client/Server Verhältnis & 25/25 & 25/25 & 25/25 \\
 Payload Size Small (Byte) & 8 & 8 & 8 \\
 Payload Size Large (Byte) & 32 & 50 & 50 \\
 \bottomrule
