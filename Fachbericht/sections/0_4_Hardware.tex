@@ -70,17 +70,16 @@ Mit den verwendeten Batterien welche je eine Kapazität von 2900mAh besitzen, k�
 Eine Messung des Stromverbrauches im Benchmark Betrieb hat gezeigt, dass dieser bei 3V Batteriespannung durchschnittlich 15mA beträgt. Dieser relativ hohe Wert wird einerseits verursacht durch die LED's die geschaltet werden und andererseits durch das Radio Interface welches im Leerlauf permanent im Empfangsmodus ist um allfällige Start Messages empfangen zu können. 
 Dieser Verbrauch ermöglicht eine Betriebsdauer von rund 190 Stunden was mehr als ausreichend ist für diese Verwendung.
 
-Die Befestigung des Dongles am Batteriepaket erfolgte so dass die PCB Antenne welche sich am Ende des PCB's befindet möglichst frei liegt und sich dadurch die bestmöglichen Abstrahlungseigenschaften ergeben. Ein weiterer Vorteil der in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} dargestellten Montage ist die Zugänglichkeit des USB Ports. So können die Benchmark Nodes auf einfachste Arte und Weise mit einer neuen Software geflasht werden.
-
- 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{nRF52840_Dongle.png}
+	\includegraphics[width=0.2\textwidth]{Node_picture.png}
 	\caption{Testnode: nRF52840-Dongle inkl. Batteriepack}
 	\label{fig:TestnodenRF52840-DongleinklBatteriepack}
 \end{figure}
-\todo[inline]{Bild anpassen}
 
+Die Befestigung des Dongles am Batteriepaket erfolgte so dass die PCB Antenne welche sich am Ende des PCB's befindet möglichst frei liegt und sich dadurch die bestmöglichen Abstrahlungseigenschaften ergeben. Ein weiterer Vorteil der in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} dargestellten Montage ist die Zugänglichkeit des USB Ports. So können die Benchmark Nodes auf einfachste Arte und Weise mit einer neuen Software geflasht werden.
+
+ 
 \subsection{Antenne und Strahlungscharakteristik}\label{subsec:AntenneundStrahlungscharakteristik}
 
 Wie bereits im Abschnitt \ref{subsec:HardwareDevelopmentKits} erwähnt, besitzen die beiden eingesetzten Development Kits jeweils eine PCB Antenne. Beim nRF52840-DK ist diese als einfache IFA (Inverted-F Antenna) \ref{fig:nrf52840-DK-Copper} ausgeführt während dem der Dongle mangels Platz auf dem PCB eine sogenannte MIFA (Meandered Inverted-F Antenna) \ref{fig:nrf52840-Dongle-Copper} besitzt.

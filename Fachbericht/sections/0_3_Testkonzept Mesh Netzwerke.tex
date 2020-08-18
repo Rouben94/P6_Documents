@@ -34,7 +34,7 @@ Die Benchmark Management Station (BMS) welche mit dem BMN via USB/UART kommunizi
 In der Abbildung \ref{fig:MeshTestKonzept} sind verschiedene Messages dargestellt. Dabei handelt es sich um die Nachrichten die zwischen den einzelnen Teilen des Testaufbaus versendet werden und schliesslich einen Benchmark ausmachen. Die Messages besitzen Funktionen:
 
 \paragraph{Mesh Benchmark Message (MBM)}
-Die MBM ist jene Message welche die eigentlichen Messdaten produziert und diese sogleich unter den BSN (Mesh Knoten) überträgt. Anhand dieser Messages werden die Parameter gemäss der Abschnitt \ref{subsec:MessgrössenMesh} erfasst. Bei den MBM handelt es sich also eigentlich um eine Sammlung von Messages welche je nach gewünschtem Messwert in Form und Anzahl unterschiedlich ausfallen können.
+Die MBM ist jene Message welche die eigentlichen Messdaten produziert und diese sogleich unter den BSN (Mesh Knoten) überträgt. Anhand dieser Messages werden die Parameter für den Vergleich der Protokolle gemäss Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} erfasst. Bei den MBM handelt es sich also um eine Sammlung von Messages welche je nach gewünschtem Messwert in Form und Anzahl unterschiedlich ausfallen können.
 
 \paragraph{Mesh Control Message (MCM)}
 Die MCM beinhaltet die Parameter für die Benchmarks welche vom BMN an alle BSN übertragen werden. Ausserdem werden damit Kontrollbefehle für die Benchmarks wie beispielsweise \textit{Start/Stop} sowie \textit{Laufzeit, Wiederholrate usw.} übertragen.
@@ -290,22 +290,11 @@ Msg. Density & - & \begin{tabular}[t]{@{}l@{}}Dichte der Nachrichten. Verhältni
 \subsection{Allgemeine Benchmark Parameter}\label{subsec:AllgemeineBenchmarkParameter}
 
 
-
 Die oben erwähnten Messreihen haben nebst den variablen Parametern einige allgemeingültige Benchmark Parameter die in der Tabelle \ref{tab:AllgemeineBenchmarkParameter} aufgeführt sind.
 Diese sind für sämtliche Messungen innerhalb des jeweiligen Mesh Protokolls gültig.
-In den Punkten \textit{Benchmark Duration, Message Ack, Mesh Node Cnt.}, sowie \textit{Payload Size Small} unterscheiden sich die Benchmarks der drei Protokolle nicht.
-Die Parameter \textit{Group addressing mode} sowie \textit{Payload Size Large} hingegen unterscheiden sich aufgrund der Eigenschaften der Protokolle leicht.
-Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Directional bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
-Aufgrund von dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur sehr selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet vorgenommen.
-Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
-
-Die \textit{Payload Size Large} soll eine vergleichsweise grosse Payload simulieren die über das Mesh übertragen wird.
-Die beiden Protokollstacks Thread und Zigbee erlauben dank IEEE 802.15.4 beide eine totale Framegrösse von 127 Byte.
-Abzüglich der Grösse der Header bieten die Protokolle noch Platz für eine Payload von ca. 50 Byte. Je nach Implementation der Protokolle variiert die Header Grösse und die Payload kann entsprechend erhöht werden.
-BT Mesh hingegen beginnt bereits bei einer Payload Grösse von 8 Byte mit der Fragmentierung. Somit werden bei den 32 Byte für die \textit{Payload Size Large} bereits 4 Frames versendet. Diverse Tests haben ergeben, dass hier der BT Mesh Stack an seine Leistungsgrenze stösst.
-Aus diesem Grund ist eine weitere Erhöhung der Payload nicht sinnvoll.
-
-
+In den Punkten \textit{Message Ack, Mesh Node Cnt., Client/Server Verhältnis}, sowie \textit{Payload Size Small} unterscheiden sich die Benchmarks der drei Protokolle nicht.
+Die Benchmark Nachrichten werden auf dem Application Layer \textit{unacknowledged} versendet. Wenn also ein Paket sein Ziel nicht erreicht, wird dies vom Sender nicht registriert und das Paket nicht erneut übertragen.
+Sämtliche Benchmarks werden mit 50 Mesh Nodes durchgeführt. Davon sind jeweils gleich viele Client Nodes wie Server Nodes \ref{subsubsec:Nodes}.
 
 \begin{table}[h]
 \centering
@@ -313,7 +302,7 @@ Aus diesem Grund ist eine weitere Erhöhung der Payload nicht sinnvoll.
 \toprule
  & BT Mesh & Thread & Zigbee \\ 
 \hline
-Group addressing mode & Broadcast & Multicast & Directional \\
+Group addressing mode & Broadcast & Multicast & Unicast \\
 Message Ack (Appl. Layer) & No & No & No \\
 Mesh Node Cnt. & 50 & 50 & 50 \\
 Client/Server Verhältnis & 25/25 & 25/25 & 25/25 \\
@@ -325,17 +314,58 @@ Payload Size Large (Byte) & 32 & 50 & 50 \\
 \label{tab:AllgemeineBenchmarkParameter}
 \end{table}
 
+Die Parameter \textit{Group addressing mode} sowie \textit{Payload Size Large} unterscheiden sich aufgrund der Eigenschaften der Protokolle leicht.
+Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Unicast bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
+Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch \ref{sec:ZigbeeUmsetzungBenchmark}).
+Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
+
+Die \textit{Payload Size Large} soll eine vergleichsweise grosse Payload simulieren die über das Mesh übertragen wird.
+Die beiden Protokollstacks Thread und Zigbee erlauben dank IEEE 802.15.4 beide eine totale Framegrösse von 127 Byte.
+Abzüglich der Grösse der Header bieten die Protokolle noch Platz für eine Payload von ca. 50 Byte. Je nach Implementation der Protokolle variiert die Header Grösse und die Payload kann entsprechend erhöht werden.
+BT Mesh hingegen beginnt bereits bei einer Payload Grösse von 8 Byte mit der Fragmentierung. Somit werden bei den 32 Byte für die \textit{Payload Size Large} bereits 4 Frames versendet. Diverse Tests haben ergeben, dass hier der BT Mesh Stack an seine Leistungsgrenze stösst.
+Aus diesem Grund ist eine weitere Erhöhung der Payload nicht sinnvoll.
+
+
+
+
 \todo[inline]{Wieviele Clients / Server gibt es ? , Wie wurden die Nodes Konfigueriert (Router / Relaying), INwiefern sind diese Eigenschaften verwandt?}
 
 \subsection{Traffic Generation}\label{subsec:TrafficGeneration}
 
-\todo[inline]{Wie wird der Mesh-Traffic generiert (Random / Sequentiell), wie sieht die Verteilung aus bei Sequ? Basis für Message dichte mit FOrmel angeben}
+Die in Tabelle \ref{tab:BedeutungBenchmarkParameter} erwähnte Message Generation ist im Benchmark verantwortlich für die Verteilung der Benchmark Nachrichten über die Nodes in Abhängigkeit der Zeit. So wird bestimmt wie der Traffic innerhalb des Netzes sowie auf den einzelnen Nodes generiert wird.
+Dabei werden die folgenden zwei Modi unterschieden:
 
+\paragraph{Random}\label{par:Random}
+Im Modus \textit{Random} werden die Zeitpunkte für den Versand einer Nachricht sogenannt pseudozufällig generiert. Dies bedeutet, dass jedem Client Node eine Liste von einmalig zufällig generierten Werten zugewiesen wird.
+Aus dieser Liste werden nur so viele Werte gelesen wie es Nachrichten zu versenden gilt. Diese werden schliesslich nach Grösse sortiert und über den gesamten Benchmark Zeitraum gelegt woraus nun die Zeitpunkte für den Versand der Nachrichten entstehen.
+Ein solche Methode erlaubt es die Zeitpunkte reproduzierbar zu machen und identisch auf alle 3 Mesh Stacks anzuwenden.
+
+\paragraph{Sequentiell}\label{par:Sequentiell}
+Mit der \textit{Random} Methode kann die Belastung eines Nodes sowie des gesamten Netzes zwischenzeitlich stark ansteigen.
+Um dies zu verhindern, kann der Traffic Generation Modus \textit{Sequentiell} gewählt werden.
+Dabei werden die Nachrichten in regelmässigen Zeitschlitzen gemäss \ref{eq:TrafficGenerationSeq} pro Node versendet. Die Reihenfolge der Nodes bleibt jeweils die selbe.
+
+
+\begin{equation}\label{eq:TrafficGenerationSeq}
+T_{Msg\_send} =  \frac{T_{Bench\_Duration}}{(Msg\_Cnt \cdot 25)} \cdot NodeID \cdot i_{Msg}
+\end{equation}
+
+\begin{small}
+\begin{center}
+\begin{tabular}{ll}
+$T_{Msg\_send}$ & Zeitpunkt zu welchem die Nachricht gesendet wird.\\
+$T_{Bench\_Duration}$ & Benchmark Dauer (siehe \ref{tab:ParameterBenchmarkMessreihe})\\
+$Msg\_Cnt$ & Anzahl Nachrichten die versendet werden.\\
+$NodeID$ &Identifikationsnummer des Nodes. \\
+$i_{Msg}$ & Message Index
+\end{tabular}
+\end{center}
+\end{small}
 
 
 \subsection{Messdatenerfassung und Auswertung}\label{subsec:MessdatenerfassungundAuswertung}
 
-Für die Messdatenerfassung und Auswertung wird keine dedizierte Hardware verwendet. Die eigentlichen Messwerte die in Abschnitt \ref{subsec:MessgrössenMesh} erläutert sind, werden auf den Mesh Nodes direkt erfasst und erst im RAM und später im Flash des Microcontrollers zwischen gespeichert. Von dort werden sie mittels BRM (Benchmark Report Message) an den BMN übertragen.
+Für die Messdatenerfassung und Auswertung wird keine dedizierte Hardware verwendet. Die eigentlichen Messwerte die in Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} erläutert sind, werden auf den Mesh Nodes direkt erfasst und erst im RAM und später im Flash des Microcontrollers zwischen gespeichert. Von dort werden sie mittels BRM (Benchmark Report Message) an den BMN übertragen.
 Auf den Mesh Nodes inkl. BMN findet noch keine Auswertung der Daten statt.
 Diese wird an das BMS ausgelagert.
 Das BMS empfängt die BRM via CLI (Command Line Interface) und speichert die Messwerte in einem Excel CSV File ab. Dazu kommt ein Python Skript zum Einsatz (siehe \ref{subsubsec:Benchmark}).
