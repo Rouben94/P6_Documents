@@ -204,4 +204,21 @@ Zur Verifikation der Zeitsynchronisation wurde ein Oszilloskop an jeweils einen 
 
 Abbildung \ref{fig:TimesyncVerifikationP2P} zeigt den Signalverlauf der GPIOs vom Master (gelb) und Slave (blau). Anfänglich lagen die Abweichungen im Bereich von ca. 40us. Durch Wiederholungen der Messung konnte dieser Fehler als systematisch identifiziert werden. Mithilfe einer Korrektur um 40us konnte die Genauigkeit in den Bereich von 100ns bis 1200ns reduziert werden. Eine Abweichung der Zeitsynchronisation von ca. 1us sollte genügend genau sein um als gute Grundlage für die Statemachine aus Abschnitt \ref{sec:SoftundFirmware} zu dienen. 
  
+ \newpage
 \subsection{Django Webserver}\label{sec:DjangoWebserver}
+Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver geschrieben. Django ist ein open-source Webframework, dass auf dem Model-View-Controller verfahren basiert und in der Programmiersprache Python geschrieben wurde. Das Framwork hat sein eigenes Benennungssystem für alle Funktionen und Komponenten. Zum Beispiel werde HTTP-Antworten als Views bezeichnet. Ein grosser Vorteil von Django ist die Administrationsseite. Die Admin-Seite ist Bestandteil des Projekts und dient dazu die Models zu verwalten. Models sind Objekte, die in einer Datenbank des Webservers gespeichert werden. Die gängigsten Datenbanksysteme, wie z.B. SQLLite sind in Django integriert und können einfach aktiviert oder bzw. implementiert werden. In der Tabelle \ref{table:FeaturesDjango} sind die wichtigsten Features von Django aufgelistet:
+
+\begin{table}[H]
+	\centering
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{@{}|l|l|l|@{}}
+			\toprule
+			\multicolumn{3}{|c|}{\textbf{Features}}                                        \\ \midrule
+			Einfacher Syntax (Python) & Model-View-Controller      & Administrations Seite \\ \midrule
+			Model-View-Controller     & Eigener Webserver          & Gängigste Datenbanken \\ \midrule
+			HTTP Bibliothek           & Python Unit Test Framework & Models für Datenbank  \\ \bottomrule
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Features Django}
+	\label{table:FeaturesDjango}
+\end{table}
