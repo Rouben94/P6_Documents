@@ -66,8 +66,7 @@ Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlic
 
 \subsection{Umsetzung}\label{subsec:Software_Umsetzung}
 
-\todo[inline]{Cyrill Tabelle und subsections, Raffel und Robin Text}
-
+\todo[inline]{Cyrill Text anpassen. Thread nutzt SharedLib voll}
 
 
 Die Software und Firmware für die Mesh Benchmarks sowie für die P2P Testinfrastruktur setzt sich aus diversen Modulen zusammen. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 4 Benchmark Teilen: BLE Mesh, Zigbee, Thread sowie P2P.
@@ -88,11 +87,11 @@ Die Stack bezogenen Implementationen der Benchmark Firmware werden in den indivi
 \hline
 \multicolumn{1}{|l|}{Library} & Funktion & Modul & \multicolumn{1}{l|}{Referenz} \\ 
 \hline
-\multirow{8}{*}{\rotcells{SharedLib}} & Statemachine & bm\_statemachine.c~ & xy \\ 
+\multirow{8}{*}{\rotcells{SharedLib}} & Statemachine & bm\_statemachine.c~ & \ref{subsubsec:StatemachineSoftware} \\ 
 \cline{2-4}
- & Timesync & bm\_timesync.c & xy \\ 
+ & Timesync & bm\_timesync.c & \ref{subsubsec:Timesync} \\ 
 \cline{2-4}
- & Control & bm\_control.c & xy \\ 
+ & Control & bm\_control.c & \ref{subsubsec:Control} \\ 
 \cline{2-4}
  & Report & bm\_report.c & xy \\ 
 \cline{2-4}
