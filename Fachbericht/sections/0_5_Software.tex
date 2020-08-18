@@ -164,7 +164,9 @@ Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Unters
 
 \subsubsection{Timesync}\label{subsubsec:Timesync}
 
+Die Zeitsynchronisation wurde identisch wie in Abschnitt \ref{sec:ZeitsynchronisationP2P} umgesetzt. Durch wiederholen der Master-Timestamps, nimmt der Synchronisationsfehler pro Hop zu. Angenommen pro Hop entstehen maximal 1.2us, so wäre der Fehler nach sieben Hops 8.4us. \\ 
 
+Um die Funktionen von Master und Slave zu unterscheiden, wurde eine Subscribe- und Publish-Funktion. 
 
 \subsubsection{Control}\label{subsubsec:Control}
 
