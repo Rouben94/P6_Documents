@@ -69,85 +69,72 @@ Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlic
 \todo[inline]{Cyrill Text anpassen. Thread nutzt SharedLib voll}
 
 
-Die Software und Firmware für die Mesh Benchmarks sowie für die P2P Testinfrastruktur setzt sich aus diversen Modulen zusammen. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 4 Benchmark Teilen: BLE Mesh, Zigbee, Thread sowie P2P.
-Gemeinsame Module auf Firmware Ebene für die BT Mesh und Zigbee Firmware sind im Ordner SharedLib im Github Repository\footnotemark\ zusammengefasst. Aus diversen Gründen wurde die Thread Firmware zu einem grossen Teil in separaten Modulen realisiert. Die nicht Stack spezifischen Teile der Thread Lösung werden als Thread Common zusammengefasst.
+Die Software und Firmware für die Mesh Benchmarks setzt sich aus diversen Modulen zusammen. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 3 Benchmark Teilen: BLE Mesh, Thread und Zigbee.
+Gemeinsame Module auf Firmware Ebene sind im Ordner SharedLib im Github Repository\footnotemark\ zusammengefasst.
+
 Jene Python Scripts für das Benchmark Management stehen im gleichnamigen Ordner auf dem Github Repository zur Verfügung.
 Die Stack bezogenen Implementationen der Benchmark Firmware werden in den individuellen Teilen \ref{part:BluetoothMesh}, \ref{part:Thread} und \ref{part:Zigbee} behandelt.
 
 
-\newcommand{\rotcells}[1]{%
-  \rotatebox[origin=c]{90}{ #1 }%
-}
+%\newcommand{\rotcells}[1]{%
+%  \rotatebox[origin=c]{90}{ #1 }%
+%}
 
 \begin{table}
 \centering
 \caption{Übersicht Shared Lib und Benchmark Management Module}
 \label{tab:UebersichtSoftware}
-\begin{tabular}{|c|l|l|c|} 
+\begin{tabular}{|l|l|l|c|} 
 \hline
-\multicolumn{1}{|l|}{Library} & Funktion & Modul & \multicolumn{1}{l|}{Referenz} \\ 
+Library & Funktion & Modul & Referenz \\ 
 \hline
-\multirow{8}{*}{\rotcells{SharedLib}} & Statemachine & bm\_statemachine.c~ & \ref{subsubsec:StatemachineSoftware} \\ 
+\multirow{8}{*}{SharedLib} & Statemachine & bm\_satemachine.c &  \\ 
 \cline{2-4}
- & Timesync & bm\_timesync.c & \ref{subsubsec:Timesync} \\ 
+ & Timesync & bm\_timesync.c &  \\ 
 \cline{2-4}
- & Control & bm\_control.c & \ref{subsubsec:Control} \\ 
+ & Control & bm\_control.c &  \\ 
 \cline{2-4}
  & Report & bm\_report.c & xy \\ 
 \cline{2-4}
  & Logging & bm\_log.c & xy \\ 
 \cline{2-4}
- & Flash Save & bm\_flash\_ave.c & xy \\ 
+ & Flash Save & bm\_flash\_save.c & xy \\ 
 \cline{2-4}
  & CLI & bm\_cli.c & xy \\ 
 \cline{2-4}
  & Low Layer Radio & bm\_radio.c & xy \\ 
 \hline
-\multirow{4}{*}{\rotcells{\begin{tabular}[c]{@{}c@{}}Benchmark\\Management \end{tabular}}} & Flash & Flasher.py & xy \\ 
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\hline
+\multirow{4}{*}{\begin{tabular}[c]{@{}l@{}}Benchmark\\Management \end{tabular}} & Flash & Flasher.py & xy \\ 
 \cline{2-4}
  & Configurator & Configurator.py & xy \\ 
 \cline{2-4}
- & Benchmark & \begin{tabular}[c]{@{}l@{}}Benchmark\_and\_\\Reporter.py\end{tabular} & xy \\ 
+ & Benchmark & \begin{tabular}[c]{@{}l@{}}Benchmark\_and\_\\Reporter.py \end{tabular} & xy \\ 
 \cline{2-4}
- & Analysis & Analysis.py & xy \\
+ & Analysis & Analysis.py & xy \\ 
+\hline
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\hline
+\multirow{2}{*}{BT Mesh} & Stack Handling & bm\_blemesh.c & \ref{sec:BTMeshUmsetzungBenchmark} \\ 
+\cline{2-4}
+ & Stack Configuration & bm\_config.c & \ref{sec:BTMeshUmsetzungBenchmark} \\ 
+\hline
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\hline
+\multirow{2}{*}{Thread} &  &  & \ref{sec:ThreadUmsetzungBenchmark} \\ 
+\cline{2-4}
+ &  &  & \ref{sec:ThreadUmsetzungBenchmark} \\ 
+\hline
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\hline
+\multirow{2}{*}{Zigbee} & Stack Handling & bm\_zigbee.c & \ref{sec:ZigbeeUmsetzungBenchmark} \\ 
+\cline{2-4}
+ & Stack Configuration & bm\_config.c & \ref{sec:ZigbeeUmsetzungBenchmark} \\
 \hline
 \end{tabular}
 \end{table}
 
-%\begin{table}[h]
-%\centering
-%\begin{tabular}{|c|l|l|c|} 
-%\cline{4}
-%\multicolumn{1}{l}{} & \multicolumn{2}{l|}{} & \multicolumn{1}{l|}{BT Mesh} \\ 
-%\hline
-%\multirow{8}{*}{\rotcells{SharedLib}} & Statemachine & bm\_statemachine.c [\ref{subsubsec:Statemachine}]& x \\ 
-%\cline{2-4}
-% & Timesync & bm\_timesync.c [\ref{subsubsec:Timesync}] & x  \\ 
-%\cline{2-4}
-% & Control & bm\_control.c [\ref{subsubsec:Control}] & x \\ 
-%\cline{2-4}
-% & Report & bm\_report.c [\ref{subsubsec:Report}] & x  \\ 
-%\cline{2-4}
-% & Logging & bm\_log.c [\ref{subsubsec:Logging}]& x  \\ 
-%\cline{2-4}
-% & Flash Save & bm\_flash\_save.c [\ref{subsubsec:FlashSave}]& x   \\ 
-%\cline{2-4}
-% & CLI & bm\_cli.c [\ref{subsubsec:CLI}]& x  \\ 
-%\cline{2-4}
-% & Low Layer Radio & bm\_radio.c [\ref{subsubsec:LowLevelRadio}]& x \\ 
-%\hline
-%\multirow{4}{*}{\rotcells{\begin{tabular}[c]{@{}c@{}}Benchmark\\Management \end{tabular}}} & Flash & Flasher.py [\ref{subsubsec:Flash}]& x  \\ 
-%\cline{2-4}
-% & Configurator & Configurator.py [\ref{subsubsec:Configurator}]& x\\ 
-%\cline{2-4}
-% & Benchmark & \begin{tabular}[c]{@{}l@{}}Benchmark\_and\_\\Reporter.py [\ref{subsubsec:Report}] \end{tabular} & x \\ 
-%\cline{2-4}
-% & Analysis & Analysis.py [\ref{subsubsec:Analysis}]& x \\
-%\hline
-%\end{tabular}
-%\caption{Übersicht Shared Lib und Benchmark Management Module}
-%\label{tab:UebersichtSoftware}
-%\end{table}
 
 Sämtliche Firm- und Software Komponenten die für Mesh Benchmark sowie die P2P Testinfrastruktur nötig sind, können auf dem Github Repository zum Projekt unter folgendem \href{https://github.com/Rouben94/P6_Software}{Link\footnotemark[\value{footnote}]}  eingesehen werden.
 
