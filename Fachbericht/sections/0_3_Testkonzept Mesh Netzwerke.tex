@@ -230,9 +230,14 @@ Die Zeit in der die Radio Schnittstelle aktiv ist wird auf dem Node direkt gesto
 
 
 \subsection{Messreihe}\label{subsec:Messreihe}
-Um die Mesh Protokolle einem möglichst fairen Vergleich zu unterziehen, werden pro Testumgebung eine Reihe an Messungen durchgeführt. Die Tabelle \ref{tab:ParameterBenchmarkMessreihe} zeigt 6 Messreihen mit den entsprechenden Parametern.
+Um die Mesh Protokolle einem möglichst fairen Vergleich zu unterziehen, werden pro Testumgebung eine Reihe an Messungen durchgeführt. Die Tabelle \ref{tab:ParameterBenchmarkMessreihe} zeigt Total 8 Messreihen mit den entsprechenden Parametern.
 
-Bei der Messung mit dem Index 6 handelt es sich um ein Benchmark welcher mit der P2P Testinfrastruktur gestört wird womit die Störimmunität des Mesh Stacks getestet werden soll. Dieser Test wird nur im Labormessaufbau durchgeführt da eine Störung im weit verteilten Netzwerk nur einzelne Nodes stören würde und somit nicht sehr aussagekräftig wäre.
+Die Messungen 1 bis 5 werden in allen drei Messaufbauten durchgeführt. So werden die Unterschiede der Topologien ersichtlich.
+Die Messungen 6 bis 8 hingegen werden nur im Laboraufbau durchgeführt damit allfällige Externe Störeinflüsse ausgeschlossen werden können und das Mesh Netzwerk unter Extrembedingungen getestet werden kann.
+
+Bei der Messung mit dem Index 6 handelt es sich um ein Benchmark welcher mit der P2P Testinfrastruktur gestört wird. So soll die Störimmunität des Mesh Stacks getestet werden.
+Die Messungen 7 und 8 wurden aufgrund der Erfahrungen die mit den Resultaten der Messungen 1 bis 6 gesammelt werden konnten, nachträglich ergänzt. In Abschnitt \ref{sec:Validierung} wird genauer auf diese Problematik eingegangen.
+Die Dichte der Nachrichten ist bei diesen Messungen deutlich tiefer.
 
 
 \begin{table}[h]
@@ -258,9 +263,9 @@ Bei der Messung mit dem Index 6 handelt es sich um ein Benchmark welcher mit der
 \hline
 6 & Rand & 600s & 60 & Small & Yes & x &  &  \\ 
 \hline
-7 & Seq & 750s & 60 & Small & No & x &  &  \\ 
+7 & Seq & 750s & 10 & Small & No & x &  &  \\ 
 \hline
-8 & Seq & 750s & 60 & Large & No & x &  &  \\
+8 & Seq & 750s & 10 & Large & No & x &  &  \\
 \hline
 \end{tabular}
 \end{adjustbox}
@@ -272,23 +277,25 @@ Die Erläuterungen über die Bedeutung der Parameter ist in der folgenden Tabell
 
 \begin{table}[h]
 \centering
+\begin{adjustbox}{width=1\textwidth}
 \begin{tabular}{lll} 
 \toprule
 Parameter: & Gültige Werte: & Bedeutung: \\ 
 \hline
-Msg. Gen & Seq./Rand. & Nachrichten Generierung sequentiell oder pseudozufällig. \\
-Msg. Count & Ganze Zahlen & \begin{tabular}[t]{@{}l@{}}Anzahl der Nachrichten die pro Client Node\\versendet werden. \end{tabular} \\
-Payload & Small/Large & \begin{tabular}[t]{@{}l@{}}Grosse oder Kleine Payload gemäss Definition\\in Tabelle \ref{tab:AllgemeineBenchmarkParameter}.~\end{tabular} \\
+Msg. Gen & Seq/Rand & Nachrichten Generierung Sequentiell oder Pseudozufällig \ref{subsec:TrafficGeneration}. \\
+Duration & Ganze Zahlen & Dauer eines Benchmarks angegeben in Sekunden. \\
+Msg. Count & Ganze Zahlen & Anzahl der Nachrichten die pro Client Node versendet werden.\\
+Payload & Small/Large & Grosse oder Kleine Payload gemäss Definition in Tabelle.\\
 Disturbance & Yes/No & \begin{tabular}[t]{@{}l@{}}Gewollte Störung durch P2P Testinfrastruktur auf\\dem selben Channel. \end{tabular} \\
-Msg. Density & - & \begin{tabular}[t]{@{}l@{}}Dichte der Nachrichten. Verhältnis zwischen\\Benchmark Duration und Msg. Count. \end{tabular} \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \caption{Bedeutung Benchmark Parameter}
 \label{tab:BedeutungBenchmarkParameter}
 \end{table}
 
-\subsection{Allgemeine Benchmark Parameter}\label{subsec:AllgemeineBenchmarkParameter}
 
+\subsection{Allgemeine Benchmark Parameter}\label{subsec:AllgemeineBenchmarkParameter}
 
 Die oben erwähnten Messreihen haben nebst den variablen Parametern einige allgemeingültige Benchmark Parameter die in der Tabelle \ref{tab:AllgemeineBenchmarkParameter} aufgeführt sind.
 Diese sind für sämtliche Messungen innerhalb des jeweiligen Mesh Protokolls gültig.
