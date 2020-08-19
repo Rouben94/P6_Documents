@@ -256,17 +256,122 @@ Der Aufbau des Django Weberservers für die P2P-Testinfrastruktur ist in der Abb
 	\label{fig:FunktionenP2PWebserver}
 \end{figure}
 
-\textbf{URLs: }
+
+\textbf{URLs: } \\
 In der folgenden Tabelle sind alle URLs aufgelistet, welche verwendet wurden um auf die entsprechenden Views zu zeigen.
 \begin{itemize}
-	\item 127.0.0.1:8000/node\textunderscore list referenziert auf die View node\textunderscore list
-	\item 127.0.0.1:8000/chart referenziert auf die View chart
-	\item 127.0.0.1:8000/connect referenziert auf die View connect
-	\item 127.0.0.1:8000/info referenziert auf die View info
+	\item 127.0.0.1:8000/node\textunderscore list \hspace{2.5mm} referenziert auf die View node\textunderscore list
+	\item 127.0.0.1:8000/chart \hspace{10mm} referenziert auf die View chart
+	\item 127.0.0.1:8000/connect \hspace{6mm} referenziert auf die View connect
+	\item 127.0.0.1:8000/info \hspace{12.5mm} referenziert auf die View info
 \end{itemize} 
 
-\textbf{Views: }
+\vspace{5mm}
+\textbf{Views: } \\
+Es wurden vier Views im P2P-Webserver erstellt, die die Schnittstellen zu den Forms, den Models und der HTML-Dateien bilden:
+\begin{itemize}
+	\item Node\textunderscore list View
+	\item Chart View
+	\item Connect View
+	\item Info View
+\end{itemize} 
+Die Bedienung der einzelnen Seiten wird im Kapitel \ref{sec:BedienungMessinfrastruktur} erläutert.
 
-\textbf{Models: }
+\newpage
+\textbf{Models: } \\
+Für die Speicherung der Daten vom NRF52 Master, sind zwei Objekte verfügbar: 
+\begin{itemize}
+	\item Objekt Node
+	\item Objekt Channel
+\end{itemize} 
 
-\textbf{Templates: }
+\vspace{3mm}
+Die zwei Objekte sind miteinander verknüpft. Wenn ein Node Objekt erstellt wird können die dazugehörigen Channel Informationen dazu erstellt werden. Dadurch ist eine klare Struktur gegeben. Über das Node Objekt können die verschiedenen Channel Informationen abgerufen werden. \\
+
+
+Folgende Parameter können dem Objekt Node als Information mitgegeben werden:
+\begin{itemize}
+	\item MAC Adresse
+\end{itemize} 
+
+\vspace{3mm}
+Folgende Parameter können dem Objekt Channel als Information mitgegeben werden:
+\begin{itemize}
+	\item Channel Nummer
+	\item Signal to noise ratio
+	\item Packetloss
+	\item Node ID
+\end{itemize}
+
+\vspace{5mm}
+\textbf{Templates: } \\
+Als Template wurden zwei verschiedene Django Forms erstellt. Eine Form ist eine Anordnung an Eingabefeldern, die frei bestimmt werden können. Die Drop Down Auswahlmöglichkeiten sind in der Tabelle \ref{table:TabelleAuswahlfelder} aufgelistet. \\
+
+Für die Eingabe der Parameter, die auf dem P2P-Master eingestellt werden können, ist die Form ParamForm mit folgenden Eingabefeldern verfügbar:
+\begin{itemize}
+	\item Start Channel \hspace{5mm} -> Integer Feld
+	\item Stop Channel \hspace{6mm} -> Integer Feld
+	\item Size \hspace{22.3mm} -> Integer Feld
+	\item Mode \hspace{19.5mm} -> Drop Down Auswahlfeld
+	\item CCMA CA \hspace{10mm} -> Drop Down Auswahlfeld
+	\item Tx Power \hspace{13mm} -> Drop Down Auswahlfeld
+\end{itemize}
+
+\vspace{3mm}
+Für die Auswahl des Ports für die Serielle Verbindung zum Master, ist die Form PortForm mit folgenden Eingabefeldern verfügbar:
+\begin{itemize}
+	\item  Port \hspace{22mm} -> Drop Down Auswahlfeld
+\end{itemize}
+
+\begin{table}[H]
+	\centering
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{@{}llll|l|l|l|@{}}
+			\toprule
+			\multicolumn{7}{|c|}{\textbf{Auswahlfelder}}                                                                                                                                                                                    \\ \midrule
+			\multicolumn{1}{|c|}{\textbf{Auswahl Mode}}         & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\textbf{Auswahl CCMA CA}} &  & \multicolumn{1}{c|}{\textbf{Auswahl Tx Power}} &  & \multicolumn{1}{c|}{\textbf{Auswahl Port}} \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			\multicolumn{1}{|l|}{1 Mbit/s Nordic radio mode}    & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Off}                      &  & 0 dB                                           &  & Disconnect                                 \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			\multicolumn{1}{|l|}{2 Mbit/s Nordic radio mode}    & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Ed Mode}                  &  & 1 dB                                           &  & COM 1                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			\multicolumn{1}{|l|}{1 Mbit/s BLE}                  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier Mode}             &  & 2 dB                                           &  & COM 2                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			\multicolumn{1}{|l|}{2 Mbit/s BLE}                  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier and Ed Mode}      &  & 3 dB                                           &  & COM 3                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			\multicolumn{1}{|l|}{Long range 125 kbit/s TX}      & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier or Ed Mode}       &  & 4 dB                                           &  & COM 4                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			\multicolumn{1}{|l|}{Long range 500 kbit/s TX}      &                       &                                               &  & 5 dB                                           &  & COM 5                                      \\ \cmidrule(r){1-1} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			\multicolumn{1}{|l|}{IEEE 802.15.4-2006 250 kbit/s} &                       &                                               &  & 6 dB                                           &  & COM 6                                      \\ \cmidrule(r){1-1} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			&                       &                                               &  & 7 dB                                           &  & COM 7                                      \\ \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+			&                       &                                               &  & 8 dB                                           &  & \textbf{...}                               \\ \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Tabelle Auswahlfelder}
+	\label{table:TabelleAuswahlfelder}
+\end{table}
+
+In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe Forms ersichtlich. Die Daten werden mit einem Button, der ein HTTP-POST Ereignis auslöst, an die entsprechende View weitergeleitet.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{ParamForm.png}
+	\caption{Parameter Form}
+	\label{fig:ParamForm}
+\end{figure}
+
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{PortForm.png}
+	\caption{Port Form}
+	\label{fig:PortForm}
+\end{figure}
+
+\newpage
+
+\textbf{Serielle Kommunikation: } \\
+Die Serielle Kommunikation wird mit Hilfe der Python Bibliothek PySerial aufgebaut. Auf der P2P-Webserver Seite Connect, kann der Port ausgewählt werden, an dem der P2P-Master angeschlossen ist. Sobald die Verbindung zum Master aufgebaut ist, wird ein seperater Python Thread gestartet. In diesem Thread wird in einem while-loop das Serielle Interface permanent ausgelesen. Sobald der Master einen neuen Mess-Report schickt, wird dieser ausgewertet und es werden Node und Channel Objekte anhand der Reports erstellt. In der Abbildung \ref{fig:AblaufDjangoSerial} ist der Ablauf ersichtlich.
+
+Die erhaltenen Daten werden in der View Node\textunderscore List in einer Dynamischen Tabelle, die jede Sekunde Aktualisiert wird angezeigt. Zudem ist in der View Chart ein Visualisierung der Daten ersichtlich. Die Messergebnisse werden mit Hilfe der Bibliothek PlotLy dargestellt. \\
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Ablauf Django Serial.png}
+	\caption{Ablauf Django Serial}
+	\label{fig:AblaufDjangoSerial}
+\end{figure}
