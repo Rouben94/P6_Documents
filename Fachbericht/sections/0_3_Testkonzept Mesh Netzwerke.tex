@@ -188,6 +188,8 @@ Ein Mesh Benchmark folgt einem klar definierten Ablauf. Die Abbildung \ref{fig:M
 
 \subsection{Vergleichswerte und Messgrössen}\label{subsec:VergleichswerteundMessgrössenMesh}
 
+\subsubsection{Vergleichswerte}\label{subsubsec:Vergleichswerte}
+
 Zur Bestimmung der Performance eines Mesh Protokolls und dem Vergleich mit den anderen Protokollstacks werden verschiedene Vergleichswerte erfasst.
 Im Pflichtenheft zu dieser Arbeit (Anhang \ref{app:Pflichtenheft}) wurden diese Testkriterien bereits ausführlich behandelt.
 Folgende Vergleichswerte kommen nun in der Auswertung effektiv zum Tragen:
@@ -196,11 +198,13 @@ Folgende Vergleichswerte kommen nun in der Auswertung effektiv zum Tragen:
 	\item \textbf{Latenzzeit}: Bestimmung der Latenzzeit in Millisekunden eines Pakets das über das Mesh vom Client zum Server versendet wird.  
 	\item \textbf{Anzahl Hops}: Bestimmung der Anzahl Hops, über welche eine Nachricht übermittelt wird.
 	\item \textbf{Datenrate}: Messen der Datenrate in Bytes/s, welche zwischen zwei Teilnehmern erreicht wurde. 
-	\item \textbf{RSSI}: Erfassen des RSSI-Werts der eingehenden Pakete.
+%	\item \textbf{RSSI}: Erfassen des RSSI-Werts der eingehenden Pakete.
 	\item \textbf{Paketverlust}: Pakete welche ihr Ziel nicht erreichen konnten werden gezählt um so eine Paketverlustrate zu ermitteln.
 	\item \textbf{Aktive Radio Zeit}: Zur Abschätzung des Energieverbrauchs der Nodes im Mesh Betrieb, wird die Aktivdauer der Radio Schnittstelle gemessen.
 \end{itemize}
 
+
+\subsubsection{Messgrössen}\label{subsubsec:Messgrössen}
 
 Um diese Werte zu erfassen sind spezifische Messgrössen gefragt die auf den Nodes direkt erfasst werden können.
 Die untenstehende Auflistung zeigt die auf den Mesh Nodes erfassten Messgrössen, deren Generierung und wie diese in der Auswertung verwendet werden.
@@ -305,18 +309,23 @@ Sämtliche Benchmarks werden mit 50 Mesh Nodes durchgeführt. Davon sind jeweils
 
 \begin{table}[h]
 \centering
+\begin{adjustbox}{width=1\textwidth}
 \begin{tabular}{lccc} 
 \toprule
  & BT Mesh & Thread & Zigbee \\ 
 \hline
 Group addressing mode & Broadcast & Multicast & Unicast \\
-Message Ack (Appl. Layer) & No & No & No \\
+Application Layer & Models & CoAP & ZCL (Zigbee Cluster Library) \\
+MAC-Layer & BLE 1M & IEEE 802.15.4 & IEEE 802.15.4 \\
+Mesh Node Type & Relay & FTD (Full Thread Device) & Zigbee-Router \\
 Mesh Node Cnt. & 50 & 50 & 50 \\
 Client/Server Verhältnis & 25/25 & 25/25 & 25/25 \\
+Message Ack (Appl. Layer) & No & No & No \\
 Payload Size Small (Byte) & 8 & 8 & 8 \\
 Payload Size Large (Byte) & 32 & 50 & 50 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \caption{Allgemeine Benchmark Parameter}
 \label{tab:AllgemeineBenchmarkParameter}
 \end{table}
@@ -379,5 +388,5 @@ Das BMS empfängt die BRM via CLI (Command Line Interface) und speichert die Mes
 Mittels einem weiteren Python Skript und manueller Bearbeitung in Excel können die so erfassten Daten ausgewertet werden.
 
 \subsection{Messerwartung}\label{subsec:Messerwartung}
-\todo[inline]{Welche Resultate werden erwartet. Welcher der drei Stacks ist vermeintlich der Beste?}
+\todo[inline]{Cyrill: Welche Resultate werden erwartet. Welcher der drei Stacks ist vermeintlich der Beste?}
 

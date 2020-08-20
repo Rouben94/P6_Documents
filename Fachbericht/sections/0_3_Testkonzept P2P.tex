@@ -12,6 +12,8 @@ Im Nachfolgenden Abschnitt wird auf die Point to Point (P2P) Messung eingegangen
 \subsection{Anforderungen}\label{sec:AnforderungentP2P}
 
 \todo[inline]{Anforderungen an P2P Software beschreiben}
+\todo[inline]{Raffi}
+
 
 \subsection{Konzept}\label{sec:KonzeptP2P}
 
@@ -32,11 +34,10 @@ Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kan
 
 \todo[inline]{Testumgebungen sowie die Beziehungen der Knoten innerhalb der Point to Point Messung beschreiben.}
 
-\subsection{Ablauf}\label{sec:AblaufP2P}
-\todo[inline]{Ablauf eines Point to Point MAC Layer Benchmarks aus Anwendersicht beschreiben.}
 
 \subsection{Messgrössen}\label{sec:MessgrössenP2P}
 \todo[inline]{Erläuterung der Messgrössen die erfasst werden sollen. Inkl. Beschreibung wie dies technisch umgesetzt wird.}
+\todo[inline]{Raffi}
 
 \subsection{Messaufbau}\label{sec:Messaufbau}
 
@@ -48,37 +49,44 @@ Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kan
 \end{figure}
 
 \todo[inline]{Schema inkl. Beschreibung.}
+\todo[inline]{Raffi}
 
 
 \newpage
 \section{Bedienung Messinfrastruktur}\label{sec:BedienungMessinfrastruktur}
 
+\todo[inline]{Raffi: Flashen, vorbereiten usw.}
+\todo[inline]{Robin: Bedienung Webserver usw.}
+
+\subsection{Webserver}\label{sec:AufbauundBedienungderMessinfrastruktur}
+
+\subsection{Webserver}\label{sec:AufbauundBedienungderMessinfrastruktur}
 
 \subsection{Webserver}\label{sec:AufbauundBedienungderMessinfrastruktur}
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Webserver_Nodelist.png}
+	\includegraphics[width=\textwidth]{Webserver_Nodelist.png}
 	\caption{Webserver Nodelist View}
 	\label{fig:WebserverNodelistView}
 \end{figure}
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Webserver_nodelist_ausgeklappt.png}
+	\includegraphics[width=\textwidth]{Webserver_nodelist_ausgeklappt.png}
 	\caption{Webserver Nodelist View ausgeklappt}
 	\label{fig:WebserverNodelistViewausgeklappt}
 \end{figure}
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Webserver_Chart.png}
+	\includegraphics[width=\textwidth]{Webserver_Chart.png}
 	\caption{Webserver Chart View}
 	\label{fig:WebserverChartView}
 \end{figure}
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Webserver_Connection.png}
+	\includegraphics[width=\textwidth]{Webserver_Connection.png}
 	\caption{Webserver Connection View}
 	\label{fig:WebserverConnectionView}
 \end{figure}
@@ -115,11 +123,6 @@ Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Unters
 	\item  \textbf{\textit{Publish:}} Im \textit{Publishing-State} hat der Master Zeit die Daten an die Übergeordnete stelle zu Übermitteln (USB-UART). Die Slaves können in diesem State Energie Sparen. Alle Teilnehmer beginnen wieder im \textit{Discovery-State}, wo sie sich neu Synchronisieren. 
 \end{itemize}
 
-
-
-
-
-\todo[inline]{Beschreibung der Node-Firmware sowie der Auswertesoftware auf dem Raspi.}
 
 \subsection{Low Level Radio Driver}\label{sec:LowLevelRadioDriver}
 
@@ -165,7 +168,6 @@ Abbildung \ref{fig:RadioTransmitSequP2P} zeigt den Ablauf beim Senden eines Pake
 	\label{fig:RadioReceiveSequP2P}
 \end{figure}
 
-\todo[inline]{Bild mit RSSI Start ergänzen}
 
 Der Ablauf zum Empfangen eines Pakets wird in Abbildung \ref{fig:RadioReceiveSequP2P} dargestellt. Grundsätzlich ist der Ablauf gleich Aufgebaut wie beim Senden von einem Paket. Nach Initiieren mittels dem RXEN-Befehl fährt der Empfänger hoch und wartet auf den Empfang eines Pakets. Nach eingehen einer Preamble-Sequenz wird das Address-Feld geprüft. Dieses kann vorgängig festgelegt werden um nur Pakete mit übereinstimmender Adresse zu empfangen. Bei allen BLE-Modes erfolgt die Prüfung auf Hardware-Ebene (ohne Interaktion der CPU) ab. Beim \textit{IEEE802.15.4-Mode} steht dieses Feature nicht zur Verfügung. Das vergleichen des Adress-Feldes muss der Radio-Driver selbst übernehmen. Um die Signalstärke (RSSI) vom eingehenden Paket zu messen, wird eine Verknüpfung zwischen dem \textit{Address-Event} und dem \textit{RSSIStart-Task} aktiviert. Nach erfolgreichem Prüfen der CRC Checksumme wird mittels einer Verknüpfung des CRCOK-Event der Disable-Task ausgeführt. Beim Empfangen eines Pakets wartet der Radio-Driver während eines gewissen Timeouts auf den Disabled-Event. Die Empfangsfunktion gibt die Restzeit des Timeouts in Millisekunden zurück, wodurch sich ein erfolgreiches Empfangen prüfen lässt. Das Bufferhandling übernimmt der Radio-Driver und erwartet beim Senden und Empfangen von Daten eine vordefinierte \textit{Radio-Packet-Structure}. Zu beachten gilt es das die Daten erst nach dem End-Event  vollständig abgearbeitet wurden, da der Zugriff von der Hardware über DMA erfolgt. Ebenfalls wurde festgestellt das beim wechseln auf oder von dem \textit{IEEE802.15.4-Mode} der Kanalwechsel vor dem Modewechsel erfolgen muss. Ansonsten werden keine Pakete empfangen. \cite{nordic_semi_nrf_infocenter_radio_receive_sequence_2020}
 
@@ -254,10 +256,10 @@ Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver ges
 
  \newpage
 \subsubsection{Software Grundlagen}\label{subsubsec:SoftwareGrundlagen}
-Bei einer gewöhnlichen datengesteuerten Webseite wartet die Webanwendung auf eine HTTP-Anfrage des Browsers. Wird ein Anfrage empfangen so bestimmt die Anwendung auf der Grundlage der URL, ob ein GET oder POST Event ausgelöst wird. Je nach Anfrage wird somit aus einer Datenbank gelesen oder es wird in die Datenbank geschrieben. Die Anwendung schickt danach eine Antwort an den Web-Browser, wobei häufig eine HTML-Seite erzeugt wird, um die Antwort darzustellen. Diese Schritte sind in Django, wie in der Abblidung \ref{fig:DjangoAblauf} aufgeführt,  in separaten Dateien zusammengefasst.
+Bei einer gewöhnlichen datengesteuerten Webseite wartet die Webanwendung auf eine HTTP-Anfrage des Browsers. Wird ein Anfrage empfangen so bestimmt die Anwendung auf der Grundlage der URL, ob ein GET oder POST Event ausgelöst wird. Je nach Anfrage wird somit aus einer Datenbank gelesen oder es wird in die Datenbank geschrieben. Die Anwendung schickt danach eine Antwort an den Web-Browser, wobei häufig eine HTML-Seite erzeugt wird, um die Antwort darzustellen. Diese Schritte sind in Django, wie in der Abbildung \ref{fig:DjangoAblauf} aufgeführt,  in separaten Dateien zusammengefasst.
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Django Ablauf.png}
+	\includegraphics[width=0.8\textwidth]{Django Ablauf.png}
 	\caption{Django Funktionen}
 	\label{fig:DjangoAblauf}
 \end{figure}
@@ -279,7 +281,7 @@ Das Template ist eine Textdatei, in der die Struktur oder das Layout einer HTML-
 Der Aufbau des Django Weberservers für die P2P-Testinfrastruktur ist in der Abbildung \ref{fig:FunktionenP2PWebserver} ersichtlich.
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{DjangoSoftwaredoku.png}
+	\includegraphics[width=0.8\textwidth]{DjangoSoftwaredoku.png}
 	\caption{Funktionen P2P Webserver}
 	\label{fig:FunktionenP2PWebserver}
 \end{figure}
@@ -295,7 +297,7 @@ In der folgenden Tabelle sind alle URLs aufgelistet, welche verwendet wurden um 
 \end{itemize} 
 
 \vspace{5mm}
-\textbf{Views: } \\
+\paragraph{Views:}\label{par:Views}
 Es wurden vier Views im P2P-Webserver erstellt, die die Schnittstellen zu den Forms, den Models und der HTML-Dateien bilden:
 \begin{itemize}
 	\item Node\textunderscore list View
@@ -403,3 +405,8 @@ Die erhaltenen Daten werden in der View Node\textunderscore List in einer Dynami
 	\caption{Ablauf Django Serial}
 	\label{fig:AblaufDjangoSerial}
 \end{figure}
+
+
+\section{Fazit P2P}\label{sec:FazitP2P}
+
+\todo[inline]{Raffi und Robin: Todo!!}
