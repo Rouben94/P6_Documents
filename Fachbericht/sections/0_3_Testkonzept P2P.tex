@@ -76,17 +76,29 @@ Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt wird das Signal-Ra
 \todo[inline]{Raffi: Flashen, vorbereiten usw.}
 \todo[inline]{Robin: Bedienung Webserver usw.}
 
-\subsection{Webserver}\label{sec:AufbauundBedienungderMessinfrastruktur}
+\subsection{Schritt - Webserver Starten}\label{sec:SchrittWebserverStarten}
+Der Webserver wurde mit eine Windows Umgebung entwickelt und getestet. Die folgende Anleitung funktioniert nur mit einer Windows Maschine. Für die Verwendung mit Linux oder MacOS sind auf der Hompage von Django Anleitungen verfügbar.
+Bevor der Webserver gestartet werden kann, muss der Source-Code vom \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnotemark[\value{footnote}]} geklont werden. Auf der Ordnerebene \textbf{P6\_Software\textbackslash P2P\textbackslash Webserver\textbackslash p2p\_webserver} müssen folgende cmd Befehle ausgeführt werden.
+\footnotetext{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}}
 
-\subsection{Webserver}\label{sec:AufbauundBedienungderMessinfrastruktur}
+\begin{lstlisting}[style=DOS]
+Microsoft Windows [Version 10.0.18363.1016]
+(c) 2019 Microsoft Corporation. Alle Rechte vorbehalten.
 
-\subsection{Webserver}\label{sec:AufbauundBedienungderMessinfrastruktur}
-\begin{figure} [H]
-	\centering
-	\includegraphics[width=\textwidth]{Webserver_Nodelist.png}
-	\caption{Webserver Nodelist View}
-	\label{fig:WebserverNodelistView}
-\end{figure}
+C:\Users\GitHub\P6_Software\P2P\Webserver\p2p_webserver> .\myvenv\Scripts\activate
+(myvenv) C:\Users\GitHub\P6_Software\P2P\Webserver\p2p_webserver> python .\manage.py runserver
+Performing system checks...
+	
+System check identified no issues (0 silenced).
+August 20, 2020 - 22:01:13
+Django version 3.0.8, using settings 'p2p_site.settings'
+Starting development server at http://127.0.0.1:8000/   
+Quit the server with CTRL-BREAK.
+\end{lstlisting}
+
+Nachdem ist der Webserver gestartet und kann unter der Adresse \textbf{http://127.0.0.1:8000/} erreicht werden.
+
+\subsection{Schritt - Verbindungsaufbau}\label{sec:SchrittVerbindungsaufbau}
 
 \begin{figure} [H]
 	\centering
@@ -97,21 +109,29 @@ Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt wird das Signal-Ra
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=\textwidth]{Webserver_Chart.png}
-	\caption{Webserver Chart View}
-	\label{fig:WebserverChartView}
-\end{figure}
-
-\begin{figure} [H]
-	\centering
 	\includegraphics[width=\textwidth]{Webserver_Connection.png}
 	\caption{Webserver Connection View}
 	\label{fig:WebserverConnectionView}
 \end{figure}
 
 
-%\subsection{Interpretation der Messresultate für den Anwender}\label{sec:InterpretationderMessresultatefürdenAnwender}
-%\todo[inline]{Wie sind die Resultate zu interpretieren. Welche Schlüsse können/müssen aus den Resultaten gezogen werden. Welche Resultate bedeuten was?}
+\subsection{Schritt - Parameter Einstellen}\label{sec:SchrittParameterEinstellen}
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=\textwidth]{Webserver_Nodelist.png}
+	\caption{Webserver Nodelist View}
+	\label{fig:WebserverNodelistView}
+\end{figure}
+
+\subsection{Schritt - Channel Vergleichen}\label{sec:SchrittChannelVergleichen}
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=\textwidth]{Webserver_Chart.png}
+	\caption{Webserver Chart View}
+	\label{fig:WebserverChartView}
+\end{figure}
+
+
 
 \newpage
 \section{Soft- und Firmware}\label{sec:P2PSoft-undFirmware}
@@ -277,35 +297,35 @@ Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver ges
 Bei einer gewöhnlichen datengesteuerten Webseite wartet die Webanwendung auf eine HTTP-Anfrage des Browsers. Wird ein Anfrage empfangen so bestimmt die Anwendung auf der Grundlage der URL, ob ein GET oder POST Event ausgelöst wird. Je nach Anfrage wird somit aus einer Datenbank gelesen oder es wird in die Datenbank geschrieben. Die Anwendung schickt danach eine Antwort an den Web-Browser, wobei häufig eine HTML-Seite erzeugt wird, um die Antwort darzustellen. Diese Schritte sind in Django, wie in der Abbildung \ref{fig:DjangoAblauf} aufgeführt,  in separaten Dateien zusammengefasst.
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Django Ablauf.png}
+	\includegraphics[width=0.76\textwidth]{Django Ablauf.png}
 	\caption{Django Funktionen}
 	\label{fig:DjangoAblauf}
 \end{figure}
 
-\textbf{URLs: }
+\paragraph{URLs: }\label{par:1URLs}
 Die URL Datei leitet die Anfrage an die entsprechende View weiter. Damit dies gelingt wird ein URL-Mapper eingesetzt. Dieser dient dazu, die Anfrage so zu interpretieren, damit die richtige View aufgerufen wird. Zusätzlich erkennt der URL-Mapper Zeichenketten und Ziffern in der URL und kann diese abgleichen und anschliessend als Daten an die View-Funktion weitergeben.
 
-\textbf{Views: }
+\paragraph{Views: }\label{par:1Views}
 Die View ist eine Request-Handler-Funktion, die HTTP Anfragen empfängt un zurückgibt. Die View kann über die Model Funktion auf Daten in der Datenbank zugreifen. Über die Template Funktion beschreibt die View schlussendlich, wie die HTTP-Antwort formatiert werden muss.
 
-\textbf{Models: }
+\paragraph{Models: }\label{par:1Models}
 Ein Model ist ein Python Objekt, die die Struktur der Daten einer Anwendung definieren. Darüber hinaus stellt die Funktion die Mittel bereit, um die Daten in der Datenbank zu verwalten, wie z.B Hinzufügen, Löschen oder Ändern. Die Model Funktion ist somit die Schnittstelle zu der Datenbank.
 
-\textbf{Templates: }
+\paragraph{Templates: }\label{par:1Templates}
 Das Template ist eine Textdatei, in der die Struktur oder das Layout einer HTML-Seite definiert wird. Für die Struktur werden Platzhalter zur Darstellung des eigentlichen Inhalts  verwendet. Demnach kann die View-Funktion mit Hilfe vom Template eine dynamische HTML-Seite erzeugen und mit Daten von der Model-Funktion füllen.
 
- \newpage
+\newpage
 \subsubsection{Software Aufbau}\label{subsubsec:SoftwareAufbau}
 Der Aufbau des Django Weberservers für die P2P-Testinfrastruktur ist in der Abbildung \ref{fig:FunktionenP2PWebserver} ersichtlich.
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{DjangoSoftwaredoku.png}
+	\includegraphics[width=0.9\textwidth]{DjangoSoftwaredoku.png}
 	\caption{Funktionen P2P Webserver}
 	\label{fig:FunktionenP2PWebserver}
 \end{figure}
 
 
-\textbf{URLs: } \\
+\paragraph{URLs: }\label{par:2URLs}
 In der folgenden Tabelle sind alle URLs aufgelistet, welche verwendet wurden um auf die entsprechenden Views zu zeigen.
 \begin{itemize}
 	\item 127.0.0.1:8000/node\textunderscore list \hspace{2.5mm} referenziert auf die View node\textunderscore list
@@ -315,7 +335,7 @@ In der folgenden Tabelle sind alle URLs aufgelistet, welche verwendet wurden um 
 \end{itemize} 
 
 \vspace{5mm}
-\paragraph{Views:}\label{par:Views}
+\paragraph{Views:}\label{par:2Views}
 Es wurden vier Views im P2P-Webserver erstellt, die die Schnittstellen zu den Forms, den Models und der HTML-Dateien bilden:
 \begin{itemize}
 	\item Node\textunderscore list View
@@ -326,7 +346,7 @@ Es wurden vier Views im P2P-Webserver erstellt, die die Schnittstellen zu den Fo
 Die Bedienung der einzelnen Seiten wird im Kapitel \ref{sec:BedienungMessinfrastruktur} erläutert.
 
 \newpage
-\textbf{Models: } \\
+\paragraph{Models: }\label{par:2Models}
 Für die Speicherung der Daten vom NRF52 Master, sind zwei Objekte verfügbar: 
 \begin{itemize}
 	\item Objekt Node
@@ -352,7 +372,7 @@ Folgende Parameter können dem Objekt Channel als Information mitgegeben werden:
 \end{itemize}
 
 \vspace{5mm}
-\textbf{Templates: } \\
+\paragraph{Templates: }\label{par:2Templates}
 Als Template wurden zwei verschiedene Django Forms erstellt. Eine Form ist eine Anordnung an Eingabefeldern, die frei bestimmt werden können. Die Drop Down Auswahlmöglichkeiten sind in der Tabelle \ref{table:TabelleAuswahlfelder} aufgelistet. \\
 
 Für die Eingabe der Parameter, die auf dem P2P-Master eingestellt werden können, ist die Form ParamForm mit folgenden Eingabefeldern verfügbar:
@@ -397,7 +417,7 @@ In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe For
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{ParamForm.png}
+	\includegraphics[width=\textwidth]{ParamForm.png}
 	\caption{Parameter Form}
 	\label{fig:ParamForm}
 \end{figure}
@@ -405,21 +425,21 @@ In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe For
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{PortForm.png}
+	\includegraphics[width=0.5\textwidth]{PortForm.png}
 	\caption{Port Form}
 	\label{fig:PortForm}
 \end{figure}
 
 \newpage
 
-\textbf{Serielle Kommunikation: } \\
+\paragraph{Serielle Kommunikation: }\label{par:SerielleKommunikation}
 Die Serielle Kommunikation wird mit Hilfe der Python Bibliothek PySerial aufgebaut. Auf der P2P-Webserver Seite Connect, kann der Port ausgewählt werden, an dem der P2P-Master angeschlossen ist. Sobald die Verbindung zum Master aufgebaut ist, wird ein seperater Python Thread gestartet. In diesem Thread wird in einem while-loop das Serielle Interface permanent ausgelesen. Sobald der Master einen neuen Mess-Report schickt, wird dieser ausgewertet und es werden Node und Channel Objekte anhand der Reports erstellt. In der Abbildung \ref{fig:AblaufDjangoSerial} ist der Ablauf ersichtlich.
 
 Die erhaltenen Daten werden in der View Node\textunderscore List in einer Dynamischen Tabelle, die jede Sekunde Aktualisiert wird angezeigt. Zudem ist in der View Chart ein Visualisierung der Daten ersichtlich. Die Messergebnisse werden mit Hilfe der Bibliothek PlotLy dargestellt. \\
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Ablauf Django Serial.png}
+	\includegraphics[width=0.63\textwidth]{Ablauf Django Serial.png}
 	\caption{Ablauf Django Serial}
 	\label{fig:AblaufDjangoSerial}
 \end{figure}

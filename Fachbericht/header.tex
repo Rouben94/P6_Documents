@@ -56,6 +56,27 @@
 %%---Other Packages----------------------------------------------------------------------
 %\usepackage{xargs}                     %De­fine com­mands with many op­tional ar­gu­ments
 
+\lstset{
+	aboveskip=1ex,
+	backgroundcolor=\color{gray!25},
+	basicstyle=\small\ttfamily,
+	belowskip=1ex,
+	breaklines=true,
+	columns=fullflexible,
+	framerule=0pt,
+	framexrightmargin=0em,
+	framexleftmargin=0em,
+	numbers=left,
+	numberstyle=\footnotesize\sffamily,
+	tabsize=2
+}
+
+\lstdefinestyle{DOS}
+{
+	backgroundcolor=\color{black},
+	basicstyle=\scriptsize\color{white}\ttfamily
+}
+
 
 %%---Bibliography------------------------------------------------------------------------
 \usepackage[style=ieee,urldate=comp,backend=biber]{biblatex}
@@ -78,22 +99,22 @@
 
 %%---Optional Package Settings-----------------------------------------------------------
 %Listings-Settings: (requires \usepackage{listings}) => Example with Matlab Code
-\lstset{language=Matlab,%
-    basicstyle=\footnotesize\ttfamily,
-    breaklines=false,%
-    morekeywords={switch, case, otherwise},
-    keywordstyle=\color{Blue},%
-    tabsize=2,
-    %morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
-    identifierstyle=\color{Black},%
-    stringstyle=\color{Purple},
-    commentstyle=\color{Green},%
-    showstringspaces=false,%without this there will be a symbol in the places where there is a space
-    numbers=left,%
-    numberstyle={\tiny \color{black}},% size of the numbers
-    numbersep=9pt, % this defines how far the numbers are from the text
-    %emph=[1]{word1, word2,...},emphstyle=[1]\color{red}
-}							
+%\lstset{language=Matlab,%
+%    basicstyle=\footnotesize\ttfamily,
+%    breaklines=false,%
+%    morekeywords={switch, case, otherwise},
+%    keywordstyle=\color{Blue},%
+%    tabsize=2,
+%    %morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+%    identifierstyle=\color{Black},%
+%    stringstyle=\color{Purple},
+%    commentstyle=\color{Green},%
+%    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+%    numbers=left,%
+%    numberstyle={\tiny \color{black}},% size of the numbers
+%    numbersep=9pt, % this defines how far the numbers are from the text
+%    %emph=[1]{word1, word2,...},emphstyle=[1]\color{red}
+%}							
 
 %Hurenkinder und Schusterjungen verhindern (kein Scherz, Google es)
 \clubpenalty10000
