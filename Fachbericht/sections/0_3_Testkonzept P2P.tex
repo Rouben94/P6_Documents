@@ -33,6 +33,16 @@ Das Ausmessen der obigen Eingenschaften soll pro Kanal (Frequenz) möglich sein.
 \end{itemize}
 
 
+\subsection{Messgrössen}\label{sec:MessgrössenP2P}
+
+Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt wird das Signal-Rasuch-Verhältnis (SNR) und der Paketverlust gemessen. Die beiden Messgrössen können direkt mittels der nRF-Platform bestimmt werden.
+
+\begin{itemize}
+	\item \textbf{\textit{SNR}}: Gibt das Verhältnis zwischen der Signalleistung und Rauschleistung an. Als Rauschen werden jegliche Umwelteinflüsse (Störungen) bezeichnet. Zur Bestimmung des SNR muss die Rauschleistung und Signalleistung erfasst werden. Bei der Rauschleistungs-Detektion muss der Signalbringer (Sender) deaktiviert sein. Das Messen der Signalleistung + Rauschleistung erfolgt bei eingeschaltetem Sender.
+	\item \textbf{\textit{Paketverlust}}: Bildet das Verhältnis von gesendeten, zu erfolgreich Empfangenen Paketen. Zur Bestimmung werden Probe-Pakete generiert und vom Sender zum Empfänger übermittelt. Dieser zählt die Anzahl empfangener Pakete und meldet den Zählwert dem Sender. Anschliessend ist der Sender in der Lage den Paketverlust zu berechnen. 
+\end{itemize} 
+
+
 \subsection{Konzept}\label{sec:KonzeptP2P}
 
 Zur Realisierung der Point to Point Testinfrastruktur wurde auf eine \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Broadcasting bekannt). Dies hat den Vorteil das mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass die Messpfade nur unidirektional charakterisiert werden (nur von Master zu Slave oder Uplink-Pfad). Die Abweichung zwischen Up- und Downlink Pfad können durch wiederholen der Messung mit vertauschten Standorten verifiziert werden. 
@@ -50,14 +60,11 @@ Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer M
 
 Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kann eingesetzt werden um den Aufbau von PAN-Netzwerken zu optimieren. Mithilfe des Tools können zu Beispiel die Standorte der Teilnehmer eines Zigbee, Thread oder Bluetooth Mesh Netzwerks optimal gewählt werden. Zudem lassen sich während eines Messvorgangs gezielt Störungen in ein solches Netzwerk einbringen. Dadurch können die Netzwerke auf Störsicherheit geprüft werden. 
 
-\todo[inline]{Testumgebungen sowie die Beziehungen der Knoten innerhalb der Point to Point Messung beschreiben.}
 
-
-\subsection{Messgrössen}\label{sec:MessgrössenP2P}
-
-Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt wird das Signal-Rasuch-Verhältniss (SNR) und der Paketverlust gemessen. 
 
 \subsection{Messaufbau}\label{sec:Messaufbau}
+
+Bei der verwendeten Hardware handelt es sich um nRF52840 Mikrocontroller (siehe Abschnitt \ref{sec:HardwarePlattform}). Als Master dient das Development-Kit (DK), welches über eine USB-Buchse verfügt. Als Slaves kommen sowhl DKs als auch die USB-Dongle Variante in Frage. Letztere sind einfacher unterzubringen und werden in diesem Messaufbau bevorzugt. Um die Erhaltenen Daten auswerten zu können geschieht die Visualisierung mittels einem Laptop oder PC. Dieser muss mit der USB Buchse des Masters verbunden werden und die entsprechende Auswertesoftware gestartet sein. Im Folgenden Abschnitt wird die Inbetriebnahme und Bedienung der P2P-Testinfrastruktur genauer beschrieben. 
 
 \begin{figure} [H]
 	\centering
@@ -66,15 +73,31 @@ Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt wird das Signal-Ra
 	\label{fig:MessaufbauP2P}
 \end{figure}
 
-\todo[inline]{Schema inkl. Beschreibung.}
-\todo[inline]{Raffi}
+Abbildung \ref{fig:MessaufbauP2P} zeigt den Messaufbau der P2P-Testinfrastruktur. Der Master kann mittels Laptop mobil gehalten werden um so den optimalen Standort des Masters anzupeilen. 
 
 
 \newpage
-\section{Bedienung Messinfrastruktur}\label{sec:BedienungMessinfrastruktur}
+\section{Inbetriebnahme und Bedienung}\label{sec:InbetriebnahmeBedienungP2P}
 
-\todo[inline]{Raffi: Flashen, vorbereiten usw.}
-\todo[inline]{Robin: Bedienung Webserver usw.}
+
+Zur Inbetriebnahme müssen folgende Voraussetzungen erfüllt werden: 
+
+\begin{itemize}
+	\item 1x nRF52840 DK (Master) und 1x nRF52840 DK / Dongle (Slave)
+	\item Laptop mit folgender Software:
+	\begin{itemize}
+		\item Python 3.x
+		\item nrfutil (pip install nrfutil), zum Flashen der nRF52840. 
+		\item Django Framework, für Webserver
+		\item Browser, zur Darstellung der Weboberfläche
+	\end{itemize}
+\end{itemize}
+
+\todo[inline]{Robin: Was fehlt für Webserver?.}
+
+Eine Anleitung und der Sourcecode sind im Internet verfügbar \cite{github_p6_software_p2p_2020}. Um den Master und Slaves vorzubereiten sind die beiden mit der entsprechenden Firmware zu laden. Anschliessend können die Slaves im Raum platziert und der Master am Laptop eingesteckt werden.  
+
+\todo[inline]{Robin: wie weiter mit Webserver?}
 
 \subsection{Webserver}\label{sec:AufbauundBedienungderMessinfrastruktur}
 
@@ -222,7 +245,7 @@ Die Zeitsynchronisation wurde mittels einer Offset Kompensation gelöst. Der Zei
 	\label{fig:TimesyncBasicwithErrorP2P}
 \end{figure}
 
-Wie in Abbildung \ref{fig:TimesyncBasicwithErrorP2P} ersichtlich entsteht beim Auslesen der Zeit bis zum Senden eine Verzögerung die TxChainDelay, sowie beim Empfänger die RxChainDelay. Da Ziel ist es diese Verzögerungen so gering wie möglich zu halten. 
+Wie in Abbildung \ref{fig:TimesyncBasicwithErrorP2P} ersichtlich entsteht beim Auslesen der Zeit bis zum Senden eine Verzögerung die TxChainDelay, sowie beim Empfänger die RxChainDelay. Das Ziel ist es diese Verzögerungen so gering wie möglich zu halten. 
 
 \begin{figure} [H]
 	\centering
@@ -425,6 +448,20 @@ Die erhaltenen Daten werden in der View Node\textunderscore List in einer Dynami
 \end{figure}
 
 
-\section{Fazit P2P}\label{sec:FazitP2P}
+\section{Fazit}\label{sec:FazitP2P}
 
-\todo[inline]{Raffi und Robin: Todo!!}
+In den folgenden Abschnitten soll eine kurze Validierung und Verifizierung der Messresultate erfolgen. Anschliessend eine kurze Schlussbetrachtung als Abschluss. 
+
+\subsection{Validieren}\label{subsec:ValidierenP2P}
+
+Die vorgegebene Ziele zur Erfassung des SNR und Paketverlusts konnten erfüllt werden. Das Tool erfüllt mittels der grafischen Oberfläche seinen Zweck als universell einsetzbares Messwerkzeug. Das erfassen des SNRs funktioniert nicht immer optimal. Durch Störeinflüsse, welche sich schnell ändern (WLAN etc.) kann es vorkommen das die Angabe des SNRs nicht korrekt erfolgt. Die Ergebnisse des Paketverlust sehen valide aus. 
+
+\subsection{Verifikation}\label{subsec:VerifikationP2P}
+
+Die Messresultate sind stark von äusseren Störeinflüssen abhängig. Somit wird eine exakte Verifikation fast unmöglich. Die Messwerte korrelieren mit denjenigen des Radio-Test-Example \cite{nrf_connect_sdk_radio_test_example_2020}, welches einen ähnlichen Zweck erfüllt. 
+
+\subsection{Schlusswort}\label{subsec:SchlusswortP2P}
+
+Die Arbeit Analyse des MAC-Layers und Umsetzung der Testinfrastruktur hat viele Erkenntnisse im Bereich der hardwarenahen-Programmierung gebracht. Durch das erarbeiten der Firmware sind viele Module (Zeitsynchronisation, Statemachine, CLI, etc.) geschaffen worden, welche in weiteren Programmen integrierbar sind. Somit ergab sich eine ideale Grundlage um in die Netzwerk-Stacks, welche auf dem MAC-Layer basieren, einzutauchen. 
+
+\todo[inline]{Robin: Noch was zu ergänzen? Webserver nicht automatisch?}
