@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.18)  18 AUG 2020 08:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.18)  20 AUG 2020 19:17
 entering extended mode
 **./main.tex
 (main.tex
@@ -1647,12 +1647,61 @@ LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <7.5> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <7.5> not available
 (Font)              size <7> substituted on input line 2.
 
-) (sections/2_0_Methode.tex) (sections/3_0_Ergebnisse.tex)
-(sections/4_0_Interpretation.tex) (sections/5_0_Validierung.tex
-Underfull \vbox (badness 2073) has occurred while \output is active []
+) [2] (sections/2_0_Methode.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
- [2])
-[3] (main.aux)
+ []
+
+<graphics/Mesh_Testkonzeptschema.png, id=53, 678.1335pt x 793.16325pt>
+File: graphics/Mesh_Testkonzeptschema.png Graphic file (type png)
+<use graphics/Mesh_Testkonzeptschema.png>
+Package pdftex.def Info: graphics/Mesh_Testkonzeptschema.png  used on input lin
+e 11.
+(pdftex.def)             Requested size: 170.71652pt x 199.67003pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./graphics/Mesh_Testkonzeptschema.png>]
+LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
+24.
+
+("C:\Users\robin\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stix\ts1stix.fd"
+File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `stix' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+<graphics/Testaufbau_Labor.png, id=59, 1168.96725pt x 762.4485pt>
+File: graphics/Testaufbau_Labor.png Graphic file (type png)
+<use graphics/Testaufbau_Labor.png>
+Package pdftex.def Info: graphics/Testaufbau_Labor.png  used on input line 33.
+(pdftex.def)             Requested size: 170.71652pt x 111.34912pt.
+<graphics/Testaufbau_Haus_Schnitt.png, id=60, 1888.80656pt x 1700.60344pt>
+File: graphics/Testaufbau_Haus_Schnitt.png Graphic file (type png)
+<use graphics/Testaufbau_Haus_Schnitt.png>
+Package pdftex.def Info: graphics/Testaufbau_Haus_Schnitt.png  used on input li
+ne 50.
+(pdftex.def)             Requested size: 170.71652pt x 153.69643pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 3612) has occurred while \output is active []
+
+ [4 <./graphics/Testaufbau_Labor.png>]
+<graphics/Plan_Wohnung_Cyrill_Nodes_Placement.png, id=66, 1699.5495pt x 1232.20
+35pt>
+File: graphics/Plan_Wohnung_Cyrill_Nodes_Placement.png Graphic file (type png)
+<use graphics/Plan_Wohnung_Cyrill_Nodes_Placement.png>
+Package pdftex.def Info: graphics/Plan_Wohnung_Cyrill_Nodes_Placement.png  used
+ on input line 67.
+(pdftex.def)             Requested size: 170.71652pt x 123.77281pt.
+) [5 <./graphics/Testaufbau_Haus_Schnitt.png> <./graphics/Plan_Wohnung_Cyrill_N
+odes_Placement.png>] (sections/3_0_Ergebnisse.tex)
+[6] (sections/4_0_Interpretation.tex) [7] (sections/5_0_Validierung.tex)
+[8] (main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1662,21 +1711,22 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 31329 strings out of 480795
- 618298 string characters out of 2895574
- 857598 words of memory out of 3000000
- 46637 multiletter control sequences out of 15000+200000
- 664779 words of font info for 182 fonts, out of 3000000 for 9000
+ 31405 strings out of 480795
+ 620163 string characters out of 2895574
+ 858483 words of memory out of 3000000
+ 46686 multiletter control sequences out of 15000+200000
+ 669459 words of font info for 193 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,20n,110p,843b,1213s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 81i,20n,110p,1073b,1213s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/stix/stix-t
-1.enc}<C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/stix
-/STIXGeneral-Bold.pfb><C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/stix/STIXGeneral-Italic.pfb><C:/Users/robin/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/stix/STIXGeneral-Regular.pfb>
-Output written on main.pdf (3 pages, 244736 bytes).
+s1.enc}{C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/stix/s
+tix-t1.enc}<C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/stix/STIXGeneral-Bold.pfb><C:/Users/robin/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/stix/STIXGeneral-Italic.pfb><C:/Users/robin/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/stix/STIXGeneral-Regular.pfb>
+Output written on main.pdf (8 pages, 3429157 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 25714 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 26758 words of extra memory for PDF output out of 29859 (max. 10000000)
 
