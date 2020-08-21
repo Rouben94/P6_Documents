@@ -107,25 +107,22 @@ Der Laboraufbau ist ein Extremtest welcher die Leistungsgrenzen der Protokollsta
 \includegraphics[width=0.7\textwidth]{Testaufbau_Labor.png}
 \caption{Anordnung Labor Testumgebung, Messumgebung 1}\label{fig:AnordnungLaborTestumgebungMessumgebung1}
 \end{figure}
-	
-
 
 \paragraph{Einfamilienhaus}
 Die Testgeräte werden in einem Einfamilienhaus installiert und repräsentieren damit eine flächendeckende Heim-Automatisierung. Folgende Eingenschaften soll diese Messung abdecken:
 \begin{itemize}
 	\item Einfamilienhaus über mehrere Etagen.
-	\item Anzahl Sensoren und Aktoren vergleichbar gross.
 	\item Node-Dichte relativ gering.
 	\item Kleine Beeinflussung durch Nachbarsysteme sind zu erwarten.
 	\item Sämtliche Mesh-Beziehungen gemäss \ref{subsubsec:MeshBeziehungen} kommen vor und werden durch die bestehende Infrastruktur bestimmt.
 \end{itemize}
 
-Die Abbildung \ref{fig:Messumgebung2Einfamilienhaus} zeigt den Schnitt des Einfamilienhauses in welchem der Benchmark durchgeführt wurde. Die genaue Platzierung der Nodes pro Etage ist im Anhang xy einsehbar.
+Die Abbildung \ref{fig:Messumgebung2Einfamilienhaus} zeigt die Platzierung der Nodes auf den 4 Etagen des Einfamilienhauses.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Testaufbau_Haus_Schnitt.png}
-	\caption{Messumgebung 2 Einfamilienhaus}\label{fig:Messumgebung2Einfamilienhaus}
+	\includegraphics[width=\textwidth]{Plan_Haus_Raffi.png}
+	\caption{Platzierung der Nodes im Einfamilienhaus}\label{fig:Messumgebung2Einfamilienhaus}
 \end{figure}
 	
 \paragraph{Wohnung}
@@ -341,10 +338,6 @@ Abzüglich der Grösse der Header bieten die Protokolle noch Platz für eine Pay
 BT Mesh hingegen beginnt bereits bei einer Payload Grösse von 8 Byte mit der Fragmentierung. Somit werden bei den 32 Byte für die \textit{Payload Size Large} bereits 4 Frames versendet. Diverse Tests haben ergeben, dass hier der BT Mesh Stack an seine Leistungsgrenze stösst.
 Aus diesem Grund ist eine weitere Erhöhung der Payload nicht sinnvoll.
 
-
-
-
-\todo[inline]{Wieviele Clients / Server gibt es ? , Wie wurden die Nodes Konfigueriert (Router / Relaying), INwiefern sind diese Eigenschaften verwandt?}
 
 \subsection{Traffic Generation}\label{subsec:TrafficGeneration}
 

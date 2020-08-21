@@ -48,10 +48,10 @@ Nachfolgend wird auf die vier Schichten des Zigbee Stacks eingegangen und deren 
 \end{figure}
 
 \subsubsection{MAC und PHY Layer}\label{subsubsec:MACundPHYLayer}
-MAC und PHY Layer werden im Zigbee Protokoll Stack gebildet durch den IEEE 802.15.4 Standard für \textit{Wireless Personal Area Networks (WPAN)}.
+Der MAC und Physical Layer (PHY) werden im Zigbee Protokoll Stack gebildet durch den IEEE 802.15.4 Standard für \textit{Wireless Personal Area Networks} (WPAN).
 Während beispielsweise Wifi oder Bluetooth, welche auf dem selben 2.4 GHz ISM-Funkfrequenzband betrieben werden können, für hohe Datenübertragungsraten konzipiert wurden, ist dieser Standard für kleinere Datenmengen optimiert.
 Durch die Vermeidung von unnötigen Steuerinformationen, kann der IEEE 802.15.4 Standard auf einfachster Hardware realisiert und mit kleinstem Energieaufwand betrieben werden.
-Ideal also für sogenannte \textit{Wireless Sensor Networks (WSN)} wie beispielsweise Zigbee. \cite{markus_krause_rainer_konrad_ieee_2014}
+Ideal also für sogenannte \textit{Wireless Sensor Networks} (WSN) wie beispielsweise Zigbee. \cite{markus_krause_rainer_konrad_ieee_2014}
 
 
 \subsubsection{Network Layer}\label{subsubsec:Network Layer}
@@ -115,6 +115,13 @@ Für die Umsetzung von Zigbee Applikationen auf dem nRF52840 SoC \ref{subsec:Sys
 Da Thread und Zigbee den selben IEEE 802.15.4 MAC Layer benutzen, teilen sich die beiden Protokollstacks eine gemeinsame SDK.
 Innerhalb der SDK nutzen die beiden jedoch unterschiedliche Ressourcen.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Zigbee_SDK_Plattform_Design.png}
+	\caption{nRF5 SDK for Thread and Zigbee Plattform Design Referenz für Zigbee Applikationen \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}}
+	\label{fig:ZigbeePlattformDesign}
+\end{figure}
+
 Für Zigbee Applikationen kommt ein Plattform Design gemäss Abbildung \ref{fig:ZigbeePlattformDesign} zum Einsatz. 
 Als eigentlicher Zigbee Stack kommt dabei der \textit{ZBOSS} Zigbee Stack in der Version 3.3 von DSR\footnote{ZBOSS stack v3.3.0: \url{https://dsr-iot.com/}} zum Einsatz.
 Es handelt sich dabei um einen weit verbreiteten \textit{Zigbee PRO} Stack welcher die neuste Version der Zigbee Core Specification rev22 umsetzt.
@@ -125,10 +132,5 @@ Oberhalb des \textit{ZBOSS} Stacks befindet sich die Applikationsebene in welche
 
 
  
- \begin{figure}[h]
-	\centering
-	\includegraphics[width=0.6\textwidth]{Zigbee_SDK_Plattform_Design.png}
-	\caption{nRF5 SDK for Thread and Zigbee Plattform Design Referenz für Zigbee Applikationen \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}}
-	\label{fig:ZigbeePlattformDesign}
-\end{figure}
+
  

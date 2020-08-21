@@ -40,8 +40,6 @@ Die Stack bezogenen Implementationen der Benchmark Firmware werden in den indivi
 
 \begin{table}
 \centering
-\caption{Übersicht Shared Lib und Benchmark Management Module}
-\label{tab:UebersichtSoftware}
 \begin{tabular}{|l|l|l|c|} 
 \hline
 Library & Funktion & Modul & Referenz \\ 
@@ -93,6 +91,8 @@ Library & Funktion & Modul & Referenz \\
  & Stack Configuration & bm\_config.c & \ref{sec:ZigbeeUmsetzungBenchmark} \\
 \hline
 \end{tabular}
+\caption{Übersicht Shared Lib und Benchmark Management Module}
+\label{tab:UebersichtSoftware}
 \end{table}
 
 
@@ -241,7 +241,7 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 \subsubsection{Flash Save}\label{subsubsec:FlashSave}
 
-Mittels diesem Modul wird das abspeichern aus dem RAM in das FLASH mithilfe der Flash-Device-Storage Library abgearbeitet.  
+Mittels diesem Modul wird das abspeichern von Daten aus dem RAM in das FLASH mithilfe der Flash-Device-Storage Library behandelt. Dies ist die Library, welches in der nRF-SDK angeboten wird. Dabei handelt es sich  
 
 \subsubsection{CLI}\label{subsubsec:CLI}
 
