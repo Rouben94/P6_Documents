@@ -91,10 +91,7 @@ Zur Authentifizierung eines neuen Gerätes, dass dem Netzwerk beitreten möchte 
 Das Thread-Netzwerk wird mit einem netzwerkweiten Schlüssel geschützt. Von diesem Schlüssel werden weitere Schlüssel abgeleitet, um den MAC-Layer mit den IEEE 802.15.4 Nachrichten zu schützen. Dadurch wird das Netzwerk vom Abhören und Unterbrechen von Aussenstehenden geschüzt.\cite[Seite 1-5]{thread_group_inc_thread_2017}
 
 \subsection{Thread Software Development Kit}\label{subsec:ThreadSoftwareDevelopmentKit}
-In dieser Arbeit wird OpenThread verwendet. OpenThread ist eine open-sorce Implementation von Thread, die von Google umgesetzt und weiterentwickelt wird. Das Software Development Kit von Nordic Semiconductors beinhaltet eine Vorkompilierte Bibliothek des Openthread Stacks. Dank der guten Dokumentation und Beispiel-Code, wurde die Firmware auf der Thread SDK von Nordic aufgebaut. 
-
-\paragraph{Übersicht}
-
+In dieser Arbeit wird OpenThread verwendet. OpenThread ist eine open-sorce Implementation von Thread, die von Google umgesetzt und weiterentwickelt wird. Das Software Development Kit von Nordic Semiconductors beinhaltet eine Vorkompilierte Bibliothek des Openthread Stacks. Zuzüglich der Thread Bibliothek befinden sich auch die Normale SDK von Nordic Semiconudtor in dem Kit. Alle Module die für den SoC NRF52840 verfügbar sind, sind auch darin enthalten. Dank der guten Dokumentation und Beispiel-Code, wurde die Firmware auf der Thread SDK von Nordic aufgebaut. 
 
 \paragraph{IDE}
 Für die Erstellung der Firmware wurde die IDE Segger Embedded Systems verwendet. Die Firma Nordic Semiconductor empfiehlt mit dem gebrauch der SDK for Thread and ZigBee das arbeiten mit Segger. Da die alle Beispiel Anwendungen und Dokumentationen mit Segger gemacht wurden, war dies die beste Lösung.

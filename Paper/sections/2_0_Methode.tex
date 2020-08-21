@@ -6,14 +6,14 @@ Für den Vergleich der 3 Mesh Netzwerkstacks Bluetooth Mesh (BT Mesh), Thread un
 
 Die Benchmark Management Station (BMS) welche mit dem BMN via USB/UART kommuniziert, ist zuständig für die Verwaltung und Verarbeitung der Benchmarks. Während eines Benchmark Prozesses sollen sämtliche Messungen jedoch unabhängig von der BMS durchgeführt werden damit allfällige Latenzzeiten der USB/UART Verbindung die Resultate nicht verfälschen.
 
-\begin{figure}[h]
+\begin{wrapfigure}{r}{0.5\textwidth}
 	\centering
-	\includegraphics[width=6cm]{graphics/Mesh_Testkonzeptschema.png}
+	\includegraphics[width=0.5\textwidth]{graphics/Mesh_Testkonzeptschema.png}
 	\caption{Konzeptschema Testablauf}
 	\label{fig:KonzeptschemaTestablauf}
-\end{figure}
+\end{wrapfigure}
 
-
+\newpage
 \subsection{Messaufbau}
 Unterschiedliche Testumgebungen sollen die Benchmarks und schlussendlich den Vergleich der 3 Mesh Protokolle aussagekräftiger machen. Nachfolgende Umgebungen mit den entsprechenden Eigenschaften sollen getestet werden. Die Abbildungen zu den Testumgebungen zeigen jeweils die Platzierung der Nodes sowie deren Funktion und Gruppen Zugehörigkeit. Die Farbe Grün identifiziert den Node als Client Node während Blau für einen Server Nodes steht. Die Nummerierung zeigt welcher Node zu welcher Adressgruppe gehört. Ein Client Node in Gruppe 1 sendet jeweils Nachrichten zu allen Server Nodes in der selben Gruppe.
 
@@ -28,12 +28,12 @@ Der Laboraufbau ist ein Extremtest welcher die Leistungsgrenzen der Protokollsta
 	\item Die Mesh-Beziehungen werden künstlich bestimmt sodass einfache P2P Verbindungen mit oder ohne Hop entstehen.
 \end{itemize}
 
-\begin{figure}[h]
+\begin{wrapfigure}{r}{0.5\textwidth}
 	\centering
-	\includegraphics[width=6cm]{graphics/Testaufbau_Labor.png}
+	\includegraphics[width=0.5\textwidth]{graphics/Testaufbau_Labor.png}
 	\caption{Testaufbau Labor}
 	\label{fig:TestaufbauLabor}
-\end{figure}
+\end{wrapfigure}
 
 \paragraph{Einfamilienhaus}
 Die Testgeräte werden in einem Einfamilienhaus installiert und repräsentieren damit eine flächendeckende Heim-Automatisierung. Folgende Eingenschaften soll diese Messung abdecken:
@@ -45,12 +45,13 @@ Die Testgeräte werden in einem Einfamilienhaus installiert und repräsentieren 
 \end{itemize}
 
 Die Abbildung \ref{fig:TestaufbauHaus} zeigt den Schnitt des Einfamilienhauses in welchem der Benchmark durchgeführt wurde.
-\begin{figure}[h]
+
+\begin{wrapfigure}{r}{0.5\textwidth}
 	\centering
-	\includegraphics[width=6cm]{graphics/Testaufbau_Haus_Schnitt.png}
+	\includegraphics[width=0.5\textwidth]{graphics/Testaufbau_Haus_Schnitt.png}
 	\caption{Testaufbau Haus}
 	\label{fig:TestaufbauHaus}
-\end{figure}
+\end{wrapfigure}
 
 \paragraph{Wohnung}
 Ebenfalls als Heim-Automatisierung gedacht werden die Messungen in einer Wohnung durchgeführt.
@@ -62,13 +63,13 @@ Ebenfalls als Heim-Automatisierung gedacht werden die Messungen in einer Wohnung
 \end{itemize}
 
 Bei der Wohnung handelt es sich um eine 3.5 Zimmer Wohnung mit einer Wohnfläche von 122 Quadratmetern. Die genauen Abmessungen sowie die Platzierung der Nodes ist in Abbildung \ref{fig:TestaufbauWohnung} zu sehen.
-\begin{figure}[h]
+
+\begin{wrapfigure}{r}{0.5\textwidth}
 	\centering
-	\includegraphics[width=6cm]{graphics/Plan_Wohnung_Cyrill_Nodes_Placement.png}
+	\includegraphics[width=0.5\textwidth]{graphics/Plan_Wohnung_Cyrill_Nodes_Placement.png}
 	\caption{Testaufbau Wohnung}
 	\label{fig:TestaufbauWohnung}
-\end{figure}
-
+\end{wrapfigure}
 
 \subsection{Messerwartung}
 \todo[inline]{Welche Erwartungen haben wir von den verschiedenen Stacks. (Bluetooth routet nicht daher evtl. langsamer)}
