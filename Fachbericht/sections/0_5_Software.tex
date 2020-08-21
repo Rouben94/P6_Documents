@@ -209,10 +209,35 @@ Das Reporting teilt sich in eine Subscribe und Publish-Funktion auf. Der Master 
 	\caption{Ablauf des Reportings mit Handshake zwischen Master und Slave}\label{fig:ReportingAblauf}
 \end{figure}
 
-Die Abbildung \ref{fig:ReportingAblauf} zeigt den Ablauf des Reportings beispielhaft. Durch das Handshake verfahren, wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben, wird der Repoert-Entry 2 nochmals angefordert, da dieser nicht erfolgreich beim Master angekommen ist. 
+Die Abbildung \ref{fig:ReportingAblauf} zeigt den Ablauf des Reportings beispielhaft. Durch das Handshake verfahren, wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben, wird der Repoert-Entry 2 nochmals angefordert, da dieser nicht erfolgreich beim Master angekommen ist. \\
 
+Sobald der Report als nicht mehr gültig erkannt wird, wird das Reporting beidseitig beendet. Dies geschieht durch prüfen des Zeitstempel-Feld des jeweiligen Report Eintrages auf null. Falls keine Verbindung zustande kommt, brechen Master, sowie Slave nach einer bestimmten Anzahl von Versuchen das Reporting ab. \\
+
+
+Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
+
+\footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_report.c} \cite{rouben94_sharedlib_report_software_git_2020}}
 
 \subsubsection{Logging}\label{subsubsec:Logging}
+
+Das Logging-Modul ist für das verwalten der Log-Daten im RAM sowie im FLASH zuständig. Es definiert das Format eines Log-Eintrages, welcher bereits in Abschnitt \ref{subsubsec:Messgrössen} vorgestellt wurde. Die Länge eines Eintrages setzt sich zu 28-Bytes zusammen. Zudem beherbergt es den gesamten Log im RAM als Array von 3000 Einträgen. Diese konstante kam zustande, durch maximal 1000 Nachrichten pro Messung pro Client, welche verschickt werden. Ein Server soll von maximal drei Clients alle 1000 Einträge aufnehmen können, wodurch die Länge des Arrays auf 3000 festgelegt wurde. Somit werden 84kByte RAM für das Log reserviert. Die Funktionen des Moduls lassen sich folgendermassen beschreiben. 
+
+\begin{itemize}
+	\item \textit{\textbf{bm\_log\_clear\_ram()}} Wird genutzt um alle Log-Einträge aus dem RAM zu entfernen.
+	\item \textit{\textbf{bm\_log\_append\_ram()}} Fügt einen Log-Eintrag dem RAM hinzu. Das Modul verwaltet selbst den nächsten freien Index. 
+	\item \textit{\textbf{bm\_log\_clear\_flash()}} Bewirkt ein löschen des gesamten Logs im FLASH. 
+	\item \textit{\textbf{bm\_log\_save\_to\_flash()}} Schreibt den gesamten Log vom RAM in das FLASH. 
+	\item \textit{\textbf{bm\_log\_load\_from\_flash()}} Lädt den gesamten Log vom FLASH in das RAM. 
+	\item \textit{\textbf{bm\_log\_init()}} Initialisiert das Logging-Modul.
+\end{itemize} 
+
+Die Abarbeitung des Flash Moduls wurde bei der Zephyr direkt in diesem Log-Modul integriert. Handelt es sich um eine nRF-SDK findet die behandlung des Flashs in einem separaten Modul statt (siehe Abschnitt \ref{subsubsec:FlashSave}). \\
+
+Zephyr organisiert die Flash-Bereiche mithilfe eines Device-Tree-Source-Files (DTS). Darin werden verschiedene Partitionen definiert. Die Partition in welchen die Daten gespeichert werden, ist vom Bootloader für ein DFU-Upgrade reserviert. Sofern kein DFU-Upgrade im gang ist kann der Bereich beliebig genutzt werden. Die Partition muss mindestens 84kByte zur Verfügung Stellen. Der Zugriff auf das Flash ist über das Zephyr OS geregelt, welches einen Flash-Driver zur Verfügung stellt. Dieser kann eine Pages-Grösse von 4kByte löschen. 
+
+Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
+
+\footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_log.c} \cite{rouben94_sharedlib_log_software_git_2020}}
 
 \subsubsection{Flash Save}\label{subsubsec:FlashSave}
 
