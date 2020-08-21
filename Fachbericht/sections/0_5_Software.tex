@@ -21,7 +21,7 @@ Das Konzept der Messung wurde in Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerk
 	\item \textit{\textbf{nRF SDK for Mesh}}: Proprietäre SDK Library von Nordic Semiconductor für Bluetooth-Mesh. Ist zur Produktion freigegeben. \cite{nordic_semi_nrf_sdk_for_mesh_2020}
 \end{itemize}
 
-Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlich sein, um die Vergleichbarkeit nicht zu beeinträchtigen. Um eine möglichst unabhängig von der verwendeten Library zu sein, wurde auf eine selbst entwickelte Kommunikation über die P2P-Testinfrastruktur gesetzt. 
+Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlich sein, um die Vergleichbarkeit nicht zu beeinträchtigen. Um eine möglichst unabhängig von der verwendeten SDK zu sein, wurde auf die selbst entwickelte Kommunikation gesetzt. Diverse Module wurden der P2P-Testinfrastruktur nachempfunden. 
 
 
 \subsection{Umsetzung}\label{subsec:Software_Umsetzung}
@@ -148,7 +148,7 @@ Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Unters
 
 Die Zeitsynchronisation wurde identisch wie in Abschnitt \ref{sec:ZeitsynchronisationP2P} umgesetzt. Durch wiederholen der Master-Timestamps, nimmt der Synchronisationsfehler pro Hop zu. Angenommen pro Hop entstehen maximal 1.2us, so wäre der maximale Fehler nach sieben Hops 8.4us. Dieser Fehler ist vernachlässigbar klein veglichen mit dem Clock-Drift. Die genauigkeit des Quarz-Oszilators auf dem nRF52840 liegt bei +/- 10ppm. Das heisst pro Sekunde kann ein maximaler Clock-Drift von 20us entstehen. 
 
-Um die Funktionen von Master und Slave zu unterscheiden, wurde eine Subscribe- und Publish-Funktion definiert. Der Master verteilt den Timestamp über die Publish-Funktion. Der Slave Subcribet auf Timesync-Paket. Erhält der Slave ein Timesync-Paket, wiederholt dieser das Frame mittels der Publish-Funktion. Vor dem Publishen muss immer einen zufälligen Timeslot abgewartet werden, damit es nicht zu Kollisionen zwischen den Timesync-Paketen kommt. Die maximale Backoff-Zeit kann gemäss Abschnitt \ref{sec:BroadcastingCollissionsProbability} berechnet werden. Entsprechend muss das Zeitfenster zur Synchronisation genügend lang sein, damit alle Teilnehmer sich synchronisieren können.\\
+Um die Funktionen von Master und Slave zu unterscheiden, wurde eine Subscribe- und Publish-Funktion definiert. Der Master verteilt den Timestamp über die Publish-Funktion. Der Slave Subcribet auf Timesync-Pakete. Erhält der Slave ein Timesync-Paket, wiederholt dieser das Frame mittels der Publish-Funktion. Vor dem Publishen muss immer einen zufälligen Timeslot abgewartet werden, damit es nicht zu Kollisionen zwischen den Timesync-Paketen kommt. Die maximale Backoff-Zeit kann gemäss Abschnitt \ref{sec:BroadcastingCollissionsProbability} berechnet werden. Entsprechend muss das Zeitfenster zur Synchronisation genügend lang sein, damit alle Teilnehmer sich synchronisieren können.\\
 
 Ein Timesync-Pakete setzt sich aus folgenden Feldern zusammen. 
 
@@ -156,7 +156,7 @@ Ein Timesync-Pakete setzt sich aus folgenden Feldern zusammen.
 	\item \textit{uint64\_t} \textbf{LastTxTimestamp} Gibt den Zeitstempel (Master-Zeit) an welcher zum Zeitpunkt des versandt des Probepakets erfasst wurde. \\
 	\item \textit{uint64\_t} \textbf{NextState\_TS\_us} Definiert den Zeitpunkt um in den nächsten Schritt zu wechseln.\\
 	\item \textit{uint32\_t} \textbf{MAC\_Address\_LSB} Die Identifizierung des Time-Masters. Muss mit dem des vorherigen empfangenen Paket übereinstimmen. \\
-	\item \textit{uint8\_t} \textbf{seq} Sequenz-Feld zur Überprüfung ob das vorherige Timesync-Paket des Time-Masters das zuletzt versendete war. \\
+	\item \textit{uint8\_t} \textbf{seq} Sequenz-Feld zur Überprüfung ob das vorherige Timesync-Paket des Time-Masters das zuletzt versendete wurde. \\
 \end{itemize}
 
 Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
@@ -220,7 +220,7 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 \subsubsection{Logging}\label{subsubsec:Logging}
 
-Das Logging-Modul ist für das verwalten der Log-Daten im RAM sowie im FLASH zuständig. Es definiert das Format eines Log-Eintrages, welcher bereits in Abschnitt \ref{subsubsec:Messgrössen} vorgestellt wurde. Die Länge eines Eintrages setzt sich zu 28-Bytes zusammen. Zudem beherbergt es den gesamten Log im RAM als Array von 3000 Einträgen. Diese konstante kam zustande, durch maximal 1000 Nachrichten pro Messung pro Client, welche verschickt werden. Ein Server soll von maximal drei Clients alle 1000 Einträge aufnehmen können, wodurch die Länge des Arrays auf 3000 festgelegt wurde. Somit werden 84kByte RAM für das Log reserviert. Die Funktionen des Moduls lassen sich folgendermassen beschreiben. 
+Das Logging-Modul ist für das verwalten der Log-Daten im RAM sowie im FLASH zuständig. Es definiert das Format eines Log-Eintrages, welcher bereits in Abschnitt \ref{subsubsec:Messgrössen} vorgestellt wurde. Die Länge eines Eintrages setzt sich zu 28-Bytes zusammen. Zudem beherbergt dieses Modul die gesamten Log-Daten als Array von 3000 Log-Einträgen. Diese konstante kommt folgendermassen zustande. Pro Client können maximal 1000 Nachrichten verschickt werden. Ein Server soll mit maximal drei Clients in der sleben Gruppe sein. Damit er alle Einträge aufnehmen kann, wurde die Länge des Arrays auf 3000 festgelegt. Somit müssen 84kByte RAM und Flash für das Log zur Verfügung stehen. Die im Ablauf benötigten Funktionen des Moduls lassen sich folgendermassen beschreiben. 
 
 \begin{itemize}
 	\item \textit{\textbf{bm\_log\_clear\_ram()}} Wird genutzt um alle Log-Einträge aus dem RAM zu entfernen.
@@ -241,9 +241,26 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 \subsubsection{Flash Save}\label{subsubsec:FlashSave}
 
-Mittels diesem Modul wird das abspeichern von Daten aus dem RAM in das FLASH mithilfe der Flash-Device-Storage Library behandelt. Dies ist die Library, welches in der nRF-SDK angeboten wird. Dabei handelt es sich  
+Mittels diesem Modul wird das abspeichern von Daten aus dem RAM in das FLASH mithilfe der Flash-Device-Storage (FDS) API behandelt. Dies ist eine API, welche in der \textit{nRF SDK for Mesh}, sowie in der \textit{nRF SDK for Thread and Zigbee} angeboten wird. Sie erlaubt das abspeichern von Daten im Flash und implementiert ein \textit{Basic-Wearleveling}. \\
+
+Das FDS-Modul beginnt, falls nicht anders vorgesehen, direkt unterhalb der Bootloader-Adresse mit dem abspeichern der Daten im Flash. Mittels der \textit{sdk-config.h} Konfiguration werden die Länge des Flash-Bereichs und weitere Einstellungen für das FDS-Modul festgelegt. Die abzuspeichernden Daten werden in Records unterteilt. Zur Abspeicherung der Log-Daten wurde nur ein Record verwendet. \cite{nordic_semi_nrf5_sdk_flash_data_storage_2020}
+
+Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
+
+\footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_flash_save.c} \cite{rouben94_sharedlib_flash_save_software_git_2020}}
 
 \subsubsection{CLI}\label{subsubsec:CLI}
+
+Mit diesem Modul werden Ein- / Ausgaben über das Command-Line-Interface (CLI) ermöglicht. Die wohl einfachste Funktionalität ist das ausgeben über einen Log-Befehl. Dieser ist mittels \textit{bm\_cli\_log("Hello")} aufrufbar. Dieses Kommando wird auf die jeweilige Umgebung (SDK) angepasst. Bei der \textit{nRF SDK} werden Logs mittels dem \textit{NRF\_LOG()} Befehl, bei \textit{Zephyr} mithilfe von \textit{printk()} ausgegeben. \\
+
+Die zentrale Funktionalität des Modul bezieht sich auf das verarbeiten von CLI-Befehlen. Dafür werden verschiedene CLI-Befehlssätze angeboten, welche im Sub-Modul \textit{bm\_cli\_cmds} defniert sind. 
+
+\begin{itemize}
+	\item \textit{\textbf{setNodeSettings}} Mithilfe dieses Befehlssatzes können die Einstellungen eines Slaves (Server/Clients) geändert werden. Dieser löst eine darauffolgende Control-Messages aus mit den entsprechenden Parametern. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
+	\textit{setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1> 
+	<DST\_MAC\_2> <DST\_MAC\_3>}. Die Bedeutung der einzelnen Felder sind in Abschnitt ... erklärt. 
+	
+\end{itemize}
 
 
 
