@@ -340,7 +340,7 @@ Abbildung \ref{fig:TimesyncVerifikationP2P} zeigt den Signalverlauf der GPIOs vo
  \newpage
 \subsection{Webserver}\label{subsec:DjangoWebserver}
 \subsubsection{Django}\label{subsubsec:Django}
-Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver geschrieben. Django ist ein open-source Webframework, dass auf dem Model-View-Controller verfahren basiert und in der Programmiersprache Python geschrieben wurde. Das Framwork hat sein eigenes Benennungssystem für alle Funktionen und Komponenten. Zum Beispiel werde HTTP-Antworten als Views bezeichnet. Ein grosser Vorteil von Django ist die Administrationsseite. Die Admin-Seite ist Bestandteil des Projekts und dient dazu die Models zu verwalten. Models sind Objekte, die in einer Datenbank des Webservers gespeichert werden. Die gängigsten Datenbanksysteme, wie z.B. SQLLite sind in Django integriert und können einfach aktiviert oder bzw. implementiert werden. In der Tabelle \ref{table:FeaturesDjango} sind die wichtigsten Features von Django aufgelistet:
+Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver geschrieben. Django ist ein open-source Webframework, dass auf dem Model-View-Controller verfahren basiert und in der Programmiersprache Python geschrieben wurde. Das Framwork hat sein eigenes Benennungssystem für alle Funktionen und Komponenten. Zum Beispiel werde HTTP-Antworten als Views bezeichnet. Ein grosser Vorteil von Django ist die Administrationsseite. Die Admin-Seite ist Bestandteil des Projekts und dient dazu die Models zu verwalten. Models sind Objekte, die in einer Datenbank des Webservers gespeichert werden. Die gängigsten Datenbanksysteme, wie z.B. SQLLite sind in Django integriert und können einfach aktiviert oder bzw. implementiert werden. \cite{django_django_2020} In der Tabelle \ref{table:FeaturesDjango} sind die wichtigsten Features von Django aufgelistet:
 
 \begin{table}[H]
 	\centering
@@ -353,7 +353,7 @@ Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver ges
 			HTTP Bibliothek           & Python Unit Test Framework & Models für Datenbank  \\ \bottomrule
 		\end{tabular}
 	\end{adjustbox}
-	\caption{Features Django}
+	\caption{Features Django \cite{django_django_2020}}
 	\label{table:FeaturesDjango}
 \end{table}
 
@@ -363,7 +363,7 @@ Bei einer gewöhnlichen datengesteuerten Webseite wartet die Webanwendung auf ei
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=0.76\textwidth]{Django Ablauf.png}
-	\caption{Django Funktionen}
+	\caption{Django Funktionen \cite{mdn_web_docs_django_2019}}
 	\label{fig:DjangoAblauf}
 \end{figure}
 
