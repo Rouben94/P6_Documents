@@ -64,13 +64,13 @@ Library & Funktion & Modul & Referenz \\
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
-\multirow{4}{*}{\begin{tabular}[c]{@{}l@{}}Benchmark\\Management \end{tabular}} & Flash & Flasher.py & xy \\ 
+\multirow{4}{*}{\begin{tabular}[c]{@{}l@{}}Benchmark\\Management \end{tabular}} & Flash & Flasher.py & \ref{subsubsec:Flash} \\ 
 \cline{2-4}
- & Configurator & Configurator.py & xy \\ 
+ & Configurator & Configurator.py & \ref{subsubsec:Configurator} \\ 
 \cline{2-4}
- & Benchmark & \begin{tabular}[c]{@{}l@{}}Benchmark\_and\_\\Reporter.py \end{tabular} & xy \\ 
+ & Benchmark and Reporter & \begin{tabular}[c]{@{}l@{}}Benchmark\_and\_\\Reporter.py \end{tabular} & \ref{subsubsec:BenchmarkandReporter} \\ 
 \cline{2-4}
- & Analysis & Analysis.py & xy \\ 
+ & Analysis & Analysis.py & \ref{subsubsec:Analysis} \\ 
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
@@ -271,21 +271,43 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 \footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_cli.c} \cite{rouben94_sharedlib_cli_software_git_2020}}
 
+\subsubsection{Traffic Generator}\label{subsubsec:TrafficGenerator}
+
+Das Konzept um den Benchmark Traffic zu generieren wurde bereits in Abschnitt \ref{subsec:TrafficGeneration} erläutert. Im folgenden Modul werden die Sende-Zeitwerte von Nachrichten verwaltet oder generiert. \\
+
+Der Random-Mode unterteilt sich in ein..
+
+Raffi Morgen weiter
+
 \subsubsection{Low Level Radio}\label{subsubsec:LowLevelRadio}
 
-Das Radio-Interface wird mittels dem Selben Modul wie in der 
+Der Low-Level-Radio Treiber soll möglichst unabhängig direkt mit dem Radio-Interface operieren. Er stellt die für das Verwalten der Messung notwendigen Funktionen zur Verfügung. Senden oder Empfangen von Daten sollen mittels einfachen Aufrufen möglich sein. \\
+
+Das Radio-Interface wird fast identisch zur P2P-Testinfrastruktur bedient (siehe Abschnitt \ref{sec:LowLevelRadioDriver}). Lediglich auf das verwenden von Interrupts musste verzichtet werden, da die Meisten Radio-Driver der Mesh-Stacks diese bereits belegten. Insbesondere beim Zephyr findet die Initialisierung des Radio-Treiber vor dem Aufrufen der Statemachine statt. Somit wurden die Events durch pollen abgewartet. \\
+
+Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
+
+\footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_radio.c} \cite{rouben94_sharedlib_radio_software_git_2020}}
 
 \subsection{Benchmark Management}\label{subsec:Benchmark Management}
 
 Um die Verwaltung einer Messung zu automatisieren dienen folgende Python-Scripts. Die Scripts werden auf der BMS (Benchmark Managment Station) ausgeführt. Die Konfiguration der Teilnehmer wird mittels einem Excel-File durchgeführt. 
 
-\subsubsection{Flash}\label{subsubsec:Flash}
+\subsubsection{Flasher}\label{subsubsec:Flash}
 
 Dieses Script dient dazu alle nRF52-Dongles mit der entsprechenden Firmware zu flashen. Dazu liest das Script die Konfigurationsdatei aus. Mithilfe der dort vorhanden Informationen fordert das Script den Benutzer dazu auf die entsprechende Dongle-Nummer einzustecken. Sobald der Dongle eingesteckt wurde beginnt das Script mit dem Flashen. Dies geschieht mittels dem nrfutil-Tool. 
 
 \subsubsection{Configurator}\label{subsubsec:Configurator}
 
-\subsubsection{Benchmark}\label{subsubsec:Benchmark}
+Mithilfe des Configurator-Scripts kann eine voreingestellte Konfiguration auf die einzelnen Teilnehmer verteilt werden. Das Script arbeitet die Konfigurations-Einträge der Reihe nach ab. Mittels dem an der BMS angeschlossenen Masters sendet das Script den entsprechenden Konfigurationsbefehl ab. 
+
+\subsubsection{Benchmark and Reporter}\label{subsubsec:BenchmarkandReporter}
+
+Über dieses Script wird entweder eine Messung gestartet oder die Resultate einer vorhergehenden Messung einzuholen. Wird eine neuer Benchmark initiiert muss der Benutzer die Benchmark-Parameter angeben. Anschliessend startet das Script über den angeschlossenen Master den Vorgang. Während der Messung zeigt das Script die Meldungen des Masters an. \\
+
+Nach beenden der Messung können die Reports mithilfe des Scripts eingeholt werden. Dazu fordert das Script den Benutzer auf sich in die nähe des ersten Slaves zu begeben. Nach dem Bestätigen fängt das Script an die Daten des Slaves einzusammeln. Nach einsammeln aller Daten der Slaves schreibt das Script die Werte in ein CSV-File. 
 
 \subsubsection{Analysis}\label{subsubsec:Analysis}
+
+Sind alle Report-Daten in einem Excel-File abgespeichert, können die Messgrössen mithilfe des Analysis-Scripts berechnet werden. Dieses wertet die einzelnen Daten aus und gibt die Messdaten in einem ergänzenden CSV-File zur Verfügung. Dieses Script wird nicht länger benötigt da die Auswertung neu komplet in Excel erfolgt. 
 
