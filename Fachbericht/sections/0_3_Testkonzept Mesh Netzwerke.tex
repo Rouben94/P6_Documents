@@ -6,8 +6,6 @@
 \clearpage
 
 \section{Benchmark Konzept Mesh Netzwerke}\label{sec:BenchmarkKonzeptMeshNetzwerke}
-\todo[inline]{Cyrill}
-
 Um die Performance der drei Mesh Stacks zu vergleichen wurde ein einheitliches Benchmark Konzept erarbeitet. Dieses definiert die Mesh Parameter, Testumgebungen, den Ablauf sowie sämtliche Messgrössen und Messreihen. Nachfolgend wird detailliert auf dieses Konzept eingegangen.
 
 \subsection{Konzeptschema}\label{subsec:KonzeptschemaMesh}
@@ -184,11 +182,10 @@ Ein Mesh Benchmark folgt einem klar definierten Ablauf. Die Abbildung \ref{fig:M
 
 
 \subsection{Vergleichswerte und Messgrössen}\label{subsec:VergleichswerteundMessgrössenMesh}
+Beim Vergleich der Mesh Protokolle wird zwischen Vergleichswerten und Messgrössen unterschieden. Vergleichswerte sind meist aus einer oder mehreren Messgrössen berechnete Werte die einen aussagekräftigen Vergleich ermöglichen.
 
 \subsubsection{Vergleichswerte}\label{subsubsec:Vergleichswerte}
-
-Zur Bestimmung der Performance eines Mesh Protokolls und dem Vergleich mit den anderen Protokollstacks werden verschiedene Vergleichswerte erfasst.
-Im Pflichtenheft zu dieser Arbeit (Anhang \ref{app:Pflichtenheft}) wurden diese Testkriterien bereits ausführlich behandelt.
+Im Pflichtenheft zu dieser Arbeit (Anhang \ref{app:Pflichtenheft}) wurden die Testkriterien für den Vergleich bereits ausführlich behandelt.
 Folgende Vergleichswerte kommen nun in der Auswertung effektiv zum Tragen:
 
 \begin{itemize}
@@ -403,5 +400,9 @@ Mittels einem weiteren Python Skript und manueller Bearbeitung in Excel können 
 
 
 \subsection{Messerwartung}\label{subsec:Messerwartung}
-\todo[inline]{Cyrill: Welche Resultate werden erwartet. Welcher der drei Stacks ist vermeintlich der Beste?}
+Wie in der Übersicht \ref{subsec:VorarbeitenP5} bereits erwähnt, konnte im Rahmen der Vorarbeiten zu dieser Thesis der BT Mesh Stack bereits vertieft untersucht und erste Erfahrungen damit gesammelt werden. Bei den beiden anderen Stacks, Thread und Zigbee musste dies erst noch erfolgen.
+Bei eben diesen Vorarbeiten konnten bereits deutliche Unterschiede zwischen den Stacks beobachtet werden, hauptsächlich verursacht durch das Routing bei Thread und Zigbee sowieso das Flooding-Mesh bei BT Mesh.
+Aufgrund dieser Erfahrungen wird erwartet, dass die beiden auf dem IEEE 802.15.4 Standard aufbauenden Protokolle klare Vorteile haben werden da die Nachrichtenzustellung durch das Routing effizienter realisiert werden kann.
 
+
+\todo[inline]{Cyrill: Welche Resultate werden erwartet. Welcher der drei Stacks ist vermeintlich der Beste?}
