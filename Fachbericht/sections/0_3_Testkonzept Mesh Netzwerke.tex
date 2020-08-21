@@ -372,6 +372,9 @@ $i_{Msg}$ & Message Index
 \end{small}
 
 
+
+
+
 \subsection{Messdatenerfassung und Auswertung}\label{subsec:MessdatenerfassungundAuswertung}
 
 Für die Messdatenerfassung und Auswertung wird keine dedizierte Hardware verwendet. Die eigentlichen Messwerte die in Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} erläutert sind, werden auf den Mesh Nodes direkt erfasst und erst im RAM und später im Flash des Microcontrollers zwischen gespeichert. Von dort werden sie mittels BRM (Benchmark Report Message) an den BMN übertragen.
@@ -379,6 +382,25 @@ Auf den Mesh Nodes inkl. BMN findet noch keine Auswertung der Daten statt.
 Diese wird an das BMS ausgelagert.
 Das BMS empfängt die BRM via CLI (Command Line Interface) und speichert die Messwerte in einem Excel CSV File ab. Dazu kommt ein Python Skript zum Einsatz (siehe \ref{subsubsec:Benchmark}).
 Mittels einem weiteren Python Skript und manueller Bearbeitung in Excel können die so erfassten Daten ausgewertet werden.
+
+
+\subsection{Identifizierung der Teilnehmer}\label{subsec:NodeIdentification}
+
+\todo[inline]{Raffi: Kurze Beschreibung wie die 50 Nodes auseinander gehalten werden. (MAC-Address-LSB). Bei Dongle mit Bild wo die MAC-Adresse abzulessen ist. Hinweis zur erfassung in der Excel-Liste zur Konfiguration. Hinweis das die MAC-Addresse zufällig generiert, jedoch fix in jedem DOngle eingebrant ist (FICR--REgister). }
+
+\subsection{Konfiguration der Teilnehmer}\label{subsec:NodeConfiguration}
+
+\todo[inline]{Raffi: Kurze Beschreibung wie die 50 Nodes Konfigueriert werden können (über einfache CLI Befehle). Alle Felder kurz mit ihrer Bedeutung auf das Benchmark KOnzept beschreiben (Group-ID = Gruppe, DST\_MAC\_1 = Zigbee Direct Addressing... etc.. setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1> <DST\_MAC\_2> <DST\_MAC\_3>}
+
+
+\subsection{Starten einer Messung}\label{subsec:NodeConfiguration}
+
+\todo[inline]{Raffi: Kurze Beschreibung wie eine Messung gestartet wird und was die Beidern Fleder im Bfehl Bedeuten (verweis auf obiges KOnzept)}
+
+\subsection{Einholen der Messdaten}\label{subsec:NodeConfiguration}
+
+\todo[inline]{Raffi: Kurze Beschreibung wie eine das Reporting eingeleitet wird. Viele Detail ssind dazu ubereits im Software Teil vorhanden. }
+
 
 \subsection{Messerwartung}\label{subsec:Messerwartung}
 \todo[inline]{Cyrill: Welche Resultate werden erwartet. Welcher der drei Stacks ist vermeintlich der Beste?}

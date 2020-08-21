@@ -21,7 +21,7 @@ Das Konzept der Messung wurde in Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerk
 	\item \textit{\textbf{nRF SDK for Mesh}}: Proprietäre SDK Library von Nordic Semiconductor für Bluetooth-Mesh. Ist zur Produktion freigegeben. \cite{nordic_semi_nrf_sdk_for_mesh_2020}
 \end{itemize}
 
-Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlich sein, um die Vergleichbarkeit nicht zu beeinträchtigen. Um eine möglichst unabhängig von der verwendeten SDK zu sein, wurde auf die selbst entwickelte Kommunikation gesetzt. Diverse Module wurden der P2P-Testinfrastruktur nachempfunden. 
+Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlich sein, um die Vergleichbarkeit nicht zu beeinträchtigen. Um eine möglichst unabhängig von der verwendeten SDK zu bleiben, wurde auf eine selbst entwickelte Kommunikation im Benchmark Management gesetzt. Dazu wurden  diverse Module der P2P-Testinfrastruktur nachempfunden. 
 
 
 \subsection{Umsetzung}\label{subsec:Software_Umsetzung}
@@ -253,23 +253,35 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 Mit diesem Modul werden Ein- / Ausgaben über das Command-Line-Interface (CLI) ermöglicht. Die wohl einfachste Funktionalität ist das ausgeben über einen Log-Befehl. Dieser ist mittels \textit{bm\_cli\_log("Hello")} aufrufbar. Dieses Kommando wird auf die jeweilige Umgebung (SDK) angepasst. Bei der \textit{nRF SDK} werden Logs mittels dem \textit{NRF\_LOG()} Befehl, bei \textit{Zephyr} mithilfe von \textit{printk()} ausgegeben. \\
 
-Die zentrale Funktionalität des Modul bezieht sich auf das verarbeiten von CLI-Befehlen. Dafür werden verschiedene CLI-Befehlssätze angeboten, welche im Sub-Modul \textit{bm\_cli\_cmds} defniert sind. 
+Die zentrale Funktionalität des Modul bezieht sich auf das verarbeiten von CLI-Befehlen. Dafür werden verschiedene CLI-Befehlssätze angeboten, welche im Sub-Modul \textit{bm\_cli\_cmds.c} defniert sind. 
 
 \begin{itemize}
-	\item \textit{\textbf{setNodeSettings}} Mithilfe dieses Befehlssatzes können die Einstellungen eines Slaves (Server/Clients) geändert werden. Dieser löst eine darauffolgende Control-Messages aus mit den entsprechenden Parametern. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
+	\item \textit{\textbf{setNodeSettings}} Mithilfe dieses Befehlssatzes können die Einstellungen eines Slaves (Server/Clients) geändert werden. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
 	\textit{setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1> 
-	<DST\_MAC\_2> <DST\_MAC\_3>}. Die Bedeutung der einzelnen Felder sind in Abschnitt ... erklärt. 
-	
+	<DST\_MAC\_2> <DST\_MAC\_3>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet.
+	\item \textit{\textbf{getNodeReport}} Mithilfe dieses Befehlssatzes können die Reports eines Slaves (Server/Clients) abgefragt werden. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
+	\textit{getNodeReport <MAC in Integer format>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet. 
+	\item \textit{\textbf{startBM}} Mithilfe dieses Befehlssatzes wird ein Benchmark gestartet. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
+	\textit{startBM <BenchmarkTime (seconds)> <BenchmarkPacketsCount>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet. 
 \end{itemize}
 
+Erhält der Master eine der oben erwähnten Befehlssätze und löst eine darauffolgende Control-Message aus. Die zugewiesenen Paramter werden ebenfalls mithilfe des Moduls abgespeichert und initialisiert. 
 
+Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
+
+\footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_cli.c} \cite{rouben94_sharedlib_cli_software_git_2020}}
 
 \subsubsection{Low Level Radio}\label{subsubsec:LowLevelRadio}
 
+Das Radio-Interface wird mittels dem Selben Modul wie in der 
 
 \subsection{Benchmark Management}\label{subsec:Benchmark Management}
 
+Um die Verwaltung einer Messung zu automatisieren dienen folgende Python-Scripts. Die Scripts werden auf der BMS (Benchmark Managment Station) ausgeführt. Die Konfiguration der Teilnehmer wird mittels einem Excel-File durchgeführt. 
+
 \subsubsection{Flash}\label{subsubsec:Flash}
+
+Dieses Script dient dazu alle nRF52-Dongles mit der entsprechenden Firmware zu flashen. Dazu liest das Script die Konfigurationsdatei aus. Mithilfe der dort vorhanden Informationen fordert das Script den Benutzer dazu auf die entsprechende Dongle-Nummer einzustecken. Sobald der Dongle eingesteckt wurde beginnt das Script mit dem Flashen. Dies geschieht mittels dem nrfutil-Tool. 
 
 \subsubsection{Configurator}\label{subsubsec:Configurator}
 
