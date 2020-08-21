@@ -1,15 +1,12 @@
 \clearpage
 \section{Hardware Plattform}\label{sec:HardwarePlattform}
-\todo[inline]{Cyrill}
-
-\todo[inline]{Übersicht über die eingesetzte Hardware. Einleitung inkl. Erläuterung Unterschiede und Gemeinsamkeiten P2P und Mesh Test Hardware (Stichwort: Open Source, Open Hardware).}
 
 Für den Benchmark und den Vergleich der drei Mesh Protokolle sowie die P2P Testinfrastruktur wird eine einheitliche Hardwareplattform verwendet. Dies macht ein Vergleich der Testresultate möglich. Im Zentrum steht dabei der nRF52840 SoC von Nordic Semiconductor welcher eine voll umfängliche Plattform für Bluetooth und IEEE 802.15.4 darstellt. Damit besonders die P2P Testinfrastruktur einfach nutzbar ist, werden Entwicklungsboards vom Chip Hersteller eingesetzt welche vergleichsweise günstig und gut verfügbar sind. Nachfolgend wird auf die Hardware und deren Einsatz genauer eingegangen.
 
 
 \subsection{System on Chip}\label{subsec:SystemonChip}
 
-Der nRF52840 ist ein Highend System-on-Chip welcher gleichermassen Bluetooth 5 wie auch den IEEE 802.15.4 Wireless-Personal-Area-Network (WPAN) Standard unterstützt. Auf Wunsch sogar als Multiprotocol Lösung.
+Der nRF52840 ist ein Highend System-on-Chip welcher gleichermassen Bluetooth 5 wie auch den IEEE 802.15.4 Wireless Personal Area Network (WPAN) Standard unterstützt. Auf Wunsch sogar als Multiprotocol Lösung.
 Entscheidend für die vorliegende Anwendung ist, dass der SoC von den drei Organisationen Bluetooth SIG, Openthread und der Zigbee Alliance offiziell für das jeweilige Protokoll zertifiziert ist.
 Die Eckdaten des nRF52840 SoC sind in der Tabelle \ref{tab:EigenschaftennRF52840SoC} kurz zusammengefasst.
 
@@ -22,7 +19,7 @@ Clock frequency    & 64 MHz                                       \\
 Flash              & 1MB                                        \\
 RAM                & 256kB                                          \\
 Frequency Band     & 2.4GHz                                       \\
-Wireless protocols & IEEE 802.15.4 (Thread, Zigbee), Bluetooth 5.0  \\
+Wireless protocols & IEEE 802.15.4 (Thread, Zigbee), Bluetooth 5.2  \\
 \bottomrule
 \end{tabular}
 \caption{Eigenschaften nRF52840 SoC \cite{nordic_semiconductor_asa_nrf52840_2020}}
@@ -129,10 +126,10 @@ Die gemessenen Abstrahleigenschaften der beiden Antennen bestätigen schliesslic
 
 Die Erkenntnisse aus den vorliegenden Messungen waren hilfreich bei der Planung und Durchführung der Mesh Benchmarks. Beim Aufbau der Testnodes \ref{subsec:AufbauTestnode} flossen diese beispielsweise ein um die Ausrichtung der Antenne zu optimieren. Weiter halfen die Ergebnisse bei der Interpretation der weiteren Messungen da auch dort klar aufgezeigt werden konnte, dass die Positionierung und Ausrichtung der Antenne von entscheidender Bedeutung für die Performance ist.
 
-\subsection{Benchmark Management Station}\label{subsec:BenchmarkManagementStation}
-
-\todo[inline]{Cyrill: Raspi entfernen.}
-
-Die Benchmark Management Station (BMS) ist im Mesh Benchmark und in der P2P Testinfrastruktur unterschiedlich ausgeführt. Im Mesh Benchmark handelt es sich um einen PC welcher via USB UART Verbindung mit dem Benchmark Master Node (BMN) verbunden ist. Dazu kann jeder PC verwendet werden.
-Bei der P2P Testinfrastruktur stellt die BMS ein Raspberry Pi4 dar. Dieser wird ebenfalls wia USB UART mit dem BMN verbunden. Mit dem Einsatz eines Raspberry Pi's als BMS wird diese unabhängiger und kann einfach portiert werden. So kann die Testinfrastruktur als Messinstrument eingesetzt werden.
+%\subsection{Benchmark Management Station}\label{subsec:BenchmarkManagementStation}
+%
+%\todo[inline]{Cyrill: Raspi entfernen.}
+%
+%Die Benchmark Management Station (BMS) ist im Mesh Benchmark und in der P2P Testinfrastruktur unterschiedlich ausgeführt. Im Mesh Benchmark handelt es sich um einen PC welcher via USB UART Verbindung mit dem Benchmark Master Node (BMN) verbunden ist. Dazu kann jeder PC verwendet werden.
+%Bei der P2P Testinfrastruktur stellt die BMS ein Raspberry Pi4 dar. Dieser wird ebenfalls wia USB UART mit dem BMN verbunden. Mit dem Einsatz eines Raspberry Pi's als BMS wird diese unabhängiger und kann einfach portiert werden. So kann die Testinfrastruktur als Messinstrument eingesetzt werden.
 
