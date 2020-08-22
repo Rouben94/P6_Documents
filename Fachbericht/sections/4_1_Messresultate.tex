@@ -54,8 +54,11 @@ Sie sagt also aus wie viele Nachrichten mit einer gewissen Latenzzeit das Ziel e
 In diesem Beispiel haben rund 76 Prozent der Nachrichten die im BT Mesh Test versendet wurden das Ziel mit einer maximalen Latenzzeit von 10 Millisekunden erreicht.
 Die weitere Verteilung geht bis auf Latenzzeiten von über 300 Millisekunden wobei die Prozentzahl der Nachrichten in diesem Bereich sehr tief ist.
 
+Aus den in Abbildung \ref{fig:VerteilungderLatenzzeiten} aufgezeigten Latenzzeiten wurde in der Abbildung \ref{fig:DurchschnittlicheLatenzzeit} der Durchschnitt gebildet. Es handelt sich dabei wiederum um die Latenzzeit pro Hop. Im Falle von Zigbee ist dies erwähnenswert, da hier die Anzahl Hops nicht ausgelesen werden konnte (siehe Abschnitt \ref{subsubsec:AnzahlHops}) und die Resultate somit mit Vorsicht interpretiert werden müssen. Mehr dazu in der Validierung im Abschnitt \ref{subsec:Validierung}.
 
-Von den in Abbildung \ref{fig:VerteilungderLatenzzeiten} aufgezeigten Latenzzeiten wurde in der Abbildung \ref{fig:DurchschnittlicheLatenzzeit} der Durchschnitt gebildet. Es handelt sich dabei wiederum um die Latenzzeit pro Hop. Im Falle von Zigbee ist dies erwähnenswert, da hier die Anzahl Hops nicht ausgelesen werden konnte (siehe Abschnitt \ref{subsubsec:AnzahlHops}) und die Resultate somit mit Vorsicht interpretiert werden müssen. Mehr dazu in der Validierung im Abschnitt \ref{subsec:Validierung}.
+Der durchschnittliche Datendurchsatz der mit der Abbildung \ref{fig:DurchschnittlicherDurchsatz} aufgezeigt wird, muss mit der selben Vorsicht betrachtet werden. Denn auch hier werden die Werte pro Hop für die Berechnung verwendet.
+Diese Werte werden errechnet aus der Paketgrösse (Small oder Large) gemäss den Definitionen in Abschnitt \ref{subsec:AllgemeineBenchmarkParameter} und der Latenzzeit des übertragenen Pakets.
+
 
 \begin{figure}[!htbp]
 \centering
