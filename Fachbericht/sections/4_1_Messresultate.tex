@@ -4,23 +4,8 @@
 \clearpage
 
 \section{Messresultate}\label{sec:Messresultate}
-Bei der Durchführung der Messungen innerhalb des Mesh Benchmarks wurde für jede Messung unter den entsprechenden Bedingungen, die in der Tabelle \ref{tab:MessungenMeshBenchmark} nochmals zusammengefasst sind, ein Messprotokoll resp. eine Auswertung erstellt. Diese detaillierten Auswertungen wurden im Anhang \ref{app:MessprotokolleMeshBenchmark} dem Bericht angefügt.
-
-
-
-\todo[inline]{Cyrill}
-
-\ref{app:Paper}
-
-\todo[inline]{Verweis auf das Paper. Die wichtigsten Resultate und Erkenntnisse sind im Paper zusammengefasst.}
-
-\subsection{Resultate}\label{subsec:Resultate}
-\todo[inline]{Präsentation der Messresultate aus den Messungen der Mesh Netze. Als Grafiken inkl. beschreibendem Text. Keine Interpretation der Resultate. Vergleich der Resultate mit den verschiedenen Netzen.}
-
-\todo[inline]{Verweis auf Messauswertungen im Anhang.}
-
-\todo[inline]{Bild: Exemplarische Grafik z.B. Messung 1 Haus und Erläuterung wie die Messauswertungen zu lesen sind.}
-
+Bei der Durchführung der Messungen innerhalb des Mesh Benchmarks wurde für jede Messung unter den entsprechenden Bedingungen, die in der Tabelle \ref{tab:MessungenMeshBenchmark} nochmals zusammengefasst sind, ein Messprotokoll resp. eine Auswertung erstellt. Diese detaillierten Auswertungen sind im Anhang \ref{app:MessprotokolleMeshBenchmark} dem Bericht angefügt.
+Nachfolgend soll exemplarisch eine dieser Auswertungen erläutert werden um aufzuzeigen was diese darstellen und wie diese gelesen werden können.
 
 \begin{table}[h]
 \centering
@@ -50,27 +35,40 @@ Bei der Durchführung der Messungen innerhalb des Mesh Benchmarks wurde für jed
 \end{table}
 
 
+\subsection{Resultate}\label{subsec:Resultate}
+
+
+Die Messresultate welche ausführlich im Anhang \ref{app:MessprotokolleMeshBenchmark} zu finden sind wurden mit den Messindizes 1-8 gemäss Tabelle \ref{tab:tab:MessungenMeshBenchmark} versehen um diese eindeutig identifizieren zu können.
+Gemäss den Erläuterungen im Abschnitt \ref{subsec:Messreihe} wurden nicht alle Messungen in allen Messumgebungen durchgeführt.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{Latency_2_Wohnung.png}
-	\caption{Verteilung der Latenzzeiten}
+	\caption{Messung 2 Wohnung: Verteilung der Latenzzeiten pro Hop}
 	\label{fig:VerteilungderLatenzzeiten}
 \end{figure}
 
+Die Abbildungen \ref{fig:VerteilungderLatenzzeiten} bis \ref{fig:DurchschnittlicherEnergieverbrauch} zeigen die Messresultate der Messung 2 in der Messumgebung \textit{Wohnung}. Sie zeigen exemplarisch die Ergebnisse einer Messung wie sie durchgeführt wurden.
+In Abbildung \ref{fig:VerteilungderLatenzzeiten} ist die prozentuale Verteilung der Latenzzeiten pro Hop der drei Mesh Protokolle dargestellt.
+Sie sagt also aus wie viele Nachrichten mit einer gewissen Latenzzeit das Ziel erreicht haben.
+In diesem Beispiel haben rund 76 Prozent der Nachrichten die im BT Mesh Test versendet wurden das Ziel mit einer maximalen Latenzzeit von 10 Millisekunden erreicht.
+Die weitere Verteilung geht bis auf Latenzzeiten von über 300 Millisekunden wobei die Prozentzahl der Nachrichten in diesem Bereich sehr tief ist.
+
+
+Von den in Abbildung \ref{fig:VerteilungderLatenzzeiten} aufgezeigten Latenzzeiten wurde in der Abbildung \ref{fig:DurchschnittlicheLatenzzeit} der Durchschnitt gebildet. Es handelt sich dabei wiederum um die Latenzzeit pro Hop. Im Falle von Zigbee ist dies erwähnenswert, da hier die Anzahl Hops nicht ausgelesen werden konnte (siehe Abschnitt \ref{subsubsec:AnzahlHops}) und die Resultate somit mit Vorsicht interpretiert werden müssen. Mehr dazu in der Validierung im Abschnitt \ref{subsec:Validierung}.
 
 \begin{figure}[!htbp]
 \centering
 \begin{minipage}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Average_Latency_per_Hop.png}
-		\caption{Durchschnittliche Latenzzeit pro Hop}
+		\caption{Messung 2 Wohnung: Durchschnittliche Latenzzeit pro Hop}
 		\label{fig:DurchschnittlicheLatenzzeit}
 \end{minipage}
 \begin{minipage}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Average_Throughput_per_Hop.png}
-		\caption{Durchschnittlicher Durchsatz pro Hop}
+		\caption{Messung 2 Wohnung: Durchschnittlicher Durchsatz pro Hop}
 		\label{fig:DurchschnittlicherDurchsatz}
 \end{minipage}
 \end{figure}
@@ -81,21 +79,32 @@ Bei der Durchführung der Messungen innerhalb des Mesh Benchmarks wurde für jed
 \begin{minipage}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Average_Packet_Loss.png}
-		\caption{Durchschnittlicher Paketverlust}
+		\caption{Messung 2 Wohnung: Durchschnittlicher Paketverlust}
 		\label{fig:DurchschnittlicherPaketverlust}
 \end{minipage}
 \begin{minipage}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Average_Radio_Energy_Consumption.png}
-		\caption{Durchschnittlicher Energieverbrauch}
+		\caption{Messung 2 Wohnung: Durchschnittlicher Energieverbrauch}
 		\label{fig:DurchschnittlicherEnergieverbrauch}
 \end{minipage}
 \end{figure}
+
+\todo[inline]{Cyrill}
+
+
+\todo[inline]{Präsentation der Messresultate aus den Messungen der Mesh Netze. Als Grafiken inkl. beschreibendem Text. Keine Interpretation der Resultate. Vergleich der Resultate mit den verschiedenen Netzen.}
+
+\todo[inline]{Verweis auf Messauswertungen im Anhang.}
+
+\todo[inline]{Bild: Exemplarische Grafik z.B. Messung 1 Haus und Erläuterung wie die Messauswertungen zu lesen sind.}
 
 
 \subsection{Validierung}\label{subsec:Validierung}
 
 \todo[inline]{Überprüfung des eigenen Vorgehen usw.}
+\todo[inline]{Fehler in Latency Zigbee da Number of Hops nicht ausgelesen werden kann.}
+
 
 \subsection{Verifizierung}\label{subsec:Verifizierung}
 
