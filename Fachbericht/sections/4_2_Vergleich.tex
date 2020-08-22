@@ -9,7 +9,7 @@
 
 Der Vergleich der Mesh-Netzwerke basiert auf den Messergebnissen der Messreihen, welche in Abschnitt \ref{subsec:Messreihe} erwähnt wurden. Eine Messung unterscheidet sich durch die unterschiedlichen Messparameter, sowie durch den Messaufbau (Wohnung / Labor / Haus). Um einen Vergleich ziehen zu können, wird daher nach diesen beiden Hauptmerkmalen unterschieden.
 
-\subsection{Vergleich Messparameter}\label{subsec:VergleichMessparameter}
+\subsection{Vergleich Messreihen}\label{subsec:VergleichMessreihen}
 
 Dieser Vergleich bezieht sich auf die selbe Testumgebung, jedoch mit unterschiedlichen Messreihen. Als Referenz wurde die Umgebung des Labors ausgewählt, da Messergebnisse aller Messreihen vorliegen (siehe Anhang \ref{app:MessprotokolleMeshBenchmark}). Im Anschluss soll gezeigt werden wie sich die einzelnen Mesh-Netzwerke bei veränderten Messreihen verändern. \\
 
@@ -18,19 +18,25 @@ Zusammengefasst lassen sich die Messreihen folgendermassen unterscheiden.
 \begin{itemize}
 	\item \textbf{\textit{Payload}} Die Payload wurde zwischen den Messreihen 1-3, 2-4 und 7-8 von 8 Byte auf 32 Byte, resp. 50 Byte erhöht.
 	\item \textbf{\textit{Traffic Generation Mode}} Wurde zwischen den Messreihen 1-2 und 3-4 von Random auf Sequentiel geändert.
-	\item \textbf{\textit{Message Dichte}} Wurde zwischen den Messreihen 2-7 und 4-8 von 2.5 M/s auf 0.33 M/s gesenkt (Sekunden/Message).
+	\item \textbf{\textit{Message Dichte}} Wurde zwischen den Messreihen 2-7 und 4-8 von 2.5 M/s auf 0.33 M/s gesenkt (Messages/Sekunde).
 	\item \textbf{\textit{Disturbance}} Wurde zwischen den Messreihen 2-6 eingeschaltet.
 \end{itemize}
 
 \subsubsection{Latenzzeit}\label{subsec:VergleichLatenzzeitMessreihen}
-
-BT-Mesh anfällig auf Payload-Grösse. Bei Zigbee konnte das Hops Feld nicht ausgewertet werden. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Latenzzeiten_per_Hop_Messreihen.png}
 	\caption{Durchschnittliche Latenzzeit per Hop der einzelnen Messreihen im Vergleich}\label{fig:Latenzzeiten_per_Hop_Messreihen}
 \end{figure}
+
+Durch die in Abbildung \ref{fig:Latenzzeiten_per_Hop_Messreihen} dargestellten Latenzzeiten wird ersichtlich das Bluetooth-Mesh am anfälligsten auf ein erhöhen der Payload reagiert. Eine detaillierte Analyse zu diesem Phänomen wird in Abschnitt \ref{subsec:Bluetooth_Mesh} durchgeführt. Die Verzögerung bleibt bei Zigbee und Thread trotz Erhöhung der Paketlänge stabil. \\
+
+Ein Änderung des Traffic Generation Mode von Random auf Sequentiel bewirkt bei Bleutooth-Mesh eine drastische Abnahme der Latenz. Bei Zigbee ist zwischen der Messreihe 1 und 2 ebenfalls eine Abnahme zu verzeichnen, welche jedoch nicht zwischen der Reihe 3 und 4 feststellbar ist. Somit muss ein anderer Einfluss für die Abnahme verantwortlich sein (in Abschnitt \ref{subsec:Zigbee} untersucht). Die Änderung des Traffic Generation Mode wirkt bei Thread ebenfalls zu einer Verbesserung der Latenz.\\
+
+ Das senken der Message Dichte führt bei Bluetooth-Mesh zu einer markanten Abnahme der Latenz. Bei Thread und Zigbee bleibt die Latenz nahezu identisch. \\
+ 
+ Das einbringen von Störungen hat lediglich bei Bluetooth-Mesh einen negativen Einfluss, wodurch sich die Latenzzeit erhöht. 
 
 \subsubsection{Durchsatz}\label{subsec:VergleichDurchsatzMessreihen}
 
@@ -40,6 +46,15 @@ BT-Mesh anfällig auf Payload-Grösse. Bei Zigbee konnte das Hops Feld nicht aus
 	\includegraphics[width=1.0\textwidth]{Durchsatz_per_Hop_Messreihen.png}
 	\caption{Durchschnittlicher Durchsatz per Hop der einzelnen Messreihen im Vergleich}\label{fig:Durchsätze_per_Hop_Messreihen}
 \end{figure}
+
+
+Durch die in Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} dargestellten Durchsätze wird ersichtlich das Bluetooth-Mesh am anfälligsten auf ein erhöhen der Payload reagiert. Wie bereits in Abschnitt \ref{subsec:VergleichLatenzzeitMessreihen} dargelegt wird eine detaillierte Analyse zu diesem Phänomen in Abschnitt \ref{subsec:Bluetooth_Mesh} durchgeführt. Der Durchsatz steigt bei Zigbee und Thread durch die Erhöhung der Paketlänge stark an. Dies wird in Abschnitt \ref{subsec:Thread} für Thread und Abschnitt \ref{subsec:Zigbee} für Zigbee genauer Untersucht. \\
+
+Ein Änderung des Traffic Generation Mode von Random auf Sequentiel bewirkt bei Bleutooth-Mesh eine drastische Abnahme der Latenz. Bei Zigbee ist zwischen der Messreihe 1 und 2 ebenfalls eine Abnahme zu verzeichnen, welche jedoch nicht zwischen der Reihe 3 und 4 feststellbar ist. Somit muss ein anderer Einfluss für die Abnahme verantwortlich sein (in Abschnitt \ref{subsec:Zigbee} untersucht). Die Änderung des Traffic Generation Mode wirkt bei Thread ebenfalls zu einer Verbesserung der Latenz.\\
+
+Das senken der Message Dichte führt bei Bluetooth-Mesh zu einer markanten Abnahme der Latenz. Bei Thread und Zigbee bleibt die Latenz nahezu identisch. \\
+
+Das einbringen von Störungen hat lediglich bei Bluetooth-Mesh einen negativen Einfluss, wodurch sich die Latenzzeit erhöht. 
 
 \subsubsection{Paketverlust}\label{subsec:VergleichPaketverlustMessreihen}
 
@@ -106,11 +121,19 @@ Mithilfe der Unterschiedlichen Testumgebungen wird e
 
 \todo[inline]{Rouben}
 
+\todo[inline]{Erhöhung der Paketlänge führt zu steigerung des Durchsatzes -> Paylod von 50 Byte reicht aus um innerhalb eines Pakets versendet zu werden. }
+
 \subsection{Zigbee}\label{subsec:Zigbee}
 
 \todo[inline]{Cyrill}
 
+\todo[inline]{Warum ist die Latenzeit unabhängig vom Traffic Generation Mode zu beginn kleiner als Zuvor? -> Einrouten des Protocolls zu beginn noch nicht abgeschlossen)}
+
+\todo[inline]{Erhöhung der Paketlänge führt zu steigerung des Durchsatzes -> Paylod von 50 Byte reicht aus um innerhalb eines Pakets versendet zu werden. }
+
 \subsection{Bluetooth Mesh}\label{subsec:Bluetooth_Mesh}
+
+\todo[inline]{Die erhöhung der Latenzeit führte zu der drastischen steigerung der Latenzzeit und verringerung des Durchsatzes -> Darlegung der Ongoing Transactions und Überforderung des Stacks aufzeigen.}
 
 \todo[inline]{Raffi}
 
