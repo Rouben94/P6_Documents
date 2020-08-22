@@ -5,7 +5,7 @@
 \vspace*{\fill}
 \clearpage
 
-\section{Konzept Point to Point Messung}\label{sec:KonzeptP2PMessung}
+\section{P2P Messung}\label{sec:P2PMessung}
 
 Im Nachfolgenden Abschnitt wird auf die Point to Point (P2P) Messung eingegangen. Ziel ist es die Verbindung auf MAC-Layer auszumessen. Eine Mac-Layer Verbindung beschreibt die rudimentäre Kommunikation direkt über der physikalischen-Schicht. Dazu wird im folgenden auf das Messkonzept, den Messablauf und technische Einzelheiten eingegangen. 
 
@@ -44,7 +44,7 @@ Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt wird das Signal-Ra
 \end{itemize} 
 
 
-\subsection{Messprinzip}\label{sec:MessprinzipP2P}
+\subsection{Konzept}\label{sec:KonzeptP2P}
 
 Zur Realisierung der Point to Point Testinfrastruktur wurde auf eine \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Broadcasting bekannt). Dies hat den Vorteil das mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass die Messpfade nur unidirektional charakterisiert werden (nur von Master zu Slave oder Uplink-Pfad). Die Abweichung zwischen Up- und Downlink Pfad können durch wiederholen der Messung mit vertauschten Standorten verifiziert werden. 
 
@@ -409,7 +409,7 @@ Es wurden vier Views im P2P-Webserver erstellt, die die Schnittstellen zu den Fo
 	\item Connect View
 	\item Info View
 \end{itemize} 
-Die Bedienung der einzelnen Seiten wird im Kapitel \ref{sec:BedienungMessinfrastruktur} erläutert.
+Die Bedienung der einzelnen Seiten wurde im Kapitel \ref{sec:InbetriebnahmeBedienungP2P} bereits erläutert.
 
 \newpage
 \paragraph{Models: }\label{par:2Models}
@@ -439,44 +439,75 @@ Folgende Parameter können dem Objekt Channel als Information mitgegeben werden:
 
 \vspace{5mm}
 \paragraph{Templates: }\label{par:2Templates}
-Als Template wurden zwei verschiedene Django Forms erstellt. Eine Form ist eine Anordnung an Eingabefeldern, die frei bestimmt werden können. Die Drop Down Auswahlmöglichkeiten sind in der Tabelle \ref{table:TabelleAuswahlfelder} aufgelistet. \\
+Als Template wurden zwei verschiedene Django Forms erstellt. Das eine Form ist eine Anordnung an Eingabefeldern, die frei bestimmt werden können. Die Dropdown Auswahlmöglichkeiten sind in der Tabelle \ref{table:TabelleAuswahlfelder} aufgelistet.
 
-Für die Eingabe der Parameter, die auf dem P2P-Master eingestellt werden können, ist die Form ParamForm mit folgenden Eingabefeldern verfügbar:
+Für die Eingabe der Parameter, die auf dem P2P-Master eingestellt werden können, ist die Form \textit{ParamForm} mit folgenden Eingabefeldern verfügbar:
 \begin{itemize}
 	\item Start Channel \hspace{5mm} -> Integer Feld
 	\item Stop Channel \hspace{6mm} -> Integer Feld
 	\item Size \hspace{22.3mm} -> Integer Feld
 	\item Mode \hspace{19.5mm} -> Drop Down Auswahlfeld
-	\item CCMA CA \hspace{10mm} -> Drop Down Auswahlfeld
+	\item CSMA CA \hspace{10mm} -> Drop Down Auswahlfeld
 	\item Tx Power \hspace{13mm} -> Drop Down Auswahlfeld
 \end{itemize}
 
 \vspace{3mm}
-Für die Auswahl des Ports für die Serielle Verbindung zum Master, ist die Form PortForm mit folgenden Eingabefeldern verfügbar:
+Für die Auswahl des Ports für die Serielle Verbindung zum Master, ist die Form \textit{ParamForm} mit folgenden Eingabefeldern verfügbar:
 \begin{itemize}
 	\item  Port \hspace{22mm} -> Drop Down Auswahlfeld
 \end{itemize}
 
-\begin{table}[H]
-	\centering
-	\begin{adjustbox}{width=1\textwidth}
-		\begin{tabular}{@{}llll|l|l|l|@{}}
-			\toprule
-			\multicolumn{7}{|c|}{\textbf{Auswahlfelder}}                                                                                                                                                                                    \\ \midrule
-			\multicolumn{1}{|c|}{\textbf{Auswahl Mode}}         & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\textbf{Auswahl CCMA CA}} &  & \multicolumn{1}{c|}{\textbf{Auswahl Tx Power}} &  & \multicolumn{1}{c|}{\textbf{Auswahl Port}} \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			\multicolumn{1}{|l|}{1 Mbit/s Nordic radio mode}    & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Off}                      &  & 0 dB                                           &  & Disconnect                                 \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			\multicolumn{1}{|l|}{2 Mbit/s Nordic radio mode}    & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Ed Mode}                  &  & 1 dB                                           &  & COM 1                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			\multicolumn{1}{|l|}{1 Mbit/s BLE}                  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier Mode}             &  & 2 dB                                           &  & COM 2                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			\multicolumn{1}{|l|}{2 Mbit/s BLE}                  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier and Ed Mode}      &  & 3 dB                                           &  & COM 3                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			\multicolumn{1}{|l|}{Long range 125 kbit/s TX}      & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier or Ed Mode}       &  & 4 dB                                           &  & COM 4                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			\multicolumn{1}{|l|}{Long range 500 kbit/s TX}      &                       &                                               &  & 5 dB                                           &  & COM 5                                      \\ \cmidrule(r){1-1} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			\multicolumn{1}{|l|}{IEEE 802.15.4-2006 250 kbit/s} &                       &                                               &  & 6 dB                                           &  & COM 6                                      \\ \cmidrule(r){1-1} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			&                       &                                               &  & 7 dB                                           &  & COM 7                                      \\ \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-			&                       &                                               &  & 8 dB                                           &  & \textbf{...}                               \\ \cmidrule(lr){5-5} \cmidrule(l){7-7} 
-		\end{tabular}
-	\end{adjustbox}
-	\caption{Tabelle Auswahlfelder}
-	\label{table:TabelleAuswahlfelder}
+%\begin{table}[H]
+%	\centering
+%	\begin{adjustbox}{width=1\textwidth}
+%		\begin{tabular}{@{}llll|l|l|l|@{}}
+%			\toprule
+%			\multicolumn{7}{|c|}{\textbf{Auswahlfelder}}                                                                                                                                                                                    \\ \midrule
+%			\multicolumn{1}{|c|}{\textbf{Auswahl Mode}}         & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{\textbf{Auswahl CCMA CA}} &  & \multicolumn{1}{c|}{\textbf{Auswahl Tx Power}} &  & \multicolumn{1}{c|}{\textbf{Auswahl Port}} \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			\multicolumn{1}{|l|}{1 Mbit/s Nordic radio mode}    & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Off}                      &  & 0 dB                                           &  & Disconnect                                 \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			\multicolumn{1}{|l|}{2 Mbit/s Nordic radio mode}    & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Ed Mode}                  &  & 1 dB                                           &  & COM 1                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			\multicolumn{1}{|l|}{1 Mbit/s BLE}                  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier Mode}             &  & 2 dB                                           &  & COM 2                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			\multicolumn{1}{|l|}{2 Mbit/s BLE}                  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier and Ed Mode}      &  & 3 dB                                           &  & COM 3                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			\multicolumn{1}{|l|}{Long range 125 kbit/s TX}      & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Carrier or Ed Mode}       &  & 4 dB                                           &  & COM 4                                      \\ \cmidrule(r){1-1} \cmidrule(lr){3-3} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			\multicolumn{1}{|l|}{Long range 500 kbit/s TX}      &                       &                                               &  & 5 dB                                           &  & COM 5                                      \\ \cmidrule(r){1-1} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			\multicolumn{1}{|l|}{IEEE 802.15.4-2006 250 kbit/s} &                       &                                               &  & 6 dB                                           &  & COM 6                                      \\ \cmidrule(r){1-1} \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			&                       &                                               &  & 7 dB                                           &  & COM 7                                      \\ \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%			&                       &                                               &  & 8 dB                                           &  & \textbf{...}                               \\ \cmidrule(lr){5-5} \cmidrule(l){7-7} 
+%		\end{tabular}
+%	\end{adjustbox}
+%	\caption{Tabelle Auswahlfelder}
+%	\label{table:TabelleAuswahlfelder}
+%\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|l|l|l|l|} 
+\hline
+\multicolumn{4}{|c|}{\textbf{Auswahlfelder} } \\ 
+\hline
+\multicolumn{1}{|c|}{\textbf{Mode} } & \multicolumn{1}{c|}{\textbf{CSMA CA} } & \multicolumn{1}{c|}{\textbf{Tx Power} } & \multicolumn{1}{c|}{\textbf{Port} } \\ 
+\hline
+1 Mbit/s Nordic radio mode & Off & 0 dB & Disconnect \\ 
+\hline
+2 Mbit/s Nordic radio mode & Ed Mode & 1 dB & COM 1 \\ 
+\hline
+1 Mbit/s BLE & Carrier Mode & 2 dB & COM 2 \\ 
+\hline
+2 Mbit/s BLE & Carrier and Ed Mode & 3 dB & COM 3 \\ 
+\hline
+Long range 125 kbit/s TX & Carrier or Ed Mode & 4 dB & COM 4 \\ 
+\hline
+Long range 500 kbit/s TX &  & 5 dB & COM 5 \\ 
+\cline{1-1}\cline{3-4}
+IEEE 802.15.4-2006 250 kbit/s &  & 6 dB & COM 6 \\ 
+\cline{1-1}\cline{3-4}
+\multicolumn{1}{l}{} &  & 7 dB & COM 7 \\ 
+\cline{3-4}
+\multicolumn{1}{l}{} &  & 8 dB & \textbf{...}  \\
+\cline{3-4}
+\end{tabular}
+\caption{Tabelle Auswahlfelder}
+\label{table:TabelleAuswahlfelder}
 \end{table}
 
 In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe Forms ersichtlich. Die Daten werden mit einem Button, der ein HTTP-POST Ereignis auslöst, an die entsprechende View weitergeleitet.
