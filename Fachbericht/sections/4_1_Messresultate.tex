@@ -48,9 +48,9 @@ Gemäss den Erläuterungen im Abschnitt \ref{subsec:Messreihe} wurden nicht alle
 	\label{fig:VerteilungderLatenzzeiten}
 \end{figure}
 
-Die Abbildungen \ref{fig:VerteilungderLatenzzeiten} bis \ref{fig:DurchschnittlicherEnergieverbrauch} zeigen die Messresultate der Messung 2 in der Messumgebung \textit{Wohnung}. Sie zeigen exemplarisch die Ergebnisse einer Messung wie sie durchgeführt wurden.
+Die Abbildungen \ref{fig:VerteilungderLatenzzeiten} bis \ref{fig:DurchschnittlicherEnergieverbrauch} zeigen die Messresultate der Messung 2 in der Messumgebung \textit{Wohnung}. Sie stehen exemplarisch für die Messergebnisse aller Messreihen.
 In Abbildung \ref{fig:VerteilungderLatenzzeiten} ist die prozentuale Verteilung der Latenzzeiten pro Hop der drei Mesh Protokolle dargestellt.
-Sie sagt also aus wie viele Nachrichten mit einer gewissen Latenzzeit das Ziel erreicht haben.
+Sie sagt also aus wie viele Nachrichten von allen angekommenen Nachrichten, das Ziel mit einer bestimmten Latenzzeit erreicht haben.
 In diesem Beispiel haben rund 76 Prozent der Nachrichten die im BT Mesh Test versendet wurden das Ziel mit einer maximalen Latenzzeit von 10 Millisekunden erreicht.
 Die weitere Verteilung geht bis auf Latenzzeiten von über 300 Millisekunden wobei die Prozentzahl der Nachrichten in diesem Bereich sehr tief ist.
 
@@ -76,6 +76,10 @@ Diese Werte werden errechnet aus der Paketgrösse (Small oder Large) gemäss den
 \end{minipage}
 \end{figure}
 
+In der Abbildung \ref{fig:DurchschnittlicherPaketverlust} wird der prozentuale Paketverlust gezeigt über die gesamte Anzahl Nachrichten die während dem Benchmark versendet wurden. Die Paketverluste von einzelnen Client-Server Beziehungen werden nicht separat ausgewertet.
+Wiederum im Beispiel von BT Mesh sind in dieser Messung 2.07 \% der Pakete nicht am Ziel angekommen.
+Zuletzt wird mit dem Diagramm in Abbildung \ref{fig:DurchschnittlicherEnergieverbrauch} der durchschnittliche Energieverbrauch der Protokolle dargestellt.
+Der Energieverbrauch wurde abgeleitet aus der Aktivzeit des Funkmoduls. Diese wurde verrechnet mit dem Strombedarf des nRF52840 SoC's gemäss \ref{tab:EigenschaftennRF52840SoC}.
 
 \begin{figure}[!htbp]
 \centering
