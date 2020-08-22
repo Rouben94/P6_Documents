@@ -100,9 +100,6 @@ Sämtliche Firm- und Software Komponenten die für Mesh Benchmark sowie die P2P 
 
 \footnotetext{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}}
 
-
-
-
 \subsection{Shared Library}\label{subsec:SharedLibrary}
 
 Die \textit{Shared Library} ist die geteilte Bibliothek zwischen allen Mesh-Stacks. Sie beherbergt alle relevanten Module um eine Messung zu Verwalten. Der jeweilige Mesh-Stack ist lediglich für das senden und empfangen von Nachrichten, sowie zum Erfassen der Messdaten zuständig. 
@@ -128,7 +125,7 @@ Die Statemachine dient dazu den Ablauf, welcher in Abschnitt \ref{subsec:AblaufM
 \end{figure}
 
 
-Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Untersuchung ist der Source Code unter \cite{rouben94_sharedlib_software_git_2020} verfügbar.  \\
+Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Untersuchung ist der Source Code unter \cite{rouben94_sharedlib_software_git_2020} verfügbar.
 
 \begin{itemize}
 	\item \textbf{\textit{Init:}} Dieser Schritt initialisiert alle notwendige Funktionen (Radio, Timers, usw.). Ebenfalls rekonstruiert er die \textit{Log-Daten} indem er diese aus dem Flash in das RAM kopiert. Nach der erfolgreichen Initialisierung wechselt die Statemachine in den Control-State.
@@ -148,9 +145,9 @@ Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Unters
 
 Die Zeitsynchronisation wurde identisch wie in Abschnitt \ref{sec:ZeitsynchronisationP2P} umgesetzt. Durch wiederholen der Master-Timestamps, nimmt der Synchronisationsfehler pro Hop zu. Angenommen pro Hop entstehen maximal 1.2us, so wäre der maximale Fehler nach sieben Hops 8.4us. Dieser Fehler ist vernachlässigbar klein veglichen mit dem Clock-Drift. Die genauigkeit des Quarz-Oszilators auf dem nRF52840 liegt bei +/- 10ppm. Das heisst pro Sekunde kann ein maximaler Clock-Drift von 20us entstehen. 
 
-Um die Funktionen von Master und Slave zu unterscheiden, wurde eine Subscribe- und Publish-Funktion definiert. Der Master verteilt den Timestamp über die Publish-Funktion. Der Slave Subcribet auf Timesync-Pakete. Erhält der Slave ein Timesync-Paket, wiederholt dieser das Frame mittels der Publish-Funktion. Vor dem Publishen muss immer einen zufälligen Timeslot abgewartet werden, damit es nicht zu Kollisionen zwischen den Timesync-Paketen kommt. Die maximale Backoff-Zeit kann gemäss Abschnitt \ref{sec:BroadcastingCollissionsProbability} berechnet werden. Entsprechend muss das Zeitfenster zur Synchronisation genügend lang sein, damit alle Teilnehmer sich synchronisieren können.\\
+Um die Funktionen von Master und Slave zu unterscheiden, wurde eine Subscribe- und Publish-Funktion definiert. Der Master verteilt den Timestamp über die Publish-Funktion. Der Slave Subcribet auf Timesync-Pakete. Erhält der Slave ein Timesync-Paket, wiederholt dieser das Frame mittels der Publish-Funktion. Vor dem Publishen muss immer einen zufälligen Timeslot abgewartet werden, damit es nicht zu Kollisionen zwischen den Timesync-Paketen kommt. Die maximale Backoff-Zeit kann gemäss Abschnitt \ref{sec:BroadcastingCollissionsProbability} berechnet werden. Entsprechend muss das Zeitfenster zur Synchronisation genügend lang sein, damit alle Teilnehmer sich synchronisieren können.
 
-Ein Timesync-Pakete setzt sich aus folgenden Feldern zusammen. 
+Ein Timesync-Pakete setzt sich aus folgenden Feldern zusammen: 
 
 \begin{itemize}
 	\item \textit{uint64\_t} \textbf{LastTxTimestamp} Gibt den Zeitstempel (Master-Zeit) an welcher zum Zeitpunkt des versandt des Probepakets erfasst wurde. \\
@@ -168,9 +165,9 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 Im Control-State befinden sich alle Teilnehmer in Bereitschaft (wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben). Es wurden wie in Abschnitt \ref{subsubsec:Timesync} Publish- und Subscribe-Funktionen definiert um Control-Messages zu verteilen. Eine Control-Message beinhaltet die wichtigsten folgenden Felder.
 
 \begin{itemize}
-	\item \textit{uint32\_t} \textbf{MACAddressDst} Control-Messages erfüllen den Zweck den Zustand eines Teilnehmers oder den aller Teilnehmer zu ändern. Dazu wurde dieses Feld als Ziel MAC-Adresse festgelegt. Die MAC-Adresse 0xFFFFFFFF ist als Broadcast defniert. \\
+	\item \textit{uint32\_t} \textbf{MACAddressDst} Control-Messages erfüllen den Zweck den Zustand eines Teilnehmers oder den aller Teilnehmer zu ändern. Dazu wurde dieses Feld als Ziel MAC-Adresse festgelegt. Die MAC-Adresse 0xFFFFFFFF ist als Broadcast defniert.
 	
-	\item \textit{uint8\_t} \textbf{depth} Die Anzahl Relays, welche die Nachricht bereits absolviert hat. Der Master sendet immer mit der Tiefe 0. Wird ein Paket Relayed (Wiederholt) wird das Depth-Feld um eins erhöht. Erreicht ein Paket mit einer höheren Tiefe als die zuletzt empfangene Tiefe, so wird das Paket nicht erneut gesendet. Die zuletzt empfangenen Tiefe ist nur eine gewisse Zeit gültig um auf Veränderungen im Netzaufbau reagieren zu können. \\
+	\item \textit{uint8\_t} \textbf{depth} Die Anzahl Relays, welche die Nachricht bereits absolviert hat. Der Master sendet immer mit der Tiefe 0. Wird ein Paket Relayed (Wiederholt) wird das Depth-Feld um eins erhöht. Erreicht ein Paket mit einer höheren Tiefe als die zuletzt empfangene Tiefe, so wird das Paket nicht erneut gesendet. Die zuletzt empfangenen Tiefe ist nur eine gewisse Zeit gültig um auf Veränderungen im Netzaufbau reagieren zu können.
 	
 	
 	\begin{figure}[H]
@@ -185,23 +182,21 @@ Im Control-State befinden sich alle Teilnehmer in Bereitschaft (wie bereits in A
 \end{itemize}
 
 
-Ein Teilnehmer signalisiert über aufblinken der grünen-LED seine Bereitschaft um weiter Control-Messages verarbeiten zu können. Blinkt die blaue-LED auf zeigt dies an das der Teilnehmer eine Zustands- oder Parameteränderung erhalten hat. 
+Ein Teilnehmer signalisiert über aufblinken der grünen-LED seine Bereitschaft um weiter Control~-~Messages verarbeiten zu können. Blinkt die blaue-LED auf zeigt dies an das der Teilnehmer eine Zustands- oder Parameteränderung erhalten hat. 
 
 Das abfragen von Control-Messages erfolgt durch Pollen. Dies hat den Ursprung, das nicht bei allen SDKs der Interrupt des Radio-Interfaces frei ist. (siehe Abschnitt ...). 
 
+\todo[inline]{Referenz einfügen}
 
 Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
 
 \footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_control.c} \cite{rouben94_sharedlib_cotrol_software_git_2020}}
 
-
-
-
 \subsubsection{Report}\label{subsubsec:Report}
 
-Wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben werden vom Master anfragen an einen Slave getätigt um dessen Reports einzuholen. Dazu wird eine Control-Message vom Master initiiert um den Slave in den Reporting Zustand zu versetzten. Diese Nachricht wird zwar Relayed, jedoch funktioniert das anschliessende Reporting nur über eine direkte Verbindung. \\
+Wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben werden vom Master anfragen an einen Slave getätigt um dessen Reports einzuholen. Dazu wird eine Control-Message vom Master initiiert um den Slave in den Reporting Zustand zu versetzten. Diese Nachricht wird zwar Relayed, jedoch funktioniert das anschliessende Reporting nur über eine direkte Verbindung.
 
-Das Reporting teilt sich in eine Subscribe und Publish-Funktion auf. Der Master Subcribed auf Reports und sendet Reports-Requests an den Slave. Der Slave erwartet in der Publish-Funktion Report-Requests des Masters. Erhält ein Slave einen Request, so sendet er darufhin dem Master den verlangten Eintrag dem Master zu. \\
+Das Reporting teilt sich in eine Subscribe und Publish-Funktion auf. Der Master Subcribed auf Reports und sendet Reports-Requests an den Slave. Der Slave erwartet in der Publish-Funktion Report-Requests des Masters. Erhält ein Slave einen Request, so sendet er darufhin dem Master den verlangten Eintrag dem Master zu.
 
 \begin{figure}[H]
 	\centering
@@ -209,10 +204,9 @@ Das Reporting teilt sich in eine Subscribe und Publish-Funktion auf. Der Master 
 	\caption{Ablauf des Reportings mit Handshake zwischen Master und Slave}\label{fig:ReportingAblauf}
 \end{figure}
 
-Die Abbildung \ref{fig:ReportingAblauf} zeigt den Ablauf des Reportings beispielhaft. Durch das Handshake verfahren, wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben, wird der Repoert-Entry 2 nochmals angefordert, da dieser nicht erfolgreich beim Master angekommen ist. \\
+Die Abbildung \ref{fig:ReportingAblauf} zeigt den Ablauf des Reportings beispielhaft. Durch das Handshake verfahren, wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben, wird der Repoert-Entry 2 nochmals angefordert, da dieser nicht erfolgreich beim Master angekommen ist.
 
-Sobald der Report als nicht mehr gültig erkannt wird, wird das Reporting beidseitig beendet. Dies geschieht durch prüfen des Zeitstempel-Feld des jeweiligen Report Eintrages auf null. Falls keine Verbindung zustande kommt, brechen Master, sowie Slave nach einer bestimmten Anzahl von Versuchen das Reporting ab. \\
-
+Sobald der Report als nicht mehr gültig erkannt wird, wird das Reporting beidseitig beendet. Dies geschieht durch prüfen des Zeitstempel-Feld des jeweiligen Report Eintrages auf null. Falls keine Verbindung zustande kommt, brechen Master, sowie Slave nach einer bestimmten Anzahl von Versuchen das Reporting ab.
 
 Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
 
@@ -231,7 +225,7 @@ Das Logging-Modul ist für das verwalten der Log-Daten im RAM sowie im FLASH zus
 	\item \textit{\textbf{bm\_log\_init()}} Initialisiert das Logging-Modul.
 \end{itemize} 
 
-Die Abarbeitung des Flash Moduls wurde bei der Zephyr direkt in diesem Log-Modul integriert. Handelt es sich um eine nRF-SDK findet die behandlung des Flashs in einem separaten Modul statt (siehe Abschnitt \ref{subsubsec:FlashSave}). \\
+Die Abarbeitung des Flash Moduls wurde bei der Zephyr direkt in diesem Log-Modul integriert. Handelt es sich um eine nRF-SDK findet die behandlung des Flashs in einem separaten Modul statt (siehe Abschnitt \ref{subsubsec:FlashSave}).
 
 Zephyr organisiert die Flash-Bereiche mithilfe eines Device-Tree-Source-Files (DTS). Darin werden verschiedene Partitionen definiert. Die Partition in welchen die Daten gespeichert werden, ist vom Bootloader für ein DFU-Upgrade reserviert. Sofern kein DFU-Upgrade im gang ist kann der Bereich beliebig genutzt werden. Die Partition muss mindestens 84kByte zur Verfügung Stellen. Der Zugriff auf das Flash ist über das Zephyr OS geregelt, welches einen Flash-Driver zur Verfügung stellt. Dieser kann eine Pages-Grösse von 4kByte löschen. 
 
@@ -251,14 +245,13 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 \subsubsection{CLI}\label{subsubsec:CLI}
 
-Mit diesem Modul werden Ein- / Ausgaben über das Command-Line-Interface (CLI) ermöglicht. Die wohl einfachste Funktionalität ist das ausgeben über einen Log-Befehl. Dieser ist mittels \textit{bm\_cli\_log("Hello")} aufrufbar. Dieses Kommando wird auf die jeweilige Umgebung (SDK) angepasst. Bei der \textit{nRF SDK} werden Logs mittels dem \textit{NRF\_LOG()} Befehl, bei \textit{Zephyr} mithilfe von \textit{printk()} ausgegeben. \\
+Mit diesem Modul werden Ein- / Ausgaben über das Command-Line-Interface (CLI) ermöglicht. Die wohl einfachste Funktionalität ist das ausgeben über einen Log-Befehl. Dieser ist mittels \textit{bm\_cli\_log("Hello")} aufrufbar. Dieses Kommando wird auf die jeweilige Umgebung (SDK) angepasst. Bei der \textit{nRF SDK} werden Logs mittels dem \textit{NRF\_LOG()} Befehl, bei \textit{Zephyr} mithilfe von \textit{printk()} ausgegeben.
 
 Die zentrale Funktionalität des Modul bezieht sich auf das verarbeiten von CLI-Befehlen. Dafür werden verschiedene CLI-Befehlssätze angeboten, welche im Sub-Modul \textit{bm\_cli\_cmds.c} defniert sind. 
 
 \begin{itemize}
 	\item \textit{\textbf{setNodeSettings}} Mithilfe dieses Befehlssatzes können die Einstellungen eines Slaves (Server/Clients) geändert werden. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
-	\textit{setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1> 
-	<DST\_MAC\_2> <DST\_MAC\_3>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet.
+	\textit{setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1> \linebreak <DST\_MAC\_2> <DST\_MAC\_3>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet.
 	\item \textit{\textbf{getNodeReport}} Mithilfe dieses Befehlssatzes können die Reports eines Slaves (Server/Clients) abgefragt werden. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
 	\textit{getNodeReport <MAC in Integer format>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet. 
 	\item \textit{\textbf{startBM}} Mithilfe dieses Befehlssatzes wird ein Benchmark gestartet. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
@@ -273,17 +266,18 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 \subsubsection{Traffic Generator}\label{subsubsec:TrafficGenerator}
 
-Das Konzept um den Benchmark Traffic zu generieren wurde bereits in Abschnitt \ref{subsec:TrafficGeneration} erläutert. Im folgenden Modul werden die Sende-Zeitwerte von Nachrichten verwaltet oder generiert. \\
+Das Konzept um den Benchmark Traffic zu generieren wurde bereits in Abschnitt \ref{subsec:TrafficGeneration} erläutert. Im folgenden Modul werden die Sende-Zeitwerte von Nachrichten verwaltet oder generiert.
 
 Der Random-Mode unterteilt sich in ein..
 
-Raffi Morgen weiter
+\todo[inline]{Raffi Morgen weiter}
+
 
 \subsubsection{Low Level Radio}\label{subsubsec:LowLevelRadio}
 
-Der Low-Level-Radio Treiber soll möglichst unabhängig direkt mit dem Radio-Interface operieren. Er stellt die für das Verwalten der Messung notwendigen Funktionen zur Verfügung. Senden oder Empfangen von Daten sollen mittels einfachen Aufrufen möglich sein. \\
+Der Low-Level-Radio Treiber soll möglichst unabhängig direkt mit dem Radio-Interface operieren. Er stellt die für das Verwalten der Messung notwendigen Funktionen zur Verfügung. Senden oder Empfangen von Daten sollen mittels einfachen Aufrufen möglich sein.
 
-Das Radio-Interface wird fast identisch zur P2P-Testinfrastruktur bedient (siehe Abschnitt \ref{sec:LowLevelRadioDriver}). Lediglich auf das verwenden von Interrupts musste verzichtet werden, da die Meisten Radio-Driver der Mesh-Stacks diese bereits belegten. Insbesondere beim Zephyr findet die Initialisierung des Radio-Treiber vor dem Aufrufen der Statemachine statt. Somit wurden die Events durch pollen abgewartet. \\
+Das Radio-Interface wird fast identisch zur P2P-Testinfrastruktur bedient (siehe Abschnitt \ref{sec:LowLevelRadioDriver}). Lediglich auf das verwenden von Interrupts musste verzichtet werden, da die Meisten Radio-Driver der Mesh-Stacks diese bereits belegten. Insbesondere beim Zephyr findet die Initialisierung des Radio-Treiber vor dem Aufrufen der Statemachine statt. Somit wurden die Events durch pollen abgewartet.
 
 Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar. 
 
@@ -292,6 +286,8 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 \subsection{Benchmark Management}\label{subsec:Benchmark Management}
 
 Um die Verwaltung einer Messung zu automatisieren dienen folgende Python-Scripts. Die Scripts werden auf der BMS (Benchmark Managment Station) ausgeführt. Die Konfiguration der Teilnehmer wird mittels einem Excel-File durchgeführt. 
+
+\todo[inline]{Referenz zu Bedienung}
 
 \subsubsection{Flasher}\label{subsubsec:Flash}
 
@@ -303,7 +299,7 @@ Mithilfe des Configurator-Scripts kann eine voreingestellte Konfiguration auf di
 
 \subsubsection{Benchmark and Reporter}\label{subsubsec:BenchmarkandReporter}
 
-Über dieses Script wird entweder eine Messung gestartet oder die Resultate einer vorhergehenden Messung einzuholen. Wird eine neuer Benchmark initiiert muss der Benutzer die Benchmark-Parameter angeben. Anschliessend startet das Script über den angeschlossenen Master den Vorgang. Während der Messung zeigt das Script die Meldungen des Masters an. \\
+Über dieses Script wird entweder eine Messung gestartet oder die Resultate einer vorhergehenden Messung einzuholen. Wird eine neuer Benchmark initiiert muss der Benutzer die Benchmark-Parameter angeben. Anschliessend startet das Script über den angeschlossenen Master den Vorgang. Während der Messung zeigt das Script die Meldungen des Masters an.
 
 Nach beenden der Messung können die Reports mithilfe des Scripts eingeholt werden. Dazu fordert das Script den Benutzer auf sich in die nähe des ersten Slaves zu begeben. Nach dem Bestätigen fängt das Script an die Daten des Slaves einzusammeln. Nach einsammeln aller Daten der Slaves schreibt das Script die Werte in ein CSV-File. 
 
