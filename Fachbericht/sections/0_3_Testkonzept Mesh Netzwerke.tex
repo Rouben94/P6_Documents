@@ -230,14 +230,6 @@ Die Zeit in der die Radio Schnittstelle aktiv ist wird auf dem Node direkt gesto
 \subsection{Messreihe}\label{subsec:Messreihe}
 Um die Mesh Protokolle einem möglichst fairen Vergleich zu unterziehen, werden pro Testumgebung eine Reihe an Messungen durchgeführt. Die Tabelle \ref{tab:ParameterBenchmarkMessreihe} zeigt Total 8 Messreihen mit den entsprechenden Parametern.
 
-Die Messungen 1 bis 5 werden in allen drei Messaufbauten durchgeführt. So werden die Unterschiede der Topologien ersichtlich.
-Die Messungen 6 bis 8 hingegen werden nur im Laboraufbau durchgeführt damit allfällige Externe Störeinflüsse ausgeschlossen werden können und das Mesh Netzwerk unter Extrembedingungen getestet werden kann.
-
-Bei der Messung mit dem Index 6 handelt es sich um ein Benchmark welcher mit der P2P Testinfrastruktur gestört wird. So soll die Störimmunität des Mesh Stacks getestet werden.
-Die Messungen 7 und 8 wurden aufgrund der Erfahrungen die mit den Resultaten der Messungen 1 bis 6 gesammelt werden konnten, nachträglich ergänzt. In Abschnitt \ref{sec:Validierung} wird genauer auf diese Problematik eingegangen.
-Die Dichte der Nachrichten ist bei diesen Messungen deutlich tiefer.
-
-
 \begin{table}[h]
 \centering
 \begin{adjustbox}{width=1\textwidth}
@@ -271,7 +263,7 @@ Die Dichte der Nachrichten ist bei diesen Messungen deutlich tiefer.
 \label{tab:ParameterBenchmarkMessreihe}
 \end{table}
 
-Die Erläuterungen über die Bedeutung der Parameter ist in der folgenden Tabelle \ref{tab:BedeutungBenchmarkParameter} zu finden. 
+Die Erläuterungen über die Bedeutung der Parameter ist in der folgenden Übersicht \ref{tab:BedeutungBenchmarkParameter} zu finden. 
 
 \begin{table}[h]
 \centering
@@ -292,26 +284,41 @@ Disturbance & Yes/No & \begin{tabular}[t]{@{}l@{}}Gewollte Störung durch P2P Te
 \label{tab:BedeutungBenchmarkParameter}
 \end{table}
 
+Die Messungen 1 bis 5 werden in allen drei Messaufbauten durchgeführt. So werden die Unterschiede der Topologien ersichtlich.
+Die Messungen 6 bis 8 hingegen werden nur im Laboraufbau durchgeführt damit allfällige Externe Störeinflüsse ausgeschlossen werden können und das Mesh Netzwerk unter Extrembedingungen getestet werden kann.
+
+Bei der Messung mit dem Index 6 handelt es sich um ein Benchmark welcher mit der P2P Testinfrastruktur gestört wird. So soll die Störimmunität des Mesh Stacks getestet werden.
+Die Messungen 7 und 8 wurden aufgrund der Erfahrungen die mit den Resultaten der Messungen 1 bis 6 gesammelt werden konnten, nachträglich ergänzt. In Abschnitt \ref{sec:Validierung} wird genauer auf diese Problematik eingegangen.
+Die Dichte der Nachrichten ist bei diesen Messungen deutlich tiefer.
+
+
+
+
 
 \subsection{Allgemeine Benchmark Parameter}\label{subsec:AllgemeineBenchmarkParameter}
 
 Die oben erwähnten Messreihen haben nebst den variablen Parametern einige allgemeingültige Benchmark Parameter die in der Tabelle \ref{tab:AllgemeineBenchmarkParameter} aufgeführt sind.
 Diese sind für sämtliche Messungen innerhalb des jeweiligen Mesh Protokolls gültig.
-In den Punkten \textit{Message Ack, Mesh Node Cnt., Client/Server Verhältnis}, sowie \textit{Payload Size Small} unterscheiden sich die Benchmarks der drei Protokolle nicht.
-Die Benchmark Nachrichten werden auf dem Application Layer \textit{unacknowledged} versendet. Wenn also ein Paket sein Ziel nicht erreicht, wird dies vom Sender nicht registriert und das Paket nicht erneut übertragen.
-Sämtliche Benchmarks werden mit 50 Mesh Nodes durchgeführt. Davon sind jeweils gleich viele Client Nodes wie Server Nodes \ref{subsubsec:Nodes}.
+Die ersten vier Parameter \textit{Group addressing mode, Application Layer, MAC Layer sowie Mesh Node Type} sind Protokoll abhängig und deshalb bei allen drei Mesh Stacks unterschiedlich.
+Da sich diese Parameter innerhalb des jeweiligen Protokolls unterschiedlich umsetzen lassen sind die gewählten Werte resp. Funktionen hier aufgelistet.
+Deren Funktionsweise wird in separaten Abschnitten noch detailliert behandelt.
+
+Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Unicast bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
+Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch \ref{sec:ZigbeeUmsetzungBenchmark}).
+Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
+
+
 
 \begin{table}[h]
 \centering
-\begin{adjustbox}{width=1\textwidth}
 \begin{tabular}{lccc} 
 \toprule
  & BT Mesh & Thread & Zigbee \\ 
 \hline
 Group addressing mode & Broadcast & Multicast & Unicast \\
-Application Layer & Models & CoAP & ZCL (Zigbee Cluster Library) \\
-MAC-Layer & BLE 1M & IEEE 802.15.4 & IEEE 802.15.4 \\
-Mesh Node Type & Relay & FTD (Full Thread Device) & Zigbee-Router \\
+Application Layer & Models & CoAP [\ref{subsec:CoAP}] & ZCL [\ref{par:ZigbeeAFZCL}] \\
+MAC-Layer & BLE 1 Mbit & IEEE 802.15.4 & IEEE 802.15.4 \\
+Mesh Node Type & Relay & FTD [\ref{par:FullThreadDevice}] & Zigbee-Router [\ref{par:ZigbeeRouter}] \\
 Mesh Node Cnt. & 50 & 50 & 50 \\
 Client/Server Verhältnis & 25/25 & 25/25 & 25/25 \\
 Message Ack (Appl. Layer) & No & No & No \\
@@ -319,21 +326,20 @@ Payload Size Small (Byte) & 8 & 8 & 8 \\
 Payload Size Large (Byte) & 32 & 50 & 50 \\
 \bottomrule
 \end{tabular}
-\end{adjustbox}
 \caption{Allgemeine Benchmark Parameter}
 \label{tab:AllgemeineBenchmarkParameter}
 \end{table}
 
-Die Parameter \textit{Group addressing mode} sowie \textit{Payload Size Large} unterscheiden sich aufgrund der Eigenschaften der Protokolle leicht.
-Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Unicast bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
-Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch \ref{sec:ZigbeeUmsetzungBenchmark}).
-Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
+In den Punkten \textit{Mesh Node Cnt., Client/Server Verhältnis, Message Ack}, sowie \textit{Payload Size Small} unterscheiden sich die Benchmarks der drei Protokolle nicht.
+Sämtliche Benchmarks werden mit 50 Mesh Nodes durchgeführt. Davon sind jeweils gleich viele Client Nodes wie Server Nodes \ref{subsubsec:Nodes}.
+Die Benchmark Nachrichten werden auf dem Application Layer \textit{unacknowledged} versendet. Wenn also ein Paket sein Ziel nicht erreicht, wird dies vom Sender nicht registriert und das Paket nicht erneut übertragen.
 
-Die \textit{Payload Size Large} soll eine vergleichsweise grosse Payload simulieren die über das Mesh übertragen wird.
-Die beiden Protokollstacks Thread und Zigbee erlauben dank IEEE 802.15.4 beide eine totale Framegrösse von 127 Byte.
+Die \textit{Payload Size Small} mit der Grösse von 8 Byte soll eine kleine Nachricht repräsentieren wie sie beispielsweise beim Dimmen einer Lampe versendet wird.
+Mit der \textit{Payload Size Large} hingegen soll eine vergleichsweise grosse Payload simuliert werden die über das Mesh übertragen wird.
+Die beiden Protokollstacks Thread und Zigbee erlauben dank IEEE 802.15.4  eine totale Framegrösse von 127 Byte.
 Abzüglich der Grösse der Header bieten die Protokolle noch Platz für eine Payload von ca. 50 Byte. Je nach Implementation der Protokolle variiert die Header Grösse und die Payload kann entsprechend erhöht werden.
 BT Mesh hingegen beginnt bereits bei einer Payload Grösse von 8 Byte mit der Fragmentierung. Somit werden bei den 32 Byte für die \textit{Payload Size Large} bereits 4 Frames versendet. Diverse Tests haben ergeben, dass hier der BT Mesh Stack an seine Leistungsgrenze stösst.
-Aus diesem Grund ist eine weitere Erhöhung der Payload nicht sinnvoll.
+Aus diesem Grund wäre eine weitere Erhöhung der Payload nicht sinnvoll.
 
 
 \subsection{Traffic Generation}\label{subsec:TrafficGeneration}
