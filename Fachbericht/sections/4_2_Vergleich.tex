@@ -5,7 +5,7 @@
 \todo[inline]{Raffi}
 
 \todo[inline]{Verweis auf das Paper. Die wichtigsten Resultate und Erkenntnisse sind im Paper zusammengefasst.}
-\todo[inline]{Interpretation und Diskussion der Messresultate. Qualitativer Vergleich der drei Mesh Protokolle. Kritische Betrachtung der Resultate. Gibt es einschneidende Unterschiede zwischen den 3 Netzen die zu einem verfälschten Resultat geführt haben?}
+
 
 Der Vergleich der Mesh-Netzwerke basiert auf den Messergebnissen der Messreihen, welche in Abschnitt \ref{subsec:Messreihe} erwähnt wurden. Eine Messung unterscheidet sich durch die unterschiedlichen Messparameter, sowie durch den Messaufbau (Wohnung / Labor / Haus). Um einen Vergleich ziehen zu können, wird daher nach diesen beiden Hauptmerkmalen unterschieden.
 
@@ -84,9 +84,6 @@ Durch Abbildung \ref{fig:EnergieverbrauchMessreihen} wird ersichtlich das Blueto
 
 Dieser Vergleich bezieht sich auf die selbe Messreihe, jedoch in unterschiedlichen Testumgebungen. Als Referenz wurde die Messreihe 2 ausgewählt, da diese für alle Testumgebung repräsentative Resultate enthält (siehe Anhang \ref{app:MessprotokolleMeshBenchmark}). Im Anschluss soll gezeigt werden wie sich die einzelnen Mesh-Netzwerke bei veränderten Testumgebungen verändern. \\
 
-\todo[inline]{Vergleich der drei Netze anhand von spezifischen Merkmalen. Welches Protokoll ist für welche Anwendung geeignet? Wo ist welches Protokoll nicht geeignet?}
-
-
 \subsubsection{Latenzzeit}\label{subsec:VergleichLatenzzeitTestumgebungen}
 
 
@@ -121,16 +118,27 @@ Die Abbildung \ref{fig:Latenzzeiten_per_Hop_Testumgebungen} zeigt das die Testum
 Abbildung \ref{fig:Durchsätze_per_Hop_Testumgebungen} zeigt das im Labor-Aufbau alle Netzwerke vollkommen zuverlässig arbeiten. In der Wohnung erlebt Bluetooth-Mesh einen geringen Anstieg des Paketverlusts. Bei Thread ist die Änderung kaum relevant. Alle Netzwerke erfahren bei starker Verzweigung des Netzwerks einen Anstieg der Verlustrate wie es bei der Haus-Topologie zu sehen ist. 
 
 
-\subsection{Fazit}\label{subsec:Fazit}
-\todo[inline]{Finale Interpretation der Resultate. Welches Protokoll ist das Beste?}
+\subsection{Fazit}\label{subsec:FazitVergleich}
 
-\todo[inline]{Pro / COntra eigene Einschätzung des Stacks... z.B. Thread optimal für Homeautomation.. eher nicht geeiget für Smart Agriculture}
+
+Alle Mesh-Netzwerke mussten diversen Tests standhalten. Die Ergebnisse aus den Messreihen 1 bis 4 aus allen Testumgebungen wurden als Durchschnittswert zusammengefasst, um einen finalen Vergleich zu erzielen. Die Abbildung \ref{fig:Messresultate_Fazit} zeigt alle Ergebnisse auf einen Blick.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Messresultate_Fazit.jpg}
+	\caption{Durchschnittliche Messgrössen im Vergleich inkl. separater Betrachtung der Messergebnisse, welche mit 8-Byte Paketlänge erzielt wurden}\label{fig:Messresultate_Fazit}
+\end{figure}
+
+Schlussendlich lässt sich Thread als klarer Sieger erkennen. Dieser Network-Stack hat die Tests am besten absolviert. Auf dem zweiten Platz steht Zigbee, welches mit seiner konstanten Latenz und als zuverlässigstes Protokoll die Daten verarbeiten konnte. Bluetooth-Mesh kann durch den niedrigen Energiebedarf brillieren, schnitt jedoch in Sachen Performance deutlich schlechter als seine Kornkurenten ab. Im Anschluss wird jedes Protokoll genauer Analysiert und die vor und Nachteile, sowie auf mögliche Verbesserungen eingegangen. 
+
 
 \subsection{Thread}\label{subsec:Thread}
 
 \todo[inline]{Rouben}
 
 \todo[inline]{Erhöhung der Paketlänge führt zu steigerung des Durchsatzes -> Paylod von 50 Byte reicht aus um innerhalb eines Pakets versendet zu werden. }
+
+\todo[inline]{Pro / COntra eigene Einschätzung des Stacks... z.B. Thread optimal für Homeautomation.. eher nicht geeiget für Smart Agriculture}
 
 \subsection{Zigbee}\label{subsec:Zigbee}
 
@@ -140,9 +148,24 @@ Abbildung \ref{fig:Durchsätze_per_Hop_Testumgebungen} zeigt das im Labor-Aufbau
 
 \todo[inline]{Erhöhung der Paketlänge führt zu steigerung des Durchsatzes -> Paylod von 50 Byte reicht aus um innerhalb eines Pakets versendet zu werden. }
 
+\todo[inline]{Pro / COntra eigene Einschätzung des Stacks... z.B. Thread optimal für Homeautomation.. eher nicht geeiget für Smart Agriculture}
+
 \subsection{Bluetooth Mesh}\label{subsec:Bluetooth_Mesh}
 
-\todo[inline]{Die erhöhung der Latenzeit führte zu der drastischen steigerung der Latenzzeit und verringerung des Durchsatzes -> Darlegung der Ongoing Transactions und Überforderung des Stacks aufzeigen.}
+Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie aus dem Abschnitt \ref{subsec:VergleichMessreihen} zu erkennen ist. Der grösste Einfluss auf die Performance hatte die Länge der gesendeten Nachrichten. Dies hat seinen Ursprung das ein einzelnes Bluetooth-Mesh-Paket lediglich 10-Byte aufnehmen kann (siehe Abschnitt \ref{subsec:BLEMeshStack}). Der Stack beginnt mit der Segmentierung der Daten in mehrere kleine Pakete. Bei 32-Byte sind dies bereits 4 Frames. Damit ist der komplette Network-Stack überfordert. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Bluetooth_Mesh_Big_Payload_Issue.png}
+	\caption{Ongoing Transactions und Latenzzeiten einer Messung mit 32Byte Paketlänge}\label{fig:Bluetooth_Mesh_Big_Payload_Issue}
+\end{figure}
+
+Abbildung \ref{fig:Bluetooth_Mesh_Big_Payload_Issue} zeigt eine Messung mit 32-Byte Payload, einer Message-Dichte von 3 Sekunden / Message welche Sequenziell versendet wurden. Dabei ist zu erkennen, dass die Anzahl der Ongoing Transactions immer weiter ansteigt. Lediglich in der Nachtbearbeitungszeit sinkt die Kurve wieder. Dies deutet darauf hin das zu viel Traffic im Netz gesendet wird. Angelehnt an die Ongoing Transactions steigt die Latenz von einer Sekunde auf einige 100 Sekunden an. \\
+
+Vermutlich entsteht eine zu hohe Message-Dichte, da zu viele Relay-Nodes jede empfangene Message wiederholen. Durch deaktivieren einiger Relays könnte der Netzaufbau entlastet werden. Jedoch erfordern solche manuellen Eingriffe Fachwissen und verringern die Ausfallsicherheit des Netzes. 
+
+
+\todo[inline]{Pro / COntra eigene Einschätzung des Stacks... z.B. Thread optimal für Homeautomation.. eher nicht geeiget für Smart Agriculture}
 
 \todo[inline]{Raffi}
 
