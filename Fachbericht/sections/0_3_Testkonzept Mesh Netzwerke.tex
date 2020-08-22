@@ -389,20 +389,48 @@ Mittels einem weiteren Python Skript und manueller Bearbeitung in Excel können 
 
 \subsubsection{Identifizierung der Teilnehmer}\label{subsubsec:NodeIdentification}
 
-\todo[inline]{Raffi: Kurze Beschreibung wie die 50 Nodes auseinander gehalten werden. (MAC-Address-LSB). Bei Dongle mit Bild wo die MAC-Adresse abzulessen ist. Hinweis zur erfassung in der Excel-Liste zur Konfiguration. Hinweis das die MAC-Addresse zufällig generiert, jedoch fix in jedem DOngle eingebrant ist (FICR--REgister). }
+Die verschiedenen Teilnehmer werden mithilfe ihrer MAC-Adresse identifiziert. Jedem nRF52840-SOC wird eine 48-bit lange Adresse während der Produktion eingebrannt. Dabei handelt es sich um zufällig generierte Werte. Zur Identifizierung werden nur die letzten 32-bit verwendet. Auf dem nRF-52840-Dongle ist diese Adresse auf der Rückseite angegeben (siehe Abbildung ...).
+
+\todo[inline]{Raffi:  Bei Dongle mit Bild wo die MAC-Adresse abzulessen ist. }
+
+
+
 
 \subsubsection{Konfiguration der Teilnehmer}\label{subsubsec:NodeConfiguration}
 
-\todo[inline]{Raffi: Kurze Beschreibung wie die 50 Nodes Konfigueriert werden können (über einfache CLI Befehle). Alle Felder kurz mit ihrer Bedeutung auf das Benchmark KOnzept beschreiben (Group-ID = Gruppe, DST\_MAC\_1 = Zigbee Direct Addressing... etc.. setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1> <DST\_MAC\_2> <DST\_MAC\_3>}
+Zur Konfiguration der dient ein Excel-File. Darin sind alle Teilnehmer mit ihren Konfigurations-Parametern aufgelistet. Die folgenden Angaben sind in einem Konfigurations-Eintrag enthalten. 
+
+\begin{itemize}
+	\item \textit{\textbf{Nummer}} Gibt die Nummer des zu konfigurierenden Teilnehmers an.
+	\item \textit{\textbf{Firmware}} Verweist auf das Firmmware-File mit welchem der Teilnehmer geflasht wird.
+	\item \textit{\textbf{Dev ID}} Gibt die letzten 32bit der MAC-Adresse des zu konfigurierenden Teilnehmers an (siehe Abschnitt \ref{subsubsec:NodeConfiguration})
+	\item \textit{\textbf{Group ID}} Gruppennummer zu welcher der Teilnehmer gehört. (siehe Abschnitt \ref{subsubsec:TestumgebungenundMessaufbau})
+	\item \textit{\textbf{Node ID}} Die Node ID wird nur bei Clients benötigt. Dieses Feld gibt an wie der Traffic Generiert wird (siehe Abschnitt \ref{subsec:TrafficGeneration}).
+	\item \textit{\textbf{Ack}} Einschalten des Sendens von Acknowledged Messages.
+	\item \textit{\textbf{Add Payload Len}} Gibt die Anzahl Bytes an, welche zusätzlich zu jeder Nachricht angehängt werden. 
+	\item \textit{\textbf{Traffic Gen Mode}} Gibt die Art an wir der Traffic Generiert wird (siehe Abschnitt \ref{subsec:TrafficGeneration}).  
+	\item \textit{\textbf{DST\_Node\_1-3}} Gibt die Nummer des Servers an, welcher im direct Addressing Mode als Ziel verwendet wird. Dazu existieren drei verschiedene Einträge.  
+	\item \textit{\textbf{DST\_MAC\_1-3}} Gibt die MAC-Adresse des Servers an, welcher im direct Addressing Mode als Ziel verwendet wird. Dazu existieren drei verschiedene Einträge. 
+\end{itemize}
+
+Mithilfe eines CLI Befehls können die einzelnen Teilnehmer konfiguriert werden (siehe Abschnitt \ref{subsubsec:CLI}). Mithilfe des Python Scripts aus Abschnitt \ref{subsubsec:Configurator}, wurde dieser Vorgang automatisiert. 
 
 
 \subsubsection{Starten einer Messung}\label{subsubsec:StartofMeassurment}
 
-\todo[inline]{Raffi: Kurze Beschreibung wie eine Messung gestartet wird und was die Beidern Fleder im Bfehl Bedeuten (verweis auf obiges KOnzept)}
+Bei Starten einer Messung über das CLI müssen die folgenden Parameter mit angegeben werden. 
+
+\begin{itemize}
+	\item \textit{\textbf{BenchmarkTime}} Die Zeit wie Lange der Benchmark dauert in Sekunden. 
+	\item \textit{\textbf{BenchmarkMsgCnt}} Die Anzahl von Nachrichten, welche pro Client versendet werden.  
+\end{itemize}
+
+Die Eingabe des Befehls erfolgt gemäss Abschnitt \ref{subsubsec:CLI}. 
+
 
 \subsubsection{Einholen der Messdaten}\label{subsec:NodeConfiguration}
 
-\todo[inline]{Raffi: Kurze Beschreibung wie eine das Reporting eingeleitet wird. Viele Detail ssind dazu ubereits im Software Teil vorhanden. }
+Mithilfe eines CLI-Befehls aus Abschnitt \ref{subsubsec:CLI} können die Messdaten eingeholt werden. Durch das Python Scripts aus Abschnitt \ref{subsubsec:BenchmarkandReporter}, wurde dieser Vorgang automatisiert. 
 
 
 \subsection{Messerwartung}\label{subsec:Messerwartung}

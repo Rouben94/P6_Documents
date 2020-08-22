@@ -60,7 +60,7 @@ Library & Funktion & Modul & Referenz \\
 \cline{2-4}
  & Low Layer Radio & bm\_radio.c & \ref{subsubsec:LowLevelRadio} \\ 
  \cline{2-4}
- & Random and Sequential Traffic Generator & bm\_rand.c & xy \\ 
+ & \begin{tabular}[c]{@{}l@{}}Random and Sequential \\ Traffic Generator  \end{tabular} & bm\_rand.c & \ref{subsubsec:TrafficGenerator} \\ 
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
@@ -74,21 +74,23 @@ Library & Funktion & Modul & Referenz \\
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
-\multirow{2}{*}{BT Mesh} & Stack Handling & bm\_blemesh.c & \ref{sec:BTMeshUmsetzungBenchmark} \\ 
+\multirow{4}{*}{BT Mesh} & Stack Init and Configuration & bm\_blemesh.c & \ref{sec:BTMeshUmsetzungBenchmark} \\ 
 \cline{2-4}
- & Stack Configuration & bm\_config.c & \ref{sec:BTMeshUmsetzungBenchmark} \\ 
+& Model Handling & bm\_blemesh\_model\_handler.c & \ref{sec:BTMeshUmsetzungBenchmark} \\ 
+\cline{2-4}
+ & Stack Configuration & bm\_config.h & \ref{sec:BTMeshUmsetzungBenchmark} \\ 
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
-\multirow{2}{*}{Thread} &  &  & \ref{sec:ThreadUmsetzungBenchmark} \\ 
+\multirow{2}{*}{Thread} & Stack-Handling & bm\_ot.c & \ref{sec:ThreadUmsetzungBenchmark} \\ 
 \cline{2-4}
- &  &  & \ref{sec:ThreadUmsetzungBenchmark} \\ 
+ & Stack Configuration & bm\_config.h & \ref{sec:ThreadUmsetzungBenchmark} \\ 
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
 \multirow{2}{*}{Zigbee} & Stack Handling & bm\_zigbee.c & \ref{sec:ZigbeeUmsetzungBenchmark} \\ 
 \cline{2-4}
- & Stack Configuration & bm\_config.c & \ref{sec:ZigbeeUmsetzungBenchmark} \\
+ & Stack Configuration & bm\_config.h & \ref{sec:ZigbeeUmsetzungBenchmark} \\
 \hline
 \end{tabular}
 \caption{Übersicht Shared Lib und Benchmark Management Module}
@@ -253,16 +255,17 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 Mit diesem Modul werden Ein- / Ausgaben über das Command-Line-Interface (CLI) ermöglicht. Die wohl einfachste Funktionalität ist das ausgeben über einen Log-Befehl. Dieser ist mittels \textit{bm\_cli\_log("Hello")} aufrufbar. Dieses Kommando wird auf die jeweilige Umgebung (SDK) angepasst. Bei der \textit{nRF SDK} werden Logs mittels dem \textit{NRF\_LOG()} Befehl, bei \textit{Zephyr} mithilfe von \textit{printk()} ausgegeben. \\
 
-Die zentrale Funktionalität des Modul bezieht sich auf das verarbeiten von CLI-Befehlen. Dafür werden verschiedene CLI-Befehlssätze angeboten, welche im Sub-Modul \textit{bm\_cli\_cmds.c} defniert sind. 
+Die zentrale Funktionalität des Moduls bezieht sich auf das verarbeiten von CLI-Befehlen. Dafür werden verschiedene CLI-Befehlssätze angeboten, welche im Sub-Modul \textit{bm\_cli\_cmds.c} defniert sind. 
 
 \begin{itemize}
 	\item \textit{\textbf{setNodeSettings}} Mithilfe dieses Befehlssatzes können die Einstellungen eines Slaves (Server/Clients) geändert werden. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
-	\textit{setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1> 
-	<DST\_MAC\_2> <DST\_MAC\_3>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet.
+	\textit{setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1>}\\
+	 \textit{
+	<DST\_MAC\_2> <DST\_MAC\_3>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{subsubsec:NodeConfiguration} beschrieben.
 	\item \textit{\textbf{getNodeReport}} Mithilfe dieses Befehlssatzes können die Reports eines Slaves (Server/Clients) abgefragt werden. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
-	\textit{getNodeReport <MAC in Integer format>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet. 
+	\textit{getNodeReport <MAC in Integer format>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{subsubsec:NodeIdentification} angedeutet. 
 	\item \textit{\textbf{startBM}} Mithilfe dieses Befehlssatzes wird ein Benchmark gestartet. Eine Beispielhafte Eingabe könnte folgendes Format aufweisen. 
-	\textit{startBM <BenchmarkTime (seconds)> <BenchmarkPacketsCount>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet. 
+	\textit{startBM <BenchmarkTime (seconds)> <BenchmarkPacketsCount>}. Das erste Feld gibt die Benchmark Zeit in Sekunden an. Beim zweiten Feld handelt es sich um die Anzahl Nachrichten, welche versendet werden sollen. 
 \end{itemize}
 
 Erhält der Master eine der oben erwähnten Befehlssätze und löst eine darauffolgende Control-Message aus. Die zugewiesenen Paramter werden ebenfalls mithilfe des Moduls abgespeichert und initialisiert. 
@@ -273,11 +276,30 @@ Der Source Code ist zur genaueren Untersuchung online\footnotemark\ verfügbar.
 
 \subsubsection{Traffic Generator}\label{subsubsec:TrafficGenerator}
 
-Das Konzept um den Benchmark Traffic zu generieren wurde bereits in Abschnitt \ref{subsec:TrafficGeneration} erläutert. Im folgenden Modul werden die Sende-Zeitwerte von Nachrichten verwaltet oder generiert. \\
+Im folgenden Modul werden die Sende-Zeitwerte von Nachrichten generiert. Das Konzept dazu wurde bereits in Abschnitt \ref{subsec:TrafficGeneration} erläutert. Dabei wird zwischen zufälligen und sequentiellen Werten unterschieden.  \\
 
-Der Random-Mode unterteilt sich in ein..
+Wird eine Messung mit sequentiellen Werten gestartet erstellt dieses Modul, abhängig von den Benchmark-Parametern, eine Abfolge gemäss der bereits erwähnten Formel \ref{eq:TrafficGenerationSeq}. \\
 
-Raffi Morgen weiter
+Wird eine Messung mit zufälligen Werten gestartet erstellt dieses Modul, abhängig von den Benchmark-Parametern, eine neu generiertes Set oder verwendet ein bereits vorhandenes Set an zufälligen  Werten. Es existieren 25 verschiedene vordefinierte Sets. Diese wurden vorgängig mittels der Webseite \textit{random.org} erzeugt. Die Einstellungen, welche zur Erzeugung der Werte verwendet wurden, sind im Anhang \ref{app:RandomTrafficGeneration} zu finden. \\
+
+Wurde ein Set festgelegt werden diese Werte mittels eines \textit{Bubble-Sort} Algorithmus in aufsteigender Reihenfolge sortiert. Anschliessend müssen die Werte auf den Zeitbereich des Benchmarks skaliert werden. Da es isch bei den zufällig generierten Werten um uInt16-Datentypen handelt liegt der Wertebereich zwischen 0-65535. Die Werte werden gemäss Formel \ref{eq:TrafficGenerationRand} berechnet. 
+
+\begin{equation}\label{eq:TrafficGenerationRand}
+T_{Msg\_send} =  \frac{V_{Rand}}{UINT16MAX} \cdot T_{Benchmark}
+\end{equation}
+
+\begin{small}
+	\begin{center}
+		\begin{tabular}{ll}
+			$T_{Msg\_send}$ & Zeitpunkt zu welchem die Nachricht gesendet wird.\\
+			$T_{Benchmark}$ & Benchmark Dauer (siehe \ref{tab:ParameterBenchmarkMessreihe})\\
+			$V_{Rand}$ & Random Value aus dem Set \\
+			$UINT16MAX$ & Maximaler Wert des UInt16 (65535) \\
+		\end{tabular}
+	\end{center}
+\end{small}
+
+\footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_rand.c} \cite{rouben94_sharedlib_rand_software_git_2020}}
 
 \subsubsection{Low Level Radio}\label{subsubsec:LowLevelRadio}
 
