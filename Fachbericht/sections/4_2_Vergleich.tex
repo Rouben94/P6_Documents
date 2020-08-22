@@ -48,22 +48,25 @@ Ein Änderung des Traffic Generation Mode von Random auf Sequentiel bewirkt bei 
 \end{figure}
 
 
-Durch die in Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} dargestellten Durchsätze wird ersichtlich das Bluetooth-Mesh am anfälligsten auf ein erhöhen der Payload reagiert. Wie bereits in Abschnitt \ref{subsec:VergleichLatenzzeitMessreihen} dargelegt wird eine detaillierte Analyse zu diesem Phänomen in Abschnitt \ref{subsec:Bluetooth_Mesh} durchgeführt. Der Durchsatz steigt bei Zigbee und Thread durch die Erhöhung der Paketlänge stark an. Dies wird in Abschnitt \ref{subsec:Thread} für Thread und Abschnitt \ref{subsec:Zigbee} für Zigbee genauer Untersucht. \\
+Die in der Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} dargestellten Durchsätze wird ersichtlich, dass sich die ähnlichen Resultate ergeben wie bei der Latenzzeit. Bluetooth-Mesh reagiert am anfälligsten auf die Payload-Erhöhung. Wie bereits in Abschnitt \ref{subsec:VergleichLatenzzeitMessreihen} dargelegt wird eine detaillierte Analyse zu diesem Phänomen in Abschnitt \ref{subsec:Bluetooth_Mesh} durchgeführt. Der Durchsatz steigt bei Zigbee und Thread durch die Erhöhung der Paketlänge stark an. Dies wird in Abschnitt \ref{subsec:Thread} für Thread und Abschnitt \ref{subsec:Zigbee} für Zigbee genauer Untersucht. \\
 
-Ein Änderung des Traffic Generation Mode von Random auf Sequentiel bewirkt bei Bleutooth-Mesh eine drastische Abnahme der Latenz. Bei Zigbee ist zwischen der Messreihe 1 und 2 ebenfalls eine Abnahme zu verzeichnen, welche jedoch nicht zwischen der Reihe 3 und 4 feststellbar ist. Somit muss ein anderer Einfluss für die Abnahme verantwortlich sein (in Abschnitt \ref{subsec:Zigbee} untersucht). Die Änderung des Traffic Generation Mode wirkt bei Thread ebenfalls zu einer Verbesserung der Latenz.\\
+Ein Änderung des Traffic Generation Mode von Random auf Sequentiel bewirkt bei Bluetooth-Mesh eine drastische Zunahme des Durchsatzes. Bei Thread ist ebenfalls eine Steigerung der Übertragungskapazität feststellbar. Die Änderung des Traffic Generation Mode wirkt bei Zigbee zu keiner merklichen Verbesserung des Durchsatzes.\\
 
-Das senken der Message Dichte führt bei Bluetooth-Mesh zu einer markanten Abnahme der Latenz. Bei Thread und Zigbee bleibt die Latenz nahezu identisch. \\
+Das senken der Message Dichte führt bei Bluetooth-Mesh zu einer Verbesserung des Durchsatzes. Bei Thread und Zigbee kann keine Abhängigkeit festgestellt werden. \\
 
-Das einbringen von Störungen hat lediglich bei Bluetooth-Mesh einen negativen Einfluss, wodurch sich die Latenzzeit erhöht. 
+Das einbringen von Störungen hat bei allen Netzwerken einen leichten negativen Einfluss, wodurch der Durchsatz sinkt. 
 
 \subsubsection{Paketverlust}\label{subsec:VergleichPaketverlustMessreihen}
 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{Paketverlust_Messreihen.png}
 	\caption{Durchschnittlicher Paketverlust der einzelnen Messreihen im Vergleich}\label{fig:PaketverlusteMessreihen}
 \end{figure}
+
+Wie in Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} ersichtlich ist Bluetooth-Mesh sehr anfällig auf das erhöhen der Paketlänge. Dies wird in Abschnitt \ref{subsec:Bluetooth_Mesh} genauer untersucht. Zigbee und Thread zeichnen sich als über alle Messreihen als sehr zuverlässig aus. 
+
 
 \subsubsection{Energieverbrauch}\label{subsec:VergleichEnergieverbrauchMessreihen}
 
@@ -71,14 +74,15 @@ Das einbringen von Störungen hat lediglich bei Bluetooth-Mesh einen negativen E
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Energieverbrauch_Messreihen.png}
-	\caption{Durchschnittlicher Energiebedarf der einzelnen Messreihen im Vergleich}\label{fig:PaketverlusteMessreihen}
+	\caption{Durchschnittlicher Energiebedarf der einzelnen Messreihen im Vergleich}\label{fig:EnergieverbrauchMessreihen}
 \end{figure}
 
+Durch Abbildung \ref{fig:EnergieverbrauchMessreihen} wird ersichtlich das Bluetooth-Mesh den etwas geringeren Energiebedarf aufweist als Thread und Zigbee. Ansonsten zeigen alle Netzwerke ähnliche Resultate unabhängig der Messreihen. 
 
 
 \subsection{Vergleich Testumgebungen}\label{subsec:VergleichTestumgebungen}
 
-Mithilfe der Unterschiedlichen Testumgebungen wird e
+Dieser Vergleich bezieht sich auf die selbe Messreihe, jedoch in unterschiedlichen Testumgebungen. Als Referenz wurde die Messreihe 2 ausgewählt, da diese für alle Testumgebung repräsentative Resultate enthält (siehe Anhang \ref{app:MessprotokolleMeshBenchmark}). Im Anschluss soll gezeigt werden wie sich die einzelnen Mesh-Netzwerke bei veränderten Testumgebungen verändern. \\
 
 \todo[inline]{Vergleich der drei Netze anhand von spezifischen Merkmalen. Welches Protokoll ist für welche Anwendung geeignet? Wo ist welches Protokoll nicht geeignet?}
 
@@ -92,6 +96,8 @@ Mithilfe der Unterschiedlichen Testumgebungen wird e
 	\caption{Durchschnittliche Latenzzeit per Hop der einzelnen Testumgebungen im Vergleich}\label{fig:Latenzzeiten_per_Hop_Testumgebungen}
 \end{figure}
 
+Die Abbildung \ref{fig:Latenzzeiten_per_Hop_Testumgebungen} zeigt das die Testumgebung Labor für alle Netzwerke die geringste Verzögerung aufweist. Bluetooth-Mesh erfährt bei weiter Streuung der Teilnehmer, wie sie im Haus anzutreffen ist, die grösste Steigerung der Latenz. Zigbee erhält in der Wohnung eine kaum relevante Erhöhung der Verzögerung. Thread zeichnet sich als unabhängig bezüglich der Testumgebung aus. 
+
 \subsubsection{Durchsatz}\label{subsec:VergleichDurchsatzTestumgebungen}
 
 
@@ -100,6 +106,8 @@ Mithilfe der Unterschiedlichen Testumgebungen wird e
 	\includegraphics[width=1.0\textwidth]{Durchsatz_per_Hop_Testumgebungen.png}
 	\caption{Durchschnittlicher Durchsatz per Hop der einzelnen Testumgebungen im Vergleich}\label{fig:Durchsätze_per_Hop_Testumgebungen}
 \end{figure}
+
+Ähnlich zu den Betrachtungen der Latenzzeit, zeigt die Abbildung \ref{fig:Durchsätze_per_Hop_Testumgebungen} den höchsten Durchsatz im Testaufbau Labor. Bluetooth-Mesh erfährt den grössten Einfluss durch ein ändern der Topologie. 
 
 \subsubsection{Paketverlust}\label{subsec:VergleichPaketverlustTestumgebungen}
 
@@ -110,6 +118,7 @@ Mithilfe der Unterschiedlichen Testumgebungen wird e
 	\caption{Durchschnittlicher Paketverlust der einzelnen Testumgebungen im Vergleich}\label{fig:PaketverlusteTestumgebungen}
 \end{figure}
 
+Abbildung \ref{fig:Durchsätze_per_Hop_Testumgebungen} zeigt das im Labor-Aufbau alle Netzwerke vollkommen zuverlässig arbeiten. In der Wohnung erlebt Bluetooth-Mesh einen geringen Anstieg des Paketverlusts. Bei Thread ist die Änderung kaum relevant. Alle Netzwerke erfahren bei starker Verzweigung des Netzwerks einen Anstieg der Verlustrate wie es bei der Haus-Topologie zu sehen ist. 
 
 
 \subsection{Fazit}\label{subsec:Fazit}
@@ -127,7 +136,7 @@ Mithilfe der Unterschiedlichen Testumgebungen wird e
 
 \todo[inline]{Cyrill}
 
-\todo[inline]{Warum ist die Latenzeit unabhängig vom Traffic Generation Mode zu beginn kleiner als Zuvor? -> Einrouten des Protocolls zu beginn noch nicht abgeschlossen)}
+\todo[inline]{Warum ist die Latenzeit und Durchsatz unabhängig vom Traffic Generation Mode zu beginn kleiner als Zuvor? -> Einrouten des Protocolls zu beginn noch nicht abgeschlossen)}
 
 \todo[inline]{Erhöhung der Paketlänge führt zu steigerung des Durchsatzes -> Paylod von 50 Byte reicht aus um innerhalb eines Pakets versendet zu werden. }
 
