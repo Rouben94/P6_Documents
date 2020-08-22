@@ -2,7 +2,6 @@
 \section{Technische Grundlagen Zigbee}\label{sec:TechnischeGrundlagenZigbee}
 
 \subsection{Netzaufbau und Topologie}\label{subsec:NetzaufbauundTopologie}
-
 Zigbee ist nicht gleich Zigbee. Obwohl Zigbee von zentraler Stelle, der Zigbee Alliance, spezifiziert wurde gibt es verschiedene Arten davon. In den Spezifikationen wird zwischen zwei sogenannten Stackprofilen \textit{ZigBee} und \textit{ZigBee PRO} unterschieden.
 Während \textit{ZigBee}-Netzwerke eine Baumstruktur haben und der Koordinator dabei einen Single-Point-of-Failure bildet, bieten \textit{ZigBee PRO}-Netzwerke geroutete Mesh Funktionalitäten mit Routing Tabellen und Wegentdeckung. Der Koordinator bildet dabei nicht länger einen Single-Point-of-Failure da sich das Routing dynamisch anpassen kann.
 Die Abbildung \ref{fig:NetzwerktopologienZigbee} zeigt die Unterschiede von einem Baumnetzwerk im Stackprofil \textit{ZigBee} links und einem Meshnetzwerk im Stackprofil \textit{ZigBee PRO} rechts.
@@ -11,7 +10,7 @@ In der vorliegenden Arbeit wurde das \textit{ZigBee PRO} Stackprofil verwendet w
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Zigbee_Netztopologie.png}
-	\caption{Zigbee Baum- und Meshnetzwerke \cite[S.~221]{markus_krause_rainer_konrad_zigbee_2014}}	\label{fig:NetzwerktopologienZigbee}
+	\caption{Zigbee Baumnetzwerk links und Meshnetzwerk rechts \cite[S.~221]{markus_krause_rainer_konrad_zigbee_2014}}	\label{fig:NetzwerktopologienZigbee}
 \end{figure}
 
 Wie in der Abbildung \ref{fig:NetzwerktopologienZigbee} bereits angedeutet, kann innerhalb eines Zigbee Meshnetzwerkes zwischen 3 Nodetypen unterschieden werden. Diese besitzen unterschiedliche Aufgaben und Eigenschaften.
@@ -42,7 +41,7 @@ Nachfolgend wird auf die vier Schichten des Zigbee Stacks eingegangen und deren 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Zigbee_Architektur.png}
+	\includegraphics[width=0.6\textwidth]{Zigbee_Architektur.png}
 	\caption{Architektur des Zigbee Protokoll Stacks}
 	\label{fig:ArchitekturdesZigbeeProtokollStacks}
 \end{figure}

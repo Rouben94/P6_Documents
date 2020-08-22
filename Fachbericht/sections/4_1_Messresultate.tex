@@ -79,7 +79,8 @@ Diese Werte werden errechnet aus der Paketgrösse (Small oder Large) gemäss den
 In der Abbildung \ref{fig:DurchschnittlicherPaketverlust} wird der prozentuale Paketverlust gezeigt über die gesamte Anzahl Nachrichten die während dem Benchmark versendet wurden. Die Paketverluste von einzelnen Client-Server Beziehungen werden nicht separat ausgewertet.
 Wiederum im Beispiel von BT Mesh sind in dieser Messung 2.07 \% der Pakete nicht am Ziel angekommen.
 Zuletzt wird mit dem Diagramm in Abbildung \ref{fig:DurchschnittlicherEnergieverbrauch} der durchschnittliche Energieverbrauch der Protokolle dargestellt.
-Der Energieverbrauch wurde abgeleitet aus der Aktivzeit des Funkmoduls. Diese wurde verrechnet mit dem Strombedarf des nRF52840 SoC's gemäss \ref{tab:EigenschaftennRF52840SoC}.
+Der Energieverbrauch wurde abgeleitet aus der Aktivzeit des Funkmoduls. Diese wurde verrechnet mit dem Strombedarf des nRF52840 SoC's gemäss den Angaben in der Tabelle \ref{tab:EigenschaftennRF52840SoC}. Eine solche Berechnung erlaubt einen qualitativen Vergleich des Energiebedarf unter den 3 Protokollen da diese auf der gleichen Hardware umgesetzt wurden. Die Werte in der Abbildung \ref{fig:DurchschnittlicherEnergieverbrauch} sind jedoch keine tatsächlichen Verbrauchswerte und können deshalb nur im Kontext des Vergleichs verwendet werden.
+
 
 \begin{figure}[!htbp]
 \centering
@@ -97,21 +98,30 @@ Der Energieverbrauch wurde abgeleitet aus der Aktivzeit des Funkmoduls. Diese wu
 \end{minipage}
 \end{figure}
 
-\todo[inline]{Cyrill}
-
-
-\todo[inline]{Präsentation der Messresultate aus den Messungen der Mesh Netze. Als Grafiken inkl. beschreibendem Text. Keine Interpretation der Resultate. Vergleich der Resultate mit den verschiedenen Netzen.}
-
-\todo[inline]{Verweis auf Messauswertungen im Anhang.}
-
-\todo[inline]{Bild: Exemplarische Grafik z.B. Messung 1 Haus und Erläuterung wie die Messauswertungen zu lesen sind.}
-
 
 \subsection{Validierung}\label{subsec:Validierung}
+
+
 
 \todo[inline]{Überprüfung des eigenen Vorgehen usw.}
 \todo[inline]{Fehler in Latency Zigbee da Number of Hops nicht ausgelesen werden kann.}
 
+\begin{itemize}
+\item Resultate bei grosser Payload nicht korrekt bei BT Mesh -> Überforderung des Stacks.
+
+\item Fehler in Latency Zigbee da Number of Hops nicht ausgelesen werden kann.
+
+\item Latency Fehler bei Zigbee kann aus der Grafik herausgelesen werden. Es gibt zwei Hauptsäulen bei 30ms und eine bei 60ms.
+
+\item Message Dichte zu Beginn zu hoch gewählt. Darum zusätzliche Messungen 7 und 8. Zuvor unfair für BT Mesh. -> Kein hoher Durchsatz möglich.
+
+\item Durchschnittliche Werte beinhalten Ausreisser welche das Resultat verfälschen. -> Evtl. Median bilden.
+
+\item Packetloss: IEEE 802.15.4 hat ein MAC ACK bei Unicast Messages. Im Multicast oder Broadcast hingegen nicht. Vorteil Zigbee da Unicast Adressierung.
+
+\item BT Mesh hat gar kein ACK. Auch nicht auf MAC Layer.
+
+\end{itemize}
 
 \subsection{Verifizierung}\label{subsec:Verifizierung}
 
