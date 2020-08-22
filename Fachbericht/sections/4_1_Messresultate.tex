@@ -3,10 +3,14 @@
 \vspace*{\fill}
 \clearpage
 
-\section{Messresultate}\label{sec:MessresultateundDiskussion}
+\section{Messresultate}\label{sec:Messresultate}
+Bei der Durchführung der Messungen innerhalb des Mesh Benchmarks wurde für jede Messung unter den entsprechenden Bedingungen, die in der Tabelle \ref{tab:MessungenMeshBenchmark} nochmals zusammengefasst sind, ein Messprotokoll resp. eine Auswertung erstellt. Diese detaillierten Auswertungen wurden im Anhang \ref{app:MessprotokolleMeshBenchmark} dem Bericht angefügt.
+
 
 
 \todo[inline]{Cyrill}
+
+\ref{app:Paper}
 
 \todo[inline]{Verweis auf das Paper. Die wichtigsten Resultate und Erkenntnisse sind im Paper zusammengefasst.}
 
@@ -16,6 +20,35 @@
 \todo[inline]{Verweis auf Messauswertungen im Anhang.}
 
 \todo[inline]{Bild: Exemplarische Grafik z.B. Messung 1 Haus und Erläuterung wie die Messauswertungen zu lesen sind.}
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|} 
+\hline
+\textbf{\#}  & \textbf{Msg. Gen.}  & \textbf{Duration}  & \textbf{Msg. Cnt.}  & \textbf{Payload }  & \textbf{Disturbance}  \\ 
+\hline
+1 & Rand & 600s & 60 & Small & No \\ 
+\hline
+2 & Seq & 600s & 60 & Small & No \\ 
+\hline
+3 & Rand & 600s & 60 & Large & No \\ 
+\hline
+4 & Seq & 600s & 60 & Large & No \\ 
+\hline
+5 & Rand & 600s & 600 & Small & No \\ 
+\hline
+6 & Rand & 600s & 60 & Small & Yes \\ 
+\hline
+7 & Seq & 750s & 10 & Small & No \\ 
+\hline
+8 & Seq & 750s & 10 & Large & No \\
+\hline
+\end{tabular}
+\caption{Messungen Mesh Benchmark}
+\label{tab:MessungenMeshBenchmark}
+\end{table}
+
 
 
 \begin{figure}[h]
