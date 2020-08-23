@@ -4,27 +4,165 @@
 
 
 \subsection{Zielerreichung}\label{subsec:Zielerreichung}
-\todo[inline]{Wurden die Ziele aus dem Pflichtenheft erreicht? Welche Ziele wurden nicht erreicht?}
+Für die vorliegende Projektarbeit wurden im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) klare Ziele definiert. In den Tabellen \ref{tab:ErreichungP2PZiele}, \ref{tab:ErreichungMeshZiele}, \ref{tab:ErreichungSteuersoftwareZiele} und \ref{tab:ErreichungZusatzziele} sind diese in kurzer Form nochmals zusammen gefasst. Ausserdem ersichtlich ist welche Ziele erfüllt werden konnten und welche hingegen nicht. Wenn nötig ist auch noch ein kurzer Kommentar hinterlegt.
 
+\paragraph{Punkt zu Punkt Testinfrastruktur}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|l|c|l|} 
+		\hline
+		\multicolumn{4}{|l|}{\textbf{Projektziele}}                                                                                                                                                                                                                                                                                                      \\ 
+		\hline
+		\textbf{Nr.}              & \textbf{Ziel}                                                                                      & \textbf{Erfüllt} & \textbf{Kommentar}                                                                                                                                                                           \\ 
+		\hline
+		P1                        & Kommunikation mit BMS                                                                              & Ja               & \begin{tabular}[c]{@{}l@{}}Alle Master Module werden via USB UART \\angesteuert.\end{tabular}                                                                                                \\ 
+		\hline
+		P2                        & Senden von MAC Frames                                                                              & Ja               &                                                                                                                                                                                              \\ 
+		\hline
+		P3                        & \begin{tabular}[c]{@{}l@{}}Rückbestätigung der \\MAC-Frames\end{tabular}                           & Ja               &                                                                                                                                                                                              \\ 
+		\hline
+		P4                        & \begin{tabular}[c]{@{}l@{}}Konfiguration der \\Anzahl BSN\end{tabular}                             & Bedingt          & \begin{tabular}[c]{@{}l@{}}Alle Slave-Nodes werden automatisch erkannt \\und angezeigt.\end{tabular}                                                                                         \\ 
+		\hline
+		P5                        & Adressierung der BSN                                                                               & Bedingt          & \begin{tabular}[c]{@{}l@{}}Alle Slave-Nodes werden automatisch erkannt \\und angezeigt.\end{tabular}                                                                                         \\ 
+		\hline
+		P6                        & Konfiguration der Kanäle                                                                           & Ja               & Kann über den Webserver angepasst werden.                                                                                                                                                    \\ 
+		\hline
+		P7                        & Einstellbare Framelänge                                                                            & Ja               & \begin{tabular}[c]{@{}l@{}}Die Payload kann über den Webserver \\eingestellt werden.\end{tabular}                                                                                            \\ 
+		\hline
+		P8                        & \begin{tabular}[c]{@{}l@{}}Einstellbare Frame und \\Kanalwechselrate\end{tabular}                  & Nein             &                                                                                                                                                                                              \\ 
+		\hline
+		P9                        & Einstellbare Sendeleistung                                                                         & Ja               & Kann über den Webserver angepasst werden.                                                                                                                                                    \\ 
+		\hline
+		\multicolumn{1}{|l|}{P10} & \begin{tabular}[c]{@{}l@{}}Anpassung der \\Modulationsart\end{tabular}                             & Ja               & Kann über den Webserver angepasst werden.                                                                                                                                                    \\ 
+		\hline
+		\multicolumn{1}{|l|}{P11} & \begin{tabular}[c]{@{}l@{}}Ein- und Ausschalten der \\Collision Avoidance \\(CSMA/CA)\end{tabular} & Ja               & \begin{tabular}[c]{@{}l@{}}Kann über den Webserver ein- und \\ausgeschaltet werden.\end{tabular}                                                                                             \\ 
+		\hline
+		\multicolumn{1}{|l|}{P12} & \begin{tabular}[c]{@{}l@{}}Erfassen der \\Verbindungsqualität\end{tabular}                         & Ja               & \begin{tabular}[c]{@{}l@{}}Der Master sendet und empfängt in einem \\Zeit Intervall Frames von den Slave-Nodes \\und sendet die Daten an die \\Serielle-Schnittstellt weiter.~\end{tabular}  \\ 
+		\hline
+		\multicolumn{1}{|l|}{P13} & Tool für Feldtests                                                                                 & Ja               & \begin{tabular}[c]{@{}l@{}}Das Tool ist mit dem Webserver und der \\Firmware einsatzbereit.\end{tabular}                                                                                     \\
+		\hline
+	\end{tabular}
+	\caption{Erreichung der Ziele zur Punkt zu Punkt Testinfrastruktur}
+	\label{tab:ErreichungP2PZiele}
+\end{table}
+
+\newpage
+\paragraph{Test Mesh Netzwerke}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|l|c|l|} 
+		\hline
+		\multicolumn{4}{|l|}{ \textbf{Projektziele} }                                                                                                                                                                                                                                                                   \\ 
+		\hline
+		\textbf{Nr.}  & \textbf{Ziel}                                                               & \textbf{Erfüllt}  & \textbf{Kommentar}                                                                                                                                                                            \\ 
+		\hline
+		P1            & Kommunikation mit BMS                                                       & Ja                & \begin{tabular}[c]{@{}l@{}}Alle Master Module werden via USB UART \\angesteuert.\end{tabular}                                                                                                 \\ 
+		\hline
+		P2            & Konfiguration BSN                                                           & Nein              & \begin{tabular}[c]{@{}l@{}}Alle Nodes im Netzwerk fungieren als \\Routing-Knoten.\end{tabular}                                                                                                \\ 
+		\hline
+		P3            & Mesh-Netzwerk                                                               & Ja                & \begin{tabular}[c]{@{}l@{}}Alle Netzwerke wurden in einem 50 Node \\Mesh-Netzwerk getestet.\end{tabular}                                                                                      \\ 
+		\hline
+		P4            & Simulation Sensorwerte                                                      & Ja                & \begin{tabular}[c]{@{}l@{}}Über ein Python Programm können \\Testzeit und Anzahl Nachrichten konfiguriert \\werden. Es können sogar verschiedene \\Zufalls-Modi gewählt werden.\end{tabular}  \\ 
+		\hline
+		P5            & Sensordaten                                                                 & Ja                & \begin{tabular}[c]{@{}l@{}}Die Sensordaten werden im RAM und \\FLASH des SoCs gespeichert und nach \\der Messung an den Master gesendet.\end{tabular}                                         \\ 
+		\hline
+		P6            & Datenauswertung                                                             & Ja                & \begin{tabular}[c]{@{}l@{}}Die Daten der Messungen wurden mit \\Hilfe~ von Excel Tabellen ausgewertet.\end{tabular}                                                                           \\ 
+		\hline
+		P7            & Störimmunität                                                               & Ja                & \begin{tabular}[c]{@{}l@{}}Störmessungen mit der \\P2P-Testinfrastruktur wurden gemacht.\end{tabular}                                                                                         \\ 
+		\hline
+		P8            & \begin{tabular}[c]{@{}l@{}}Unterschiedliche Test \\Bedingungen\end{tabular} & Ja                & \begin{tabular}[c]{@{}l@{}}Es wurden drei Bereiche getestet. \\Haus, Wohnung und Labor.\end{tabular}                                                                                          \\ 
+		\hline
+		P9            & Test und Validierung                                                        & Ja                & \begin{tabular}[c]{@{}l@{}}Die Mesh Netzwerke wurden im \\Fachbericht vollumfänglich verglichen \\und ausgewertet.\end{tabular}                                                               \\
+		\hline
+	\end{tabular}
+	\caption{Erreichung der Ziele zu den Test Mesh Netzwerken}
+	\label{tab:ErreichungMeshZiele}
+\end{table}
+
+\paragraph{Steuer- und Auswertesoftware}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|l|c|l|} 
+		\hline
+		\multicolumn{4}{|l|}{ \textbf{Projektziele} }                                                                                                                                                                                                                                                                                \\ 
+		\hline
+		\textbf{Nr.}  & \textbf{Ziel}                                                                & \textbf{Erfüllt}  & \textbf{Kommentar}                                                                                                                                                                                        \\ 
+		\hline
+		P1            & Ansteuerung Funkmodul                                                        & Ja                & \begin{tabular}[c]{@{}l@{}}Alle Master Module werden via USB UART \\angesteuert.\end{tabular}                                                                                                             \\ 
+		\hline
+		P2            & Visualisierung Parameter                                                     & Bedingt           & \begin{tabular}[c]{@{}l@{}}Für die P2P-Testinfrastruktur steht ein \\Webserver zur Verfügung. Die Daten des \\Mesh-Tests werden erst in einer Excel \\Tabelle ausgewertet und Visualisiert.\end{tabular}  \\ 
+		\hline
+		P3            & User Interface (UI)                                                          & Ja                & \begin{tabular}[c]{@{}l@{}}Ein Django Webserver stellt ein UI für die \\Verwaltung der P2P-Testinfrastruktur \\zur Verfügung.\end{tabular}                                                                \\ 
+		\hline
+		P4            & \begin{tabular}[c]{@{}l@{}}Konfiguration Mesh-\\Netzwerk\end{tabular}        & Ja                & \begin{tabular}[c]{@{}l@{}}Ein Python Programm konfiguriert die \\Mesh Nodes über den BMN.\end{tabular}                                                                                                   \\ 
+		\hline
+		P5            & \begin{tabular}[c]{@{}l@{}}Einheitliche \\Kommunikation von BMS\end{tabular} & Ja                & \begin{tabular}[c]{@{}l@{}}Ein Python Programm steuert die Mesh \\Nodes über den BMN.\end{tabular}                                                                                                        \\
+		\hline
+	\end{tabular}
+	\caption{Erreichung der zur Steuer- und Auswertesoftware}
+	\label{tab:ErreichungSteuersoftwareZiele}
+\end{table}
+
+\paragraph{Zusatzziele}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|l|c|l|} 
+		\hline
+		\multicolumn{4}{|l|}{ \textbf{Projektziele} }                                                                                                                                                                                                                  \\ 
+		\hline
+		\textbf{Nr.}  & \textbf{Ziel}                                                       & \textbf{Erfüllt}  & \textbf{Kommentar}                                                                                                                                   \\ 
+		\hline
+		P1            & \begin{tabular}[c]{@{}l@{}}Hardware Testmodul\\BMN/BSN\end{tabular} & Nein              & \begin{tabular}[c]{@{}l@{}}Mit Absprache der Coaches, ist ein \\Hardwaremodul nicht notwendig.\end{tabular}                                          \\ 
+		\hline
+		P2            & ~Vergleich SOC                                                      & Bedingt           & \begin{tabular}[c]{@{}l@{}}Die Bluetooth Tests wären mit verschiedenen \\SoCs möglich, diese Messungen wurden aber \\nicht ausgeführt.\end{tabular}  \\ 
+		\hline
+		P3            & Drahtlos Konfiguration                                              & Nein              & \begin{tabular}[c]{@{}l@{}}Ein Firmware over the air upgrade wurde \\nicht umgesetzt.\end{tabular}                                                   \\ 
+		\hline
+		P4            & UI für Mesh Test                                                    & Nein              & \begin{tabular}[c]{@{}l@{}}Für die Mesh-Tests wurde kein aus zeitlichen \\Gründen kein User-Interface geschrieben\end{tabular}                       \\
+		\hline
+	\end{tabular}
+	\caption{Erreichung der Zusatzziele}
+	\label{tab:ErreichungZusatzziele}
+\end{table}
+
+
+\newpage
 \subsection{Fazit}\label{subsec:Fazit}
-\todo[inline]{Resultate aus den Mesh und P2P Messungen in kürzest Form zusammen fassen. Die wichtigsten Erkenntnisse zusammen fassen.}
+In dieser Arbeit wurden die drei Mesh Protokolle Bluetooth Mesh, Thread und ZigBee unter verschiedenen Testszenarien ausgemessen und anschliessend miteinander verglichen. Wichtig zu verstehen ist, dass es kein bestes Mesh Netzwerk gibt. Alle Protokolle haben ihre stärken und schwächen in verschiedenen Umgebungen und Messparametern. Nachfolgend wird zusammengefasst, welche Schlüsse aus dem Vergleich der drei Protokollen gezogen worden sind.
 
-\todo[inline]{Mess-Parameter ungünstig gewählt. }
+\begin{itemize}
+	\item ZigBee hat innerhalb einer Umgebung eine sehr konstante Latenzzeit.
+	\item Bluetooth Mesh hat den grössten Vorteil in einer Umgebung, bei der sich die Knoten stetig bewegen. Dies aus dem Grund, dass das Mesh keine Routing Knoten verwendet.
+	\item Der grösste Vorteil von Thread ist es, dass sich das Mesh-Netzwerk selber ausmisst. Die Routenden Knoten werden automatisch bestimmt. Somit kann sich das Protokoll der Umgebung anpassen und konnte dadurch auch in allen Testumgebungen eine tiefe Latenz zu Tage legen.
+	\item \todo[inline]{Noch mehr Infos}
+\end{itemize}
 
-\todo[inline]{Durchschnittswert der Latenz nicht repräsentativ für Durchsatzmessung -> Durchsatz ist höher.}
+In den folgenden zwei Paragraphen wird auf einige bekannte Probleme im Projekt eingegangen und wie diese behoben werden können. Die zwei Teile werden in eher organisatorische Probleme oder eher technische Probleme aufgeteilt.
 
 \paragraph{Organisatorische Verbesserungen}\label{par:Organisatorische_Verbesserungen}
-
-\todo[inline]{Besseres und Detailierters Softwarekonzept... mehr nach Projektplan arbeiten... etc.}
+\begin{itemize}
+	\item Ein frühzeitiges Softwarekonzept hätte sehr viel Redundanz in der verschiedenen Firmware Teilen erspart und somit auch viel Zeit eingespart.
+	\item Die Arbeitsaufteilung müsste besser kommuniziert und besprochen werden, ansonsten wird der Arbeitsaufwand für die jeweiligen Personen ungerecht aufgeteilt.
+\end{itemize}
 
 \paragraph{Technische Verbesserungen}\label{par:Technische_Verbesserungen}
+\begin{itemize}
+	\item Durchschnittswerte sollten mit dem Median bestimmen werden. Der momentane Mittelwert wird zu sehr von Ausreissern der Latenzzeit verfälscht. Daher ist die durchschnittliche Latenz meist nicht repräsentativ.
+	\item Es wurden ungünstige Messparameter verwendet. Die Nachrichtendichte ist zu gross gewählt und muss heruntergesetzt werden, damit sich die Protokolle besser vergleichen lassen.
+	\item Beim Reporting vom BSN zum BMN ist es möglich, dass siche die Daten von zwei Slaves überschneiden. Mit Hilfe der Node ID könnte dies verhindert werden, indem nur der BSN mit der entsprechender Node ID angesprochen wird.
+	\item Beim ZigBee Protokoll ist es leider nicht möglich die Anzahl Hops auszulesen, die eine Nachricht nimmt. Dies müsste für eine repräsentative Auswertung noch implementiert werden, da die Latenzzeit pro Hop bestimmt wird.
+	\item Die Message ID und die Adresse der Nodes werden in der Payload der Benchmark-Nachricht mitgegeben. Dadurch ist es nicht möglich eine Payload unter 3 Byte zu versenden. Besser wäre ein auslesen der Message ID und der Adresse vom entsprechenden Header. 
+\end{itemize}
 
-\todo[inline]{Reporting (Node ID in Report Req Message mitgeben um gleichzeitiges Reportng zu verhindern)}
-
+\newpage
 \subsection{Ausblick}\label{subsec:Ausblick}
-\todo[inline]{Was konnte innerhalb der Thesis nicht umgesetzt werden? Wofür wäre mehr Zeit und mehr Ressourcen nötig gewesen? Wie könnten die Resultate verbessert werden?}
+In diesem Abschnitt wird erwähnt, welche Module zu den bestehenden noch ergänzt werden können, um z.B. die Bedienung noch Benutzerfreundlicher zu machen. Diese Informationen dienen als Hinweis, falls die Arbeit von einer andere Person weiterführt wird.
 
-
+\begin{itemize}
+	\item Damit die Bedienung benutzerfreundlicher wird, kann für die gesamte Mesh-Test Umgebung ein GUI erstellt werden. Mit Hilfe einem User Interface können alle Einstellungen und Auswertung direkt an einem Ort visualisiert werden. Durch dies würde eine mühsame Auswertung mit externen Programm wie Excel entfallen.
+	\item Ein Over-The-Air Firmware upgrade würde die Bedienung weiter vereinfachen. Mit Hilfe des GUIs kann das entsprechende Protokoll ausgewählt werden und die BSN werden mit der entsprechenden Firmware geladen. Das würde bedeuten, dass ein mühseliges flashen der einzelnen Nodes entfällt.
+	\item Damit die einzelnen BSN robuster werden und auch weitere Parameter wie z.B. der Stromverbrauch erfasst werden können, ist eine eigene Hardware Entwicklung sinnvoll. Dadurch könnte der Batteriestand von den einzelnen Nodes bestimmt werden und ein Warnung würde dem Benutzer mitteilen, dass die Batterien ausgetauscht werden müssen.
+\end{itemize}
 
 \subsection{Schlusswort}\label{subsec:Schlusswort}
-\todo[inline]{Abschliessende Worte}
+Die Arbeit hat mir sehr gefallen. 
