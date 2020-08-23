@@ -51,8 +51,8 @@ Die BRM beschreiben Nachrichten welche den Status oder die Ergebnisse eines Benc
 Wie bereits angedeutet und in Abbildung \ref{fig:MeshTestKonzept} gezeigt, kann im Mesh Benchmark zwischen den folgenden 3 Node Typen unterschieden werden.
 
 \paragraph{Benchmark Master Node (BMN)}
-Der Benchmark Master Node bildet den zentralen Zugriffspunkt zum Mesh Netzwerk für den Benchmark. Über ihn werden Control und Report Messages versendet und empfangen. Je nach Mesh Protokoll fungiert er zugleich als Mesh Leader (Thread) respektive Coordinator (Zigbee).
-\todo[inline]{Robin:  Der BMN muss nicht der leader sein. Das Protokoll bestimmt den leader automatisch. Es kann auch ein BCN oder ein BSN als leader fungieren.}
+Der Benchmark Master Node bildet den zentralen Zugriffspunkt zum Mesh Netzwerk für den Benchmark. Über ihn werden Control und Report Messages versendet und empfangen. Im Zigbee Mesh Protokoll fungiert er zugleich Coordinator.
+
 
 \paragraph{Benchmark Client Node (BCN)}
 Der Benchmark Client Node repräsentiert beispielsweise einen Schalter in einer Lichtsteuerung. Im Benchmark Kontext ist er jene Instanz die MBM versendet.
@@ -163,8 +163,7 @@ Ein Mesh Benchmark folgt einem klar definierten Ablauf. Die Abbildung \ref{fig:M
 	\item \textbf{Finish:}\\
 	Der BMN kontrolliert ob er die Daten von sämtlichen BSN korrekt auslesen konnte und bestätigt das Ende der Messung gegenüber dem BMS.
 	\item \textbf{Auswertung:}\\
-	Das BMS beendet den Benchmark Vorgang, speichert die Messdaten in seiner Datenbank ab und bereitet diese grafisch auf. 
-	\todo[inline]{Robin:  Werden sie immer noch Grafisch aufbereitet? Diese Funktion brauchen wird doch nicht mehr.}
+	Das BMS beendet den Benchmark Vorgang und speichert die Messdaten in seiner Datenbank ab. Von dort können die Daten gelesen und mit Excel ausgewertet werden.
 \end{enumerate}
 
 %\subsection{Anforderungen}\label{subsec:SoftwareAnforderungen}
@@ -225,8 +224,7 @@ Die Adressinformationen werden aus dem Message Header des Mesh Pakets ausgelesen
 Als Payload im Mesh Paket versendet, identifiziert die Message ID das Paket zusammen mit den Adressinformationen eindeutig. So kann Paketverlust wie auch die Latenzzeit erfasst werden.
 
 \paragraph{RSSI}
-Der RSSI (Received Signal Strength Indication) wird auf dem Server Node auf MAC Ebene erfasst und zeigt die Empfangsstärke zum zuletzt passierten Hop. Dies gibt Aufschluss über die Empfangsqualität und kann bei der Analyse des Benchmarks als weiterer Indikator für Paketverlust und Latenzzeit verwendet werden.
-\todo[inline]{Robin:  Bei Thread wird der durchschnitt von allen genommen Hops berechnet.}
+Der RSSI (Received Signal Strength Indication) wird auf dem Server Node auf MAC Ebene erfasst und zeigt die Empfangsqualität der Übertragung. Dies kann bei der Analyse des Benchmarks als weiterer Indikator für Paketverlust und Latenzzeit verwendet werden.
 
 \paragraph{Aktive Radio Zeit}
 Die Zeit in der die Radio Schnittstelle aktiv ist wird auf dem Node direkt gestoppt und gespeichert.
@@ -304,11 +302,9 @@ Die Dichte der Nachrichten ist bei diesen Messungen deutlich tiefer.
 
 Die oben erwähnten Messreihen haben nebst den variablen Parametern einige allgemeingültige Benchmark Parameter die in der Tabelle \ref{tab:AllgemeineBenchmarkParameter} aufgeführt sind.
 Diese sind für sämtliche Messungen innerhalb des jeweiligen Mesh Protokolls gültig.
-Die ersten vier Parameter \textit{Group addressing mode, Application Layer, MAC Layer sowie Mesh Node Type} sind Protokoll abhängig und deshalb bei allen drei Mesh Stacks unterschiedlich.
+Die ersten vier Parameter \textit{Group addressing mode, Application Layer, MAC Layer} sowie \textit{Mesh Node Type} sind protokollabhängig und deshalb bei allen drei Mesh Stacks unterschiedlich.
 Da sich diese Parameter innerhalb des jeweiligen Protokolls unterschiedlich umsetzen lassen sind die gewählten Werte resp. Funktionen hier aufgelistet.
 Deren Funktionsweise wird in separaten Abschnitten noch detailliert behandelt.
-
-\todo[inline]{Raffi: Verweis auf die jeweiligen Abschnitte? Oder den Letzte Satz weg lassen.} 
 
 Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Unicast bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
 Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch \ref{sec:ZigbeeUmsetzungBenchmark}).
