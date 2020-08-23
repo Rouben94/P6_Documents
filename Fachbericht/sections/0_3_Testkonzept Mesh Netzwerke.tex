@@ -16,6 +16,7 @@ Die Benchmark Slave Nodes (BSN) in der Abbildung als Sensoren und Aktoren mit un
 Das Testnetzwerk soll ein realitätsnahes Netzwerk nachbilden.
 Beispielsweise wird eine Hausautomation in einem Einfamilienhaus als Referenz angenommen in welchem jeweils nur gewisse Nodes untereinander Applikationsdaten austauschen.
 Ein Lichtschalter kommuniziert nur mit einer Lichtquelle und umgekehrt. \todo[inline]{Raffi:  Es können auch mehrere Lampen sein? }
+\todo[inline]{Robin:  Ich würde etwas in dieser Art schreiben: Lichtschalter kommunizieren nur mit Lichtquellen und umgekehrt, sie tauschen jedoch keine Applikationsdaten mit Temperatursensoren aus. }
 Der selbe Lichtschalter tauscht jedoch keine Applikationsdaten mit dem Temperatursensor aus.
 Diese unterschiedlichen Beziehungen innerhalb des Mesh Netzwerks sind in der Abbildung \ref{fig:MeshTestKonzept} bereits angedeutet und werden im Abschnitt \ref{subsubsec:MeshBeziehungen} noch genauer beschrieben.
 
@@ -51,6 +52,7 @@ Wie bereits angedeutet und in Abbildung \ref{fig:MeshTestKonzept} gezeigt, kann 
 
 \paragraph{Benchmark Master Node (BMN)}
 Der Benchmark Master Node bildet den zentralen Zugriffspunkt zum Mesh Netzwerk für den Benchmark. Über ihn werden Control und Report Messages versendet und empfangen. Je nach Mesh Protokoll fungiert er zugleich als Mesh Leader (Thread) respektive Coordinator (Zigbee).
+\todo[inline]{Robin:  Der BMN muss nicht der leader sein. Das Protokoll bestimmt den leader automatisch. Es kann auch ein BCN oder ein BSN als leader fungieren.}
 
 \paragraph{Benchmark Client Node (BCN)}
 Der Benchmark Client Node repräsentiert beispielsweise einen Schalter in einer Lichtsteuerung. Im Benchmark Kontext ist er jene Instanz die MBM versendet.
@@ -162,6 +164,7 @@ Ein Mesh Benchmark folgt einem klar definierten Ablauf. Die Abbildung \ref{fig:M
 	Der BMN kontrolliert ob er die Daten von sämtlichen BSN korrekt auslesen konnte und bestätigt das Ende der Messung gegenüber dem BMS.
 	\item \textbf{Auswertung:}\\
 	Das BMS beendet den Benchmark Vorgang, speichert die Messdaten in seiner Datenbank ab und bereitet diese grafisch auf. 
+	\todo[inline]{Robin:  Werden sie immer noch Grafisch aufbereitet? Diese Funktion brauchen wird doch nicht mehr.}
 \end{enumerate}
 
 %\subsection{Anforderungen}\label{subsec:SoftwareAnforderungen}
@@ -223,6 +226,7 @@ Als Payload im Mesh Paket versendet, identifiziert die Message ID das Paket zusa
 
 \paragraph{RSSI}
 Der RSSI (Received Signal Strength Indication) wird auf dem Server Node auf MAC Ebene erfasst und zeigt die Empfangsstärke zum zuletzt passierten Hop. Dies gibt Aufschluss über die Empfangsqualität und kann bei der Analyse des Benchmarks als weiterer Indikator für Paketverlust und Latenzzeit verwendet werden.
+\todo[inline]{Robin:  Bei Thread wird der durchschnitt von allen genommen Hops berechnet.}
 
 \paragraph{Aktive Radio Zeit}
 Die Zeit in der die Radio Schnittstelle aktiv ist wird auf dem Node direkt gestoppt und gespeichert.
