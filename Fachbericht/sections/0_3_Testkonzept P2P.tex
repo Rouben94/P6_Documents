@@ -61,7 +61,7 @@ Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer M
 
 \subsection{Testszenarien}\label{sec:TestszenarienP2P}
 Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert.
-Es kann eingesetzt werden um den Aufbau von sogenannten \textit{Personal Area Networks (PAN)} zu optimieren.
+Es kann eingesetzt werden um den Aufbau von sogenannten \textit{Wireless Personal Area Networks (WPAN)} zu optimieren.
 Mithilfe diese Tools können zum Beispiel die Standorte der Teilnehmer eines Zigbee, Thread oder Bluetooth Mesh Netzwerks optimal gewählt werden.
 
 Weiter kann die Testinfrastruktur als Störquelle in den Benchmarks von Mesh Netzwerken eingesetzt werden (siehe Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke}).
@@ -194,6 +194,8 @@ Alle anderen Modi:
 \begin{itemize}
 	\item 0 - 250 bit
 \end{itemize}
+
+\todo[inline]{Vorgaben können evtl. noch als Tabelle dargestellt werden. Könnte übersichtlicher sein.}
 
 \begin{figure} [H]
 	\centering
@@ -405,8 +407,9 @@ Anfänglich lagen die Abweichungen im Bereich von ca. 40$\mu$s.
 Durch Wiederholungen der Messung konnte dieser Fehler als systematisch identifiziert werden.
 Mithilfe einer Korrektur um 40$\mu$s konnte die Genauigkeit in den Bereich von 100ns bis 1200ns reduziert werden. Eine Abweichung der Zeitsynchronisation von ca. 1$\mu$s sollte genügend genau sein um als gute Grundlage für die Statemachine aus Abschnitt \ref{sec:SoftundFirmware} zu dienen. 
  
- \newpage
 \subsection{Webserver}\label{subsec:DjangoWebserver}
+\todo[inline]{Evtl. noch eine kurze Einleitung ins Kapitel Webserver
+}
 \subsubsection{Django}\label{subsubsec:Django}
 Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver aufgesetzt.
 Django ist ein open-source Webframework, dass auf dem Model-View-Controller Prinzip basiert und in der Programmiersprache Python geschrieben wurde.
