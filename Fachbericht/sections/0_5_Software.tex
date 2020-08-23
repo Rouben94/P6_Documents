@@ -1,42 +1,47 @@
 \clearpage
 \section{Soft- und Firmware}\label{sec:Soft-undFirmware}
 
+Im folgenden Abschnitt wird das Konzept und die Umsetzung der Software für den Mesh Benchmark dokumentiert.
+Dabei stand die Erfüllung der Anforderungen an die Software im Zentrum. Diese wurden in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) vorgängig definiert. 
 
-Im folgenden Abschnitt werden Anforderungen, Konzept und die Umsetzung der Software dokumentiert. Die Lösungsfindung und ihre Prozess wird nachfolgend beschrieben. 
-
-\subsection{Anforderungen}\label{subsec:Software_Anforderungen}
-
-Wie bereits im Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} wurden die Anforderungen in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) vorgängig festgelegt. Im Fokus steht das erfassen der wichtigsten Messgrössen welche bereits in Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} definiert wurden. 
-
-Die Erfassung der Messwerte muss in allen Mesh-Netzwerken möglich sein. Um die Messresultate vergleichen zu können müssen die gleichen Ausgangslagen vorliegen, sowie die selben Messmethoden angewendet werden. 
+%\subsection{Anforderungen}\label{subsec:Software_Anforderungen}
+%Wie im Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} erwähnt, wurden die detaillierten Anforderungen an die Software bereits in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) festgelegt.
+%Im Fokus steht das erfassen der wichtigsten Messgrössen welche bereits in Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} definiert wurden. 
+%
+%Die Erfassung der Messwerte muss in allen Mesh-Netzwerken möglich sein. Um die Messresultate vergleichen zu können müssen die gleichen Ausgangslagen vorliegen, sowie die selben Messmethoden angewendet werden. 
 
 
 \subsection{Konzept}\label{subsec:Software_Konzept}
 
-Das Konzept der Messung wurde in Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke} erläutert. Die Software soll so aufgebaut sein, dass sie von allen Mesh-Stacks genutzt werden kann. Zur Umsetzung der Mesh-Stacks mittles der \textit{NRF-Platform} sind folgende SDKs vorhanden: 
+Um das Benchmark Konzept welches bereits im Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke} erläutert wurde, umsetzen zu können soll die Soft- und Firmware so aufgebaut sein, dass sie von allen Mesh-Stacks genutzt werden kann.
+Zur Umsetzung der drei Mesh-Stacks auf der \textit{NRF-Plattform} wurden folgende \textit{Software Development Kits (SDK's)} eingesetzt. 
 
-\begin{itemize}
-	\item \textit{\textbf{nRF Connect SDK}}: Auf dem Zephyr-RTOS aufbauende SDK. Diese soll in Zukunft alle drei Mesh-Protokolle (Bluetooth-Mesh, Openthread und Zigbee) unterstützen. Wird jedoch noch nicht zum Einsatz in End-Produkten empfohlen. \cite{nordic_semi_welcome_to_the_nrf_connect_sdk_2020}
-	\item \textit{\textbf{nRF SDK for Thread and Zigbee}}: Proprietäre SDK Library von Nordic Semiconductor. Thread integration mittels Openthread, Zigbee einbindung mittels ZBOSS. \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}
-	\item \textit{\textbf{nRF SDK for Mesh}}: Proprietäre SDK Library von Nordic Semiconductor für Bluetooth-Mesh. Ist zur Produktion freigegeben. \cite{nordic_semi_nrf_sdk_for_mesh_2020}
-\end{itemize}
+\begin{table}[h]
+\centering
+\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{ll} 
+\toprule
+nRF Connect SDK & \begin{tabular}[t]{@{}l@{}}Die \textit{nRF Connect SDK} baut auf dem Zephyr-RTOS auf und unterstützt\\alle drei Mesh-Protokolle (Bluetooth-Mesh, Openthread und Zigbee).\\ Der Einsatz der SDK in einem End-Produkt wird jedoch noch nicht empfohlen. \cite{nordic_semi_welcome_to_the_nrf_connect_sdk_2020}\end{tabular} \\
+\begin{tabular}[t]{@{}l@{}}nRF5 SDK for Thread\\and Zigbee\end{tabular} & \begin{tabular}[t]{@{}l@{}}Die \textit{nRF5 SDK for Thread and Zigbee} ist eine Software Bibliothek\\für die Entwicklung von Thread und Zigbee zertifizierten Produkten. \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}\end{tabular} \\
+nRF5 SDK for Mesh & \begin{tabular}[t]{@{}l@{}}Die \textit{nRF5 SDK for Mesh }ist eine Software Bibliothek\\für die Entwicklung von Bluetooth Mesh Lösungen. \cite{nordic_semi_nrf_sdk_for_mesh_2020}\end{tabular} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Eingesetzte SDK's für die Umsetzung der Benchmark Firmware}
+\label{tab:Eingesetzte SDKs}
+\end{table}
 
-Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlich sein, um die Vergleichbarkeit nicht zu beeinträchtigen. Um eine möglichst unabhängig von der verwendeten SDK zu bleiben, wurde auf eine selbst entwickelte Kommunikation im Benchmark Management gesetzt. Dazu wurden  diverse Module der P2P-Testinfrastruktur nachempfunden. 
-
+Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlich sein, um die Vergleichbarkeit nicht zu beeinträchtigen.
+Daher wurde für das Benchmark Management eine eigene Kommunikationsebene entwickelt.
+Diverse Module der P2P-Testinfrastruktur konnten dafür direkt oder indirekt verwendet werden.
 
 \subsection{Umsetzung}\label{subsec:Software_Umsetzung}
-
-
-Die Software und Firmware für die Mesh Benchmarks setzt sich aus diversen Modulen zusammen. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 3 Benchmark Teilen: BLE Mesh, Thread und Zigbee.
+Die Soft- und Firmware für die Mesh Benchmarks setzt sich aus mehreren Modulen zusammen. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 3 Benchmark Teilen: BLE Mesh, Thread und Zigbee.
 Gemeinsame Module auf Firmware Ebene sind im Ordner SharedLib im Github Repository\footnotemark\ zusammengefasst.
 
-Jene Python Scripts für das Benchmark Management stehen im gleichnamigen Ordner auf dem Github Repository zur Verfügung.
+Jene Python Scripts für das Benchmark Management stehen im gleichnamigen Ordner ebenso auf dem Github Repository zur Verfügung.
 Die Stack bezogenen Implementationen der Benchmark Firmware werden in den individuellen Teilen \ref{part:BluetoothMesh}, \ref{part:Thread} und \ref{part:Zigbee} behandelt.
 
-
-%\newcommand{\rotcells}[1]{%
-%  \rotatebox[origin=c]{90}{ #1 }%
-%}
 
 \begin{table}
 \centering
@@ -98,7 +103,7 @@ Library & Funktion & Modul & Referenz \\
 \end{table}
 
 
-Sämtliche Firm- und Software Komponenten die für Mesh Benchmark sowie die P2P Testinfrastruktur nötig sind, können auf dem Github Repository zum Projekt unter folgendem \href{https://github.com/Rouben94/P6_Software}{Link\footnotemark[\value{footnote}]}  eingesehen werden. Die nächsten Abschnitte behandeln die Umsetzung der Software, welche von allen Mesh-Stacks genutzt wird.
+Sämtliche Firm- und Software Komponenten die für das Mesh Benchmark entwickelt wurden, können auf dem Github Repository zum Projekt unter folgendem \href{https://github.com/Rouben94/P6_Software}{Link\footnotemark[\value{footnote}]}  eingesehen werden. Die folgenden Abschnitte behandeln die Umsetzung der Software, welche von allen Mesh-Stacks genutzt wird.
 
 \footnotetext{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}}
 
@@ -113,12 +118,17 @@ Die \textit{Shared Library} ist die geteilte Bibliothek zwischen allen Mesh-Stac
 	\caption{Vereinfachte Anbindung der \textit{Shared Library} an die Mesh-Stacks}\label{fig:ShardeLibConcept}
 \end{figure}
 
-Abbildung \ref{fig:ShardeLibConcept} zeigt die vereinfachten Schnittstellen zwischen der Shared-Library und den Mesh-Stacks. Die Bibliothek ist spezifisch für die nRF52840 SOCs zugeschnitten. Um einfach in die jeweilige SDK integrierbar zu sein müssen die Module der Shared-Lib möglichst ohne weitere Abhängigkeiten klar kommen. Sofern Treiber oder externe Bibliotheken für Module benötigt werden, müssen diese von allen SDKs vergleichbar zur Verfügung gestellt werden. Im folgenden Abschnitt wird auf die einzelnen Module der \textit{Shared-Lib} eingegangen. 
+\todo[inline]{Schreibfehler in Grafik. measurement statt Meassurment}
+
+Abbildung \ref{fig:ShardeLibConcept} zeigt vereinfacht die Schnittstellen zwischen der Shared-Library und den Mesh-Stacks.
+Die Bibliothek ist spezifisch für die nRF52840 SOCs zugeschnitten.
+Damit die \textit{Shared-Lib} in die jeweilige SDK integrierbar ist, müssen die enthaltenen Module möglichst ohne weitere Abhängigkeiten auskommen.
+Sofern Treiber oder externe Bibliotheken für Module benötigt werden, müssen diese von allen SDKs vergleichbar zur Verfügung gestellt werden. Im folgenden Abschnitt wird auf die einzelnen Module der \textit{Shared-Lib} eingegangen. 
 
 
 \subsubsection{Statemachine}\label{subsubsec:StatemachineSoftware}
 
-Die Statemachine dient dazu den Ablauf, welcher in Abschnitt \ref{subsec:AblaufMesh} beschrieben wurde abzuarbeiten. Sowohl der Master, die Server und Clients arbeiten den in Abbildung \ref{fig:StatemachineFLowgraph} dargestellten Ablauf ab. 
+Die Statemachine dient dazu den Ablauf, welcher in Abschnitt \ref{subsec:AblaufMesh} bereits beschrieben wurde abzuarbeiten. Sowohl der Master als auch die Server und Clients arbeiten den in Abbildung \ref{fig:StatemachineFLowgraph} dargestellten Ablauf ab. 
 
 \begin{figure}[H]
 	\centering
@@ -127,15 +137,20 @@ Die Statemachine dient dazu den Ablauf, welcher in Abschnitt \ref{subsec:AblaufM
 \end{figure}
 
 
-Die Funktion der Schritte wird im Folgenden grob beschrieben. Zur genauen Untersuchung ist der Source Code unter \cite{rouben94_sharedlib_software_git_2020} verfügbar.
+Die Funktion der Schritte wird nachfolgend grob beschrieben.
 
 \begin{itemize}
-	\item \textbf{\textit{Init:}} Dieser Schritt initialisiert alle notwendige Funktionen (Radio, Timers, usw.). Ebenfalls rekonstruiert er die \textit{Log-Daten} indem er diese aus dem Flash in das RAM kopiert. Nach der erfolgreichen Initialisierung wechselt die Statemachine in den Control-State.
-	\item \textbf{\textit{Control:}} Im Control-State wartet jeder Teilnehmer auf eingehende Befehle des Benutzers. Der Master erhält über das Command Line Interface (CLI) den auszuführenden Befehl. Diesen wandelt der Master in eine Nachricht (Control-Message) um und leitet sie über das Radio-Interface an die Slaves weiter.  Alle Slaves (Clients und Servers) erwarten eine Control-Message über das Radio-Interface. Damit alle Clients und Servers die Nachricht empfangen können wiederholt jeder Slave jede Control-Message. Somit wird die Mesh-Fähigkeit der Verwaltungsschicht (Benchmark Managment) sichergestellt. Folgende Transitionen sind vom Control-State zugelassen: 
-	\begin{itemize}
-		\item \textit{\textbf{Transition to Timesync}}: Wird ein Benchmark gestartet erfolgt dies durch einen Wechsel in den Timesync-State. Jeder Teilnehmer wechselt nach wiederholen der Nachricht in den entsprechenden Schritt. 
-		\item \textit{\textbf{Transition to Report}}: Das Reporting wird über den Report-State abgehandelt. Nur der Teilnehmer von welchem Reports angefordert wurden, wechselt in den Report-State. 
-	\end{itemize} 	
+	\item \textbf{\textit{Init:}} Dieser Schritt initialisiert alle notwendige Funktionen (Radio, Timers, usw.). Ebenfalls rekonstruiert er die \textit{Log-Daten} indem er diese aus dem Flash ins RAM lädt. Nach der erfolgreichen Initialisierung wechselt die Statemachine in den Control-State.
+	\item \textbf{\textit{Control:}} Im Control-State wartet jeder Teilnehmer auf eingehende Befehle des Benutzers. Der Master erhält über das Command Line Interface (CLI) den auszuführenden Befehl.
+	Diesen wandelt der Master in eine Nachricht (Control-Message) um und leitet sie über das Radio-Interface an die Slaves weiter. 
+	Alle Slaves (Clients und Servers) erwarten eine Control-Message über das Radio-Interface.
+	Damit alle Clients und Servers die Nachricht empfangen können wiederholt jeder Slave jede Control-Message.
+	Somit wird die Mesh-Fähigkeit der Verwaltungsschicht (Benchmark Management) sichergestellt.
+	Folgende Transitionen sind vom Control-State zugelassen: 
+	\begin{description}
+		\item[\textit{\textbf{Transition to Timesync}}:] Wird ein Benchmark gestartet erfolgt dies durch einen Wechsel in den Timesync-State. Jeder Teilnehmer wechselt nach wiederholen der Nachricht in den entsprechenden Schritt. 
+		\item[\textit{\textbf{Transition to Report}}:] Das Reporting wird über den Report-State abgehandelt. Nur der Teilnehmer von welchem Reports angefordert wurden, wechselt in den Report-State. 
+	\end{description} 	
 	\item \textbf{\textit{Timesync:}} Der Master verteilt die Zeitsynchronisation an die Slaves. Die Slaves synchronisieren sich auf das Signal des Masters auf, sofern sie in seiner Reichweite liegen. Sobald ein Slave synchronisiert ist, fängt er an die Zeitsynchronisation ebenfalls zu verteilen. Dadurch können Slaves, welche nicht über einen Hop vom Master erreicht werden sich ebenfalls synchronisieren. Konnte ein Slave keine Zeitsynchronisation durchführen, wechselt dieser in den  \textit{Control-State} zurück und bringt einen Fehler mittels der roten-LED zur Anezige. Der Master wird immer zum nächsten Schritt voranschreiten. 	
 	\item \textbf{\textit{Init Benchmark:}} Dies ist der Zeitpunkt bei welchem jeder Teilnehmer den Mesh Stack-Initialisiert und Anschliessend Startet. Das Netzwerk hat nun Zeit sich aufzubauen, falls dies notwendig ist. Vor dem Initialisieren des Mesh-Stacks löscht jeder Node die Log-Daten aus dem Flash, sowie dem RAM. Beim Client wird zusätzlich der Sendezeitpunkt der Benchmark-Nachrichten (Benchmark-Messages) berechnet und vorbereitet. Hat sich der Slave erfolgreich Initialisiert und mit dem Netzwerk verbunden, beginnt das grüne Status-LED zu leuchten. Der wechsel zum Benchmark-State wird unabhängig vom Verbindungsstatus nach einer Verzögerungszeit ausgelöst. 
 	\item \textbf{\textit{Benchmark:}} Die Statemachine wartet in diesem Schritt lediglich auf das auslösen von Events. Beim Server überlässt sie dem Mesh-Stack das Loggen der empfangenen Nachrichten, welcher über einen eigenen Event-Handler verfügt. Beim Client plant die Statemachine das senden von Nachrichten mittels Timer-Interrupts. Löst ein solcher aus, wird der Mesh-Stack sofort benachrichtigt. Das erfassen des Logs erfolgt ebenfalls im Stack. Der Status des einzelnen Slaves (Licht EIN / Aus) ist über die grüne RGB-LED (Client) oder die blaue RGB-LED (Server) erkennbar. Nach der eingestellten Benchmark-Zeit, löst der Letzte Timer-Interrupt aus und die Abarbeitung des Mesh-Stacks wird abgebrochen. Es folgt der wechsel zum letzten Schritt. 
