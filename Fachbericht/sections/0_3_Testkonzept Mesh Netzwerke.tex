@@ -12,12 +12,11 @@ Um die Performance der drei Mesh Stacks zu vergleichen wurde ein einheitliches B
 
 Für den Vergleich der 3 Mesh Netzwerkstacks Bluetooth Mesh (BT Mesh), Thread und Zigbee wird ein vom Mesh Protokoll unabhängiges Testkonzept umgesetzt welches in der Abbildung \ref{fig:MeshTestKonzept} als Konzeptschema dargestellt ist.
 Die Benchmark Slave Nodes (BSN) in der Abbildung als Sensoren und Aktoren mit unterschiedlichen Funktionalitäten dargestellt, bilden zusammen mit dem Benchmark Master Node (BMN) das zu testende Mesh Netzwerk.
-Innerhalb des Netzwerks wird dessen Organisation vom jeweiligen Protokoll sichergestellt.
+\textit{Innerhalb des Netzwerks wird dessen Organisation vom jeweiligen Protokoll sichergestellt.} \todo[inline]{Raffi:  Das Benchamrk Managment wird nicht mehr vom Network Stack organisiert? }
 Das Testnetzwerk soll ein realitätsnahes Netzwerk nachbilden.
 Beispielsweise wird eine Hausautomation in einem Einfamilienhaus als Referenz angenommen in welchem jeweils nur gewisse Nodes untereinander Applikationsdaten austauschen.
-Ein Lichtschalter kommuniziert nur mit einer Lichtquelle und umgekehrt.
+Ein Lichtschalter kommuniziert nur mit einer Lichtquelle und umgekehrt. \todo[inline]{Raffi:  Es können auch mehrere Lampen sein? }
 Der selbe Lichtschalter tauscht jedoch keine Applikationsdaten mit dem Temperatursensor aus.
-Trotzdem bilden die Nodes zusammen ein Mesh Netzwerk.
 Diese unterschiedlichen Beziehungen innerhalb des Mesh Netzwerks sind in der Abbildung \ref{fig:MeshTestKonzept} bereits angedeutet und werden im Abschnitt \ref{subsubsec:MeshBeziehungen} noch genauer beschrieben.
 
 \begin{figure}[h]
@@ -65,6 +64,8 @@ Das Pendant zum BCN stellt der BSN dar. Er steht beispielsweise für eine Lichtq
 Die Benchmarks der Mesh Protokolle sollen mit unterschiedlichen Bedingungen getestet werden wobei grundsätzlich eine reelle Anwendung nachgebaut werden soll. Zum einen gibt es unterschiedliche Beziehungen innerhalb des Mesh Netzwerks, zum anderen werden Testumgebungen unterschieden.
 
 \subsubsection{Mesh Beziehungen}\label{subsubsec:MeshBeziehungen}
+
+\todo[inline]{Raffi:  Ist diese Information Relevant für das verständniss des Benchmarks?}
 
 Innerhalb eines Mesh Netzwerks können 4 Beziehungen zwischen den Nodes für die Benchmarks unterschieden werden. Üblicherweise kommen mehrere oder sogar alle 4 Beziehungen innerhalb eines Netzwerkes gleichzeitig zum Einsatz. Abbildung \ref{fig:MeshTestBeziehungen} zeigt die Beziehungen.
 
@@ -303,6 +304,8 @@ Die ersten vier Parameter \textit{Group addressing mode, Application Layer, MAC 
 Da sich diese Parameter innerhalb des jeweiligen Protokolls unterschiedlich umsetzen lassen sind die gewählten Werte resp. Funktionen hier aufgelistet.
 Deren Funktionsweise wird in separaten Abschnitten noch detailliert behandelt.
 
+\todo[inline]{Raffi: Verweis auf die jeweiligen Abschnitte? Oder den Letzte Satz weg lassen.} 
+
 Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Unicast bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
 Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch \ref{sec:ZigbeeUmsetzungBenchmark}).
 Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
@@ -340,6 +343,7 @@ Die beiden Protokollstacks Thread und Zigbee erlauben dank IEEE 802.15.4  eine t
 Abzüglich der Grösse der Header bieten die Protokolle noch Platz für eine Payload von ca. 50 Byte. Je nach Implementation der Protokolle variiert die Header Grösse und die Payload kann entsprechend erhöht werden.
 BT Mesh hingegen beginnt bereits bei einer Payload Grösse von 8 Byte mit der Fragmentierung. Somit werden bei den 32 Byte für die \textit{Payload Size Large} bereits 4 Frames versendet. Diverse Tests haben ergeben, dass hier der BT Mesh Stack an seine Leistungsgrenze stösst.
 Aus diesem Grund wäre eine weitere Erhöhung der Payload nicht sinnvoll.
+
 
 
 \subsection{Traffic Generation}\label{subsec:TrafficGeneration}
@@ -427,7 +431,7 @@ Beim Starten einer Messung über das CLI müssen die folgenden Parameter dem Sta
 Die Eingabe des Befehls erfolgt gemäss Abschnitt \ref{subsubsec:CLI}. 
 
 
-\subsubsection{Einholen der Messdaten}\label{subsec:NodeConfiguration}
+\subsubsection{Einholen der Messdaten}\label{subsec:GetNodeReports}
 
 Mithilfe eines CLI-Befehls aus Abschnitt \ref{subsubsec:CLI} können die Messdaten eingeholt werden. Durch das Python Script aus Abschnitt \ref{subsubsec:BenchmarkandReporter}, wurde dieser Vorgang automatisiert. 
 
