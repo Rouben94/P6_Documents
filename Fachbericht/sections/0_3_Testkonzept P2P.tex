@@ -7,46 +7,46 @@
 
 \section{Messkonzept}\label{sec:KonzeptP2PMessung}
 
-Im Nachfolgenden Abschnitt wird auf die Point to Point (P2P) Messung eingegangen. Ziel ist es die Verbindung auf MAC-Layer auszumessen. Eine Mac-Layer Verbindung beschreibt die rudimentäre Kommunikation direkt über der physikalischen-Schicht. Dazu wird im folgenden auf das Messkonzept, den Messablauf und technische Einzelheiten eingegangen. 
+Im den nachfolgenden Abschnitten wird auf die Kon­zep­ti­o­nie­rung und Umsetzung der Point to Point (P2P) Testinfrastruktur eingegangen. Ziel dieser Infrastruktur ist es die Verbindungen auf den MAC-Layern \textit{BLE} sowie \textit{IEEE 802.15.4} auszumessen. Die Mac-Layer Verbindung beschreibt eine rudimentäre Kommunikation zwischen zwei Knoten, welche direkt auf der physikalischen Schicht stattfindet und keine Netzwerk- und Applikationsschichten beteiligt sind.
+Dazu wird zuerst das Messkonzept präsentiert und anschliessend die Inbetriebnahme und Bedienung der Messinfrastruktur erläutert. Schliesslich werden noch die technischen Einzelheiten hinsichtlich Umsetzung dargelegt.
 
-\subsection{MAC-Layer}\label{sec:MAC-LayerP2P}
+\subsection{Definition MAC-Layer}\label{sec:MAC-LayerP2P}
 
-Der MAC-Layer ist bei drahtlosen Protokollen oftmals über Normen spezifiziert. Die Hardware-Platfrom (siehe Abschnitt \ref{sec:HardwarePlattform}) unterstützt BLE, sowie den IEEE 802.15.4 Standard. Dieser Modus wird im weiteren als Radio-Mode bezeichnet. Nebst dem Mode charakterisiert sich die MAC-Schicht über den verwendeten Kanal. Dabei handelt es sich um eine Frequenz über welche gesendet wird. 
+Der MAC-Layer ist bei Protokollen für die drahtlose Kommunikation oftmals über Normen spezifiziert. Die eingesetzte Hardware-Plattform (siehe Abschnitt \ref{sec:HardwarePlattform}) unterstützt \textit{BLE}, sowie den \textit{IEEE 802.15.4} Standard.
+Diese beiden Standards werden im weiteren als Radio-Mode bezeichnet. Nebst dem Mode charakterisiert sich die MAC-Schicht über den verwendeten Kanal. Dabei handelt es sich um ein Frequenzband auf welchem gesendet wird. 
 
-\subsection{Anforderungen}\label{sec:AnforderungentP2P}
+\subsection{Anforderungen}\label{subsec:AnforderungentP2P}
 
-Die Anforderungen an die Testinfrastruktur ist es eine Verbindung mit den folgenden Messdaten charakterisieren zu können. 
+Die Anforderung an die Point-to-Point Testinfrastruktur ist es, eine Verbindung zwischen zwei Funkmodulen anhand der folgenden Messwerte charakterisieren zu können:
 
 \begin{itemize}
-	\item \textit{\textbf{SNR}} (Signal to Noise Ratio)
-	\item \textit{\textbf{Packetloss}} (Paketverlust)
+	\item \textit{\textbf{Signal to Noise Ratio (SNR)}} Signal-Rausch-Verhältnis 
+	\item \textit{\textbf{Packetloss}} Paketverlust
 \end{itemize}
 
-Das Ausmessen der obigen Eingenschaften soll pro Kanal (Frequenz) möglich sein. Die folgenden Parameter können vom Benutzer eingestellt werden um eine Messung durchzuführen.
+Das Ausmessen der obigen Eingenschaften soll pro Kanal (Frequenz) möglich sein. Die folgenden Parameter können vom Benutzer eingestellt werden um eine Messung durchzuführen:
 
 \begin{itemize}
-	\item \textit{\textbf{Radio-Mode}} (BLE-1Mbit, IEEE 802.15.4, etc.)
-	\item \textit{\textbf{Start-Channel}} Abhängig vom Radio-Mode. Kanal ab welchem mit Messen begonnen wird.
-	\item \textit{\textbf{Stop-Channel}} Abhängig vom Radio-Mode. Kanal bis zu welchem gemessen wird. 
-	\item \textit{\textbf{Tx-Power}} Sendeleistung, mit welcher gesendet wird. 
-	\item \textit{\textbf{CA}} Collision-Avoidance-Modus (nur bei IEEE 802.15.4 Radio Mode)
+	\item \textit{\textbf{Radio-Mode}} (BLE-1Mbit, IEEE 802.15.4)
+	\item \textit{\textbf{Start-Channel}} Abhängig vom Radio-Mode. Kanal auf welchem die Messung gestartet wird.
+	\item \textit{\textbf{Stop-Channel}} Abhängig vom Radio-Mode. Kanal bis zu welchem die Messung durchgeführt werden soll. 
+	\item \textit{\textbf{Tx-Power}} Sendeleistung
+	\item \textit{\textbf{Collision-Avoidance (CA)}} Kollisionsvermeidung (nur bei IEEE 802.15.4 Radio Mode)
 	\item \textit{\textbf{Payload}} Anzahl der zu sendenden Bytes pro Paket.
 \end{itemize}
 
 
 \subsection{Messgrössen}\label{sec:MessgrössenP2P}
-
-Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt wird das Signal-Rasuch-Verhältnis (SNR) und der Paketverlust gemessen. Die beiden Messgrössen können direkt mittels der nRF-Platform bestimmt werden.
+Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt, wird das Signal-Rausch-Verhältnis (SNR) und der Paketverlust gemessen. Die beiden Messgrössen können mit Hilfe der nRF-Plattform direkt bestimmt werden.
 
 \begin{itemize}
-	\item \textbf{\textit{SNR}}: Gibt das Verhältnis zwischen der Signalleistung und Rauschleistung an. Als Rauschen werden jegliche Umwelteinflüsse (Störungen) bezeichnet. Zur Bestimmung des SNR muss die Rauschleistung und Signalleistung erfasst werden. Bei der Rauschleistungs -Detektion muss der Signalbringer (Sender) deaktiviert sein. Das Messen der Signalleistung + Rauschleistung erfolgt bei eingeschaltetem Sender.
-	\item \textbf{\textit{Paketverlust}}: Bildet das Verhältnis von gesendeten, zu erfolgreich Empfangenen Paketen. Zur Bestimmung werden Probe-Pakete generiert und vom Sender zum Empfänger übermittelt. Dieser zählt die Anzahl empfangener Pakete und meldet den Zählwert dem Sender. Anschliessend ist der Sender in der Lage den Paketverlust zu berechnen. 
+	\item \textbf{\textit{SNR}}: Gibt das Verhältnis zwischen der Signalleistung und Rauschleistung an. Als Rauschen werden jegliche Umwelteinflüsse (Störungen) bezeichnet. Zur Bestimmung des SNR muss die Rauschleistung und Signalleistung erfasst werden. Bei der Detektion der Rauschleistung muss der Signalbringer (Sender) deaktiviert sein. Das Messen der Signalleistung + Rauschleistung erfolgt hingegen bei eingeschaltetem Sender.
+	\item \textbf{\textit{Paketverlust}}: Als Paketverlust wird das Verhältnis der Pakete bezeichnet die das Ziel nicht erreicht haben zu der totalen Anzahl versendeten Pakete, bezeichnet. Zur Bestimmung werden Pakete generiert und vom Sender zum Empfänger übermittelt. Dieser zählt die Anzahl empfangener Pakete und meldet den Zählwert dem Sender. Anschliessend ist der Sender in der Lage den Paketverlust zu berechnen. 
 \end{itemize} 
 
 
 \subsection{Konzept}\label{sec:KonzeptP2P}
-
-Zur Realisierung der Point to Point Testinfrastruktur wurde auf eine \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Broadcasting bekannt). Dies hat den Vorteil das mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass die Messpfade nur unidirektional charakterisiert werden (nur von Master zu Slave oder Uplink-Pfad). Die Abweichung zwischen Up- und Downlink Pfad können durch wiederholen der Messung mit vertauschten Standorten verifiziert werden. 
+Zur Realisierung der Point to Point Testinfrastruktur wurde auf ein \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Multicast bezeichnet). Dies hat den Vorteil das mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass die Messpfade nur unidirektional charakterisiert werden (nur von Master zu Slave oder Uplink-Pfad). Die Abweichung zwischen Up- und Downlink Pfad kann durch wiederholen der Messung mit vertauschten Standorten verifiziert werden. 
 
 \begin{figure} [H]
 	\centering
@@ -55,17 +55,22 @@ Zur Realisierung der Point to Point Testinfrastruktur wurde auf eine \textit{One
 	\label{fig:KonzeptschemaP2P}
 \end{figure}
 
-Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Managment Station, einem Master- und mehreren Slave Nodes. Über die Management Station können Messresultate angezeigt, sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node). Er koordiniert den Messablauf und sendet \textit{Probe Packets} an alle SN (Slave Nodes). Diese Protokollieren die Anzahl empfangener \textit{Probe Packets} und melden ihre Messresultate an den MN zurück. Nach Empfang aller Resultate leitet der MN alle Messergebnisse an die MS weiter. Dort werden dem Benutzer die Messdaten dargestellt. Details zum Ablauf sind in Abschnitt \ref{sec:SoftundFirmware} aufgeführt. Eine mögliche Anwendung der Testinfrastruktur wird im folgenden Abschnitt \ref{sec:TestszenarienP2P} beschrieben.  
+\todo[inline]{Schreibfehler in der Grafik.->Messurment Parameters}
+
+Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Management Station, einem Master- und mehreren Slave Nodes. Über die Management Station können Messresultate angezeigt, sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node). Er koordiniert den Messablauf und sendet \textit{Probe Packets} an alle SN (Slave Nodes). Diese Protokollieren die Anzahl empfangener \textit{Probe Packets} und melden ihre Messresultate an den MN zurück. Nach Empfang aller Resultate leitet der MN alle Messergebnisse an die MS weiter. Dort werden dem Benutzer die Messdaten dargestellt. Details zum Ablauf sind in Abschnitt \ref{sec:SoftundFirmware} aufgeführt. Eine mögliche Anwendung der Testinfrastruktur wird im folgenden Abschnitt \ref{sec:TestszenarienP2P} beschrieben.  
 
 \subsection{Testszenarien}\label{sec:TestszenarienP2P}
+Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert.
+Es kann eingesetzt werden um den Aufbau von sogenannten \textit{Personal Area Networks (PAN)} zu optimieren.
+Mithilfe diese Tools können zum Beispiel die Standorte der Teilnehmer eines Zigbee, Thread oder Bluetooth Mesh Netzwerks optimal gewählt werden.
 
-Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert. Es kann eingesetzt werden um den Aufbau von PAN-Netzwerken zu optimieren. Mithilfe des Tools können zu Beispiel die Standorte der Teilnehmer eines Zigbee, Thread oder Bluetooth Mesh Netzwerks optimal gewählt werden. Zudem lassen sich während eines Messvorgangs gezielt Störungen in ein solches Netzwerk einbringen. Dadurch können die Netzwerke auf Störsicherheit geprüft werden. 
-
-
+Weiter kann die Testinfrastruktur als Störquelle in den Benchmarks von Mesh Netzwerken eingesetzt werden (siehe Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke}).
+Die Form der Störung kann dabei gemäss den einstellbaren Parametern \ref{subsec:AnforderungentP2P} frei gewählt werden.
 
 \subsection{Messaufbau}\label{sec:Messaufbau}
 
-Bei der verwendeten Hardware handelt es sich um nRF52840 Mikrocontroller (siehe Abschnitt \ref{sec:HardwarePlattform}). Als Master dient das Development-Kit (DK), welches über eine USB-Buchse verfügt. Als Slaves kommen sowhl DKs als auch die USB-Dongle Variante in Frage. Letztere sind einfacher unterzubringen und werden in diesem Messaufbau bevorzugt. Um die Erhaltenen Daten auswerten zu können geschieht die Visualisierung mittels einem Laptop oder PC. Dieser muss mit der USB Buchse des Masters verbunden werden und die entsprechende Auswertesoftware gestartet sein. Im Folgenden Abschnitt wird die Inbetriebnahme und Bedienung der P2P-Testinfrastruktur genauer beschrieben. 
+Bei der verwendeten Hardware handelt es sich um nRF52840 Mikrocontroller (siehe Abschnitt \ref{sec:HardwarePlattform}). Als Master dient das Development-Kit (DK), welches über eine USB-Buchse verfügt. Als Slaves kommen sowohl DKs als auch die USB-Dongle Variante in Frage. Letztere sind einfacher unterzubringen und werden in diesem Messaufbau bevorzugt. Um die erhaltenen Daten auswerten zu können geschieht die Visualisierung mittels einem Laptop oder PC. Dieser muss mit der USB Buchse des Masters verbunden werden und die entsprechende Auswertesoftware gestartet sein. Im nachfolgenden Abschnitt \ref{sec:InbetriebnahmeBedienungP2P} wird die Inbetriebnahme und Bedienung der P2P-Testinfrastruktur genauer beschrieben.
+Die Abbildung \ref{fig:MessaufbauP2P} zeigt den schematischen Messaufbau der P2P-Testinfrastruktur. Der Master kann durch den Einsatz eines Notebooks mobil gehalten werden um so den optimalen Standort des Masters anzupeilen. 
 
 \begin{figure} [H]
 	\centering
@@ -73,8 +78,6 @@ Bei der verwendeten Hardware handelt es sich um nRF52840 Mikrocontroller (siehe 
 	\caption{Messaufbau P2P Testinfrastruktur}
 	\label{fig:MessaufbauP2P}
 \end{figure}
-
-Abbildung \ref{fig:MessaufbauP2P} zeigt den Messaufbau der P2P-Testinfrastruktur. Der Master kann mittels Laptop mobil gehalten werden um so den optimalen Standort des Masters anzupeilen. 
 
 
 \newpage
