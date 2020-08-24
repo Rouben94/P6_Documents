@@ -97,20 +97,16 @@ Zur Inbetriebnahme müssen jedoch folgende Voraussetzungen bezüglich vorhandene
 	\end{itemize}
 \end{itemize}
 
-Eine Anleitung und der Sourcecode sind im \href{https://github.com/Rouben94/P6_Software}{Github Repository\footnotemark[\value{footnote}]} zu diesem Projekt verfügbar \cite{github_p6_software_p2p_2020}.
+Eine Anleitung und der Sourcecode sind im \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnote{\url{https://github.com/Rouben94/P6_Software}\cite{anklin_bobst_horath_rouben94p6_software_nodate}}} zu diesem Projekt verfügbar \cite{github_p6_software_p2p_2020}.
 Um den Master und die Slaves vorzubereiten sind die beiden mit der entsprechenden Firmware zu laden.
 Anschliessend können die Slaves im Raum platziert und der Master am Laptop eingesteckt werden.
 Sobald diese geschehen ist, kann nach folgender Schritt für Schritt Anleitung vorgegangen werden.
 
 \subsection{Schritt 1 - Webserver Starten}\label{sec:SchrittWebserverStarten}
 Der Webserver wurde mit eine Windows Umgebung entwickelt und getestet. Die folgende Anleitung ist demzufolge nur für eine Windows Umgebung gültig.
-Für die Verwendung mit Linux oder MacOS sind auf der Homepage von \href{https://www.djangoproject.com/}{Django\footnote{\url{https://www.djangoproject.com}}} entsprechende Anleitungen verfügbar.
-Bevor der Webserver gestartet werden kann, muss der Sourcecode vom \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnotemark[\value{footnote}]} geklont werden.
+Für die Verwendung mit Linux oder MacOS sind unter folgendem \href{https://tutorial.djangogirls.org/en/django_installation/}{Link\footnote{\url{https://tutorial.djangogirls.org/en/django_installation/}}} entsprechende Anleitungen verfügbar.
+Bevor der Webserver gestartet werden kann, muss der Sourcecode vom \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnotemark[1]} geklont werden.
 Auf der Ordnerebene \textbf{P6\_Software\textbackslash P2P\textbackslash Webserver\textbackslash p2p\_webserver} müssen folgende cmd Befehle ausgeführt werden.
-
-\footnotetext[\value{footnote}]{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}}
-
-\todo[inline]{Link zu Django Website einfügen und Footnote Numbering anpassen.}
 
 \begin{lstlisting}[style=DOS]
 Microsoft Windows [Version 10.0.18363.1016]
@@ -173,29 +169,29 @@ Nachdem die serielle Verbindung zum Master hergestellt ist, werden auf der Seite
 
 Damit die Parameter der Nodes verändert werden können, besteht auf der gleichen Seite die Möglichkeit die gewünschten Werte einzugeben und an den Master zu senden. Die Parameter können wie auf der Abbildung \ref{fig:WebserverNodelistView} markiert, definiert werden. Folgende Vorgaben müssen bei der Eingabe eingehalten werden:
 
-\paragraph{Start und Stop Channel}
-Falls IEEE 802.15.4 250kBit Mode ausgewählt:
-\begin{itemize}
-	\item Start Channel 11 bis Stop Channel 26
-\end{itemize}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|l|c|l|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Start und Stop Channel Feld}}                                                            \\ \hline
+		\multicolumn{2}{|c|}{\textbf{IEE 802.15.4 250 kBit}}       & \multicolumn{2}{c|}{\textbf{Alle Anderen Modi}}          \\ \hline
+		\multicolumn{2}{|c|}{Start Channel 11 bis Stop Channel 26} & \multicolumn{2}{c|}{Start Channel 0 bis Stop Channel 39} \\ \hline
+	\end{tabular}
+	\caption{Parameter Start und Stop Channel Feld}
+	\label{table:ParameterStartStopChannel}
+\end{table}
 
-Alle anderen Modi:
-\begin{itemize}
-	\item Start Channel 0 bis Stop Channel 39
-\end{itemize}
-
-\paragraph{Payload}
-Falls IEEE 802.15.4 250kBit Mode ausgewählt:
-\begin{itemize}
-	\item 0 - 120 bit
-\end{itemize}
-
-Alle anderen Modi:
-\begin{itemize}
-	\item 0 - 250 bit
-\end{itemize}
-
-\todo[inline]{Vorgaben können evtl. noch als Tabelle dargestellt werden. Könnte übersichtlicher sein.}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|l|c|l|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Payload Feld}}                                                            \\ \hline
+		\multicolumn{2}{|c|}{\textbf{IEE 802.15.4 250 kBit}} & \multicolumn{2}{c|}{\textbf{Alle Anderen Modi}} \\ \hline
+		\multicolumn{2}{|c|}{0 - 120 bit}                    & \multicolumn{2}{c|}{0 - 250 bit}                \\ \hline
+	\end{tabular}
+	\caption{Parameter Payload Feld}
+	\label{table:ParameterPayloadFeld}
+\end{table}
 
 \begin{figure} [H]
 	\centering
@@ -408,8 +404,7 @@ Durch Wiederholungen der Messung konnte dieser Fehler als systematisch identifiz
 Mithilfe einer Korrektur um 40$\mu$s konnte die Genauigkeit in den Bereich von 100ns bis 1200ns reduziert werden. Eine Abweichung der Zeitsynchronisation von ca. 1$\mu$s sollte genügend genau sein um als gute Grundlage für die Statemachine aus Abschnitt \ref{sec:SoftundFirmware} zu dienen. 
  
 \subsection{Webserver}\label{subsec:DjangoWebserver}
-\todo[inline]{Evtl. noch eine kurze Einleitung ins Kapitel Webserver
-}
+Damit die P2P-Testinfrastruktur visualisiert und mit einem schönen User Interface gesteuert werden kann, wurde ein Webserver aufgesetzt. Das Ziel ist es auf einem Rechner unter einer Web-Adresse einen Webserver zu erreichen, welche es ermöglicht alle Einstellung über eine serielle Schnittstelle dem BMN mitzuteilen. Somit wird es möglich den Ablauf bequem über den Web-Server zu steuern.
 \subsubsection{Django}\label{subsubsec:Django}
 Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver aufgesetzt.
 Django ist ein open-source Webframework, dass auf dem Model-View-Controller Prinzip basiert und in der Programmiersprache Python geschrieben wurde.
@@ -575,7 +570,7 @@ In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe For
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{ParamForm.png}
+	\includegraphics[width=\textwidth]{ParamForm.png}
 	\caption{Parameter Form}
 	\label{fig:ParamForm}
 \end{figure}
@@ -586,8 +581,6 @@ In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe For
 	\caption{Port Form}
 	\label{fig:PortForm}
 \end{figure}
-
-\todo[inline]{Bild Parameter Form anpassen. Schreibfehler CSMA-CA}
 
 \paragraph{Serielle Kommunikation:}\label{par:SerielleKommunikation}
 Die Serielle Kommunikation wird mit Hilfe der Python Bibliothek \textit{PySerial} aufgebaut. Auf der P2P-Webserver Seite Connect, kann der Port ausgewählt werden, an dem der P2P-Master angeschlossen ist. Sobald die Verbindung zum Master aufgebaut ist, wird ein separater Python Thread gestartet. In diesem Thread wird in einem while-loop das Serielle Interface permanent ausgelesen. Sobald der Master einen neuen Mess-Report schickt, wird dieser ausgewertet und es werden Node und Channel Objekte anhand des Reports erstellt. In der Abbildung \ref{fig:AblaufDjangoSerial} ist der Ablauf ersichtlich.
