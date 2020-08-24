@@ -396,9 +396,13 @@ Mittels einem weiteren Python Skript und manueller Bearbeitung in Excel können 
 Die verschiedenen Benchmark Slave Nodes (BSN) werden mithilfe ihrer MAC-Adresse identifiziert.
 Jedem nRF52840-SOC wird eine 48-bit lange Adresse während der Produktion eingebrannt. Dabei handelt es sich um zufällig generierte Werte.
 Zur Identifizierung im Benchmark werden nur die letzten 32-bit dieser MAC-Adresse verwendet.
-Auf dem nRF-52840-Dongle ist die Adresse auf der Rückseite angegeben (siehe Abbildung ...) und kann so einfach abgelesen werden.
+Auf dem nRF-52840-Dongle ist die Adresse auf der Rückseite angegeben (siehe Abbildung \ref{fig:MACAdresseDongle}) und kann so einfach abgelesen werden.
 
-\todo[inline]{Raffi:  Bei Dongle mit Bild wo die MAC-Adresse abzulessen ist. }
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{Donge_MAC_Address.jpg}
+	\caption{MAC Adresse nRF52840-Dongle}\label{fig:MACAdresseDongle}
+\end{figure}
 
 
 \subsubsection{Konfiguration Benchmark Slave Node}\label{subsubsec:NodeConfiguration}

@@ -133,12 +133,11 @@ Schlussendlich lässt sich Thread als klarer Sieger erkennen. Dieser Network-Sta
 
 
 \subsection{Thread}\label{subsec:Thread}
+Wie aus den vorhergehenden Kapiteln ersichtlich hat der Thread Stack die Messungen am besten abgeschlossen. Das bedeutet aber nicht unbedingt, dass der Stack der Beste ist. Es ist klar zu erkennen, dass der Thread Stack dank seiner automatischen Ernennung von Routing-Knoten, sich seiner Umgebung gut anpassen kann. Die Latenzzeit der gesendeten Nachrichten ändert sich in verschiedenen Umgebungen nur minimal. Das bedeutet, dass sich der Stack sehr gut für eine Hausautomation eignet. Wenn sich Sensoren oder Aktoren verschieben, z.B. wenn eine Lampe einen neuen Standort erhaltet, erkennt dies der Stack und kann das Routing der Knoten anpassen. Da sich das Netz sehr gut erweitern lässt und sich die Latenzzeiten eher tief zeigen, kann das Mesh-Netzwerk ausserdem gut für Industrieanwendungen verwendet werden. 
 
-\todo[inline]{Rouben}
+Durch das automatische Routen der Knoten, entsteht auf den einzelnen Nodes jedoch ein Overhead, der zum Beispiel BT-Mesh nicht hat. Aus diesem Grund ist der Energieverbrauch auf den Knoten höher, was sich auch in der Abbildung \ref{fig:EnergieverbrauchMessreihen} zeigt. Dies ist keine repräsentative Messung, da nur die aktiven Radio Zeiten gemessen wurde, es könnte trotzdem die vorherige These mit dem Overhead bestätigen. 
 
-\todo[inline]{Erhöhung der Paketlänge führt zu steigerung des Durchsatzes -> Paylod von 50 Byte reicht aus um innerhalb eines Pakets versendet zu werden. }
-
-\todo[inline]{Pro / COntra eigene Einschätzung des Stacks... z.B. Thread optimal für Homeautomation.. eher nicht geeiget für Smart Agriculture}
+Anders als bei BT-Mesh können mit dem IEEE 802.15.4 und dem 6LoWPAN Layer grösser Pakete versendet werden. Das bedeutet, dass die Segmentierung im Gegensatz zu BL-Mesh später stattfindet. Dies erklärt das Phänomen, dass sich der Durchsatz mit steigender Payload vergrössert. Der Thread Stack erreicht bei manchen Messreihen einen Durchsatz von bis zu 32 kbit pro Sekunde. Dies ist jedoch eher unwahrscheinlich. Das bei den Durchschnittsberechnungen kein Median verwendet wurde, können Extremwerte den Durchschnitt verfälschen. Es gab sehr wenige Latenzmessungen, die Fehlerhaft waren und eine Latenz unter 0.5ms aufwiesen. Durch diesen Fehler wurde der Durchsatz in der Auswertung unwahrscheinlich hoch. 
 
 \subsection{Zigbee}\label{subsec:Zigbee}
 
