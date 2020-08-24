@@ -20,8 +20,8 @@ Flash              & 1MB                                        \\
 RAM                & 256kB \\
 Frequency Band     & 2.4GHz   \\
 Wireless protocols & IEEE 802.15.4 (Thread, Zigbee), Bluetooth 5.2  \\
-TX only run current & 4.8mA \\
 Operating voltage  & 3V \\
+TX only run current & 4.8mA \\
 \bottomrule
 \end{tabular}
 \caption{Eigenschaften nRF52840 SoC \cite{nordic_semiconductor_asa_nrf52840_2020}\cite{nordic_semiconductor_asa_nrf52840_ps_v11pdf_nodate}}
@@ -29,11 +29,12 @@ Operating voltage  & 3V \\
 \end{table}
 
 \subsection{Hardware Development Kits}\label{subsec:HardwareDevelopmentKits}
-Der Hersteller Nordic Semiconductor bietet gleich zwei Entwicklungsboards für den SoC an. Einerseits das umfangreiche nRF52840-DK (pca10056) \ref{fig:nrf52840-DK} welches zusammen mit dem Software Development Kit von Nordic Semiconductor eine vollumfängliche Entwicklungsumgebung bietet.
+Der Hersteller Nordic Semiconductor bietet gleich zwei Entwicklungsboards für den SoC an.
+Einerseits das umfangreiche nRF52840-DK (pca10056) (siehe Abbildung \ref{fig:nrf52840-DK}) welches zusammen mit den Software Development Kits von Nordic Semiconductor (siehe Abschnitt \ref{sec:Soft-undFirmware}) eine komplette Entwicklungsumgebung bietet.
 Auf dem Board ist nebst diverser Peripherie auch ein Segger J-Link Debugger integriert.
 Dieser erleichtert das flashen und debuggen ungemein.
 Im Benchmark Betrieb fungiert ein nRF52840-DK als Benchmark Master Node \ref{subsubsec:Nodes} wobei die USB-UART Schnittstelle als Interface zur Benchmark Management Station verwendet wird.
-Als einfachere Alternative zum voll umfänglichen Development Kit werden als Benchmark Slave Nodes \ref{subsubsec:Nodes} die einfacheren und günstigeren nRF52840-Dongle (pca10059) \ref{fig:nrf52840-Dongle} verwendet.
+Als einfachere Alternative zum voll umfänglichen Development Kit werden als Benchmark Slave Nodes \ref{subsubsec:Nodes} die einfacheren und günstigeren nRF52840-Dongle (pca10059) (siehe Abbildung \ref{fig:nrf52840-Dongle}) verwendet.
 Offensichtlich als USB-Dongle entworfen können die Dongles flexibel eingesetzt werden. Die fehlende Peripherie macht die Hardware jedoch unpassend für die Entwicklung neuer Firmware.
 Beide Typen von Entwicklungsboards besitzen eine integrierte PCB Antenne wenn auch in unterschiedlichen Ausführungen.
 Im Abschnitt \ref{subsec:AntenneundStrahlungscharakteristik} wird näher auf die Ausführung der Antennen und deren Strahlungscharakteristik eingegangen.
@@ -58,10 +59,11 @@ Im Abschnitt \ref{subsec:AntenneundStrahlungscharakteristik} wird näher auf die
 
 
 \subsection{Aufbau Testnode}\label{subsec:AufbauTestnode}
-
-Der Aufbau des Testnodes wie er in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} wurde so einfach wie möglich gehalten. Ein externes Batteriepaket wird eingesetzt, damit der Benchmark Slave Node unabhängig von einer externen Stromversorgung betrieben werden kann. So kann der Einsatzort frei gewählt und auch kurzfristig geändert werden.
-Das Batteriepaket besteht aus zwei Standard Mignon Einwegzellen vom Typ AA mit je 1.5V Spannung. In Serieschaltung betrieben wird die Speisespannung von 3V erreicht welche für den Dongle ausreichend ist. Mit fortschreitender Entladung der Zellen sinkt die Spannung. Da der SoC einen Betriebsspannungsbereich von 1.7V bis 5.5V hat stellt die sinkende Spannung jedoch kein Problem dar.
-Die Speisung des nRF52840-Dongle erfolgt über einen 2-poligen JST Header der gemäss Datenblatt xx mit dem VDD OUT und GND Anschluss verbunden ist. Am VDD OUT Anschluss ist ein Betriebsspannungsbereich von 1.8V bis 3.6V zulässig.
+Der Aufbau des Testnodes wie er in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} abgebildet ist, wurde so einfach wie möglich gehalten.
+Ein externes Batteriepaket wird eingesetzt, damit der Benchmark Slave Node unabhängig von einer externen Stromversorgung betrieben werden kann.
+So kann der Einsatzort frei gewählt und auch kurzfristig geändert werden.
+Das Batteriepaket besteht aus zwei Standard Mignon Einwegzellen vom Typ AA mit je 1.5V Spannung. In Serieschaltung betrieben wird die Speisespannung von 3V gemäss der Vorgabe in Tabelle \ref{tab:EigenschaftennRF52840SoC} erreicht. Mit fortschreitender Entladung der Zellen sinkt die Spannung. Da der SoC einen Betriebsspannungsbereich von 1.7V bis 5.5V hat stellt die sinkende Spannung jedoch kein Problem dar.
+Die Speisung des nRF52840-Dongle erfolgt über einen 2-poligen JST Header der gemäss Userguide \cite{nordic_semiconductor_asa_nrf52840_dongle_user_guide_v11pdf_2019} mit dem VDD OUT und GND Anschluss verbunden ist. Am VDD OUT Anschluss ist ein Betriebsspannungsbereich von 1.8V bis 3.6V zulässig.
 Das Batteriegehäuse verfügt ausserdem über einen Schalter um den Testnode nach Belieben ein- und auszuschalten.
 Mit den verwendeten Batterien welche je eine Kapazität von 2900mAh besitzen, können die Nodes im Mesh Benchmark Betrieb über mehrere Tage betrieben werden \cite{distrelec_schweiz_ag_rnd_2020}.
 Eine Messung des Stromverbrauches im Benchmark Betrieb hat gezeigt, dass dieser bei 3V Batteriespannung durchschnittlich 15mA beträgt. Dieser relativ hohe Wert wird einerseits verursacht durch die LED's die geschaltet werden und andererseits durch das Radio Interface welches im Leerlauf permanent im Empfangsmodus ist um allfällige Start Messages empfangen zu können. 
@@ -74,12 +76,12 @@ Dieser Verbrauch ermöglicht eine Betriebsdauer von rund 190 Stunden was mehr al
 	\label{fig:TestnodenRF52840-DongleinklBatteriepack}
 \end{figure}
 
-Die Befestigung des Dongles am Batteriepaket erfolgte so dass die PCB Antenne welche sich am Ende des PCB's befindet möglichst frei liegt und sich dadurch die bestmöglichen Abstrahlungseigenschaften ergeben. Ein weiterer Vorteil der in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} dargestellten Montage ist die Zugänglichkeit des USB Ports. So können die Benchmark Nodes auf einfachste Arte und Weise mit einer neuen Software geflasht werden.
+Die Befestigung des Dongles am Batteriepaket erfolgte so dass die PCB Antenne welche sich am Ende des PCB's befindet möglichst frei liegt und sich dadurch die bestmöglichen Abstrahlungseigenschaften ergeben. Ein weiterer Vorteil der in Abbildung \ref{fig:TestnodenRF52840-DongleinklBatteriepack} dargestellten Montage ist die Zugänglichkeit des USB Ports. So können die Benchmark Nodes auf einfache Arte und Weise mit einer neuen Firmware geflasht werden.
 
  
 \subsection{Antenne und Strahlungscharakteristik}\label{subsec:AntenneundStrahlungscharakteristik}
 
-Wie bereits im Abschnitt \ref{subsec:HardwareDevelopmentKits} erwähnt, besitzen die beiden eingesetzten Development Kits jeweils eine PCB Antenne. Beim nRF52840-DK ist diese als einfache IFA (Inverted-F Antenna) \ref{fig:nrf52840-DK-Copper} ausgeführt während dem der Dongle mangels Platz auf dem PCB eine sogenannte MIFA (Meandered Inverted-F Antenna) \ref{fig:nrf52840-Dongle-Copper} besitzt.
+Wie bereits im Abschnitt \ref{subsec:HardwareDevelopmentKits} erwähnt, besitzen die beiden eingesetzten Development Kits jeweils eine PCB Antenne. Beim nRF52840-DK ist diese als einfache IFA (Inverted-F Antenna) \ref{fig:nrf52840-DK-Copper} ausgeführt währenddessen der Dongle mangels Platz auf dem PCB über eine sogenannte MIFA (Meandered Inverted-F Antenna) \ref{fig:nrf52840-Dongle-Copper} verfügt.
 
 \begin{figure}[!htbp]
 \centering
@@ -97,14 +99,12 @@ Wie bereits im Abschnitt \ref{subsec:HardwareDevelopmentKits} erwähnt, besitzen
 \end{minipage}
 \end{figure}
 
-Erste Versuche zu Beginn dieser Projektarbeit haben gezeigt, dass sich die Eigenschaften der beiden Antennen relativ deutlich unterscheiden. Beispielweise konnte festgestellt werden, dass die Antenne des pca10056 eine deutlich höhere Reichweite erzielt als jene des pca10059.
-Um diese Vermutungen zu prüfen wurde eine Spektrumanalyse der gestrahlten Emmission an den beiden Entwicklungsboards durchgeführt. Diese Messungen wurden im Rahmen eines Projektes für das Modul emv durchgeführt und dort in einem Bericht dokumentiert. Nachfolgend werden die wichtigsten Erkenntnisse daraus nochmals wieder gegeben. Der ganze Bericht ist im Anhang \ref{app:BerichtemvMessungDevelopmentKits} zu finden.
+Erste Versuche zu Beginn dieser Projektarbeit haben gezeigt, dass sich die Eigenschaften der beiden Antennen deutlich unterscheiden. Beispielweise konnte festgestellt werden, dass die Antenne des pca10056 eine deutlich höhere Reichweite erzielt als jene des pca10059.
+Um diese Vermutungen zu prüfen wurde eine Spektrumanalyse der gestrahlten Emmission an den beiden Entwicklungsboards durchgeführt. Diese Messungen wurden im Rahmen eines Projektes für das Modul emv durchgeführt und dort in einem Bericht dokumentiert. Nachfolgend werden die wichtigsten Erkenntnisse daraus nochmals wiedergegeben. Der ganze Bericht ist im Anhang \ref{app:BerichtemvMessungDevelopmentKits} zu finden.
 
 Bei den durchgeführten Messungen lag das Hauptaugenmerk auf der Erfassung der Abstrahlcharakteristik in dreidimensionaler Richtung. Die absoluten Signalpegel konnten dabei nicht korrekt erfasst werden, waren jedoch auch nicht von grosser Bedeutung.
-Die in den beiden Abbildungen \ref{fig:PCA10056Peak} und \ref{fig:PCA10059Peak} dargestellten Abstrahlcharakteristiken der jeweiligen Development Boards zeigen deutliche Unterschiede auf. Während das pca10056 eine sehr gleichmässige Verteilung der Sendeleistung über die gesamte Halbkugeloberfläche ausweist, zeigt das pca10059 deutliche Schwachstellen in Form von Dellen in der Halbkugel auf.
+Die in den beiden Abbildungen \ref{fig:PCA10056Peak} und \ref{fig:PCA10059Peak} dargestellten Abstrahlcharakteristiken der jeweiligen Development Kits zeigen deutliche Unterschiede auf. Während das pca10056 eine sehr gleichmässige Verteilung der Sendeleistung über die gesamte Halbkugeloberfläche ausweist, zeigt das pca10059 deutliche Schwachstellen in Form von Dellen in der Halbkugel auf.
 Weiter unterscheidet sich der maximal Wert in Z-Richtung zwar optisch nur minimal, in Wirklichkeit bedeutet dies jedoch eine 2 bis 4 fach höhere Dämpfung und somit eine deutlich kleinere Reichweite.
-
-
 
 \begin{figure}[!htbp]
 \centering

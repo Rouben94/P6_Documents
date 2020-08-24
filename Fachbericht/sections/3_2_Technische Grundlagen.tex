@@ -15,15 +15,15 @@ In der vorliegenden Arbeit wurde das \textit{ZigBee PRO} Stackprofil verwendet w
 
 Wie in der Abbildung \ref{fig:NetzwerktopologienZigbee} bereits angedeutet, kann innerhalb eines Zigbee Meshnetzwerkes zwischen 3 Nodetypen unterschieden werden. Diese besitzen unterschiedliche Aufgaben und Eigenschaften.
 
-\paragraph{Zigbee Koordinator}\label{par:ZigbeeKoordinator}
+\paragraph{Zigbee Koordinator}
 Als zentrale Einheit übernimmt der \textit{Zigbee Koordinator} Aufgaben wie den Start und die Verwaltung eines PAN (Personal Area Network) inkl. der Definition der wichtigsten Parameter wie der PAN-ID, der Sicherheitsschlüssel sowie die Wahl des IEEE Channels.
 In einem Zigbee-Netzwerk gibt es genau ein Gerät das die Rolle des \textit{Zigbee Koordinators} übernimmt. Wenn dieses Gerät das Netzwerk verlässt oder kurzzeitig ausser Betrieb ist, kann das Netzwerk trotzdem weiter bestehen und funktioniert normal weiter.
 Jeder \textit{Zigbee-Koordinator} hat gleichzeitig auch die Rolle eines \textit{Zigbee-Router}.
 
-\paragraph{Zigbee Router}\label{par:ZigbeeRouter}
+\paragraph{Zigbee Router}
 \textit{Zigbee-Router} bilden das eigentliche Meshnetzwerk. Sie übernehmen die Aufgabe des Routings was die Wegentdeckung sowie Weiterleitung von Paketen beinhaltet. Jeder \textit{Zigbee-Router} führt eine Routing-Table welche fortlaufend aktualisiert wird.
 
-\paragraph{Zigbee End-Device}\label{par:ZigbeeEndDevice}
+\paragraph{Zigbee End-Device}
 Die einfachste Rolle ist jene des \textit{Zigbee End-Devices}. Sie stehen in einer Parent-Child Beziehung mit einem \textit{Zigbee-Router}.
 Diese Kommunikation findet entweder periodisch oder ausgelöst durch einen Userinput statt.
 Ankommende Pakete werden jeweils vom Parent-Node gespeichert bis das  \textit{Zigbee End-Devices} diese abruft.
@@ -32,8 +32,7 @@ Ausgeführt als Sleepy-End-Device können CPU und RAM des entsprechenden Nodes g
 Dadurch können sehr lange Batteriestandzeiten erreicht werden. \cite{markus_krause_rainer_konrad_zigbee_2014}
 
 
-\subsection{Zigbee Protokoll Stack}\label{subsec:ZigbeeProtokollStack}
-
+\subsection{Zigbee Protokoll Stack}
 Die Architektur des Zigbee Stacks besteht aus vier Layern, dem Physical layer (PHY), dem MAC layer, dem Network layer (NWK) und dem Application layer (APL).
 Abbildung \ref{fig:ArchitekturdesZigbeeProtokollStacks} zeigt den Aufbau des Protokoll Stacks im Detail.
 Jede der Schichten ist mit bestimmten Aufgaben betraut und stellt der darüber liegenden Schicht Daten und Dienste bereit.
@@ -56,24 +55,24 @@ Ideal also für sogenannte \textit{Wireless Sensor Networks} (WSN) wie beispiels
 \subsubsection{Network Layer}\label{subsubsec:Network Layer}
 Der Network Layer ist im Zigbee Stack verantwortlich für den Aufbau sowie das Management der Netzwerkfunktionen und das Routing innerhalb dieses Netzwerkes.
 
-\paragraph{Netzaufbau und Adressierung}\label{par:ZigbeeNetzaufbauundAdressierung}
+\paragraph{Netzaufbau und Adressierung}
 Wie unter \ref{par:ZigbeeKoordinator} bereits erwähnt ist der Koordinator verantwortlich für den Aufbau des Zigbee Netzwerks und der Wahl von entsprechend geeigneten Parametern wie beispielsweise einer 16-Bit PAN-ID oder eines möglichst störungsfreien Funkkanals.
 Beim Beitritt eines neuen Funkmoduls wird diesem vom Koordinator eine im Netzwerk einmalige 16-Bit \textit{Short-Address} zugewiesen.
 Anhand dieser kann das Funkmodul nun im Netzwerk adressiert werden und es selbst kann damit Routing Funktionen war nehmen.
 Die im MAC Layer definierte 64-Bit MAC Adresse kann ebenfalls vollwertig für die Adressierung verwendet werden wobei diese schliesslich in die \textit{Short-Address} übersetzt wird.
 
 
-\paragraph{Routing}\label{par:Zigbee Routing}
+\paragraph{Routing}
 Das Routing geschieht innerhalb von Zigbee Mesh Netzwerken mit dem \textit{ZigBee PRO}-Stackprofil mittels Routingtabellen die jeder Router erstellt und nach führt wenn es Änderungen gibt. In dieser ist die \textit{Short-Address} des Ziels sowie jene des nächsten Hops hinterlegt.
 Enthält die Routingtabelle veraltete Einträge oder sind für das entsprechende Ziel noch gar keine Informationen vorhanden, muss ein \textit{Route Discovery} durchgeführt werden.
 Hierbei handelt es sich um eine Broadcast Nachricht welche an alle Router gesendet wird. Diese empfangen die Nachricht und leiten sie wiederum als Broadcast an alle Router in Reichweite weiter. Dabei werden die Wegkosten jeweils addiert um diese sobald die Nachricht beim Zielnode angekommen ist, dem Absender mitzuteilen.
 So wird jener Weg mit den geringsten totalen Wegkosten ermittelt und kann schliesslich in der Routingtabelle abgelegt werden.
 
 
-\subsubsection{Application Layer (APL)}\label{subsubsec:ZigbeeApplicationLayer}
+\subsubsection{Application Layer (APL)}
 Der Zigbee Application Layer kann in drei Teile unterteilt werden, den Application Support Sublayer, das Zigbee Device Object und das Application Framework mit der Zigbee Cluster Library als eigentliche Anwendung.
 
-\paragraph{Application Support Sublayer (APS)}\label{par:ZigbeeApplicationSupportSublayer}
+\paragraph{Application Support Sublayer (APS)}
 Wie der Name andeutet ist der APS Layer für die Anwendungsunterstützung zuständig und ist als Zwischenschicht im Application Layer eingebettet.
 Zu den Aufgaben des APS Layers gehören das Binding, das Gruppenmanagement, die Datenübertragung inkl. Fragmentierung sowie das Erstellen und Versenden von APS-Frames.
 Ausserdem bietet der APS Layer eine Möglichkeit der Empfangsbestätigung auf Applikationsebene. Anders als die Empfangsbestätigung auf MAC Ebene ist diese nicht nur auf Funkmodule in unmittelbarer Reichweite beschränkt.
@@ -90,7 +89,7 @@ Abzüglich sämtlicher Header auf MAC, NWK sowie APS Ebene und sonstigem Protoko
 Sollen nun grössere Daten übertragen werden führt der APS Layer eine Fragmentierung durch \cite[S.~279 - 299]{markus_krause_rainer_konrad_zigbee_2014}.
 
 
-\paragraph{Application Framework (AF) mit Zigbee Cluster Library (ZCL)}\label{par:ZigbeeAFZCL}
+\paragraph{Application Framework (AF) mit Zigbee Cluster Library (ZCL)}
 Das Application Framework bildet den Bereich des APL in dem die eigentlichen Anwendung abläuft. Für die Adressierung stehen dem Anwender dabei 240 sogenannte Endpoints zur Verfügung. Endpoints können mit dem Prinzip von Ports im TCP/IP Modell verglichen werden.
 Sie dienen dazu unterschiedliche Anwendungen auf dem selben Node zu adressieren.
 Innerhalb des AF können Anwendungen nun prinzipiell frei umgesetzt werden.
@@ -98,7 +97,7 @@ Um den Herstellern jedoch eine herstellerunabhängige Applikationsentwicklung zu
 Anwendungen wie beispielsweise ein Lichtschalter, werden durch sogenannte Cluster detailliert beschrieben.
 Dabei handelt es sich um eine Sammlung von Kommandos und Attributen für den jeweiligen Anwendungszweck.
 
-\paragraph{Zigbee Device Object (ZDO)}\label{par:ZigbeeDeviceObject}
+\paragraph{Zigbee Device Object (ZDO)}
 Das Zigbee Device Object ist ein eigenständiges Anwendungsobjekt welches immer mit dem Endpoint 0 addressiert wird.
 Es setzt die Funktionalitäten gemäss Definition der Zigbee Rollen (Koordinator, Router, Enddevice) um und benutzt dafür Funktionen der NWK sowie APS Schicht.
 Beispielsweise ist es zuständig für das Netzwerkmanagement, Knotenmanagement und auch für die Implementation von Sicherheitsfunktionen.
