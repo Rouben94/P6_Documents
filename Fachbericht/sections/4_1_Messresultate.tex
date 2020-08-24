@@ -7,6 +7,7 @@
 Bei der Durchführung der Mesh Benchmark Messungen wurde für jede Messung unter den entsprechenden Bedingungen ein Messprotokoll resp. eine Auswertung erstellt. Die 8 unterschiedlichen Bedingungen sind in Tabelle \ref{tab:MessungenMeshBenchmark} nochmals zusammengefasst sind.
 Diese detaillierten Auswertungen sind im Anhang \ref{app:MessprotokolleMeshBenchmark} dem Bericht angefügt.
 Nachfolgend soll exemplarisch eine dieser Auswertungen erläutert werden um aufzuzeigen was diese darstellen und wie diese gelesen werden können.
+Eine Interpretation dieser Messresultate ihm Rahmen eines Vergleichs erfolgt schliesslich im Abschnitt \ref{sec:VergleichMeshNetzwerke}.
 
 \begin{table}[h]
 \centering
@@ -45,7 +46,7 @@ Weiter musste bei der Durchführung der Messung 5 festgestellt werden, dass die 
 In der Folge dessen wurde die Auswertung dieser Messung gestrichen. Mehr dazu im Abschnitt  \ref{subsec:Validierung}.
 
 
-Die Abbildungen \ref{fig:VerteilungderLatenzzeiten} bis \ref{fig:DurchschnittlicherEnergieverbrauch} zeigen die Messresultate der Messung 2 in der Messumgebung \textit{Wohnung}. Sie stehen exemplarisch für die Messergebnisse aller Messreihen.
+Die Abbildungen \ref{fig:VerteilungderLatenzzeiten} bis \ref{fig:OngoingTransactions} zeigen die Messresultate der Messung 2 in der Messumgebung \textit{Wohnung}. Sie stehen exemplarisch für die Messergebnisse aller Messreihen.
 In Abbildung \ref{fig:VerteilungderLatenzzeiten} ist die prozentuale Verteilung der Latenzzeiten pro Hop dargestellt.
 In sämtlichen Grafiken werden die Ergebnisse von BT Mesh in blau, jene von Thread in grün und jene von Zigbee in rot dargestellt.
 So ist ein direkter Vergleich der Protokolle möglich.
@@ -68,9 +69,7 @@ Es handelt sich dabei wiederum um die Latenzzeit pro Hop. Im Falle von Zigbee is
 Der durchschnittliche Datendurchsatz der mit der Abbildung \ref{fig:DurchschnittlicherDurchsatz} aufgezeigt wird, muss mit der selben Vorsicht betrachtet werden. Denn auch hier werden die Werte pro Hop für die Berechnung verwendet.
 Die präsentierten Werte werden errechnet aus der Paketgrösse (Small oder Large) gemäss den Definitionen in Abschnitt \ref{subsec:AllgemeineBenchmarkParameter} und der Latenzzeit des übertragenen Pakets (siehe Gleichung \ref{eq:BerechnungDurchsatz}.
 Dabei werden die Werte für den Durchsatz für jedes empfangene Paket berechnet und davon schliesslich der Mittelwert gebildet und in Abbildung \ref{fig:DurchschnittlicherDurchsatz} dargestellt.
-Wie oben erwähnt weisst BT Mesh in der vorliegenden Messung grosse Ausreisser auf.
-Thread hingegen zeigt konstant tiefe Latenzzeiten.
-Die Ausreisser bei BT Mesh bewirken nun einen unerwartet hohen Durchsatz bei BT Mesh im Vergleich zu jenem bei Thread.
+Die oben erwähnten Ausreisser bei BT Mesh bewirken nun einen unerwartet hohen Durchsatz bei BT Mesh im Vergleich zu jenem bei Thread welches konstant tiefe Latenzzeiten hat.
 
 \begin{equation}\label{eq:BerechnungDurchsatz}
 TP =  \frac{S_{packet} \cdot 8}{t_{lat}}
@@ -85,9 +84,6 @@ $t_{lat}$ & Latency time (ms)\\
 \end{tabular}
 \end{center}
 \end{small}
-
-
-
 
 \begin{figure}[!htbp]
 \centering
@@ -105,11 +101,9 @@ $t_{lat}$ & Latency time (ms)\\
 \end{minipage}
 \end{figure}
 
-In der Abbildung \ref{fig:DurchschnittlicherPaketverlust} wird der prozentuale Paketverlust gezeigt über die gesamte Anzahl Nachrichten die während dem Benchmark versendet wurden. Die Paketverluste von einzelnen Client-Server Beziehungen werden nicht separat ausgewertet.
+In der Abbildung \ref{fig:DurchschnittlicherPaketverlust} wird der prozentuale Paketverlust gezeigt über die gesamte Anzahl Nachrichten die während dem Benchmark versendet wurden.
+Die Paketverluste von einzelnen Client-Server Beziehungen werden nicht separat ausgewertet.
 Wiederum im Beispiel von BT Mesh sind in dieser Messung 2.07 \% der Pakete nicht am Ziel angekommen.
-Zuletzt wird mit dem Diagramm in Abbildung \ref{fig:DurchschnittlicherEnergieverbrauch} der durchschnittliche Energieverbrauch der Protokolle dargestellt.
-Der Energieverbrauch wurde abgeleitet aus der Aktivzeit des Funkmoduls. Diese wurde verrechnet mit dem Strombedarf des nRF52840 SoC's gemäss den Angaben in der Tabelle \ref{tab:EigenschaftennRF52840SoC}. Eine solche Berechnung erlaubt einen qualitativen Vergleich des Energiebedarf unter den 3 Protokollen da diese auf der gleichen Hardware umgesetzt wurden. Die Werte in der Abbildung \ref{fig:DurchschnittlicherEnergieverbrauch} sind jedoch keine tatsächlichen Verbrauchswerte und können deshalb nur im Kontext des Vergleichs verwendet werden.
-
 
 \begin{figure}[!htbp]
 \centering
@@ -127,12 +121,70 @@ Der Energieverbrauch wurde abgeleitet aus der Aktivzeit des Funkmoduls. Diese wu
 \end{minipage}
 \end{figure}
 
+Mit dem Diagramm in Abbildung \ref{fig:DurchschnittlicherEnergieverbrauch} wird schliesslich noch der durchschnittliche Energieverbrauch der Protokolle dargestellt.
+Dieser ist abgeleitet aus der \textit{Active Radio Time} (siehe Abschnitt \ref{subsubsec:Vergleichswerte}) welche direkt auf dem nRF52840 SoC mit der entsprechenden API ausgelesen werden kann.
+Die \textit{Active Radio Time} wurde schliesslich mit dem Strombedarf des SoC's bei definierter Speisesannung von 3V verrechnet.
+Gemäss den Angaben in der Tabelle \ref{tab:EigenschaftennRF52840SoC} aus Abschnitt \ref{subsec:SystemonChip} beträgt der Strombedarf bei aktivem Funkmodul im Sendemodus 4.8mA.
+Eine solche Berechnung erlaubt einen qualitativen Vergleich des Energiebedarf unter den 3 Protokollen da die Umsetzung auf der gleichen Hardware erfolgte.
+Die Werte in der Abbildung \ref{fig:DurchschnittlicherEnergieverbrauch} sind jedoch keine quantitativen Verbrauchswerte und können deshalb nur im Kontext des Vergleichs verwendet werden.
+Der Strombedarf sämtlicher Peripherie wurde nicht berücksichtigt da dieser prinzipiell bei allen Protokollen identisch ist.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Ongoing_Transactions_and_Latency.png}
+	\caption{Messung 2 Wohnung: Ongoing Transactions und Verlauf der Latenzzeiten über die Messdauer.}
+	\label{fig:OngoingTransactions}
+\end{figure}
+
+Die letzte Grafik gemäss Abbildung \ref{fig:OngoingTransactions} zeigt den Verlauf der \textit{Ongoing Transactions} sowie der Latenzzeiten über die Gesamtdauer einer Messung.
+In diesem Fall beträgt die Dauer 600 Sekunden.
+Die Grafik soll einen Eindruck darüber vermitteln, wie die Stacks damit umgehen, wenn vielen Nachrichten zur selben Zeit versendet werden.
+Die \textit{Ongoing Transactions} welche als durchgezogene Linien dargestellt sind, zeigen zu welchem Zeitpunkt wie viele Nachrichten in der Übermittlung sind.
+Da die Nachrichten in diesem Beispiel sequentiellen versendet werden gibt es nur sehr geringe Ausschläge welche im unteren Bildrand zu sehen sind.
+Die logarithmische Darstellung der Latenzzeiten als gestrichelte Linie bestätigt die Beobachtungen die in der Abbildung \ref{fig:VerteilungderLatenzzeiten} bereits gemacht wurden.
+Zigbee wie auch Thread weisen einen ziemlich regelmässigen Verlauf der Latenzzeiten auf.
+BT Mesh hingegen zeigt starke Ausreisser.
 
 \subsection{Validierung}\label{subsec:Validierung}
+Die durchgeführten Messungen haben aussagekräftige Resultate geliefert welche jedoch stark vom gewählten Vorgehen abhängig sind.
+Dieses Vorgehen soll nun kritisch überprüft und allfällige Mängel im Konzept sowie der Umsetzung aufgezeigt werden.
+Zudem werden systematische Messfehler deklariert.
+
+\begin{description}
+\item[Large Payload]\hfill \\
+Die Messungen 3, 4 und 8 gemäss Tabelle \ref{tab:MessungenMeshBenchmark} welche mit einer grossen Payload durchgeführt wurden, sind nur für Thread und Zigbee aussagekräftig. Der BT Mesh Stack liefert bei diesen Messungen keine brauchbaren Resultate.
+Eine Recherche zu diesem Problem hat ergeben, dass durch die Fragmentierung einer 32 Byte Payload die sichere und schnelle Übertragung der Daten nicht mehr gewährleistet werden kann.
+\todo[inline]{Referenz auf Artikel wenn vorhanden. Raffi? Ansonsten Text anpassen.}
+
+\item[Zigbee Latency]\hfill \\
+Wie bereits im Abschnitt \ref{subsec:Resultate} erwähnt, konnte bei Zigbee die Anzahl Hops die ein Paket passiert hat nicht ausgewertet werden.
+Der Forumsbeitrag \href{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}{\textit{Zigbee - Read number of hops (radius)\footnote{\url{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}}}} bestätigt, dass der entsprechende Wert nicht ausgelesen werden kann.
+Als Folge dessen kann schliesslich die Latenzzeit nur als Total über die gesamte Strecke erfasst werden was in der Auswertung wiederum, BT Mesh und Thread fälschlicherweise einen Vorteil verschafft.
+Die Auswertung der totalen Latenzzeit bei allen 3 Protokollen könnte das Problem lösen.
+Dies würde jedoch dem Messkonzept widersprechen und wurde deshalb nicht umgesetzt.
+Im Vergleich der Abbildungen \ref{fig:DurchschnittlicheLatenzzeitValidierung} und \ref{fig:DurchschnittlicheLatenzzeitohneHopsValidierung} ist der Unterschied einer solchen Betrachtung deutlich erkennbar.
+Während links die Latenzzeit pro Hop dargestellt ist, zeigt die rechte Grafik die totale Latenzzeit.
+
+\begin{figure}[!htbp]
+\centering
+\begin{minipage}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Average_Latency_per_Hop.png}
+		\caption{Durchschnittliche Latenzzeit pro Hop}
+		\label{fig:DurchschnittlicheLatenzzeitValidierung}
+\end{minipage}
+\begin{minipage}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Average_Latency_without_Hops.png}
+		\caption{Durchschnittliche Latenzzeit ohne Berücksichtigung der Hops.}	\label{fig:DurchschnittlicheLatenzzeitohneHopsValidierung}
+\end{minipage}
+\end{figure}
+
+\item[Message Dichte]\hfill \\
 
 
-\todo[inline]{Überprüfung des eigenen Vorgehen usw.}
-\todo[inline]{Fehler in Latency Zigbee da Number of Hops nicht ausgelesen werden kann.}
+ 
+\end{description}
 
 \begin{itemize}
 \item Resultate bei grosser Payload nicht korrekt bei BT Mesh -> Überforderung des Stacks.
