@@ -145,23 +145,32 @@ Anders als bei BT-Mesh können mit dem IEEE 802.15.4 und dem 6LoWPAN Layer grös
 Die Resultate und Vergleiche aus den vorhergehenden Abschnitten zeigen, dass das Zigbee Protokoll in dieser Implementation eine solide Performance abliefert.
 Auch wenn Zigbee nicht ganz an jene Leistung von Thread herankommt, bestätigen die Ergebnisse wieso es zurzeit das am weitesten verbreiteten WPAN Protokoll ist.
 
-Die durchschnittlichen Latenzzeiten liegen zwischen 30 und 50 Millisekunden. Damit schneidet es besser ab als Bluetooth jedoch liegt es hinter jenen Durchschnittswerten von Thread.
-Dies kommt nicht allzu überraschend und ist auch nicht sehr aussagekräftig.
-Viel interessanter zu beobachten sind die Verteilungen der Latenzzeiten, wie sie beispielsweise in Abbildung \ref{fig:VerteilungderLatenzzeiten} zu sehen sind.
+Die durchschnittlichen Latenzzeiten liegen zwischen 30 und 50 Millisekunden. Damit schneidet Zigbee besser ab als Bluetooth jedoch liegt es hinter jenen Durchschnittswerten von Thread.
+Dies kommt nicht allzu überraschend.
+Sehr interessant zu beobachten sind die Verteilungen der Latenzzeiten, wie sie beispielsweise in Abbildung \ref{fig:VerteilungderLatenzzeiten} zu sehen sind.
 Anders als beispielsweise Thread weist Zigbee dort deutliche Peaks bei 40ms und 70ms auf.
 Diese Beobachtung kann bei sämtlichen Messresultaten gemacht werden.
 Ausreisser nach unten gibt es praktisch keine und solche nach oben nur sehr vereinzelt.
-Somit kann festgestellt werden, dass bei Zigbee mit einer minimalen Latenzzeit von ca. 30ms gerechnet werden muss, diese aber in den seltensten Fällen deutlich überschreitet.
+Es kann also festgestellt werden, dass bei Zigbee mit einer minimalen Latenzzeit von ca. 30ms gerechnet werden muss, diese aber in den seltensten Fällen deutlich überschreitet.
 Zigbee wäre also auch für eher zeitkritische Anwendungen geeignet da die Latenzzeiten deterministisch sind.
 In diesen Zusammenhang nochmals zu erwähnen ist, das Fehlen der Information über die Anzahl Hops die ein Paket während dem Benchmark genommen hat.
 Es kann davon ausgegangen werden, dass der zweite Peak bei 70ms Latenzzeit diesem Problem verschuldet ist.
 Wenn also die Anzahl Hops erfasst werden könnte, dürfte sich die Verteilung der Latenzzeiten wohl nochmals reduzieren.
 
+Die Ergebnisse aus Abbildung \ref{fig:Latenzzeiten_per_Hop_Messreihen} zeigen eine weitere interessante Eigenschaft von Zigbee.
+In Messreihe 1 beträgt die durchschnittliche Latenzzeit mit 86ms mehr als das doppelte als in den übrigen Messreihen.
 
 
 
-Im Vergleich mit Thread kann das Zigbee Protokoll nicht überzeugen.
-Weder in der Latenzzeit noch im Durchsatz 
+Die Erhöhung der Payload von 8 auf 50 Byte hat die Latenzzeiten bei den Zigbee Messungen nicht merklich beeinflusst.
+Somit steigt auch der Durchsatz mit grösserer Payload.
+Da die Segmentierung dank IEEE 802.15.4 erst ab 127 Byte Framelänge startet ist dies auch nicht weiter verwunderlich.
+Gegenüber BT Mesh haben Zigbee wie acuh Thread den klaren Vorteil grössere Payloads versenden zu können ohne segmentieren zu müssen.
+
+
+
+
+
 
 \todo[inline]{Cyrill}
 
@@ -173,7 +182,7 @@ Weder in der Latenzzeit noch im Durchsatz
 
 \subsection{Bluetooth Mesh}\label{subsec:Bluetooth_Mesh}
 
-Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie aus dem Abschnitt \ref{subsec:VergleichMessreihen} zu erkennen ist. Der grösste Einfluss auf die Performance hatte die Länge der gesendeten Nachrichten. Dies hat seinen Ursprung das ein einzelnes Bluetooth-Mesh-Paket lediglich 10-Byte Application-Payload aufnehmen kann (siehe Abschnitt \ref{sec:BLEMeshProtokollStack}). Der Stack beginnt mit der Segmentierung der Daten in mehrere kleine Pakete. Bei 32-Byte sind dies bereits 4 Frames. Damit ist der komplette Network-Stack überfordert. 
+Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie aus dem Abschnitt \ref{subsec:VergleichMessreihen} zu erkennen ist. Der grösste Einfluss auf die Performance hatte die Länge der gesendeten Nachrichten. Dies hat seinen Ursprung das ein einzelnes Bluetooth-Mesh-Paket lediglich 10-Byte aufnehmen kann (siehe Abschnitt \ref{subsec:BLEMeshStack}). Der Stack beginnt mit der Segmentierung der Daten in mehrere kleine Pakete. Bei 32-Byte sind dies bereits 4 Frames. Damit ist der komplette Network-Stack überfordert. 
 
 \begin{figure}[H]
 	\centering
@@ -183,14 +192,8 @@ Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie au
 
 Abbildung \ref{fig:Bluetooth_Mesh_Big_Payload_Issue} zeigt eine Messung mit 32-Byte Payload, einer Message-Dichte von 3 Sekunden / Message welche Sequenziell versendet wurden. Dabei ist zu erkennen, dass die Anzahl der Ongoing Transactions immer weiter ansteigt. Lediglich in der Nachtbearbeitungszeit sinkt die Kurve wieder. Dies deutet darauf hin das zu viel Traffic im Netz gesendet wird. Angelehnt an die Ongoing Transactions steigt die Latenz von einer Sekunde auf einige 100 Sekunden an. \\
 
-Vermutlich entsteht eine zu hohe Message-Dichte, da zu viele Relay-Nodes jede empfangene Message wiederholen. Durch deaktivieren einiger Relays könnte der Netzaufbau entlastet werden. Jedoch erfordern solche manuellen Eingriffe Fachwissen und verringern die Ausfallsicherheit des Netzes. \\
+Vermutlich entsteht eine zu hohe Message-Dichte, da zu viele Relay-Nodes jede empfangene Message wiederholen. Durch deaktivieren einiger Relays könnte der Netzaufbau entlastet werden. Jedoch erfordern solche manuellen Eingriffe Fachwissen und verringern die Ausfallsicherheit des Netzes. 
 
-Klare Vorteile erfährt Bluetooth-Mesh beim dem Durchsatz. Durch den 4-mal schnelleren MAC-Layer auf BLE 1Mbits gegenüber IEEE 802.15.4 welcher kediglich mit 250kbit/s arbeitet. Durch verwenden von ausschliesslich Bluetooth 5.0 Teilnehmern in einem Netzwerk könnte die Geschwindigkeit des MAC-Layers sogar nochmals verdoppelt werden, da somit 2Mbit/s möglich wären. \\ 
-
-
-
-
-\todo[inline]{Weiter erläutern gemäss ....}
 
 \todo[inline]{Pro / COntra eigene Einschätzung des Stacks... z.B. Thread optimal für Homeautomation.. eher nicht geeiget für Smart Agriculture}
 
