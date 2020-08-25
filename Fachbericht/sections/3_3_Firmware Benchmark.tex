@@ -62,7 +62,8 @@ Für den Versand von Benchmark Nachrichten wurde deshalb der \textit{ZCL Level c
 Dieser definiert Attribute und Funktionen zur Steuerung eines Gerätes welches einen Level Wert annehmen kann, wie beispielsweise die Helligkeit einer Lampe.
 Die verwendete SDK stellt den \textit{ZCL Level control cluster} standardmässig zur Verfügung.\cite{the_zigbee_alliance_zigbee_2016}
 
-\subsubsection{Endpoint Handler}\label{subsubsec:EndpointHandler}
+
+\subsubsection{Enpoint Handler}\label{subsubsec:EnpointHandler}
 Der Empfang von jeglichen \textit{ZCL} Nachrichten wird in der \textit{nRF5 SDK for Thread and Zigbee} durch einen Callback Handler realisiert.
 Dieser wird beim Start der Anwendung einmalig registriert und ausgelöst durch ein Callback-Ereignis der Radio Schnittstelle.
 Im Zigbee Benchmark wurde ein \textit{Costum Endpoint Handler} implementiert mit welchem die Benchmark Nachrichten ausgewertet werden können.
@@ -109,41 +110,74 @@ Durch Abfrage der \textit{Adress-Table} werden schliesslich die \textit{Short-Ad
 \subsection{Mesh Node Firmware}\label{subsec:ZigbeeMeshNodeFirmware}
 Die Firmware für die Benchmark Nodes die in Abschnitt \ref{sec:Soft-undFirmware} bereits behandelt wurde, wird durch ein C- und ein H-Modul ergänzt die spezifisch für die Implementation des Zigbee Stack zuständig sind.
 Im Modul \textit{bm\_config.h} werden Konstanten für den Benchmark wie auch die Funktion des Stacks definiert.
-Das Modul \textit{bm\_zigbee.c} hingegen beinhaltet je nach Funktion des Nodes (Master, Client oder Server) die entsprechenden Funktionen für das Stack Handling sowie den Versand und Empfang der Nachrichten.
+Das Modul \textit{bm\_zigbee.c} hingegen beinhaltet je nach Funktion des Nodes (Master, Client oder Server) die entsprechenden Funktionen für die Initialisierung und Konfiguration des Stacks sowie das Benchmark Handling.
+Darin ist der Versand und Empfang der Benchmark Nachrichten vereint.
+Der gesamte Sourcecode ist im Github Repository\footnote{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}} zu diesem Projekt einsehbar.
 
-\subsubsection{Stack Configuration}\label{subsubsec:ZigbeeStackConfiguration}
+\subsubsection{Stack Init und Konfiguration}\label{subsubsec:ZigbeeStackInitundKonfiguration}
+Die Stack Init Routine wird durch die Benchmark Statemachine gemäss Abschnitt \ref{subsubsec:StatemachineSoftware} im State \textit{Init Benchmark} aufgerufen.
+Diese Routine ist durch die Funktionen \textit{bm\_zigbee\_init()} sowie \textit{bm\_zigbee\_enable()} im Modul \textit{bm\_zigbee.c} abgebildet.
+Hier wird der Zigbee Stack in der Rolle als \textit{Zigbee-Koordinator} resp. \textit{Zigbee-Server} initialisiert und hochgefahren.
 
-\todo[inline]{bm\_config.h}
+Nach dem Start des Stacks wird der \textit{ZBOSS Mainloop} im Benchmark State iteriert. Damit wird der \textit{ZBOSS Scheduler} aktiviert und die Ausführung des Stacks startet.
 
-\subsubsection{Stack Handling}\label{subsubsec:ZigbeeStackHandling}
+Der \textit{Zigbee-Koordinator} welcher auf dem Benchmark Master Node aufgesetzt ist, startet nun das \textit{Network Formation}, sofern keine Konfiguration gespeichert ist.
+Dies ist nur beim Erststart der Fall.
+Im \textit{Network Formation} wird das Zigbee Netzwerk auf dem gewählten Kanal gebildet und die entsprechenden Netzwerk Schlüssel generiert.
+Kann beim Start eine Konfiguration aus dem Flash gelesen werden oder das \textit{Network Formation} war erfolgreich, wird direkt mit dem \textit{Zigbee Commissioning} gestartet.
 
-\todo[inline]{bm\_zigbee.c}
+Im \textit{Zigbee Commissioning} State melden sich sämtliche Teilnehmer beim \textit{Zigbee-Koordinator} an und erhalten von ihm die nötigen Netzwerkparameter.
+Unter anderem wird jedem Node eine 16-Bit \textit{Short-Address} zugewiesen.
+Der Start des \textit{Commissioning} wird bei den Benchmark Teilnehmern um eine zufällige Zeit zwischen 0 und 30 Sekunden verzögert.
+So kann sichergestellt werden, dass der \textit{Zigbee-Koordinator} nicht von Anfragen überhäuft wird.
+Nach erfolgreichem \textit{Commissioning} ist das Zigbee Mesh Netzwerk bereit für die erste Messung.
 
-\paragraph{Master}\label{par:ZigbeeMaster}
+Die gesamte \textit{Benchmark Init} Phase wie sie im Abschnitt \ref{subsubsec:StatemachineSoftware} definiert wurde dauert bei Zigbee 60 Sekunden.
+Diese Zeit wird benötigt um das \textit{Commissioning} abzuschliessen.
+Danach wird automatisch in den \textit{Benchmark State} gewechselt.
 
-\paragraph{Client}\label{par:ZigbeeClient}
+\subsubsection{Benchmark Handling}\label{subsubsec:ZigbeeBenchmarkHandling}
+Während der Master am Benchmark Handling nicht beteiligt ist,  sind im Modul \textit{bm\_zigbee.c} für den Benchmark Client und den Benchmark Server unterschiedliche Funktionen implementiert.
 
-Benchmark Message
+\paragraph{Client}
+Der Benchmark Client ist für den Versand von Benchmark Nachrichten zuständig.
+Dazu wird durch die Benchmark Statemachine mittels universeller Schnittstelle in der SharedLib (siehe Abschnitt \ref{subsec:SharedLibrary} die Funktion \textit{bm\_send\_message()} aufgerufen.
+Diese löst wiederum einen Callback aus in welchem die Benchmark Nachricht konstruiert und schliesslich versendet wird.
+Die Nachricht ist einem \textit{ZCL Move to Level Request} nachempfunden.
+Allerdings kann die Payload der Nachricht beliebig erhöht werden.
 
-\paragraph{Server}\label{par:ZigbeeServer}
+Noch vor dem Versand der Benchmark Nachricht werden die Message Infos in der Funktion \textit{bm\_read\_message\_info()} ausgelesen und ein Log-Eintrag wird erstellt.
+Dabei handelt es sich um die Messgrössen gemäss Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh}.
+Zudem wird der Zustand des grünen RGB-LEDs gewechselt.
+
+\paragraph{Server}
+Der Benchmark Server wartet im \textit{Benhmark State} auf ankommende Benchmark Nachrichten.
+Sobald ein Paket vom Stack empfangen wurde, wird der Benchmark Endpoint Handler\linebreak \textit{(bm\_ep\_handler())} signalisiert.
+Dieser entscheidet anhand der \textit{ZCL Cluster ID} ob es sich bei der Nachricht um eine Benchmark Nachricht handelt.
+Falls dem so ist, wird die Funktion \textit{bm\_receive\_message()} aufgerufen und die Referenz des Paket Buffers \textit{(bufid)} übergeben.
+Mit Hilfe der \textit{bufid} werden nun die Message Infos ausgelesen und daraus ein Log Eintrag erstellt.
+Zum Schluss wird der Status des blauen RGB-LED's gewechselt womit der erfolgreiche Empfang einer Nachricht signalisiert wird.
 
 
 
 
-\subsection{Benchmark und Stack Parameter}\label{subsec:BenchmarkundStackParameter}
-
+\subsubsection{Benchmark und Stack Parameter}\label{subsubsec:BenchmarkundStackParameter}
+Für die Umsetzung des Zigbee Protokoll Stacks sowie des Benchmark Frameworks für den Zigbee Benchmark, mussten einige Parameter gesetzt oder neu definiert werden.
+Die Tabelle \ref{tab:ZigbeeBenchmarkundStackParameter} zeigt die wichtigsten Benchmark und Stack Parameter.
 
 \begin{table}[h]
 \centering
 \begin{adjustbox}{width=1\textwidth}
 \begin{tabular}{lll}
-Stack Init Time & 60000 ms & \begin{tabular}[t]{@{}l@{}}Zeit die benötigt wird um den Stack für den Benchmark\\zu initialisieren. Das Zigbee Netzwerk benötigt eine\\gewisse Zeit um sich aufzubauen\end{tabular} \\
+Stack Init Time & 60000 ms & \begin{tabular}[t]{@{}l@{}}Zeit die benötigt wird um den Stack für den Benchmark\\zu initialisieren. Das Zigbee Netzwerk benötigt eine\\gewisse Zeit um sich aufzubauen \end{tabular} \\
+STACK\_STARTUP\_MAX\_DELAY & 30000 ms & \begin{tabular}[t]{@{}l@{}}Maximalwert für die Verzögerungszeit des Stack Startup\\bei Client und Server Nodes.\end{tabular} \\
+NETWORK\_FORMATION\_DELAY & 5000 ms & \begin{tabular}[t]{@{}l@{}}Verzögerungszeit für das Network Formation durch \\den Koordinator. \end{tabular} \\
 IEEE Channel & 15 & Zigbee Kanal der verwendet wird um das Mesh aufzubauen. \\
 Client Endpoint & 1 & Nummer für den Client Endpoint im ZCL Level Cluster \\
 Server Endpoint & 10 & Nummer für den Server Endpoint im ZCL Level Cluster \\
-Group ID & 0xB331 & \begin{tabular}[t]{@{}l@{}}Default Group ID. Zu diesem Wert wird der Index für die\\zugewiesene Gruppe addiert um die\\Gruppenzugehörigkeit festzulegen.\end{tabular}
+Group ID & 0xB331 & \begin{tabular}[c]{@{}l@{}}Default Group ID. Zu diesem Wert wird der Index für die\\zugewiesene Gruppe addiert um die\\Gruppenzugehörigkeit festzulegen.\end{tabular}
 \end{tabular}
 \end{adjustbox}
-\caption{Messgrössen Gewinnung und Verwendung}
-\label{tab:MessgrössenGewinnungundVerwendung}
+\caption{Zigbee Benchmark und Stack Parameter}
+\label{tab:ZigbeeBenchmarkundStackParameter}
 \end{table}
