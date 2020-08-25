@@ -58,29 +58,68 @@ Das Thread Routing-Protokoll ist ein einfaches Distanz-Vektor-Routing-Protokoll.
 Das Thread Protokoll verwendet im Link und Physical Layer das IEEE 802.15.4 Protokoll. \cite{ieee_computer_society_ieee_2020} \cite[Seite 3-2]{thread_group_inc_thread_2017}
 \newpage
 
-\subsection{Netzaufbau und Topologie}\label{subsec:NetzaufbauundTopologie}
+\subsection{Netzaufbau und Topologie}\label{subsec:NetzaufbauTopologie}
+In den nachfolgenden Unterkapiteln wird erklärt, wie das ganze Thread Netzwerk aufgebaut und verwaltet wird.
 
+\subsubsection{Node Rollen}\label{subsubsec:NodeRollen}
+Wie im Bild \ref{fig:ThreadDeviceRoles} ersichtlich, wird das Thread Netzwerk in zwei verschiedene Rollen aufgeteilt. \cite[Seite 1-4]{thread_group_inc_thread_2017}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{ot_device_roles.png}
+	\caption{Thread Device Roles}\label{fig:ThreadDeviceRoles}
+\end{figure}
+
+\paragraph{Router:}
+Ein Gerät mit der Router Rolle leitet alle Pakete für Netzwerkgeräte weiter und hält aus diesem Grund seinen Transceiver jederzeit aktiviert. Weiter bietet der Router sichere Commissioning-Dienste für Geräte an, die versuche dem Netzwerk beizutreten. \cite[Seite 1-4]{thread_group_inc_thread_2017}
+
+\paragraph{Endgerät:}
+Ein Gerät mit der Rolle Endgerät kommuniziert hingegen nur mit einem einzelnen Router und kann seinen Transceiver deaktivieren, falls dieser nicht benötigt wird. Das Endgerät kann deshalb seine Leistung reduzieren und trotzdem voll funktionsfähig im Netzwerk kommunizieren. Da der Transceiver sporadisch abgeschaltet wird, leitet das Endgerät keine Pakete für andere Netzwerkgeräte weiter. \cite[Seite 1-4]{thread_group_inc_thread_2017}
+
+\newpage
 \subsubsection{Node Typen}\label{subsubsec:NodeTypen}
+Ausserdem können die Thread Geräte, wie in Abbildung \ref{fig:ThreadDeviceTypes} zu sehen ist, in zwei verschiedene Node Typen unterteilt werden: \cite[Seite 1-4]{thread_group_inc_thread_2017}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.39\textwidth]{ot_device_types.png}
+	\caption{Thread Device Types}\label{fig:ThreadDeviceTypes}
+\end{figure}
 
 \paragraph{Full Thread Device (FTD):}\label{par:FullThreadDevice}
+Ein Full Thread Device (FTD) hat sein on-chip-radio immer aktiviert, erhält und leitet alle Multicast Nachrichten weiter und verwaltet die IPv6-Adresszuordnungen. Ein FTD kann als Router oder als Endgerät arbeiten. Es gibt drei Arten von FTDs: \cite[Seite 1-4]{thread_group_inc_thread_2017}
 
-\underline{Leader:}
+\begin{itemize}
+	\item \textbf{Router}
+	\item \textbf{Router Eligible End Device (REED)} - Kann Router oder Endgerät sein.
+	\item \textbf{Full End Device (FED)} - Kann nur ein Endgerät sein.
+\end{itemize}
 
-\underline{Router:}
 
-\underline{Full End Device:}
+\paragraph{Minimal Thread Device (MTD):}
+Ein Minimal THread Device leitet keine Multicast Nachrichten weiter, das Gerät kommuniziert nur über einen Router mit dem Netzwerk. Ein MTD kann nur als Endgerät arbeiten. \cite[Seite 1-4]{thread_group_inc_thread_2017}
 
-\paragraph{Minimal Thread Device (MTD): }
+\begin{itemize}
+	\item \textbf{Minimal End Device (MED)} - Transceiver ist immer eingeschaltet und muss keine Nachrichten vom Router abfragen. 
+	\item \textbf{Sleepy End Device (SED)} - Transceiver ist ausgeschaltet, wacht nur auf um Nachrichten vom Router abzufragen.
+\end{itemize}
 
-\underline{Minimal End Device:}
+\paragraph{Leader:}
+Der Thread Leader ist ein Router, der für die Verwaltung aller Router im Netzwerk verantwortlich ist. Der Leader wird dynamisch selbst vom Netzwerk gewählt und hat Zugriff auf das gesamte Thread Netzwerk. Er verteilt auf ganzer Netzwerksebene Konfigurationsinformationen. In jedem Netzwerk gibt es immer nur einen Leader. \cite[Seite 1-4]{thread_group_inc_thread_2017}
 
-\underline{Sleepy End Device:}
+\paragraph{Boarder Router:}
+Ein Border Router ist ein Gerät, das Informationen zwischen dem Thread Netzwerk und einem nicht Thread Netzwerk weiterleitet. Mit dem Border Router ist es möglich das Thread Netzwerk über das Internet zu erreichen. Es besteht zudem die Möglichkeit das Thread Netzwerk über den Border Router zu konfigurieren. So kann z.B. mit einer Bluetooth Verbindung einzelne Knoten hinzugefügt oder entfernt werden. \cite[Seite 1-4]{thread_group_inc_thread_2017}
 
 \subsubsection{IPv6 Adressierung}\label{subsubsec:IPv6Adressierung}
+\paragraph{Bereiche:}
+
+\paragraph{Unicast:}
+
+\paragraph{Multicast:}
+
+\paragraph{Anycast:}
 
 \subsubsection{Netzwerk Aufbau}\label{subsubsec:NetzwerkAufbau}
 
-\subsubsection{Router Auswahl}\label{subsubsec:RouterAuswahl}
 \newpage
 
 \subsection{Sicherheit}\label{subsec:Sicherheit}
@@ -93,7 +132,7 @@ Zur Authentifizierung eines neuen Gerätes, dass dem Netzwerk beitreten möchte 
 Das Thread-Netzwerk wird mit einem netzwerkweiten Schlüssel geschützt. Von diesem Schlüssel werden weitere Schlüssel abgeleitet, um den MAC-Layer mit den IEEE 802.15.4 Nachrichten zu schützen. Dadurch wird das Netzwerk vom Abhören und Unterbrechen von Aussenstehenden geschüzt.\cite[Seite 1-5]{thread_group_inc_thread_2017}
 
 \subsection{Thread Software Development Kit}\label{subsec:ThreadSoftwareDevelopmentKit}
-In dieser Arbeit wird OpenThread verwendet. OpenThread ist eine open-sorce Implementation von Thread, die von Google umgesetzt und weiterentwickelt wird. Das Software Development Kit von Nordic Semiconductors beinhaltet eine Vorkompilierte Bibliothek des Openthread Stacks. Zuzüglich der Thread Bibliothek befinden sich auch die Normale SDK von Nordic Semiconudtor in dem Kit. Alle Module die für den SoC NRF52840 verfügbar sind, sind auch darin enthalten. Dank der guten Dokumentation und Beispiel-Code, wurde die Firmware auf der Thread SDK von Nordic aufgebaut. 
+In dieser Arbeit wird OpenThread verwendet. OpenThread ist eine open-sorce Implementation von Thread, die von Google umgesetzt und weiterentwickelt wird. Das Software Development Kit von Nordic Semiconductors beinhaltet eine Vorkompilierte Bibliothek des Openthread Stacks. Zuzüglich der Thread Bibliothek befinden sich auch die Normale SDK von Nordic Semiconudtor in dem Kit. Alle Module die für den SoC NRF52840 verfügbar sind, sind auch darin enthalten. Dank der guten Dokumentation und Community-Foren, wurde die Firmware auf der Thread SDK von Nordic aufgebaut. 
 
 \paragraph{IDE}
 Für die Erstellung der Firmware wurde die IDE Segger Embedded Systems verwendet. Die Firma Nordic Semiconductor empfiehlt mit dem gebrauch der SDK for Thread and ZigBee das arbeiten mit Segger. Da die alle Beispiel Anwendungen und Dokumentationen mit Segger gemacht wurden, war dies die beste Lösung.
