@@ -1,3 +1,47 @@
 \clearpage
 \section{Umsetzung Benchmark}\label{sec:ThreadUmsetzungBenchmark}
 \todo[inline]{Komplette Beschreibung der Firmware unterteilt in die 3 Nodetypen. Besonderheiten herausstreichen und allfällige Schwierigkeiten aufzeigen.}
+
+
+\subsection{Benchmark und Stack Parameter}\label{subsec:BenchmarkundStackParameter}
+
+
+\begin{table}[h]
+	\centering
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{lll}
+			Stack Init Time                            & 30000 ms                                                               & \begin{tabular}[c]{@{}l@{}}Zeit die benötigt wird um den Stack für den Benchmark\\zu initialisieren. Reserve Zeit um das Routing des \\Netzwerkes durchzuführen.\end{tabular}  \\
+			IEEE Channel                               & 15                                                                     & Thread Kanal der verwendet wird um das Mesh aufzubauen.                                                                                                                        \\
+			Netzwerk Name                              & OpenThread                                                             & Netzwerkname~                                                                                                                                                                  \\
+			\textcolor[rgb]{0.278,0.278,0.278}{PAN ID} & \textcolor[rgb]{0.278,0.278,0.278}{0xABCD}                             & Wird für das Precomissioning verwendet.                                                                                                                                        \\
+			Netzwerkschlüssel                          & \textcolor[rgb]{0.278,0.278,0.278}{0x00112233445566778899AABBCCDDEEFF} & Wird für das Precomissioning verwendet.                                                                                                                                       
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Messgrössen Gewinnung und Verwendung}
+	\label{tab:ThreadMessgrössenGewinnungundVerwendung}
+\end{table}
+
+\subsection{Mesh Node Firmware}\label{subsec:ThreadMeshNodeFirmware}
+
+\subsubsection{Stack Configuration}\label{subsubsec:ThreadStackConfiguration}
+
+\todo[inline]{bm\_config.h}
+
+\subsubsection{Stack Handling}\label{subsubsec:ThreadStackHandling}
+
+\todo[inline]{bm\_ot.c}
+
+\paragraph{Master}\label{par:ThreadeMaster}
+
+\paragraph{Client}\label{par:ThreadClient}
+
+\paragraph{Server}\label{par:ThreadServer}
+
+
+\subsection{CoAP Benchmark Message}\label{subsec:ThreadBenchmarkMessage}
+
+\subsection{Thread Stack Implementation}\label{subsec:ThreadStackImplementation}
+
+\subsubsection{Channel Wahl}\label{subsubsec:ThreadChannel}
+
+\subsubsection{Adressierung}\label{subsubsec:ThreadAdressierung}
