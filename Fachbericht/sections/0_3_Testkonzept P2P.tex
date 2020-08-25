@@ -96,8 +96,8 @@ Die Slaves werden in der Wohnung oder im Haus an den möglichen Standorten der M
 
 \newpage
 \section{Inbetriebnahme und Bedienung}\label{sec:InbetriebnahmeBedienungP2P}
-Die P2P Testinfrastruktur kann von jedem interessierten Anwender eingesetzt werden
-Zur Inbetriebnahme müssen jedoch folgende Voraussetzungen bezüglich vorhandener Hard- und Software erfüllt sein: 
+Die P2P Testinfrastruktur kann von jedem interessierten Anwender eingesetzt werden.
+Zur Inbetriebnahme müssen jedoch folgende Hard- und Software Komponenten vorhanden und einsatzbereit sein: 
 
 \begin{itemize}
 	\item 1x nRF52840 DK (Master)
@@ -110,14 +110,14 @@ Zur Inbetriebnahme müssen jedoch folgende Voraussetzungen bezüglich vorhandene
 	\end{itemize}
 \end{itemize}
 
-Eine Anleitung und der Sourcecode sind im \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnote{\url{https://github.com/Rouben94/P6_Software}\cite{anklin_bobst_horath_rouben94p6_software_nodate}}} zu diesem Projekt verfügbar \cite{github_p6_software_p2p_2020}.
-Um den Master und die Slaves vorzubereiten sind die beiden mit der entsprechenden Firmware zu laden.
-Anschliessend können die Slaves im Raum platziert und der Master am Laptop eingesteckt werden.
-Sobald diese geschehen ist, kann nach folgender Schritt für Schritt Anleitung vorgegangen werden.
+Eine Anleitung und der Sourcecode sind im \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnote{\url{https://github.com/Rouben94/P6_Software}\cite{github_p6_software_p2p_2020}}} zu diesem Projekt verfügbar.
+Master und Slaves sind mit der entsprechenden Firmware zu laden um diese für die Messung vorzubereiten.
+Anschliessend werden die Slaves im Raum platziert und der Master am Laptop eingesteckt.
+Nach erfolgtem Setup ist gemäss den nachfolgend beschriebenen Schritten vorzugehen.
 
-\subsection{Schritt 1 - Webserver Starten}\label{sec:SchrittWebserverStarten}
-Der Webserver wurde mit eine Windows Umgebung entwickelt und getestet. Die folgende Anleitung ist demzufolge nur für eine Windows Umgebung gültig.
-Für die Verwendung mit Linux oder MacOS sind unter folgendem \href{https://tutorial.djangogirls.org/en/django_installation/}{Link\footnote{\url{https://tutorial.djangogirls.org/en/django_installation/}}} entsprechende Anleitungen verfügbar.
+\paragraph{Schritt 1 - Webserver Starten}
+Der Webserver wurde mit einer Windows Umgebung entwickelt und getestet. Die folgende Anleitung ist demzufolge nur für eine Windows Umgebung gültig.
+Für die Verwendung mit Linux oder MacOS sind unter folgendem \href{https://tutorial.djangogirls.org/en/django_installation}{Link\footnote{\url{https://tutorial.djangogirls.org/en/django_installation/}}} entsprechende Anleitungen verfügbar.
 Bevor der Webserver gestartet werden kann, muss der Sourcecode vom \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnotemark[1]} geklont werden.
 Auf der Ordnerebene \textbf{P6\_Software\textbackslash P2P\textbackslash Webserver\textbackslash p2p\_webserver} müssen folgende cmd Befehle ausgeführt werden.
 
@@ -160,8 +160,8 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 \end{lstlisting}
 
-\subsection{Schritt 2 - Verbindungsaufbau}\label{sec:SchrittVerbindungsaufbau}
-Sobald der Webserver gestartet wurde, ist die Seite \textit{Point to Point} zu sehen. Wie in der Abbildung \ref{fig:WebserverNodelistViewausgeklappt} beschrieben, muss nun auf die Seite Connection gewechselt werden, damit die Verbindung zum Master aufgenommen werden kann. Es besteht die Möglichkeit das Hauptmenü auf der Linken Seite auf und zu zuklappen. Dies ist mit der Nummer \textbf{1.} in der erwähnten Abbildung gezeigt. Wenn das Hauptmenü aufgeklappt ist, kann das Github-Repository durch Klicken auf die Schaltfläche \textbf{GitHub Repo} erreicht werden.
+\paragraph{Schritt 2 - Verbindungsaufbau}
+Sobald der Webserver gestartet wurde, ist die Seite \textbf{Point to Point} zu sehen (siehe Abbildung \ref{fig:WebserverNodelistViewausgeklappt}). Wie in der Abbildung beschrieben, muss nun auf die Seite Connection gewechselt werden, damit die Verbindung zum Master aufgenommen werden kann. Es besteht die Möglichkeit das Hauptmenü auf der linken Seite auf und zu zuklappen (siehe Nummer 1 in Abbildung \ref{fig:WebserverNodelistViewausgeklappt}). Wenn das Hauptmenü aufgeklappt ist, kann das Github-Repository durch einen Klick auf die Schaltfläche \textbf{GitHub Repo} erreicht werden.
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Webserver_nodelist_ausgeklappt.png}
@@ -169,7 +169,7 @@ Sobald der Webserver gestartet wurde, ist die Seite \textit{Point to Point} zu s
 	\label{fig:WebserverNodelistViewausgeklappt}
 \end{figure}
 
-Auf der Seite Connection angekommen (siehe Abbildung \ref{fig:WebserverConnectionView}) soll für die Kommunikation mit der seriellen Schnittstelle, der entsprechende COM-Port, an dem der Master registriert ist, ausgewählt werden. Mit einem Klick auf Connect wird nun eine Verbindung hergestellt. Falls der Master nicht angeschlossen ist oder auf einem andere COM-Port registriert ist, wird dies mit einer Fehlermeldung mitgeteilt.
+Auf der Seite \textbf{Connection} (siehe Abbildung \ref{fig:WebserverConnectionView}) soll für die Kommunikation mit der Seriellen Schnittstelle der entsprechende COM-Port, an dem der Master registriert ist, ausgewählt werden (siehe Nummer 1 in Abbildung \ref{fig:WebserverConnectionView}). Mit einem Klick auf das Feld \textbf{Connect} wird nun eine Verbindung hergestellt (siehe Nummer 2 in Abbildung \ref{fig:WebserverConnectionView}). Falls der Master nicht angeschlossen oder auf einem anderen COM-Port registriert ist, wird dies mit einer Fehlermeldung mitgeteilt.
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{Webserver_Connection.png}
@@ -177,34 +177,28 @@ Auf der Seite Connection angekommen (siehe Abbildung \ref{fig:WebserverConnectio
 	\label{fig:WebserverConnectionView}
 \end{figure}
 
-\subsection{Schritt 3 - Parameter Einstellen}\label{sec:SchrittParameterEinstellen}
-Nachdem die serielle Verbindung zum Master hergestellt ist, werden auf der Seite \textit{Point to Point} die verfügbaren Slaves in der Tabelle aufgeführt. Die Tabelle aktualisiert sich automatisch. Wie in der Abbildung \ref{fig:WebserverNodelistView} ersichtlich, sind die Nodes anhand der MAC-Adresse identifizierbar. Die Tabelle zeigt die dazugehörigen Channels welche zuvor eingestellt wurden. Pro Channel ist je ein Wert für den Packetloss und den SNR zu sehen. Die Werte sind im Kapitel \ref{sec:MessgrössenP2P} beschrieben. 
+\paragraph{Schritt 3 - Einstellen der Parameter}
+Nachdem die Serielle Verbindung zum Master hergestellt ist, werden auf der Seite \textbf{Point to Point} die verfügbaren Slaves in der Tabelle aufgeführt. Die Tabelle aktualisiert sich automatisch. Wie in der Abbildung \ref{fig:WebserverNodelistView} ersichtlich, sind die Nodes anhand der MAC-Adresse identifizierbar. Die Tabelle zeigt die dazugehörigen Channels, welche zuvor eingestellt wurden. Pro Channel ist ein Wert für den Packetloss und den SNR zu sehen. Die Definition dieser Werte ist im Kapitel \ref{sec:MessgrössenP2P} beschrieben. 
 
-Damit die Parameter der Nodes verändert werden können, besteht auf der gleichen Seite die Möglichkeit die gewünschten Werte einzugeben und an den Master zu senden. Die Parameter können wie auf der Abbildung \ref{fig:WebserverNodelistView} markiert, definiert werden. Folgende Vorgaben müssen bei der Eingabe eingehalten werden:
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{|c|l|c|l|}
-		\hline
-		\multicolumn{4}{|c|}{\textbf{Start und Stop Channel Feld}}                                                            \\ \hline
-		\multicolumn{2}{|c|}{\textbf{IEE 802.15.4 250 kBit}}       & \multicolumn{2}{c|}{\textbf{Alle Anderen Modi}}          \\ \hline
-		\multicolumn{2}{|c|}{Start Channel 11 bis Stop Channel 26} & \multicolumn{2}{c|}{Start Channel 0 bis Stop Channel 39} \\ \hline
-	\end{tabular}
-	\caption{Parameter Start und Stop Channel Feld}
-	\label{table:ParameterStartStopChannel}
-\end{table}
+Damit die Parameter der Nodes verändert werden können, besteht auf der gleichen Seite die Möglichkeit, die gewünschten Werte einzugeben und an den Master zu senden. Die Parameter können, wie in Abbildung \ref{fig:WebserverNodelistView} markiert, definiert werden. Folgende Vorgaben müssen bei der Eingabe eingehalten werden:
 
 \begin{table}[h]
-	\centering
-	\begin{tabular}{|c|l|c|l|}
-		\hline
-		\multicolumn{4}{|c|}{\textbf{Payload Feld}}                                                            \\ \hline
-		\multicolumn{2}{|c|}{\textbf{IEE 802.15.4 250 kBit}} & \multicolumn{2}{c|}{\textbf{Alle Anderen Modi}} \\ \hline
-		\multicolumn{2}{|c|}{0 - 120 bit}                    & \multicolumn{2}{c|}{0 - 250 bit}                \\ \hline
-	\end{tabular}
-	\caption{Parameter Payload Feld}
-	\label{table:ParameterPayloadFeld}
+\centering
+\begin{tabular}{|l|c|c|} 
+\hline
+\textbf{Radio Mode} & \textbf{IEEE 802.15.4 250 kBit}  & \textbf{Alle Anderen Modi}  \\ 
+\hline
+\textbf{Start Channel Feld} & 11 & 0 \\ 
+\hline
+\textbf{Stop Channel Feld} & 26 & 39 \\ 
+\hline
+\textbf{Payload Feld} & 0 - 120 bit & 0 - 250 bit \\
+\hline
+\end{tabular}
+\caption{Zulässige Parameter für die Eingabefelder in der Nodelist View}
+\label{tab:ParameterEingabefelederNodelistView}
 \end{table}
+
 
 \begin{figure} [H]
 	\centering
@@ -213,8 +207,8 @@ Damit die Parameter der Nodes verändert werden können, besteht auf der gleiche
 	\label{fig:WebserverNodelistView}
 \end{figure}
 
-\subsection{Schritt 4 - Channel Vergleichen}\label{sec:SchrittChannelVergleichen}
-Damit die Channels von einem Node besser mit einander verglichen werden können, ist auf der Seite Chart eine entsprechende Grafik verfügbar. Jeder Node wird in einem separaten aufklappbaren Fenster angezeigt. In Abbildung \ref{fig:WebserverChartView} mit der Nummer \textbf{1.} gekennzeichnet, ist ein solches Fenster zu sehen. Mit Klick auf \textbf{1.} wird das Fenster aufgeklappt und alle eingestellten Channels werden nacheinander mit dem Packetloss in \% aufgelistet.
+\paragraph{Schritt 4 - Vergleich der Channels}
+Damit die Channels von einem Node besser miteinander verglichen werden können, ist auf der Seite Chart eine entsprechende Grafik verfügbar. Jeder Node wird in einem separaten aufklappbaren Fenster angezeigt. In Abbildung \ref{fig:WebserverChartView} mit der Nummer \textbf{1.} gekennzeichnet, ist ein solches Fenster zu sehen. Mit Klick auf die Schaltfläche mit der Nummer \textbf{1.} wird das Fenster aufgeklappt und alle eingestellten Channels werden nacheinander mit dem Packetloss in \% aufgelistet.
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=\textwidth]{Webserver_Chart.png}
@@ -225,13 +219,13 @@ Damit die Channels von einem Node besser mit einander verglichen werden können,
 \newpage
 \section{Soft- und Firmware}\label{sec:P2PSoft-undFirmware}
 In den nachfolgenden Abschnitten wird die Soft- und Firmware für die P2P Testinfrastruktur beschrieben.
-Der dazugehörige Sourcecode ist im Github Repository\footnote{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}} zu diesem Projekt frei zugänglich und kann für die vertiefte Untersuchung konsultiert werden.
+Der dazugehörige Sourcecode ist im \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnote{\url{https://github.com/Rouben94/P6_Software}\cite{github_p6_software_p2p_2020}}} zu diesem Projekt frei zugänglich und kann für die vertiefte Untersuchung konsultiert werden.
 
 \subsection{Soft- und Firmware}\label{sec:SoftundFirmware}
-Die Firmware ist als zeit-diskrete Schrittkette aufgebaut.
-Jeder Schritt ist über ein fixes Zeitfenster definiert wodurch der Ablauf rein zeitabhängig vorgegeben ist.
-Damit alle Teilnehmer synchron ihre Schrittketten abarbeiten, muss mit Hilfe einer Zeitsynchronisation auf den Master der exakte Startzeitpunkt kommuniziert werden.
-Unabhängig vom Zustand des aktiven Schrittes, darf dieser sein Zeitfenster nicht überschreiten, ansonsten fällt die Schrittkette ausser Takt. 
+Die Firmware ist als zeitabhängige Schrittkette aufgebaut.
+Jeder Schritt ist über ein fixes Zeitfenster definiert.
+Damit alle Teilnehmer synchron die Schrittkette abarbeiten können, muss mit Hilfe einer Zeitsynchronisation auf den Master der exakte Startzeitpunkt kommuniziert werden.
+Unabhängig vom Zustand des aktiven Schrittes darf dieser sein Zeitfenster nicht überschreiten, ansonsten fällt die Schrittkette aus dem Takt. 
 
 \begin{figure} [H]
 	\centering
@@ -240,24 +234,33 @@ Unabhängig vom Zustand des aktiven Schrittes, darf dieser sein Zeitfenster nich
 	\label{fig:FlowgraphP2P}
 \end{figure}
 
-Abbildung \ref{fig:FlowgraphP2P} zeigt die Schrittkette für den Master, sowie für die Slave-Nodes. Der Ablauf zeigt die Schritte, sowie die Bedingungen der Transitionen zwischen den Schritten. Jedoch muss beachtet werden das jeder Schritt immer eine bestimmte Zeit aktiv bleibt. Somit ist ersichtlich das der \textit{Packets-State} nach Ablauf seines Zeitfensters immer zum \textit{ReportsReq-State} führt. Wobei der Wechsel nach dem \textit{Discovery-State} von verschiedenen Bedingungen abhängig ist.
+Abbildung \ref{fig:FlowgraphP2P} zeigt die Schrittkette für den Master, sowie für die Slave-Nodes.
+Der Ablauf zeigt die Schritte, sowie die Bedingungen der Transitionen zwischen den Schritten.
+Jedoch muss beachtet werden, dass jeder Schritt immer während einer bestimmten Zeit aktiv bleibt.
+Somit ist ersichtlich dass der \textit{Packets-State} nach Ablauf seines Zeitfensters immer zum \textit{ReportsReq-State} führt.
+Dabei hängt der Wechsel nach dem \textit{Discovery-State} von verschiedenen Bedingungen ab.
 
-Die Funktion der Schritte wird nachfolgend grob beschrieben. 
+Auf die Funktion der Schritte wird nachfolgend kurz eingegangen: 
 
 \begin{itemize}
-	\item \textbf{\textit{Discovery:}} Der Master verteilt die Zeitsynchronisation an die Slaves. Die Slaves synchronisieren sich auf das Signal des Masters auf, sofern sie in seiner Reichweite liegen. Hat ein Slave sich nicht Synchronisieren können verweilt dieser im \textit{Discovery-State}. Der Master darf immer zum nächsten Schritt voranschreiten. 
-	\item \textbf{\textit{Mockup:}} Der Master wartet auf eine Antwort der einzelnen Slaves. Jeder Slave generiert einen zufälligen Timeslot um sich beim Master anzumelden. Der Master führt alle Slaves die sich gemeldet haben in einer Liste auf. Ist diese Liste leer (hat sich kein Slave gemeldet), so wird der Master zum \textit{Discovery State} zurückkehren. Ist ein Slave bereits beim Master angemeldet, so muss sich dieser nicht erneut anmelden. 
-	\item \textbf{\textit{Param:}} Der Master versendet die Packets-Parameter (Mode, StartChannel, StopChannel, etc.) auf welchen er die Probe-Packets versendet. Erhält ein Slave keine Daten so kehrt er in den \textit{Discovery-State} zurück. 
+	\item \textbf{\textit{Discovery:}} Der Master verteilt die Zeitsynchronisation an die Slaves. Die Slaves synchronisieren sich auf das Signal des Masters auf, sofern sie in seiner Reichweite liegen. Hat ein Slave sich nicht synchronisieren können, verweilt dieser im \textit{Discovery-State}. Der Master kann in jedem Fall zum nächsten Schritt voranschreiten.
+	 
+	\item \textbf{\textit{Mockup:}} Der Master wartet auf eine Antwort der einzelnen Slaves. Jeder Slave generiert einen zufälligen Timeslot, um sich beim Master anzumelden. Der Master führt alle Slaves, die sich gemeldet haben, in einer Liste auf. Hat sich kein Slave gemeldet, ist diese Liste leer und der Master wird zum \textit{Discovery State} zurückkehren. Ist ein Slave bereits beim Master angemeldet, so muss er sich nicht erneut anmelden. 
+	
+	\item \textbf{\textit{Param:}} Der Master versendet die Packets-Parameter (Mode, StartChannel, StopChannel, etc.). Erhält ein Slave keine Daten, so kehrt er in den \textit{Discovery-State} zurück. 
+	
 	\item \textbf{\textit{Packets:}} Der Master versendet \textit{Probe Packets} mit den zuvor kommunizierten Einstellungen. Die Slaves empfangen diese Daten, zählen die Anzahl erfolgreich empfangener Pakete und erfassen weitere Messdaten. 
-	\item  \textbf{\textit{Reports Req:}} Nach dem Ausmessen beginnt der Master mit dem Einsammeln der einzelnen Slave Reports. Dazu sendet er an jeden Slave in seiner Liste (aus dem \textit{Mockup-State}) Report-Anfragen, sogenannte \textit{Reports-Requests}. Die Slaves warten auf einen \textit{Report Request} vom Master. 
-	\item  \textbf{\textit{Reports:}} Der Slave, welcher den Request bekommen hat, sendet seinen Report zum Master. Dies muss innerhalb einer gewissen Zeit erfolgen. Sendet ein Slave nach einer gewissen Anzahl von Versuchen keine Reports, so wird er aus der Liste der gemeldeten Slaves entfernt. Sobald der Master alle Reports von allen Slaves empfangen hat, meldet er über eine spezielle \textit{Reports-Request-Message} an alle Slaves, dass das Reporting beendet ist.
-	\item  \textbf{\textit{Publish:}} Im \textit{Publishing-State} hat der Master Zeit die Daten an die übergeordnete Stelle zu übermitteln (USB-UART). Die Slaves können in diesem State Energie sparen. Alle Teilnehmer beginnen wieder im \textit{Discovery-State}, wo sie sich neu synchronisieren. 
+	\item  \textbf{\textit{Reports Req:}} Nach dem Ausmessen beginnt der Master mit dem Einsammeln der einzelnen Slave Reports. Dazu sendet er an jeden Slave in seiner Liste (aus dem \textit{Mockup-State}) Report-Anfragen, sogenannte \textit{Report-Requests}. Die Slaves warten auf einen \textit{Report Request} vom Master. 
+	
+	\item  \textbf{\textit{Reports:}} Der Slave, welcher den Request erhalten hat, sendet seinen Report zum Master. Dies hat innerhalb einer gewissen Zeit zu erfolgen. Sendet ein Slave nach einer gewissen Anzahl von Versuchen innerhalb dieser begrenzten Zeit keine Reports, so wird er aus der Liste der gemeldeten Slaves entfernt. Sobald der Master alle Reports von allen Slaves empfangen hat, meldet er an alle Slaves über eine spezielle \textit{Reports-Request-Message}, dass das Reporting beendet ist.
+	
+	\item  \textbf{\textit{Publish:}} Im \textit{Publishing-State} hat der Master Zeit, die Daten an die übergeordnete Stelle zu übermitteln (USB-UART). Die Slaves können in diesem State Energie sparen. Alle Teilnehmer beginnen wieder von vorne, im \textit{Discovery-State}, wo sie sich neu synchronisieren. 
 \end{itemize}
 
 
 \subsection{Low Level Radio Driver}\label{sec:LowLevelRadioDriver}
 
-Die Kommunikation über das Radio-Interface wurde mittels einem eigens entwickelten Radio-Driver, speziell für die nRF52 / nRF53 SOCs ermöglicht. Dieser stellt die nötigen Funktionen für die P2P Testinfrastruktur zur Verfügung. Zum Beispiel kann die Mode- und Kanalwahl sowie das Senden und Empfangen von Daten mittels simplen Kommandos erfolgen. Bei der Entwicklung diente das \textit{Radio Test Example} \cite{nrf_connect_sdk_radio_test_example_2020} als Vorlage. Der Radio-Driver steuert mithilfe der \textit{NRF-HAL Radio Library} oder über direkten Zugriff auf die Peripherie-Register das Radio-Interface an.
+Die Kommunikation über das Radio-Interface wurde mittels einem eigens entwickelten Radio-Driver speziell für die nRF52 / nRF53 SOCs ermöglicht. Dieser stellt die nötigen Funktionen für die P2P Testinfrastruktur zur Verfügung. Zum Beispiel kann die Mode- und Kanalwahl sowie das Senden und Empfangen von Daten mittels simplen Kommandos erfolgen. Bei der Entwicklung diente das \textit{Radio Test Example} \cite{nrf_connect_sdk_radio_test_example_2020} als Vorlage. Der Radio-Driver steuert mithilfe der \textit{NRF-HAL Radio Library} oder über direkten Zugriff auf die Peripherie-Register das Radio-Interface an.
 
 \begin{figure} [H]
 	\centering
@@ -266,8 +269,8 @@ Die Kommunikation über das Radio-Interface wurde mittels einem eigens entwickel
 	\label{fig:RadioStatesP2P}
 \end{figure}
 
-Die Radio Hardware der nRF52 und nRF53 SOCs verfügt über verschiedene Zustände (siehe Abbildung \ref{fig:RadioStatesP2P}). Abhängig von der gewünschten Operation (Senden oder Empfangen), werden die States abgearbeitet.
-Um Energie zu sparen wird nach Abschluss der gewünschten Tätigkeit immer in den Disabled-State gewechselt.
+Die Radio Hardware der nRF52 und nRF53 SoCs verfügt über verschiedene Zustände (siehe Abbildung \ref{fig:RadioStatesP2P}). Abhängig von der gewünschten Operation (Senden oder Empfangen) werden die States abgearbeitet.
+Um Energie zu sparen, wird nach Abschluss der gewünschten Tätigkeit immer in den Disabled-State gewechselt.
 Die Benachrichtigung des Radio Drivers durch die Hardware erfolgt zudem mittels Interrupts, wodurch der Energieverbrauch zusätzlich minimiert werden kann.
 
 \begin{figure} [H]
@@ -279,19 +282,19 @@ Die Benachrichtigung des Radio Drivers durch die Hardware erfolgt zudem mittels 
 
 Abbildung \ref{fig:RadioTransmitSequP2P} zeigt den Ablauf beim Senden eines Pakets. Die zu sendenden Daten (Payload) müssen vorgängig im RAM vorliegen.
 Anschliessend wird der Packet Pointer des Radio-Interface auf die entsprechende Speicher-Adresse eingestellt.
-Zu beachten gilt es, dass im ersten Byte die Länge der Payload angegeben sein muss.
-Diese wird vom Radio Driver automatisch ergänzt.
-Zusätzlich kann ein Adressfeld den Sendedaten mitgegeben werden. Nach dem vollständigen Konfigurieren des Radio-Interface wird das Senden durch den Befehl TXEN initiiert. Mithilfe von Verknüpfungen (Shorts) wird nach dem Ready-Event automatisch der Start-Task ausgelöst.
+Zu beachten gilt, dass im ersten Byte die Länge der Payload angegeben werden muss.
+Diese\todo{Was ist mit DIESE gemeint?} wird vom Radio Driver automatisch ergänzt.
+Zusätzlich kann den Sendedaten ein Adressfeld mitgegeben werden. Nach der vollständigen Konfiguration des Radio-Interface wird das Senden durch den Befehl TXEN initiiert. Mithilfe von Verknüpfungen (Shorts) wird nach dem Ready-Event automatisch der Start-Task ausgelöst.
 Das Senden läuft also nach dem Initiieren vollautomatisch ab.
-Der Radio-Driver wartet lediglich auf das Auslösen des Disabled-Events.
-Das Senden ist erfolgreich abgeschlossen und der Funktionsaufruf kehrt zum Hauptprogramm zurück.
+Der Radio-Driver wartet auf das Auslösen des Disabled-Events.
+Danach ist das Senden erfolgreich abgeschlossen und der Funktionsaufruf kehrt zum Hauptprogramm zurück.
 
 Das Senden mittels CCA wird im \textit{IEEE802.15.4-Mode} unterstützt.
-Dazu wird vor dem Senden der Kanal abgehört um Kollisionen zu vermeiden.
+Dazu wird vor dem Senden der Kanal abgehört, um Kollisionen zu vermeiden.
 Mittels dem RXEN Befehl wird der CCAStart-Task aktiv. Dieser führt abhängig vom konfigurierten CCA-Modus eine Prüfung des Kanals durch.
-Ist der Kanal nicht belegt wird ein CCAIdle-Event generiert, welcher mittels Verknüpfung automatisch den TXEN-Task startet (siehe Abbildung \ref{fig:CCAIDLEP2P}).
-Sendet ein anderer Teilnehmer momentan auf dem Kanal wird ein CCABusy-Event generiert, welcher ebenfalls den Disable-Task ausführt (siehe Abbildung \ref{fig:CCABUSYP2P}).
-Somit enden beide Varianten (Idle und Busy) im Disabled-State, wobei beim Einen keine Daten gesendet werden konnten. \cite{nordic_semi_nrf_infocenter_radio_transmit_sequence_2020}
+Ist der Kanal nicht belegt, wird ein CCAIdle-Event generiert, welcher mittels Verknüpfung automatisch den TXEN-Task startet (siehe Abbildung \ref{fig:CCAIDLEP2P}).
+Sendet ein anderer Teilnehmer zum gleichen Zeitpunkt auf diesem Kanal, wird ein CCABusy-Event generiert, welcher ebenfalls den Disable-Task ausführt (siehe Abbildung \ref{fig:CCABUSYP2P}).
+Somit enden beide Varianten (Idle und Busy) im Disabled-State, wobei bei Busy Variante keine Daten gesendet werden konnten. \cite{nordic_semi_nrf_infocenter_radio_transmit_sequence_2020}
 
 \begin{figure}[!htbp]
 \begin{adjustbox}{width=1\textwidth}
@@ -318,18 +321,18 @@ Somit enden beide Varianten (Idle und Busy) im Disabled-State, wobei beim Einen 
 \end{figure}
 
 
-Der Ablauf zum Empfangen eines Pakets wird in Abbildung \ref{fig:RadioReceiveSequP2P} dargestellt. Grundsätzlich ist der Ablauf gleich aufgebaut wie beim Senden eines Pakets. Nach dem Initiieren mittels RXEN-Befehl fährt der Empfänger hoch und wartet auf den Empfang eines Pakets. Nach Eingang einer Präambel-Sequenz wird das Adressfeld geprüft.
-Dieses kann vorgängig festgelegt werden um nur Pakete mit übereinstimmender Adresse zu Empfangen.
-Bei allen BLE-Modes erfolgt die Prüfung auf Hardware-Ebene (ohne Interaktion der CPU) ab.
-Beim \textit{IEEE802.15.4-Mode} steht dieses Feature nicht zur Verfügung. Das vergleichen des Adressfeldes muss der Radio-Driver selbst übernehmen.
+Der Empfangsablauf eines Pakets wird in Abbildung \ref{fig:RadioReceiveSequP2P} dargestellt. Grundsätzlich ist der Ablauf gleich aufgebaut wie beim Senden eines Pakets. Nach dem Initiieren mittels RXEN-Befehl fährt der Empfänger hoch und wartet auf den Empfang eines Pakets. Nach Eingang einer Präambel-Sequenz wird das Adressfeld geprüft.
+Dieses kann vorgängig so definiert werden, dass nur Pakete mit übereinstimmender Adresse empfangen werden.
+Bei allen BLE-Modes erfolgt die Prüfung auf Hardware-Ebene (ohne Interaktion der CPU).
+Beim \textit{IEEE802.15.4-Mode} steht dieses Feature jedoch nicht zur Verfügung. Das Vergleichen des Adressfeldes muss daher der Radio-Driver selbst übernehmen.
 
 Um die Signalstärke (RSSI) des eingehenden Pakets zu messen, wird eine Verknüpfung zwischen dem \textit{Address-Event} und dem \textit{RSSIStart-Task} aktiviert.
 Nach erfolgreicher Prüfung der CRC Checksumme wird mittels einer Verknüpfung des CRCOK-Event der Disable-Task ausgeführt.
-Beim Empfangen eines Pakets wartet der Radio-Driver während eines gewissen Timeouts auf den Disabled-Event.
-Die Empfangsfunktion gibt die Restzeit des Timeouts in Millisekunden zurück, wodurch sich ein erfolgreiches Empfangen prüfen lässt.
-Das Bufferhandling übernimmt der Radio-Driver und erwartet beim Senden und Empfangen von Daten eine vordefinierte \textit{Radio-Packet-Structure}.
-Zu beachten gilt es das die Daten erst nach dem End-Event  vollständig abgearbeitet wurden, da der Zugriff der Hardware via DMA (Direct Memory Access) erfolgt.
-Ebenfalls wurde festgestellt das beim Wechsel zum oder vom  \textit{IEEE802.15.4-Mode} der Kanalwechsel vor dem Modewechsel erfolgen muss. Ansonsten werden keine Pakete empfangen. \cite{nordic_semi_nrf_infocenter_radio_receive_sequence_2020}
+Beim Empfang eines Pakets wartet der Radio-Driver während eines gewissen Timeouts auf den Disabled-Event.
+Die Empfangsfunktion gibt die Restzeit des Timeouts in Millisekunden zurück, wodurch sich ein erfolgreicher Empfang prüfen lässt.
+Das Bufferhandling übernimmt der Radio-Driver. Er erwartet beim Senden und Empfangen von Daten eine vordefinierte \textit{Radio-Packet-Structure}.
+Es gilt zu beachten, dass die Daten erst nach dem End-Event  vollständig abgearbeitet wurden, da der Zugriff der Hardware via DMA (Direct Memory Access) erfolgt.
+Ebenfalls wurde festgestellt, dass beim Wechsel zum oder vom  \textit{IEEE802.15.4-Mode} der Kanalwechsel vor dem Modewechsel erfolgen muss. Ansonsten werden keine Pakete empfangen. \cite{nordic_semi_nrf_infocenter_radio_receive_sequence_2020}
 
 
 \subsection{Broadcasting Collisions Probability}\label{sec:BroadcastingCollissionsProbability}

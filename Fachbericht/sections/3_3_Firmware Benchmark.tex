@@ -1,7 +1,6 @@
 \clearpage
-\section{Umsetzung Benchmark}\label{sec:ZigbeeUmsetzungBenchmark}
-\todo[inline]{Komplette Beschreibung der Firmware unterteilt in die 3 Nodetypen. Besonderheiten herausstreichen und allfällige Schwierigkeiten aufzeigen.}
 
+\section{Umsetzung Benchmark}\label{sec:ZigbeeUmsetzungBenchmark}
 Die Umsetzung des Benchmarks geschah im Rahmen der Anforderungen des Benchmark Konzepts gemäss Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke}.
 Wie im Abschnitt \ref{sec:Soft-undFirmware} bereits ausführlich behandelt, sind innerhalb der Shared Library (siehe Abschnitt \ref{subsec:SharedLibrary}) klare Schnittstellen und Grenzen für die Mesh Protokollstacks definiert.
 Nachfolgend wird auf die Umsetzung des Zigbee Stacks innerhalb dieser Grenzen eingegangen.
@@ -151,9 +150,9 @@ Dabei handelt es sich um die Messgrössen gemäss Abschnitt \ref{subsec:Vergleic
 Zudem wird der Zustand des grünen RGB-LEDs gewechselt.
 
 \paragraph{Server}
-Der Benchmark Server wartet im \textit{Benhmark State} auf ankommende Benchmark Nachrichten.
+Der Benchmark Server wartet im \textit{Benchmark State} auf ankommende Nachrichten.
 Sobald ein Paket vom Stack empfangen wurde, wird der Benchmark Endpoint Handler\linebreak \textit{(bm\_ep\_handler())} signalisiert.
-Dieser entscheidet anhand der \textit{ZCL Cluster ID} ob es sich bei der Nachricht um eine Benchmark Nachricht handelt.
+Dieser entscheidet anhand der \textit{ZCL Cluster ID} ob es sich bei der Nachricht um eine Benchmark Nachricht handelt oder nicht.
 Falls dem so ist, wird die Funktion \textit{bm\_receive\_message()} aufgerufen und die Referenz des Paket Buffers \textit{(bufid)} übergeben.
 Mit Hilfe der \textit{bufid} werden nun die Message Infos ausgelesen und daraus ein Log Eintrag erstellt.
 Zum Schluss wird der Status des blauen RGB-LED's gewechselt womit der erfolgreiche Empfang einer Nachricht signalisiert wird.
