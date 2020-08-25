@@ -222,8 +222,7 @@ Ein Timesync-Paket setzt sich aus folgenden Feldern zusammen:
 \item \textit{uint32\_t} \textbf{MAC\_Address\_LSB:}
 	Die Identifizierung des Time-Masters. Muss mit jener Addresse des zuvor empfangenen Pakets übereinstimmen.
 \item \textit{uint8\_t} \textbf{seq:}
-	Sequenz-Feld zur Überprüfung ob das vorherige Timesync-Paket des Time Masters das zuletzt versendete wurde.
-	\todo[inline]{Seltsamer Satz}
+	Aufsteigende Nummer um jedes Times-Sync Paket zu identifizieren. Der Slave prüft ob das eingehende Paket das direkt Folgende des zuvor erhaltenen Pakets ist.
 \end{itemize}
 
 
