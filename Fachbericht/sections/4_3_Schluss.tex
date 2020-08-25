@@ -6,6 +6,7 @@
 \subsection{Zielerreichung}\label{subsec:Zielerreichung}
 Für die vorliegende Projektarbeit wurden im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) klare Ziele definiert. In den Tabellen \ref{tab:ErreichungP2PZiele}, \ref{tab:ErreichungMeshZiele}, \ref{tab:ErreichungSteuersoftwareZiele} und \ref{tab:ErreichungZusatzziele} sind diese in kurzer Form nochmals zusammen gefasst. Ausserdem ersichtlich ist welche Ziele erfüllt werden konnten und welche hingegen nicht. Wenn nötig ist auch noch ein kurzer Kommentar hinterlegt.
 
+\todo[inline]{Raffi bitte P2P-Tabelle kontrollieren und ergänzen} 
 \paragraph{Punkt zu Punkt Testinfrastruktur}
 \begin{table}[H]
 	\centering
@@ -133,8 +134,9 @@ In dieser Arbeit wurden die drei Mesh Protokolle Bluetooth Mesh, Thread und ZigB
 \begin{itemize}
 	\item ZigBee hat innerhalb einer Umgebung eine sehr konstante Latenzzeit.
 	\item Bluetooth Mesh hat den grössten Vorteil in einer Umgebung, bei der sich die Knoten stetig bewegen. Dies aus dem Grund, dass das Mesh keine Routing Knoten verwendet.
-	\item Der grösste Vorteil von Thread ist es, dass sich das Mesh-Netzwerk selber ausmisst. Die Routenden Knoten werden automatisch bestimmt. Somit kann sich das Protokoll der Umgebung anpassen und konnte dadurch auch in allen Testumgebungen eine tiefe Latenz zu Tage legen.
-	\item \todo[inline]{Noch mehr Infos}
+	\item Der grösste Vorteil von Thread ist es, dass sich das Mesh-Netzwerk selber ausmisst. Die routenden Knoten werden automatisch bestimmt. Somit kann sich das Protokoll der Umgebung anpassen und konnte dadurch auch in allen Testumgebungen eine tiefe Latenz zu Tage legen.
+	\item Ein Nachteil von Thread ist es, dass wegen dem automatischen Routen ein höherer Overhead entsteht. Durch diesem Overhead steigt der Energieverbrauch auf den einzelnen Nodes
+	\item \todo[inline]{Ein Vorteil und ein Nachteil erwähnen pro Mesh-Stack. Raffel und Cyrill bitte noch ausfüllen}
 \end{itemize}
 
 In den folgenden zwei Paragraphen wird auf einige bekannte Probleme im Projekt eingegangen und wie diese behoben werden können. Die zwei Teile werden in eher organisatorische Probleme oder eher technische Probleme aufgeteilt.
@@ -165,4 +167,6 @@ In diesem Abschnitt wird erwähnt, welche Module zu den bestehenden noch ergänz
 \end{itemize}
 
 \subsection{Schlusswort}\label{subsec:Schlusswort}
-Die Arbeit hat mir sehr gefallen. 
+Das Ziel dieser Bachelor Thesis ist, die drei Mesh-Stack BL-Mesh, Thread und ZigBee zu vergleichen. Der Weg zu diesem Ziel war nicht nur wegen dem COVID-19 Virus steinig und ungewiss. Da das Softwarekonzept und die Arbeitsaufteilung sehr spät oder gar nicht umgesetzt wurden, mussten viele Zeilen Code doppelt geschrieben werden oder waren sogar zwecklos. Dank dem sehr grossen Durchhaltewillen aller Teammitgliedern und dem starken Entschluss eine phantastische Arbeit zu schreiben, konnten trotz mehreren Rückschlägen aussagekräftige Resultate erzielt werden. Durch das Einlesen und Arbeiten mit neuen Themen wie Mesh-Netzwerke, Firmwareprogrammierung, Webserver, Funksysteme und Zeitsynchronisation konnten zahlreiche neue Erfahrungen gesammelt werden. Dank diesen Erfahrungen wurden die Kenntnisse der Programmiersprachen C, C++, Python, HTML und Java Script verbessert oder gar neu erlernt. Dank der guten Teamarbeit konnte schlussendlich ein Resultat erzielt werden, dass sich zeigen und begründen lässt. 
+
+Zum Schluss möchten wir uns bei unseren Projektbetreuern Herr M. Meier und Herr M. Di Cerbo bedanken. Sie haben uns bei unserem Vorgehen unterstützt und konnten uns Fachlich zur Seite stehen, falls wir an unseren Arbeiten nicht mehr weitergekommen sind.

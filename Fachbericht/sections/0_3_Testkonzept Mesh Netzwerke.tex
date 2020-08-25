@@ -1,24 +1,22 @@
 \vspace*{4cm}
 \begin{center}
-\part{Mesh Benchmark Konzept und Testumgebung}\label{MeshBenchmarkKonzeptundTestumgebung}
+\part{Mesh Benchmark - Konzept und Umsetzung}\label{MeshBenchmarkKonzeptundTestumgebung}
 \end{center}
 \vspace*{\fill}
 \clearpage
 
-\section{Benchmark Konzept Mesh Netzwerke}\label{sec:BenchmarkKonzeptMeshNetzwerke}
+\section{Benchmark Konzept}\label{sec:BenchmarkKonzeptMeshNetzwerke}
 Um die Performance der drei Mesh Stacks zu vergleichen wurde ein einheitliches Benchmark Konzept erarbeitet. Dieses definiert die Mesh Parameter, Testumgebungen, den Ablauf sowie sämtliche Messgrössen und Messreihen. Nachfolgend wird detailliert auf dieses Konzept eingegangen.
 
 \subsection{Konzeptschema}\label{subsec:KonzeptschemaMesh}
 
 Für den Vergleich der 3 Mesh Netzwerkstacks Bluetooth Mesh (BT Mesh), Thread und Zigbee wird ein vom Mesh Protokoll unabhängiges Testkonzept umgesetzt welches in der Abbildung \ref{fig:MeshTestKonzept} als Konzeptschema dargestellt ist.
 Die Benchmark Slave Nodes (BSN) in der Abbildung als Sensoren und Aktoren mit unterschiedlichen Funktionalitäten dargestellt, bilden zusammen mit dem Benchmark Master Node (BMN) das zu testende Mesh Netzwerk.
-\textit{Innerhalb des Netzwerks wird dessen Organisation vom jeweiligen Protokoll sichergestellt.} \todo[inline]{Raffi:  Das Benchamrk Managment wird nicht mehr vom Network Stack organisiert? }
+Innerhalb des Netzwerks wird dessen Organisation vom jeweiligen Protokoll sichergestellt.
 Das Testnetzwerk soll ein realitätsnahes Netzwerk nachbilden.
-Beispielsweise wird eine Hausautomation in einem Einfamilienhaus als Referenz angenommen in welchem jeweils nur gewisse Nodes untereinander Applikationsdaten austauschen.
-Ein Lichtschalter kommuniziert nur mit einer Lichtquelle und umgekehrt. \todo[inline]{Raffi:  Es können auch mehrere Lampen sein? }
-\todo[inline]{Robin:  Ich würde etwas in dieser Art schreiben: Lichtschalter kommunizieren nur mit Lichtquellen und umgekehrt, sie tauschen jedoch keine Applikationsdaten mit Temperatursensoren aus. }
-Der selbe Lichtschalter tauscht jedoch keine Applikationsdaten mit dem Temperatursensor aus.
-Diese unterschiedlichen Beziehungen innerhalb des Mesh Netzwerks sind in der Abbildung \ref{fig:MeshTestKonzept} bereits angedeutet und werden im Abschnitt \ref{subsubsec:MeshBeziehungen} noch genauer beschrieben.
+Eine Heimautomation in einem Einfamilienhaus oder Wohnung wird als Referenz angenommen in welchem jeweils nur gewisse Nodes untereinander Applikationsdaten austauschen.
+Lichtschalter kommunizieren nur mit Lichtquellen und umgekehrt, sie tauschen jedoch keine Daten mit Temperatursensoren aus.
+Diese unterschiedlichen Beziehungen innerhalb des Mesh Netzwerks sind in der Abbildung \ref{fig:MeshTestKonzept} angedeutet.
 
 \begin{figure}[h]
 	\centering
@@ -26,7 +24,7 @@ Diese unterschiedlichen Beziehungen innerhalb des Mesh Netzwerks sind in der Abb
 	\caption{Konzeptschema für den Ablauf eines Mesh Benchmarks.}\label{fig:MeshTestKonzept}
 \end{figure}
 
-Die Benchmark Management Station (BMS) welche mit dem BMN via USB/UART kommuniziert, ist zuständig für die Verwaltung und Verarbeitung der Benchmarks. Während eines Benchmark Prozesses sollen sämtliche Messungen jedoch unabhängig von der BMS durchgeführt werden damit allfällige Latenzzeiten der USB/UART Verbindung die Resultate nicht verfälschen.
+Die Benchmark Management Station (BMS) welche mit dem BMN via USB/UART kommuniziert, ist zuständig für die Verwaltung und Verarbeitung des Benchmarks. Während eines Benchmark Prozesses sollen sämtliche Messungen jedoch unabhängig von der BMS durchgeführt werden damit allfällige Latenzzeiten der USB/UART Verbindung die Resultate nicht verfälschen.
 
 \subsubsection{Messages}\label{subsubsec:Messages}
 In der Abbildung \ref{fig:MeshTestKonzept} sind verschiedene Messages dargestellt. Dabei handelt es sich um die Nachrichten die zwischen den einzelnen Teilen des Testaufbaus versendet werden und schliesslich einen Benchmark ausmachen. Die Messages besitzen Funktionen:
@@ -61,32 +59,33 @@ Der Benchmark Client Node repräsentiert beispielsweise einen Schalter in einer 
 Das Pendant zum BCN stellt der BSN dar. Er steht beispielsweise für eine Lichtquelle. Im Benchmark Kontext empfängt er die MBM die vom BCN versendet werden.
 
 
-\subsection{Testszenarien}\label{subsec:TestszenarienMesh}
+%\subsection{Testszenarien}\label{subsec:TestszenarienMesh}
 
-Die Benchmarks der Mesh Protokolle sollen mit unterschiedlichen Bedingungen getestet werden wobei grundsätzlich eine reelle Anwendung nachgebaut werden soll. Zum einen gibt es unterschiedliche Beziehungen innerhalb des Mesh Netzwerks, zum anderen werden Testumgebungen unterschieden.
+%Die Benchmarks der Mesh Protokolle sollen mit unterschiedlichen Bedingungen getestet werden wobei grundsätzlich eine reelle Anwendung nachgebaut werden soll. Zum einen gibt es unterschiedliche Beziehungen innerhalb des Mesh Netzwerks, zum anderen werden Testumgebungen unterschieden.
 
-\subsubsection{Mesh Beziehungen}\label{subsubsec:MeshBeziehungen}
+%\subsubsection{Mesh Beziehungen}\label{subsubsec:MeshBeziehungen}
+%
+%\todo[inline]{Raffi:  Ist diese Information Relevant für das verständniss des Benchmarks?}
+%
+%Innerhalb eines Mesh Netzwerks können 4 Beziehungen zwischen den Nodes für die Benchmarks unterschieden werden. Üblicherweise kommen mehrere oder sogar alle 4 Beziehungen innerhalb eines Netzwerkes gleichzeitig zum Einsatz. Abbildung \ref{fig:MeshTestBeziehungen} zeigt die Beziehungen.
+%
+%\begin{itemize}
+% 	\item \textcolor{red}{Rot} stellt eine einfache P2P Verbindung ohne Hop dar. Beispielweise schaltet ein einzelner Schalter eine einzelne, definierte Lichtquelle
+% 	\item \textcolor{orange}{Orange} ist eine many-to-one Verbindung in welcher mehrere Lichtschalter die selbe Lichtquelle schalten.
+% 	\item \textcolor{cyan}{Blau} ist eine klassiche one-to-many Topologie dargestellt in welcher beispielsweise ein Schalter mehrere Lichtquellen bedient.
+% 	 \item \textcolor{green}{Grün} dargestellt ist eine indirekte P2P Verbindung mit. Das bedeutet, dass Schalter und Lichtquelle keine direkte Verbindung zueinander haben und daher Mesh-typisch via einem oder mehreren Hops kommuniziert.
+%\end{itemize}
+%
+%
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=1.0\textwidth]{Mesh_Test_Beziehungen.png}
+%	\caption{Beziehungen zwischen den Mesh Nodes innerhalb eines Benchmarks.}\label{fig:MeshTestBeziehungen}
+%\end{figure}
 
-\todo[inline]{Raffi:  Ist diese Information Relevant für das verständniss des Benchmarks?}
+\subsection{Testumgebungen und Messaufbau}\label{subsubsec:TestumgebungenundMessaufbau}
 
-Innerhalb eines Mesh Netzwerks können 4 Beziehungen zwischen den Nodes für die Benchmarks unterschieden werden. Üblicherweise kommen mehrere oder sogar alle 4 Beziehungen innerhalb eines Netzwerkes gleichzeitig zum Einsatz. Abbildung \ref{fig:MeshTestBeziehungen} zeigt die Beziehungen.
-
-\begin{itemize}
- 	\item \textcolor{red}{Rot} stellt eine einfache P2P Verbindung ohne Hop dar. Beispielweise schaltet ein einzelner Schalter eine einzelne, definierte Lichtquelle
- 	\item \textcolor{orange}{Orange} ist eine many-to-one Verbindung in welcher mehrere Lichtschalter die selbe Lichtquelle schalten.
- 	\item \textcolor{cyan}{Blau} ist eine klassiche one-to-many Topologie dargestellt in welcher beispielsweise ein Schalter mehrere Lichtquellen bedient.
- 	 \item \textcolor{green}{Grün} dargestellt ist eine indirekte P2P Verbindung mit. Das bedeutet, dass Schalter und Lichtquelle keine direkte Verbindung zueinander haben und daher Mesh-typisch via einem oder mehreren Hops kommuniziert.
-\end{itemize}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{Mesh_Test_Beziehungen.png}
-	\caption{Beziehungen zwischen den Mesh Nodes innerhalb eines Benchmarks.}\label{fig:MeshTestBeziehungen}
-\end{figure}
-
-
-\subsubsection{Testumgebungen und Messaufbau}\label{subsubsec:TestumgebungenundMessaufbau}
+%\subsubsection{Testumgebungen und Messaufbau}\label{subsubsec:TestumgebungenundMessaufbau}
 
 Unterschiedliche Testumgebungen sollen die Benchmarks und schlussendlich den Vergleich der 3 Mesh Protokolle aussagekräftiger machen.
 Nachfolgende Umgebungen mit den entsprechenden Eigenschaften sollen getestet werden.
@@ -307,7 +306,7 @@ Da sich diese Parameter innerhalb des jeweiligen Protokolls unterschiedlich umse
 Deren Funktionsweise wird in separaten Abschnitten noch detailliert behandelt.
 
 Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Unicast bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
-Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch \ref{sec:ZigbeeUmsetzungBenchmark}).
+Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch Abschnitt \ref{subsubsec:Adressierung}).
 Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
 
 
@@ -319,9 +318,9 @@ Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt 
  & BT Mesh & Thread & Zigbee \\ 
 \hline
 Group addressing mode & Broadcast & Multicast & Unicast \\
-Application Layer & Models & CoAP [\ref{subsec:CoAP}] & ZCL [\ref{par:ZigbeeAFZCL}] \\
+Application Layer & Models & CoAP [\ref{subsec:CoAP}] & ZCL [\ref{subsubsec:ApplicationLayer}] \\
 MAC-Layer & BLE 1 Mbit & IEEE 802.15.4 & IEEE 802.15.4 \\
-Mesh Node Type & Relay & FTD [\ref{par:FullThreadDevice}] & Zigbee-Router [\ref{par:ZigbeeRouter}] \\
+Mesh Node Type & Relay & FTD [\ref{par:FullThreadDevice}] & Zigbee-Router [\ref{subsec:NetzaufbauundTopologie}] \\
 Mesh Node Cnt. & 50 & 50 & 50 \\
 Client/Server Verhältnis & 25/25 & 25/25 & 25/25 \\
 Message Ack (Appl. Layer) & No & No & No \\
@@ -394,28 +393,31 @@ Mittels einem weiteren Python Skript und manueller Bearbeitung in Excel können 
 \subsubsection{Identifizierung Benchmark Slave Node}\label{subsubsec:NodeIdentification}
 
 Die verschiedenen Benchmark Slave Nodes (BSN) werden mithilfe ihrer MAC-Adresse identifiziert.
-Jedem nRF52840-SOC wird eine 48-bit lange Adresse während der Produktion eingebrannt. Dabei handelt es sich um zufällig generierte Werte.
+Jedem nRF52840 SoC wird eine 48-bit lange Adresse während der Produktion eingebrannt. Dabei handelt es sich um zufällig generierte Werte.
 Zur Identifizierung im Benchmark werden nur die letzten 32-bit dieser MAC-Adresse verwendet.
-Auf dem nRF-52840-Dongle ist die Adresse auf der Rückseite angegeben (siehe Abbildung ...) und kann so einfach abgelesen werden.
+Auf dem nRF-52840-Dongle ist die Adresse auf der Rückseite angegeben (siehe Abbildung \ref{fig:MACAdresseDongle}) und kann so einfach abgelesen werden.
 
-\todo[inline]{Raffi:  Bei Dongle mit Bild wo die MAC-Adresse abzulessen ist. }
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{Donge_MAC_Address.jpg}
+	\caption{MAC Adresse nRF52840-Dongle}\label{fig:MACAdresseDongle}
+\end{figure}
 
 
 \subsubsection{Konfiguration Benchmark Slave Node}\label{subsubsec:NodeConfiguration}
-
 Zur Konfiguration der BSN dient ein Excel-File. Darin sind alle Nodes mit ihren Konfigurations-Parametern aufgelistet. Die folgenden Angaben sind in einem Konfigurations-Eintrag enthalten. 
 
 \begin{itemize}
-	\item \textit{\textbf{Nummer}} Gibt die Nummer des zu konfigurierenden Teilnehmers an.
-	\item \textit{\textbf{Firmware}} Verweist auf das Firmmware-File mit welchem der Teilnehmer geflasht wird.
-	\item \textit{\textbf{Dev ID}} Gibt die letzten 32bit der MAC-Adresse des zu konfigurierenden Teilnehmers an (siehe Abschnitt \ref{subsubsec:NodeIdentification})
-	\item \textit{\textbf{Group ID}} Gruppennummer zu welcher der Teilnehmer gehört. (siehe Abschnitt \ref{subsubsec:TestumgebungenundMessaufbau})
-	\item \textit{\textbf{Node ID}} Die Node ID wird nur bei Clients benötigt. Dieses Feld gibt an welche pseudozufälligen Werte benutzt werden im Traffic Generatio Modus Random (siehe Abschnitt \ref{subsec:TrafficGeneration}).
-	\item \textit{\textbf{Ack}} Einschalten des Sendens von Acknowledged Messages.
-	\item \textit{\textbf{Add Payload Len}} Gibt die Anzahl Bytes an, welche zusätzlich zu jeder Nachricht angehängt werden um die Gesamtgrösse des Pakets zu verändern.
-	\item \textit{\textbf{Traffic Gen Mode}} Gibt die Art an wir der Traffic generiert wird (siehe Abschnitt \ref{subsec:TrafficGeneration}).  
-	\item \textit{\textbf{DST\_Node\_1-3}} Gibt die Nummer des Servers an, welcher im Unicast Addressing Mode als Ziel verwendet wird. Dazu existieren drei verschiedene Einträge.  
-	\item \textit{\textbf{DST\_MAC\_1-3}} Gibt die MAC-Adresse des Servers an, welcher im Unicast Addressing Mode als Ziel verwendet wird. Dazu existieren drei verschiedene Einträge. 
+	\item \textit{\textbf{Nummer:}} Gibt die Nummer des zu konfigurierenden Teilnehmers an.
+	\item \textit{\textbf{Firmware:}} Verweis auf das Firmware-File mit welchem der Teilnehmer geflasht wird.
+	\item \textit{\textbf{Dev ID:}} Gibt die letzten 32bit der MAC-Adresse des zu konfigurierenden Teilnehmers an (siehe Abschnitt \ref{subsubsec:NodeIdentification})
+	\item \textit{\textbf{Group ID:}} Index der Gruppe zu der der Teilnehmer gehört. (siehe Abschnitt \ref{subsubsec:TestumgebungenundMessaufbau})
+	\item \textit{\textbf{Node ID:}} Die Node ID wird nur bei Clients benötigt. Dieses Feld gibt an welche pseudozufälligen Werte im Traffic Generation Modus Random (siehe Abschnitt \ref{subsec:TrafficGeneration}) benutzt werden.
+	\item \textit{\textbf{Ack:}} Einschalten des Sendens von Acknowledged Messages.
+	\item \textit{\textbf{Add Payload Len:}} Gibt die Anzahl Bytes an, welche zusätzlich zu jeder Nachricht angehängt werden um die Gesamtgrösse des Pakets zu verändern.
+	\item \textit{\textbf{Traffic Gen Mode:}} Gibt die Art an wie der Traffic generiert wird (siehe Abschnitt \ref{subsec:TrafficGeneration}).  
+	\item \textit{\textbf{DST\_Node\_1-3:}} Gibt die Nummer des Servers an, welcher im Unicast Addressing Mode als Ziel verwendet wird. Es können Total drei Einträge definiert werden.  
+	\item \textit{\textbf{DST\_MAC\_1-3:}} Gibt die MAC-Adresse des Servers an, welcher im Unicast Addressing Mode als Ziel verwendet wird. Diese Felder sind von den Feldern \textit{DST\_Node\_1-3} abhängig. 
 \end{itemize}
 
 Mithilfe eines CLI Befehls können die einzelnen Teilnehmer konfiguriert werden (siehe Abschnitt \ref{subsubsec:CLI}). Mithilfe des Python Scripts aus Abschnitt \ref{subsubsec:Configurator}, wurde dieser Vorgang automatisiert. 

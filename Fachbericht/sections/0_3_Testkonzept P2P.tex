@@ -6,72 +6,85 @@
 \clearpage
 
 \section{Messkonzept}\label{sec:KonzeptP2PMessung}
-
-Im den nachfolgenden Abschnitten wird auf die Kon­zep­ti­o­nie­rung und Umsetzung der Point to Point (P2P) Testinfrastruktur eingegangen. Ziel dieser Infrastruktur ist es die Verbindungen auf den MAC-Layern \textit{BLE} sowie \textit{IEEE 802.15.4} auszumessen. Die Mac-Layer Verbindung beschreibt eine rudimentäre Kommunikation zwischen zwei Knoten, welche direkt auf der physikalischen Schicht stattfindet und keine Netzwerk- und Applikationsschichten beteiligt sind.
-Dazu wird zuerst das Messkonzept präsentiert und anschliessend die Inbetriebnahme und Bedienung der Messinfrastruktur erläutert. Schliesslich werden noch die technischen Einzelheiten hinsichtlich Umsetzung dargelegt.
+In den nachfolgenden Abschnitten wird auf die Kon­zep­ti­o­nie­rung und Umsetzung der Point to Point (P2P) Testinfrastruktur eingegangen.
+Ziel dieser Infrastruktur ist, die Verbindungen auf den MAC-Layern \textit{BLE} sowie \textit{IEEE 802.15.4} auszumessen.
+Die Mac-Layer Verbindung beschreibt eine rudimentäre Kommunikation zwischen zwei Knoten, welche direkt auf der physikalischen Schicht stattfindet und keine Netzwerk- und Applikationsschichten daran beteiligt sind.
+Dazu wird zuerst das Messkonzept präsentiert und anschliessend die Inbetriebnahme und Bedienung der Messinfrastruktur erläutert. Schliesslich werden noch die technischen Einzelheiten hinsichtlich der Umsetzung dargelegt.
 
 \subsection{Definition MAC-Layer}\label{sec:MAC-LayerP2P}
+Der MAC-Layer ist bei Protokollen für die drahtlose Kommunikation oftmals über Normen spezifiziert. Die eingesetzte Hardware-Plattform (siehe Abschnitt \ref{sec:HardwarePlattform}) unterstützt \textit{BLE} sowie den \textit{IEEE 802.15.4} Standard.
+Diese beiden Standards werden im Weiteren als Radio-Mode bezeichnet. Nebst dem Radio-Mode charakterisiert sich die MAC-Schicht über den verwendeten Kanal. Dabei handelt es sich um das Frequenzband, auf welchem gesendet wird. 
 
-Der MAC-Layer ist bei Protokollen für die drahtlose Kommunikation oftmals über Normen spezifiziert. Die eingesetzte Hardware-Plattform (siehe Abschnitt \ref{sec:HardwarePlattform}) unterstützt \textit{BLE}, sowie den \textit{IEEE 802.15.4} Standard.
-Diese beiden Standards werden im weiteren als Radio-Mode bezeichnet. Nebst dem Mode charakterisiert sich die MAC-Schicht über den verwendeten Kanal. Dabei handelt es sich um ein Frequenzband auf welchem gesendet wird. 
+\subsection{Anforderungen}\label{subsec:AnforderungenP2P}
 
-\subsection{Anforderungen}\label{subsec:AnforderungentP2P}
-
-Die Anforderung an die Point-to-Point Testinfrastruktur ist es, eine Verbindung zwischen zwei Funkmodulen anhand der folgenden Messwerte charakterisieren zu können:
+Die Anforderung an die Point-to-Point Testinfrastruktur ist, eine Verbindung zwischen zwei Funkmodulen anhand der folgenden Messwerte charakterisieren zu können:
 
 \begin{itemize}
-	\item \textit{\textbf{Signal to Noise Ratio (SNR)}} Signal-Rausch-Verhältnis 
-	\item \textit{\textbf{Packetloss}} Paketverlust
+	\item \textit{\textbf{Signal to Noise Ratio (SNR)}}
+	\item \textit{\textbf{Packetloss}}
 \end{itemize}
 
-Das Ausmessen der obigen Eingenschaften soll pro Kanal (Frequenz) möglich sein. Die folgenden Parameter können vom Benutzer eingestellt werden um eine Messung durchzuführen:
+Das Ausmessen der obigen Eigenschaften soll pro Kanal möglich sein. Die folgenden Parameter müssen vom Benutzer eingestellt werden können, um eine Messung durchzuführen:
 
 \begin{itemize}
-	\item \textit{\textbf{Radio-Mode}} (BLE-1Mbit, IEEE 802.15.4)
-	\item \textit{\textbf{Start-Channel}} Abhängig vom Radio-Mode. Kanal auf welchem die Messung gestartet wird.
-	\item \textit{\textbf{Stop-Channel}} Abhängig vom Radio-Mode. Kanal bis zu welchem die Messung durchgeführt werden soll. 
-	\item \textit{\textbf{Tx-Power}} Sendeleistung
-	\item \textit{\textbf{Collision-Avoidance (CA)}} Kollisionsvermeidung (nur bei IEEE 802.15.4 Radio Mode)
-	\item \textit{\textbf{Payload}} Anzahl der zu sendenden Bytes pro Paket.
+	\item \textit{\textbf{Radio-Mode}} BLE-1Mbit oder IEEE 802.15.4
+	\item \textit{\textbf{Start-Channel:}} Der Start-Channel definiert den Kanal, auf welchem die Messung gestartet werden soll. Dieser ist abhängig vom Radio-Mode.
+	\item \textit{\textbf{Stop-Channel:}} Der Stop-Channel definiert den Kanal, bis zu welchem die Messung durchgeführt werden soll. Dieser ist ebenfalls abhängig vom Radio-Mode.
+	\item \textit{\textbf{Tx-Power:}} Sendeleistung beim Versand der Testnachrichten.
+	\item \textit{\textbf{Collision-Avoidance (CA):}} Kollisionsvermeidung (nur bei IEEE 802.15.4 Radio Mode)
+	\item \textit{\textbf{Payload:}} Anzahl der zu sendenden Bytes pro Paket.
 \end{itemize}
 
 
-\subsection{Messgrössen}\label{sec:MessgrössenP2P}
-Wie bereits in Abschnitt \ref{sec:AnforderungentP2P} erwähnt, wird das Signal-Rausch-Verhältnis (SNR) und der Paketverlust gemessen. Die beiden Messgrössen können mit Hilfe der nRF-Plattform direkt bestimmt werden.
+\subsection{Messgrössen}\label{subsec:MessgrössenP2P}
+Wie bereits in Abschnitt \ref{subsec:AnforderungenP2P} erwähnt, wird das Signal-Rausch-Verhältnis (SNR) und der Paketverlust gemessen. Die beiden Messgrössen können mit Hilfe der nRF-Plattform direkt bestimmt werden.
 
 \begin{itemize}
-	\item \textbf{\textit{SNR}}: Gibt das Verhältnis zwischen der Signalleistung und Rauschleistung an. Als Rauschen werden jegliche Umwelteinflüsse (Störungen) bezeichnet. Zur Bestimmung des SNR muss die Rauschleistung und Signalleistung erfasst werden. Bei der Detektion der Rauschleistung muss der Signalbringer (Sender) deaktiviert sein. Das Messen der Signalleistung + Rauschleistung erfolgt hingegen bei eingeschaltetem Sender.
-	\item \textbf{\textit{Paketverlust}}: Als Paketverlust wird das Verhältnis der Pakete bezeichnet die das Ziel nicht erreicht haben zu der totalen Anzahl versendeten Pakete, bezeichnet. Zur Bestimmung werden Pakete generiert und vom Sender zum Empfänger übermittelt. Dieser zählt die Anzahl empfangener Pakete und meldet den Zählwert dem Sender. Anschliessend ist der Sender in der Lage den Paketverlust zu berechnen. 
+	\item \textbf{\textit{SNR}}: Gibt das Verhältnis zwischen der Signalleistung und Rauschleistung an. Als Rauschen werden jegliche Umwelteinflüsse (Störungen) bezeichnet. Zur Bestimmung des SNR muss die Rauschleistung und Signalleistung erfasst werden.
+	Bei der Detektion der Rauschleistung muss der Signalbringer (Sender) deaktiviert sein. Das Messen der Signalleistung inkl. Rauschleistung erfolgt hingegen bei eingeschaltetem Sender.
+	
+	\item \textbf{\textit{Paketverlust}}: Als Paketverlust wird das Verhältnis zwischen der Anzahl Pakete bezeichnet, die das Ziel nicht erreicht haben, zu der totalen Anzahl versendeten Pakete.
+	Zur Bestimmung dieses Verhältnisses werden Pakete generiert und vom Sender zum Empfänger übermittelt. Dieser zählt die Anzahl empfangener Pakete und meldet den Zählwert dem Sender zurück. Damit ist der Sender in der Lage, den Paketverlust zu berechnen. 
 \end{itemize} 
 
 
 \subsection{Konzept}\label{sec:KonzeptP2P}
-Zur Realisierung der Point to Point Testinfrastruktur wurde auf ein \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Multicast bezeichnet). Dies hat den Vorteil das mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass die Messpfade nur unidirektional charakterisiert werden (nur von Master zu Slave oder Uplink-Pfad). Die Abweichung zwischen Up- und Downlink Pfad kann durch wiederholen der Messung mit vertauschten Standorten verifiziert werden. 
+Zur Realisierung der Point to Point Testinfrastruktur wurde auf ein \textit{One to Many} (1:n) Messprinzip gesetzt (auch als Multicast bezeichnet). Dies hat den Vorteil, dass mehrere Verbindungen gleichzeitig ausgemessen werden können. Der Nachteil dabei ist, dass so die Messpfade nur unidirektional charakterisiert werden (nur von Master zu Slave oder Uplink-Pfad). Die Abweichung zwischen Up- und Downlink Pfad kann durch die Wiederholung der Messung mit vertauschten Standorten verifiziert werden. 
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Konzeptschema_P2P.png}
+	\includegraphics[width=0.7\textwidth]{Konzeptschema_P2P.png}
 	\caption{Konzeptschema P2P Testinfrastruktur}
 	\label{fig:KonzeptschemaP2P}
 \end{figure}
 
-\todo[inline]{Schreibfehler in der Grafik.->Messurment Parameters}
-
-Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Management Station, einem Master- und mehreren Slave Nodes. Über die Management Station können Messresultate angezeigt, sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node). Er koordiniert den Messablauf und sendet \textit{Probe Packets} an alle SN (Slave Nodes). Diese Protokollieren die Anzahl empfangener \textit{Probe Packets} und melden ihre Messresultate an den MN zurück. Nach Empfang aller Resultate leitet der MN alle Messergebnisse an die MS weiter. Dort werden dem Benutzer die Messdaten dargestellt. Details zum Ablauf sind in Abschnitt \ref{sec:SoftundFirmware} aufgeführt. Eine mögliche Anwendung der Testinfrastruktur wird im folgenden Abschnitt \ref{sec:TestszenarienP2P} beschrieben.  
+Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Management Station, einem Master- und mehreren Slave Nodes.
+Über die Management Station können Messresultate angezeigt sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node).
+Er koordiniert den Messablauf und sendet \textit{Probe Packets} an alle SN (Slave Nodes).
+Diese protokollieren die Anzahl empfangener \textit{Probe Packets} und melden ihre Messresultate an den MN zurück.
+Nach Empfang aller Resultate leitet der MN alle Messergebnisse an die MS weiter.
+Dort werden dem Benutzer die Messdaten dargestellt.
+Details zum Ablauf sind in Abschnitt \ref{sec:SoftundFirmware} aufgeführt.
+Eine mögliche Anwendung der Testinfrastruktur wird im nachfolgenden Abschnitt \ref{sec:TestszenarienP2P} beschrieben.  
 
 \subsection{Testszenarien}\label{sec:TestszenarienP2P}
 Die P2P Testinfrastruktur ist als einfach zu bedienendes Tool konzipiert.
-Es kann eingesetzt werden um den Aufbau von sogenannten \textit{Wireless Personal Area Networks (WPAN)} zu optimieren.
-Mithilfe diese Tools können zum Beispiel die Standorte der Teilnehmer eines Zigbee, Thread oder Bluetooth Mesh Netzwerks optimal gewählt werden.
+Es kann eingesetzt werden, um den Aufbau von sogenannten \textit{Wireless Personal Area Networks (WPAN)} zu optimieren.
+Mithilfe dieses Tools können zum Beispiel die Standorte der Teilnehmer eines Zigbee, Thread oder Bluetooth Mesh Netzwerks optimal gewählt werden.
 
 Weiter kann die Testinfrastruktur als Störquelle in den Benchmarks von Mesh Netzwerken eingesetzt werden (siehe Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke}).
-Die Form der Störung kann dabei gemäss den einstellbaren Parametern \ref{subsec:AnforderungentP2P} frei gewählt werden.
+Die Form der Störung kann dabei gemäss den einstellbaren Parametern aus Abschnitt \ref{subsec:AnforderungenP2P} frei gewählt werden.
 
 \subsection{Messaufbau}\label{sec:Messaufbau}
-
-Bei der verwendeten Hardware handelt es sich um nRF52840 Mikrocontroller (siehe Abschnitt \ref{sec:HardwarePlattform}). Als Master dient das Development-Kit (DK), welches über eine USB-Buchse verfügt. Als Slaves kommen sowohl DKs als auch die USB-Dongle Variante in Frage. Letztere sind einfacher unterzubringen und werden in diesem Messaufbau bevorzugt. Um die erhaltenen Daten auswerten zu können geschieht die Visualisierung mittels einem Laptop oder PC. Dieser muss mit der USB Buchse des Masters verbunden werden und die entsprechende Auswertesoftware gestartet sein. Im nachfolgenden Abschnitt \ref{sec:InbetriebnahmeBedienungP2P} wird die Inbetriebnahme und Bedienung der P2P-Testinfrastruktur genauer beschrieben.
-Die Abbildung \ref{fig:MessaufbauP2P} zeigt den schematischen Messaufbau der P2P-Testinfrastruktur. Der Master kann durch den Einsatz eines Notebooks mobil gehalten werden um so den optimalen Standort des Masters anzupeilen.
-Die Slaves werden in der Wohnung oder im Haus an den möglichen Standorten der Mesh Nodes platziert und so eine Messung gestartet.
+Bei der verwendeten Hardware handelt es sich um einen nRF52840 Mikrocontroller (siehe auch Abschnitt \ref{sec:HardwarePlattform}).
+Als Master dient das Development-Kit (DK), welches über eine USB-Buchse verfügt.
+Als Slaves kommen sowohl DKs als auch die USB-Dongle Variante in Frage.
+Letztere sind einfacher unterzubringen und werden in diesem Messaufbau bevorzugt.
+Um die erhaltenen Daten auswerten zu können, geschieht die Visualisierung mittels einem Laptop oder PC.
+Dieser muss mit der USB Buchse des Masters verbunden werden und die entsprechende Auswertesoftware gestartet sein.
+Im nachfolgenden Abschnitt \ref{sec:InbetriebnahmeBedienungP2P} wird die Inbetriebnahme und die Bedienung der P2P-Testinfrastruktur genauer beschrieben.
+Die Abbildung \ref{fig:MessaufbauP2P} zeigt den schematischen Messaufbau der P2P-Testinfrastruktur. Der Master kann durch den Einsatz eines Notebooks mobil gehalten werden, um so den optimalen Standort des Masters auszuloten.
+Die Slaves werden in der Wohnung oder im Haus an den möglichen Standorten der Mesh Nodes platziert. Danach wird die Messung gestartet.
 
 \begin{figure} [H]
 	\centering
@@ -97,20 +110,16 @@ Zur Inbetriebnahme müssen jedoch folgende Voraussetzungen bezüglich vorhandene
 	\end{itemize}
 \end{itemize}
 
-Eine Anleitung und der Sourcecode sind im \href{https://github.com/Rouben94/P6_Software}{Github Repository\footnotemark[\value{footnote}]} zu diesem Projekt verfügbar \cite{github_p6_software_p2p_2020}.
+Eine Anleitung und der Sourcecode sind im \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnote{\url{https://github.com/Rouben94/P6_Software}\cite{anklin_bobst_horath_rouben94p6_software_nodate}}} zu diesem Projekt verfügbar \cite{github_p6_software_p2p_2020}.
 Um den Master und die Slaves vorzubereiten sind die beiden mit der entsprechenden Firmware zu laden.
 Anschliessend können die Slaves im Raum platziert und der Master am Laptop eingesteckt werden.
 Sobald diese geschehen ist, kann nach folgender Schritt für Schritt Anleitung vorgegangen werden.
 
 \subsection{Schritt 1 - Webserver Starten}\label{sec:SchrittWebserverStarten}
 Der Webserver wurde mit eine Windows Umgebung entwickelt und getestet. Die folgende Anleitung ist demzufolge nur für eine Windows Umgebung gültig.
-Für die Verwendung mit Linux oder MacOS sind auf der Homepage von \href{https://www.djangoproject.com/}{Django\footnote{\url{https://www.djangoproject.com}}} entsprechende Anleitungen verfügbar.
-Bevor der Webserver gestartet werden kann, muss der Sourcecode vom \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnotemark[\value{footnote}]} geklont werden.
+Für die Verwendung mit Linux oder MacOS sind unter folgendem \href{https://tutorial.djangogirls.org/en/django_installation/}{Link\footnote{\url{https://tutorial.djangogirls.org/en/django_installation/}}} entsprechende Anleitungen verfügbar.
+Bevor der Webserver gestartet werden kann, muss der Sourcecode vom \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnotemark[1]} geklont werden.
 Auf der Ordnerebene \textbf{P6\_Software\textbackslash P2P\textbackslash Webserver\textbackslash p2p\_webserver} müssen folgende cmd Befehle ausgeführt werden.
-
-\footnotetext[\value{footnote}]{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}}
-
-\todo[inline]{Link zu Django Website einfügen und Footnote Numbering anpassen.}
 
 \begin{lstlisting}[style=DOS]
 Microsoft Windows [Version 10.0.18363.1016]
@@ -173,29 +182,29 @@ Nachdem die serielle Verbindung zum Master hergestellt ist, werden auf der Seite
 
 Damit die Parameter der Nodes verändert werden können, besteht auf der gleichen Seite die Möglichkeit die gewünschten Werte einzugeben und an den Master zu senden. Die Parameter können wie auf der Abbildung \ref{fig:WebserverNodelistView} markiert, definiert werden. Folgende Vorgaben müssen bei der Eingabe eingehalten werden:
 
-\paragraph{Start und Stop Channel}
-Falls IEEE 802.15.4 250kBit Mode ausgewählt:
-\begin{itemize}
-	\item Start Channel 11 bis Stop Channel 26
-\end{itemize}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|l|c|l|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Start und Stop Channel Feld}}                                                            \\ \hline
+		\multicolumn{2}{|c|}{\textbf{IEE 802.15.4 250 kBit}}       & \multicolumn{2}{c|}{\textbf{Alle Anderen Modi}}          \\ \hline
+		\multicolumn{2}{|c|}{Start Channel 11 bis Stop Channel 26} & \multicolumn{2}{c|}{Start Channel 0 bis Stop Channel 39} \\ \hline
+	\end{tabular}
+	\caption{Parameter Start und Stop Channel Feld}
+	\label{table:ParameterStartStopChannel}
+\end{table}
 
-Alle anderen Modi:
-\begin{itemize}
-	\item Start Channel 0 bis Stop Channel 39
-\end{itemize}
-
-\paragraph{Payload}
-Falls IEEE 802.15.4 250kBit Mode ausgewählt:
-\begin{itemize}
-	\item 0 - 120 bit
-\end{itemize}
-
-Alle anderen Modi:
-\begin{itemize}
-	\item 0 - 250 bit
-\end{itemize}
-
-\todo[inline]{Vorgaben können evtl. noch als Tabelle dargestellt werden. Könnte übersichtlicher sein.}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|l|c|l|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Payload Feld}}                                                            \\ \hline
+		\multicolumn{2}{|c|}{\textbf{IEE 802.15.4 250 kBit}} & \multicolumn{2}{c|}{\textbf{Alle Anderen Modi}} \\ \hline
+		\multicolumn{2}{|c|}{0 - 120 bit}                    & \multicolumn{2}{c|}{0 - 250 bit}                \\ \hline
+	\end{tabular}
+	\caption{Parameter Payload Feld}
+	\label{table:ParameterPayloadFeld}
+\end{table}
 
 \begin{figure} [H]
 	\centering
@@ -408,8 +417,7 @@ Durch Wiederholungen der Messung konnte dieser Fehler als systematisch identifiz
 Mithilfe einer Korrektur um 40$\mu$s konnte die Genauigkeit in den Bereich von 100ns bis 1200ns reduziert werden. Eine Abweichung der Zeitsynchronisation von ca. 1$\mu$s sollte genügend genau sein um als gute Grundlage für die Statemachine aus Abschnitt \ref{sec:SoftundFirmware} zu dienen. 
  
 \subsection{Webserver}\label{subsec:DjangoWebserver}
-\todo[inline]{Evtl. noch eine kurze Einleitung ins Kapitel Webserver
-}
+Damit die P2P-Testinfrastruktur visualisiert und mit einem schönen User Interface gesteuert werden kann, wurde ein Webserver aufgesetzt. Das Ziel ist es auf einem Rechner unter einer Web-Adresse einen Webserver zu erreichen, welche es ermöglicht alle Einstellung über eine serielle Schnittstelle dem BMN mitzuteilen. Somit wird es möglich den Ablauf bequem über den Web-Server zu steuern.
 \subsubsection{Django}\label{subsubsec:Django}
 Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver aufgesetzt.
 Django ist ein open-source Webframework, dass auf dem Model-View-Controller Prinzip basiert und in der Programmiersprache Python geschrieben wurde.
@@ -575,7 +583,7 @@ In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe For
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{ParamForm.png}
+	\includegraphics[width=\textwidth]{ParamForm.png}
 	\caption{Parameter Form}
 	\label{fig:ParamForm}
 \end{figure}
@@ -586,8 +594,6 @@ In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe For
 	\caption{Port Form}
 	\label{fig:PortForm}
 \end{figure}
-
-\todo[inline]{Bild Parameter Form anpassen. Schreibfehler CSMA-CA}
 
 \paragraph{Serielle Kommunikation:}\label{par:SerielleKommunikation}
 Die Serielle Kommunikation wird mit Hilfe der Python Bibliothek \textit{PySerial} aufgebaut. Auf der P2P-Webserver Seite Connect, kann der Port ausgewählt werden, an dem der P2P-Master angeschlossen ist. Sobald die Verbindung zum Master aufgebaut ist, wird ein separater Python Thread gestartet. In diesem Thread wird in einem while-loop das Serielle Interface permanent ausgelesen. Sobald der Master einen neuen Mess-Report schickt, wird dieser ausgewertet und es werden Node und Channel Objekte anhand des Reports erstellt. In der Abbildung \ref{fig:AblaufDjangoSerial} ist der Ablauf ersichtlich.
@@ -622,7 +628,7 @@ Die Messwerte korrelieren mit denjenigen des Radio-Test-Example \cite{nrf_connec
 Die Analyse des MAC-Layers und Umsetzung der Testinfrastruktur hat viele Erkenntnisse im Bereich der hardwarenahen-Programmierung gebracht. Durch das erarbeiten der Firmware sind viele Module (Zeitsynchronisation, Statemachine, CLI, etc.) geschaffen worden, welche in weiteren Programmen integrierbar sind. Somit ergab sich eine ideale Grundlage um in die Netzwerk-Stacks, welche auf dem MAC-Layer basieren, einzutauchen. 
 
 \paragraph{Webserver}
-Das Entwickeln eines Webservers für die Bedienung der P2P-Testinfrastruktur war eine sehr lehrreiche Erfahrung. Bis an hin waren nur die Programmiersprachen C und C++ bekannt. Das Erlernen und Anwenden von Python, HTML und Javascript für den Aufbau und die Darstellung des Webservers waren sehr intensiv aber auch lehrreich. Gewisse Funktionen vom Webserver könnten verbessert werden:
+Das Entwickeln eines Webservers für die Bedienung der P2P-Testinfrastruktur war eine sehr lehrreiche Erfahrung. Bis an hin waren nur die Programmiersprachen C und C\texttt{++} bekannt. Das Erlernen und Anwenden von Python, HTML und Javascript für den Aufbau und die Darstellung des Webservers waren sehr intensiv aber auch lehrreich. Gewisse Funktionen vom Webserver könnten verbessert werden:
 
 \begin{itemize}
 	\item Das Aktualisieren der Tabellen und den Charts wird im Sekundentakt gemacht. Es wäre besser die Aktualisierung auszuführen, wenn der Master Node meldet, dass er mit dem Report fertig ist.

@@ -20,6 +20,7 @@ Zusammengefasst lassen sich die Messreihen folgendermassen unterscheiden.
 	\item \textbf{\textit{Traffic Generation Mode}} Wurde zwischen den Messreihen 1\&2 und 3\&4 von Random auf Sequentiel geändert.
 	\item \textbf{\textit{Message Dichte}} Wurde zwischen den Messreihen 2\&7 und 4\&8 von 2.5 M/s auf 0.33 M/s gesenkt (Messages/Sekunde).
 	\item \textbf{\textit{Disturbance}} Wurde zwischen den Messreihen 2\&6 eingeschaltet.
+	\todo[inline]{\"Wurde zwischen den Messreihen 2\&6 eingeschaltet\" ist verwirrend. Man könnte verstehen, dass die Disturbance von 2 bis 6 eingeschaltet war.}
 \end{itemize}
 
 \subsubsection{Latenzzeit}\label{subsec:VergleichLatenzzeitMessreihen}
@@ -30,11 +31,11 @@ Zusammengefasst lassen sich die Messreihen folgendermassen unterscheiden.
 	\caption{Durchschnittliche Latenzzeit per Hop der einzelnen Messreihen im Vergleich}\label{fig:Latenzzeiten_per_Hop_Messreihen}
 \end{figure}
 
-Durch die in Abbildung \ref{fig:Latenzzeiten_per_Hop_Messreihen} dargestellten Latenzzeiten wird ersichtlich das Bluetooth-Mesh am anfälligsten auf ein erhöhen der Payload reagiert. Eine detaillierte Analyse zu diesem Phänomen wird in Abschnitt \ref{subsec:Bluetooth_Mesh} durchgeführt. Die Verzögerung bleibt bei Zigbee und Thread trotz Erhöhung der Paketlänge stabil. \\
+Durch die in Abbildung \ref{fig:Latenzzeiten_per_Hop_Messreihen} dargestellten Latenzzeiten wird ersichtlich das Bluetooth-Mesh am anfälligsten auf die Erhöhung der Payload reagiert. Eine detaillierte Analyse zu diesem Phänomen wird in Abschnitt \ref{subsec:Bluetooth_Mesh} durchgeführt. Die Verzögerung bleibt bei Zigbee und Thread trotz Erhöhung der Paketlänge stabil. \\
 
-Ein Änderung des Traffic Generation Mode von Random auf Sequentiel bewirkt bei Bleutooth-Mesh eine drastische Abnahme der Latenz. Bei Zigbee ist zwischen der Messreihe 1 und 2 ebenfalls eine Abnahme zu verzeichnen, welche jedoch nicht zwischen der Reihe 3 und 4 feststellbar ist. Somit muss ein anderer Einfluss für die Abnahme verantwortlich sein (in Abschnitt \ref{subsec:Zigbee} untersucht). Die Änderung des Traffic Generation Mode wirkt bei Thread ebenfalls zu einer Verbesserung der Latenz.\\
+Ein Änderung des Traffic Generation Mode von Random auf Sequentiell bewirkt bei Bluetooth-Mesh eine drastische Abnahme der Latenz. Bei Zigbee ist zwischen der Messreihe 1 und 2 ebenfalls eine Abnahme zu verzeichnen, welche jedoch nicht zwischen der Reihe 3 und 4 feststellbar ist. Somit muss ein anderer Einfluss für die Abnahme verantwortlich sein (in Abschnitt \ref{subsec:Zigbee} untersucht). Die Änderung des Traffic Generation Mode wirkt bei Thread ebenfalls zu einer Verbesserung der Latenz.\\
 
- Das senken der Message Dichte führt bei Bluetooth-Mesh zu einer markanten Abnahme der Latenz. Bei Thread und Zigbee bleibt die Latenz nahezu identisch. \\
+Das Senken der Message Dichte führt bei Bluetooth-Mesh zu einer markanten Abnahme der Latenz. Bei Thread und Zigbee bleibt die Latenz nahezu identisch. \\
  
  Das einbringen von Störungen hat lediglich bei Bluetooth-Mesh einen negativen Einfluss, wodurch sich die Latenzzeit erhöht. 
 
@@ -129,18 +130,38 @@ Alle Mesh-Netzwerke mussten diversen Tests standhalten. Die Ergebnisse aus den M
 	\caption{Durchschnittliche Messgrössen im Vergleich inkl. separater Betrachtung der Messergebnisse, welche mit 8-Byte Paketlänge erzielt wurden}\label{fig:Messresultate_Fazit}
 \end{figure}
 
-Schlussendlich lässt sich Thread als klarer Sieger erkennen. Dieser Network-Stack hat die Tests am besten absolviert. Auf dem zweiten Platz steht Zigbee, welches mit seiner konstanten Latenz und als zuverlässigstes Protokoll die Daten verarbeiten konnte. Dabei gilt zu beachten das bei Zigbee die Hops nicht berücksichtigt wurden (siehe Abschnitt \ref{subsec:Validierung}). Bluetooth-Mesh kann durch den niedrigen Energiebedarf brillieren, schnitt jedoch in Sachen Performance deutlich schlechter als seine Kornkurenten ab. Im Anschluss wird jedes Protokoll genauer Analysiert und die vor und Nachteile, sowie auf mögliche Verbesserungen eingegangen. 
+Schlussendlich lässt sich Thread als klarer Sieger erkennen. Dieser Network-Stack hat die Tests am besten absolviert. Auf dem zweiten Platz steht Zigbee, welches mit seiner konstanten Latenz und als zuverlässigstes Protokoll die Daten verarbeiten konnte. Dabei gilt zu beachten das bei Zigbee die Hops nicht berücksichtigt wurden (siehe Abschnitt \ref{subsec:Validierung}). Bluetooth-Mesh kann durch den niedrigen Energiebedarf brillieren, schneidet jedoch in Sachen Performance deutlich schlechter als seine Konkurrenten ab. Im Anschluss wird jedes Protokoll genauer analysiert und auf die Vor- und Nachteile, sowie mögliche Verbesserungen eingegangen. 
 
 
 \subsection{Thread}\label{subsec:Thread}
+Wie aus den vorhergehenden Kapiteln ersichtlich hat der Thread Stack die Messungen am besten abgeschlossen. Das bedeutet aber nicht unbedingt, dass der Stack der Beste ist. Es ist klar zu erkennen, dass der Thread Stack dank seiner automatischen Ernennung von Routing-Knoten, sich seiner Umgebung gut anpassen kann. Die Latenzzeit der gesendeten Nachrichten ändert sich in verschiedenen Umgebungen nur minimal. Das bedeutet, dass sich der Stack sehr gut für eine Hausautomation eignet. Wenn sich Sensoren oder Aktoren verschieben, z.B. wenn eine Lampe einen neuen Standort erhaltet, erkennt dies der Stack und kann das Routing der Knoten anpassen. Da sich das Netz sehr gut erweitern lässt und sich die Latenzzeiten eher tief zeigen, kann das Mesh-Netzwerk ausserdem gut für Industrieanwendungen verwendet werden. 
 
-\todo[inline]{Rouben}
+Durch das automatische Routen der Knoten, entsteht auf den einzelnen Nodes jedoch ein Overhead, der zum Beispiel BT-Mesh nicht hat. Aus diesem Grund ist der Energieverbrauch auf den Knoten höher, was sich auch in der Abbildung \ref{fig:EnergieverbrauchMessreihen} zeigt. Dies ist keine repräsentative Messung, da nur die aktiven Radio Zeiten gemessen wurden, es könnte trotzdem die vorherige These mit dem Overhead bestätigen. 
 
-\todo[inline]{Erhöhung der Paketlänge führt zu steigerung des Durchsatzes -> Paylod von 50 Byte reicht aus um innerhalb eines Pakets versendet zu werden. }
-
-\todo[inline]{Pro / COntra eigene Einschätzung des Stacks... z.B. Thread optimal für Homeautomation.. eher nicht geeiget für Smart Agriculture}
+Anders als bei BT-Mesh können mit dem IEEE 802.15.4 und dem 6LoWPAN Layer grössere Pakete versendet werden. Das bedeutet, dass die Segmentierung im Gegensatz zu BT Mesh später stattfindet. Dies erklärt das Phänomen, dass sich der Durchsatz mit steigender Payload vergrössert. Der Thread Stack erreicht bei manchen Messreihen einen Durchsatz von bis zu 32 kbit pro Sekunde. Dies ist jedoch eher unwahrscheinlich. Da bei den Durchschnittsberechnungen kein Median verwendet wurde, können Extremwerte den Durchschnitt verfälschen. Es gab sehr wenige Latenzmessungen, die fehlerhaft waren und eine Latenz unter 0.5ms aufwiesen. Durch diesen Fehler wurde der Durchsatz in der Auswertung unwahrscheinlich hoch. 
 
 \subsection{Zigbee}\label{subsec:Zigbee}
+
+Die Resultate und Vergleiche aus den vorhergehenden Abschnitten zeigen, dass das Zigbee Protokoll in dieser Implementation eine solide Performance abliefert.
+Auch wenn Zigbee nicht ganz an jene Leistung von Thread herankommt, bestätigen die Ergebnisse wieso es zurzeit das am weitesten verbreiteten WPAN Protokoll ist.
+
+Die durchschnittlichen Latenzzeiten liegen zwischen 30 und 50 Millisekunden. Damit schneidet es besser ab als Bluetooth jedoch liegt es hinter jenen Durchschnittswerten von Thread.
+Dies kommt nicht allzu überraschend und ist auch nicht sehr aussagekräftig.
+Viel interessanter zu beobachten sind die Verteilungen der Latenzzeiten, wie sie beispielsweise in Abbildung \ref{fig:VerteilungderLatenzzeiten} zu sehen sind.
+Anders als beispielsweise Thread weist Zigbee dort deutliche Peaks bei 40ms und 70ms auf.
+Diese Beobachtung kann bei sämtlichen Messresultaten gemacht werden.
+Ausreisser nach unten gibt es praktisch keine und solche nach oben nur sehr vereinzelt.
+Somit kann festgestellt werden, dass bei Zigbee mit einer minimalen Latenzzeit von ca. 30ms gerechnet werden muss, diese aber in den seltensten Fällen deutlich überschreitet.
+Zigbee wäre also auch für eher zeitkritische Anwendungen geeignet da die Latenzzeiten deterministisch sind.
+In diesen Zusammenhang nochmals zu erwähnen ist, das Fehlen der Information über die Anzahl Hops die ein Paket während dem Benchmark genommen hat.
+Es kann davon ausgegangen werden, dass der zweite Peak bei 70ms Latenzzeit diesem Problem verschuldet ist.
+Wenn also die Anzahl Hops erfasst werden könnte, dürfte sich die Verteilung der Latenzzeiten wohl nochmals reduzieren.
+
+
+
+
+Im Vergleich mit Thread kann das Zigbee Protokoll nicht überzeugen.
+Weder in der Latenzzeit noch im Durchsatz 
 
 \todo[inline]{Cyrill}
 

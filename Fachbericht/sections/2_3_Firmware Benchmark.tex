@@ -1,3 +1,30 @@
 \clearpage
 \section{Umsetzung Benchmark}\label{sec:ThreadUmsetzungBenchmark}
-\todo[inline]{Komplette Beschreibung der Firmware unterteilt in die 3 Nodetypen. Besonderheiten herausstreichen und allfällige Schwierigkeiten aufzeigen.}
+\todo[inline]{Einleitung schreiben}
+
+\subsection{Openthread Stack Konfiguration}\label{subsec:ThreadStackKonfiguration}
+\todo[inline]{Konfig erklären}
+\begin{table}[h]
+	\centering
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{lll}
+			Stack Init Time                            & 30000 ms                                                               & \begin{tabular}[c]{@{}l@{}}Zeit die benötigt wird um den Stack für den Benchmark\\zu initialisieren. Reserve Zeit um das Routing des \\Netzwerkes durchzuführen.\end{tabular}  \\
+			IEEE Channel                               & 15                                                                     & Thread Kanal der verwendet wird um das Mesh aufzubauen.                                                                                                                        \\
+			Netzwerk Name                              & OpenThread                                                             & Netzwerkname~                                                                                                                                                                  \\
+			\textcolor[rgb]{0.278,0.278,0.278}{PAN ID} & \textcolor[rgb]{0.278,0.278,0.278}{0xABCD}                             & Wird für das Precomissioning verwendet.                                                                                                                                        \\
+			Netzwerkschlüssel                          & \textcolor[rgb]{0.278,0.278,0.278}{0x00112233445566778899AABBCCDDEEFF} & Wird für das Precomissioning verwendet.                                                                                                                                       
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Messgrössen Gewinnung und Verwendung}
+	\label{tab:ThreadMessgrössenGewinnungundVerwendung}
+\end{table}
+
+\todo[inline]{bm\_config.h}
+
+\todo[inline]{bm\_ot.c}
+
+\subsection{CoAP Benchmark Message}\label{subsec:ThreadBenchmarkMessage}
+\todo[inline]{CoAP erklären}
+
+\subsection{IPv6 Adressierung}\label{subsec:IPv6Adressierung}
+\todo[inline]{IPv6 group multicast erklären}
