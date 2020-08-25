@@ -173,7 +173,7 @@ Weder in der Latenzzeit noch im Durchsatz
 
 \subsection{Bluetooth Mesh}\label{subsec:Bluetooth_Mesh}
 
-Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie aus dem Abschnitt \ref{subsec:VergleichMessreihen} zu erkennen ist. Der grösste Einfluss auf die Performance hatte die Länge der gesendeten Nachrichten. Dies hat seinen Ursprung das ein einzelnes Bluetooth-Mesh-Paket lediglich 10-Byte aufnehmen kann (siehe Abschnitt \ref{subsec:BLEMeshStack}). Der Stack beginnt mit der Segmentierung der Daten in mehrere kleine Pakete. Bei 32-Byte sind dies bereits 4 Frames. Damit ist der komplette Network-Stack überfordert. 
+Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie aus dem Abschnitt \ref{subsec:VergleichMessreihen} zu erkennen ist. Der grösste Einfluss auf die Performance hatte die Länge der gesendeten Nachrichten. Dies hat seinen Ursprung das ein einzelnes Bluetooth-Mesh-Paket lediglich 10-Byte Application-Payload aufnehmen kann (siehe Abschnitt \ref{sec:BLEMeshProtokollStack}). Der Stack beginnt mit der Segmentierung der Daten in mehrere kleine Pakete. Bei 32-Byte sind dies bereits 4 Frames. Damit ist der komplette Network-Stack überfordert. 
 
 \begin{figure}[H]
 	\centering
@@ -183,12 +183,12 @@ Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie au
 
 Abbildung \ref{fig:Bluetooth_Mesh_Big_Payload_Issue} zeigt eine Messung mit 32-Byte Payload, einer Message-Dichte von 3 Sekunden / Message welche Sequenziell versendet wurden. Dabei ist zu erkennen, dass die Anzahl der Ongoing Transactions immer weiter ansteigt. Lediglich in der Nachtbearbeitungszeit sinkt die Kurve wieder. Dies deutet darauf hin das zu viel Traffic im Netz gesendet wird. Angelehnt an die Ongoing Transactions steigt die Latenz von einer Sekunde auf einige 100 Sekunden an. \\
 
-Vermutlich entsteht eine zu hohe Message-Dichte, da zu viele Relay-Nodes jede empfangene Message wiederholen. Durch deaktivieren einiger Relays könnte der Netzaufbau entlastet werden. Jedoch erfordern solche manuellen Eingriffe Fachwissen und verringern die Ausfallsicherheit des Netzes. 
+Vermutlich entsteht eine zu hohe Message-Dichte, da zu viele Relay-Nodes jede empfangene Message wiederholen. Durch deaktivieren einiger Relays könnte der Netzaufbau entlastet werden. Jedoch erfordern solche manuellen Eingriffe Fachwissen und verringern die Ausfallsicherheit des Netzes. \\
+
+Klare Vorteile erfährt Bluetooth-Mesh beim dem Durchsatz. Durch den 4-mal schnelleren MAC-Layer auf BLE 1Mbits gegenüber IEEE 802.15.4 welcher kediglich mit 250kbit/s arbeitet. Durch verwenden von ausschliesslich Bluetooth 5.0 Teilnehmern in einem Netzwerk könnte die Geschwindigkeit des MAC-Layers sogar nochmals verdoppelt werden, da somit 2Mbit/s möglich wären. \\ 
 
 
-\subsubsection{Grenzen des Stacks}\label{subsec:BLEMeshProtokollStack}
 
-Die Topologie eines Netzwerks beeinträchtigt stark seine Performance. Ist die Node-Dichte sehr hoch, steigt die Wahrscheinlichkeit an das es zu Kollisionen der einzelnen Nachrichten kommt. 
 
 \todo[inline]{Weiter erläutern gemäss ....}
 

@@ -1,4 +1,18 @@
 \clearpage
 \section{Analyse Bluetooth Mesh Stack}\label{sec:AnalyseBluetoothMeshStack}
+
+Bleutooth-Mesh ist ein relativ neuer Stack mit wenig Anwendungsbeispielen. Er wurde designed um mit der Konkurenzwie Z-Wave oder Zigbee mithalten zu können. Im folgenden werden die Grenzen des Stacks aufgezeigt, sowie die Praktische Erfahrung erläutert.
+
+
+
+\subsubsection{Grenzen des Stacks}\label{subsec:BLEMeshProtokollStack}
+
+Die Topologie eines Netzwerks beeinträchtigt stark seine Performance. Ist die Node-Dichte sehr hoch, steigt die Wahrscheinlichkeit an das es zu Kollisionen der einzelnen Nachrichten kommt. Der BLE-MAC-Layer verfügt im Gegensatz zum IEEE 802.15.4 Layer über keine Collision Avoidance. Somit ist es im Interesse aller Teilnehmer wenn die Radio-Sende-Zeiten so kurz wie möglich gehalten werden. Deshalb schreibt der Stack lediglich 33Bytes als maximale Network-PDU vor. Durch die Geschwindigkeit des MAC-Layers von 1-2Mbit/s sinkt die Wahrscheinlichkeit von Kollisionen der Pakete weiter. Das versenden von längeren Nachrichten, welche stark Segmentiert werden müssen, erhöhen die gesamtbelastung des Netzwerks und sind somit eher unerwünscht. \cite{bluetooth_sig_mesh_netzwerk_spezifikationen_2020}\\
+
+Der Mesh-Stack schreibt eine maximale Grösse von 32767 Teilnehmern vor. Dies soll die theoretische sowie praktische Grenze darstellen. Eine Gebäude der Firma Silvair wurde mit über 1000 Bluetooth-Mesh-Nodes ausgestattet. Laut dem Betreiber laufe das System einwandfrei. Dabei handelt es sich um ein Office-Gebäude mit vielen anderen Bluetooth-Geräten wie Smartphones, Mäuse und Headsets.  \cite{woolley_how_bluetooth_mesh_puts_the_large__2018}
+
+Ein Bluetooth-Mesh Paket wird immer auf drei Kanälen (37,38,39) gesendet (BLE-GAT Advertising). Dadurch erhöht sich die Störfestigkeit. Jedoch verringert sich der Durchsatz mit dem Faktor drei, da ein Paket dreimal solange braucht um gesendet zu werden. 
+
+
 \todo[inline]{Persönliche Eindrücke, Vor- und Nachteile, Besonderheiten beschreiben. Soll dem Leser helfen die "Qualität" des Stacks einzuordnen.}
 
