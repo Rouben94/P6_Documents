@@ -67,7 +67,7 @@ Wie im Bild \ref{fig:ThreadDeviceRoles} ersichtlich, wird das Thread Netzwerk in
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{ot_device_roles.png}
-	\caption{Thread Device Roles}\label{fig:ThreadDeviceRoles}
+	\caption{Thread Device Roles \cite{openthread_ot-primer-roles_2xpng_2016}}\label{fig:ThreadDeviceRoles}
 \end{figure}
 
 \paragraph{Router:}
@@ -82,7 +82,7 @@ Ausserdem können die Thread Geräte, wie in Abbildung \ref{fig:ThreadDeviceType
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.39\textwidth]{ot_device_types.png}
-	\caption{Thread Device Types}\label{fig:ThreadDeviceTypes}
+	\caption{Thread Device Types \cite{openthread_ot-primer-taxonomy_2xpng_2016}}\label{fig:ThreadDeviceTypes}
 \end{figure}
 
 \paragraph{Full Thread Device (FTD):}\label{par:FullThreadDevice}
@@ -110,15 +110,87 @@ Der Thread Leader ist ein Router, der für die Verwaltung aller Router im Netzwe
 Ein Border Router ist ein Gerät, das Informationen zwischen dem Thread Netzwerk und einem nicht Thread Netzwerk weiterleitet. Mit dem Border Router ist es möglich das Thread Netzwerk über das Internet zu erreichen. Es besteht zudem die Möglichkeit das Thread Netzwerk über den Border Router zu konfigurieren. So kann z.B. mit einer Bluetooth Verbindung einzelne Knoten hinzugefügt oder entfernt werden. \cite[Seite 1-4]{thread_group_inc_thread_2017}
 
 \subsubsection{IPv6 Adressierung}\label{subsubsec:IPv6Adressierung}
+Die Thread Knoten kommunizieren in einem IPv6 Adressraum miteinander. In diesem Kapitel wird dies etwas näher erläutert.
 \paragraph{Bereiche:}
+Wie in der Abbildung \ref{fig:IPv6Adressräume} ersichtlich, gibt es für eine Unicast Nachricht drei verschiedene Adressräume:
+
+\begin{itemize}
+	\item \textbf{Link-Lokal} - Beinhaltet alle Geräte, die direkt (ohne Hop) erreichbar sind.
+	\item \textbf{Mesh-Lokal} - Beinhaltet alle Geräte innerhalb des selben Thread Netzwerkes.
+	\item \textbf{Global} - Beinhaltet jegliche Geräte, auch solche die über einen Border Router erreichbar sind.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{ot_ip_scopes.png}
+	\caption{IPv6 Adressräume \cite{openthread_ot-primer-scopes_2xpng_2016}}\label{fig:IPv6Adressräume}
+\end{figure}
 
 \paragraph{Unicast:}
+Ein Thread Gerät beinhaltet mehrere IPv6 Adressen, die jede eine andere Funktion hat. Nachfolgend werden alle Adressen kurz aufgelistet:
+
+\begin{itemize}
+	\item \textbf{Link-Lokale Adresse} - Adresse ist nur mit einer einzigen Funkübertragung erreichbar (keine Hops). Diese Adresse wird vom Stack verwendet, um direkt benachbarte Knoten zu finden, um Routing Informationen auszutauschen und die Verbindungen zu konfigurieren. Präfix: fe80::/16
+	\item \textbf{Mesh-Lokale EID} - Adresse wird nach dem Eintritt in das Netzwerk zufällig gewählt und ist eindeutig. Mit dieser Adresse sind alle Knoten innerhalb des Thread Netzwerkes erreichbar auch über mehrere Hops. Diese Adresse wird für Anwendungen verwendet. Präfix: fd00::/8
+	\item \textbf{Routing Locator} - Diese Adresse lokalisiert die Position des Knoten im Netzwerk. Das bedeutet die Adresse verändert sich, wenn sich die Topologie im Netzwerk ändert. Wird für das Routing verwendet.
+	\item \textbf{Anycast Locator} - Wird verwendet, falls der Routing Locator nicht verfügbar ist.
+	\item \textbf{Globale Unicast Adresse} - Wird als Globale IPv6 Adresse verwendet für Anwendungen mit Border Router.(Öffentliche IPv6 Adresse) Präfix: 2000::/3
+\end{itemize}
 
 \paragraph{Multicast:}
+Wenn Nachrichten an mehrere Geräte gleichzeitig gesendet werden müssen, wird eine Multicast IPv6 Adresse verwendet. Die Adressen können unter Einhaltung der zwei Präfixe für Multicast und Unicast, selbst definiert werden. Es gibt jedoch 4 Multicast Adressen, die vordefiniert sind:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{IPv6 Adresse} & \textbf{Bereich} & \textbf{Verwendung} \\ \hline
+		ff02::1               & Link Lokal       & Alle FTDs und MEDs  \\ \hline
+		ff02::2               & Link Lokal       & Alle FTDs           \\ \hline
+		ff03::1               & Mesh Lokal       & Alle FTDs und MEDs  \\ \hline
+		ff03::2               & Mesh Lokal       & Alle FTDs           \\ \hline
+	\end{tabular}
+	\caption{Reservierte Multicast Adressen}
+	\label{table:ReservierteMulticastAdressen}
+\end{table}
 
 \paragraph{Anycast:}
+Falls der Routing Lacator nicht verfügbar ist, werden über vordefinierte Anycast Adressen gewisse Funktionen reserviert. In der Tabelle \ref{table:ReservierteAnycastAdressen} sind die Funktionen mit der dazugehörigen reservierten Adresse aufgelistet.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{ALOC16}                                                           & \textbf{Type}            \\ \hline
+		0xfc00                                                                    & Leader                   \\ \hline
+		0xfc01 - 0xfc0f                                                           & DHCPv6 Agent             \\ \hline
+		0xfc10 - 0xfc2f                                                           & Service                  \\ \hline
+		0xfc30 - 0xfc37                                                           & Commissioner             \\ \hline
+		0xfc40 - 0xfc4e                                                           & Neighbor Discovery Agent \\ \hline
+		\begin{tabular}[c]{@{}l@{}}0xfc38 - 0xfc3f\\ 0xfc4f - 0xfcff\end{tabular} & Reserviert               \\ \hline
+	\end{tabular}
+	\caption{Reservierte Anycast Adressen}
+	\label{table:ReservierteAnycastAdressen}
+\end{table}
 
 \subsubsection{Netzwerk Aufbau}\label{subsubsec:NetzwerkAufbau}
+Das Thread Netzwerk wird mit drei verschiedenen einzigartigen Identifikatoren definiert:
+
+\begin{itemize}
+	\item 2-byte Personal Area Network ID. (PAN ID)
+	\item 8-byte Extended Personal Area Network ID (XPAN ID)
+	\item Netzwerkname
+\end{itemize}
+
+Wenn ein Thread Knoten hochfährt und einem Netz aufgenommen werden will oder ein neues Netz kreieren will, scannt das Gerät aktiv nach einem IEEE 802.15.4 Netzwerk in Reichweite:
+
+\begin{enumerate}
+	\item Das Gerät sendet einen 802.15.4 Beacon Anfrage von einem spezifischen Channel aus.
+	\item Im Gegenzug senden alle Router oder Router fähigen Endgeräte in Reichweite ihre PAN-ID, XPAN-ID und den Netzwerknamen in einem Beacon zurück.
+	\item Schritt 1. und 2. werden für alle Channels wiederholt.
+\end{enumerate}
+
+Wenn der Knoten alle Netze in Reichweite gefunden hat, kann sich das Gerät entweder einem existierenden Netz verbinden oder eröffnet ein neues Netz.
 
 \newpage
 
