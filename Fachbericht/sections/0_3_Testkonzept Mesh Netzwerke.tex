@@ -306,7 +306,7 @@ Da sich diese Parameter innerhalb des jeweiligen Protokolls unterschiedlich umse
 Deren Funktionsweise wird in separaten Abschnitten noch detailliert behandelt.
 
 Beim \textit{Group addressing mode} wird zwischen Broadcast bei BT Mesh, Multicast bei Thread und Unicast bei Zigbee unterschieden. Gemäss Definition im Pflichtenheft soll jeweils eine Gruppenadressierung stattfinden. Zigbee bietet zwar eine solche Möglichkeit eines Multicasts jedoch wird dieser schliesslich als Broadcast umgesetzt was eine deutliche Limitierung der Performance verursacht.
-Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch \ref{sec:ZigbeeUmsetzungBenchmark}).
+Aufgrund dieser Erfahrung und der Erkenntnis dass marktübliche Lichtsteuerungen\footnote{Analyse mittels Sniffer Trace einer IKEA Tradfri Lichtsteuerung.} nur selten ein solches Multicast Prinzip verwenden, wird die Adressierung im Benchmark gerichtet (Unicast) vorgenommen (siehe auch Abschnitt \ref{subsubsec:Adressierung}).
 Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt an die jeweilige Node Adresse gesendet. Bei mehreren Servern innerhalb einer Gruppe werden also auch mehrere Nachrichten versendet.
 
 
@@ -318,9 +318,9 @@ Das bedeutet die Nachrichten werden nicht an eine Gruppenadresse sondern direkt 
  & BT Mesh & Thread & Zigbee \\ 
 \hline
 Group addressing mode & Broadcast & Multicast & Unicast \\
-Application Layer & Models & CoAP [\ref{subsec:CoAP}] & ZCL [\ref{par:ZigbeeAFZCL}] \\
+Application Layer & Models & CoAP [\ref{subsec:CoAP}] & ZCL [\ref{subsubsec:ApplicationLayer}] \\
 MAC-Layer & BLE 1 Mbit & IEEE 802.15.4 & IEEE 802.15.4 \\
-Mesh Node Type & Relay & FTD [\ref{par:FullThreadDevice}] & Zigbee-Router [\ref{par:ZigbeeRouter}] \\
+Mesh Node Type & Relay & FTD [\ref{par:FullThreadDevice}] & Zigbee-Router [\ref{subsec:NetzaufbauundTopologie}] \\
 Mesh Node Cnt. & 50 & 50 & 50 \\
 Client/Server Verhältnis & 25/25 & 25/25 & 25/25 \\
 Message Ack (Appl. Layer) & No & No & No \\

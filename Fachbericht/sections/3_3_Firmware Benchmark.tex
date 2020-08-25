@@ -2,6 +2,134 @@
 \section{Umsetzung Benchmark}\label{sec:ZigbeeUmsetzungBenchmark}
 \todo[inline]{Komplette Beschreibung der Firmware unterteilt in die 3 Nodetypen. Besonderheiten herausstreichen und allfällige Schwierigkeiten aufzeigen.}
 
+Die Umsetzung des Benchmarks geschah im Rahmen der Anforderungen des Benchmark Konzepts gemäss Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke}.
+Wie im Abschnitt \ref{sec:Soft-undFirmware} bereits ausführlich behandelt, sind innerhalb der Shared Library (siehe Abschnitt \ref{subsec:SharedLibrary}) klare Schnittstellen und Grenzen für die Mesh Protokollstacks definiert.
+Nachfolgend wird auf die Umsetzung des Zigbee Stacks innerhalb dieser Grenzen eingegangen.
+
+\subsection{Zigbee Software Development Kit}\label{subsec:ZigbeeSoftwareDevelopmentKit}
+Für die Umsetzung von Zigbee Applikationen auf dem nRF52840 SoC \ref{subsec:SystemonChip} stellt Nordic Semiconductor ein eigenes Software Development Kit (SDK) zur Verfügung, die \textit{nRF5 SDK for Thread and Zigbee} \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}.
+Da Thread und Zigbee den selben \textit{IEEE 802.15.4} MAC Layer benutzen, teilen sich die beiden Protokollstacks eine gemeinsame SDK.
+Innerhalb der SDK nutzen die beiden jedoch unterschiedliche Ressourcen.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Zigbee_SDK_Plattform_Design.png}
+	\caption{nRF5 SDK for Thread and Zigbee Plattform Design Referenz für Zigbee Applikationen \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}}
+	\label{fig:ZigbeePlattformDesign}
+\end{figure}
+
+Für Zigbee Applikationen kommt ein Plattform Design gemäss Abbildung \ref{fig:ZigbeePlattformDesign} zum Einsatz. 
+Als eigentlicher Zigbee Stack wird der \textit{ZBOSS} Zigbee Stack in der Version 3.3 von DSR\footnote{ZBOSS stack v3.3.0: \url{https://dsr-iot.com/}} implementiert.
+Es handelt sich dabei um einen weit verbreiteten \textit{Zigbee PRO} Stack welcher die neuste Version der Zigbee Core Specification rev22 umsetzt.
+\textit{ZBOSS} verwendet dabei ein kooperatives Multitasking Prinzip mit einem Scheduler welche die Tasks verwaltet.
+
+Unter dem \textit{ZBOSS} Stack verwendet die SDK den \textit{nRF IEEE 802.15.4 radio driver} für die Ansteuerung der Funkschnittstelle.
+Über dem \textit{ZBOSS} Stack befindet sich die Applikationsebene in welcher Applikationen gemäss den ZCL Spezifikationen\footnote{\url{https://zigbeealliance.org/wp-content/uploads/2019/12/07-5123-06-zigbee-cluster-library-specification.pdf}\cite{the_zigbee_alliance_zigbee_2016}} umgesetzt werden können.
+\textit{ZBOSS} stellt die dafür notwendigen Funktionen zur Verfügung.
+
+
+\subsection{Zigbee Stack Implementation}\label{subsec:ZigbeeStackImplementation}
+Der Zigbee Stack wurde mit Hilfe der \textit{nRF5 SDK for Thread and Zigbee} wie oben beschrieben implementiert.
+Dabei wurden einige Funktionen und Werte definiert.
+Diese sollen in den nächsten Abschnitten erläutert werden.
+
+\subsubsection{Topologie}\label{subsubsec:ZigbeeTopologie}
+Das Zigbee Netzwerk für den Benchmark wurde mit Hilfe des \textit{ZigBee PRO} Stackprofils als vollständiges Mesh Netzwerk aufgebaut (siehe Abschnit \ref{subsec:NetzaufbauundTopologie}).
+Um dabei Resultate erhalten zu können die mit jenen der beiden anderen Mesh Protokolle vergleichbar sind, wurden ausschliesslich \textit{Zigbee-Router} konfiguriert.
+Total ergibt dies ein Mesh Netzwerk mit 50 \textit{Zigbee-Routern} und einem \textit{Zigbee-Koordinator} welcher gleichzeitig ebenso als \textit{Zigbee-Router} fungiert.
+Auf den Einsatz von \textit{Zigbee End-Devices} wurde verzichtet da diese für die Performance des Netzes irrelevant sind.
+
+\subsubsection{Funkkanal Wahl im 2.4GHz ISM Band}\label{subsubsec:FunkkanalWahlim2.4GHzISMBand}
+Wie schon einige Male erwähnt, ist die Konkurrenz im 2.4GHz ISM Band gross.
+Aus diesem Grund ist die Wahl des Funkkanals entscheidend für die Performance jedes Protokolls.
+Zigbee respektive der \textit{IEEE 802.15.4} Standard bietet die Möglichkeit den besten Funkkanal je nach Belastung automatisch zu bestimmen und auch während dem Betrieb zu ändern.
+Dies bringt für den Benchmark jedoch einige Probleme in Form von inkonstanten Bedingungen mit sich.
+Deshalb wurde der Funkkanal für das Zigbee Netzwerk fix hinterlegt.
+Abbildung \ref{fig:KonkurrenzIEEEundWLANFunkkanäle} zeigt wie die Kanäle von \textit{Zigbee/IEEE 802.15.4} mit den WLAN Kanälen in Konkurrenz stehen.
+Da in den Messumgebungen gemäss Abschnitt \ref{subsubsec:TestumgebungenundMessaufbau} eine störende Beinflussung durch WLAN Netze zu erwarten ist, wurde Kanal 15 mit einer Mittenfrequenz von 2.425 GHz für die Benchmarks gewählt.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Funkkanaele_Konkurrenz_IEEE.png}
+	\caption{Konkurrenz IEEE und WLAN Funkkanäle \cite{markus_krause_rainer_konrad_drahtlose_2014}}
+	\label{fig:KonkurrenzIEEEundWLANFunkkanäle}
+\end{figure}
+
+\subsubsection{ZCL Level Cluster}\label{subsubsec:ZCLLevelCluster}
+Der Performancevergleich der Mesh Protokolle soll gemäss Benchmark Konzept (siehe Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke}) auf Applikationsebene durchgeführt werden.
+Wie im Abschnitt \ref{Application Layer (APL)} beschrieben wird diese gebildet durch die \textit{Zigbee Cluster Library (ZCL)}.
+Für den Versand von Benchmark Nachrichten wurde deshalb der \textit{ZCL Level control cluster} implementiert.
+Dieser definiert Attribute und Funktionen zur Steuerung eines Gerätes welches einen Level Wert annehmen kann, wie beispielsweise die Helligkeit einer Lampe.
+Die verwendete SDK stellt den \textit{ZCL Level control cluster} standardmässig zur Verfügung.\cite{the_zigbee_alliance_zigbee_2016}
+
+\subsubsection{Endpoint Handler}\label{subsubsec:EndpointHandler}
+Der Empfang von jeglichen \textit{ZCL} Nachrichten wird in der \textit{nRF5 SDK for Thread and Zigbee} durch einen Callback Handler realisiert.
+Dieser wird beim Start der Anwendung einmalig registriert und ausgelöst durch ein Callback-Ereignis der Radio Schnittstelle.
+Im Zigbee Benchmark wurde ein \textit{Costum Endpoint Handler} implementiert mit welchem die Benchmark Nachrichten ausgewertet werden können.
+Nachrichten welche an den entsprechend Endpoint (siehe Abschnitt \ref{subsubsec:ApplicationLayer}) gesendet werden, werden in diesem Handler verarbeitet.
+Die Registration des Handlers erfolgt durch den folgenden API Aufruf:
+
+ZB\_AF\_SET\_ENDPOINT\_HANDLER(BENCHMARK\_SERVER\_ENDPOINT,\linebreak bm\_ep\_handler)
+
+\subsubsection{APS Frame}\label{subsubsec:ZigbeeAPSFrame}
+Während eines Benchmark Vorganges werden mit jeder Benchmark Nachricht die notwendigen Messgrössen gemäss Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} generiert.
+Dazu muss der \textit{Server Node}, also der Empfänger einer Nachricht, folgende Werte aus den Headern des Pakets auslesen:
+
+\begin{itemize}
+\item \textbf{Source Address:} Dies ist die Adresse in Form der \textit{Short-Address} des Senders.
+\item \textbf{Message ID:} Sequenznummer der empfangenen Benchmark Nachricht.
+\end{itemize}
+
+Diese Daten können dem APS Header des Pakets, welcher in Abbildung \ref{fig:AufbauAPSDatenframe} dargestellt ist, entnommen werden.
+Die Message ID wird als \textit{uint\_16t}-Wert im \textit{Manufacturer Specific} Feld des erweiterten APS Header übermittelt.
+Damit können 65535 Benchmark Nachrichten eindeutig identifiziert werden.
+Die eigentliche Sequenznummer des ZCL Pakets ist nur ein \textit{uint\_8t}-Wert und kann deshalb nur bis zu einem Maximalwert von 255 inkrementiert werden.
+Die Identifikation der Benchmark Nachrichten wäre somit aufwendiger.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Zigbee_APS_Datenframe.png}
+	\caption{Aufbau APS Datenframe \cite{markus_krause_rainer_konrad_drahtlose_2014}}
+	\label{fig:AufbauAPSDatenframe}
+\end{figure}
+
+
+\subsubsection{Adressierung}\label{subsubsec:Adressierung}
+Die Adressierung der Nodes innerhalb des Zigbee Mesh Benchmarks kann entweder Unicast oder Multicast erfolgen.
+Eine Multicast Adressierung kann mit Hilfe des \textit{ZCL Groups cluster} erfolgen.
+Dazu wird der Cluster auf den entsprechenden Nodes implementiert und diese werden mittels \textit{ZCL Add Group Request}-Befehl einer gewissen Gruppe hinzugefügt.
+Eine solche Adressierung kann gemäss Abschnitt \ref{subsubsec:CLI} durch die Angabe einer \textit{Group Number} in der Konfiguration der Benchmark Nodes definiert werden.
+Funktionstests zu Beginn der Benchmark Messungen haben allerdings gezeigt, dass diese Multicast Adressierung auf diesem Wege nicht praktikabel ist (siehe Abschnitt \ref{subsubsec:Group addressing mode}).
+Deshalb wurden die Zigbee Benchmark Messungen im Unicast Modus durchgeführt.
+Dabei werden die Benchmark Nachrichten direkt an die jeweiligen Empfänger gesendet.
+Die Unicast Adressierung erfolgt durch Angabe der MAC Adressen der Empfänger bei der Konfiguration der Client Nodes.
+Durch Abfrage der \textit{Adress-Table} werden schliesslich die \textit{Short-Addresses} der Empfänger ermittelt.
+
+
+\subsection{Mesh Node Firmware}\label{subsec:ZigbeeMeshNodeFirmware}
+Die Firmware für die Benchmark Nodes die in Abschnitt \ref{sec:Soft-undFirmware} bereits behandelt wurde, wird durch ein C- und ein H-Modul ergänzt die spezifisch für die Implementation des Zigbee Stack zuständig sind.
+Im Modul \textit{bm\_config.h} werden Konstanten für den Benchmark wie auch die Funktion des Stacks definiert.
+Das Modul \textit{bm\_zigbee.c} hingegen beinhaltet je nach Funktion des Nodes (Master, Client oder Server) die entsprechenden Funktionen für das Stack Handling sowie den Versand und Empfang der Nachrichten.
+
+\subsubsection{Stack Configuration}\label{subsubsec:ZigbeeStackConfiguration}
+
+\todo[inline]{bm\_config.h}
+
+\subsubsection{Stack Handling}\label{subsubsec:ZigbeeStackHandling}
+
+\todo[inline]{bm\_zigbee.c}
+
+\paragraph{Master}\label{par:ZigbeeMaster}
+
+\paragraph{Client}\label{par:ZigbeeClient}
+
+Benchmark Message
+
+\paragraph{Server}\label{par:ZigbeeServer}
+
+
+
+
 \subsection{Benchmark und Stack Parameter}\label{subsec:BenchmarkundStackParameter}
 
 
@@ -19,58 +147,3 @@ Group ID & 0xB331 & \begin{tabular}[t]{@{}l@{}}Default Group ID. Zu diesem Wert 
 \caption{Messgrössen Gewinnung und Verwendung}
 \label{tab:MessgrössenGewinnungundVerwendung}
 \end{table}
-
-\subsection{Mesh Node Firmware}\label{subsec:ZigbeeMeshNodeFirmware}
-
-\subsubsection{Stack Configuration}\label{subsubsec:ZigbeeStackConfiguration}
-
-\todo[inline]{bm\_config.h}
-
-\subsubsection{Stack Handling}\label{subsubsec:ZigbeeStackHandling}
-
-\todo[inline]{bm\_zigbee.c}
-
-\paragraph{Master}\label{par:ZigbeeMaster}
-
-\paragraph{Client}\label{par:ZigbeeClient}
-
-\paragraph{Server}\label{par:ZigbeeServer}
-
-
-\subsection{Benchmark Message}\label{subsec:BenchmarkMessage}
-
-\subsection{Zigbee Stack Implementation}\label{subsec:ZigbeeStackImplementation}
-
-\subsubsection{Topologie}\label{subsubsec:ZigbeeTopologie}
-
-Mesh mit 50 ZR (Zigbee Router)
-
-
-\subsubsection{Funkkanal Wahl im 2.4GHz ISM Band}\label{subsubsec:FunkkanalWahlim2.4GHzISMBand}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Funkkanaele_Konkurrenz_IEEE.png}
-	\caption{Konkurrenz IEEE und WLAN Funkkanäle \cite{markus_krause_rainer_konrad_drahtlose_2014}}
-	\label{fig:KonkurrenzIEEEundWLANFunkkanäle}
-\end{figure}
-
-\subsubsection{ZCL Level Cluster}\label{subsubsec:ZCLLevelCluster}
-
-\subsubsection{Endpoint Handler}\label{subsubsec:EndpointHandler}
-
-Costum Endpoint Handler: ZBAFSETENDPOINTHANDLER anstatt Standard ZCL Device Callback
-
-\subsubsection{APS Header}\label{subsubsec:Header}
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Zigbee_APS_Datenframe.png}
-	\caption{Aufbau APS Datenframe \cite{markus_krause_rainer_konrad_drahtlose_2014}}
-	\label{fig:KonkurrenzIEEEundWLANFunkkanäle}
-\end{figure}
-
-
-\subsubsection{Adressierung}\label{subsubsec:Adressierung}
-
