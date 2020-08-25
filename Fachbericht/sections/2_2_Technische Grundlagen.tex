@@ -110,7 +110,7 @@ Der Thread Leader ist ein Router, der für die Verwaltung aller Router im Netzwe
 Ein Border Router ist ein Gerät, das Informationen zwischen dem Thread Netzwerk und einem nicht Thread Netzwerk weiterleitet. Mit dem Border Router ist es möglich das Thread Netzwerk über das Internet zu erreichen. Es besteht zudem die Möglichkeit das Thread Netzwerk über den Border Router zu konfigurieren. So kann z.B. mit einer Bluetooth Verbindung einzelne Knoten hinzugefügt oder entfernt werden. \cite[Seite 1-4]{thread_group_inc_thread_2017}
 
 \subsubsection{IPv6 Adressierung}\label{subsubsec:IPv6Adressierung}
-Die Thread Knoten kommunizieren in einem IPv6 Adressraum miteinander. In diesem Kapitel wird dies etwas näher erläutert.
+Die Thread Knoten kommunizieren in einem IPv6 Adressraum miteinander. In diesem Kapitel wird dies etwas näher erläutert. \cite[Kapitel 5]{thread_group_inc_thread_2017}
 \paragraph{Bereiche:}
 Wie in der Abbildung \ref{fig:IPv6Adressräume} ersichtlich, gibt es für eine Unicast Nachricht drei verschiedene Adressräume:
 
@@ -127,7 +127,7 @@ Wie in der Abbildung \ref{fig:IPv6Adressräume} ersichtlich, gibt es für eine U
 \end{figure}
 
 \paragraph{Unicast:}
-Ein Thread Gerät beinhaltet mehrere IPv6 Adressen, die jede eine andere Funktion hat. Nachfolgend werden alle Adressen kurz aufgelistet:
+Ein Thread Gerät beinhaltet mehrere IPv6 Adressen, die jede eine andere Funktion hat. Nachfolgend werden alle Adressen kurz aufgelistet: 
 
 \begin{itemize}
 	\item \textbf{Link-Lokale Adresse} - Adresse ist nur mit einer einzigen Funkübertragung erreichbar (keine Hops). Diese Adresse wird vom Stack verwendet, um direkt benachbarte Knoten zu finden, um Routing Informationen auszutauschen und die Verbindungen zu konfigurieren. Präfix: fe80::/16
@@ -174,7 +174,7 @@ Falls der Routing Lacator nicht verfügbar ist, werden über vordefinierte Anyca
 \end{table}
 
 \subsubsection{Netzwerk Aufbau}\label{subsubsec:NetzwerkAufbau}
-Das Thread Netzwerk wird mit drei verschiedenen einzigartigen Identifikatoren definiert:
+Das Thread Netzwerk wird mit drei verschiedenen einzigartigen Identifikatoren definiert \cite[Seite 8-18]{thread_group_inc_thread_2017}:
 
 \begin{itemize}
 	\item 2-byte Personal Area Network ID. (PAN ID)
