@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A template for Wiley article submissions developed by 
+% Overleaf for the Overleaf-Wiley pilot which ran 
+% during 2017 and 2018.
+% 
+% This template is no longer supported, but is provided
+% for historical reference. Last updated January 2019.
+%
+% Please note that whilst this template provides a 
+% preview of the typeset manuscript for submission, it 
+% will not necessarily be the final publication layout.
+%
+% Document class options:
+% =======================
+% blind: Anonymise all author, affiliation, correspondence
+%        and funding information.
+%
+% lineno: Adds line numbers.
+%
+% serif: Sets the body font to be serif. 
+%
+% twocolumn: Sets the body text in two-column layout. 
+% 
+% num-refs: Uses numerical citation and references style 
+%           (Vancouver-authoryear).
+%
+% alpha-refs: Uses author-year citation and references style
+%             (rss).
+%
+% Using other bibliography styles:
+% =======================
+%
+% To specify a different bibiography style
+%
+% 1) Do not use either num-refs or alpha-refs in documentclass.
+% 2) Load natbib package with the options set as needed.
+% 3) Use the \bibliographystyle command to specify the style
+% 
+% Included NJD styles are: 
+%   WileyNJD-ACS
+%   WileyNJD-AMA
+%   WileyNJD-AMS
+%   WileyNJD-APA
+%   WileyNJD-Harvard
+%   WileyNJD-VANCOUVER
+%
+% or you may upload an alternative .bst file 
+% (if requested by the journal).
+%
+% Examples:
+% =======================
+%% Example: Using numerical, sort-by-authors citations.
+\documentclass[num-refs, serif]{wiley-article}
+
+%% Example: Using author-year citations and anonymising submission
+% \documentclass[blind,alpha-refs]{wiley-article}
+
+%% Example: Using unsrtnat for numerical, in-sequence citations
+% \documentclass{wiley-article}
+% \usepackage[numbers]{natbib}
+% \bibliographystyle{unsrtnat}
+
+%% Example: Using WileyNJD-AMA reference style and superscript
+%%          citations, two-column and serif fonts for AIChE
+% \documentclass[serif,twocolumn,lineno]{wiley-article}
+% \usepackage[super]{natbib}
+% \bibliographystyle{WileyNJD-AMA}
+% \makeatletter
+% \renewcommand{\@biblabel}[1]{#1.}
+% \makeatother
+
+% Add additional packages here if required
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage[textsize=footnotesize]{todonotes}
+\usepackage{wrapfig}
+
+% Update article type if known
+\papertype{FHNW Paper}
+
+\title{Perfomancevergleich von Zigbee, Thread und Bluetooth Mesh Netzwerken}
+
+% List abbreviations here, if any. Please note that it is preferred that abbreviations be defined at the first instance they appear in the text, rather than creating an abbreviations list.
+%\abbrevs{ABC, a black cat; DEF, doesn't ever fret; GHI, goes home immediately.}
+
+% Include full author names and degrees, when required by the journal.
+% Use the \authfn to add symbols for additional footnotes and present addresses, if any. Usually start with 1 for notes about author contributions; then continuing with 2 etc if any author has a different present address.
+\author[1]{Cyrill Horath}
+\author[1]{Raffael Anklin}
+\author[1]{Robin Bobst}
+
+% Include full affiliation details for all authors
+\affil[1]{Institut für ??, Fachhochschule Nordwestschweiz, Windisch, Aargau, 5210, Schweiz}
+
+\corraddress{Team Blau, Institut für ??, Fachhochschule Nordwestschweiz, Windisch, Aargau, 5210, Schweiz}
+\corremail{TeamBlau@email.com}
+
+%\presentadd[\authfn{2}]{Department, Institution, City, State or Province, Postal Code, Country}
+
+%\fundinginfo{Funder One, Funder One Department, Grant/Award Number: 123456, 123457 and 123458; Funder Two, Funder Two Department, Grant/Award Number: 123459}
+
+% Include the name of the author that should appear in the running header
+\runningauthor{Perfomancevergleich Zigbee, Thread, Bluetooth}
+
+\begin{document}
+\begin{figure}
+	\includegraphics[scale=1]{graphics/fhnw_ht_logo_de.pdf}
+\end{figure}
+
+\begin{frontmatter}
+\maketitle
+
+% Document abstract:
+% ==========================================
+\begin{abstract}
+ The assignment of this bachelor thesis was to build a consistent test framework for all three mesh-networks to benchmark them under realistic conditions. The benchmark is structured in two parts, a slave node and a master which is directly connected to a computer. The master node is responsible for controlling the measurement, whereas the slave nodes send benchmark messages to each other. These benchmark messages collect the necessary information to determine latency, RSSI, throughput and active radio time. For a better comparability an apartment house, an apartment and a labor environment were selected as different test benches. The Thread stack results the best in the different test benches. Because of its automatic routing it is able to adapt himself to the environment, as a result the latency of this stack is in every three benches similarly low. Bluetooth Mesh was able to reach the lowest latency with small payload. The ZigBee network stands out with its constant and low latency within one test bench. As a conclusion all of the three networks perform well in case of a home automation. Due to of their own assets and drawbacks it cannot be said this is the best mesh-stack. It depends on the application which mesh network performs the best.
+\end{abstract}
+\end{frontmatter}
+
+% Document sections:
+% ==========================================
+
+\input{sections/1_0_Einleitung}
+
+\newpage
+\input{sections/2_0_Methode}
+
+\newpage
+\input{sections/3_0_Ergebnisse}
+
+\newpage
+\input{sections/4_0_Interpretation}
+
+\newpage
+\input{sections/5_0_Validierung}
+
+% Document "Appendix":
+% ==========================================
+
+\section*{Ergänzende Informationen}
+\todo[inline]{Infos die evtl. wichtig sind aber nicht unbedingt in den Kontext gehören}
+
+% Document "References":
+% ==========================================
+%\bibliography{literature/bibliography}
+
+\end{document}
