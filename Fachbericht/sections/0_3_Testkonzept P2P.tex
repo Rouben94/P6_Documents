@@ -58,6 +58,9 @@ Zur Realisierung der Point to Point Testinfrastruktur wurde auf ein \textit{One 
 	\label{fig:KonzeptschemaP2P}
 \end{figure}
 
+\todo[inline]{Cyrill: Grafik korrigieren}
+
+
 Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Management Station, einem Master- und mehreren Slave Nodes.
 Über die Management Station können Messresultate angezeigt sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node).
 Er koordiniert den Messablauf und sendet \textit{Probe Packets} an alle SN (Slave Nodes).
@@ -136,6 +139,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 \end{lstlisting}
 
+
 Sobald dies erfolgreich ausgeführt wurde, ist der Webserver gestartet und kann unter der Adresse \textbf{http://127.0.0.1:8000/} erreicht werden.
 
 Falls das Starten nicht geklappt hat, müssen möglicherweise Django und die benötigten Python Bibliotheken nachinstalliert werden. Dies wird wie folgt gemacht:
@@ -159,6 +163,9 @@ Django version 3.0.8, using settings 'p2p_site.settings'
 Starting development server at http://127.0.0.1:8000/   
 Quit the server with CTRL-BREAK.
 \end{lstlisting}
+
+\todo[inline]{Robin: Kosmetik}
+
 
 \paragraph{Schritt 2 - Verbindungsaufbau}
 Sobald der Webserver gestartet wurde, ist die Seite \textbf{Point to Point} zu sehen (siehe Abbildung \ref{fig:WebserverNodelistViewausgeklappt}). Wie in der Abbildung beschrieben, muss nun auf die Seite Connection gewechselt werden, damit die Verbindung zum Master aufgenommen werden kann. Es besteht die Möglichkeit das Hauptmenü auf der linken Seite auf und zu zuklappen (siehe Nummer 1 in Abbildung \ref{fig:WebserverNodelistViewausgeklappt}). Wenn das Hauptmenü aufgeklappt ist, kann das Github-Repository durch einen Klick auf die Schaltfläche \textbf{GitHub Repo} erreicht werden.
@@ -628,9 +635,14 @@ Das Erfassen des SNRs funktioniert jedoch nicht immer optimal.
 Durch Störeinflüsse, welche sich schnell ändern (WLAN etc.) kann es vorkommen, dass die Angabe des SNRs nicht korrekt erfolgt.
 Die Ergebnisse des Paketverlusts sehen allerdings valide aus. 
 
+\todo[inline]{Cyrill: Validierung ausführlicher oder ganz weglassen.}
+
 \subsection{Verifizierung}\label{subsec:P2PVerifizierung}
 Die Messwerte korrelieren mit denjenigen des Radio-Test-Examples, welches einen ähnlichen Zweck erfüllt \cite{nrf_connect_sdk_radio_test_example_2020}.
 Die Messresultate sind jedoch stark von äusseren Störeinflüssen abhängig. Somit wird eine exakte Verifizierung fast unmöglich.
+
+\todo[inline]{Cyrill: Verifizierung ausführlicher oder ganz weglassen.}
+
 
 \subsection{Fazit}\label{subsec:FazitP2P}
 \paragraph{Firmware}

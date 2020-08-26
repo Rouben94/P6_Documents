@@ -73,7 +73,7 @@ Um die Benchmark Message vom Client an den Server zu senden wurde ein CoAP-Proto
 Der Default-Handler ist einer Callback-Funktion, die jede CoAP Applikation beinhalten muss. Bei der Initialisierung von CoAP muss eine Callbackfunktion mitgegeben werden. Diese wird aufgerufen, falls die CoAP Nachricht nicht zugeordnet werden kann. Das bedeutet die Adresse der Nachricht stimmt, jedoch ist der Uniform Resource Identifiert (URI) der Nachricht nicht registriert. Der URI wird verwendet, um die Nachricht zu identifizieren. 
 
 \paragraph{Probe Message Send}
-Nur Clientseitig implementiert ist die Funktion \textit{bm\_coap\_probe\_message\_send}. Mit dieser Funktion wird eine neue Nachricht generiert und an die entsprechende Multicast Adresse gesendet. Zusätzlich zu der Adresse wird ein CoAP Port benötigt. Dieser ist standartmässig auf die Portadresse \textit{0x1633} festgelegt. Folgende Parameter werden der Nachricht mit der gesendet:
+Nur Clientseitig implementiert ist die Funktion \textit{bm\_coap\_probe\_message\_send}. Mit dieser\linebreak Funktion wird eine neue Nachricht generiert und an die entsprechende Multicast Adresse gesendet. Zusätzlich zu der Adresse wird ein CoAP Port benötigt. Dieser ist standartmässig auf die Portadresse \textit{0x1633} festgelegt. Folgende Parameter werden der Nachricht mit der gesendet:
 
 \begin{itemize}
 	\item \textbf{URI:} bm\_probe

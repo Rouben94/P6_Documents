@@ -1,12 +1,6 @@
 \clearpage
 
 \section{Vergleich Mesh Netzwerke}\label{sec:VergleichMeshNetzwerke}
-
-\todo[inline]{Raffi}
-
-\todo[inline]{Verweis auf das Paper. Die wichtigsten Resultate und Erkenntnisse sind im Paper zusammengefasst.}
-
-
 Der Vergleich der Mesh-Netzwerke basiert auf den Messergebnissen der Messreihen, welche in Abschnitt \ref{subsec:Messreihe} erwähnt wurden. Eine Messung unterscheidet sich durch die unterschiedlichen Messparameter, sowie durch den Messaufbau (Wohnung / Labor / Haus). Um einen Vergleich ziehen zu können, wird daher nach diesen beiden Hauptmerkmalen unterschieden.
 
 \todo[inline]{Verweis auf das Paper muss irgendwo noch rein.}
@@ -21,8 +15,8 @@ Zusammengefasst lassen sich die Messreihen folgendermassen unterscheiden.
 	\item \textbf{\textit{Payload}} Die Payload wurde zwischen den Messreihen 1\&3, 2\&4 und 7\&8 von 8 Byte auf 32 Byte, resp. 50 Byte erhöht.
 	\item \textbf{\textit{Traffic Generation Mode}} Wurde zwischen den Messreihen 1\&2 und 3\&4 von Random auf Sequentiel geändert.
 	\item \textbf{\textit{Message Dichte}} Wurde zwischen den Messreihen 2\&7 und 4\&8 von 2.5 M/s auf 0.33 M/s gesenkt (Messages/Sekunde).
-	\item \textbf{\textit{Disturbance}} Wurde zwischen den Messreihen 2\&6 eingeschaltet.
-	\todo[inline]{\"Wurde zwischen den Messreihen 2\&6 eingeschaltet\" ist verwirrend. Man könnte verstehen, dass die Disturbance von 2 bis 6 eingeschaltet war.}
+	\item \textbf{\textit{Disturbance}} Wurde von Messung 2 auf Messung 6 eingeschaltet.
+	\todo[inline]{Cyrill: Wurde zwischen den Messreihen 2\&6 eingeschaltet ist verwirrend. Man könnte verstehen, dass die Disturbance von 2 bis 6 eingeschaltet war.}
 \end{itemize}
 
 \subsubsection{Latenzzeit}\label{subsec:VergleichLatenzzeitMessreihen}
@@ -132,15 +126,14 @@ Alle Mesh-Netzwerke mussten diversen Tests standhalten. Die Ergebnisse aus den M
 Schlussendlich lässt sich Thread als klarer Sieger erkennen. Dieser Network-Stack hat die Tests am besten absolviert. Auf dem zweiten Platz steht Zigbee, welches mit seiner konstanten Latenz und als zuverlässigstes Protokoll die Daten verarbeiten konnte. Dabei gilt zu beachten das bei Zigbee die Hops nicht berücksichtigt wurden (siehe Abschnitt \ref{subsec:Validierung}). Bluetooth-Mesh kann durch den niedrigen Energiebedarf brillieren, schneidet jedoch in Sachen Performance deutlich schlechter als seine Konkurrenten ab. Im Anschluss wird jedes Protokoll genauer analysiert und auf die Vor- und Nachteile, sowie mögliche Verbesserungen eingegangen. 
 
 
-\subsection{Thread}\label{subsec:Thread}
+\subsubsection{Thread}\label{subsubsec:FazitThread}
 Wie aus den vorhergehenden Kapiteln ersichtlich hat der Thread Stack die Messungen am besten abgeschlossen. Das bedeutet aber nicht unbedingt, dass der Stack der Beste ist. Es ist klar zu erkennen, dass der Thread Stack dank seiner automatischen Ernennung von Routing-Knoten, sich seiner Umgebung gut anpassen kann. Die Latenzzeit der gesendeten Nachrichten ändert sich in verschiedenen Umgebungen nur minimal. Das bedeutet, dass sich der Stack sehr gut für eine Hausautomation eignet. Wenn sich Sensoren oder Aktoren verschieben, z.B. wenn eine Lampe einen neuen Standort erhaltet, erkennt dies der Stack und kann das Routing der Knoten anpassen. Da sich das Netz sehr gut erweitern lässt und sich die Latenzzeiten eher tief zeigen, kann das Mesh-Netzwerk ausserdem gut für Industrieanwendungen verwendet werden. 
 
 Durch das automatische Routen der Knoten, entsteht auf den einzelnen Nodes jedoch ein Overhead, der zum Beispiel BT-Mesh nicht hat. Aus diesem Grund ist der Energieverbrauch auf den Knoten höher, was sich auch in der Abbildung \ref{fig:EnergieverbrauchMessreihen} zeigt. Dies ist keine repräsentative Messung, da nur die aktiven Radio Zeiten gemessen wurden, es könnte trotzdem die vorherige These mit dem Overhead bestätigen. 
 
 Anders als bei BT-Mesh können mit dem IEEE 802.15.4 und dem 6LoWPAN Layer grössere Pakete versendet werden. Das bedeutet, dass die Segmentierung im Gegensatz zu BT Mesh später stattfindet. Dies erklärt das Phänomen, dass sich der Durchsatz mit steigender Payload vergrössert. Der Thread Stack erreicht bei manchen Messreihen einen Durchsatz von bis zu 32 kbit pro Sekunde. Dies ist jedoch eher unwahrscheinlich. Da bei den Durchschnittsberechnungen kein Median verwendet wurde, können Extremwerte den Durchschnitt verfälschen. Es gab sehr wenige Latenzmessungen, die fehlerhaft waren und eine Latenz unter 0.5ms aufwiesen. Durch diesen Fehler wurde der Durchsatz in der Auswertung unwahrscheinlich hoch. 
 
-\subsection{Zigbee}\label{subsec:Zigbee}
-
+\subsubsection{Zigbee}\label{subsubsec:FazitZigbee}
 Die Resultate und Vergleiche aus den vorhergehenden Abschnitten zeigen, dass das Zigbee Protokoll in dieser Implementation eine solide Performance abliefert.
 Auch wenn Zigbee nicht ganz an jene Leistung von Thread herankommt, bestätigen die Ergebnisse wieso es zurzeit das am weitesten verbreiteten WPAN Protokoll ist.
 
@@ -178,8 +171,7 @@ Sei dies eine komplette Hausautomation oder eine Lichtsteuerung, bis zu einer Ne
 Ergänzt durch die \textit{Zigbee Cluster Library} welche die Systeme herstellerunabhängig macht wird Zigbee noch interessanter.
 
 
-\subsection{Bluetooth Mesh}\label{subsec:Bluetooth_Mesh}
-
+\subsubsection{Bluetooth Mesh}\label{subsubsec:FazitBluetoothMesh}
 Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie aus dem Abschnitt \ref{subsec:VergleichMessreihen} zu erkennen ist. Der grösste Einfluss auf die Performance hatte die Länge der gesendeten Nachrichten. Dies hat seinen Ursprung das ein einzelnes Bluetooth-Mesh-Paket lediglich 10-Byte aufnehmen kann (siehe Abschnitt \ref{subsec:BLEMeshStack}). Der Stack beginnt mit der Segmentierung der Daten in mehrere kleine Pakete. Bei 32-Byte sind dies bereits 4 Frames. Damit ist der komplette Network-Stack überfordert. 
 
 \begin{figure}[H]
@@ -188,14 +180,10 @@ Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie au
 	\caption{Ongoing Transactions und Latenzzeiten einer Messung mit 32Byte Paketlänge}\label{fig:Bluetooth_Mesh_Big_Payload_Issue}
 \end{figure}
 
-Abbildung \ref{fig:Bluetooth_Mesh_Big_Payload_Issue} zeigt eine Messung mit 32-Byte Payload, einer Message-Dichte von 3 Sekunden / Message welche Sequenziell versendet wurden. Dabei ist zu erkennen, dass die Anzahl der Ongoing Transactions immer weiter ansteigt. Lediglich in der Nachtbearbeitungszeit sinkt die Kurve wieder. Dies deutet darauf hin das zu viel Traffic im Netz gesendet wird. Angelehnt an die Ongoing Transactions steigt die Latenz von einer Sekunde auf einige 100 Sekunden an. \\
+Abbildung \ref{fig:Bluetooth_Mesh_Big_Payload_Issue} zeigt eine Messung mit 32-Byte Payload, einer Message-Dichte von 3 Sekunden / Message welche Sequenziell versendet wurden. Dabei ist zu erkennen, dass die Anzahl der Ongoing Transactions immer weiter ansteigt. Lediglich in der Nachtbearbeitungszeit sinkt die Kurve wieder. Dies deutet darauf hin das zu viel Traffic im Netz gesendet wird. Angelehnt an die Ongoing Transactions steigt die Latenz von einer Sekunde auf einige 100 Sekunden an.
 
 Vermutlich entsteht eine zu hohe Message-Dichte, da zu viele Relay-Nodes jede empfangene Message wiederholen. Durch deaktivieren einiger Relays könnte der Netzaufbau entlastet werden. Jedoch erfordern solche manuellen Eingriffe Fachwissen und verringern die Ausfallsicherheit des Netzes. 
 
-
-\todo[inline]{Pro / COntra eigene Einschätzung des Stacks... z.B. Thread optimal für Homeautomation.. eher nicht geeiget für Smart Agriculture}
-
-\todo[inline]{Raffi}
 
 
 

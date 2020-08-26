@@ -6,10 +6,9 @@
 \clearpage
 
 \section{Benchmark Konzept}\label{sec:BenchmarkKonzeptMeshNetzwerke}
-Um die Performance der drei Mesh Stacks zu vergleichen wurde ein einheitliches Benchmark Konzept erarbeitet. Dieses definiert die Mesh Parameter, Testumgebungen, den Ablauf sowie sämtliche Messgrössen und Messreihen. Nachfolgend wird detailliert auf dieses Konzept eingegangen.
+Um die Performance der drei Mesh Stacks zu vergleichen, wurde ein einheitliches Benchmark Konzept erarbeitet. Dieses definiert die Mesh Parameter, Testumgebungen, den Ablauf sowie sämtliche Messgrössen und Messreihen. Nachfolgend wird detailliert auf dieses Konzept eingegangen.
 
 \subsection{Konzeptschema}\label{subsec:KonzeptschemaMesh}
-
 Für den Vergleich der 3 Mesh Netzwerkstacks Bluetooth Mesh (BT Mesh), Thread und Zigbee wird ein vom Mesh Protokoll unabhängiges Testkonzept umgesetzt welches in der Abbildung \ref{fig:MeshTestKonzept} als Konzeptschema dargestellt ist.
 Die Benchmark Slave Nodes (BSN) in der Abbildung als Sensoren und Aktoren mit unterschiedlichen Funktionalitäten dargestellt, bilden zusammen mit dem Benchmark Master Node (BMN) das zu testende Mesh Netzwerk.
 Innerhalb des Netzwerks wird dessen Organisation vom jeweiligen Protokoll sichergestellt.
@@ -443,4 +442,9 @@ Wie in der Übersicht \ref{subsec:VorarbeitenP5} bereits erwähnt, konnte im Rah
 Bei eben diesen Vorarbeiten konnten bereits deutliche Unterschiede zwischen den Stacks beobachtet werden, hauptsächlich verursacht durch das Routing bei Thread und Zigbee sowieso das Flooding-Mesh Prinzip bei BT Mesh.
 Aufgrund dieser Erfahrungen wird erwartet, dass die beiden auf dem IEEE 802.15.4 Standard aufbauenden Protokolle klare Vorteile haben werden da die Nachrichtenzustellung durch das Routing effizienter realisiert werden kann.
 Hingegen könnte BT Mesh Vorteile haben bei kleiner Belastung des Netzes.
+
+\todo[inline]{Raffi und Robin: Durchlesen und Ergänzen.}
+
+\todo[inline]{Robin: Erwartung Latenzzeiten unter 200ms. Oberhalb ist scheisse!}
+
 
