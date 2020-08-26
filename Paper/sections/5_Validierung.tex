@@ -40,15 +40,15 @@ Die Statistik der Latenzzeiten von Zigbee hat zwei Hauptsäulen bei 40ms und 70m
 
 \newpage
 \paragraph{Nachrichten Dichte}
-Bei der Definition der Messreihen \ref{subsec:Messreihe} wurden zu Beginn nur die Messungen 1 bis 6 spezifiziert.
+Bei der Definition der Messreihen \ref{sec:Interpretation} wurden zu Beginn nur die Messungen 1 bis 6 spezifiziert.
 Die Messreihen 7 und 8 kamen erst nachträglich hinzu als festgestellt werden musste, dass die Dichte der Nachrichten für den BT Mesh Stack zu hoch gewählt wurde.
-Dieser schien überfordert besonders bei zufälliger Nachrichten Generierung wie im Abschnitt \ref{subsec:TrafficGeneration} beschrieben.
+Dieser schien überfordert besonders bei zufälliger Nachrichten Generierung.
 Thread und Zigbee zeigten indes keine Mühe mit der Dichte von 60 Nachrichten in 600 Sekunden pro Node.
 Die Resultate der Messungen 7 und 8 haben schliesslich gezeigt, dass die Reduktion der Nachrichtendichte einen positiven Einfluss hat.
 
 \paragraph{Group addressing mode}
-Der \textit{Group addressing mode} wurde im Abschnitt \ref{subsec:AllgemeineBenchmarkParameter} für die 3 Protokolle unterschiedlich definiert.
-Erste Tests vor den eigentlichen Benchmarks haben gezeigt, dass eine Multicast Adressierung bei Zigbee unbrauchbar ist (siehe Abschnitt \ref{subsubsec:Group addressing mode}).
+Der \textit{Group addressing mode} wurde für die 3 Protokolle unterschiedlich definiert.
+Erste Tests vor den eigentlichen Benchmarks haben gezeigt, dass eine Multicast Adressierung bei Zigbee unbrauchbar ist.
 Deshalb hat man sich entschieden bei Zigbee eine Unicast Adressierung umzusetzen.
 Während den Benchmarks musste schliesslich festgestellt werden, dass Zigbee durch diese Änderung ein deutlicher Vorteil erlangt hat.
 Besonders auf die Paketverlustrate hat sich die Unicast Adressierung positiv ausgewirkt denn Unicast Nachrichten werden im IEEE 802.15.4 Standard auf MAC Ebene quittiert.
