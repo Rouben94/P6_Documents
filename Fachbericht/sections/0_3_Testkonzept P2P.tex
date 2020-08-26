@@ -58,8 +58,6 @@ Zur Realisierung der Point to Point Testinfrastruktur wurde auf ein \textit{One 
 	\label{fig:KonzeptschemaP2P}
 \end{figure}
 
-\todo[inline]{Cyrill: Grafik korrigieren}
-
 
 Das in Abbildung \ref{fig:KonzeptschemaP2P} gezeigte Konzept besteht aus einer Management Station, einem Master- und mehreren Slave Nodes.
 Über die Management Station können Messresultate angezeigt sowie Messparameter eingestellt werden. Als Ausgangspunkt zur Messung dient der MN (Master Node).
@@ -184,7 +182,7 @@ Auf der Seite \textbf{Connection} (siehe Abbildung \ref{fig:WebserverConnectionV
 \end{figure}
 
 \paragraph{Schritt 3 - Einstellen der Parameter}
-Nachdem die Serielle Verbindung zum Master hergestellt ist, werden auf der Seite \textbf{Point to Point} die verfügbaren Slaves in der Tabelle aufgeführt. Die Tabelle aktualisiert sich automatisch. Wie in der Abbildung \ref{fig:WebserverNodelistView} ersichtlich, sind die Nodes anhand der MAC-Adresse identifizierbar. Die Tabelle zeigt die dazugehörigen Channels, welche zuvor eingestellt wurden. Pro Channel ist ein Wert für den Packetloss und den SNR zu sehen. Die Definition dieser Werte ist im Kapitel \ref{sec:MessgrössenP2P} beschrieben. 
+Nachdem die Serielle Verbindung zum Master hergestellt ist, werden auf der Seite \textbf{Point to Point} die verfügbaren Slaves in der Tabelle aufgeführt. Die Tabelle aktualisiert sich automatisch. Wie in der Abbildung \ref{fig:WebserverNodelistView} ersichtlich, sind die Nodes anhand der MAC-Adresse identifizierbar. Die Tabelle zeigt die dazugehörigen Channels, welche zuvor eingestellt wurden. Pro Channel ist ein Wert für den Packetloss und den SNR zu sehen. Die Definition dieser Werte ist im Abschnitt \ref{subsec:MessgrössenP2P} beschrieben. 
 
 Damit die Parameter der Nodes verändert werden können, besteht auf der gleichen Seite die Möglichkeit, die gewünschten Werte einzugeben und an den Master zu senden. Die Parameter können, wie in Abbildung \ref{fig:WebserverNodelistView} markiert, definiert werden. Folgende Vorgaben müssen bei der Eingabe eingehalten werden:
 
@@ -214,7 +212,10 @@ Damit die Parameter der Nodes verändert werden können, besteht auf der gleiche
 \end{figure}
 
 \paragraph{Schritt 4 - Vergleich der Channels}
-Damit die Channels von einem Node besser miteinander verglichen werden können, ist auf der Seite Chart eine entsprechende Grafik verfügbar. Jeder Node wird in einem separaten aufklappbaren Fenster angezeigt. In Abbildung \ref{fig:WebserverChartView} mit der Nummer \textbf{1.} gekennzeichnet, ist ein solches Fenster zu sehen. Mit Klick auf die Schaltfläche mit der Nummer \textbf{1.} wird das Fenster aufgeklappt und alle eingestellten Channels werden nacheinander mit dem Packetloss in \% aufgelistet.
+Damit die Channels von einem Node besser miteinander verglichen werden können, ist auf der Seite \textbf{Chart} eine entsprechende Grafik verfügbar.
+Jeder Node wird in einem separaten aufklappbaren Fenster angezeigt.
+In Abbildung \ref{fig:WebserverChartView} mit der Nummer \textbf{1.} gekennzeichnet, ist ein solches Fenster zu sehen.
+Mit Klick auf die Schaltfläche mit der Nummer \textbf{1.} wird das Fenster aufgeklappt und alle eingestellten Channels werden nacheinander mit dem Packetloss in \% aufgelistet.
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=\textwidth]{Webserver_Chart.png}
