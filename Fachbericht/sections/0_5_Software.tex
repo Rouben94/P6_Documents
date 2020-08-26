@@ -2,18 +2,11 @@
 \section{Soft- und Firmware}\label{sec:Soft-undFirmware}
 
 Im folgenden Abschnitt wird das Konzept und die Umsetzung der Software für den Mesh Benchmark dokumentiert.
-Dabei stand die Erfüllung der Anforderungen an die Software im Zentrum. Diese wurden in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) vorgängig definiert. 
-
-%\subsection{Anforderungen}\label{subsec:Software_Anforderungen}
-%Wie im Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} erwähnt, wurden die detaillierten Anforderungen an die Software bereits in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) festgelegt.
-%Im Fokus steht das erfassen der wichtigsten Messgrössen welche bereits in Abschnitt \ref{subsec:VergleichswerteundMessgrössenMesh} definiert wurden. 
-%
-%Die Erfassung der Messwerte muss in allen Mesh-Netzwerken möglich sein. Um die Messresultate vergleichen zu können müssen die gleichen Ausgangslagen vorliegen, sowie die selben Messmethoden angewendet werden. 
+Dabei stand die Erfüllung der Anforderungen an die Software im Zentrum. Diese wurden in der Aufgabenstellung (siehe Anhang \ref{app:Aufgabenstellung}) sowie im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) zu dieser Arbeit vorgängig definiert. 
 
 
 \subsection{Konzept}\label{subsec:Software_Konzept}
-
-Um das Benchmark Konzept welches bereits im Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke} erläutert wurde, umsetzen zu können soll die Soft- und Firmware so aufgebaut sein, dass sie von allen Mesh-Stacks genutzt werden kann.
+Um das Benchmark Konzept, welches bereits im Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke} erläutert wurde, umsetzen zu können, soll die Soft- und Firmware so aufgebaut sein, dass sie von allen Mesh-Stacks genutzt werden kann.
 Zur Umsetzung der drei Mesh-Stacks auf der \textit{NRF-Plattform} wurden folgende \textit{Software Development Kits (SDK's)} eingesetzt. 
 
 \begin{table}[h]
@@ -35,8 +28,9 @@ Die Messungen sollten trotz der verschiedenen Bibliotheken möglichst einheitlic
 Daher wurde für das Benchmark Management eine eigene Kommunikationsebene entwickelt.
 Diverse Module der P2P-Testinfrastruktur konnten dafür direkt oder indirekt verwendet werden.
 
+\newpage
 \subsection{Umsetzung}\label{subsec:Software_Umsetzung}
-Die Soft- und Firmware für die Mesh Benchmarks setzt sich aus mehreren Modulen zusammen. Die Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 3 Benchmark Teilen: BLE Mesh, Thread und Zigbee.
+Die Soft- und Firmware für die Mesh Benchmarks setzt sich aus mehreren Modulen zusammen. Tabelle \ref{tab:UebersichtSoftware} zeigt eine Übersicht der wichtigsten Module und deren Verwendung in den 3 Benchmark Teilen: BLE Mesh, Thread und Zigbee.
 Gemeinsame Module auf Firmware Ebene sind im Ordner SharedLib im Github Repository\footnotemark\ zusammengefasst.
 
 Jene Python Scripts für das Benchmark Management stehen im gleichnamigen Ordner ebenso auf dem Github Repository\footnotemark\ zur Verfügung.
@@ -47,7 +41,7 @@ Die Stack bezogenen Implementationen der Benchmark Firmware werden in den indivi
 \centering
 \begin{tabular}{|l|l|l|c|} 
 \hline
-Library & Funktion & Modul & Referenz \\ 
+\textbf{Library} & \textbf{Funktion} & \textbf{Modul} & \textbf{Referenz} \\ 
 \hline
 \multirow{8}{*}{SharedLib} & Statemachine & bm\_statemachine.c & \ref{subsubsec:StatemachineSoftware} \\ 
 \cline{2-4}
@@ -69,13 +63,11 @@ Library & Funktion & Modul & Referenz \\
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
-\multirow{4}{*}{\begin{tabular}[c]{@{}l@{}}Benchmark\\Management \end{tabular}} & Flash & Flasher.py & \ref{subsubsec:Flash} \\ 
+\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Benchmark\\Management \end{tabular}} & Flash & Flasher.py &  \\ 
 \cline{2-4}
  & Configurator & Configurator.py & \ref{subsubsec:Configurator} \\ 
 \cline{2-4}
  & Benchmark and Reporter & \begin{tabular}[c]{@{}l@{}}Benchmark\_and\_\\Reporter.py \end{tabular} & \ref{subsubsec:BenchmarkandReporter} \\ 
-\cline{2-4}
- & Analysis & Analysis.py & \ref{subsubsec:Analysis} \\ 
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
@@ -93,35 +85,33 @@ Library & Funktion & Modul & Referenz \\
 \hline
 \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
 \hline
-\multirow{2}{*}{Zigbee} & Stack Handling & bm\_zigbee.c & \ref{subsubsec:ZigbeeStackHandling} \\ 
+\multirow{2}{*}{Zigbee} & Stack Handling & bm\_zigbee.c & \ref{subsec:ZigbeeMeshNodeFirmware} \\ 
 \cline{2-4}
- & Stack Configuration & bm\_config.h & \ref{subsubsec:ZigbeeStackConfiguration} \\
+ & Stack Configuration & bm\_config.h & \ref{subsec:ZigbeeMeshNodeFirmware} \\
 \hline
 \end{tabular}
 \caption{Übersicht Shared Lib und Benchmark Management Module}
 \label{tab:UebersichtSoftware}
 \end{table}
 
-\todo[inline]{Alle: Referenzen in der Tabelle überprüfen und allenfalls anpassen.}
 
 \footnotetext{\url{https://github.com/Rouben94/P6_Software} \cite{anklin_bobst_horath_rouben94p6_software_nodate}}
 
 \subsection{Shared Library}\label{subsec:SharedLibrary}
 
-Die \textit{Shared Library} ist die geteilte Bibliothek zwischen allen Mesh-Stacks. Sie enthält alle relevanten Module um eine Messung zu verwalten und zu steuern. Der jeweilige Mesh-Stack ist lediglich für das Senden und Empfangen von Nachrichten, sowie für die Erfassung der Messdaten zuständig. 
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth]{Shared_Lib_Concept.png}
-	\caption{Vereinfachte Anbindung der \textit{Shared Library} an die Mesh-Stacks}\label{fig:ShardeLibConcept}
-\end{figure}
+Die \textit{Shared Library} ist die geteilte Bibliothek zwischen allen Mesh-Stacks. Sie enthält alle relevanten Module, um eine Messung zu verwalten und zu steuern. Der jeweilige Mesh-Stack ist lediglich für das Senden und Empfangen von Nachrichten sowie für die Erfassung der Messdaten zuständig. 
 
 Abbildung \ref{fig:ShardeLibConcept} zeigt vereinfacht die Schnittstellen zwischen der Shared-Library und den Mesh-Stacks.
 Die Bibliothek ist spezifisch für die nRF52840 SoC's zugeschnitten.
 Damit die \textit{Shared-Lib} in die jeweilige SDK integrierbar ist, müssen die enthaltenen Module möglichst ohne weitere Abhängigkeiten auskommen.
 Sofern Treiber oder externe Bibliotheken für Module benötigt werden, müssen diese von allen SDKs vergleichbar zur Verfügung gestellt werden.
 Im folgenden Abschnitt wird auf die einzelnen Module der \textit{Shared-Lib} eingegangen. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Shared_Lib_Concept.png}
+	\caption{Vereinfachte Anbindung der \textit{Shared Library} an die Mesh-Stacks}\label{fig:ShardeLibConcept}
+\end{figure}
 
 
 \subsubsection{Statemachine}\label{subsubsec:StatemachineSoftware}
