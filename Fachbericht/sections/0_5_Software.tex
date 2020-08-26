@@ -102,7 +102,7 @@ Die Stack bezogenen Implementationen der Benchmark Firmware werden in den indivi
 Die \textit{Shared Library} ist die geteilte Bibliothek zwischen allen Mesh-Stacks. Sie enthält alle relevanten Module, um eine Messung zu verwalten und zu steuern. Der jeweilige Mesh-Stack ist lediglich für das Senden und Empfangen von Nachrichten sowie für die Erfassung der Messdaten zuständig. 
 
 Abbildung \ref{fig:ShardeLibConcept} zeigt vereinfacht die Schnittstellen zwischen der Shared-Library und den Mesh-Stacks.
-Die Bibliothek ist spezifisch für die nRF52840 SoC's zugeschnitten.
+Die Bibliothek ist spezifisch auf die nRF52840 SoC's zugeschnitten.
 Damit die \textit{Shared-Lib} in die jeweilige SDK integrierbar ist, müssen die enthaltenen Module möglichst ohne weitere Abhängigkeiten auskommen.
 Sofern Treiber oder externe Bibliotheken für Module benötigt werden, müssen diese von allen SDKs vergleichbar zur Verfügung gestellt werden.
 Im folgenden Abschnitt wird auf die einzelnen Module der \textit{Shared-Lib} eingegangen. 
