@@ -12,15 +12,14 @@ Dieser Vergleich bezieht sich auf die selbe Testumgebung, jedoch mit unterschied
 Zusammengefasst lassen sich die Messreihen folgendermassen unterscheiden. 
 
 \begin{itemize}
-	\item \textbf{\textit{Payload}} Die Payload wurde zwischen den Messreihen 1\&3, 2\&4 und 7\&8 von 8 Byte auf 32 Byte, resp. 50 Byte erhöht.
-	\item \textbf{\textit{Traffic Generation Mode}} Wurde zwischen den Messreihen 1\&2 und 3\&4 von Random auf Sequentiel geändert.
-	\item \textbf{\textit{Message Dichte}} Wurde zwischen den Messreihen 2\&7 und 4\&8 von 2.5 M/s auf 0.33 M/s gesenkt (Messages/Sekunde).
-	\item \textbf{\textit{Disturbance}} Wurde von Messung 2 auf Messung 6 eingeschaltet.
-	\todo[inline]{Cyrill: Wurde zwischen den Messreihen 2\&6 eingeschaltet ist verwirrend. Man könnte verstehen, dass die Disturbance von 2 bis 6 eingeschaltet war.}
+	\item Die \textbf{\textit{Payload}} wurde zwischen den Messreihen 1\&3, 2\&4 und 7\&8 von 8 Byte auf 32 Byte, resp. 50 Byte erhöht.
+	\item  Der \textbf{\textit{Traffic Generation Mode}} wurde zwischen den Messreihen 1\&2 und 3\&4 von Random auf Sequentiell geändert.
+	\item Die \textbf{\textit{Message Dichte}} wurde zwischen den Messreihen 2\&7 und 4\&8 von 2.5 M/s auf 0.33 M/s gesenkt (Messages/Sekunde).
+	\item Der \textbf{\textit{Disturbance}}-Vergleich kann zwischen der Messung 2 und der Messung 6 erfolgen. Bei Messung 6 ist die Disturbance eingeschaltet.
 \end{itemize}
 
 \subsubsection{Latenzzeit}\label{subsec:VergleichLatenzzeitMessreihen}
-Durch die in Abbildung \ref{fig:Latenzzeiten_per_Hop_Messreihen} dargestellten Latenzzeiten wird ersichtlich das Bluetooth-Mesh am anfälligsten auf die Erhöhung der Payload reagiert. Eine detaillierte Analyse zu diesem Phänomen wird in Abschnitt \ref{subsec:Bluetooth_Mesh} durchgeführt. Die Verzögerung bleibt bei Zigbee und Thread trotz Erhöhung der Paketlänge stabil.
+Durch die in Abbildung \ref{fig:Latenzzeiten_per_Hop_Messreihen} dargestellten Latenzzeiten wird ersichtlich das Bluetooth-Mesh am anfälligsten auf die Erhöhung der Payload reagiert. Eine detaillierte Analyse zu diesem Phänomen wird in Abschnitt \ref{subsubsec:FazitBluetoothMesh} durchgeführt. Die Verzögerung bleibt bei Zigbee und Thread trotz Erhöhung der Paketlänge stabil.
 
 \begin{figure}[H]
 	\centering
@@ -28,11 +27,12 @@ Durch die in Abbildung \ref{fig:Latenzzeiten_per_Hop_Messreihen} dargestellten L
 	\caption{Durchschnittliche Latenzzeit per Hop der einzelnen Messreihen im Vergleich}\label{fig:Latenzzeiten_per_Hop_Messreihen}
 \end{figure}
 
-Ein Änderung des Traffic Generation Mode von Random auf Sequentiell bewirkt bei Bluetooth-Mesh eine drastische Abnahme der Latenz. Bei Zigbee ist zwischen der Messreihe 1 und 2 ebenfalls eine Abnahme zu verzeichnen, welche jedoch nicht zwischen der Reihe 3 und 4 feststellbar ist. Somit muss ein anderer Einfluss für die Abnahme verantwortlich sein (in Abschnitt \ref{subsec:Zigbee} untersucht). Die Änderung des Traffic Generation Mode wirkt bei Thread ebenfalls zu einer Verbesserung der Latenz.
+Ein Änderung des Traffic Generation Mode von Random auf Sequentiell bewirkt bei Bluetooth-Mesh eine drastische Abnahme der Latenz. Bei Zigbee ist zwischen der Messreihe 1 und 2 ebenfalls eine Abnahme zu verzeichnen, welche jedoch nicht zwischen der Reihe 3 und 4 feststellbar ist. Somit muss ein anderer Einfluss für die Abnahme verantwortlich sein (siehe Abschnitt \ref{subsubsec:FazitZigbee}). Die Änderung des Traffic Generation Mode wirkt bei Thread ebenfalls zu einer Verbesserung der Latenz.
 
 Das Senken der Message Dichte führt bei Bluetooth-Mesh zu einer markanten Abnahme der Latenz. Bei Thread und Zigbee bleibt die Latenz nahezu identisch.
  
-Die Einbringung von Störungen hat lediglich bei Bluetooth-Mesh einen negativen Einfluss, wodurch sich die Latenzzeit erhöht. 
+Die Einbringung von Störungen hat lediglich bei Bluetooth-Mesh einen negativen Einfluss, wodurch sich die Latenzzeit erhöht.
+Dank CSMA\slash CA werden die Messungen von Thread und Zigbee nicht beeinflusst.
 
 \subsubsection{Durchsatz}\label{subsec:VergleichDurchsatzMessreihen}
 
@@ -44,7 +44,7 @@ Die Einbringung von Störungen hat lediglich bei Bluetooth-Mesh einen negativen 
 \end{figure}
 
 
-Die in der Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} dargestellten Durchsätze wird ersichtlich, dass sich die ähnlichen Resultate ergeben wie bei der Latenzzeit. Bluetooth-Mesh reagiert am anfälligsten auf die Payload-Erhöhung. Wie bereits in Abschnitt \ref{subsec:VergleichLatenzzeitMessreihen} dargelegt wird eine detaillierte Analyse zu diesem Phänomen in Abschnitt \ref{subsec:Bluetooth_Mesh} durchgeführt. Der Durchsatz steigt bei Zigbee und Thread durch die Erhöhung der Paketlänge stark an. Dies wird in Abschnitt \ref{subsec:Thread} für Thread und Abschnitt \ref{subsec:Zigbee} für Zigbee genauer Untersucht.
+Die in der Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} dargestellten Durchsätze wird ersichtlich, dass sich die ähnlichen Resultate ergeben wie bei der Latenzzeit. Bluetooth-Mesh reagiert am anfälligsten auf die Payload-Erhöhung. Wie bereits in Abschnitt \ref{subsec:VergleichLatenzzeitMessreihen} dargelegt wird eine detaillierte Analyse zu diesem Phänomen in Abschnitt \ref{subsubsec:FazitBluetoothMesh} durchgeführt. Der Durchsatz steigt bei Zigbee und Thread durch die Erhöhung der Paketlänge stark an. Dies wird in Abschnitt \ref{subsubsec:FazitThread} für Thread und Abschnitt \ref{subsubsec:FazitZigbee} für Zigbee genauer Untersucht.
 
 Ein Änderung des Traffic Generation Mode von Random auf Sequentiel bewirkt bei Bluetooth-Mesh eine drastische Zunahme des Durchsatzes. Bei Thread ist ebenfalls eine Steigerung der Übertragungskapazität feststellbar. Die Änderung des Traffic Generation Mode wirkt bei Zigbee zu keiner merklichen Verbesserung des Durchsatzes.
 
@@ -61,7 +61,7 @@ Das einbringen von Störungen hat bei allen Netzwerken einen leichten negativen 
 	\caption{Durchschnittlicher Paketverlust der einzelnen Messreihen im Vergleich}\label{fig:PaketverlusteMessreihen}
 \end{figure}
 
-Wie in Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} ersichtlich ist Bluetooth-Mesh sehr anfällig auf das erhöhen der Paketlänge. Dies wird in Abschnitt \ref{subsec:Bluetooth_Mesh} genauer untersucht. Zigbee und Thread zeichnen sich über alle Messreihen als sehr zuverlässig aus. 
+Wie in Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} ersichtlich ist Bluetooth-Mesh sehr anfällig auf das erhöhen der Paketlänge. Dies wird in Abschnitt \ref{subsubsec:FazitBluetoothMesh} genauer untersucht. Zigbee und Thread zeichnen sich über alle Messreihen als sehr zuverlässig aus. 
 
 
 \subsubsection{Energieverbrauch}\label{subsec:VergleichEnergieverbrauchMessreihen}
@@ -123,7 +123,7 @@ Alle Mesh-Netzwerke mussten diversen Tests standhalten. Die Ergebnisse aus den M
 	\caption{Durchschnittliche Messgrössen im Vergleich inkl. separater Betrachtung der Messergebnisse, welche mit 8-Byte Paketlänge erzielt wurden}\label{fig:Messresultate_Fazit}
 \end{figure}
 
-Schlussendlich lässt sich Thread als klarer Sieger erkennen. Dieser Network-Stack hat die Tests am besten absolviert. Auf dem zweiten Platz steht Zigbee, welches mit seiner konstanten Latenz und als zuverlässigstes Protokoll die Daten verarbeiten konnte. Dabei gilt zu beachten das bei Zigbee die Hops nicht berücksichtigt wurden (siehe Abschnitt \ref{subsec:Validierung}). Bluetooth-Mesh kann durch den niedrigen Energiebedarf brillieren, schneidet jedoch in Sachen Performance deutlich schlechter als seine Konkurrenten ab. Im Anschluss wird jedes Protokoll genauer analysiert und auf die Vor- und Nachteile, sowie mögliche Verbesserungen eingegangen. 
+Thread ist schliesslich als klarer Sieger erkennbar. Dieser Network-Stack hat die Tests am besten absolviert. Auf dem zweiten Platz steht Zigbee, welches mit seiner konstanten Latenz und als zuverlässigstes Protokoll die Daten verarbeiten konnte. Dabei gilt zu beachten das bei Zigbee die Hops nicht berücksichtigt wurden (siehe Abschnitt \ref{subsec:Validierung}). Bluetooth-Mesh kann durch den niedrigen Energiebedarf brillieren, schneidet jedoch in Sachen Performance deutlich schlechter als seine Konkurrenten ab. Im Anschluss wird jedes Protokoll genauer analysiert und auf die Vor- und Nachteile, sowie mögliche Verbesserungen eingegangen. 
 
 
 \subsubsection{Thread}\label{subsubsec:FazitThread}

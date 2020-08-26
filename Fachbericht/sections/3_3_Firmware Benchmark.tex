@@ -6,7 +6,7 @@ Wie im Abschnitt \ref{sec:Soft-undFirmware} bereits ausführlich behandelt, sind
 Nachfolgend wird auf die Umsetzung des Zigbee Stacks innerhalb dieser Grenzen eingegangen.
 
 \subsection{Zigbee Software Development Kit}\label{subsec:ZigbeeSoftwareDevelopmentKit}
-Für die Umsetzung von Zigbee Applikationen auf dem nRF52840 SoC \ref{subsec:SystemonChip} stellt Nordic Semiconductor ein eigenes Software Development Kit (SDK) zur Verfügung, die \textit{nRF5 SDK for Thread and Zigbee} \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}.
+Für die Umsetzung von Zigbee Applikationen auf dem nRF52840 SoC \ref{subsec:SystemonChip} stellt Nordic Semiconductor ein eigenes Software Development Kit (SDK) zur Verfügung, die \textit{nRF5 SDK for Thread and Zigbee\footnote{\url{https://www.nordicsemi.com/Software-and-tools/Software/nRF5-SDK-for-Thread-and-Zigbee} \cite{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}}} .
 Da Thread und Zigbee den selben \textit{IEEE 802.15.4} MAC Layer benutzen, teilen sich die beiden Protokollstacks eine gemeinsame SDK.
 Innerhalb der SDK nutzen die beiden jedoch unterschiedliche Ressourcen.
 
@@ -18,12 +18,12 @@ Innerhalb der SDK nutzen die beiden jedoch unterschiedliche Ressourcen.
 \end{figure}
 
 Für Zigbee Applikationen kommt ein Plattform Design gemäss Abbildung \ref{fig:ZigbeePlattformDesign} zum Einsatz. 
-Als eigentlicher Zigbee Stack wird der \textit{ZBOSS} Zigbee Stack in der Version 3.3 von DSR\footnote{ZBOSS stack v3.3.0: \url{https://dsr-iot.com/}} implementiert.
+Als eigentlicher Zigbee Stack wird der \textit{ZBOSS} Zigbee Stack in der Version 3.3.0 von DSR\footnote{\url{https://dsr-iot.com/} \cite{dsr_corporation_dsr_nodate}} implementiert.
 Es handelt sich dabei um einen weit verbreiteten \textit{Zigbee PRO} Stack welcher die neuste Version der Zigbee Core Specification rev22 umsetzt.
 \textit{ZBOSS} verwendet dabei ein kooperatives Multitasking Prinzip mit einem Scheduler welche die Tasks verwaltet.
 
 Unter dem \textit{ZBOSS} Stack verwendet die SDK den \textit{nRF IEEE 802.15.4 radio driver} für die Ansteuerung der Funkschnittstelle.
-Über dem \textit{ZBOSS} Stack befindet sich die Applikationsebene in welcher Applikationen gemäss den ZCL Spezifikationen\footnote{\url{https://zigbeealliance.org/wp-content/uploads/2019/12/07-5123-06-zigbee-cluster-library-specification.pdf}\cite{the_zigbee_alliance_zigbee_2016}} umgesetzt werden können.
+Über dem \textit{ZBOSS} Stack befindet sich die Applikationsebene in welcher Applikationen gemäss den ZCL Spezifikationen\footnote{\url{https://zigbeealliance.org/solution/zigbee} \cite{the_zigbee_alliance_zigbee_2016}} umgesetzt werden können.
 \textit{ZBOSS} stellt die dafür notwendigen Funktionen zur Verfügung.
 
 
@@ -62,7 +62,7 @@ Dieser definiert Attribute und Funktionen zur Steuerung eines Gerätes welches e
 Die verwendete SDK stellt den \textit{ZCL Level control cluster} standardmässig zur Verfügung.\cite{the_zigbee_alliance_zigbee_2016}
 
 
-\subsubsection{Enpoint Handler}\label{subsubsec:EnpointHandler}
+\subsubsection{Endpoint Handler}\label{subsubsec:EnpointHandler}
 Der Empfang von jeglichen \textit{ZCL} Nachrichten wird in der \textit{nRF5 SDK for Thread and Zigbee} durch einen Callback Handler realisiert.
 Dieser wird beim Start der Anwendung einmalig registriert und ausgelöst durch ein Callback-Ereignis der Radio Schnittstelle.
 Im Zigbee Benchmark wurde ein \textit{Costum Endpoint Handler} implementiert mit welchem die Benchmark Nachrichten ausgewertet werden können.
@@ -167,14 +167,36 @@ Die Tabelle \ref{tab:ZigbeeBenchmarkundStackParameter} zeigt die wichtigsten Ben
 \begin{table}[h]
 \centering
 \begin{adjustbox}{width=1\textwidth}
-\begin{tabular}{lll}
-Stack Init Time & 60000 ms & \begin{tabular}[t]{@{}l@{}}Zeit die benötigt wird um den Stack für den Benchmark\\zu initialisieren. Das Zigbee Netzwerk benötigt eine\\gewisse Zeit um sich aufzubauen \end{tabular} \\
-STACK\_STARTUP\_MAX\_DELAY & 30000 ms & \begin{tabular}[t]{@{}l@{}}Maximalwert für die Verzögerungszeit des Stack Startup\\bei Client und Server Nodes.\end{tabular} \\
-NETWORK\_FORMATION\_DELAY & 5000 ms & \begin{tabular}[t]{@{}l@{}}Verzögerungszeit für das Network Formation durch \\den Koordinator. \end{tabular} \\
-IEEE Channel & 15 & Zigbee Kanal der verwendet wird um das Mesh aufzubauen. \\
-Client Endpoint & 1 & Nummer für den Client Endpoint im ZCL Level Cluster \\
-Server Endpoint & 10 & Nummer für den Server Endpoint im ZCL Level Cluster \\
-Group ID & 0xB331 & \begin{tabular}[c]{@{}l@{}}Default Group ID. Zu diesem Wert wird der Index für die\\zugewiesene Gruppe addiert um die\\Gruppenzugehörigkeit festzulegen.\end{tabular}
+\begin{tabular}{|l|l|l|} 
+\hline
+Stack Init Time & 60000 ms & \begin{tabular}[c]{@{}l@{}}Zeit die benötigt wird um den Stack für den Benchmark\\zu initialisieren. Reserve Zeit um das Routing des \\Netzwerkes durchzuführen. \end{tabular} \\ 
+\hline
+Stack Startup max Delay & 30000 ms & \begin{tabular}[c]{@{}l@{}}Maximale Verzögerungszeit für den Startup des Zigbee Stacks\\auf allen Client und Server Nodes. Wird benötigt um das Netz\\sauber aufbauen zu können.\end{tabular} \\ 
+\hline
+Network Formation Delay & 5000 ms & \begin{tabular}[c]{@{}l@{}}Zeit die zur Stack Startup Delay Time addiert wird um das\\Network Formation des Koordinators abzuwarten.\end{tabular} \\ 
+\hline
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\hline
+IEEE Channel & 15 & \begin{tabular}[c]{@{}l@{}}IEEE Kanal der verwendet wird um das Zigbee Mesh Netzwerk\\aufzubauen. \end{tabular} \\ 
+\hline
+Node Type & Zigbee-Router & Alle Nodes werden als Zigbee-Router konfiguriert \\ 
+\hline
+Client Endpoint & 1 & Nummer für den Client Endpoint im ZCL Level Cluster \\ 
+\hline
+Server Endpoint & 10 & Nummer für den Server Endpoint im ZCL Level Cluster \\ 
+\hline
+Default~Group ID & 0xB331 & \begin{tabular}[c]{@{}l@{}}Zu diesem Wert wird der Index für die\textcolor[rgb]{0.502,0,0}{ }zugewiesene Gruppe\\addiert um damit die Gruppenzugehörigkeit festzulegen.\end{tabular} \\ 
+\hline
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\ 
+\hline
+BSP LED 0 & ZIGBEE\_NETWORK\_STATE\_LED & Zeigt den Status der Netzwerkverbindung an. \\ 
+\hline
+BSP LED 1 & ERROR\_LED & Zeigt an, ob ein Fehler in der Statemachine vorliegt. \\ 
+\hline
+BSP LED 2 & CLIENT\_LED & \begin{tabular}[c]{@{}l@{}}Wird beim Versand einer Benchmark Nachricht ein oder\\ausgeschaltet.\end{tabular} \\ 
+\hline
+BSP LED 3 & BULB\_LED & \begin{tabular}[c]{@{}l@{}}Imitiert die Lichtquelle. Wird abwechselnd ein oder ausgeschaltet~\\wenn ein Paket empfangen wird.\end{tabular} \\
+\hline
 \end{tabular}
 \end{adjustbox}
 \caption{Zigbee Benchmark und Stack Parameter}

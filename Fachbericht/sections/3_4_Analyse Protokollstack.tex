@@ -1,40 +1,57 @@
 \clearpage
 \section{Analyse Zigbee Stack}\label{sec:AnalyseZigbeeStack}
-\todo[inline]{Persönliche Eindrücke, Vor- und Nachteile, Besonderheiten beschreiben. Soll dem Leser helfen die "Qualität" des Stacks einzuordnen.}
-
 Für die Umsetzung des Benchmark Konzepts war eine vertiefte Auseinandersetzung mit dem Zigbee Protokoll nötig.
 Dabei konnten einige Erfahrungen mit dem Stack sowie der verwendeten SDK gemacht werden.
 Aufgrund dieser Erfahrungen wird nachfolgend eine Analyse des Zigbee Protokollstacks gemacht und einige Schwierigkeiten und Hindernisse bei der Softwareentwicklung aufgezeigt.
 
 
 \subsection{Stärken und Schwächen des Protokollstacks}\label{subsec:ZigbeeStärkenundSchwächendesProtokollstacks}
+Folgende Stärken und Schwächen weist der \textit{ZBOSS Zigbee Stack} auf.
+Stack Implementationen von anderen Herstellern können nicht bewertet werden.
 
-\paragraph{Stärken}
-
+\textbf{Stärken:}
 \begin{itemize}
-\item Die \textbf{Zigbee Cluster Library} erleichtert die Umsetzung eines Produktes, welches mit anderen Zigbee Geräten konform sein soll, erheblich.
-\item 
+\item Die \textbf{Zigbee Cluster Library (ZCL)} erleichtert die Umsetzung eines Produktes, welches mit anderen Zigbee Geräten konform sein soll erheblich.
+\item Die \textbf{Adressierung mit Short-, Long- und Group-Adressen} ist übersichtlich und schlank gehalten.
+Die vereinfacht das Handling für Entwickler und Anwender.
+\item Ein simpler \textbf{Scheduler und Callback} Mechanismus vereinfacht das Nachrichten Handling.
+\item Der \textbf{IEEE 802.15.4 Standard} für die MAC Ebene bietet dem Entwickler eine solide Basis um die gewünsche Anwendung darauf umsetzen zu können.
 \end{itemize}
 
-\paragraph{Schwächen}
+\textbf{Schwächen:}
 \begin{itemize}
 \item Bei der \textbf{Gruppen Adressierung} zeigt der Zigbee Stack deutliche Schwächen da für Broadcast Nachrichten ein kleinerer Packetbuffer verwendet wird.
+\item Wenn \textbf{Zigbee Cluster Library (ZCL)} Funktionalitäten nicht zwingend benötigt werden, wird die Applikationsentwicklung umständlich.
+Der Stack ist zu sehr auf vordefinierte Anwendungen ausgerichtet.
+\item Die Spezifikationen des Stacks sind frei verfügbar. Leider implementieren die Hersteller den Stack schliesslich im \textbf{Closed-Source} Verfahren weshalb keine Community entstehen kann die den Stack verbessert.
+\item Das \textbf{Commissioning} von neuen Teilnehmern hat in unserer Anwendung leider nicht immer reibungslos funktioniert.
+Bei vielen gleichzeitigen Anmeldeanfragen kam der \textbf{Zigbee-Koordinator} gerne ins Straucheln und der Vorgang musste neu gestartet werden.
 \end{itemize}
 
 
 \subsection{Schwierigkeiten bei der Umsetzung}\label{subsec:ZigbeeSchwierigkeitenbeiderUmsetzung}
+Einige Probleme haben die Entwicklung der Zigbee Benchmark Firmware schwieriger gemacht als erhofft.
+Die folgenden 4 Punkte haben die Arbeiten merklich beeinflusst. 
 
-\subsubsection{Software Development Kit}\label{subsubsec:ZigbeeSoftwareDevelopmentKit}
+\paragraph{Software Development Kit}
+Da die \textit{nRF5 SDK for Thread and Zigbee} wohl bald von der \textit{nRF Connect SDK} abgelöst wird, scheint der Hersteller Nordic Semiconductor nicht wirklich Interesse daran zu haben, die alte SDK zu unterhalten.
+Dies macht sich in der Dokumentation bemerkbar, denn gewisse API's nicht oder nur sehr schlecht dokumentiert wurden.
+Da es sich beim \textit{ZBOSS Zigbee Stack} um eine vorkompilierte Library handelt ist auch die Interpretation des Codes schwierig bis unmöglich.
+In einigen Fällen verweist die Dokumentation sogar auf Funktionen und Beispiele die in der aktuellsten Version der SDK nicht mehr verfügbar sind.
+ 
 
-\subsubsection{Anzahl Hops}\label{subsubsec:AnzahlHops}
+\paragraph{Anzahl Hops}
 Für die Auswertung der Messergebnisse in den Abschnitten \ref{sec:Messresultate} und \ref{sec:VergleichMeshNetzwerke} wurden unterschiedliche Messgrössen erfasst.
 Unter anderem wäre auch die Anzahl Hops die eine Benchmark Nachricht innerhalb des Mesh Netzwerkes passiert hat, von grosser Wichtigkeit.
 Nur so kann die Latenz unabhängig von gewählten Weg definiert und mit den Latenzzeiten der anderen Protokolle verglichen werden.
 Leider bietet die \textit{nRF5 SDK for Thread and Zigbee} keine Möglichkeit diesen Wert zu bestimmen, da das Radius-Feld aus dem NWK-Header nicht ausgelesen werden kann.
-Der folgende Beitrag aus dem Supportforum von Nordic Semiconductor bestätigt dies: \href{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}{\textit{Zigbee - Read number of hops (radius)\footnote{\url{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}\cite{cyrill_horath_zigbee_2020}}}}
+Das Radius-Feld wäre gemäss neuster \textit{Zigbee Specification} ein 8-Bit Feld im NWK-Header welches bei passieren eines Hops dekrementiert wird \cite{the_zigbee_alliance_zigbee_2015}.
+Das Paket wird verworfen falls das Feld den Wert 0 enthält.
+Der folgende Beitrag aus dem Supportforum von Nordic Semiconductor bestätigt dieses Problem: \href{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}{Zigbee - Read number of hops (radius)\footnote{\url{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}\cite{cyrill_horath_zigbee_2020}}}
 
 
-\subsubsection{Group addressing mode}\label{subsubsec:Groupaddressingmode}
+
+\paragraph{Group addressing mode}
 Diverse Tests mit implementiertem \textit{ZCL groups cluster} haben gezeigt, dass Zigbee bei der Adressierung von Gruppenadressen schnell überfordert ist.
 Besonders bei leicht erhöhtem Verkehrsaufkommen im Netzwerk, konnte grosser Packetverlust von über 90 Prozent festgestellt werden.
 Eine Gruppenadressierung löst in Zigbee eine Broadcast Nachricht aus, welche von allen Teilnehmern weitergeleitet wird.
@@ -42,17 +59,9 @@ Dies verursacht wiederum ein noch grösseres Verkehrsaufkommen.
 Grund für die Problematik ist vermutlich, dass der Packetbuffer für Broadcast Nachrichten zu klein ist sowie zu langsam abgearbeitet wird und daher schnell überläuft.
 Es konnte festgestellt werden, dass nach ca. 16 Nachrichten, keine weiteren Nachrichten zugestellt werden konnten bis sich der Stack nach einiger Zeit wieder erholen konnte.
 
-\subsubsection{nRF Connect SDK}\label{subsubsec:nRFConnectSDK}
-
-
-\subsection{Erkenntnisse und Fazit}\label{subsec:ErkenntnisseundFazit}
-
-
-
-\todo[inline]{Versuch mit nRF Connect SDK erwähnen.}
-\todo[inline]{ZCL Vor- und Nachteile. Kompliziert mit Attributen Definition usw. Hilfreich da herstellerunabhängig}
-\todo[inline]{SDK schlecht dokumentiert. ZBOSS Funktionen teilweise gar nicht dokumentiert oder alte Dokumentation von Funktionen die nicht mehr vorhanden sind.}
-\todo[inline]{ZBOSS Scheduler hilfreich für das Handling in der Applikation.}
-
-
-\todo[inline]{Commissioning nicht immer zuverlässig. Vorallem wenn viele Nodes gleichzeitig.}
+\paragraph{nRF Connect SDK}
+Nordic Semiconductor stellt nebst der in dieser Arbeit verwendeten \textit{nRF5 SDK for Thread and Zigbee} noch eine zwei SDK für die Entwicklung von Zigbee Produkten zur Verfügung.
+Die \textit{nRF Connect SDK} unterstützt seit der Version v1.3.0 ebenfalls den Zigbee Protokollstack.
+Im Verlauf dieser Arbeit wurde auch diese SDK zumindest testweise eingesetzt.
+Leider hat sich erst spät herausgestellt, dass die \textit{nRF Connect SDK} noch einige Kinderkrankheiten bei der Verwendung mit Zigbee besitzt.
+So werden Nachrichten teilweise erst mit einer Verzögerung von 200ms versendet. In den \href{https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.3.0/nrf/doc/release-notes-1.3.0.html}{Release Notes\footnote{\url{https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.3.0/nrf/doc/release-notes-1.3.0.html}}} zu der entsprechenden Version ist dies festgehalten. 
