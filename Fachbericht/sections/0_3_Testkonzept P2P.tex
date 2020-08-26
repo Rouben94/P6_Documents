@@ -142,6 +142,7 @@ Quit the server with CTRL-BREAK.
 
 Sobald dies erfolgreich ausgeführt wurde, ist der Webserver gestartet und kann unter der Adresse \textbf{http://127.0.0.1:8000/} erreicht werden.
 
+\newpage
 Falls das Starten nicht geklappt hat, müssen möglicherweise Django und die benötigten Python Bibliotheken nachinstalliert werden. Dies wird wie folgt gemacht:
 
 \begin{lstlisting}[style=DOS]
@@ -164,22 +165,20 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 \end{lstlisting}
 
-\todo[inline]{Robin: Kosmetik}
-
-
 \paragraph{Schritt 2 - Verbindungsaufbau}
 Sobald der Webserver gestartet wurde, ist die Seite \textbf{Point to Point} zu sehen (siehe Abbildung \ref{fig:WebserverNodelistViewausgeklappt}). Wie in der Abbildung beschrieben, muss nun auf die Seite Connection gewechselt werden, damit die Verbindung zum Master aufgenommen werden kann. Es besteht die Möglichkeit das Hauptmenü auf der linken Seite auf und zu zuklappen (siehe Nummer 1 in Abbildung \ref{fig:WebserverNodelistViewausgeklappt}). Wenn das Hauptmenü aufgeklappt ist, kann das Github-Repository durch einen Klick auf die Schaltfläche \textbf{GitHub Repo} erreicht werden.
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.95\textwidth]{Webserver_nodelist_ausgeklappt.png}
+	\includegraphics[width=\textwidth]{Webserver_nodelist_ausgeklappt.png}
 	\caption{Webserver Nodelist View ausgeklappt}
 	\label{fig:WebserverNodelistViewausgeklappt}
 \end{figure}
 
+\newpage
 Auf der Seite \textbf{Connection} (siehe Abbildung \ref{fig:WebserverConnectionView}) soll für die Kommunikation mit der Seriellen Schnittstelle der entsprechende COM-Port, an dem der Master registriert ist, ausgewählt werden (siehe Nummer 1 in Abbildung \ref{fig:WebserverConnectionView}). Mit einem Klick auf das Feld \textbf{Connect} wird nun eine Verbindung hergestellt (siehe Nummer 2 in Abbildung \ref{fig:WebserverConnectionView}). Falls der Master nicht angeschlossen oder auf einem anderen COM-Port registriert ist, wird dies mit einer Fehlermeldung mitgeteilt.
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{Webserver_Connection.png}
+	\includegraphics[width=0.6\textwidth]{Webserver_Connection.png}
 	\caption{Webserver Connection View}
 	\label{fig:WebserverConnectionView}
 \end{figure}

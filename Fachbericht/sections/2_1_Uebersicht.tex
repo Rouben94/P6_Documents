@@ -1,10 +1,12 @@
 \vspace*{4cm}
 \part{Thread}\label{part:Thread}
-Robin Bobst
+Autor: Robin Bobst
 \vspace*{\fill}
 \clearpage
 
 \section{Einleitung}\label{sec:EinleitungThread}
+In diesem Teil der Arbeit werden die Eigenschaften und Besonderheiten des Thread Mesh Stack erläutert und es wird auf die Umsetzung des Benchmarks auf Stack Ebene eingegangen. Dieser Teil soll als eigenständiger Teil betrachtet werden in dem ausschliesslich Thread behandelt wird.
+
 Thread ist ein auf IPv6 basiertes Netzwerkprotokoll, das speziell für Internet of Things (IoT) Anwendungen entwickelt wurde. Die einzelnen Teilnehmer im Netzwerk verbinden sich zu einem Mesh-Netzwerk. Wie in der Abbildung \ref{fig:ThreadProtokollLayer} ersichtlich verwendet Thread für eine effiziente Kommunikation mit IPv6-Paketen das Kommunikationsprotokoll 6LoWPAN (IPv6 over Low Power Personal Area Network). 6LoWPAN wendet ein Header-Kompressionsverfahren an, welches es ermöglicht die IPv6-Pakete über den Standard IEEE-802.15.4 zu übermitteln. Dank diesem Standard ist es machbar, die mit Thread entwickelten Geräte so energieeffizient zu gestalten, dass ein Batteriebetrieb realisierbar ist. In der Tabelle \ref{table:MerkmaleThread} sind die wichtigsten Merkmale von Thread aufgelistet. Im Juli 2014 wurde die Thread Working Group ins Leben gerufen, bei der folgende Firmen Bestandteil der Gruppe sind: Nest Labs, Samsung, ARRM Holdings, Qualcom, NXP Semiconductors, Silicon Labs, Big Ass Solutions, Somfy, OSRAM Tyco International und Yale. Ab August 2018 Apple trat auch Apple der Arbeitsgruppe bei, um das Prokoll populär zu machen. \cite[Kapitel 1]{thread_group_inc_thread_2017} \\
 
 \begin{figure}[H]
