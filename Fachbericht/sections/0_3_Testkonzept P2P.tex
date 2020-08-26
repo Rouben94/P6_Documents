@@ -337,17 +337,18 @@ Ebenfalls wurde festgestellt, dass beim Wechsel zum oder vom  \textit{IEEE802.15
 
 \subsection{Broadcasting Collisions Probability}\label{sec:BroadcastingCollissionsProbability}
 
-Kollisionen entstehen wenn mehrere Teilnehmer gleichzeitig auf dem selben Kanal (Frequenz) senden.
-Dabei stören sich die beiden Sender und es kann sein das der Empfänger keine Daten empfangen kann.
-Dies kann leider nicht immer vermieden werden. Wenn sich mehrere Teilnehmer neu mit dem Netz verbinden möchten kann dies beispielsweise vorkommen.
-Im Fall der P2P-Testinfrastruktur entsteht ein solcher Fall im Mockup-State.
+Kollisionen entstehen, wenn mehrere Teilnehmer gleichzeitig auf dem selben Kanal (Frequenz) senden.
+Dabei stören sich die beiden Sender und es besteht die Möglichkeit, dass der Empfänger keine Daten empfangen kann.
+Wenn sich mehrere Teilnehmer neu mit dem Netz verbinden möchten, kann dies ebenfalls zu Problemen führen.
+Leider können solche Störungen nicht immer vermieden werden.
+In der vorliegenden Anwendung kann ein solcher Fall im Mockup-State entstehend.
 Hier soll sich jeder Slave, welcher dem Master noch unbekannt ist, auf die Discovery-Anfrage des Masters melden.
-Die Lösung ist dass jeder Slave einen zufälligen Zeitpunkt zum Antworten auswählt.
-Wie gross dieses Zeitfenster sein muss in welchem ein Slave einen Zeitpunkt zufällig wählen darf berechnet sich wie folgt:
+Die Lösung ist, dass jeder Slave einen zufälligen Zeitpunkt zum Antworten auswählt.
+Wie gross dieses Zeitfenster sein muss, in welchem ein Slave einen Zeitpunkt zufällig wählen darf, berechnet sich wie folgt:
 
-Angenommen es gibt $N$ Teilnehmer, welche $t_a$ Sekunden brauchen um eine Antwort zu Senden.
-Zusätzlich existieren $N_{ch}$ verschiedene Kanäle auf welchen die Teilnehmer antworten können.
-Die Wahrscheinlichkeit das sich zwei Sender, im Zeitfenster $t_I$ Sekunden, nicht überlappen $P_{miss}$ lässt sich gemäss Formel \ref{eq:BroadcastingMissProbability} bestimmen. \cite{rk_how_to_deal_with_broadcasting_collision_2020}
+Angenommen es gibt $N$ Teilnehmer, welche $t_a$ Sekunden brauchen, um eine Antwort zu senden.
+Zusätzlich existieren $N_{ch}$ verschiedene Kanäle, auf welchen die Teilnehmer antworten können.
+Die Wahrscheinlichkeit, dass sich zwei Sender im Zeitfenster $t_I$ Sekunden nicht überlappen $P_{miss}$, lässt sich gemäss Formel \ref{eq:BroadcastingMissProbability} bestimmen. \cite{rk_how_to_deal_with_broadcasting_collision_2020}
 
 \begin{equation}\label{eq:BroadcastingMissProbability}
 P_{miss} = (1- \frac{2 \cdot t_a}{N_{ch}} \cdot t_I)^{N-1}
@@ -362,10 +363,9 @@ Die folgenden Werte wurden zur Berechnung des Zeitfensters im Mockup-State verwe
 	\item $t_I = 1.2s$	
 \end{itemize} 
 
-Somit liegt die Wahrscheinlichkeit dass alle 50 Nodes sich verfehlen bei 85\%. 
+Somit liegt die Wahrscheinlichkeit, dass alle 50 Nodes sich verfehlen bei 85\%. 
 
 \subsection{Zeitsynchronisation}\label{sec:ZeitsynchronisationP2P}
-
 Die Zeitsynchronisation wurde mittels einer Offset Kompensation gelöst.
 Der Zeitgeber (Master) sendet seine Zeit (Timestamp) über einen Broadcast an alle Teilnehmer in der Umgebung.
 Die Slaves vergleichen die empfangene Master-Zeit mit ihrer lokalen Zeit und errechnen den Unterschied (Offset) zwischen dem Master-Timestamp und Slave-Timestamp.
@@ -378,7 +378,7 @@ Somit können sie ihre Zeit an die des Masters angleichen. Das Prinzip ist relat
 	\label{fig:TimesyncBasicwithErrorP2P}
 \end{figure}
 
-Wie in Abbildung \ref{fig:TimesyncBasicwithErrorP2P} ersichtlich ist, entsteht beim Auslesen der Zeit bis zum Senden eine Verzögerung die TxChainDelay, sowie beim Empfänger die RxChainDelay. Das Ziel ist es diese Verzögerungen so gering wie möglich zu halten. 
+Wie in Abbildung \ref{fig:TimesyncBasicwithErrorP2P} ersichtlich ist, entsteht ab dem Auslesen der Zeit bis zum Senden eine Verzögerung die TxChainDelay sowie beim Empfänger die RxChainDelay. Das Ziel ist, diese Verzögerungen so gering wie möglich zu halten. 
 
 \begin{figure} [H]
 	\centering
@@ -387,13 +387,13 @@ Wie in Abbildung \ref{fig:TimesyncBasicwithErrorP2P} ersichtlich ist, entsteht b
 	\label{fig:TimesyncwithPPIP2P}
 \end{figure}
 
-Die Lösung wird in Abbildung \ref{fig:TimesyncwithPPIP2P} gezeigt. Der nRF52840 SOC verfügt über ein PPI (Programmable peripheral interconnect).
+Die Lösung diese Problems wird in Abbildung \ref{fig:TimesyncwithPPIP2P} gezeigt. Der nRF52840 SoC verfügt über ein PPI (Programmable peripheral interconnect) Modul.
 Mithilfe des PPI lassen sich verschiedene Events und Tasks direkt Verknüpfen, ohne dass die CPU dabei involviert ist.
 Dies führt zu einer minimalen Verzögerung (ca. 1/16$\mu$s) zwischen Event und Task.
-Dazu wird der Event, dass ein Packet erfolgreich gesendet wurde (Radio-End-Event), mit dem Task zum Erfassen des Synctimers (Synctimer-Capture-Task) verknüpft.
-Beim Slave wird der Event, dass ein Packet erfolgreich Empfangen wurde (Radio-CRCOK-Event), mit dem Task zum Erfassen des Synctimers (Synctimer-Capture-Task) verknüpft.
-Nach dem Empfangen muss der Slave diesen PPI sofort deaktivieren, da ein direkt folgendes Paket ebenfalls ein Erfassen des Timers auslöst.
-Der Master wird nach deaktivieren des PPI mit einem Folgepaket seine Master-Zeit dem Slave mitteilen, welche zum Zeitpunkt des Probe-Packets registriert wurde. Der Slave errechnet den Offset gemäss Formel \ref{eq:TimesyncOffsetSynctimeCalc} und die Synchronisierte-Zeit gemäss Formel \ref{eq:TimesyncSynctimeCalc}. \cite{nordic_semi_nrf_infocenter_ppi_2020}
+Dazu wird der Event, wenn ein Packet erfolgreich gesendet wurde (Radio-End-Event), mit dem Task zum Erfassen des Synctimers (Synctimer-Capture-Task) verknüpft.
+Beim Slave wird der Event, wenn ein Packet erfolgreich Empfangen wurde (Radio-CRCOK-Event), mit dem Task zum Erfassen des Synctimers (Synctimer-Capture-Task) verknüpft.
+Nach dem Empfang muss der Slave diesen PPI sofort deaktivieren, da ein direkt anschliessendes Paket ebenfalls ein Erfassen des Timers auslöst.
+Der Master wird nach der Deaktivierung des PPI mit einem Folgepaket seine Master-Zeit dem Slave mitteilen, welche zum Zeitpunkt des Probe-Packets registriert wurde. Der Slave errechnet den Offset gemäss Formel \ref{eq:TimesyncOffsetSynctimeCalc} und die synchronisierte Zeit gemäss Formel \ref{eq:TimesyncSynctimeCalc}. \cite{nordic_semi_nrf_infocenter_ppi_2020}
 
 \begin{equation}\label{eq:TimesyncOffsetSynctimeCalc}
 T_{Offset} =  T_{Master} - T_{Slave} 
@@ -404,8 +404,8 @@ T_{Sync} =  T_{Slave} + T_{Offset}
 \end{equation}
 
 Zur Verifizierung der Zeitsynchronisation wurde ein Oszilloskop an jeweils einen GPIO-Pin des Masters und an einen Pin des Slaves angeschlossen. Auf dem Master und Slave wurden nacheinander Timer-Interrupts registriert, welche relativ zur synchronisierten Zeit auf dem Master und Slave genau gleichzeitig auslösen. Mithilfe eines PPI-Kanals wurde der Interrupt-Event auf den GPIO-Pin verknüpft.
-Beim Auslösen des Interrupts wird der Zustand des GPIO-Pins getoggelt.
-Somit wird die Abweichung präzise auf dem Oszilloskop ersichtlich.
+Beim Auslösen des Interrupts wird der Zustand des GPIO-Pins invertiert.
+Dadurch wird die Abweichung präzise auf dem Oszilloskop ersichtlich.
 
 \begin{figure} [H]
 	\centering
@@ -414,20 +414,25 @@ Somit wird die Abweichung präzise auf dem Oszilloskop ersichtlich.
 	\label{fig:TimesyncVerifikationP2P}
 \end{figure}
 
-Abbildung \ref{fig:TimesyncVerifikationP2P} zeigt den Signalverlauf der GPIOs vom Master (gelb) und Slave (blau).
+Abbildung \ref{fig:TimesyncVerifikationP2P} zeigt den Signalverlauf der GPIOs von Master (gelb) und Slave (blau).
 Anfänglich lagen die Abweichungen im Bereich von ca. 40$\mu$s.
-Durch Wiederholungen der Messung konnte dieser Fehler als systematisch identifiziert werden.
-Mithilfe einer Korrektur um 40$\mu$s konnte die Genauigkeit in den Bereich von 100ns bis 1200ns reduziert werden. Eine Abweichung der Zeitsynchronisation von ca. 1$\mu$s sollte genügend genau sein um als gute Grundlage für die Statemachine aus Abschnitt \ref{sec:SoftundFirmware} zu dienen. 
+Durch die Wiederholungen der Messung konnte dieser Fehler als systematisch identifiziert werden.
+Mithilfe einer Korrektur um 40$\mu$s konnte die Genauigkeit in den Bereich von 100ns bis 1200ns beschränkt werden. Eine Abweichung der Zeitsynchronisation von ca. 1$\mu$s sollte genügend genau sein, damit die Messungen als gute Grundlage für die Statemachine aus Abschnitt \ref{sec:SoftundFirmware} dienen können. 
  
 \subsection{Webserver}\label{subsec:DjangoWebserver}
-Damit die P2P-Testinfrastruktur visualisiert und mit einem schönen User Interface gesteuert werden kann, wurde ein Webserver aufgesetzt. Das Ziel ist es auf einem Rechner unter einer Web-Adresse einen Webserver zu erreichen, welche es ermöglicht alle Einstellung über eine serielle Schnittstelle dem BMN mitzuteilen. Somit wird es möglich den Ablauf bequem über den Web-Server zu steuern.
+Damit die P2P-Testinfrastruktur visualisiert und mit einem schönen User Interface gesteuert werden kann, wurde ein Webserver aufgesetzt.
+Das Ziel ist, auf einem Rechner unter einer Web-Adresse einen Webserver zu erreichen, welche es ermöglicht alle Einstellungen über eine Serielle Schnittstelle dem BMN mitzuteilen.
+Damit wird es möglich den Ablauf bequem über den Webserver zu steuern.
+
 \subsubsection{Django}\label{subsubsec:Django}
-Um die P2P-Testinfrastruktur bedienen zu können, wurde ein Django Webserver aufgesetzt.
-Django ist ein open-source Webframework, dass auf dem Model-View-Controller Prinzip basiert und in der Programmiersprache Python geschrieben wurde.
+Als Grundlage für den Webserver dient eine Django Instanz.
+Django ist ein open-source Webframework, welches auf dem Model-View-Controller Prinzip basiert und in der Programmiersprache Python geschrieben wurde.
 Das Framework hat sein eigenes Benennungssystem für alle Funktionen und Komponenten.
 Zum Beispiel werden HTTP-Antworten als Views bezeichnet.
 Ein grosser Vorteil von Django ist die Administrationsseite.
-Diese ist Bestandteil des Projekts und dient dazu die Models zu verwalten. Models sind Objekte, die in einer Datenbank des Webservers gespeichert werden. Die gängigsten Datenbanksysteme, wie z.B. SQLLite sind in Django integriert und können einfach aktiviert bzw. implementiert werden \cite{django_django_2020}. In der Tabelle \ref{table:FeaturesDjango} sind die wichtigsten Features von Django aufgelistet.
+Diese ist Bestandteil des Projekts und dient dazu die Models zu verwalten.
+Models sind Objekte, die in einer Datenbank des Webservers gespeichert werden. Die gängigsten Datenbanksysteme, wie z.B. SQLLite sind in Django integriert und können aktiviert bzw. implementiert werden \cite{django_django_2020}.
+In der Tabelle \ref{table:FeaturesDjango} sind die wichtigsten Features von Django aufgelistet.
 
 
 \begin{table}[h]
@@ -447,9 +452,9 @@ HTTP Bibliothek & Python Unit Test Framework & Models für Datenbank \\
 
 \subsubsection{Software Grundlagen}\label{subsubsec:SoftwareGrundlagen}
 Bei einer gewöhnlichen datengesteuerten Webseite wartet die Webanwendung auf eine HTTP-Anfrage des Browsers.
-Wird ein Anfrage empfangen so bestimmt die Anwendung auf der Grundlage der URL, ob ein GET oder POST Event ausgelöst wird.
+Wird ein Anfrage empfangen, so bestimmt die Anwendung, auf Grundlage der URL, ob ein GET oder POST Event ausgelöst wird.
 Je nach Anfrage wird somit aus einer Datenbank gelesen oder es wird in die Datenbank geschrieben.
-Die Anwendung schickt danach eine Antwort an den Web-Browser, wobei häufig eine HTML-Seite erzeugt wird, um die Antwort darzustellen. Diese Schritte sind in Django, wie in der Abbildung \ref{fig:DjangoAblauf} aufgeführt,  in separaten Dateien zusammengefasst.
+Die Anwendung sendet danach eine Antwort an den Webbrowser, wobei häufig eine HTML-Seite erzeugt wird, um die Antwort darzustellen. Diese Schritte sind in Django, wie in der Abbildung \ref{fig:DjangoAblauf} aufgeführt, in separaten Dateien zusammengefasst. Dies werden unterhalb kurz beschrieben.
 
 \begin{figure} [H]
 	\centering
@@ -458,28 +463,27 @@ Die Anwendung schickt danach eine Antwort an den Web-Browser, wobei häufig eine
 	\label{fig:DjangoAblauf}
 \end{figure}
 
-\paragraph{URLs:}\label{par:1URLs}
+\paragraph{URLs}
 Die URL Datei leitet die Anfrage an die entsprechende View weiter. Damit dies gelingt wird ein URL-Mapper eingesetzt.
 Dieser dient dazu, die Anfrage so zu interpretieren, damit die richtige View aufgerufen wird.
 Zusätzlich erkennt der URL-Mapper Zeichenketten und Ziffern in der URL und kann diese abgleichen und anschliessend als Daten an die View-Funktion weitergeben.
 
-\paragraph{Views:}\label{par:1Views}
-Die View ist eine Request-Handler-Funktion, die HTTP Anfragen empfängt und zurückgibt.
+\paragraph{Views}
+Die View ist eine Request-Handler-Funktion, die HTTP-Anfragen empfängt und zurückgibt.
 Die View kann über die Model Funktion auf Daten in der Datenbank zugreifen.
-Über die Template Funktion beschreibt die View schlussendlich, wie die HTTP-Antwort formatiert werden muss.
+Über die Template-Funktion beschreibt die View schlussendlich, wie die HTTP-Antwort formatiert werden muss.
 
-\paragraph{Models:}\label{par:1Models}
-Ein Model ist ein Python Objekt, das die Struktur der Daten einer Anwendung definiert. Darüber hinaus stellt die Funktion die Mittel, wie z.B Hinzufügen, Löschen oder Ändern, bereit um die Daten in der Datenbank zu verwalten.
+\paragraph{Models}
+Ein Model ist ein Python Objekt, welches die Struktur der Daten einer Anwendung definiert. Darüber hinaus stellt die Funktion die Mittel wie beispielsweise das Hinzufügen, Löschen oder Ändern bereit, um die Daten in der Datenbank zu verwalten.
 Die Model Funktion ist somit die Schnittstelle zur Datenbank.
 
-\paragraph{Templates:}\label{par:1Templates}
-Das Template ist eine Textdatei, in der die Struktur oder das Layout einer HTML-Seite definiert wird.
+\paragraph{Templates}
+Das Template ist eine Textdatei, in der die Struktur oder das Layout einer zugehörigen HTML-Seite definiert wird.
 Für die Struktur werden Platzhalter zur Darstellung des eigentlichen Inhalts verwendet.
-Demnach kann die View-Funktion mit Hilfe vom Template eine dynamische HTML-Seite erzeugen und mit Daten der Model-Funktion füllen.
+Demnach kann die View-Funktion mit Hilfe vom Templates eine dynamische HTML-Seite erzeugen und diese mit Daten der Model-Funktion füllen.
 
-
-\subsubsection{Software Aufbau}\label{subsubsec:SoftwareAufbau}
-Der Aufbau des Django Weberservers für die P2P-Testinfrastruktur ist in der Abbildung \ref{fig:FunktionenP2PWebserver} ersichtlich.
+\subsubsection{Aufbau Software}\label{subsubsec:SoftwareAufbau}
+Der Aufbau des Django Weberservers für die P2P-Testinfrastruktur ist in Abbildung \ref{fig:FunktionenP2PWebserver} ersichtlich.
 
 \begin{figure} [H]
 	\centering
@@ -489,8 +493,8 @@ Der Aufbau des Django Weberservers für die P2P-Testinfrastruktur ist in der Abb
 \end{figure}
 
 
-\paragraph{URLs:}\label{par:2URLs}
-In der folgenden Tabelle sind alle URLs aufgelistet welche verwendet wurden um auf die entsprechenden Views zu zeigen.
+\paragraph{URLs}
+In der folgenden Tabelle sind alle URLs aufgelistet, welche verwendet wurden, um auf die entsprechenden Views zu verweisen.
 
 \begin{itemize}
 	\item 127.0.0.1:8000/node\textunderscore list \hspace{2.5mm} referenziert auf die View node\textunderscore list
@@ -499,24 +503,27 @@ In der folgenden Tabelle sind alle URLs aufgelistet welche verwendet wurden um a
 	\item 127.0.0.1:8000/info \hspace{12.5mm} referenziert auf die View info
 \end{itemize} 
 
-\paragraph{Views:}\label{par:2Views}
-Es wurden vier Views im P2P-Webserver erstellt, die die Schnittstellen zu den Forms, den Models und der HTML-Dateien bilden:
+\paragraph{Views}
+Es wurden vier Views im P2P-Webserver erstellt, die die Schnittstellen zu den Forms, den Models und den HTML-Dateien bilden:
 \begin{itemize}
-	\item Node\textunderscore list View
-	\item Chart View
-	\item Connect View
-	\item Info View
+	\item node\textunderscore list
+	\item chart
+	\item connect
+	\item info
 \end{itemize} 
 Die Bedienung der einzelnen Seiten wurde im Kapitel \ref{sec:InbetriebnahmeBedienungP2P} bereits erläutert.
 
-\paragraph{Models: }\label{par:2Models}
-Für die Speicherung der Daten vom P2P Master, sind zwei Objekte verfügbar: 
+\paragraph{Models}
+Für die Speicherung der Daten vom P2P Master sind die folgenden zwei Objekte verfügbar: 
 \begin{itemize}
-	\item Objekt Node
-	\item Objekt Channel
+	\item Node
+	\item Channel
 \end{itemize} 
 
-Die zwei Objekte sind miteinander verknüpft. Wenn ein Node Objekt erstellt wird können die dazugehörigen Channel Informationen ebenso dazu erstellt werden. Dadurch ist eine klare Struktur gegeben. Über das Node Objekt können die verschiedenen Channel Informationen abgerufen werden.
+Diese zwei Objekte sind miteinander verknüpft.
+Wenn ein Objekt Node erstellt wird, können die dazugehörigen Channel Informationen ebenso erstellt werden.
+Dadurch ist eine klare Struktur gegeben.
+Über das Objekt Node können die verschiedenen Channel Informationen abgerufen werden.
 
 Folgende Parameter können dem Objekt Node als Information mitgegeben werden:
 \begin{itemize}
@@ -531,10 +538,10 @@ Folgende Parameter können dem Objekt Channel als Information mitgegeben werden:
 	\item Node ID
 \end{itemize}
 
-\paragraph{Templates:}\label{par:2Templates}
-Als Template wurden zwei verschiedene Django Forms erstellt. Das eine Form ist eine Anordnung an Eingabefeldern, die frei bestimmt werden können. Die Dropdown Auswahlmöglichkeiten sind in der Tabelle \ref{table:TabelleAuswahlfelder} aufgelistet.
+\paragraph{Templates}
+Als Template wurden zwei verschiedene Django Forms erstellt. Die eine Form ist eine Anordnung an Eingabefeldern, die frei bestimmt werden können. Die Dropdown Auswahlmöglichkeiten sind in der Tabelle \ref{table:TabelleAuswahlfelder} aufgelistet.
 
-\begin{table}
+\begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|l|} 
 \hline
@@ -576,32 +583,31 @@ Für die Eingabe der Parameter, die auf dem P2P Master eingestellt werden könne
 	\item Tx Power \hspace{13mm} -> Drop Down Auswahlfeld
 \end{itemize}
 
-Für die Auswahl des Ports für die Serielle Verbindung zum Master, ist die Form \textit{ParamForm} mit folgenden Eingabefeldern verfügbar:
+Für die Auswahl des Ports der Seriellen Verbindung zum Master ist die Form \textit{ParamForm} mit folgenden Eingabefeldern verfügbar:
 \begin{itemize}
 	\item  Port \hspace{22mm} -> Drop Down Auswahlfeld
 \end{itemize}
 
-
-In der Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe Forms ersichtlich. Die Daten werden mit einem Button, der ein HTTP-POST Ereignis auslöst, an die entsprechende View weitergeleitet.
+In Abbildung \ref{fig:ParamForm} und \ref{fig:PortForm} sind die Eingabe Forms ersichtlich. Die Daten werden mit einem Button, der ein HTTP-POST Ereignis auslöst, an die entsprechende View weitergeleitet.
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=\textwidth]{ParamForm.png}
+	\includegraphics[width=0.8\textwidth]{ParamForm.png}
 	\caption{Parameter Form}
 	\label{fig:ParamForm}
 \end{figure}
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{PortForm.png}
+	\includegraphics[width=0.3\textwidth]{PortForm.png}
 	\caption{Port Form}
 	\label{fig:PortForm}
 \end{figure}
 
-\paragraph{Serielle Kommunikation:}\label{par:SerielleKommunikation}
-Die Serielle Kommunikation wird mit Hilfe der Python Bibliothek \textit{PySerial} aufgebaut. Auf der P2P-Webserver Seite Connect, kann der Port ausgewählt werden, an dem der P2P-Master angeschlossen ist. Sobald die Verbindung zum Master aufgebaut ist, wird ein separater Python Thread gestartet. In diesem Thread wird in einem while-loop das Serielle Interface permanent ausgelesen. Sobald der Master einen neuen Mess-Report schickt, wird dieser ausgewertet und es werden Node und Channel Objekte anhand des Reports erstellt. In der Abbildung \ref{fig:AblaufDjangoSerial} ist der Ablauf ersichtlich.
+\paragraph{Serielle Kommunikation:}
+Die serielle Kommunikation wird mithilfe der Python Bibliothek \textit{PySerial} aufgebaut. Auf der P2P-Webserver Seite Connect kann der Port ausgewählt werden, an dem der P2P-Master angeschlossen ist. Sobald die Verbindung zum Master besteht, wird ein separater Python Thread gestartet. In diesem Thread wird in einem while-loop das Serielle Interface permanent ausgelesen. Sobald der Master einen neuen Mess-Report schickt, wird dieser ausgewertet und die Objekte Node und Channel werden anhand des Reports erstellt. In Abbildung \ref{fig:AblaufDjangoSerial} ist dieser Ablauf ersichtlich.
 
-Die erhaltenen Daten werden in der View Node\textunderscore List in einer Dynamischen Tabelle, die jede Sekunde Aktualisiert wird angezeigt. Zudem ist in der View Chart ein Visualisierung der Daten ersichtlich. Die Messergebnisse werden mit Hilfe der Bibliothek \textit{PlotLy} dargestellt. 
+Die erhaltenen Daten werden in der View Node\textunderscore List in einer dynamischen Tabelle, die jede Sekunde aktualisiert wird, angezeigt. Zudem ist in der View Chart eine Visualisierung der Daten ersichtlich. Die Messergebnisse werden mit Hilfe der Bibliothek \textit{PlotLy} dargestellt. 
 
 \begin{figure} [H]
 	\centering
@@ -613,30 +619,30 @@ Die erhaltenen Daten werden in der View Node\textunderscore List in einer Dynami
 \newpage
 \section{Schluss}\label{sec:SchlussP2P}
 
-Nachfolgend soll eine kurze Validierung und Verifizierung der Messresultate erfolgen. Anschliessend eine kurze Schlussbetrachtung als Abschluss. 
+Abschliessend wird eine kurze Validierung und Verifizierung der Messresultate, sowie eine Schlussbetrachtung vorgenommen.
 
 \subsection{Validierung}\label{subsec:P2PValidierung}
-Die vorgegebene Ziele zur Erfassung des SNR und Paketverlusts konnten erfüllt werden.
+Die vorgegebenen Ziele zur Erfassung des SNR und Paketverlusts konnten erreicht werden.
 Das Tool erfüllt mittels der grafischen Oberfläche seinen Zweck als universell einsetzbares Messwerkzeug.
 Das Erfassen des SNRs funktioniert jedoch nicht immer optimal.
-Durch Störeinflüsse, welche sich schnell ändern (WLAN etc.) kann es vorkommen dass die Angabe des SNRs nicht korrekt erfolgt.
-Die Ergebnisse des Paketverlust sehen valide aus. 
+Durch Störeinflüsse, welche sich schnell ändern (WLAN etc.) kann es vorkommen, dass die Angabe des SNRs nicht korrekt erfolgt.
+Die Ergebnisse des Paketverlusts sehen allerdings valide aus. 
 
 \subsection{Verifizierung}\label{subsec:P2PVerifizierung}
-Die Messresultate sind stark von äusseren Störeinflüssen abhängig. Somit wird eine exakte Verifizierung fast unmöglich.
-Die Messwerte korrelieren mit denjenigen des Radio-Test-Example \cite{nrf_connect_sdk_radio_test_example_2020}, welches einen ähnlichen Zweck erfüllt. 
+Die Messwerte korrelieren mit denjenigen des Radio-Test-Examples, welches einen ähnlichen Zweck erfüllt \cite{nrf_connect_sdk_radio_test_example_2020}.
+Die Messresultate sind jedoch stark von äusseren Störeinflüssen abhängig. Somit wird eine exakte Verifizierung fast unmöglich.
 
 \subsection{Fazit}\label{subsec:FazitP2P}
 \paragraph{Firmware}
-Die Analyse des MAC-Layers und Umsetzung der Testinfrastruktur hat viele Erkenntnisse im Bereich der hardwarenahen-Programmierung gebracht. Durch das erarbeiten der Firmware sind viele Module (Zeitsynchronisation, Statemachine, CLI, etc.) geschaffen worden, welche in weiteren Programmen integrierbar sind. Somit ergab sich eine ideale Grundlage um in die Netzwerk-Stacks, welche auf dem MAC-Layer basieren, einzutauchen. 
+Die Analyse des MAC-Layers und die Umsetzung der Testinfrastruktur hat viele Erkenntnisse im Bereich der hardwarenahen Programmierung gebracht. Durch die Erarbeitung der Firmware sind viele Module (Zeitsynchronisation, Statemachine, CLI, etc.) geschaffen worden, welche in weitere Programme integrierbar sind. Somit ergab sich eine optimale Grundlage, um in die Netzwerk-Stacks, welche auf dem MAC-Layer basieren, einzutauchen.
 
 \paragraph{Webserver}
-Das Entwickeln eines Webservers für die Bedienung der P2P-Testinfrastruktur war eine sehr lehrreiche Erfahrung. Bis an hin waren nur die Programmiersprachen C und C\texttt{++} bekannt. Das Erlernen und Anwenden von Python, HTML und Javascript für den Aufbau und die Darstellung des Webservers waren sehr intensiv aber auch lehrreich. Gewisse Funktionen vom Webserver könnten verbessert werden:
+Die Entwicklung eines Webservers für die Bedienung der P2P-Testinfrastruktur war eine sehr lehrreiche Erfahrung. Bis anhin waren nur die Programmiersprachen C und C\texttt{++} bekannt. Das Erlernen und Anwenden von Python, HTML und Javascript für den Aufbau und die Darstellung des Webservers waren sehr intensiv aber auch lehrreich. Gewisse Funktionen vom Webserver könnten verbessert werden. Dazu gehören folgende:
 
 \begin{itemize}
-	\item Das Aktualisieren der Tabellen und den Charts wird im Sekundentakt gemacht. Es wäre besser die Aktualisierung auszuführen, wenn der Master Node meldet, dass er mit dem Report fertig ist.
-	\item Das Aktualisieren der Charts geschieht, indem die ganze Seite neu geladen wird. Die einzelnen Charts neu zeichnen ohne die Seite neu zu laden wäre effektiver.
-	\item Die Auswahl des COM-Ports ist fix hinterlegt. Eine Dynamische Auswahl, die zeigt welche Geräte angeschlossen sind, wäre in der Bedienung komfortabler.
+	\item Das Aktualisieren der Tabellen und der Charts wird im Sekundentakt gemacht. Es wäre besser die Aktualisierung auszuführen sobald der Master Node meldet, dass er mit dem Report fertig ist.
+	\item Das Aktualisieren der Charts geschieht, indem die ganze Seite neu geladen wird. Die einzelnen Charts neu zu zeichnen, ohne die Seite neu zu laden, wäre effektiver.
+	\item Die Auswahl des COM-Ports ist fix hinterlegt. Eine dynamische Auswahl, die zeigt welche Geräte angeschlossen sind, wäre in der Bedienung komfortabler.
 \end{itemize}
 
 
