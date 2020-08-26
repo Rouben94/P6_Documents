@@ -2,14 +2,50 @@
 \section{Analyse Zigbee Stack}\label{sec:AnalyseZigbeeStack}
 \todo[inline]{Persönliche Eindrücke, Vor- und Nachteile, Besonderheiten beschreiben. Soll dem Leser helfen die "Qualität" des Stacks einzuordnen.}
 
+Für die Umsetzung des Benchmark Konzepts war eine vertiefte Auseinandersetzung mit dem Zigbee Protokoll nötig.
+Dabei konnten einige Erfahrungen mit dem Stack sowie der verwendeten SDK gemacht werden.
+Aufgrund dieser Erfahrungen wird nachfolgend eine Analyse des Zigbee Protokollstacks gemacht und einige Schwierigkeiten und Hindernisse bei der Softwareentwicklung aufgezeigt.
 
 
-\subsection{Probleme bei der Umsetzung}\label{subsec:ProblemebeiderUmsetzung}
+\subsection{Stärken und Schwächen des Protokollstacks}\label{subsec:ZigbeeStärkenundSchwächendesProtokollstacks}
+
+\paragraph{Stärken}
+
+\begin{itemize}
+\item Die \textbf{Zigbee Cluster Library} erleichtert die Umsetzung eines Produktes, welches mit anderen Zigbee Geräten konform sein soll, erheblich.
+\item 
+\end{itemize}
+
+\paragraph{Schwächen}
+\begin{itemize}
+\item Bei der \textbf{Gruppen Adressierung} zeigt der Zigbee Stack deutliche Schwächen da für Broadcast Nachrichten ein kleinerer Packetbuffer verwendet wird.
+\end{itemize}
+
+
+\subsection{Schwierigkeiten bei der Umsetzung}\label{subsec:ZigbeeSchwierigkeitenbeiderUmsetzung}
+
+\subsubsection{Software Development Kit}\label{subsubsec:ZigbeeSoftwareDevelopmentKit}
 
 \subsubsection{Anzahl Hops}\label{subsubsec:AnzahlHops}
+Für die Auswertung der Messergebnisse in den Abschnitten \ref{sec:Messresultate} und \ref{sec:VergleichMeshNetzwerke} wurden unterschiedliche Messgrössen erfasst.
+Unter anderem wäre auch die Anzahl Hops die eine Benchmark Nachricht innerhalb des Mesh Netzwerkes passiert hat, von grosser Wichtigkeit.
+Nur so kann die Latenz unabhängig von gewählten Weg definiert und mit den Latenzzeiten der anderen Protokolle verglichen werden.
+Leider bietet die \textit{nRF5 SDK for Thread and Zigbee} keine Möglichkeit diesen Wert zu bestimmen, da das Radius-Feld aus dem NWK-Header nicht ausgelesen werden kann.
+Der folgende Beitrag aus dem Supportforum von Nordic Semiconductor bestätigt dies: \href{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}{\textit{Zigbee - Read number of hops (radius)\footnote{\url{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}\cite{cyrill_horath_zigbee_2020}}}}
 
-\subsubsection{Group addressing mode}\label{subsubsec:Group addressing mode}
 
+\subsubsection{Group addressing mode}\label{subsubsec:Groupaddressingmode}
+Diverse Tests mit implementiertem \textit{ZCL groups cluster} haben gezeigt, dass Zigbee bei der Adressierung von Gruppenadressen schnell überfordert ist.
+Besonders bei leicht erhöhtem Verkehrsaufkommen im Netzwerk, konnte grosser Packetverlust von über 90 Prozent festgestellt werden.
+Eine Gruppenadressierung löst in Zigbee eine Broadcast Nachricht aus, welche von allen Teilnehmern weitergeleitet wird.
+Dies verursacht wiederum ein noch grösseres Verkehrsaufkommen. 
+Grund für die Problematik ist vermutlich, dass der Packetbuffer für Broadcast Nachrichten zu klein ist sowie zu langsam abgearbeitet wird und daher schnell überläuft.
+Es konnte festgestellt werden, dass nach ca. 16 Nachrichten, keine weiteren Nachrichten zugestellt werden konnten bis sich der Stack nach einiger Zeit wieder erholen konnte.
+
+\subsubsection{nRF Connect SDK}\label{subsubsec:nRFConnectSDK}
+
+
+\subsection{Erkenntnisse und Fazit}\label{subsec:ErkenntnisseundFazit}
 
 
 

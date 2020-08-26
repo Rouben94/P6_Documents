@@ -125,7 +125,7 @@ Das Verfahren nutzt den \textit{AES\footnote{Advanced Encryption Standard}}-Vers
 Im \textit{CCM} Verfahren können 8 verschiedene Sicherheitsstufen definiert werden.
 Die Sicherheitsstufe 0 deaktiviert sämtliche Sicherheitsfunktionen.
 Die Stufen 1 bis 3 fügen dem MAC Frame eine \textit{MIC\footnote{Message Integrity Code}} Prüfsumme von steigender Grösse hinzu, wodurch die Grösse des Frames zunimmt.
-Erst in den Stufen 4 bis 7 werden die Nutzdaten des MAC-Frames verschlüsselt und ebenfalls eine \textit{MIC} Prüfsumme ergänzt.
+Erst ab Stufe 4 werden die Nutzdaten des MAC-Frames verschlüsselt und die Stufen 5 bis 7 mit einer \textit{MIC} Prüfsumme ergänzt.
 
 \paragraph{Schlüssel}
 Für das \textit{CCM} Verfahren in Zigbee Netzwerken, werden zwei verschiedene Schlüsseltypen eingesetzt, der Netzwerkschlüssel und ein Linkschlüssel.
