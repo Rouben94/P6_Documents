@@ -50,15 +50,15 @@ In der Nachfolgenden Tabelle sind alle Parameter aufgelistet, die verwendet werd
 \end{table}
 
 \paragraph{Autocomissioning}
-\todo[inline]{Autocomissioning erklären}
+Alle Thread Knoten werden mit den Parametern von der Tabelle \ref{tab:ParameterKonfigurationStacks} initialisiert. Da die Parameter fest programmiert wurden, verbinden sich alle Knoten direkt in das Netzwerk namens OpenThread. Somit entfällt ein Comissioning-Prozess, was das Aufstarten extrem beschleunigt. Trotzdem ist ein Zeitfenster von 30s hinterlegt, bevor der Benchmark startet. Dies aus dem einfachen Grund, da die einzelnen Knoten zuerst ihre Rolle bestimmen müssen und den Routing-Prozess durchlaufen müssen.
 
 \newpage
 \paragraph{Channel Wahl}
-\todo[inline]{Channel Wahl erklären}
+Die Openthread API stellt eine automatische Channel Wahl namens Channel Manager zur Verfügung. Der Channel Manager führt ein Qualitätscheck aus und vergleicht die verfügbaren Channels. Nachdem der Channel mit der besten Qualität ausgewählt wurde, wechseln alle Knoten den Channel zu dem vom Channel Manager vorgegebenen Channel. Leider konnte die Funktion nicht ausreichend geprüft werden und der Channel wechsel funktionierte nicht immer bei allen Nodes. Aus diesem Grund wurde der Channel Manager deaktiviert und ein fixer Channel ausgewählt, auf dem der Benchmark läuft. Wie in Abbildung \ref{fig:ChannelBandbreite} ersichtlich ist Channel 15 auf der Frequenz 2425MHz am wenigsten von anderen Quellen wie W-Lan oder BLE belastet. Somit wurde Channel 15 als Standard Channel ausgewählt.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Channels.png}
-	\caption{Channel Bandbreite}\label{fig:ChannelBandbreite}
+	\includegraphics[width=0.7\textwidth]{Channels.png}
+	\caption{Channel Bandbreite \cite{zand_fig_nodate}}\label{fig:ChannelBandbreite}
 \end{figure}
 
 \subsection{Openthread Stack Initialisierung}\label{subsec:OpenthreadStackInitialisierun}
@@ -66,7 +66,7 @@ Der Openthread Stack wird wie in Abbildung \ref{fig:InitialisierungThreadStack} 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{Initialisierung Thread Stack.png}
+	\includegraphics[width=0.3\textwidth]{Initialisierung Thread Stack.png}
 	\caption{Initialisierung Thread Stack}\label{fig:InitialisierungThreadStack}
 \end{figure}
 
