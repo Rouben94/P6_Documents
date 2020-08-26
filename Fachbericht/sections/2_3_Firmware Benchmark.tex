@@ -3,21 +3,67 @@
 In diesem Kapitel wird die Thread Stack spezifische Benchmark Umsetzung beschrieben. Das gesamte Projekt ist im \href{https://github.com/Rouben94/P6_Software}{Github-Repository\footnote{\url{https://github.com/Rouben94/P6_Software}\cite{github_p6_software_p2p_2020}}} unter dem Ordner \textbf{P6\_Software/Openthread/ Thread\_SDK/custom/P6\_Project/ot\_benchmark/} verfügbar. Ausserdem sind im Ordner \textbf{P6\_Software/Openthread/Thread\_SDK/custom/benchmark\_hex/} die vorkompilierten .zip Dateien, um diese auf den nRF52840 SoC zu flashen. 
 
 \subsection{Openthread Stack Konfiguration}\label{subsec:ThreadStackKonfiguration}
-\todo[inline]{Konfig erklären}
+In der Nachfolgenden Tabelle sind alle Parameter aufgelistet, die verwendet werden um den Openthread Stack mit CoAP Funktion zu konfigurieren.
 \begin{table}[h]
 	\centering
 	\begin{adjustbox}{width=1\textwidth}
-		\begin{tabular}{lll}
-			Stack Init Time                            & 30000 ms                                                               & \begin{tabular}[c]{@{}l@{}}Zeit die benötigt wird um den Stack für den Benchmark\\zu initialisieren. Reserve Zeit um das Routing des \\Netzwerkes durchzuführen.\end{tabular}  \\
-			IEEE Channel                               & 15                                                                     & Thread Kanal der verwendet wird um das Mesh aufzubauen.                                                                                                                        \\
-			Netzwerk Name                              & OpenThread                                                             & Netzwerkname~                                                                                                                                                                  \\
-			\textcolor[rgb]{0.278,0.278,0.278}{PAN ID} & \textcolor[rgb]{0.278,0.278,0.278}{0xABCD}                             & Wird für das Precomissioning verwendet.                                                                                                                                        \\
-			Netzwerkschlüssel                          & \textcolor[rgb]{0.278,0.278,0.278}{0x00112233445566778899AABBCCDDEEFF} & Wird für das Precomissioning verwendet.                                                                                                                                       
+		\begin{tabular}{|l|l|l|} 
+			\hline
+			Stack Init Time                             & 30000 ms                                                                & \begin{tabular}[c]{@{}l@{}}Zeit die benötigt wird um den Stack für den Benchmark\\zu initialisieren. Reserve Zeit um das Routing des \\Netzwerkes durchzuführen. \end{tabular}  \\ 
+			\hline
+			\multicolumn{1}{l}{}                        & \multicolumn{1}{l}{}                                                    & \multicolumn{1}{l}{}                                                                                                                                                            \\ 
+			\hline
+			IEEE Channel                                & 15                                                                      & \begin{tabular}[c]{@{}l@{}}Thread Kanal der verwendet wird um das Mesh \\aufzubauen.\end{tabular}                                                                               \\ 
+			\hline
+			Netzwerk Name                               & OpenThread                                                              & Netzwerkname                                                                                                                                                                    \\ 
+			\hline
+			\textcolor[rgb]{0.275,0.275,0.278}{PAN ID}  & \textcolor[rgb]{0.275,0.275,0.278}{0xABCD}                              & Personal Area Network ID                                                                                                                                                        \\ 
+			\hline
+			Netzwerkschlüssel                           & \textcolor[rgb]{0.275,0.275,0.278}{0x00112233445566778899AABBCCDDEEFF}  & Wird für das Precomissioning verwendet.                                                                                                                                         \\ 
+			\hline
+			Radio Modus                                 & radio-on-when-idle                                                      & Das Radio Interface wird nie abgeschaltet.                                                                                                                                      \\ 
+			\hline
+			Node Type                                   & FTD                                                                     & \begin{tabular}[c]{@{}l@{}}Alle Nodes werden als Full Thread Devices konfiguriert\\und habe entweder eine Parent oder eine Child Rolle.\end{tabular}                            \\ 
+			\hline
+			Comissioning                                & Auto-Comissioning                                                       & \begin{tabular}[c]{@{}l@{}}Alle Thread Gerät befinden sich nach der Initialisierung \\im gleichen Netzwerk.\end{tabular}                                                        \\ 
+			\hline
+			\multicolumn{1}{l}{}                        & \multicolumn{1}{l}{}                                                    & \multicolumn{1}{l}{}                                                                                                                                                            \\ 
+			\hline
+			BSP LED 0                                   & BSP\_LED\_THREAD\_CONNECTION                                            & Zeigt den Verbindungsstatus an.                                                                                                                                                 \\ 
+			\hline
+			BSP LED 1                                   & BSP\_LED\_THREAD\_COMMISSIONING                                         & Zeigt den Commissioning Status an.                                                                                                                                              \\ 
+			\hline
+			BSP LED 2                                   & BSP\_LED\_ALERT                                                         & Zeigt an, ob ein Fehler anliegt.                                                                                                                                                \\ 
+			\hline
+			\multicolumn{1}{l}{}                        & \multicolumn{1}{l}{}                                                    & \multicolumn{1}{l}{}                                                                                                                                                            \\ 
+			\hline
+			CoAP Port                                   & 0x1633                                                                  & CoAP Port für Nachrichtenübertragung.                                                                                                                                           \\ 
+			\hline
+			URI Path                                    & bm\_probe                                                               & \begin{tabular}[c]{@{}l@{}}URI konfiguration für die Identifizierung der CoAP \\Benchmark Message\end{tabular}                                                                  \\ 
+			\hline
+			Group Address                               & ff03::Aktuelle Gruppe                                                   & \begin{tabular}[c]{@{}l@{}}Beim Initialisieren wird sogleich die eingestellte Gruppen~\\Multicast Adresse konfiguriert.\end{tabular}                                            \\
+			\hline
 		\end{tabular}
 	\end{adjustbox}
-	\caption{Messgrössen Gewinnung und Verwendung}
-	\label{tab:ThreadMessgrössenGewinnungundVerwendung}
+	\caption{Parameter zu Konfiguration des Stacks}
+	\label{tab:ParameterKonfigurationStacks}
 \end{table}
+
+\paragraph{Autocomissioning}
+\todo[inline]{Autocomissioning erklären}
+
+\paragraph{Channel Wahl}
+\todo[inline]{Channel Wahl erklären}
+
+\newpage
+\subsection{Openthread Stack Initialisierung}\label{subsec:OpenthreadStackInitialisierun}
+Der Openthread Stack wird wie in Abbildung \ref{fig:InitialisierungThreadStack} mit den bereits erläuterten Parametern von Kapilte \ref{subsec:ThreadStackKonfiguration} initialisiert:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Initialisierung Thread Stack.png}
+	\caption{Initialisierung Thread Stack}\label{fig:InitialisierungThreadStack}
+\end{figure}
 
 \newpage
 \subsection{CoAP Benchmark Message}\label{subsec:ThreadBenchmarkMessage}
