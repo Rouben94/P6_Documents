@@ -4,7 +4,8 @@
 
 
 \subsection{Zielerreichung}\label{subsec:Zielerreichung}
-Für die vorliegende Projektarbeit wurden im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) klare Ziele definiert. In den Tabellen \ref{tab:ErreichungP2PZiele}, \ref{tab:ErreichungMeshZiele}, \ref{tab:ErreichungSteuersoftwareZiele} und \ref{tab:ErreichungZusatzziele} sind diese in kurzer Form nochmals zusammengefasst. Ausserdem ist ersichtlich welche Ziele erfüllt werden konnten und welche nicht oder nur bedingt erfüllt sind.
+Für die vorliegende Projektarbeit wurden im Pflichtenheft (siehe Anhang \ref{app:Pflichtenheft}) klare Ziele definiert.
+In den Tabellen \ref{tab:ErreichungP2PZiele}, \ref{tab:ErreichungMeshZiele}, \ref{tab:ErreichungSteuersoftwareZiele} und \ref{tab:ErreichungZusatzziele} sind diese in kurzer Form nochmals zusammengefasst. Ausserdem ist ersichtlich, welche Ziele erfüllt und welche nicht bzw. nur bedingt erfüllt werden konnten.
 Falls nötig ist auch noch ein kurzer Kommentar hinterlegt.
 
 \todo[inline]{Raffi bitte P2P-Tabelle kontrollieren und ergänzen} 
@@ -13,7 +14,7 @@ Falls nötig ist auch noch ein kurzer Kommentar hinterlegt.
 	\centering
 	\begin{tabular}{|c|l|c|l|} 
 		\hline
-		\multicolumn{4}{|l|}{\textbf{Projektziele}}                                                                                                                                                                                                                                                                                                      \\ 
+		\multicolumn{4}{|l|}{\textbf{Projektziele Punkt zu Punkt Testinfrastruktur}}                                                                                                                                                                                                                                                                                                      \\ 
 		\hline
 		\textbf{Nr.}              & \textbf{Ziel}                                                                                      & \textbf{Erfüllt} & \textbf{Kommentar}                                                                                                                                                                           \\ 
 		\hline
@@ -39,22 +40,22 @@ Falls nötig ist auch noch ein kurzer Kommentar hinterlegt.
 		\hline
 		\multicolumn{1}{|l|}{P11} & \begin{tabular}[c]{@{}l@{}}Ein- und Ausschalten der \\Collision Avoidance \\(CSMA/CA)\end{tabular} & Ja               & \begin{tabular}[c]{@{}l@{}}Kann über den Webserver ein- und \\ausgeschaltet werden.\end{tabular}                                                                                             \\ 
 		\hline
-		\multicolumn{1}{|l|}{P12} & \begin{tabular}[c]{@{}l@{}}Erfassen der \\Verbindungsqualität\end{tabular}                         & Ja               & \begin{tabular}[c]{@{}l@{}}Der Master sendet und empfängt in einem \\Zeit Intervall Frames von den Slave-Nodes \\und sendet die Daten an die \\Serielle-Schnittstellt weiter.~\end{tabular}  \\ 
+		\multicolumn{1}{|l|}{P12} & \begin{tabular}[c]{@{}l@{}}Erfassen der \\Verbindungsqualität\end{tabular}                         & Ja               & \begin{tabular}[c]{@{}l@{}}Der Master sendet und empfängt in einem \\Zeitintervall Frames von den Slave-Nodes \\und sendet die Daten an die \\Serielle-Schnittstelle weiter.~\end{tabular}  \\ 
 		\hline
 		\multicolumn{1}{|l|}{P13} & Tool für Feldtests                                                                                 & Ja               & \begin{tabular}[c]{@{}l@{}}Das Tool ist mit dem Webserver und der \\Firmware einsatzbereit.\end{tabular}                                                                                     \\
 		\hline
 	\end{tabular}
-	\caption{Erreichung der Ziele zur Punkt zu Punkt Testinfrastruktur}
+	\caption{Erreichung der Ziele der Punkt zu Punkt Testinfrastruktur}
 	\label{tab:ErreichungP2PZiele}
 \end{table}
 
 \newpage
-\paragraph{Test Mesh Netzwerke}
+\paragraph{Performancevergleich Mesh Netzwerke}
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|l|c|l|} 
 		\hline
-		\multicolumn{4}{|l|}{ \textbf{Projektziele} }                                                                                                                                                                                                                                                                   \\ 
+		\multicolumn{4}{|l|}{ \textbf{Projektziele Performancevergleich Mesh Netzwerke} }                                                                                                                                                                                                                                                                   \\ 
 		\hline
 		\textbf{Nr.}  & \textbf{Ziel}                                                               & \textbf{Erfüllt}  & \textbf{Kommentar}                                                                                                                                                                            \\ 
 		\hline
@@ -68,11 +69,11 @@ Falls nötig ist auch noch ein kurzer Kommentar hinterlegt.
 		\hline
 		P5            & Sensordaten                                                                 & Ja                & \begin{tabular}[c]{@{}l@{}}Die Sensordaten werden im RAM und \\FLASH des SoCs gespeichert und nach \\der Messung an den Master gesendet.\end{tabular}                                         \\ 
 		\hline
-		P6            & Datenauswertung                                                             & Ja                & \begin{tabular}[c]{@{}l@{}}Die Daten der Messungen wurden mit \\Hilfe~ von Excel Tabellen ausgewertet.\end{tabular}                                                                           \\ 
+		P6            & Datenauswertung                                                             & Ja                & \begin{tabular}[c]{@{}l@{}}Die Daten der Messungen wurden mit \\Hilfe von Excel Tabellen ausgewertet.\end{tabular}                                                                           \\ 
 		\hline
 		P7            & Störimmunität                                                               & Ja                & \begin{tabular}[c]{@{}l@{}}Störmessungen mit der \\P2P-Testinfrastruktur wurden gemacht.\end{tabular}                                                                                         \\ 
 		\hline
-		P8            & \begin{tabular}[c]{@{}l@{}}Unterschiedliche Test \\Bedingungen\end{tabular} & Ja                & \begin{tabular}[c]{@{}l@{}}Es wurden drei Bereiche getestet. \\Haus, Wohnung und Labor.\end{tabular}                                                                                          \\ 
+		P8            & \begin{tabular}[c]{@{}l@{}}Unterschiedliche Test \\Bedingungen\end{tabular} & Ja                & \begin{tabular}[c]{@{}l@{}}Es wurden die drei Bereiche \\Haus, Wohnung und Labor getestet.\end{tabular}                                                                                          \\ 
 		\hline
 		P9            & Test und Validierung                                                        & Ja                & \begin{tabular}[c]{@{}l@{}}Die Mesh Netzwerke wurden im \\Fachbericht vollumfänglich verglichen \\und ausgewertet.\end{tabular}                                                               \\
 		\hline
@@ -86,13 +87,13 @@ Falls nötig ist auch noch ein kurzer Kommentar hinterlegt.
 	\centering
 	\begin{tabular}{|c|l|c|l|} 
 		\hline
-		\multicolumn{4}{|l|}{ \textbf{Projektziele} }                                                                                                                                                                                                                                                                                \\ 
+		\multicolumn{4}{|l|}{ \textbf{Projektziele Steuer- und Auswertesoftware} }                                                                                                                                                                                                                                                                                \\ 
 		\hline
 		\textbf{Nr.}  & \textbf{Ziel}                                                                & \textbf{Erfüllt}  & \textbf{Kommentar}                                                                                                                                                                                        \\ 
 		\hline
 		P1            & Ansteuerung Funkmodul                                                        & Ja                & \begin{tabular}[c]{@{}l@{}}Alle Master Module werden via USB UART \\angesteuert.\end{tabular}                                                                                                             \\ 
 		\hline
-		P2            & Visualisierung Parameter                                                     & Bedingt           & \begin{tabular}[c]{@{}l@{}}Für die P2P-Testinfrastruktur steht ein \\Webserver zur Verfügung. Die Daten des \\Mesh-Tests werden erst in einer Excel \\Tabelle ausgewertet und Visualisiert.\end{tabular}  \\ 
+		P2            & Visualisierung Parameter                                                     & Bedingt           & \begin{tabular}[c]{@{}l@{}}Für die P2P-Testinfrastruktur steht ein \\Webserver zur Verfügung. Die Daten des \\Mesh-Tests werden in einer Excel-Tabelle \\ausgewertet und visualisiert.\end{tabular}  \\ 
 		\hline
 		P3            & User Interface (UI)                                                          & Ja                & \begin{tabular}[c]{@{}l@{}}Ein Django Webserver stellt ein UI für die \\Verwaltung der P2P-Testinfrastruktur \\zur Verfügung.\end{tabular}                                                                \\ 
 		\hline
@@ -110,17 +111,17 @@ Falls nötig ist auch noch ein kurzer Kommentar hinterlegt.
 	\centering
 	\begin{tabular}{|c|l|c|l|} 
 		\hline
-		\multicolumn{4}{|l|}{ \textbf{Projektziele} }                                                                                                                                                                                                                  \\ 
+		\multicolumn{4}{|l|}{ \textbf{Projektziele Zusatz} }                                                                                                                                                                                                                  \\ 
 		\hline
 		\textbf{Nr.}  & \textbf{Ziel}                                                       & \textbf{Erfüllt}  & \textbf{Kommentar}                                                                                                                                   \\ 
 		\hline
-		P1            & \begin{tabular}[c]{@{}l@{}}Hardware Testmodul\\BMN/BSN\end{tabular} & Nein              & \begin{tabular}[c]{@{}l@{}}Mit Absprache der Coaches, ist ein \\Hardwaremodul nicht notwendig.\end{tabular}                                          \\ 
+		P1            & \begin{tabular}[c]{@{}l@{}}Hardware Testmodul\\BMN/BSN\end{tabular} & Nein              & \begin{tabular}[c]{@{}l@{}}In Absprache mit den Fachcoaches, ist ein \\Hardwaremodul nicht notwendig.\end{tabular}                                          \\ 
 		\hline
 		P2            & Vergleich SoC                                                      & Bedingt           & \begin{tabular}[c]{@{}l@{}}Die Bluetooth Tests wären mit verschiedenen \\SoCs möglich, diese Messungen wurden aber \\nicht ausgeführt.\end{tabular}  \\ 
 		\hline
 		P3            & Drahtlos Konfiguration                                              & Nein              & \begin{tabular}[c]{@{}l@{}}Ein Firmware over the air upgrade wurde \\nicht umgesetzt.\end{tabular}                                                   \\ 
 		\hline
-		P4            & UI für Mesh Test                                                    & Nein              & \begin{tabular}[c]{@{}l@{}}Für die Mesh-Tests wurde kein aus zeitlichen \\Gründen kein User-Interface geschrieben\end{tabular}                       \\
+		P4            & UI für Mesh Test                                                    & Nein              & \begin{tabular}[c]{@{}l@{}}Für die Mesh-Tests wurde aus zeitlichen \\Gründen kein User-Interface geschrieben\end{tabular}                       \\
 		\hline
 	\end{tabular}
 	\caption{Erreichung der Zusatzziele}
@@ -131,38 +132,40 @@ Falls nötig ist auch noch ein kurzer Kommentar hinterlegt.
 \newpage
 \subsection{Fazit}\label{subsec:Fazit}
 In dieser Arbeit wurden die drei Mesh Protokolle Bluetooth Mesh, Thread und Zigbee unter verschiedenen Testszenarien ausgemessen und anschliessend miteinander verglichen.
-Wichtig zu verstehen ist, dass es kein bestes Mesh Netzwerk gibt.
+Die wichtigste Erkenntnis ist, dass es kein bestes Mesh Netzwerk gibt.
 Alle Protokolle haben ihre Stärken und Schwächen in verschiedenen Umgebungen und mit verschiedenen Messparametern.
-Nachfolgend wird zusammengefasst, welche Schlüsse aus dem Vergleich der drei Protokollen gezogen worden sind.
+Nachfolgend wird zusammengefasst, welche Schlüsse aus dem Vergleich der drei Protokolle gezogen worden sind.
 
 \begin{itemize}
 
-	\item Bluetooth Mesh hat den grössten Vorteil in einer Umgebung, bei der sich die Knoten stetig bewegen. Dies aus dem Grund, dass das Mesh keine Routing Knoten verwendet.
-	\item Der grösste Vorteil von Thread ist es, dass sich das Mesh-Netzwerk selber ausmisst. Die routenden Knoten werden automatisch bestimmt. Somit kann sich das Protokoll der Umgebung anpassen und konnte dadurch auch in allen Testumgebungen eine tiefe Latenz zu Tage legen.
-	\item Ein Nachteil von Thread ist es, dass wegen dem automatischen Routen ein höherer Overhead entsteht. Durch diesen Overhead steigt der Energieverbrauch auf den einzelnen Nodes
+	\item Bluetooth Mesh hat den grössten Vorteil in einer Umgebung, bei der sich die Knoten stetig bewegen. Dies aus dem Grund, dass das Protokoll keine Routing Knoten verwendet.
+	\item Der grösste Vorteil von Thread ist, dass sich das Mesh-Netzwerk selber ausmisst. Die routenden Knoten werden automatisch bestimmt. Somit kann sich das Protokoll der Umgebung anpassen und konnte dadurch auch in allen Testumgebungen eine tiefe Latenz aufweisen.
+	\item Ein Nachteil von Thread ist, dass aufgrund des automatischen Routen ein höherer Overhead entsteht. Durch diesen Overhead steigt der Energieverbrauch auf den einzelnen Nodes.
 	\item Zigbee weist eine hohe Zuverlässigkeit auf.
-	Bedingt durch das CSMA\slash CA des\linebreak \textit{IEEE 802.15.4} MAC und Physical Layer erreichen weit mehr als 95 Prozent der Nachrichten ihr Ziel mit konstant tiefer Latenzzeit.
-	\item Der gemessene Durchsatz und die gemessene Latenzzeit kann nicht ganz mit jenen Werten von Thread mithalten.
+	Bedingt durch das CSMA\slash CA des\linebreak \textit{IEEE 802.15.4} MAC und Physical Layers erreichen rund 98 Prozent der Nachrichten ihr Ziel mit konstant tiefer Latenzzeit.
+	\item Der gemessene Durchsatz und die gemessene Latenzzeit von Zigbee, können nicht ganz mit jenen Werten von Thread mithalten.
 	Daher ist die Performance bei hoher Belastung eher schlechter.
 		\item \todo[inline]{Ein Vorteil und ein Nachteil erwähnen pro Mesh-Stack. Raffel bitte noch ausfüllen}
 \end{itemize}
 
-Nachfolgend wird auf einige Probleme eingegangen welche während dem Projekt entstanden sind. Ausserdem werden mögliche Lösungen dafür vorgeschlagen.
+Nachfolgend wird auf einige Probleme eingegangen, welche während dem Projekt entstanden sind. Ausserdem werden mögliche Lösungen dafür vorgeschlagen.
 Die Probleme werden in organisatorische und technische Verbesserungsvorschläge aufgeteilt.
 
 \textbf{Organisatorische Verbesserungen}
 \begin{itemize}
-	\item Ein frühzeitiges Softwarekonzept hätte sehr viel Redundanz in der verschiedenen Firmware Teilen erspart und somit auch viel Zeit eingespart.
-	\item Die Arbeitsaufteilung müsste besser kommuniziert und besprochen werden, ansonsten wird der Arbeitsaufwand für die jeweiligen Personen ungerecht aufgeteilt.
+	\item Ein frühzeitig definiertes Softwarekonzept hätte sehr viel Redundanz in der verschiedenen Firmware Teilen erspart und somit hätte viel effizienter gearbeitet werden können.
+	\item Die Arbeitsaufteilung hätte besser kommuniziert und besprochen werdenmüssen. ansonsten wird der Arbeitsaufwand für die jeweiligen Personen ungerecht aufgeteilt.
+	\todo[inline]{Ich würde das nicht so schreiben.. Auch wenn es stimmt.}
 \end{itemize}
 
 \textbf{Technische Verbesserungen}
 \begin{itemize}
-	\item Durchschnittswerte sollten mit dem Median bestimmen werden. Der momentane Mittelwert wird zu sehr von Ausreissern der Latenzzeit verfälscht. Daher ist die durchschnittliche Latenz meist nicht repräsentativ.
+	\item Durchschnittswerte sollten mit dem Median bestimmt werden. Der verwendete Mittelwert wird zu sehr von Ausreissern in der Latenzzeit verfälscht. Daher ist die durchschnittliche Latenz meist nicht repräsentativ.
 	\item Es wurden ungünstige Messparameter verwendet. Die Nachrichtendichte ist zu gross gewählt und muss heruntergesetzt werden, damit sich die Protokolle besser vergleichen lassen.
-	\item Beim Reporting vom BSN zum BMN ist es möglich, dass siche die Daten von zwei Slaves überschneiden. Mit Hilfe der Node ID könnte dies verhindert werden, indem nur der BSN mit der entsprechender Node ID angesprochen wird.
-	\item Beim ZigBee Protokoll ist es leider nicht möglich die Anzahl Hops auszulesen, die eine Nachricht nimmt. Dies müsste für eine repräsentative Auswertung noch implementiert werden, da die Latenzzeit pro Hop bestimmt wird.
-	\item Die Message ID und die Adresse der Nodes werden in der Payload der Benchmark-Nachricht mitgegeben. Dadurch ist es nicht möglich eine Payload unter 3 Byte zu versenden. Besser wäre ein auslesen der Message ID und der Adresse vom entsprechenden Header. 
+	\item Beim Reporting vom BSN zum BMN ist es möglich, dass sich die Daten von zwei Slaves überschneiden. Mit Hilfe der Node ID könnte dies verhindert werden, indem nur der BSN mit der entsprechender Node ID angesprochen wird.
+	\item Beim Zigbee Protokoll ist es leider nicht möglich die Anzahl Hops auszulesen, die eine Nachricht bei der Übertragung passiert. Dies müsste für eine repräsentative Auswertung noch implementiert werden können, da die Latenzzeit pro Hop bestimmt wird.
+	\item Die Message ID und die Adresse der Nodes werden in der Payload der Benchmark-Nachricht mitgegeben. Dadurch ist es nicht möglich eine Payload unter 3 Byte zu versenden. Besser wäre ein Auslesen der Message ID und der Adresse vom entsprechenden Header.
+	\todo[inline]{Stimmt nicht ganz. Zigbee kann die Adresse aus dem Header lesen.} 
 \end{itemize}
 
 \newpage
