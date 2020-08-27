@@ -116,7 +116,7 @@ Im folgenden Abschnitt wird auf die einzelnen Module der \textit{Shared-Lib} ein
 
 \subsubsection{Statemachine}\label{subsubsec:StatemachineSoftware}
 
-Die Statemachine dient dazu den Ablauf, welcher in Abschnitt \ref{subsec:AblaufMesh} bereits beschrieben wurde abzuarbeiten. Sowohl der Master als auch die Server und Clients arbeiten den in Abbildung \ref{fig:StatemachineFLowgraph} dargestellten Ablauf ab. 
+Die Statemachine dient dazu, den Ablauf, welcher in Abschnitt \ref{subsec:AblaufMesh} bereits beschrieben wurde, abzuarbeiten. Sowohl der Master als auch die Server und Clients arbeiten den in Abbildung \ref{fig:StatemachineFLowgraph} dargestellten Ablauf ab. 
 
 \begin{figure}[H]
 	\centering
@@ -125,70 +125,72 @@ Die Statemachine dient dazu den Ablauf, welcher in Abschnitt \ref{subsec:AblaufM
 \end{figure}
 
 
-Die Funktion der Schritte wird nachfolgend grob beschrieben.
+Die Funktionen der einzelnen Schritte werden nachfolgend grob beschrieben.
+
 \paragraph{Init}
-%	\item \textbf{\textit{Init:}}
-	Dieser Schritt initialisiert alle notwendige Funktionen (Radio, Timers, usw.). Ebenfalls rekonstruiert er die \textit{Log-Daten} indem er diese aus dem Flash ins RAM lädt. Nach der erfolgreichen Initialisierung wechselt die Statemachine in den Control-State.
+Dieser Schritt initialisiert alle notwendige Funktionen (Radio, Timers, usw.). Ebenfalls rekonstruiert er die \textit{Log-Daten}, indem er diese aus dem Flash ins RAM lädt. Nach der erfolgreichen Initialisierung wechselt die Statemachine in den Control-State.
 	
 \paragraph{Control}
-%	\item \textbf{\textit{Control:}}
-	Im Control-State wartet jeder Teilnehmer auf eingehende Befehle des Benutzers. Der Master erhält über das Command Line Interface (CLI) den auszuführenden Befehl.
-	Diesen wandelt der Master in eine Nachricht (Control-Message) um und leitet sie über das Radio-Interface an die Slaves weiter. 
-	Alle Slaves (Clients und Servers) erwarten eine Control-Message über das Radio-Interface.
-	Damit alle Clients und Servers die Nachricht empfangen können wiederholt jeder Slave jede Control-Message.
-	Somit wird die Mesh-Fähigkeit der Verwaltungsschicht (Benchmark Management) sichergestellt.
-	Folgende Transitionen sind vom Control-State zugelassen: 
+Im Control-State wartet jeder Teilnehmer auf eingehende Befehle des Benutzers. Der Master erhält über das Command Line Interface (CLI) den auszuführenden Befehl.
+Diesen wandelt der Master in eine Nachricht (Control-Message) um und leitet sie über das Radio-Interface an die Slaves weiter. 
+Alle Slaves (Clients und Servers) erwarten eine Control-Message über das Radio-Interface.
+Damit alle Clients und Servers die Nachricht empfangen können, wiederholt jeder Slave jede Control-Message.
+Somit wird die Mesh-Fähigkeit der Verwaltungsschicht (Benchmark Management) sichergestellt.
+Folgende Transitionen sind vom Control-State zugelassen: 
+
 \begin{description}
 	\item[\textit{\textbf{Transition to Timesync}}:]
-	Wird ein Benchmark gestartet erfolgt dies durch einen Wechsel in den Timesync-State. Jeder Teilnehmer wechselt nach wiederholen der Nachricht in den entsprechenden Schritt. 
+	Wird ein Benchmark gestartet erfolgt dies durch einen Wechsel in den Timesync-State. Jeder Teilnehmer wechselt nach der Wiederholung der Nachricht in den entsprechenden Schritt. 
 	\item[\textit{\textbf{Transition to Report}}:]
-	Das Reporting wird über den Report-State abgehandelt. Nur der Teilnehmer von welchem Reports angefordert wurden, wechselt in den Report-State. 
+	Das Reporting wird über den Report-State abgehandelt. Nur der Teilnehmer, von welchem Reports angefordert wurden, wechselt in den Report-State. 
 \end{description} 	
 	
 \paragraph{Timesync}
-Der Master verteilt die Zeitsynchronisation an die Slaves. Die Slaves synchronisieren sich auf das Signal des Masters auf, sofern sie in seiner Reichweite liegen. Sobald ein Slave synchronisiert ist, fängt er an die Zeitsynchronisation ebenfalls zu verteilen. Dadurch können Slaves, welche nicht über einen Hop vom Master erreicht werden sich ebenfalls synchronisieren. Konnte ein Slave keine Zeitsynchronisation durchführen, wechselt dieser in den  \textit{Control-State} zurück und bringt einen Fehler mittels der roten-LED zur Anezige. Der Master wird immer zum nächsten Schritt voranschreiten. 	
+Der Master verteilt die Zeitsynchronisation an die Slaves. Die Slaves synchronisieren sich auf das Signal des Masters auf, sofern sie in seiner Reichweite liegen. Sobald ein Slave synchronisiert ist, beginnt er ebenfalls mit der Verteilung der Zeitsynchronisation.
+Dadurch können Slaves, welche nicht über einen Hop vom Master erreicht werden, sich ebenfalls synchronisieren.
+Konnte ein Slave keine Zeitsynchronisation durchführen, wechselt dieser in den  \textit{Control-State} zurück und bringt einen Fehler mittels der roten-LED zur Anzeige. Der Master wird immer zum nächsten Schritt voranschreiten. 	
 
 \paragraph{Init Benchmark}
 Im Init Benchmark State werden die Mesh Stacks auf allen Teilnehmern initialisiert und anschliessend gestartet.
 Das Netzwerk hat nun Zeit sich aufzubauen, falls dies notwendig ist.
-Vor dem Initialisieren des Mesh-Stacks löscht jeder Node die Log-Daten aus dem Flash, sowie dem RAM.
+Vor dem Initialisieren des Mesh-Stacks löscht jeder Node die Log-Daten aus dem Flash und dem RAM.
 Beim Client wird zusätzlich der Sendezeitpunkt der Benchmark-Nachrichten berechnet und vorbereitet.
 Hat sich der Slave erfolgreich initialisiert und mit dem Netzwerk verbunden, leuchtet das grüne Status-LED auf.
 Der Wechsel zum Benchmark State wird unabhängig vom Verbindungsstatus nach einer vordefinierten Verzögerungszeit ausgelöst.
 
 \paragraph{Benchmark}
 Die Statemachine wartet in diesem Schritt auf die Auslösung von Events.
-Beim Server überlässt sie dem Mesh-Stack das Loggen der empfangenen Nachrichten, welcher über einen eigenen Event-Handler verfügt.
+Beim Benchmark-Server überlässt sie dem Mesh-Stack das Loggen der empfangenen Nachrichten, welcher über einen eigenen Event-Handler verfügt.
 Beim Client plant die Statemachine den Versand von Nachrichten mittels Timer-Interrupts.
 Löst ein solcher Timer-Interrupt aus, wird der Mesh-Stack unmittelbar benachrichtigt.
 Die Erfassung der Logdaten erfolgt ebenfalls im Stack.
-Der Status des einzelnen Slaves (Licht EIN / Aus) ist über die grüne RGB-LED (Client) respektive die blaue RGB-LED (Server) erkennbar.
-Nach der eingestellten Benchmark-Zeit, löst der Letzte Timer-Interrupt aus und die Abarbeitung des Mesh-Stacks wird unterbrochen.
+Der Status des einzelnen Slaves (Licht Ein / Aus) ist über die grüne RGB-LED (Benchmark-Client) respektive die blaue RGB-LED (Benchmark-Server) erkennbar.
+Nach dem ablaufen der eingestellten Benchmark-Zeit löst der letzte Timer-Interrupt aus und die Abarbeitung des Mesh-Stacks wird unterbrochen.
 Es folgt der Wechsel zum letzten Schritt.
 
 \paragraph{Save Flash}
 Die erfassten Benchmark Logdaten werden vom RAM ins Flash geschrieben.
-Die Speicherung der Log-Daten aus dem im Flash ist notwendig damit diese auch noch einem Neustart persistent bleiben.
+Die Speicherung der Log-Daten im Flash ist notwendig, damit diese auch nach einem Neustart persistent bleiben.
 Anschliessend wird der Mesh-Stack durch einen Reset des Mikrocontrollers heruntergefahren und neu gestartet.
-Dies ist notwendig um sicherzustellen, das der Stack komplett gestoppt ist und das Radio-Interface dem Benchmark Management zur Verfügung steht.
+Dies ist wiederum notwendig um sicherzustellen, dass der Stack komplett angehalten wurde und somit das Radio-Interface dem Benchmark Management zur Verfügung steht.
 Zudem soll ein neuer Benchmark ohne Vorbelastung gestartet werden können.
 Nach dem Reset beginnt die Statemachine automatisch wieder von vorne im Init-State. 
 
 \paragraph{Reports}
 Das Einholen von Reports ist nur über eine direkte Verbindung vom Master zum Slave möglich.
 Die Übertragung der Log-Einträge erfolgt über ein abgesichertes Handshake-Verfahren.
-Der Master sendet eine Anfrage und verlangt beim Slave den n-ten Log-Eintrag.
+Der Master sendet eine Anfrage und verlangt beim Slave den \textit{n-ten} Log-Eintrag.
 Der Slave antwortet auf die Anfrage mit dem entsprechenden Log-Eintrag.
 Hat der Master diesen erhalten, so verlangt er den nächst höheren Eintrag.
-Andernfalls verlangt der Master den selben Eintrage erneut.
-Ist die Übetragung zu oft fehlgeschlagen wird das Reporting abgebrochen.
+Falls der aktuelle Log-Eintrag nicht angekommen ist, verlangt der Master den selben Eintrage erneut.
+Ist die Übertragung zu oft fehlgeschlagen, wird das Reporting abgebrochen.
 Master wie auch Slave wechseln nach erfolgreichem oder abgebrochenem Reporting in den Control-State.  
 
 \subsubsection{Timesync}\label{subsubsec:Timesync}
 Die Zeitsynchronisation wurde identisch wie im Point to Point Teil gemäss Abschnitt \ref{sec:ZeitsynchronisationP2P} umgesetzt.
-Durch die Wiederholung der Master-Timestamps bei jedem Hop, nimmt der Synchronisationsfehler stetig zu.
+Durch die Wiederholung der Master-Timestamps bei jedem Hop nimmt der Synchronisationsfehler stetig zu.
 Angenommen pro Hop entsteht ein maximaler Fehler von 1.2$\mu$s, so wäre der maximale Fehler nach sieben Hops bereits 8.4$\mu$s gross.
-Dieser Fehler ist noch immer vernachlässigbar klein verglichen mit dem Clock-Drift der zusätzlich vorhanden ist.
+Dieser Fehler ist noch immer vernachlässigbar klein verglichen mit dem Clock-Drift, der zusätzlich vorhanden ist.
 Die Genauigkeit des Quarz-Oszilators auf dem nRF52840 liegt bei $\pm$ 10ppm \cite{nordic_semiconductor_asa_nrf52840_ps_v11pdf_nodate}.
 Das ergibt pro Sekunde ein maximalen Clock-Drift von 20$\mu$s. 
 
@@ -196,7 +198,7 @@ Um die Funktionen von Master und Slave zu unterscheiden, wurde eine Subscribe- s
 Der Master verteilt den Timestamp über die Publish-Funktion.
 Der Slave reagiert auf Timesync-Pakete mittels Subscribe Funktion.
 Erhält der Slave ein Timesync-Paket, wiederholt dieser das Frame mittels Publish-Funktion.
-Vor dem weiterleiten mittels Pusblish muss ein zufälliger Timeslot abgewartet werden, damit es nicht zu Kollisionen zwischen den Timesync-Paketen kommt.
+Vor dem Weiterleiten mittels Publish muss ein zufälliger Timeslot abgewartet werden, damit es nicht zu Kollisionen zwischen den Timesync-Paketen kommt.
 Die maximale Backoff-Zeit wird gemäss Abschnitt \ref{sec:BroadcastingCollissionsProbability} berechnet.
 Dementsprechend muss das Zeitfenster zur Synchronisation genügend lang sein, damit sich alle Teilnehmer synchronisieren können.
 
@@ -204,11 +206,11 @@ Ein Timesync-Paket setzt sich aus folgenden Feldern zusammen:
 
 \begin{itemize}
 \item \textit{uint64\_t} \textbf{LastTxTimestamp:}
-	Gibt den Zeitstempel (Master-Zeit) an welcher zum Versandzeitpunkt des Probepakets erfasst wurde.
+	Gibt den Zeitstempel (Master-Zeit) an, welcher zum Versandzeitpunkt des Probepakets erfasst wurde.
 \item \textit{uint64\_t} \textbf{NextState\_TS\_us:}
-	Definiert den Zeitpunkt um in den nächsten Schritt zu wechseln.
+	Definiert den Zeitpunkt bei dem zum nächsten Schritt gewechselt werden kann.
 \item \textit{uint32\_t} \textbf{MAC\_Address\_LSB:}
-	Die Identifizierung des Time-Masters. Muss mit jener Addresse des zuvor empfangenen Pakets übereinstimmen.
+	Identifiziert den Time-Masters. Diese MAC Adresse muss mit jener Addresse des zuvor empfangenen Pakets übereinstimmen.
 \item \textit{uint8\_t} \textbf{seq:}
 	Aufsteigende Nummer um jedes Times-Sync Paket zu identifizieren. Der Slave prüft ob das eingehende Paket das direkt Folgende des zuvor erhaltenen Pakets ist.
 \end{itemize}
@@ -222,53 +224,50 @@ Analog zu den im Abschnitt \ref{subsubsec:Timesync} definierten Publish- und Sub
 Eine Control-Message beinhaltet die folgenden Felder:
 
 \begin{itemize}
-	\item \textit{uint32\_t} \textbf{MACAddressDst:} Control-Messages erfüllen den Zweck den Zustand eines Teilnehmers oder den aller Teilnehmer zu ändern.
+	\item \textit{uint32\_t} \textbf{MACAddressDst:} Control-Messages erfüllen den Zweck, den Zustand eines Teilnehmers oder aller Teilnehmer zu ändern.
 Dazu wurde dieses Feld als Ziel MAC-Adresse festgelegt. Die MAC-Adresse 0xFFFFFFFF ist als Broadcast definiert.
 	
-	\item \textit{uint8\_t} \textbf{depth:} Depth steht für die Anzahl Relays die die Nachricht bereits passiert hat.
+	\item \textit{uint8\_t} \textbf{depth:} Depth steht für die Anzahl Relays, die die Nachricht bereits passiert hat.
 	Der Master sendet immer mit der Depth 0.
 	Wird ein Paket relayed (wiederholt) wird das Depth-Feld inkrementiert.
-	Empfängt der Node ein Paket mit einer Depth die höher ist als jene des zuletzt empfangenen Pakets, so wird das Paket nicht erneut gesendet.
-	Die zuletzt empfangene Depth ist nur eine gewisse Zeit gültig um auf Veränderungen im Netzaufbau reagieren zu können.
+	Empfängt der Node ein Paket mit einer Depth, die höher ist als jene des zuletzt empfangenen Pakets, so wird das Paket nicht erneut gesendet.
+	Die zuletzt empfangene Depth ist nur eine gewisse Zeit gültig, um auf Veränderungen im Netzaufbau reagieren zu können.
 	Abbildung \ref{fig:ControlMessagesHops} zeigt die Verbreitung einer Control Message mithilfe des Depth-Feldes.
 	
-	
+	\item \textit{div.} \textbf{Control-Parameter:} Die restlichen Felder sind Parameter welche den Zustand des Nodes verändern oder Parameter übergeben (siehe Abschnitt \ref{subsubsec:CLI}).
+\end{itemize}
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{Control_Hops.png}
 \caption{Konzept des Depth-Feld beim Versand einer Control Message}\label{fig:ControlMessagesHops}
 \end{figure}
 
-	
-	\item \textit{div.} \textbf{Control-Paramter} Die restlichen Felder sind Parameter welche den Zustand des Nodes verändern oder Parameter übergeben. 
-\end{itemize}
-
-
-Ein Teilnehmer signalisiert über aufblinken der grünen-LED seine Bereitschaft um weitere Control Messages verarbeiten zu können. Blinkt die blaue-LED auf zeigt dies an das der Teilnehmer eine Zustands- oder Parameteränderung erhalten hat. 
+Ein Teilnehmer signalisiert über aufblinken der grünen-LED seine Bereitschaft, weitere Control Messages verarbeiten zu können. Blinkt die blaue-LED auf, zeigt dies an, dass der Teilnehmer eine Zustands- oder Parameteränderung erhalten hat. 
 
 Das Abfragen von Control-Messages erfolgt durch Pollen.
-Dies hat den Ursprung, das nicht bei allen SDK's der Interrupt des Radio-Interfaces frei ist.
+Dies hat den Ursprung, dass nicht bei allen SDK's der Interrupt des Radio-Interfaces frei ist.
 
 
 \subsubsection{Report}\label{subsubsec:Report}
 
-Wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben, versendet der Master Anfragen an einen Slave um dessen Reports einzuholen.
-Dazu wird eine Control-Message vom Master initiiert um den Slave in den Reporting Zustand zu versetzen.
-Diese Nachricht wird zwar relayed jedoch funktioniert das anschliessende Reporting nur über eine direkte Verbindung.
+Wie bereits in Abschnitt \ref{subsubsec:StatemachineSoftware} beschrieben, versendet der Master Anfragen an einen Slave, um dessen Reports einzuholen.
+Dazu wird eine Control-Message vom Master initiiert, um den Slave in den Reporting Zustand zu versetzen.
+Diese Nachricht wird zwar an die weiteren Teilnehmern weitergeleitet, jedoch funktioniert das anschliessende Reporting nur über eine direkte Verbindung.
 
-Das Reporting teilt sich in eine Subscribe und Publish-Funktion auf.
-Der Master subcribed auf Reports und sendet Report Requests an den Slave.
+Das Reporting teilt sich in eine Subscribe-Funktion und eine Publish-Funktion auf.
+Der Master registriert sich auf Reports und sendet Report Requests an den Slave.
 Der Slave erwartet in der Publish-Funktion Report-Requests des Masters.
 Erhält ein Slave einen Request, so antwortet er dem Master mit dem verlangten Eintrag.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{Reporting_Flowchart.png}
-	\caption{Ablauf des Reportings mit Handshake zwischen Master und Slave}\label{fig:ReportingAblauf}
+	\caption{Ablauf des Reportings mit Handshake zwischen Master und Slave.}\label{fig:ReportingAblauf}
 \end{figure}
 
-Die Abbildung \ref{fig:ReportingAblauf} zeigt den Ablauf des Reportings beispielhaft.
-Mithilfe des Handshake Verfahren (siehe Abschnitt \ref{subsubsec:StatemachineSoftware}) wird der Report-Entry 2 nochmals angefordert, da dieser nicht erfolgreich beim Master angekommen ist.
+Abbildung \ref{fig:ReportingAblauf} zeigt den Ablauf des Reportings anhand eines Beispiels.
+Mithilfe des Handshake-Verfahrens (siehe Abschnitt \ref{subsubsec:StatemachineSoftware}) wird der Report-Entry 2 nochmals angefordert, da dieser nicht erfolgreich beim Master angekommen ist.
 
 Sobald der Report als ungültig erkannt wird, wird das Reporting beidseitig beendet.
 Dies geschieht durch die Prüfung des Zeitstempel-Feldes des jeweiligen Report Eintrages auf den Wert Null.
@@ -277,68 +276,68 @@ Falls keine Verbindung zustande kommt, brechen Master sowie Slave nach einer bes
 
 \subsubsection{Logging}\label{subsubsec:Logging}
 Das Logging-Modul ist für die Verwaltung der Log-Daten im RAM sowie im FLASH zuständig.
-Es definiert das Format eines Log-Eintrages welcher bereits in Abschnitt \ref{subsubsec:Messgrössen} vorgestellt wurde.
+Es definiert das Format eines Log-Eintrages, welcher bereits in Abschnitt \ref{subsubsec:Messgrössen} vorgestellt wurde.
 Die Länge eines Eintrages erreicht eine Grösse von 28 Byte.
 Sämtliche Einträge werden durch das Modul als Array mit 3000 Log-Einträgen gespeichert.
-Diese Konstante Array Grösse kommt folgendermassen zustande.
+Diese konstante Grösse für das Array kommt folgendermassen zustande.
 Pro Client können maximal 1000 Nachrichten verschickt werden.
 Ein Server soll mit maximal drei Clients in der selben Gruppe sein.
 Damit er alle Einträge aufnehmen kann, wurde die Länge des Arrays auf 3000 festgelegt.
 Somit müssen 84kByte RAM und Flash für das Log zur Verfügung stehen. Die im Ablauf benötigten Funktionen des Moduls lassen sich folgendermassen beschreiben. 
 
 \begin{itemize}
-	\item \textit{\textbf{bm\_log\_clear\_ram():}} Wird genutzt um alle Log-Einträge aus dem RAM zu entfernen.
-	\item \textit{\textbf{bm\_log\_append\_ram():}} Fügt einen Log-Eintrag dem RAM hinzu. Das Modul verwaltet selbst den nächsten freien Index. 
-	\item \textit{\textbf{bm\_log\_clear\_flash():}} Bewirkt ein Löschen des gesamten Logs im FLASH. 
-	\item \textit{\textbf{bm\_log\_save\_to\_flash():}} Schreibt den gesamten Log vom RAM in das FLASH. 
-	\item \textit{\textbf{bm\_log\_load\_from\_flash():}} Lädt den gesamten Log vom FLASH in das RAM. 
-	\item \textit{\textbf{bm\_log\_init():}} Initialisiert das Logging-Modul.
+	\item \textit{\textbf{bm\_log\_clear\_ram()}} wird genutzt, um alle Log-Einträge aus dem RAM zu entfernen.
+	\item \textit{\textbf{bm\_log\_append\_ram()}} fügt einen Log-Eintrag dem RAM hinzu. Das Modul verwaltet selbst den nächsten freien Index. 
+	\item \textit{\textbf{bm\_log\_clear\_flash()}} bewirkt ein Löschen des gesamten Logs im FLASH. 
+	\item \textit{\textbf{bm\_log\_save\_to\_flash()}} schreibt den gesamten Log vom RAM in das FLASH. 
+	\item \textit{\textbf{bm\_log\_load\_from\_flash()}} lädt den gesamten Log vom FLASH in das RAM. 
+	\item \textit{\textbf{bm\_log\_init()}} initialisiert das Logging-Modul.
 \end{itemize} 
 
 Die Abarbeitung des Flash Moduls wurde bei Zephyr direkt in diesem Log-Modul integriert.
-Handelt es sich um eine nRF-SDK findet das Handling des Flashs in einem separaten Modul statt (siehe Abschnitt \ref{subsubsec:FlashSave}).
+Handelt es sich um eine nRF-SDK, findet das Handling des Flashs in einem separaten Modul statt (siehe Abschnitt \ref{subsubsec:FlashSave}).
 
 Zephyr organisiert die Flash-Bereiche mithilfe eines Device-Tree-Source-Files (DTS).
 Darin werden verschiedene Partitionen definiert.
-Die Partition in welchen die Daten gespeichert werden, ist vom Bootloader für ein DFU-Upgrade reserviert.
-Sofern kein DFU-Upgrade im Gange ist kann der Bereich beliebig genutzt werden. Die Partition muss mindestens 84kByte zur Verfügung stellen.
-Der Zugriff auf das Flash ist über das Zephyr OS geregelt welches einen Flash-Treiber zur Verfügung stellt.
+Die Partition, in welcher die Daten gespeichert werden, ist vom Bootloader für ein DFU-Upgrade reserviert.
+Sofern kein DFU-Upgrade im Gange ist, kann der Bereich beliebig genutzt werden. Die Partition muss mindestens 84kByte zur Verfügung stellen.
+Der Zugriff auf das Flash ist über das Zephyr OS geregelt, welches einen Flash-Treiber zur Verfügung stellt.
 Dieser kann eine Pages-Grösse von 4kByte löschen. 
 
 
 \subsubsection{Flash Save}\label{subsubsec:FlashSave}
 Das Modul Flash Save wird zur Speicherung von Daten im FLASH benutzt.
-Dies geschieht mit Hilfe der Flash-Device-Storage (FDS) API, welche in der \textit{nRF SDK for Mesh}, sowie in der \textit{nRF SDK for Thread and Zigbee} angeboten wird.
+Dies geschieht mit Hilfe der Flash-Device-Storage (FDS) API, welche in der \textit{nRF SDK for Mesh} sowie in der \textit{nRF5 SDK for Thread and Zigbee} angeboten wird.
 Sie erlaubt die Speicherung von Daten im Flash und implementiert ein \textit{Basic-Wearleveling}.
 
 Das FDS-Modul beginnt, falls nicht anders vorgesehen, direkt unterhalb der Bootloader-Adresse mit der Speicherung der Daten im Flash.
-Mittels der \textit{sdk-config.h} Konfiguration werden die Länge des Flash-Bereichs und weitere Einstellungen für das FDS-Modul festgelegt.
+Mittels der Konfiguration die im File \textit{sdk-config.h} definiert ist, werden die Länge des Flash-Bereichs und weitere Einstellungen für das FDS-Modul festgelegt.
 Die abzuspeichernden Daten werden in Records unterteilt.
 Zur Abspeicherung der Log-Daten wurde nur ein Record verwendet \cite{nordic_semi_nrf5_sdk_flash_data_storage_2020}.
 
 
 
 \subsubsection{CLI}\label{subsubsec:CLI}
-Mit diesem Modul werden Ein- / Ausgaben über das Command-Line-Interface (CLI) ermöglicht.
+Mit diesem Modul werden Ein- und Ausgaben über das Command-Line-Interface (CLI) ermöglicht.
 Die einfachste Funktionalität ist die Ausgabe über einen Log-Befehl.
 Dieser ist mittels \textit{bm\_cli\_log("Hello")} aufrufbar.
 Das Kommando wird auf die jeweilige Umgebung (SDK) angepasst.
-Bei den \textit{nRF SDK's} werden Logs mittels dem \textit{NRF\_LOG()} Befehl, bei \textit{Zephyr} mittels \textit{printk()} ausgegeben.
+Bei den \textit{nRF SDK's} werden Logs mittels dem \textit{NRF\_LOG()} Befehl und bei \textit{Zephyr} mittels \textit{printk()} ausgegeben.
 
 Die zentrale Funktionalität des Moduls bezieht sich auf die Verarbeitung von CLI-Befehlen.
-Dafür werden verschiedene CLI-Befehlssätze angeboten, welche im Sub-Modul \textit{bm\_cli\_cmds.c} definiert sind.
+Dafür werden verschiedene CLI-Befehlssätze angeboten, welche im Sub-Modul \textit{bm\_cli\_cmds.c} definiert sind:
 
 \begin{itemize}
 	\item \textit{\textbf{setNodeSettings:}} Mithilfe dieses Befehlssatzes können die Einstellungen eines Slaves (Server/Clients) geändert werden. Eine Eingabe muss folgendes Format haben:
-	\textit{setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1> \linebreak <DST\_MAC\_2> <DST\_MAC\_3>}.
-	Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{MeshBenchmarkKonzeptundTestumgebung} angedeutet.
+	\textit{setNodeSettings <MAC in Integer format> <GroupNumber> <Node Id> <Ack> <AdditionalPayloadSize> <BenchmarkTrafficGenMode> <DST\_MAC\_1>  <DST\_MAC\_2>\linebreak <DST\_MAC\_3>}.
+	Die Bedeutung der einzelnen Felder ist in Abschnitt \ref{subsubsec:NodeConfiguration} beschrieben.
 	\item \textit{\textbf{getNodeReport:}} Mithilfe dieses Befehlssatzes können die Reports eines Slaves (Server/Clients) abgefragt werden. Eine Eingabe muss folgendes Format haben: 
-	\textit{getNodeReport <MAC in Integer format>}. Die Bedeutung der einzelnen Felder sind in Abschnitt \ref{subsubsec:NodeIdentification} angedeutet. 
+	\textit{getNodeReport <MAC in Integer format>}.
 	\item \textit{\textbf{startBM:}} Mithilfe dieses Befehlssatzes wird ein Benchmark gestartet. Eine Eingabe muss folgendes Format haben:
-	\textit{startBM <BenchmarkTime (seconds)> <BenchmarkPacketsCount>}. Das erste Feld gibt die Benchmark Zeit in Sekunden an. Beim zweiten Feld handelt es sich um die Anzahl Nachrichten welche versendet werden sollen. 
+	\textit{startBM <BenchmarkTime (seconds)> <BenchmarkPackets\linebreak Count>}. Das erste Feld gibt die Benchmarkzeit in Sekunden an. Beim zweiten Feld handelt es sich um die Anzahl Nachrichten, welche versendet werden sollen. 
 \end{itemize}
 
-Erhält der Master eine der oben erwähnten Befehlssätze löst dieser eine entsprechende Control-Message aus.
+Erhält der Master eine der oben erwähnten Befehlssätze löst, dieser eine entsprechende Control-Message aus.
 Die zugewiesenen Parameter werden ebenfalls mithilfe des Moduls abgespeichert und initialisiert. 
 
 
@@ -347,15 +346,15 @@ Im folgenden Modul werden die Sende-Zeitwerte von Nachrichten generiert.
 Das Konzept dazu wurde bereits in Abschnitt \ref{subsec:TrafficGeneration} erläutert.
 Dabei wird zwischen zufälligen und sequentiellen Werten unterschieden.  
 
-Wird eine Messung mit sequentiellen Werten gestartet erstellt dieses Modul, abhängig von den Benchmark-Parametern, eine Abfolge gemäss der bereits erwähnten Formel \ref{eq:TrafficGenerationSeq}.
+Wird eine Messung mit sequentiellen Werten gestartet, erstellt dieses Modul, abhängig von den Benchmark-Parametern, eine Abfolge gemäss der bereits erwähnten Formel \ref{eq:TrafficGenerationSeq}.
 
-Wird eine Messung mit zufälligen Werten gestartet erstellt dieses Modul, abhängig von den Benchmark-Parametern, ein neu generiertes Set oder verwendet ein bereits vorhandenes Set an zufälligen Werten.
-Es existieren 25 verschiedene vordefinierte Sets welche vorgängig über die Webseite \textit{random.org\footnote{\url{https://www.random.org/}}} erzeugt wurden.
+Wird eine Messung mit zufälligen Werten gestartet, erstellt dieses Modul, abhängig von den Benchmark-Parametern, ein neu generiertes Set oder verwendet ein bereits vorhandenes Set an zufälligen Werten.
+Es existieren 25 verschiedene vordefinierte Sets, welche vorgängig über die Webseite \textit{random.org\footnote{\url{https://www.random.org/}}} erzeugt wurden.
 Die Einstellungen, welche zur Erzeugung der Werte verwendet wurden, sind im Anhang \ref{app:RandomTrafficGeneration} zu finden.
 
-Wurde ein Set festgelegt werden diese Werte mittels eines \textit{Bubble-Sort} Algorithmus in aufsteigender Reihenfolge sortiert.
+Wurde ein Set festgelegt, werden diese Werte mittels eines \textit{Bubble-Sort} Algorithmus in aufsteigender Reihenfolge sortiert.
 Anschliessend müssen die Werte auf den Zeitbereich des Benchmarks skaliert werden.
-Da es isch bei den zufällig generierten Werten um \textit{uInt16} Datentypen handelt liegt der Wertebereich zwischen 0-65535.
+Da es sich bei den zufällig generierten Werten um \textit{uInt16} Datentypen handelt, liegt der Wertebereich zwischen 0-65535.
 Die Werte werden gemäss Formel \ref{eq:TrafficGenerationRand} berechnet. 
 
 \begin{equation}\label{eq:TrafficGenerationRand}
@@ -374,9 +373,9 @@ T_{Msg\_send} =  \frac{V_{Rand}}{UINT16MAX} \cdot T_{Benchmark}
 \end{small}
 
 \subsubsection{Low Level Radio}\label{subsubsec:LowLevelRadio}
-Der Low-Level-Radio Treiber soll möglichst unabhängig direkt mit dem Radio-Interface operieren.
+Der Low Level Radio Treiber soll möglichst unabhängig direkt mit dem Radio-Interface operieren.
 Er stellt die für die Verwaltung der Messung notwendigen Funktionen zur Verfügung.
-Senden oder Empfangen von Daten sollen mittels einfachen Aufrufen möglich sein.
+Senden oder Empfangen von Daten wird mittels einfachen Aufrufen realisiert.
 
 Das Radio-Interface wird beinahe identisch zur P2P-Testinfrastruktur bedient (siehe Abschnitt \ref{sec:LowLevelRadioDriver}).
 Lediglich auf die Verwendung von Interrupts musste verzichtet werden, da die meisten Radio-Driver der Mesh-Stacks diese bereits belegt haben.
@@ -386,16 +385,16 @@ Somit wurden die Events durch Pollen abgefragt.
 
 \subsection{Benchmark Management}\label{subsec:Benchmark Management}
 
-Um die Verwaltung einer Messung zu automatisieren stehen folgende Python-Scripts zur Verfügung.
+Um die Verwaltung einer Messung zu automatisieren stehen untenstehende Python-Scripts zur Verfügung.
 Die Scripts werden auf der BMS (Benchmark Management Station) ausgeführt.
 Die Konfiguration der Teilnehmer wird mittels einem Excel-File durchgeführt (siehe Abschnitt \ref{subsubsec:NodeConfiguration}). 
 
 
 \subsubsection{Flasher}\label{subsubsec:Flash}
-Dieses Script dient dazu alle nRF52-Dongles mit der entsprechenden Firmware zu flashen.
-Dazu liest das Script die Konfigurationsdatei aus.
-Mithilfe der dort vorhanden Informationen fordert das Script den Benutzer dazu auf den Dongle mit der entsprechenden Nummer via USB Buchse mit dem PC zu verbinden.
-Sobald der Dongle eingesteckt wurde beginnt das Script mit dem Flashen.
+Dieses Script dient dazu, alle nRF52-Dongles mit der entsprechenden Firmware zu flashen.
+Hierzu liest das Script die Konfigurationsdatei aus.
+Mithilfe der dort vorhanden Informationen fordert das Script den Benutzer dazu auf, den Dongle mit der entsprechenden Nummer via USB Buchse mit dem PC zu verbinden.
+Sobald der Dongle eingesteckt wurde, beginnt das Script mit dem Flashen.
 Dies geschieht mit Hilfe des nrfutil-Tools. 
 
 \subsubsection{Configurator}\label{subsubsec:Configurator}
@@ -405,13 +404,13 @@ Mittels dem an der BMS angeschlossenen Masters versendet das Script den entsprec
 
 \subsubsection{Benchmark and Reporter}\label{subsubsec:BenchmarkandReporter}
 Über dieses Script wird entweder eine Messung gestartet oder die Resultate einer vorhergehenden Messung eingeholt.
-Wird ein neuer Benchmark initiiert muss der Benutzer die Benchmark-Parameter angeben.
-Anschliessend startet das Script über den angeschlossenen Master den Vorgang.
+Wird ein neuer Benchmark initiiert, muss der Benutzer die Benchmark-Parameter angeben.
+Anschliessend startet das Script den Vorgang über den angeschlossenen Master.
 Während der Messung zeigt das Script die Meldungen des Masters an.
 
 Nach Abschluss der Messung können die Reports mithilfe des Scripts eingeholt werden.
-Dazu fordert das Script den Benutzer auf sich in die Nähe des ersten Slaves zu begeben.
-Nach der Bestätigung beginnt das Script damit die Daten des Slaves einzusammeln.
+Dazu fordert das Script den Benutzer auf, sich in die Nähe des ersten Slaves zu begeben.
+Nach der Bestätigung durch den Benutzer beginnt das Script damit, die Daten des Slaves einzusammeln.
 Nach dem Einsammeln aller Daten der Slaves schreibt das Script die Werte in ein CSV-File. 
 
 %\subsubsection{Analysis}\label{subsubsec:Analysis}

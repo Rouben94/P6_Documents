@@ -3,29 +3,27 @@
 \section{Einleitung}\label{sec:Einleitung}
 
 Das \textit{Internet der Dinge} und \textit{Industrie 4.0} sind in der Technikszene die Schlagwörter der Stunde.
-Sei es im Heimbereich oder in der Industrie, die intelligente Vernetzung von Sensoren und Aktoren wird immer wichtiger bei der Entwicklung neuer Produkte.
-Eine Beleuchtung die nicht via Handy gesteuert werden kann, ist in der heutigen Zeit kaum mehr zu verkaufen.
-Alles muss \textit{Smart} und miteinander vernetzt sein.
-Und wenn möglich soll dies ohne Zusatzaufwand und Zusatzkosten möglich gemacht werden.
-Systeme mit geringem Installationsaufwand und geringen Hardwarekosten sind also gefragt.
+Insbesondere im Heimbereich oder in der Industrie wird die intelligente Vernetzung von Sensoren und Aktoren immer wichtiger bei der Entwicklung neuer Produkte.
+Eine Beleuchtung, die nicht via Handy bedienbar ist, kann in der heutigen Zeit kaum mehr verkauft werden.
+Alles muss \textit{Smart} und miteinander vernetzt sein und wenn möglich soll es keinen Zusatzaufwand und keine Zusatzkosten verursachen.
+Systeme mit geringem Installationsaufwand und geringen Hardwarekosten sind also bei den Konsumentinnen und Konsumenten sehr gefragt.
 
-Die kabellose Vernetzung zu sogenannten \textit{Wireless Sensor Networks}, kurz \textit{WSN} scheint hier ideal.
-Um die Kommunikation in solchen \textit{WSN} gewährleisten zu können, sind keine oder nur sehr einfache Installationen nötig, da auf eine Verkabelung teilweise oder sogar ganz verzichtet werden kann.
-Durch den Einsatz von Systemen die ein sogenanntes \textit{Mesh Netzwerk} bilden, können auch grosse Gebiete auf einfachste Art und Weise abgedeckt werden. 
+Die kabellose Vernetzung zu sogenannten \textit{Wireless Sensor Networks}, kurz \textit{WSN}, scheint hier ideal, um die Kommunikation gewährleisten zu können.
+Denn es sind keine bzw. nur sehr einfache Installationen nötig, da auf eine Verkabelung teilweise oder sogar ganz verzichtet werden kann.
+Durch den Einsatz von Systemen, die ein sogenanntes \textit{Mesh Netzwerk} bilden, können auch grosse Gebiete auf einfachste Art und Weise abgedeckt werden. 
 Systeme für solche Vernetzungen gibt es auf dem Markt einige, doch viele davon sind proprietär und daher oft nicht kompatibel mit Fremdsystemen.
-Die drei Protokolle \textit{Bluetooth Mesh}, \textit{Thread} sowie \textit{ZigBee}, um die sich diese Bachelor Thesis dreht, sind diesbezüglich anders.
-Sie wurden von der jeweiligen Organisation spezifiziert, standardisiert und veröffentlicht und können daher Hersteller übergreifend eingesetzt werden.
+Die drei Protokolle \textit{Bluetooth Mesh}, \textit{Thread} sowie \textit{Zigbee}, die die Schwerpunkte dieser Bachelor Thesis bilden, sind diesbezüglich anders.
+Sie wurden von der jeweiligen Organisation spezifiziert, standardisiert und veröffentlicht und können daher herstellerübergreifend eingesetzt werden.
 
 Alle drei erwähnten Mesh Protokolle besitzen Stärken und Schwächen im Bezug auf deren Leistungsfähigkeit und sind teilweise einfacher oder eben aufwändiger in der Handhabung.  
-Diese Stärken und Schwächen sollen in der vorliegenden Arbeit aufgespürt und offengelegt werden.
-Dazu wird ein qualitativer Vergleich unter realen Anwendungsbedingungen gezogen.
-Ein Benchmark soll zeigen welches der drei Protokolle die geringste Latenzzeit und den geringsten Paketverlust aufweist, um nur zwei der Vergleichspunkte zu nennen.
-Als eigenständiger Teil dieser Arbeit werden zudem die beiden Protokollstandards der MAC Ebenen von \textit{Bluetooth Mesh} mit \textit{Bluetooth Low Energy} sowie von \textit{Thread} und \textit{ZigBee} mit dem \textit{IEEE 802.15.4} Standard, untersucht.
+Diese Stärken und Schwächen werden in der vorliegenden Arbeit aufgespürt und offengelegt.
+Dazu wird ein qualitativer Vergleich unter realen Anwendungsbedingungen vorgenommen.
+Ein Benchmark wird insbesondere zeigen, welches der drei Protokolle die geringste Latenzzeit und den geringsten Paketverlust aufweist.
+Als eigenständiger Teil dieser Arbeit werden zudem die beiden Protokollstandards der MAC Ebenen von \textit{Bluetooth Mesh} mit \textit{Bluetooth Low Energy} sowie von \textit{Thread} und \textit{ZigBee} mit dem \textit{IEEE 802.15.4} Standard untersucht.
 
-Der vorliegende Bericht ist in 6 Teile gegliedert.
+Der vorliegende Bericht ist in sechs Teile gegliedert.
 Nach einer kurzen Übersicht zum Thema und den Zielen dieser Bachelor Thesis wird im Teil \ref{part:PointtoPointTestinfrastruktur} die Point to Point Testinfrastruktur auf MAC Ebene behandelt.
 Anschliessend wird im Teil \ref{part:MeshBenchmarkKonzeptundUmsetzung} das Konzept und die Umsetzung des Mesh Benchmarks beschrieben.
-In den Teilen \ref{part:BluetoothMesh}, \ref{part:Thread} und \ref{part:Zigbee} welche jeweils individuell von Raffael Anklin (\ref{part:BluetoothMesh}), Robin Bobst (\ref{part:Thread}) und Cyrill Horath (\ref{part:Zigbee}) verfasst wurden, werden die 3 Protokollstacks \textit{Bluetooth Mesh}, \textit{Thread} und \textit{ZigBee} detailliert behandelt.
-Mit dem abschliessenden Teil \ref{part:MeshBenchmarkResultateundVergleich} werden sämtliche Resultate des Benchmarks aufgezeigt und als Vergleich der Protokolle interpretiert.
-\todo[inline]{Raffi: Gegenlesen}
+In den Teilen \ref{part:BluetoothMesh}, \ref{part:Thread} und \ref{part:Zigbee}, welche jeweils individuell von Raffael Anklin (\ref{part:BluetoothMesh}), Robin Bobst (\ref{part:Thread}) und Cyrill Horath (\ref{part:Zigbee}) verfasst wurden, wird auf die drei Protokollstacks \textit{Bluetooth Mesh}, \textit{Thread} und \textit{ZigBee} detailliert eingegangen.
+Mit dem abschliessenden Teil \ref{part:MeshBenchmarkResultateundVergleich} werden sämtliche Resultate des Benchmarks aufgezeigt und die drei Mesh Protokolle verglichen.
 
