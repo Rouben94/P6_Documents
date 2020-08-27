@@ -8,7 +8,6 @@ Für die vorliegende Projektarbeit wurden im Pflichtenheft (siehe Anhang \ref{ap
 In den Tabellen \ref{tab:ErreichungP2PZiele}, \ref{tab:ErreichungMeshZiele}, \ref{tab:ErreichungSteuersoftwareZiele} und \ref{tab:ErreichungZusatzziele} sind diese in kurzer Form nochmals zusammengefasst. Ausserdem ist ersichtlich, welche Ziele erfüllt und welche nicht bzw. nur bedingt erfüllt werden konnten.
 Falls nötig ist auch noch ein kurzer Kommentar hinterlegt.
 
-\todo[inline]{Raffi bitte P2P-Tabelle kontrollieren und ergänzen} 
 \paragraph{Punkt zu Punkt Testinfrastruktur}
 \begin{table}[H]
 	\centering
@@ -138,15 +137,14 @@ Nachfolgend wird zusammengefasst, welche Schlüsse aus dem Vergleich der drei Pr
 
 \begin{itemize}
 
-	\item Bluetooth ++
-	\item Bluetooth --
+	\item Einer der grössten Vorteile von Bluetooth Mesh ist, die Interoperabilität. Der Mesh-Stack ist mit Milliarden von Geräten Weltweit kompatibel. 
+	\item Ein Nachteil von Bleutooth Mesh ist das es über kein Routing verfügt. Das Managed Flooding Prinzip führt zu hohen Netzwerk Belastungen, wenn die Topologie eine sehr hohe Node-Dichte aufweist.
 	\item Der grösste Vorteil von Thread ist, dass sich das Mesh-Netzwerk selber ausmisst. Die routenden Knoten werden automatisch bestimmt. Somit kann sich das Protokoll der Umgebung anpassen und konnte dadurch auch in allen Testumgebungen eine tiefe Latenz aufweisen.
 	\item Ein Nachteil von Thread ist, dass aufgrund des automatischen Routen ein höherer Overhead entsteht. Durch diesen Overhead steigt der Energieverbrauch auf den einzelnen Nodes.
 	\item Zigbee weist eine hohe Zuverlässigkeit auf.
 	Bedingt durch das CSMA\slash CA des\linebreak \textit{IEEE 802.15.4} MAC und Physical Layers erreichen rund 98 Prozent der Nachrichten ihr Ziel mit konstant tiefer Latenzzeit.
 	\item Der gemessene Durchsatz und die gemessene Latenzzeit von Zigbee, können nicht ganz mit jenen Werten von Thread mithalten.
 	Daher ist die Performance bei hoher Belastung eher schlechter.
-		\item \todo[inline]{Ein Vorteil und ein Nachteil erwähnen pro Mesh-Stack. Raffel bitte noch ausfüllen}
 \end{itemize}
 
 Nachfolgend wird auf einige Probleme eingegangen, welche während dem Projekt entstanden sind. Ausserdem werden mögliche Lösungen dafür vorgeschlagen.

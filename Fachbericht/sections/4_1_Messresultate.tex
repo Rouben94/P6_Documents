@@ -151,9 +151,7 @@ Zudem werden systematische Messfehler deklariert.
 
 \paragraph{Large Payload}
 Die Messungen 3, 4 und 8 gemäss Tabelle \ref{tab:MessungenMeshBenchmark}, welche mit einer grossen Payload durchgeführt wurden, sind nur für Thread und Zigbee aussagekräftig. Der BT Mesh Stack liefert bei diesen Messungen keine brauchbaren Resultate.
-Eine Recherche zu diesem Problem hat ergeben, dass durch die Fragmentierung einer 32 Byte Payload die sichere und schnelle Übertragung der Daten nicht mehr gewährleistet werden kann.
-
-\todo[inline]{Raffi: Referenz auf Artikel wenn vorhanden. Raffi? Ansonsten Text anpassen.}
+Eine Recherche zu diesem Problem hat ergeben, dass durch die Fragmentierung einer 32 Byte Payload die sichere und schnelle Übertragung der Daten nicht mehr gewährleistet werden kann. Dieses Problem wird in Abschnitt \ref{subsec:BLEMeshProtokollStackZephyr} genauer erläutert.
 
 \paragraph{Zigbee Latency}
 Wie bereits im Abschnitt \ref{subsec:ZigbeeSchwierigkeitenbeiderUmsetzung} erwähnt, konnte bei Zigbee die Anzahl Hops, die ein Paket passiert hat nicht ausgewertet werden.
