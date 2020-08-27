@@ -1,47 +1,5 @@
 \clearpage
 \section{Ergebnisse}\label{sec:Ergebnisse}
-Bei der Durchführung der Mesh Benchmark Messungen wurde für jede Messung unter den entsprechenden Bedingungen ein Messprotokoll resp. eine Auswertung erstellt. Die 8 unterschiedlichen Bedingungen sind in Tabelle \ref{tab:MessungenMeshBenchmark} nochmals zusammengefasst sind.
-Diese detaillierten Auswertungen sind im Anhang \ref{app:MessprotokolleMeshBenchmark} dem Bericht angefügt.
-Nachfolgend soll exemplarisch eine dieser Auswertungen erläutert werden um aufzuzeigen was diese darstellen und wie diese gelesen werden können.
-Eine Interpretation dieser Messresultate ihm Rahmen eines Vergleichs erfolgt schliesslich im Abschnitt \ref{sec:Interpretation}.
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{|c|c|c|c|c|c|} 
-		\hline
-		\textbf{\#}  & \textbf{Msg. Gen.}  & \textbf{Duration}  & \textbf{Msg. Cnt.}  & \textbf{Payload }  & \textbf{Disturbance}  \\ 
-		\hline
-		1 & Rand & 600s & 60 & Small & No \\ 
-		\hline
-		2 & Seq & 600s & 60 & Small & No \\ 
-		\hline
-		3 & Rand & 600s & 60 & Large & No \\ 
-		\hline
-		4 & Seq & 600s & 60 & Large & No \\ 
-		\hline
-		5 & Rand & 600s & 600 & Small & No \\ 
-		\hline
-		6 & Rand & 600s & 60 & Small & Yes \\ 
-		\hline
-		7 & Seq & 750s & 10 & Small & No \\ 
-		\hline
-		8 & Seq & 750s & 10 & Large & No \\
-		\hline
-	\end{tabular}
-	\caption{Messungen Mesh Benchmark}
-	\label{tab:MessungenMeshBenchmark}
-\end{table}
-
-
-\subsection{Resultate}\label{subsec:Resultate}
-Die Messresultate im Anhang \ref{app:MessprotokolleMeshBenchmark} wurden mit den Messindizes 1-8 gemäss Tabelle \ref{tab:MessungenMeshBenchmark}, sowie der entsprechenden Messumgebung (z.B. Wohnung) versehen.
-So können die Messungen eindeutig identifiziert werden.
-Folgende Einschränkungen müssen dabei jedoch beachtet werden:
-Gemäss den Erläuterungen im Abschnitt \ref{subsec:Interpretation} wurden die Messungen 6 - 8 nur im Labor Messaufbau durchgeführt. Von diesen Messungen sind also nur diese Auswertung vorhanden.
-Weiter musste bei der Durchführung der Messung 5 festgestellt werden, dass die Resultate unbrauchbar waren.
-In der Folge dessen wurde die Auswertung dieser Messung gestrichen. Mehr dazu im Abschnitt  \ref{subsec:Validierung}.
-
-
 Die Abbildungen \ref{fig:VerteilungderLatenzzeiten} bis \ref{fig:OngoingTransactions} zeigen die Messresultate der Messung 2 in der Messumgebung \textit{Wohnung}. Sie stehen exemplarisch für die Messergebnisse aller Messreihen.
 In Abbildung \ref{fig:VerteilungderLatenzzeiten} ist die prozentuale Verteilung der Latenzzeiten pro Hop dargestellt.
 In sämtlichen Grafiken werden die Ergebnisse von BT Mesh in blau, jene von Thread in grün und jene von Zigbee in rot dargestellt.
