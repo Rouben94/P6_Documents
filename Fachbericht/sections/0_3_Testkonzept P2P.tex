@@ -290,7 +290,7 @@ Die Benachrichtigung des Radio Drivers durch die Hardware erfolgt zudem mittels 
 Abbildung \ref{fig:RadioTransmitSequP2P} zeigt den Ablauf beim Senden eines Pakets. Die zu sendenden Daten (Payload) müssen vorgängig im RAM vorliegen.
 Anschliessend wird der Packet Pointer des Radio-Interface auf die entsprechende Speicher-Adresse eingestellt.
 Zu beachten gilt, dass im ersten Byte die Länge der Payload angegeben werden muss.
-Diese\todo{Was ist mit DIESE gemeint?} wird vom Radio Driver automatisch ergänzt.
+Das Längen-Feld wird vom Radio Driver automatisch ergänzt.
 Zusätzlich kann den Sendedaten ein Adressfeld mitgegeben werden. Nach der vollständigen Konfiguration des Radio-Interface wird das Senden durch den Befehl TXEN initiiert. Mithilfe von Verknüpfungen (Shorts) wird nach dem Ready-Event automatisch der Start-Task ausgelöst.
 Das Senden läuft also nach dem Initiieren vollautomatisch ab.
 Der Radio-Driver wartet auf das Auslösen des Disabled-Events.

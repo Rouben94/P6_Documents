@@ -80,8 +80,7 @@ Das CSMA\slash CA des \textit{IEEE 802.15.4} MAC Layers erweist sich auch hier a
 \subsubsection{Energieverbrauch}\label{subsec:VergleichEnergieverbrauchMessreihen}
 Durch Abbildung \ref{fig:EnergieverbrauchMessreihen} wird ersichtlich, dass Bluetooth-Mesh den etwas geringeren Energiebedarf aufweist als Thread und Zigbee. Ansonsten zeigen alle Netzwerke ähnliche Resultate unabhängig der Messreihen.
 Die Unterschiede zwischen den Protokollen fallen sehr gering aus.
-Es kann also kein wesentlicher Unterschied bezüglich Energiebedarf festgestellt werden.
-\todo{Raffi: Wieso sind die Werte bei den Messungen 7 und 8 höher als beim Rest? Können wir das begründen?} 
+Es kann also kein wesentlicher Unterschied bezüglich Energiebedarf festgestellt werden. Messung 7 und 8 dauerten länger als die restlichen Messungen, daher ist Ihr Energieverbrauch höher.
 
 \begin{figure}[H]
 	\centering
@@ -202,7 +201,7 @@ Ergänzt durch die \textit{Zigbee Cluster Library} welche die Systeme hersteller
 \subsubsection{Bluetooth Mesh}\label{subsubsec:FazitBluetoothMesh}
 Die Performance von Bluetooth-Mesh ist stark von der Belastung abhängig, wie aus Abschnitt \ref{subsec:VergleichMessreihen} zu erkennen ist.
 Der grösste Einfluss auf die Performance hatte die Länge der gesendeten Nachrichten.
-Ursach dafür ist, dass ein einzelnes Bluetooth-Mesh-Paket lediglich 10-Byte Payload aufnehmen kann (siehe Abschnitt \ref{subsec:BLEMeshStack})\todo{Raffi: Verweis falsch}. Der Stack beginnt mit der Segmentierung der Daten in mehrere kleine Pakete. Bei 32-Byte sind dies bereits 4 Frames. Damit ist der Network-Stack überfordert. 
+Ursach dafür ist, dass ein einzelnes Bluetooth-Mesh-Paket lediglich 8 bis 10 Byte Payload aufnehmen kann. Der Stack beginnt mit der Segmentierung der Daten in mehrere kleine Pakete. Bei 32-Byte sind dies bereits 4 Frames. Damit ist der Network-Stack überfordert. 
 
 \begin{figure}[H]
 	\centering
