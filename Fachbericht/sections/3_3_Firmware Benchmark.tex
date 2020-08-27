@@ -162,7 +162,7 @@ Zudem wird der Zustand des grünen RGB-LEDs gewechselt.
 
 \paragraph{Benchmark Server}
 Der Benchmark Server wartet im \textit{Benchmark State} auf ankommende Nachrichten.
-Sobald der Benchmark Server ein Paket empfängt, wird der Benchmark Endpoint Handler \textit{(bm\_ep\_handler()} signalisiert.
+Sobald der Benchmark Server ein Paket empfängt, wird der Benchmark Endpoint Handler\linebreak \textit{(bm\_ep\_handler()} signalisiert.
 Dieser entscheidet anhand der \textit{ZCL Cluster ID} ob es sich bei der Nachricht um eine Benchmark Nachricht handelt oder nicht.
 Falls es sich um eine Benchmark Nachricht handelt, wird die Funktion \textit{bm\_receive\_message()} aufgerufen und die Referenz des Paket Buffers \textit{(bufid)} übergeben.
 Mit Hilfe der \textit{bufid} werden nun die Message Infos ausgelesen und daraus ein Log Eintrag erstellt.
