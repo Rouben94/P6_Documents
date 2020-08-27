@@ -2,21 +2,18 @@
 \section{Validierung und Verifizierung}\label{sec:ValidierungVerifizierung}
 
 \subsection{Validierung}\label{subsec:Validierung}
-Die durchgeführten Messungen haben aussagekräftige Resultate geliefert welche jedoch stark vom gewählten Vorgehen abhängig sind.
-Dieses Vorgehen soll nun kritisch überprüft und allfällige Mängel im Konzept sowie der Umsetzung aufgezeigt werden.
-Zudem werden systematische Messfehler deklariert.
+Die durchgeführten Messungen haben aussagekräftige Resultate geliefert welche jedoch stark vom gewählten Vorgehen abhängig sind. Dieses Vorgehen soll nun kritisch überprüft und allfällige Mängel im Konzept sowie der Umsetzung aufgezeigt werden. Zudem werden systematische Messfehler deklariert.
 
 \paragraph{Large Payload}
-Die Messungen 3, 4 und 8 gemäss Tabelle \ref{tab:MessungenMeshBenchmark} welche mit einer grossen Payload durchgeführt wurden, sind nur für Thread und Zigbee aussagekräftig. Der BT Mesh Stack liefert bei diesen Messungen keine brauchbaren Resultate.
-Eine Recherche zu diesem Problem hat ergeben, dass durch die Fragmentierung einer 32 Byte Payload die sichere und schnelle Übertragung der Daten nicht mehr gewährleistet werden kann.
+Die Resultate der Messreihen 3, 4 und 8, welche mit einer grossen Payload durchgeführt wurden, sind nur für Thread und Zigbee aussagekräftig. Der BT Mesh Stack liefert bei diesen Messungen keine brauchbaren Resultate. Eine Recherche zu diesem Problem hat ergeben, dass durch die Fragmentierung einer 32 Byte Payload die sichere und schnelle Übertragung der Daten nicht mehr gewährleistet werden kann.
 
 \paragraph{Zigbee Latency}
-Wie bereits im Abschnitt \ref{subsec:Resultate} erwähnt, konnte bei Zigbee die Anzahl Hops die ein Paket passiert hat nicht ausgewertet werden.
+Wie bereits erwähnt, konnte bei Zigbee die Anzahl Hops die ein Paket passiert hat nicht ausgewertet werden.
 Der Forumsbeitrag \href{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}{\textit{Zigbee - Read number of hops (radius)\footnote{\url{https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius}}}} bestätigt, dass der entsprechende Wert mit der verwendeten SDK nicht ausgelesen werden kann.
 Als Folge dessen kann schliesslich die Latenzzeit nur als Total über die gesamte Strecke erfasst werden. In der Auswertung verschafft dies BT Mesh und Thread fälschlicherweise einen Vorteil gegenüber Zigbee.
 Die Auswertung der totalen Latenzzeit bei allen 3 Protokollen könnte das Problem lösen.
 Dies würde jedoch dem Messkonzept widersprechen und wurde deshalb nicht für alle Messungen umgesetzt.
-Die Abbildungen \ref{fig:DurchschnittlicheLatenzzeitValidierung} und \ref{fig:DurchschnittlicheLatenzzeitohneHopsValidierung} zeigen den Unterschied am Beispiel der oben analysierten Messung \ref{subsec:Resultate}.
+Die Abbildungen \ref{fig:DurchschnittlicheLatenzzeitValidierung} und \ref{fig:DurchschnittlicheLatenzzeitohneHopsValidierung} zeigen den Unterschied am Beispiel der oben analysierten Messung \ref{sec:Ergebnisse}.
 Während links die Latenzzeit pro Hop dargestellt ist, zeigt die rechte Grafik die totale Latenzzeit.
 Der Unterschied ist vorallem bei Thread deutlich erkennbar.
 Bereits in der Abbildung \ref{fig:VerteilungderLatenzzeiten} ist das Problem zu erkennen.
@@ -57,14 +54,14 @@ Multicast resp. Broadcast hingegen nicht.
 Auch in der Messung Nr. 5 hätte sich die Unicast Adressierung für Zigbee positiv ausgewirkt da die Netzbelastung deutlich geringer gewesen wäre.
 
 \paragraph{Durchschnittswerte in den Resultaten}
-In den Resultaten \ref{subsec:Resultate} wurden sämtliche Durchschnittswerte als Mittelwerte einschliesslich allfälliger Ausreisser aus den Messwerten gebildet.
+In den Ergebnissen \ref{sec:Ergebnisse} wurden sämtliche Durchschnittswerte als Mittelwerte einschliesslich allfälliger Ausreisser aus den Messwerten gebildet.
 Dadurch wurden gewisse Resultate deutlich verfälscht.
 In einer neuen Auswertung müsste die Ursache für die einzelnen Ausreisser genauer geklärt werden und diese allenfalls gestrichen werden.
 
 
 \subsection{Verifizierung}\label{subsec:Verifizierung}
 Eine Verifizierung der Messresultate konnte nur anhand des Referenzberichts \textit{AN1142: Mesh Network Performance
-	Comparison\footnote{\url{https://www.silabs.com/documents/public/application-notes/an1142-mesh-network-performance-comparison.pdf} \cite{silicon_laboratories_inc_an1142_2020}}} von \textit{Silicon Labs} gemacht werden.
+	Comparison\footnote{\url{https://www.silabs.com/documents/public/application\%2Dnotes/an1142\%2Dmesh\%2Dnetwork\%2Dperformance\%2Dcomparison.pdf} \cite{silicon_laboratories_inc_an1142_2020}}} von \textit{Silicon Labs} gemacht werden.
 Dieser ist auf der Webseite von \textit{Silicon Labs} einsehbar.
 
 Der Vergleich der Messergebnisse hat gezeigt, dass die Grössenordnung der Resultate mit jenen aus dem Bericht von Silicon Labs übereinstimmt.

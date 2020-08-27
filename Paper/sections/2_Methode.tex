@@ -47,7 +47,7 @@ Die Abbildung \ref{fig:Messumgebung2Einfamilienhaus} zeigt den Schnitt des Einfa
 \paragraph{Wohnung}
 \begin{wrapfigure}{r}{0.6\textwidth}
 	\centering
-	\vspace{-80pt}
+	\vspace{-90pt}
 	\includegraphics[width=0.6\textwidth]{graphics/Plan_Wohnung_Cyrill_Nodes_Placement.png}
 	\caption{Testaufbau Wohnung}
 	\label{fig:TestaufbauWohnung}
@@ -57,10 +57,61 @@ Ebenfalls als Heim-Automatisierung gedacht werden die Messungen in einer Wohnung
 
 Bei der Wohnung handelt es sich um eine 3.5 Zimmer Wohnung mit einer Wohnfläche von 122 Quadratmetern. Die genauen Abmessungen sowie die Platzierung der Nodes ist in Abbildung \ref{fig:TestaufbauWohnung} zu sehen.
 
-\vspace{30mm}
+\vspace{20mm}
 \subsection{Vergleichswerte und Messgrössen}\label{subsec:VergleichswerteundMessgrössenMesh}
-
+\begin{wraptable}{r}{0.6\textwidth}
+	\centering
+	\vspace{10pt}
+	\begin{adjustbox}{width=0.6\textwidth}
+		\begin{tabular}{ll|l|}
+			\cline{1-1} \cline{3-3}
+			\multicolumn{1}{|l|}{\textbf{Vergleichswerte}} &  & \textbf{Messgrössen}                   \\ \cline{1-1} \cline{3-3} 
+			\multicolumn{1}{|l|}{Latenzzeit}               &  & Message Timestamp                      \\ \cline{1-1} \cline{3-3} 
+			\multicolumn{1}{|l|}{Anzahl Hops}              &  & Anzahl Hops                            \\ \cline{1-1} \cline{3-3} 
+			\multicolumn{1}{|l|}{Datenrate}                &  & Source-, Destination und Group-Address \\ \cline{1-1} \cline{3-3} 
+			\multicolumn{1}{|l|}{Paketverlust}             &  & Message ID                             \\ \cline{1-1} \cline{3-3} 
+			\multicolumn{1}{|l|}{Aktive Radio Zeit}        &  & RSSI                                   \\ \cline{1-1} \cline{3-3} 
+			&  & Aktive Radio Zeit                      \\ \cline{3-3} 
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Vergleichswerte und Messgrössen}
+	\label{tab:VergleichswerteMessgrössen}
+	\vspace{5pt}
+\end{wraptable}
+In Tabelle \ref{tab:VergleichswerteMessgrössen} sind die Vergleichs- und Messgrössen aufgelistet. Die Vergleichswerte wurden aus den Messgrössen in der Auswertung bestimmt. Um die Mesh Protokolle einem möglichst fairen Vergleich zu unterziehen, werden pro Messumgebung eine Reihe an Messungen durchgeführt. Die Tabelle \ref{tab:ParameterBenchmarkMessreihe} zeigt Total 8 Messreihen mit den entsprechenden Parametern.
+\vspace{-1pt}
+\begin{table}[h]
+	\centering
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|} 
+			\cline{2-9}
+			\multicolumn{1}{c|}{} & \multicolumn{5}{c|}{Benchmark Parameter} & \multicolumn{3}{c|}{Messaufbau} \\ 
+			\hline
+			\textbf{\#}  & \textbf{Msg. Gen.}  & \textbf{Duration} & \textbf{Msg. Cnt.}  & \textbf{Payload }  & \textbf{Disturbance}  & \textbf{Labor}  & \textbf{Haus}  & \textbf{Wohnung}  \\ 
+			\hline
+			1 & Rand & 600s & 60 & Small & No & x & x & x \\ 
+			\hline
+			2 & Seq & 600s & 60 & Small & No & x & x & x \\ 
+			\hline
+			3 & Rand & 600s & 60 & Large & No & x & x & x \\ 
+			\hline
+			4 & Seq & 600s & 60 & Large & No & x & x & x \\ 
+			\hline
+			5 & Rand & 600s & 600 & Small & No & x & x & x \\ 
+			\hline
+			\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+			\hline
+			6 & Rand & 600s & 60 & Small & Yes & x &  &  \\ 
+			\hline
+			7 & Seq & 750s & 10 & Small & No & x &  &  \\ 
+			\hline
+			8 & Seq & 750s & 10 & Large & No & x &  &  \\
+			\hline
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Parameter Benchmark Messreihe}
+	\label{tab:ParameterBenchmarkMessreihe}
+\end{table}
+\vspace{-20pt}
 \subsection{Messerwartung}
-Da die Nachrichtenzustellung durch das Routing effizienter realisiert werden kann wird erwartet, dass die beiden auf dem IEEE 802.15.4 Standard aufbauenden Protokolle klare Vorteile haben werden. Hingegen könnte BT Mesh Vorteile haben bei kleiner Belastung des Netzes.
-
-Das menschliche Auge ist in der Lage eine Verzögerung festzustellen, wenn die Latenz vom Knopfdruck bis das Licht angeht mehr als 200ms beträgt. In einer modernen Hausautomation darf natürlich keine Verzögerung wahrgenommen werden. Somit wird erwartet, dass die Latenzzeit im Schnitt unter 200ms bleiben soll. \cite{silicon_laboratories_inc_an1142_2020}
+Da die Nachrichtenzustellung durch das Routing effizienter realisiert werden kann wird erwartet, dass die beiden auf dem IEEE 802.15.4 Standard aufbauenden Protokolle klare Vorteile haben werden. Hingegen könnte BT Mesh Vorteile haben bei kleiner Belastung des Netzes. Das menschliche Auge ist in der Lage eine Verzögerung festzustellen, wenn die Latenz vom Knopfdruck bis das Licht angeht mehr als 200ms beträgt. In einer modernen Hausautomation darf natürlich keine Verzögerung wahrgenommen werden. Somit wird erwartet, dass die Latenzzeit im Schnitt unter 200ms bleiben soll. \cite{silicon_laboratories_inc_an1142_2020}
