@@ -51,8 +51,7 @@ In Abbildung \ref{fig:VerteilungderLatenzzeiten} ist die prozentuale Verteilung 
 In sämtlichen Grafiken werden die Ergebnisse von BT Mesh in blau, jene von Thread in grün und jene von Zigbee in rot dargestellt.
 Dadurch ist ein direkter Vergleich der Protokolle möglich.
 Abbildung \ref{fig:VerteilungderLatenzzeiten} zeigt folglich, wie viele Nachrichten das Ziel mit einer bestimmten Latenzzeit erreicht haben.
-Nachrichten, die das Ziel nicht erreicht haben, also Pakete die verloren gegangen sind, werden dabei nicht berücksichtigt.
-Im gezeigten Beispiel haben rund 76 Prozent der Nachrichten, die im BT Mesh Test versendet wurden, das Ziel mit einer maximalen Latenzzeit von 10 Millisekunden erreicht.
+Nachrichten, die das Ziel nicht erreicht haben, also Pakete die verloren gegangen sind, werden dabei nicht berücksichtigt. Diese werden jedoch als Paketloss aufgezeichnet. Im gezeigten Beispiel haben rund 76 Prozent der Nachrichten, die im BT Mesh Test versendet wurden, das Ziel mit einer maximalen Latenzzeit von 10 Millisekunden erreicht.
 Die weitere Verteilung geht bis auf Latenzzeiten von über 300 Millisekunden, wobei die Prozentzahl der Nachrichten in diesem Bereich sehr tief ist.
 Die Werte für Thread und Zigbee zeigen hingegen eine deutlich kleinere Verteilung der Latenzzeiten.
 
@@ -63,7 +62,7 @@ Die Werte für Thread und Zigbee zeigen hingegen eine deutlich kleinere Verteilu
 	\label{fig:VerteilungderLatenzzeiten}
 \end{figure}
 
-Aus den in Abbildung \ref{fig:VerteilungderLatenzzeiten} aufgezeigten Latenzzeiten wurde der Durchschnitt gebildet und in Abbildung \ref{fig:DurchschnittlicheLatenzzeit} dargestellt.
+Aus den in Abbildung \ref{fig:VerteilungderLatenzzeiten} aufgezeigten Latenzzeiten wurde der Durchschnitt über alle Messreihen gebildet und in Abbildung \ref{fig:DurchschnittlicheLatenzzeit} dargestellt.
 Es handelt sich dabei wiederum um die Latenzzeit pro Hop. Im Falle von Zigbee ist dies erwähnenswert, da hier die Anzahl Hops nicht ausgelesen werden konnte (siehe Abschnitt \ref{subsec:ZigbeeSchwierigkeitenbeiderUmsetzung}) und die Resultate somit mit Vorsicht interpretiert werden müssen. Mehr dazu in der Validierung im Abschnitt \ref{subsec:Validierung}.
 
 Der durchschnittliche Datendurchsatz, der in Abbildung \ref{fig:DurchschnittlicherDurchsatz} aufgezeigt wird, muss ebnfalls mit Vorsicht betrachtet werden. Denn auch hier werden die Werte pro Hop für die Berechnung verwendet.
@@ -208,7 +207,7 @@ Auch in der Messung Nr. 5 hätte sich die Unicast Adressierung für Zigbee posit
 \paragraph{Durchschnittswerte in den Resultaten}
 In den Resultaten \ref{subsec:Resultate} wurden sämtliche Durchschnittswerte als Mittelwerte einschliesslich allfälliger Ausreisser aus den Messwerten gebildet.
 Dadurch wurden gewisse Resultate deutlich verfälscht.
-In einer verbesserten Auswertung müsste die Ursache für die einzelnen Ausreisser genauer geklärt werden und diese allenfalls gestrichen werden.
+In einer verbesserten Auswertung müsste die Ursache für die einzelnen Ausreisser genauer geklärt werden und diese allenfalls gestrichen werden. Zudem müsste für eine bessere Auswertung der Median bestimmt werden, um allfällige Ausreisser zu kompensieren.
 Dies wurde leider zu spät entdeckt und konnte daher nicht umgesetzt werden.
 
 
