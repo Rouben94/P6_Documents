@@ -19,24 +19,11 @@ Es handelt sich dabei wiederum um die Latenzzeit pro Hop. Im Falle von Zigbee is
 	\label{fig:VerteilungderLatenzzeiten}
 \end{figure}
 
+\newpage
 Der durchschnittliche Datendurchsatz der mit der Abbildung \ref{fig:DurchschnittlicherDurchsatz} aufgezeigt wird, muss mit der selben Vorsicht betrachtet werden. Denn auch hier werden die Werte pro Hop für die Berechnung verwendet.
-Die präsentierten Werte werden errechnet aus der Paketgrösse (Small oder Large) und der Latenzzeit des übertragenen Pakets (siehe Gleichung \ref{eq:BerechnungDurchsatz}.
+Die präsentierten Werte werden errechnet aus der Paketgrösse und der Latenzzeit des übertragenen Pakets.
 Dabei werden die Werte für den Durchsatz für jedes empfangene Paket berechnet und davon schliesslich der Mittelwert gebildet und in Abbildung \ref{fig:DurchschnittlicherDurchsatz} dargestellt.
 Die oben erwähnten Ausreisser bei BT Mesh bewirken nun einen unerwartet hohen Durchsatz bei BT Mesh im Vergleich zu jenem bei Thread welches konstant tiefe Latenzzeiten hat.
-
-\begin{equation}\label{eq:BerechnungDurchsatz}
-TP =  \frac{S_{packet} \cdot 8}{t_{lat}}
-\end{equation}
-
-\begin{small}
-	\begin{center}
-		\begin{tabular}{ll}
-			$TP$ & Throughput (kBit/s)\\
-			$S_{packet}$ & Packetsize (Byte)\\
-			$t_{lat}$ & Latency time (ms)\\
-		\end{tabular}
-	\end{center}
-\end{small}
 
 \begin{figure}[!htbp]
 	\centering
