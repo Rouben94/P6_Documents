@@ -4,16 +4,6 @@ Eine Messung unterscheidet sich durch die unterschiedlichen Messparameter, sowie
 
 Dieser Vergleich bezieht sich auf die selbe Testumgebung, jedoch mit unterschiedlichen Messreihen. Im Anschluss soll gezeigt werden wie sich die einzelnen Mesh-Netzwerke bei veränderten Messreihen verändern.
 
-Zusammengefasst lassen sich die Messreihen folgendermassen unterscheiden. 
-
-\begin{itemize}
-	\item \textbf{\textit{Payload}} Die Payload wurde zwischen den Messreihen 1\&3, 2\&4 und 7\&8 von 8 Byte auf 32 Byte, resp. 50 Byte erhöht.
-	\item \textbf{\textit{Traffic Generation Mode}} Wurde zwischen den Messreihen 1\&2 und 3\&4 von Random auf Sequentiel geändert.
-	\item \textbf{\textit{Message Dichte}} Wurde zwischen den Messreihen 2\&7 und 4\&8 von 2.5 M/s auf 0.33 M/s gesenkt (Messages/Sekunde).
-	\item \textbf{\textit{Disturbance}} Wurde bei Messung 6 eingeschaltet.
-\end{itemize}
-
-\subsubsection{Latenzzeit}\label{subsec:VergleichLatenzzeitMessreihen}
 Durch die in Abbildung \ref{fig:Latenzzeiten_per_Hop_Messreihen} dargestellten Latenzzeiten wird ersichtlich das Bluetooth-Mesh am anfälligsten auf die Erhöhung der Payload reagiert. Eine detaillierte Analyse zu diesem Phänomen wird in Abschnitt \ref{subsubsec:FazitBluetoothMesh} durchgeführt. Die Verzögerung bleibt bei Zigbee und Thread trotz Erhöhung der Paketlänge stabil.
 
 \begin{figure}[H]
@@ -28,39 +18,6 @@ Das Senken der Message Dichte führt bei Bluetooth-Mesh zu einer markanten Abnah
 
 Die Einbringung von Störungen hat lediglich bei Bluetooth-Mesh einen negativen Einfluss, wodurch sich die Latenzzeit erhöht. 
 
-\subsubsection{Durchsatz}\label{subsec:VergleichDurchsatzMessreihen}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{Durchsatz_per_Hop_Messreihen.png}
-	\caption{Durchschnittlicher Durchsatz per Hop der einzelnen Messreihen im Vergleich}\label{fig:Durchsätze_per_Hop_Messreihen}
-\end{figure}
-
-Die in der Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} dargestellten Durchsätze wird ersichtlich, dass sich die ähnlichen Resultate ergeben wie bei der Latenzzeit. Bluetooth-Mesh reagiert am anfälligsten auf die Payload-Erhöhung. Wie bereits in Abschnitt \ref{subsec:VergleichLatenzzeitMessreihen} dargelegt wird eine detaillierte Analyse zu diesem Phänomen in Abschnitt \ref{subsubsec:FazitBluetoothMesh} durchgeführt. Der Durchsatz steigt bei Zigbee und Thread durch die Erhöhung der Paketlänge stark an. Dies wird in Abschnitt \ref{subsubsec:FazitThread} für Thread und Abschnitt \ref{subsubsec:FazitZigbee} für Zigbee genauer Untersucht.
-
-Ein Änderung des Traffic Generation Mode von Random auf Sequentiel bewirkt bei Bluetooth-Mesh eine drastische Zunahme des Durchsatzes. Bei Thread ist ebenfalls eine Steigerung der Übertragungskapazität feststellbar. Die Änderung des Traffic Generation Mode wirkt bei Zigbee zu keiner merklichen Verbesserung des Durchsatzes.
-
-Das senken der Message Dichte führt bei Bluetooth-Mesh zu einer Verbesserung des Durchsatzes. Bei Thread und Zigbee kann keine Abhängigkeit festgestellt werden.
-
-Das einbringen von Störungen hat bei allen Netzwerken einen leichten negativen Einfluss, wodurch der Durchsatz sinkt. 
-
-\subsubsection{Paketverlust}\label{subsec:VergleichPaketverlustMessreihen}
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{Paketverlust_Messreihen.png}
-	\caption{Durchschnittlicher Paketverlust der einzelnen Messreihen im Vergleich}\label{fig:PaketverlusteMessreihen}
-\end{figure}
-
-Wie in Abbildung \ref{fig:Durchsätze_per_Hop_Messreihen} ersichtlich ist Bluetooth-Mesh sehr anfällig auf das erhöhen der Paketlänge. Dies wird in Abschnitt \ref{subsubsec:FazitBluetoothMesh} genauer untersucht. Zigbee und Thread zeichnen sich über alle Messreihen als sehr zuverlässig aus. 
-
-
-\subsubsection{Energieverbrauch}\label{subsec:VergleichEnergieverbrauchMessreihen}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{Energieverbrauch_Messreihen.png}
-	\caption{Durchschnittlicher Energiebedarf der einzelnen Messreihen im Vergleich}\label{fig:EnergieverbrauchMessreihen}
-\end{figure}
-
-Durch Abbildung \ref{fig:EnergieverbrauchMessreihen} wird ersichtlich das Bluetooth-Mesh den etwas geringeren Energiebedarf aufweist als Thread und Zigbee. Ansonsten zeigen alle Netzwerke ähnliche Resultate unabhängig der Messreihen. 
 
 \subsection{Vergleich Testumgebungen}\label{subsec:VergleichTestumgebungen}
 Dieser Vergleich bezieht sich auf die selbe Messreihe, jedoch in unterschiedlichen Testumgebungen. Als Referenz wurde die Messreihe 2 ausgewählt, da diese für alle Testumgebung repräsentative Resultate enthält. Im Anschluss soll gezeigt werden wie sich die einzelnen Mesh-Netzwerke bei veränderten Testumgebungen verändern.
@@ -93,15 +50,13 @@ Die Abbildung \ref{fig:Latenzzeiten_per_Hop_Testumgebungen} zeigt das die Testum
 Abbildung \ref{fig:Durchsätze_per_Hop_Testumgebungen} zeigt das im Labor-Aufbau alle Netzwerke vollkommen zuverlässig arbeiten. In der Wohnung erlebt Bluetooth-Mesh einen geringen Anstieg des Paketverlusts. Bei Thread ist die Änderung kaum relevant. Alle Netzwerke erfahren bei starker Verzweigung des Netzwerks einen Anstieg der Verlustrate wie es bei der Haus-Topologie zu sehen ist. 
 
 \subsection{Fazit}\label{subsec:FazitVergleich}
-Alle Mesh-Netzwerke mussten diversen Tests standhalten. Die Ergebnisse aus den Messreihen 1 bis 4 aus allen Testumgebungen wurden als Durchschnittswert zusammengefasst, um einen finalen Vergleich zu erzielen. Die Abbildung \ref{fig:Messresultate_Fazit} zeigt alle Ergebnisse auf einen Blick.
+Alle Mesh-Netzwerke mussten diversen Tests standhalten. Die Ergebnisse aus den Messreihen 1 bis 4 aus allen Testumgebungen wurden als Durchschnittswert zusammengefasst, um einen finalen Vergleich zu erzielen. Die Abbildung \ref{fig:Messresultate_Fazit} zeigt alle Ergebnisse auf einen Blick. Schlussendlich lässt sich Thread als klarer Sieger erkennen. Dieser Network-Stack hat die Tests am besten absolviert. Auf dem zweiten Platz steht Zigbee, welches mit seiner konstanten Latenz und als zuverlässigstes Protokoll die Daten verarbeiten konnte. Dabei gilt zu beachten das bei Zigbee die Hops nicht berücksichtigt wurden. Bluetooth-Mesh kann durch den niedrigen Energiebedarf brillieren, schneidet jedoch in Sachen Performance deutlich schlechter als seine Konkurrenten ab. Im Anschluss wird jedes Protokoll genauer analysiert und auf die Vor- und Nachteile, sowie mögliche Verbesserungen eingegangen. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Messresultate_Fazit.jpg}
+	\includegraphics[width=0.95\textwidth]{Messresultate_Fazit.jpg}
 	\caption{Durchschnittliche Messgrössen im Vergleich inkl. separater Betrachtung der Messergebnisse, welche mit 8-Byte Paketlänge erzielt wurden}\label{fig:Messresultate_Fazit}
 \end{figure}
-
-Schlussendlich lässt sich Thread als klarer Sieger erkennen. Dieser Network-Stack hat die Tests am besten absolviert. Auf dem zweiten Platz steht Zigbee, welches mit seiner konstanten Latenz und als zuverlässigstes Protokoll die Daten verarbeiten konnte. Dabei gilt zu beachten das bei Zigbee die Hops nicht berücksichtigt wurden. Bluetooth-Mesh kann durch den niedrigen Energiebedarf brillieren, schneidet jedoch in Sachen Performance deutlich schlechter als seine Konkurrenten ab. Im Anschluss wird jedes Protokoll genauer analysiert und auf die Vor- und Nachteile, sowie mögliche Verbesserungen eingegangen. 
 
 \newpage
 \subsubsection{Thread}\label{subsubsec:FazitThread}
