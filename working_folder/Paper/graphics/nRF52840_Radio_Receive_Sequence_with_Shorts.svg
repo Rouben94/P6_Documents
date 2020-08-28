@@ -1,0 +1,3397 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="nRF52840_Radio_Receive_Sequence_with_Shorts.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 210 297"
+   height="297mm"
+   width="210mm">
+  <defs
+     id="defs2"><g
+   id="lend14">
+			<path
+   d="M 3 -1 L 0 0 L 3 1 L 3 -1 "
+   style="stroke-linecap:round;stroke-linejoin:round;fill:none"
+   id="path1473" />
+
+		</g>
+<marker
+   id="mrkr14-7"
+   class="st3"
+   v:arrowType="14"
+   v:arrowSize="2"
+   v:setback="34.5"
+   refX="-34.5"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible">
+			<use
+   xlink:href="#lend14"
+   transform="scale(-11.5,-11.5) "
+   id="use1476" />
+
+		</marker>
+<g
+   id="lend3">
+			<path
+   d="M 2 1 L 0 0 L 2 -1 "
+   style="stroke-linecap:round;stroke-linejoin:round;fill:none"
+   id="path1479" />
+
+		</g>
+<marker
+   id="mrkr3-178"
+   class="st3"
+   v:arrowType="3"
+   v:arrowSize="2"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible">
+			<use
+   xlink:href="#lend3"
+   transform="scale(11.5) "
+   id="use1482" />
+
+		</marker>
+<marker
+   id="mrkr3-376"
+   class="st3"
+   v:arrowType="3"
+   v:arrowSize="2"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible">
+			<use
+   xlink:href="#lend3"
+   transform="scale(-11.5,-11.5) "
+   id="use1485" />
+
+		</marker>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		<marker
+   overflow="visible"
+   markerUnits="strokeWidth"
+   orient="auto"
+   v:arrowSize="2"
+   v:arrowType="3"
+   class="st3"
+   id="mrkr3-178-4">
+  <use
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     id="use1482-0"
+     transform="scale(11.5)"
+     xlink:href="#lend3" />
+</marker>
+</defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="shape34-128"
+     inkscape:document-units="mm"
+     inkscape:cy="270.06895"
+     inkscape:cx="383.33861"
+     inkscape:zoom="5.6"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Ebene 1">
+    <g
+       transform="matrix(0.35277817,0,0,0.35277817,15.646572,4.8843717)"
+       id="g3765"
+       style="font-size:12px;overflow:visible;color-interpolation-filters:sRGB;fill:none;fill-rule:evenodd;stroke-linecap:square;stroke-miterlimit:3">
+      <g
+         v:mID="0"
+         v:index="1"
+         v:groupContext="foregroundPage"
+         id="g2924">
+		<title
+   id="title1489">Page-1</title>
+
+		<v:pageProperties
+   v:drawingScale="1"
+   v:pageScale="1"
+   v:drawingUnits="19"
+   v:shadowOffsetX="8.50394"
+   v:shadowOffsetY="-8.50394" />
+
+		<v:layer
+   v:name="Connector"
+   v:index="0" />
+
+		<g
+   v:groupContext="group"
+   v:mID="2"
+   transform="translate(64.9815,-179.5072)"
+   id="group2-2">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_1" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_2" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_3" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_4" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_5" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_6" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_7" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_8" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_9" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_10" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_11" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_12" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_13" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_14" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_15" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_16" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_17" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_18" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_19" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_20" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_21" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_22" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_23" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_24" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_25" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_26" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_27" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_28" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_29" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_30" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_31" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_32" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_33" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_34" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_35" />
+
+				</v:userDefs>
+
+				<title
+   id="title1493">State Lifeline.198</title>
+
+				<desc
+   id="desc1495">State</desc>
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<g
+   transform="translate(-11.2536,-16.8732)"
+   v:groupContext="shape"
+   v:mID="34"
+   id="shape34-128">
+					<title
+   id="title1714">Straight Relationship.117</title>
+
+					
+					
+				</g>
+
+				
+				
+				
+				
+				<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="groupContent"
+   v:mID="2"
+   id="shape2-148">
+					<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+					<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="23.68"
+   cy="209.347"
+   cx="-9" />
+
+					<path
+   id="path1749"
+   class="st4"
+   d="M 0,209.35 H 27 396" />
+
+					<rect
+   id="rect1751"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="14.0092"
+   y="-12.5997"
+   x="-215.51601"
+   v:rectContext="textBkgnd" />
+
+					<text
+   id="text1753"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="-1.200006"
+   x="-215.52"><v:paragraph
+   v:horizAlign="2" /><v:tabList />State</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="39"
+   transform="translate(82.9815,-188.5072)"
+   id="group39-153">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title1757">Class.168</title>
+
+				<g
+   transform="translate(72)"
+   v:groupContext="shape"
+   v:mID="40"
+   id="shape40-154">
+					<title
+   id="title1759">Sheet.40</title>
+
+					<path
+   id="path1761"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="41"
+   id="shape41-157">
+					<title
+   id="title1764">Sheet.41</title>
+
+					<path
+   id="path1766"
+   class="st7"
+   d="M 72,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="42"
+   id="shape42-160">
+					<title
+   id="title1769">Sheet.42</title>
+
+					<path
+   id="path1771"
+   class="st7"
+   d="M 72,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="43"
+   id="shape43-163">
+					<title
+   id="title1774">Sheet.43</title>
+
+					<path
+   id="path1776"
+   class="st7"
+   d="M 72,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="44"
+   id="shape44-166">
+					<title
+   id="title1779">Sheet.44</title>
+
+					<desc
+   id="desc1781">RXRU</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="72"
+   cy="218.347"
+   cx="36" />
+
+					<path
+   id="path1783"
+   class="st7"
+   d="m 72,227.35 v -18 H 0 v 18 z m -72,0 v -18 z m 72,-18 v 18 z" />
+
+					<path
+   id="path1785"
+   class="st4"
+   d="m 72,227.35 v -18" />
+
+					<path
+   id="path1787"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path1789"
+   class="st4"
+   d="M 0,209.35 H 72" />
+
+					<path
+   id="path1791"
+   class="st4"
+   d="M 0,227.35 H 72" />
+
+					<text
+   id="text1793"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="27.5"><v:paragraph
+   v:horizAlign="1" /><v:tabList />RXRU</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(73.9815,-67.0072)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="45"
+   id="shape45-173">
+				<title
+   id="title1797">Dynamic connector.1173</title>
+
+				<desc
+   id="desc1799">RXEN</desc>
+
+				<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+				<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="30"
+   cy="258.845"
+   cx="9" />
+
+				<path
+   id="path1801"
+   class="st8"
+   d="m 9,227.35 v 18" />
+
+				<rect
+   id="rect1803"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="16.6696"
+   y="5.4003"
+   x="-267.17999"
+   v:rectContext="textBkgnd" />
+
+				<text
+   id="text1805"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="10.8"
+   x="-267.17999"><v:paragraph
+   v:horizAlign="1" /><v:tabList />RXEN</text>
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="46"
+   transform="translate(64.9815,-53.5072)"
+   id="group46-181">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_1" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_2" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_3" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_4" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_5" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_6" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_7" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_8" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_9" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_10" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_11" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_12" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_13" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_14" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_15" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_16" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_17" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_18" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_19" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_20" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_21" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_22" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_23" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_24" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_25" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_26" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_27" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_28" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_29" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_30" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_31" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_32" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_33" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_34" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_35" />
+
+				</v:userDefs>
+
+				<title
+   id="title1808">State Lifeline.1176</title>
+
+				<desc
+   id="desc1810">Lifeline</desc>
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<g
+   v:groupContext="groupContent"
+   v:mID="46"
+   id="shape46-326">
+					<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+					<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="28.69"
+   cy="209.347"
+   cx="-9" />
+
+					<path
+   id="path2064"
+   class="st4"
+   d="M 0,209.35 H 36 396" />
+
+					
+					<text
+   id="text2068"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="-1.2000055"
+   x="-218.02"><v:paragraph
+   v:horizAlign="2" /><v:tabList />Lifeline</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="83"
+   transform="translate(370.9815,-67.0054)"
+   id="group83-331">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2072">Class.1483</title>
+
+				<g
+   transform="translate(36)"
+   v:groupContext="shape"
+   v:mID="84"
+   id="shape84-332">
+					<title
+   id="title2074">Sheet.84</title>
+
+					<path
+   id="path2076"
+   class="st7"
+   d="m 0,227.35 v -9 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="85"
+   id="shape85-335">
+					<title
+   id="title2079">Sheet.85</title>
+
+					<path
+   id="path2081"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="86"
+   id="shape86-338">
+					<title
+   id="title2084">Sheet.86</title>
+
+					<path
+   id="path2086"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="87"
+   id="shape87-341">
+					<title
+   id="title2089">Sheet.87</title>
+
+					<path
+   id="path2091"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="88"
+   id="shape88-344">
+					<title
+   id="title2094">Sheet.88</title>
+
+					<desc
+   id="desc2096">2</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.03125):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(0,0,0,0)" />
+
+					<v:textRect
+   height="9"
+   width="36"
+   cy="222.847"
+   cx="18" />
+
+					<path
+   id="path2098"
+   class="st7"
+   d="m 36,227.35 v -9 H 0 v 9 z m -36,0 v -9 z m 36,-9 v 9 z" />
+
+					<path
+   id="path2100"
+   class="st4"
+   d="m 36,227.35 v -9" />
+
+					<path
+   id="path2102"
+   class="st4"
+   d="m 0,227.35 v -9" />
+
+					<path
+   id="path2104"
+   class="st4"
+   d="M 0,218.35 H 36" />
+
+					<path
+   id="path2106"
+   class="st4"
+   d="M 0,227.35 H 36" />
+
+					<text
+   id="text2108"
+   v:langID="1044"
+   class="st6"
+   y="224.64999"
+   x="16.33"><v:paragraph
+   v:horizAlign="1" /><v:tabList />2</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="89"
+   transform="translate(73.9815,-67.0072)"
+   id="group89-351">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2112">Class.1489</title>
+
+				<g
+   transform="translate(27)"
+   v:groupContext="shape"
+   v:mID="90"
+   id="shape90-352">
+					<title
+   id="title2114">Sheet.90</title>
+
+					<path
+   id="path2116"
+   class="st7"
+   d="m 0,227.35 v -9 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="91"
+   id="shape91-355">
+					<title
+   id="title2119">Sheet.91</title>
+
+					<path
+   id="path2121"
+   class="st7"
+   d="M 27,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="92"
+   id="shape92-358">
+					<title
+   id="title2124">Sheet.92</title>
+
+					<path
+   id="path2126"
+   class="st7"
+   d="M 27,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="93"
+   id="shape93-361">
+					<title
+   id="title2129">Sheet.93</title>
+
+					<path
+   id="path2131"
+   class="st7"
+   d="M 27,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="94"
+   id="shape94-364">
+					<title
+   id="title2134">Sheet.94</title>
+
+					<desc
+   id="desc2136">1</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.03125):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(0,0,0,0)" />
+
+					<v:textRect
+   height="9"
+   width="27"
+   cy="222.847"
+   cx="13.5" />
+
+					<path
+   id="path2138"
+   class="st7"
+   d="m 27,227.35 v -9 H 0 v 9 z m -27,0 v -9 z m 27,-9 v 9 z" />
+
+					<path
+   id="path2140"
+   class="st4"
+   d="m 27,227.35 v -9" />
+
+					<path
+   id="path2142"
+   class="st4"
+   d="m 0,227.35 v -9" />
+
+					<path
+   id="path2144"
+   class="st4"
+   d="M 0,218.35 H 27" />
+
+					<path
+   id="path2146"
+   class="st4"
+   d="M 0,227.35 H 27" />
+
+					<text
+   id="text2148"
+   v:langID="1044"
+   class="st6"
+   y="224.64999"
+   x="11.83"><v:paragraph
+   v:horizAlign="1" /><v:tabList />1</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(325.9815,-87.2563)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="95"
+   id="shape95-371">
+				<title
+   id="title2152">Dynamic connector.1213</title>
+
+				<desc
+   id="desc2154">END</desc>
+
+				<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+				<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="30"
+   cy="220.596"
+   cx="0" />
+
+				<path
+   id="path2156"
+   class="st9"
+   d="m 9,229.6 v 13.5" />
+
+				<rect
+   id="rect2158"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="12.6678"
+   y="-3.5997"
+   x="-226.92999"
+   v:rectContext="textBkgnd" />
+
+				<text
+   id="text2160"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="1.8"
+   x="-226.92999"><v:paragraph
+   v:horizAlign="1" /><v:tabList />CRCOK</text>
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(145.9815,-89.5063)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="96"
+   id="shape96-379">
+				<title
+   id="title2163">Dynamic connector.3011</title>
+
+				<desc
+   id="desc2165">READY</desc>
+
+				<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+				<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="30.35"
+   cy="218.35"
+   cx="18" />
+
+				<path
+   id="path2167"
+   class="st9"
+   d="m 9,227.35 v 18" />
+
+				<rect
+   id="rect2169"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="20.671301"
+   y="14.4003"
+   x="-228.685"
+   v:rectContext="textBkgnd" />
+
+				<text
+   id="text2171"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="19.799999"
+   x="-228.69"><v:paragraph
+   v:horizAlign="1" /><v:tabList />READY</text>
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(145.9815,-71.5072)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="97"
+   id="shape97-386">
+				<title
+   id="title2174">Dynamic connector.172</title>
+
+				<desc
+   id="desc2176">START</desc>
+
+				<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+				<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="30"
+   cy="258.845"
+   cx="9" />
+
+				<path
+   id="path2178"
+   class="st8"
+   d="m 9,227.35 v 18" />
+
+				<rect
+   id="rect2180"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="19.666599"
+   y="5.4003"
+   x="-268.67801"
+   v:rectContext="textBkgnd" />
+
+				<text
+   id="text2182"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="10.8"
+   x="-268.67999"><v:paragraph
+   v:horizAlign="1" /><v:tabList />START</text>
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(289.9815,-87.2572)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="98"
+   id="shape98-393">
+				<title
+   id="title2185">Dynamic connector.174</title>
+
+				<desc
+   id="desc2187">PAYLOAD</desc>
+
+				<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+				<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="38.02"
+   cy="220.597"
+   cx="4.5" />
+
+				<path
+   id="path2189"
+   class="st9"
+   d="m 9,229.6 v 13.5" />
+
+				<rect
+   id="rect2191"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="28.343901"
+   y="0.90030003"
+   x="-234.769"
+   v:rectContext="textBkgnd" />
+
+				<text
+   id="text2193"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="6.3000002"
+   x="-234.77"><v:paragraph
+   v:horizAlign="1" /><v:tabList />PAYLOAD</text>
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(325.9815,-53.5072)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="99"
+   id="shape99-400">
+				<title
+   id="title2196">Dynamic connector.205</title>
+
+				<desc
+   id="desc2198">DISABLE</desc>
+
+				<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+				<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="35.02"
+   cy="245.347"
+   cx="9" />
+
+				<path
+   id="path2200"
+   class="st9"
+   d="m 9,227.35 v -18" />
+
+				<rect
+   id="rect2202"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="25.3438"
+   y="5.4003"
+   x="-258.01901"
+   v:rectContext="textBkgnd" />
+
+				<text
+   id="text2204"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="10.8"
+   x="-258.01999"><v:paragraph
+   v:horizAlign="1" /><v:tabList />DISABLE</text>
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(361.9815,-91.7554)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="100"
+   id="shape100-407">
+				<title
+   id="title2207">Dynamic connector.243</title>
+
+				<desc
+   id="desc2209">DISABLED</desc>
+
+				<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+				<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="39.35"
+   cy="220.595"
+   cx="18" />
+
+				<path
+   id="path2211"
+   class="st9"
+   d="m 9,229.6 v 13.5" />
+
+				<rect
+   id="rect2213"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="29.6768"
+   y="14.4003"
+   x="-235.43401"
+   v:rectContext="textBkgnd" />
+
+				<text
+   id="text2215"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="19.799999"
+   x="-235.42999"><v:paragraph
+   v:horizAlign="1" /><v:tabList />DISABLED</text>
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(73.9815,-76.0072)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="101"
+   id="shape101-414">
+				<title
+   id="title2218">Dynamic connector.1475</title>
+
+				<path
+   id="path2220"
+   class="st10"
+   d="M 9,227.35 V 114.85" />
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(145.9815,-89.5054)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="102"
+   id="shape102-417">
+				<title
+   id="title2223">Dynamic connector.245</title>
+
+				<path
+   id="path2225"
+   class="st10"
+   d="m 9,227.35 v -99" />
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="103"
+   transform="translate(64.9815,-134.5072)"
+   id="group103-420">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_1" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_2" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_3" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_4" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_5" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_6" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_7" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_8" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_9" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_10" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_11" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_12" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_13" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_14" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_15" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_16" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_17" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_18" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_19" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_20" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_21" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_22" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_23" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_24" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_25" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_26" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_27" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_28" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_29" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_30" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_31" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_32" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_33" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_34" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Row_35" />
+
+				</v:userDefs>
+
+				<title
+   id="title2228">State Lifeline.331</title>
+
+				<desc
+   id="desc2230">Reception</desc>
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<g
+   transform="translate(-2.2536,-16.8732)"
+   v:groupContext="shape"
+   v:mID="138"
+   id="shape138-557">
+					<title
+   id="title2470">Straight Relationship.120</title>
+
+					<rect
+   id="rect2472"
+   class="st1"
+   height="2.2535999"
+   width="2.2535999"
+   y="225.093"
+   x="0" />
+
+					
+				</g>
+
+				
+				<g
+   v:groupContext="groupContent"
+   v:mID="103"
+   id="shape103-565">
+					<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+					<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="36.69"
+   cy="209.347"
+   cx="-9" />
+
+					<path
+   id="path2484"
+   class="st4"
+   d="m 0,209.35 h 27 63 v -9 h 180 v 9 h 126" />
+
+					<rect
+   id="rect2486"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="27.017"
+   y="-12.5997"
+   x="-222.02"
+   v:rectContext="textBkgnd" />
+
+					<text
+   id="text2488"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="-4.2000027"
+   x="-222.02"><v:paragraph
+   v:horizAlign="2" /><v:tabList />Reception</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="140"
+   transform="translate(190.9815,-143.5072)"
+   id="group140-570">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2492">Class.374</title>
+
+				<g
+   transform="translate(27)"
+   v:groupContext="shape"
+   v:mID="141"
+   id="shape141-571">
+					<title
+   id="title2494">Sheet.141</title>
+
+					<path
+   id="path2496"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="142"
+   id="shape142-574">
+					<title
+   id="title2499">Sheet.142</title>
+
+					<path
+   id="path2501"
+   class="st7"
+   d="M 27,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="143"
+   id="shape143-577">
+					<title
+   id="title2504">Sheet.143</title>
+
+					<path
+   id="path2506"
+   class="st7"
+   d="M 27,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="144"
+   id="shape144-580">
+					<title
+   id="title2509">Sheet.144</title>
+
+					<path
+   id="path2511"
+   class="st7"
+   d="M 27,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="145"
+   id="shape145-583">
+					<title
+   id="title2514">Sheet.145</title>
+
+					<desc
+   id="desc2516">A</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="27"
+   cy="218.347"
+   cx="13.5" />
+
+					<path
+   id="path2518"
+   class="st7"
+   d="m 27,227.35 v -18 H 0 v 18 z m -27,0 v -18 z m 27,-18 v 18 z" />
+
+					<path
+   id="path2520"
+   class="st4"
+   d="m 27,227.35 v -18" />
+
+					<path
+   id="path2522"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2524"
+   class="st4"
+   d="M 0,209.35 H 27" />
+
+					<path
+   id="path2526"
+   class="st4"
+   d="M 0,227.35 H 27" />
+
+					<text
+   id="text2528"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="11.5"><v:paragraph
+   v:horizAlign="1" /><v:tabList />A</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="146"
+   transform="translate(217.9815,-143.5072)"
+   id="group146-590">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2532">Class.380</title>
+
+				<g
+   transform="translate(9)"
+   v:groupContext="shape"
+   v:mID="147"
+   id="shape147-591">
+					<title
+   id="title2534">Sheet.147</title>
+
+					<path
+   id="path2536"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="148"
+   id="shape148-594">
+					<title
+   id="title2539">Sheet.148</title>
+
+					<path
+   id="path2541"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="149"
+   id="shape149-597">
+					<title
+   id="title2544">Sheet.149</title>
+
+					<path
+   id="path2546"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="150"
+   id="shape150-600">
+					<title
+   id="title2549">Sheet.150</title>
+
+					<path
+   id="path2551"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="151"
+   id="shape151-603">
+					<title
+   id="title2554">Sheet.151</title>
+
+					<desc
+   id="desc2556">S0</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="9"
+   cy="218.347"
+   cx="4.5" />
+
+					<path
+   id="path2558"
+   class="st7"
+   d="m 9,227.35 v -18 H 0 v 18 z m -9,0 v -18 z m 9,-18 v 18 z" />
+
+					<path
+   id="path2560"
+   class="st4"
+   d="m 9,227.35 v -18" />
+
+					<path
+   id="path2562"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2564"
+   class="st4"
+   d="M 0,209.35 H 9" />
+
+					<path
+   id="path2566"
+   class="st4"
+   d="M 0,227.35 H 9" />
+
+					<text
+   id="text2568"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="0.82999998"><v:paragraph
+   v:horizAlign="1" /><v:tabList />S0</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="152"
+   transform="translate(226.9815,-143.5072)"
+   id="group152-610">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2572">Class.386</title>
+
+				<g
+   transform="translate(9)"
+   v:groupContext="shape"
+   v:mID="153"
+   id="shape153-611">
+					<title
+   id="title2574">Sheet.153</title>
+
+					<path
+   id="path2576"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="154"
+   id="shape154-614">
+					<title
+   id="title2579">Sheet.154</title>
+
+					<path
+   id="path2581"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="155"
+   id="shape155-617">
+					<title
+   id="title2584">Sheet.155</title>
+
+					<path
+   id="path2586"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="156"
+   id="shape156-620">
+					<title
+   id="title2589">Sheet.156</title>
+
+					<path
+   id="path2591"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="157"
+   id="shape157-623">
+					<title
+   id="title2594">Sheet.157</title>
+
+					<desc
+   id="desc2596">L</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="9"
+   cy="218.347"
+   cx="4.5" />
+
+					<path
+   id="path2598"
+   class="st7"
+   d="m 9,227.35 v -18 H 0 v 18 z m -9,0 v -18 z m 9,-18 v 18 z" />
+
+					<path
+   id="path2600"
+   class="st4"
+   d="m 9,227.35 v -18" />
+
+					<path
+   id="path2602"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2604"
+   class="st4"
+   d="M 0,209.35 H 9" />
+
+					<path
+   id="path2606"
+   class="st4"
+   d="M 0,227.35 H 9" />
+
+					<text
+   id="text2608"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="2.8299999"><v:paragraph
+   v:horizAlign="1" /><v:tabList />L</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="158"
+   transform="translate(235.9815,-143.5072)"
+   id="group158-630">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2612">Class.392</title>
+
+				<g
+   transform="translate(9)"
+   v:groupContext="shape"
+   v:mID="159"
+   id="shape159-631">
+					<title
+   id="title2614">Sheet.159</title>
+
+					<path
+   id="path2616"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="160"
+   id="shape160-634">
+					<title
+   id="title2619">Sheet.160</title>
+
+					<path
+   id="path2621"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="161"
+   id="shape161-637">
+					<title
+   id="title2624">Sheet.161</title>
+
+					<path
+   id="path2626"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="162"
+   id="shape162-640">
+					<title
+   id="title2629">Sheet.162</title>
+
+					<path
+   id="path2631"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="163"
+   id="shape163-643">
+					<title
+   id="title2634">Sheet.163</title>
+
+					<desc
+   id="desc2636">S1</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="9"
+   cy="218.347"
+   cx="4.5" />
+
+					<path
+   id="path2638"
+   class="st7"
+   d="m 9,227.35 v -18 H 0 v 18 z m -9,0 v -18 z m 9,-18 v 18 z" />
+
+					<path
+   id="path2640"
+   class="st4"
+   d="m 9,227.35 v -18" />
+
+					<path
+   id="path2642"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2644"
+   class="st4"
+   d="M 0,209.35 H 9" />
+
+					<path
+   id="path2646"
+   class="st4"
+   d="M 0,227.35 H 9" />
+
+					<text
+   id="text2648"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="0.82999998"><v:paragraph
+   v:horizAlign="1" /><v:tabList />S1</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="164"
+   transform="translate(244.9815,-143.5072)"
+   id="group164-650">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2652">Class.398</title>
+
+				<g
+   transform="translate(54)"
+   v:groupContext="shape"
+   v:mID="165"
+   id="shape165-651">
+					<title
+   id="title2654">Sheet.165</title>
+
+					<path
+   id="path2656"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="166"
+   id="shape166-654">
+					<title
+   id="title2659">Sheet.166</title>
+
+					<path
+   id="path2661"
+   class="st7"
+   d="M 54,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="167"
+   id="shape167-657">
+					<title
+   id="title2664">Sheet.167</title>
+
+					<path
+   id="path2666"
+   class="st7"
+   d="M 54,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="168"
+   id="shape168-660">
+					<title
+   id="title2669">Sheet.168</title>
+
+					<path
+   id="path2671"
+   class="st7"
+   d="M 54,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="169"
+   id="shape169-663">
+					<title
+   id="title2674">Sheet.169</title>
+
+					<desc
+   id="desc2676">PAYLOAD</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="54"
+   cy="218.347"
+   cx="27" />
+
+					<path
+   id="path2678"
+   class="st7"
+   d="m 54,227.35 v -18 H 0 v 18 z m -54,0 v -18 z m 54,-18 v 18 z" />
+
+					<path
+   id="path2680"
+   class="st4"
+   d="m 54,227.35 v -18" />
+
+					<path
+   id="path2682"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2684"
+   class="st4"
+   d="M 0,209.35 H 54" />
+
+					<path
+   id="path2686"
+   class="st4"
+   d="M 0,227.35 H 54" />
+
+					<text
+   id="text2688"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="12.83"><v:paragraph
+   v:horizAlign="1" /><v:tabList />PAYLOAD</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="170"
+   transform="translate(298.9815,-143.5072)"
+   id="group170-670">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2692">Class.404</title>
+
+				<g
+   transform="translate(36)"
+   v:groupContext="shape"
+   v:mID="171"
+   id="shape171-671">
+					<title
+   id="title2694">Sheet.171</title>
+
+					<path
+   id="path2696"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="172"
+   id="shape172-674">
+					<title
+   id="title2699">Sheet.172</title>
+
+					<path
+   id="path2701"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="173"
+   id="shape173-677">
+					<title
+   id="title2704">Sheet.173</title>
+
+					<path
+   id="path2706"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="174"
+   id="shape174-680">
+					<title
+   id="title2709">Sheet.174</title>
+
+					<path
+   id="path2711"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="175"
+   id="shape175-683">
+					<title
+   id="title2714">Sheet.175</title>
+
+					<desc
+   id="desc2716">CRC</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="36"
+   cy="218.347"
+   cx="18" />
+
+					<path
+   id="path2718"
+   class="st7"
+   d="m 36,227.35 v -18 H 0 v 18 z m -36,0 v -18 z m 36,-18 v 18 z" />
+
+					<path
+   id="path2720"
+   class="st4"
+   d="m 36,227.35 v -18" />
+
+					<path
+   id="path2722"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2724"
+   class="st4"
+   d="M 0,209.35 H 36" />
+
+					<path
+   id="path2726"
+   class="st4"
+   d="M 0,227.35 H 36" />
+
+					<text
+   id="text2728"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="11.5"><v:paragraph
+   v:horizAlign="1" /><v:tabList />CRC</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="176"
+   transform="translate(181.9815,-143.5072)"
+   id="group176-690">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2732">Class.410</title>
+
+				<g
+   transform="translate(9)"
+   v:groupContext="shape"
+   v:mID="177"
+   id="shape177-691">
+					<title
+   id="title2734">Sheet.177</title>
+
+					<path
+   id="path2736"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="178"
+   id="shape178-694">
+					<title
+   id="title2739">Sheet.178</title>
+
+					<path
+   id="path2741"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="179"
+   id="shape179-697">
+					<title
+   id="title2744">Sheet.179</title>
+
+					<path
+   id="path2746"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="180"
+   id="shape180-700">
+					<title
+   id="title2749">Sheet.180</title>
+
+					<path
+   id="path2751"
+   class="st7"
+   d="M 9,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="181"
+   id="shape181-703">
+					<title
+   id="title2754">Sheet.181</title>
+
+					<desc
+   id="desc2756">P</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="9"
+   cy="218.347"
+   cx="4.5" />
+
+					<path
+   id="path2758"
+   class="st7"
+   d="m 9,227.35 v -18 H 0 v 18 z m -9,0 v -18 z m 9,-18 v 18 z" />
+
+					<path
+   id="path2760"
+   class="st4"
+   d="m 9,227.35 v -18" />
+
+					<path
+   id="path2762"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2764"
+   class="st4"
+   d="M 0,209.35 H 9" />
+
+					<path
+   id="path2766"
+   class="st4"
+   d="M 0,227.35 H 9" />
+
+					<text
+   id="text2768"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="2.5"><v:paragraph
+   v:horizAlign="1" /><v:tabList />P</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="182"
+   transform="translate(154.9815,-188.5072)"
+   id="group182-710">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2772">Class.116</title>
+
+				<g
+   transform="translate(180)"
+   v:groupContext="shape"
+   v:mID="183"
+   id="shape183-711">
+					<title
+   id="title2774">Sheet.183</title>
+
+					<path
+   id="path2776"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="184"
+   id="shape184-714">
+					<title
+   id="title2779">Sheet.184</title>
+
+					<path
+   id="path2781"
+   class="st7"
+   d="M 180,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="185"
+   id="shape185-717">
+					<title
+   id="title2784">Sheet.185</title>
+
+					<path
+   id="path2786"
+   class="st7"
+   d="M 180,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="186"
+   id="shape186-720">
+					<title
+   id="title2789">Sheet.186</title>
+
+					<path
+   id="path2791"
+   class="st7"
+   d="M 180,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="187"
+   id="shape187-723">
+					<title
+   id="title2794">Sheet.187</title>
+
+					<desc
+   id="desc2796">RX</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="180"
+   cy="218.347"
+   cx="90" />
+
+					<path
+   id="path2798"
+   class="st7"
+   d="m 180,227.35 v -18 H 0 v 18 z m -180,0 v -18 z m 180,-18 v 18 z" />
+
+					<path
+   id="path2800"
+   class="st4"
+   d="m 180,227.35 v -18" />
+
+					<path
+   id="path2802"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2804"
+   class="st4"
+   d="M 0,209.35 H 180" />
+
+					<path
+   id="path2806"
+   class="st4"
+   d="M 0,227.35 H 180" />
+
+					<text
+   id="text2808"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="85.830002"><v:paragraph
+   v:horizAlign="1" /><v:tabList />RX</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   v:groupContext="group"
+   v:mID="188"
+   transform="translate(334.9815,-188.5072)"
+   id="group188-730">
+				<v:userDefs>
+					<v:ud
+   v:val="VT0(1):26"
+   v:nameU="F" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:nameU="Format" />
+
+					<v:ud
+   v:val="VT0(0):26"
+   v:prompt="0,0626"
+   v:nameU="ActiveObject" />
+
+				</v:userDefs>
+
+				<title
+   id="title2812">Class.128</title>
+
+				<g
+   transform="translate(36)"
+   v:groupContext="shape"
+   v:mID="189"
+   id="shape189-731">
+					<title
+   id="title2814">Sheet.189</title>
+
+					<path
+   id="path2816"
+   class="st7"
+   d="m 0,227.35 v -18 z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="190"
+   id="shape190-734">
+					<title
+   id="title2819">Sheet.190</title>
+
+					<path
+   id="path2821"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="191"
+   id="shape191-737">
+					<title
+   id="title2824">Sheet.191</title>
+
+					<path
+   id="path2826"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="192"
+   id="shape192-740">
+					<title
+   id="title2829">Sheet.192</title>
+
+					<path
+   id="path2831"
+   class="st7"
+   d="M 36,227.35 H 0 Z" />
+
+				</g>
+
+				<g
+   v:groupContext="shape"
+   v:mID="193"
+   id="shape193-743">
+					<title
+   id="title2834">Sheet.193</title>
+
+					<desc
+   id="desc2836">RXDISABLE</desc>
+
+					<v:userDefs>
+						<v:ud
+   v:val="VT0(0.125):0"
+   v:nameU="TabSize" />
+
+						<v:ud
+   v:val="VT0(0.0625):26"
+   v:prompt=""
+   v:nameU="TabSize" />
+
+					</v:userDefs>
+
+					<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+					<v:textRect
+   height="18"
+   width="36"
+   cy="218.347"
+   cx="18" />
+
+					<path
+   id="path2838"
+   class="st7"
+   d="m 36,227.35 v -18 H 0 v 18 z m -36,0 v -18 z m 36,-18 v 18 z" />
+
+					<path
+   id="path2840"
+   class="st4"
+   d="m 36,227.35 v -18" />
+
+					<path
+   id="path2842"
+   class="st4"
+   d="m 0,227.35 v -18" />
+
+					<path
+   id="path2844"
+   class="st4"
+   d="M 0,209.35 H 36" />
+
+					<path
+   id="path2846"
+   class="st4"
+   d="M 0,227.35 H 36" />
+
+					<text
+   id="text2848"
+   v:langID="1044"
+   class="st6"
+   y="220.14999"
+   x="1.16"><v:paragraph
+   v:horizAlign="1" /><v:tabList />RXDISABLE</text>
+				</g>
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(289.9815,-85.0072)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="194"
+   id="shape194-750">
+				<title
+   id="title2852">Dynamic connector.134</title>
+
+				<path
+   id="path2854"
+   class="st10"
+   d="m 9,227.35 v -58.5" />
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(325.9815,-85.0054)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="195"
+   id="shape195-753">
+				<title
+   id="title2857">Dynamic connector.135</title>
+
+				<path
+   id="path2859"
+   class="st10"
+   d="m 9,227.35 v -58.5" />
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(361.9815,-89.5054)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="196"
+   id="shape196-756">
+				<title
+   id="title2862">Dynamic connector.137</title>
+
+				<path
+   id="path2864"
+   class="st10"
+   d="m 9,227.35 v -99" />
+
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(208.9815,-87.2572)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="197"
+   id="shape197-759">
+				<title
+   id="title2867">Dynamic connector.664</title>
+
+				<desc
+   id="desc2869">ADDRESS</desc>
+
+				<v:textBlock
+   v:margins="rect(4,4,4,4)" />
+
+				<v:textRect
+   transform="rotate(-90)"
+   height="15.2035"
+   width="38.68"
+   cy="220.597"
+   cx="4.5" />
+
+				<path
+   id="path2871"
+   class="st9"
+   d="m 9,229.6 v 13.5" />
+
+				<rect
+   id="rect2873"
+   class="st5"
+   transform="rotate(-90)"
+   height="7.20016"
+   width="29.0061"
+   y="0.90030003"
+   x="-235.10001"
+   v:rectContext="textBkgnd" />
+
+				<text
+   id="text2875"
+   v:langID="1044"
+   class="st6"
+   transform="rotate(-90)"
+   y="6.3000002"
+   x="-235.10001"><v:paragraph
+   v:horizAlign="1" /><v:tabList />ADDRESS</text>
+			</g>
+<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   transform="translate(226.9815,-85.0072)"
+   v:layerMember="0"
+   v:groupContext="shape"
+   v:mID="198"
+   id="shape198-766">
+				<title
+   id="title2878">Dynamic connector.665</title>
+
+				<path
+   id="path2880"
+   class="st10"
+   d="m -9,227.35 v -58.5" />
+
+			</g>
+
+		<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   id="group422-769"
+   transform="translate(154.981,-143.507)"
+   v:mID="422"
+   v:groupContext="group">
+			<v:userDefs>
+				<v:ud
+   v:nameU="F"
+   v:val="VT0(1):26" />
+
+				<v:ud
+   v:nameU="Format"
+   v:val="VT0(0):26" />
+
+				<v:ud
+   v:nameU="ActiveObject"
+   v:prompt="0,0626"
+   v:val="VT0(0):26" />
+
+			</v:userDefs>
+
+			<title
+   id="title2884">Class.1128</title>
+
+			<g
+   id="shape423-770"
+   v:mID="423"
+   v:groupContext="shape"
+   transform="translate(27)">
+				<title
+   id="title2886">Sheet.423</title>
+
+				<path
+   d="m 0,227.35 v -18 z"
+   class="st11"
+   id="path2888" />
+
+			</g>
+
+			<g
+   id="shape424-773"
+   v:mID="424"
+   v:groupContext="shape">
+				<title
+   id="title2891">Sheet.424</title>
+
+				<path
+   d="M 27,227.35 H 0 Z"
+   class="st11"
+   id="path2893" />
+
+			</g>
+
+			<g
+   id="shape425-776"
+   v:mID="425"
+   v:groupContext="shape">
+				<title
+   id="title2896">Sheet.425</title>
+
+				<path
+   d="M 27,227.35 H 0 Z"
+   class="st11"
+   id="path2898" />
+
+			</g>
+
+			<g
+   id="shape426-779"
+   v:mID="426"
+   v:groupContext="shape">
+				<title
+   id="title2901">Sheet.426</title>
+
+				<path
+   d="M 27,227.35 H 0 Z"
+   class="st11"
+   id="path2903" />
+
+			</g>
+
+			<g
+   id="shape427-782"
+   v:mID="427"
+   v:groupContext="shape">
+				<title
+   id="title2906">Sheet.427</title>
+
+				<desc
+   id="desc2908">’X’</desc>
+
+				<v:userDefs>
+					<v:ud
+   v:nameU="TabSize"
+   v:val="VT0(0.125):0" />
+
+					<v:ud
+   v:nameU="TabSize"
+   v:prompt=""
+   v:val="VT0(0.0625):26" />
+
+				</v:userDefs>
+
+				<v:textBlock
+   v:margins="rect(4,0,4,0)" />
+
+				<v:textRect
+   cx="13.5"
+   cy="218.347"
+   width="27"
+   height="18" />
+
+				<path
+   d="m 27,227.35 v -18 H 0 v 18 z m -27,0 v -18 z m 27,-18 v 18 z"
+   class="st11"
+   id="path2910" />
+
+				<path
+   d="m 27,227.35 v -18"
+   class="st4"
+   id="path2912" />
+
+				<path
+   d="m 0,227.35 v -18"
+   class="st4"
+   id="path2914" />
+
+				<path
+   d="M 0,209.35 H 27"
+   class="st4"
+   id="path2916" />
+
+				<path
+   d="M 0,227.35 H 27"
+   class="st4"
+   id="path2918" />
+
+				<text
+   x="10.17"
+   y="220.14999"
+   class="st6"
+   v:langID="1044"
+   id="text2920"><v:paragraph
+   v:horizAlign="1" /><v:tabList />’X’</text>
+			</g>
+
+		</g>
+
+	<g
+   inkscape:export-ydpi="317.10748"
+   inkscape:export-xdpi="317.10748"
+   style="font-size:12px;overflow:visible;color-interpolation-filters:sRGB;fill:none;fill-rule:evenodd;stroke-linecap:square;stroke-miterlimit:3"
+   id="shape97-386-2"
+   v:mID="97"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="translate(208.9815,-71.5072)">
+  <title
+     id="title2174-7">Dynamic connector.172</title>
+  <desc
+     id="desc2176-6">START</desc>
+  <v:textBlock
+     v:margins="rect(4,4,4,4)" />
+  <v:textRect
+     cx="9"
+     cy="258.845"
+     width="30"
+     height="15.2035"
+     transform="rotate(-90)" />
+  <path
+     d="m 9,227.35 v 18"
+     class="st8"
+     id="path2178-0" />
+  <rect
+     v:rectContext="textBkgnd"
+     x="-268.67801"
+     y="5.4003"
+     width="19.666599"
+     height="7.20016"
+     transform="rotate(-90)"
+     class="st5"
+     id="rect2180-2" />
+  <text
+     rotate="359.20001 0"
+     dx="0.039999999"
+     style="letter-spacing:-0.1725px;word-spacing:-12px;white-space:pre;inline-size:33.8294"
+     x="-268.67999"
+     y="10.8"
+     transform="matrix(0,-1.047253,1,0,0,-2.6959768)"
+     class="st6"
+     v:langID="1044"
+     id="text2182-0"
+     xml:space="preserve"><tspan
+       x="-268.67999"
+       y="10.8"><tspan>RSSISTART</tspan></tspan></text>
+</g>
+</g>
+    </g>
+  </g>
+  <style
+     type="text/css"
+     id="style1471">
+	<![CDATA[
+		.st1 {fill:none}
+		.st2 {marker-end:url(#mrkr14-7);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24;visibility:hidden}
+		.st3 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.08695652173913}
+		.st4 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st5 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st6 {fill:#000000;font-family:Arial;font-size:0.499992em}
+		.st7 {fill:#ffffff}
+		.st8 {marker-start:url(#mrkr3-178);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st9 {marker-end:url(#mrkr3-376);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st10 {stroke:#000000;stroke-dasharray:1.68,1.2;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st11 {fill:#e6e6e6}
+		.st12 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+</svg>

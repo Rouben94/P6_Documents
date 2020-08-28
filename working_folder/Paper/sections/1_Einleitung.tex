@@ -1,0 +1,29 @@
+\clearpage
+
+\section{Einleitung}\label{sec:Einleitung}
+Im 2.4GHz ISM-Band konkurrieren sich derzeit die drei weit verbreiteten Low Power Mesh Netzwerk Protokolle Bluetooth Mesh, Thread und Zigbee. Alle drei wurden konzipiert für die kabellose Übertragung in sogenannten WSN (Wireless Sensor Networks) oder in Netzen für die Heim Automatisierung. Während Thread und Zigbee den IEEE 802.15.4 Standard als Physical Layer benutzen basiert der BT Mesh Stack auf dem BLE (Bluetooth Low Energy) Standard. Aufgrund der hohen Dichte an Netzwerkprotokollen die das 2.4GHz ISM-Band ebenso nutzen (z.B. Wifi) sind die Störeinflüsse auf die Mesh Protokolle eines der grössten Probleme. Die Protokollstacks begegnen diesem und weiteren Problemen auf unterschiedliche Weise. Diese Unterschiede und schliesslich die Performance der Mesh Netzwerke sollen unter unterschiedlichen Testbedingungen aufgezeigt werden wodurch ein objektiver Vergleich der drei Mesh Protokolle möglich wird. In der nachfolgenden Tabelle ist sind die Hauptmerkmale der drei verschiedenen Mesh-Netzwerke aufgelistet:
+
+\begin{table}[h]
+	\centering
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{@{}|l|l|l|l|@{}}
+			\toprule
+			\multicolumn{4}{|c|}{\textbf{Mesh Netzwerke im Vergleich}}                                                                                                            \\ \midrule
+			& \textbf{Bluetooth Mesh}              & \textbf{Thread}                                  & \textbf{ZigBee}                              \\ \midrule
+			\textbf{Markt}               & Beleuchtung und Smart Home           & Industrie und Smart Home                         & Beleuchtung, Haus Automation und Messtechnik \\ \midrule
+			\textbf{Veröffentlicht}      & 2017                                 & 2015                                             & 2003                                         \\ \midrule
+			\textbf{Appllikations Layer} & Mesh Model System                    & Verknüfpbar mit allen IPv6 basierten Protokollen & Cluster Bibliothek                           \\ \midrule
+			\textbf{IPv6}                & Nein                                 & Ja                                               & Nein                                         \\ \midrule
+			\textbf{Netzwerk Zugriff}    & Smartphone oder Gateway              & Border Router                                    & Gateway                                      \\ \midrule
+			\textbf{Ökosysteme}          & Ledvance                             & Google Nest                                      & Ikea, Phillips Hue, Amazon und weitere       \\ \midrule
+			\textbf{Routing}             & Managed Flooding                     & Geroutet                                         & Geroutet                                     \\ \midrule
+			\textbf{Weiteres}            & Ist direkt mit Smartphone erreichbar & Automatisiertes Verwalten des Netzwerks          & Am meisten verbreitet                        \\ \bottomrule
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Vergleich Mesh Netzwerke}\label{table:VergleichMeshNetzwerk}
+\end{table}
+
+Hauptziel ist ein objektiver Vergleich der drei gängigsten Low Power Mesh Netzwerke Bluetooth Mesh, Thread und Zigbee bezüglich deren Leistungsfähigkeit unter wechselnden Bedingungen. Es soll erkennbar werden, welches Protokoll in welchen Bereichen seine Stärken hat und wie es am besten eingesetzt werden kann. Die detaillierte Behandlung des ganzen Projektes ist im Fachbericht verfügbar. Der Fachbericht ist unter diesem \href{https://github.com/Rouben94/P6_Documents/Abgabe}{Link\footnote{\url{https://github.com/Rouben94/P6_Documents/Abgabe}}} einsehbar.
+
+
+
