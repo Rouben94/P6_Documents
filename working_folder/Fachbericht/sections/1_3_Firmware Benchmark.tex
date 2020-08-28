@@ -1,10 +1,8 @@
 \clearpage
 \section{Umsetzung Benchmark}\label{sec:BTMeshUmsetzungBenchmark}
-
 Die Umsetzung des Benchmarks, wurde gemäss den Anforderungen des Benchamrk-Konzepts (siehe Abschnitt \ref{sec:BenchmarkKonzeptMeshNetzwerke}) umgesetzt. Zudem wurden die Schnittstellen gemäss dem Software Konzept (siehe Abschnitt \ref{sec:Soft-undFirmware}) an die Shared-Library eingebaut. Im Anschluss wird auf die Umsetzung mittels der SDKs eingegangen, sowie die einzelnen Module dazu Beschrieben. 
 
 \subsection{nRF Connect SDK}\label{subsec:BluetoothMeshUmsetzungnRFConnectSDK} 
-
 Das aufsetzen der nRF Connect SDK, sowie das Installieren der IDE ist online\footnotemark\ Dokumentiert. Mithilfe von Beispielen\footnotemark\ und der Bluetooth-Mesh-API\footnotemark\ wurde die Umsetzung bewerkstelligt. Dabei gliedert sich das Programm in zwei Module welche Nachfolgend beschrieben werden.
 
 \footnotetext{\url{https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/getting_started.html}} 
@@ -14,27 +12,20 @@ Das aufsetzen der nRF Connect SDK, sowie das Installieren der IDE ist online\foo
 \footnotetext{\url{https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/reference/bluetooth/mesh.html}} 
 
 \subsubsection{Stack Initialisierung und Konfiguration}\label{subsubsec:BluetoothMeshUmsetzungnRFConnectSDKInitandConfig} 
-
-Das Modul \textit{bm\_blemesh.c}\footnotemark\ dient zur Initialisierung des Stacks. Dazu wird die Funktion \linebreak\textit{bm\_blemesh\_enable()} aufgerufen. Diese führt die notwendigen Schritte aus um den Mesh-Stack hochzufahren. Nach erfolgreicher Initialisierung wird mit dem Provisioning weitergefahren. \\
+Das Modul \textit{bm\_blemesh.c}\footnotemark\ dient zur Initialisierung des Stacks. Dazu wird die Funktion \linebreak\textit{bm\_blemesh\_enable()} aufgerufen. Diese führt die notwendigen Schritte aus um den Mesh-Stack hochzufahren. Nach erfolgreicher Initialisierung wird mit dem Provisioning weitergefahren.
 
 
 \footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/Bluetooth/Zephyr_Mesh/src/bm_blemesh.c}}
 
 
 \paragraph{Self Provisioning}
-
-Um ein vollautomatischen Testablauf zu gewährleisten, wurden die Sicherheitsschlüssel direkt im Code vorgegeben. Mittels der eigens dafür vorgesehenen API \textit{bt\_mesh\_provision} kann sich der Teilnehmer selbst ins Netzwerk einbinden. Dies ist nur zu Testzwecken empfohlen. Die Einbindung der Teilnehmer ins Netz erfolgt somit zuverlässig und unkompliziert.\\
+Um ein vollautomatischen Testablauf zu gewährleisten, wurden die Sicherheitsschlüssel direkt im Code vorgegeben. Mittels der eigens dafür vorgesehenen API \textit{bt\_mesh\_provision} kann sich der Teilnehmer selbst ins Netzwerk einbinden. Dies ist nur zu Testzwecken empfohlen. Die Einbindung der Teilnehmer ins Netz erfolgt somit zuverlässig und unkompliziert.
 
 \paragraph{Self Configuring}
-
 Nach der erfolgreichen Einbindung ins Netz, beginnt der Node mit seiner Konfiguration. Ob es sich dabei um einen Client oder Server handelt muss zur Laufzeit bereits bekannt sein. Dies wurde zum Zeitpunkt der Kompilierung mittels der \textit{bm\_config.h} Datei festgelegt. Um Testnachrichten zu senden oder zu Empfangen wurde das Generic ON/OFF Server- resp. Client-Model eingesetzt. Des weiteren werden die Models initialisiert, an den Applikations-Key gebunden und die Publish- oder Subsrcibe-Adressen auf die jeweilige Group-Address konfiguriert. Diese Werte sind entweder aus der vorhergehenden Konfiguration bekannt oder wurden fest vorgegeben. Der Teilnehmer ist nun bereit Nachrichten zu Senden oder zu Empfangen. 
-
-
- 
  
 
 \subsubsection{Model Handler}\label{subsubsec:BluetoothMeshUmsetzungnRFConnectSDKModelHandler}
-
 Das Modul \textit{bm\_blemesh\_model\_handler.c}\footnotemark\ beherbergt alle notwendigen Model-Handler, welche zum Senden oder Empfangen von Nachrichten aufgerufen werden. In den jeweiligen Handlern soll ein Log-Eintrag mit den entsprechenden Informationen aufgefüllt werden. 
 
 
@@ -42,19 +33,14 @@ Das Modul \textit{bm\_blemesh\_model\_handler.c}\footnotemark\ beherbergt alle n
 
 
 \paragraph{Message Sending}
-
 Um eine Nachricht zu senden wird eine universelle Schnittstelle der Shared-Library zur Verfügung gestellt. Diese kann mittels dem Aufrufen der Funktion \textit{bm\_send\_message(}) eine Nachricht versenden. Anschliessend wird der entsprechende Handler des Generic ON/OFF Clients benachrichtigt. Dieser wechselt den Zustand des grünen RGB-LEDs, speichert eine Log-Eintrag und schickt die Nachricht ab. Dieser wird, gemäss der Konfiguration des Nodes, acknowledged oder unacknowledged  und mit der zusätzlichen anzahl Bytes gesendet. 
 
-\paragraph{Message Receiving} 
-
+\paragraph{Message Receiving}
 Sobald eine Nachricht vom Stack empfangen wurde, wird der Handler des Generic ON/OFF Servers benachrichtigt. Im Handler-Kontext sind viele notwendige Informationen für das Log bereits enthalten. Das erfassen des Zeitstempels und abfragen der Nachrichtenlänge wird über externe Funktionsaufrufe und Hilfsvariablen bewerkstelligt. Schlussendlich wird die blaue RGB-LED geschaltet, welches den erfolgreichen Empfang einer Nachricht anzeigt. 
 
 
 \subsection{Benchmark und Stack Parameter}\label{subsec:BT_MESHBenchmarkundStackParameter}
-
 Die Tabelle \ref{tab:BT_MESHBenchmarkundStackParameter} soll einen Überblick der verwendeten Paramter des Stacks geben. 
-
-
 
 \begin{table}[h]
 	\centering
@@ -81,13 +67,11 @@ Ein detailierte Konfiguration des Zephyr Kconfig kann übder den Source-Code\foo
 
 
 \subsection{nRF SDK for Mesh}\label{subsec:BluetoothMeshUmsetzungnRFSDKMesh} 
+Die Umsetzung mittels der \textit{nRF SDK for Mesh} wurde noch nicht vollumfänglich abgeschlossen. Es liegen zurzeit Probleme beim Zugriff auf den Flash-Treiber vor, welche noch zu beheben sind. Die Umsetzung des Benchmarks wurde jedoch abgeschlossen und es können Nachrichten versandt sowie empfangen werden. Das Loggen der Informationen funktioniert ebenfalls.
 
-Die Umsetzung mittels der \textit{nRF SDK for Mesh} wurde noch nicht vollumfänglich abgeschlossen. Es liegen zurzeit Probleme beim Zugriff auf den Flash-Treiber vor, welche noch zu beheben sind. Die Umsetzung des Benchmarks wurde jedoch abgeschlossen und es können Nachrichten versandt sowie empfangen werden. Das Loggen der Informationen funktioniert ebenfalls. \\
-
-Das aufsetzen der \textit{nRF SDK for Mesh}, sowie das Installieren der IDE ist online\footnotemark\ Dokumentiert. Mithilfe von Beispielen\footnotemark\ und der Bluetooth-Mesh-API\footnotemark\ wurde die Umsetzung bewerkstelligt. Dabei gliedert sich das Programm in zwei Module, welche Nachfolgend beschrieben werden.\\
+Das aufsetzen der \textit{nRF SDK for Mesh}, sowie das Installieren der IDE ist online\footnotemark\ Dokumentiert. Mithilfe von Beispielen\footnotemark\ und der Bluetooth-Mesh-API\footnotemark\ wurde die Umsetzung bewerkstelligt. Dabei gliedert sich das Programm in zwei Module, welche Nachfolgend beschrieben werden.
 
 Die Umsetzung wurde ähnlich realisiert wie mit der \textit{nRF Connect SDK}. Im Anschluss sind die Unterschiede aufgezeigt. 
-
 
 
 \footnotetext{\url{https://infocenter.nordicsemi.com/topic/com.nordic.infocenter.meshsdk.v4.2.0/md_doc_getting_started_getting_started.html}} 
@@ -97,8 +81,7 @@ Die Umsetzung wurde ähnlich realisiert wie mit der \textit{nRF Connect SDK}. Im
 \footnotetext{\url{https://infocenter.nordicsemi.com/topic/com.nordic.infocenter.meshsdk.v4.2.0/modules.html}} 
 
 \subsubsection{Stack Initialisierung und Konfiguration}\label{subsubsec:BluetoothMeshUmsetzungnRFSDKInitandConfig} 
-
-Das Modul \textit{bm\_ble\_mesh.c}\footnotemark\ sowie das Modul \textit{bm\_mesh\_stack.c}\footnotemark\ dienen zur Initialisierung des Stacks. Dazu wird die Funktion \textit{bm\_blemesh\_init()} aufgerufen. Diese führt die notwendigen Schritte aus um den Mesh-Stack hochzufahren. Nach erfolgreicher Initialisierung wird mit dem Provisioning weitergefahren. \\
+Das Modul \textit{bm\_ble\_mesh.c}\footnotemark\ sowie das Modul \textit{bm\_mesh\_stack.c}\footnotemark\ dienen zur Initialisierung des Stacks. Dazu wird die Funktion \textit{bm\_blemesh\_init()} aufgerufen. Diese führt die notwendigen Schritte aus um den Mesh-Stack hochzufahren. Nach erfolgreicher Initialisierung wird mit dem Provisioning weitergefahren.
 
 
 \footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/Bluetooth/nRF_SDK_Mesh/src/bm_ble_mesh.c}}
@@ -106,7 +89,6 @@ Das Modul \textit{bm\_ble\_mesh.c}\footnotemark\ sowie das Modul \textit{bm\_mes
 \footnotetext{\url{https://github.com/Rouben94/P6_Software/blob/master/Bluetooth/nRF_SDK_Mesh/src/bm_mesh_stack.c}}
 
 \paragraph{Self Provisioning and Configuring}
-
 Das Self Provisioning sowie das Self Configuring werden bei der \textit{nRF SDK for Mesh} mittels dem Device-State-Manager durchgeführt. Dieser verwaltet alle notwendigen Keys sowie Address-Listen, welche zur Konfiguration gebraucht werden. Durch analysieren des Config-Server-Models, welches normalerweise die Konfiguration des Nodes vornimmt, wurde der notwendige Ablauf zur Konfiguration rekonstruiert. 
 
 \subsubsection{Model Handler}\label{subsubsec:BluetoothMeshUmsetzungnRFSDKModelHandler}
