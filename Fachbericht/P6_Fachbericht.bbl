@@ -1,0 +1,1679 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{github_p6_software_p2p_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e1adbcbb92c622d0b3e619f9d0730abf}{%
+           family={Github},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{e1adbcbb92c622d0b3e619f9d0730abf}
+      \strng{fullhash}{e1adbcbb92c622d0b3e619f9d0730abf}
+      \strng{bibnamehash}{e1adbcbb92c622d0b3e619f9d0730abf}
+      \strng{authorbibnamehash}{e1adbcbb92c622d0b3e619f9d0730abf}
+      \strng{authornamehash}{e1adbcbb92c622d0b3e619f9d0730abf}
+      \strng{authorfullhash}{e1adbcbb92c622d0b3e619f9d0730abf}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Repository of all software code from the bachelor thesis - Rouben94/P6\_Software}
+      \field{journaltitle}{GitHub}
+      \field{month}{8}
+      \field{note}{Library Catalog: github.com}
+      \field{title}{P6\_Software\_P2P}
+      \field{urlday}{7}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\ZGAH23E8\\P2P.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://github.com/Rouben94/P6_Software/P2P
+      \endverb
+      \verb{url}
+      \verb https://github.com/Rouben94/P6_Software/P2P
+      \endverb
+    \endentry
+    \entry{nrf_connect_sdk_radio_test_example_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e1f9e02a35291002a73f1c469ed9b7aa}{%
+           family={nRF\_Connect\_SDK},
+           familyi={n\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1f9e02a35291002a73f1c469ed9b7aa}
+      \strng{fullhash}{e1f9e02a35291002a73f1c469ed9b7aa}
+      \strng{bibnamehash}{e1f9e02a35291002a73f1c469ed9b7aa}
+      \strng{authorbibnamehash}{e1f9e02a35291002a73f1c469ed9b7aa}
+      \strng{authornamehash}{e1f9e02a35291002a73f1c469ed9b7aa}
+      \strng{authorfullhash}{e1f9e02a35291002a73f1c469ed9b7aa}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{Radio\_Test\_Example — {nRF} {Connect} {SDK} 1.3.99 documentation}
+      \field{urlday}{8}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Radio Test — nRF Connect SDK 1.3.99 documentation:C\:\\Users\\cyril\\Zotero\\storage\\Z245BBP9\\README.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/peripheral/radio_test/README.html#radio-test
+      \endverb
+      \verb{url}
+      \verb https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/peripheral/radio_test/README.html#radio-test
+      \endverb
+    \endentry
+    \entry{nordic_semi_nrf_infocenter_radio_states_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{nRF}\_Infocenter\_Radio\_States}
+      \field{urlday}{8}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Nordic Semiconductor Infocenter:C\:\\Users\\cyril\\Zotero\\storage\\2BI3F9JK\\index.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fradio.html&cp=4_0_0_5_19_4&anchor=concept_rnf_nml_4r
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fradio.html&cp=4_0_0_5_19_4&anchor=concept_rnf_nml_4r
+      \endverb
+    \endentry
+    \entry{nordic_semi_nrf_infocenter_radio_transmit_sequence_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{2}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{nRF}\_Infocenter\_Radio\_Transmit\_Sequence}
+      \field{urlday}{8}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fradio.html&cp=4_0_0_5_19_5&anchor=concept_db5_cnl_4r
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fradio.html&cp=4_0_0_5_19_5&anchor=concept_db5_cnl_4r
+      \endverb
+    \endentry
+    \entry{nordic_semi_nrf_infocenter_radio_ieee_operation_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{3}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{nRF}\_Infocenter\_Radio\_IEEE\_Operation}
+      \field{urlday}{8}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fradio.html&cp=4_0_0_5_19_11&anchor=concept_wpg_n3j_4r
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fradio.html&cp=4_0_0_5_19_11&anchor=concept_wpg_n3j_4r
+      \endverb
+    \endentry
+    \entry{nordic_semi_nrf_infocenter_radio_receive_sequence_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{4}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{nRF}\_Infocenter\_Radio\_Receive\_Sequence}
+      \field{urlday}{8}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fradio.html&cp=4_0_0_5_19_4&anchor=concept_rnf_nml_4r
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fradio.html&cp=4_0_0_5_19_4&anchor=concept_rnf_nml_4r
+      \endverb
+    \endentry
+    \entry{rk_how_to_deal_with_broadcasting_collision_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=87c69d95a624572b1d842444b47e69f3}{%
+           family={RK},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{87c69d95a624572b1d842444b47e69f3}
+      \strng{fullhash}{87c69d95a624572b1d842444b47e69f3}
+      \strng{bibnamehash}{87c69d95a624572b1d842444b47e69f3}
+      \strng{authorbibnamehash}{87c69d95a624572b1d842444b47e69f3}
+      \strng{authornamehash}{87c69d95a624572b1d842444b47e69f3}
+      \strng{authorfullhash}{87c69d95a624572b1d842444b47e69f3}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nordic DevZone}
+      \field{month}{8}
+      \field{title}{How\_to\_deal\_with\_broadcasting\_collision?}
+      \field{urlday}{9}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\MM9WI5K7\\how-to-deal-with-broadcasting-collision.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://devzone.nordicsemi.com/f/nordic-q-a/13685/how-to-deal-with-broadcasting-collision
+      \endverb
+      \verb{url}
+      \verb https://devzone.nordicsemi.com/f/nordic-q-a/13685/how-to-deal-with-broadcasting-collision
+      \endverb
+    \endentry
+    \entry{nordic_semi_nrf_infocenter_ppi_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{5}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{nRF}\_Infocenter\_PPI}
+      \field{urlday}{8}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fppi.html&cp=4_0_0_5_15
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fppi.html&cp=4_0_0_5_15
+      \endverb
+    \endentry
+    \entry{django_django_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ef0f93c83e374876a61da0d4d16f36ab}{%
+           family={{Django}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{ef0f93c83e374876a61da0d4d16f36ab}
+      \strng{fullhash}{ef0f93c83e374876a61da0d4d16f36ab}
+      \strng{bibnamehash}{ef0f93c83e374876a61da0d4d16f36ab}
+      \strng{authorbibnamehash}{ef0f93c83e374876a61da0d4d16f36ab}
+      \strng{authornamehash}{ef0f93c83e374876a61da0d4d16f36ab}
+      \strng{authorfullhash}{ef0f93c83e374876a61da0d4d16f36ab}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Documentation}
+      \field{journaltitle}{Django}
+      \field{month}{1}
+      \field{title}{Django documentation}
+      \field{urlday}{21}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Django documentation | Django documentation | Django:C\:\\Users\\cyril\\Zotero\\storage\\SLWDELW2\\3.1.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://docs.djangoproject.com/en/3.1/
+      \endverb
+      \verb{url}
+      \verb https://docs.djangoproject.com/en/3.1/
+      \endverb
+    \endentry
+    \entry{mdn_web_docs_django_2019}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=eace3534eb86e51f9a1db37427425ce9}{%
+           family={{MDN Web Docs}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{fullhash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{bibnamehash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{authorbibnamehash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{authornamehash}{eace3534eb86e51f9a1db37427425ce9}
+      \strng{authorfullhash}{eace3534eb86e51f9a1db37427425ce9}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MDN Web Docs}
+      \field{month}{11}
+      \field{title}{Django introduction}
+      \field{urlday}{21}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\J4TCXYK4\\Introduction.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction
+      \endverb
+      \verb{url}
+      \verb https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction
+      \endverb
+    \endentry
+    \entry{silicon_laboratories_inc_an1142_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=bec5e2afa4b65ad73fb5a79abc20e49b}{%
+           family={{Silicon Laboratories Inc.}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{bec5e2afa4b65ad73fb5a79abc20e49b}
+      \strng{fullhash}{bec5e2afa4b65ad73fb5a79abc20e49b}
+      \strng{bibnamehash}{bec5e2afa4b65ad73fb5a79abc20e49b}
+      \strng{authorbibnamehash}{bec5e2afa4b65ad73fb5a79abc20e49b}
+      \strng{authornamehash}{bec5e2afa4b65ad73fb5a79abc20e49b}
+      \strng{authorfullhash}{bec5e2afa4b65ad73fb5a79abc20e49b}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{AN1142}: {Mesh} {Network} {Performance} {Comparison}}
+      \field{urlday}{24}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.silabs.com/documents/public/application-notes/an1142-mesh-network-performance-comparison.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.silabs.com/documents/public/application-notes/an1142-mesh-network-performance-comparison.pdf
+      \endverb
+    \endentry
+    \entry{nordic_semiconductor_asa_nrf52840_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f92ef3b96c278dbdb8c5a2f4dfe69899}{%
+           family={ASA},
+           familyi={A\bibinitperiod},
+           given={Nordic\bibnamedelima Semiconductor},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{fullhash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{bibnamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authorbibnamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authornamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authorfullhash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{nRF52840 - Advanced Bluetooth 5, Thread and Zigbee multiprotocol SoC}
+      \field{month}{8}
+      \field{title}{{nRF52840} - {Nordic} {Semiconductor}}
+      \field{urlday}{9}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\W9AJMZNN\\nRF52840.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nordicsemi.com/en/Products/Low%20power%20short-range%20wireless/nRF52840
+      \endverb
+      \verb{url}
+      \verb https://www.nordicsemi.com/en/Products/Low%20power%20short-range%20wireless/nRF52840
+      \endverb
+    \endentry
+    \entry{nordic_semiconductor_asa_nrf52840_ps_v11pdf_nodate}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6776bdce7698bc30f409c1a0564b2fed}{%
+           family={{Nordic Semiconductor ASA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{fullhash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{bibnamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authorbibnamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authornamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authorfullhash}{6776bdce7698bc30f409c1a0564b2fed}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{nRF52840}\_PS\_v1.1.pdf}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/pdf/nRF52840_PS_v1.1.pdf
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/pdf/nRF52840_PS_v1.1.pdf
+      \endverb
+    \endentry
+    \entry{nordic_semiconductor_asa_nrf52840_2020-1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6776bdce7698bc30f409c1a0564b2fed}{%
+           family={{Nordic Semiconductor ASA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{fullhash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{bibnamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authorbibnamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authornamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authorfullhash}{6776bdce7698bc30f409c1a0564b2fed}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The nRF52840 DK is a Bluetooth LE, Bluetooth mesh, Thread and Zigbee development kit for the nRF52811 and nRF52840 SoCs.}
+      \field{month}{8}
+      \field{title}{{nRF52840} {DK}}
+      \field{urlday}{9}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\4BDBP3JH\\nRF52840-DK.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nordicsemi.com/en/Software%20and%20tools/Development%20Kits/nRF52840%20DK
+      \endverb
+      \verb{url}
+      \verb https://www.nordicsemi.com/en/Software%20and%20tools/Development%20Kits/nRF52840%20DK
+      \endverb
+    \endentry
+    \entry{nordic_semiconductor_asa_nrf52840_2020-2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6776bdce7698bc30f409c1a0564b2fed}{%
+           family={{Nordic Semiconductor ASA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{fullhash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{bibnamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authorbibnamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authornamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authorfullhash}{6776bdce7698bc30f409c1a0564b2fed}
+      \field{extraname}{3}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The nRF52840 Dongle is complementary hardware to the nRF Connect for Desktop. It supports Bluetooth 5, Bluetooth mesh, Thread and Zigbee.}
+      \field{month}{8}
+      \field{title}{{nRF52840} {Dongle}}
+      \field{urlday}{9}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\Q7FMAT7T\\nRF52840-Dongle.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nordicsemi.com/en/Software%20and%20tools/Development%20Kits/nRF52840%20Dongle
+      \endverb
+      \verb{url}
+      \verb https://www.nordicsemi.com/en/Software%20and%20tools/Development%20Kits/nRF52840%20Dongle
+      \endverb
+    \endentry
+    \entry{nordic_semiconductor_asa_nrf52840_dongle_user_guide_v11pdf_2019}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f92ef3b96c278dbdb8c5a2f4dfe69899}{%
+           family={ASA},
+           familyi={A\bibinitperiod},
+           given={Nordic\bibnamedelima Semiconductor},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{fullhash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{bibnamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authorbibnamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authornamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authorfullhash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{{nRF52840}\_Dongle\_User\_Guide\_v1.1.pdf}
+      \field{urlday}{9}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/pdf/nRF52840_Dongle_User_Guide_v1.1.pdf
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/pdf/nRF52840_Dongle_User_Guide_v1.1.pdf
+      \endverb
+    \endentry
+    \entry{distrelec_schweiz_ag_rnd_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a00bf47aefa2ba4efe4c68f953fec486}{%
+           family={{Distrelec Schweiz AG}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{a00bf47aefa2ba4efe4c68f953fec486}
+      \strng{fullhash}{a00bf47aefa2ba4efe4c68f953fec486}
+      \strng{bibnamehash}{a00bf47aefa2ba4efe4c68f953fec486}
+      \strng{authorbibnamehash}{a00bf47aefa2ba4efe4c68f953fec486}
+      \strng{authornamehash}{a00bf47aefa2ba4efe4c68f953fec486}
+      \strng{authorfullhash}{a00bf47aefa2ba4efe4c68f953fec486}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{RND} 305-00002\_eng\_tds}
+      \field{urlday}{17}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.distrelec.ch/Web/Downloads/_t/ds/RND%20305-00002_eng_tds.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.distrelec.ch/Web/Downloads/_t/ds/RND%20305-00002_eng_tds.pdf
+      \endverb
+    \endentry
+    \entry{nordic_semiconductor_asa_pca10056_schematic_and_pcb_2019}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f92ef3b96c278dbdb8c5a2f4dfe69899}{%
+           family={ASA},
+           familyi={A\bibinitperiod},
+           given={Nordic\bibnamedelima Semiconductor},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{fullhash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{bibnamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authorbibnamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authornamehash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \strng{authorfullhash}{f92ef3b96c278dbdb8c5a2f4dfe69899}
+      \field{extraname}{3}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{{PCA10056}\_Schematic\_And\_PCB}
+      \field{urlday}{14}
+      \field{urlmonth}{5}
+      \field{urlyear}{2020}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://infocenter.nordicsemi.com/pdf/nRF52840_DK_User_Guide_v1.4.1.pdf
+      \endverb
+      \verb{url}
+      \verb http://infocenter.nordicsemi.com/pdf/nRF52840_DK_User_Guide_v1.4.1.pdf
+      \endverb
+    \endentry
+    \entry{nordic_semiconductor_asa_pca10059_schematic_and_pcb_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6776bdce7698bc30f409c1a0564b2fed}{%
+           family={{Nordic Semiconductor ASA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{fullhash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{bibnamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authorbibnamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authornamehash}{6776bdce7698bc30f409c1a0564b2fed}
+      \strng{authorfullhash}{6776bdce7698bc30f409c1a0564b2fed}
+      \field{extraname}{4}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{PCA10059}\_Schematic\_And\_PCB}
+      \field{urlday}{9}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.nordicsemi.com/-/media/Software-and-other-downloads/Dev-Kits/nRF52840-Dongle/nRF52840-USB-Dongle---Hardware-files-1_0_0.zip
+      \endverb
+      \verb{url}
+      \verb https://www.nordicsemi.com/-/media/Software-and-other-downloads/Dev-Kits/nRF52840-Dongle/nRF52840-USB-Dongle---Hardware-files-1_0_0.zip
+      \endverb
+    \endentry
+    \entry{nordic_semi_welcome_to_the_nrf_connect_sdk_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{6}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{Welcome\_to\_the\_nRF\_Connect\_SDK! — {nRF} {Connect} {SDK} 1.3.99 documentation}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Welcome to the nRF Connect SDK! — nRF Connect SDK 1.3.99 documentation:C\:\\Users\\cyril\\Zotero\\storage\\EE6XHU5S\\index.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html
+      \endverb
+      \verb{url}
+      \verb https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/index.html
+      \endverb
+    \endentry
+    \entry{nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{7}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{nRF}\_SDK\_for\_Thread\_and\_Zigbee}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Nordic Semiconductor Infocenter:C\:\\Users\\cyril\\Zotero\\storage\\3EKTUL6D\\index.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_sdk%2Fstruct%2Fsdk_thread_zigbee_latest.html
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_sdk%2Fstruct%2Fsdk_thread_zigbee_latest.html
+      \endverb
+    \endentry
+    \entry{nordic_semi_nrf_sdk_for_mesh_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{8}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{nRF}\_SDK\_for\_Mesh}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Nordic Semiconductor Infocenter:C\:\\Users\\cyril\\Zotero\\storage\\QK7BLV8P\\index.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_sdk%2Fstruct%2Fsdk_mesh_latest.html
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_sdk%2Fstruct%2Fsdk_mesh_latest.html
+      \endverb
+    \endentry
+    \entry{anklin_bobst_horath_rouben94p6_software_nodate}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=add72462daced57e9e2704b9f9e66a02}{%
+           family={{Anklin, Bobst, Horath}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{add72462daced57e9e2704b9f9e66a02}
+      \strng{fullhash}{add72462daced57e9e2704b9f9e66a02}
+      \strng{bibnamehash}{add72462daced57e9e2704b9f9e66a02}
+      \strng{authorbibnamehash}{add72462daced57e9e2704b9f9e66a02}
+      \strng{authornamehash}{add72462daced57e9e2704b9f9e66a02}
+      \strng{authorfullhash}{add72462daced57e9e2704b9f9e66a02}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Repository of all software code from the bachelor thesis - Rouben94/P6\_Software}
+      \field{journaltitle}{GitHub}
+      \field{note}{Library Catalog: github.com}
+      \field{title}{Rouben94/{P6}\_Software}
+      \field{urlday}{7}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\NKHC64US\\P2P.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://github.com/Rouben94/P6_Software
+      \endverb
+      \verb{url}
+      \verb https://github.com/Rouben94/P6_Software
+      \endverb
+    \endentry
+    \entry{rouben94_sharedlib_timesync_software_git_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=81f2b02ceeaeb9761f86bf888e681197}{%
+           family={Rouben94},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{81f2b02ceeaeb9761f86bf888e681197}
+      \strng{fullhash}{81f2b02ceeaeb9761f86bf888e681197}
+      \strng{bibnamehash}{81f2b02ceeaeb9761f86bf888e681197}
+      \strng{authorbibnamehash}{81f2b02ceeaeb9761f86bf888e681197}
+      \strng{authornamehash}{81f2b02ceeaeb9761f86bf888e681197}
+      \strng{authorfullhash}{81f2b02ceeaeb9761f86bf888e681197}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Repository of all software code from the bachelor thesis - Rouben94/P6\_Software}
+      \field{journaltitle}{GitHub}
+      \field{month}{8}
+      \field{title}{{SharedLib}\_Timesync\_Software\_Git}
+      \field{urlday}{16}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_timesync.c
+      \endverb
+      \verb{url}
+      \verb https://github.com/Rouben94/P6_Software/blob/master/SharedLib/bm_timesync.c
+      \endverb
+    \endentry
+    \entry{nordic_semi_nrf5_sdk_flash_data_storage_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=def9b37f27f633aabd9f0d98d939216a}{%
+           family={Nordic\_Semi},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{fullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{bibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorbibnamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authornamehash}{def9b37f27f633aabd9f0d98d939216a}
+      \strng{authorfullhash}{def9b37f27f633aabd9f0d98d939216a}
+      \field{extraname}{9}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{nRF5}\_SDK\_Flash\_Data\_Storage}
+      \field{urlday}{21}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb nRF5 SDK v16.0.0\: Flash Data Storage:C\:\\Users\\cyril\\Zotero\\storage\\6C5W2NUK\\group__fds.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://infocenter.nordicsemi.com/topic/sdk_nrf5_v16.0.0/group__fds.html
+      \endverb
+      \verb{url}
+      \verb https://infocenter.nordicsemi.com/topic/sdk_nrf5_v16.0.0/group__fds.html
+      \endverb
+    \endentry
+    \entry{bluetooth_sig_mesh-technology-overviewpdf_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=fa50017d0239527203e450aca3e79024}{%
+           family={Bluetooth\_SIG},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa50017d0239527203e450aca3e79024}
+      \strng{fullhash}{fa50017d0239527203e450aca3e79024}
+      \strng{bibnamehash}{fa50017d0239527203e450aca3e79024}
+      \strng{authorbibnamehash}{fa50017d0239527203e450aca3e79024}
+      \strng{authornamehash}{fa50017d0239527203e450aca3e79024}
+      \strng{authorfullhash}{fa50017d0239527203e450aca3e79024}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{Mesh-{Technology}-{Overview}.pdf}
+      \field{urlday}{12}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Mesh-Technology-Overview.pdf:C\:\\Users\\cyril\\Zotero\\storage\\WIRB9MH6\\Mesh-Technology-Overview.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.bluetooth.com/wp-content/uploads/2019/03/Mesh-Technology-Overview.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.bluetooth.com/wp-content/uploads/2019/03/Mesh-Technology-Overview.pdf
+      \endverb
+    \endentry
+    \entry{bluetooth_sig_mesh_netzwerk_spezifikationen_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=fa50017d0239527203e450aca3e79024}{%
+           family={Bluetooth\_SIG},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {de}%
+      }
+      \strng{namehash}{fa50017d0239527203e450aca3e79024}
+      \strng{fullhash}{fa50017d0239527203e450aca3e79024}
+      \strng{bibnamehash}{fa50017d0239527203e450aca3e79024}
+      \strng{authorbibnamehash}{fa50017d0239527203e450aca3e79024}
+      \strng{authornamehash}{fa50017d0239527203e450aca3e79024}
+      \strng{authorfullhash}{fa50017d0239527203e450aca3e79024}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Mesh Vernetzung mit der Kraft der Bluetooth Technologie Die Bluetooth®-Netzwerkspezifikationen mesh definieren Anforderungen, um eine interoperable Many-to-Many-(m:m)mesh -Netzwerklösung für...}
+      \field{journaltitle}{Website zur Bluetooth®-Technologie}
+      \field{month}{8}
+      \field{title}{Mesh\_Netzwerk\_Spezifikationen | {Bluetooth}®-{Technologie} {Website}}
+      \field{urlday}{13}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\QZNIDBGK\\mesh-specifications.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.bluetooth.com/de/specifications/mesh-specifications/
+      \endverb
+      \verb{url}
+      \verb https://www.bluetooth.com/de/specifications/mesh-specifications/
+      \endverb
+    \endentry
+    \entry{woolley_how_bluetooth_mesh_puts_the_large__2018}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e8c6a373800f1b63eb4ccf82744d3965}{%
+           family={Woolley},
+           familyi={W\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en-US}%
+      }
+      \strng{namehash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{fullhash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{bibnamehash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{authorbibnamehash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{authornamehash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{authorfullhash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article provides a comprehensive look at: Redefining scalability in terms of the number of mesh operations which can be processed per second How the overall capacity of a Bluetooth® mesh network…}
+      \field{journaltitle}{Bluetooth® Technology Website}
+      \field{month}{6}
+      \field{title}{How\_Bluetooth\_Mesh\_Puts\_the\_Large\_ in {Large}-{Scale} {Wireless} {Device} {Networks}}
+      \field{urlday}{23}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\TKUF8S2U\\mesh-in-large-scale-networks.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.bluetooth.com/blog/mesh-in-large-scale-networks/
+      \endverb
+      \verb{url}
+      \verb https://www.bluetooth.com/blog/mesh-in-large-scale-networks/
+      \endverb
+    \endentry
+    \entry{thread_group_inc_thread_2017}{misc}{}
+      \name{editor}{1}{}{%
+        {{hash=ee86318d94393d86d49c85a65f74e52c}{%
+           family={{Thread Group, Inc.}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{ee86318d94393d86d49c85a65f74e52c}
+      \strng{fullhash}{ee86318d94393d86d49c85a65f74e52c}
+      \strng{bibnamehash}{ee86318d94393d86d49c85a65f74e52c}
+      \strng{editorbibnamehash}{ee86318d94393d86d49c85a65f74e52c}
+      \strng{editornamehash}{ee86318d94393d86d49c85a65f74e52c}
+      \strng{editorfullhash}{ee86318d94393d86d49c85a65f74e52c}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Specification of a Thread Network}
+      \field{month}{2}
+      \field{shorttitle}{Thread {Spec}.}
+      \field{title}{Thread {Specification} 1.1.1}
+      \field{urlday}{5}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.threadgroup.org/ThreadSpec
+      \endverb
+      \verb{url}
+      \verb https://www.threadgroup.org/ThreadSpec
+      \endverb
+    \endentry
+    \entry{erickson_picture_2019}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=ac8d5ba4efecf084dc6be18a98a3b1b1}{%
+           family={Erickson},
+           familyi={E\bibinitperiod},
+           given={Grant},
+           giveni={G\bibinitperiod}}}%
+        {{hash=86c093cbb0518994c17238db5a055aab}{%
+           family={Neidig},
+           familyi={N\bibinitperiod},
+           given={Sujata},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6cfb5d2608616bce21708f853f01106e}{%
+           family={Hui},
+           familyi={H\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{bf7ce3927ec75378e30eb70628418c06}
+      \strng{fullhash}{bf7ce3927ec75378e30eb70628418c06}
+      \strng{bibnamehash}{bf7ce3927ec75378e30eb70628418c06}
+      \strng{authorbibnamehash}{bf7ce3927ec75378e30eb70628418c06}
+      \strng{authornamehash}{bf7ce3927ec75378e30eb70628418c06}
+      \strng{authorfullhash}{bf7ce3927ec75378e30eb70628418c06}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Picture protocol layer thread}
+      \field{journaltitle}{Thread Group}
+      \field{month}{12}
+      \field{title}{Picture protocol layer thread}
+      \field{urlday}{4}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb layerprotocols.png (400×400):C\:\\Users\\cyril\\Zotero\\storage\\6S2PDIZY\\layerprotocols.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.threadgroup.org/Portals/0/Images/blog/layerprotocols.png
+      \endverb
+      \verb{url}
+      \verb https://www.threadgroup.org/Portals/0/Images/blog/layerprotocols.png
+      \endverb
+    \endentry
+    \entry{thread_group_what_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e0c6db6fda87304d6a4010c2aac875af}{%
+           family={{Thread Group}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{e0c6db6fda87304d6a4010c2aac875af}
+      \strng{fullhash}{e0c6db6fda87304d6a4010c2aac875af}
+      \strng{bibnamehash}{e0c6db6fda87304d6a4010c2aac875af}
+      \strng{authorbibnamehash}{e0c6db6fda87304d6a4010c2aac875af}
+      \strng{authornamehash}{e0c6db6fda87304d6a4010c2aac875af}
+      \strng{authorfullhash}{e0c6db6fda87304d6a4010c2aac875af}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{What is Thread}
+      \field{journaltitle}{Thread}
+      \field{month}{1}
+      \field{title}{What is {Thread}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb What is Thread:C\:\\Users\\cyril\\Zotero\\storage\\DDBKB348\\What-is-Thread.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.threadgroup.org/What-is-Thread
+      \endverb
+      \verb{url}
+      \verb https://www.threadgroup.org/What-is-Thread
+      \endverb
+    \endentry
+    \entry{shelby_constrained_2014}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=ed98cd7a76bd516b3da09ae8534c32a0}{%
+           family={Shelby},
+           familyi={S\bibinitperiod},
+           given={Zach},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=9df875ea8cdea272d47bed2f6b8c68df}{%
+           family={Hartke},
+           familyi={H\bibinitperiod},
+           given={Klaus},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7fe2f98d5101608d1a28002bcb59c6d0}{%
+           family={Bormann},
+           familyi={B\bibinitperiod},
+           given={Carsten},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d3b77bed71a92bc7ba4b5c06c8a42240}
+      \strng{fullhash}{d3b77bed71a92bc7ba4b5c06c8a42240}
+      \strng{bibnamehash}{d3b77bed71a92bc7ba4b5c06c8a42240}
+      \strng{authorbibnamehash}{d3b77bed71a92bc7ba4b5c06c8a42240}
+      \strng{authornamehash}{d3b77bed71a92bc7ba4b5c06c8a42240}
+      \strng{authorfullhash}{d3b77bed71a92bc7ba4b5c06c8a42240}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{IETF}
+      \field{month}{6}
+      \field{note}{Library Catalog: tools.ietf.org}
+      \field{shorttitle}{{CoAP}}
+      \field{title}{The {Constrained} {Application} {Protocol} ({CoAP})}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\EXQE2587\\rfc7252.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://tools.ietf.org/html/rfc7252
+      \endverb
+      \verb{url}
+      \verb https://tools.ietf.org/html/rfc7252
+      \endverb
+    \endentry
+    \entry{postel_user_1980}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=22c8db2c59b26571094b7dab5cefad0e}{%
+           family={Postel},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{22c8db2c59b26571094b7dab5cefad0e}
+      \strng{fullhash}{22c8db2c59b26571094b7dab5cefad0e}
+      \strng{bibnamehash}{22c8db2c59b26571094b7dab5cefad0e}
+      \strng{authorbibnamehash}{22c8db2c59b26571094b7dab5cefad0e}
+      \strng{authornamehash}{22c8db2c59b26571094b7dab5cefad0e}
+      \strng{authorfullhash}{22c8db2c59b26571094b7dab5cefad0e}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{UDP}
+      \field{journaltitle}{IETF}
+      \field{month}{8}
+      \field{note}{Library Catalog: tools.ietf.org}
+      \field{title}{User {Datagram} {Protocol}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{1980}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\BPZKIA3U\\rfc768.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://tools.ietf.org/html/rfc768
+      \endverb
+      \verb{url}
+      \verb https://tools.ietf.org/html/rfc768
+      \endverb
+    \endentry
+    \entry{levis_trickle_2011}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=64657013bce77454fd72c592c7225abf}{%
+           family={Levis},
+           familyi={L\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=251d79a2b9c2915f59dbe3bfba5bfc2e}{%
+           family={Clausen},
+           familyi={C\bibinitperiod},
+           given={Thomas\bibnamedelima Heide},
+           giveni={T\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{8ce190954571b97b0c62f7d7dd4b742b}
+      \strng{fullhash}{8ce190954571b97b0c62f7d7dd4b742b}
+      \strng{bibnamehash}{8ce190954571b97b0c62f7d7dd4b742b}
+      \strng{authorbibnamehash}{8ce190954571b97b0c62f7d7dd4b742b}
+      \strng{authornamehash}{8ce190954571b97b0c62f7d7dd4b742b}
+      \strng{authorfullhash}{8ce190954571b97b0c62f7d7dd4b742b}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IETF}
+      \field{month}{3}
+      \field{note}{Library Catalog: tools.ietf.org}
+      \field{title}{The {Trickle} {Algorithm}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2011}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\CD9TDSK5\\rfc6206.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://tools.ietf.org/html/rfc6206
+      \endverb
+      \verb{url}
+      \verb https://tools.ietf.org/html/rfc6206
+      \endverb
+    \endentry
+    \entry{thubert_compression_2011}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=e36e172ff4469a59f14eb455fd2284c9}{%
+           family={Thubert},
+           familyi={T\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3514417634b2e9f1643e2cb913cbf545}{%
+           family={Hui},
+           familyi={H\bibinitperiod},
+           given={Jonathan\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{8b818a5ae913ff5e8d33df6e921209e9}
+      \strng{fullhash}{8b818a5ae913ff5e8d33df6e921209e9}
+      \strng{bibnamehash}{8b818a5ae913ff5e8d33df6e921209e9}
+      \strng{authorbibnamehash}{8b818a5ae913ff5e8d33df6e921209e9}
+      \strng{authornamehash}{8b818a5ae913ff5e8d33df6e921209e9}
+      \strng{authorfullhash}{8b818a5ae913ff5e8d33df6e921209e9}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{6LoWPAN}
+      \field{journaltitle}{IETF}
+      \field{month}{9}
+      \field{note}{Library Catalog: tools.ietf.org}
+      \field{title}{Compression {Format} for {IPv6} {Datagrams} over {IEEE} 802.15.4-{Based} {Networks}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2011}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\cyril\\Zotero\\storage\\SCGSY99U\\rfc6282.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://tools.ietf.org/html/rfc6282
+      \endverb
+      \verb{url}
+      \verb https://tools.ietf.org/html/rfc6282
+      \endverb
+    \endentry
+    \entry{ieee_computer_society_ieee_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6b600542ba3d4a21aea8e7d8ee988932}{%
+           family={{IEEE Computer Society}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{6b600542ba3d4a21aea8e7d8ee988932}
+      \strng{fullhash}{6b600542ba3d4a21aea8e7d8ee988932}
+      \strng{bibnamehash}{6b600542ba3d4a21aea8e7d8ee988932}
+      \strng{authorbibnamehash}{6b600542ba3d4a21aea8e7d8ee988932}
+      \strng{authornamehash}{6b600542ba3d4a21aea8e7d8ee988932}
+      \strng{authorfullhash}{6b600542ba3d4a21aea8e7d8ee988932}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{IEEE802.15.4}
+      \field{journaltitle}{IEEE SA}
+      \field{month}{7}
+      \field{title}{{IEEE} 802.15.4-2020 - {IEEE} {Standard} for {Low}-{Rate} {Wireless} {Networks}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb IEEE 802.15.4-2020 - IEEE Standard for Low-Rate Wireless Networks:C\:\\Users\\cyril\\Zotero\\storage\\GRHRGH4V\\802_15_4-2020.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://standards.ieee.org/standard/802_15_4-2020.html
+      \endverb
+      \verb{url}
+      \verb https://standards.ieee.org/standard/802_15_4-2020.html
+      \endverb
+    \endentry
+    \entry{openthread_ot-primer-roles_2xpng_2016}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f593e1e52d95c82a4510723880e7ab61}{%
+           family={{Openthread}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{fullhash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{bibnamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authorbibnamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authornamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authorfullhash}{f593e1e52d95c82a4510723880e7ab61}
+      \field{extraname}{1}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Bild device roles}
+      \field{journaltitle}{Openthread}
+      \field{month}{6}
+      \field{title}{ot-primer-roles\_2x.png (1656×1708)}
+      \field{urlday}{25}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb ot-primer-roles_2x.png (1656×1708):C\:\\Users\\cyril\\Zotero\\storage\\XN37Q465\\ot-primer-roles_2x.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://openthread.io/guides/images/ot-primer-roles_2x.png
+      \endverb
+      \verb{url}
+      \verb https://openthread.io/guides/images/ot-primer-roles_2x.png
+      \endverb
+    \endentry
+    \entry{openthread_ot-primer-taxonomy_2xpng_2016}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f593e1e52d95c82a4510723880e7ab61}{%
+           family={{Openthread}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{fullhash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{bibnamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authorbibnamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authornamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authorfullhash}{f593e1e52d95c82a4510723880e7ab61}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Bild device types}
+      \field{journaltitle}{Openthread}
+      \field{month}{6}
+      \field{title}{ot-primer-taxonomy\_2x.png (1480×1688)}
+      \field{urlday}{25}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb ot-primer-taxonomy_2x.png (1480×1688):C\:\\Users\\cyril\\Zotero\\storage\\3ZQZK3EE\\ot-primer-taxonomy_2x.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://openthread.io/guides/images/ot-primer-taxonomy_2x.png
+      \endverb
+      \verb{url}
+      \verb https://openthread.io/guides/images/ot-primer-taxonomy_2x.png
+      \endverb
+    \endentry
+    \entry{openthread_ot-primer-scopes_2xpng_2016}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f593e1e52d95c82a4510723880e7ab61}{%
+           family={{Openthread}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{fullhash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{bibnamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authorbibnamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authornamehash}{f593e1e52d95c82a4510723880e7ab61}
+      \strng{authorfullhash}{f593e1e52d95c82a4510723880e7ab61}
+      \field{extraname}{3}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Bild ipv6 scopes}
+      \field{journaltitle}{Openthread}
+      \field{month}{6}
+      \field{title}{ot-primer-scopes\_2x.png (2708×2676)}
+      \field{urlday}{25}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb ot-primer-scopes_2x.png (2708×2676):C\:\\Users\\cyril\\Zotero\\storage\\FN6UVGL3\\ot-primer-scopes_2x.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://openthread.io/guides/images/ot-primer-scopes_2x.png
+      \endverb
+      \verb{url}
+      \verb https://openthread.io/guides/images/ot-primer-scopes_2x.png
+      \endverb
+    \endentry
+    \entry{markus_krause_rainer_konrad_zigbee_2014}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=0b057660db02d6f4d28c8a865467a8e8}{%
+           family={{Markus Krause, Rainer Konrad}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {Deutsch}%
+      }
+      \list{publisher}{1}{%
+        {Springer Vieweg}%
+      }
+      \strng{namehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{fullhash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{bibnamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authorbibnamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authornamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authorfullhash}{0b057660db02d6f4d28c8a865467a8e8}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Drahtlose {ZigBee}-{Netzwerke} - {Ein} {Kompendium}}
+      \field{isbn}{978-3-658-05821-0}
+      \field{title}{{ZigBee}}
+      \field{urlday}{18}
+      \field{urlmonth}{4}
+      \field{urlyear}{2020}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{215\bibrangedash 331}
+      \range{pages}{117}
+    \endentry
+    \entry{markus_krause_rainer_konrad_ieee_2014}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=0b057660db02d6f4d28c8a865467a8e8}{%
+           family={{Markus Krause, Rainer Konrad}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {Deutsch}%
+      }
+      \list{publisher}{1}{%
+        {Springer Vieweg}%
+      }
+      \strng{namehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{fullhash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{bibnamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authorbibnamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authornamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authorfullhash}{0b057660db02d6f4d28c8a865467a8e8}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Drahtlose {ZigBee}-{Netzwerke} - {Ein} {Kompendium}}
+      \field{isbn}{978-3-658-05821-0}
+      \field{title}{{IEEE} 802.15.4}
+      \field{urlday}{18}
+      \field{urlmonth}{4}
+      \field{urlyear}{2020}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{83\bibrangedash 105}
+      \range{pages}{23}
+    \endentry
+    \entry{the_zigbee_alliance_zigbee_2016}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9e6d00d1fff78dd60779e73abf15ca7b}{%
+           family={{The ZigBee Alliance}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \strng{namehash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{fullhash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{bibnamehash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{authorbibnamehash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{authornamehash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{authorfullhash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{{ZigBee} {Cluster} {Library} {Specification}}
+      \field{urlday}{24}
+      \field{urlmonth}{3}
+      \field{urlyear}{2020}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://zigbeealliance.org/wp-content/uploads/2019/12/07-5123-06-zigbee-cluster-library-specification.pdf
+      \endverb
+      \verb{url}
+      \verb https://zigbeealliance.org/wp-content/uploads/2019/12/07-5123-06-zigbee-cluster-library-specification.pdf
+      \endverb
+    \endentry
+    \entry{dsr_corporation_dsr_nodate}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5a82e82519cfa0f227aa438ea20e4054}{%
+           family={{DSR Corporation}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{5a82e82519cfa0f227aa438ea20e4054}
+      \strng{fullhash}{5a82e82519cfa0f227aa438ea20e4054}
+      \strng{bibnamehash}{5a82e82519cfa0f227aa438ea20e4054}
+      \strng{authorbibnamehash}{5a82e82519cfa0f227aa438ea20e4054}
+      \strng{authornamehash}{5a82e82519cfa0f227aa438ea20e4054}
+      \strng{authorfullhash}{5a82e82519cfa0f227aa438ea20e4054}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ZBOSS}
+      \field{title}{{DSR} {IoT}}
+      \field{urlday}{26}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb DSR IoT:C\:\\Users\\cyril\\Zotero\\storage\\MA8AH5WG\\dsr-iot.com.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://dsr-iot.com/
+      \endverb
+      \verb{url}
+      \verb https://dsr-iot.com/
+      \endverb
+    \endentry
+    \entry{markus_krause_rainer_konrad_drahtlose_2014}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0b057660db02d6f4d28c8a865467a8e8}{%
+           family={{Markus Krause, Rainer Konrad}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {Deutsch}%
+      }
+      \list{publisher}{1}{%
+        {Springer Vieweg}%
+      }
+      \strng{namehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{fullhash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{bibnamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authorbibnamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authornamehash}{0b057660db02d6f4d28c8a865467a8e8}
+      \strng{authorfullhash}{0b057660db02d6f4d28c8a865467a8e8}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-658-05821-0}
+      \field{title}{Drahtlose {ZigBee}-{Netzwerke} - {Ein} {Kompendium}}
+      \field{urlday}{18}
+      \field{urlmonth}{4}
+      \field{urlyear}{2020}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+    \endentry
+    \entry{the_zigbee_alliance_zigbee_2015}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9e6d00d1fff78dd60779e73abf15ca7b}{%
+           family={{The ZigBee Alliance}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \strng{namehash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{fullhash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{bibnamehash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{authorbibnamehash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{authornamehash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \strng{authorfullhash}{9e6d00d1fff78dd60779e73abf15ca7b}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{{ZigBee} {Specification}}
+      \field{urlday}{22}
+      \field{urlmonth}{6}
+      \field{urlyear}{2020}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://zigbeealliance.org/wp-content/uploads/2019/11/docs-05-3474-21-0csg-zigbee-specification.pdf
+      \endverb
+      \verb{url}
+      \verb https://zigbeealliance.org/wp-content/uploads/2019/11/docs-05-3474-21-0csg-zigbee-specification.pdf
+      \endverb
+    \endentry
+    \entry{cyrill_horath_zigbee_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=60349776966d9ada2108aa6d61e47974}{%
+           family={{Cyrill Horath}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{60349776966d9ada2108aa6d61e47974}
+      \strng{fullhash}{60349776966d9ada2108aa6d61e47974}
+      \strng{bibnamehash}{60349776966d9ada2108aa6d61e47974}
+      \strng{authorbibnamehash}{60349776966d9ada2108aa6d61e47974}
+      \strng{authornamehash}{60349776966d9ada2108aa6d61e47974}
+      \strng{authorfullhash}{60349776966d9ada2108aa6d61e47974}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nordic Devzone}
+      \field{month}{7}
+      \field{title}{Zigbee - {Read} number of hops (radius)}
+      \field{type}{Support {Forum}}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius
+      \endverb
+      \verb{url}
+      \verb https://devzone.nordicsemi.com/f/nordic-q-a/63815/zigbee---read-number-of-hops-radius
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{zand_fig_nodate}
+\endrefsection
+\endinput
+

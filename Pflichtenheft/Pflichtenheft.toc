@@ -1,0 +1,32 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Übersicht}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Ausgangslage}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Ziel der Arbeit}{1}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Lösungskonzept}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Punkt zu Punkt Testinfrastruktur}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Test Mesh Netzwerke}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Bluetooth Mesh}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Thread}{4}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Zigbee}{4}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Steuer und Auswertesoftware}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Projektziele und Lieferobjekte}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Punkt zu Punkt Testinfrastruktur}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Test Mesh Netzwerke}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Steuer- und Auswertesoftware}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Zusatzziele}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Lieferobjekte}{8}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Projektmanagement}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Projektaufteilung}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Projektplan}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Risikoanalyse}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Projektvereinbarung}{10}{subsection.4.4}%
+\contentsline {section}{\numberline {A}Aufgabenstellung}{11}{appendix.A}%
+\contentsline {section}{\numberline {B}Test Kriterien Point to Point auf MAC Ebene}{16}{appendix.B}%
+\contentsline {section}{\numberline {C}Test Kriterien Mesh Netzwerke}{17}{appendix.C}%
+\contentsline {section}{\numberline {D}Gesamt Terminplanung}{18}{appendix.D}%
+\contentsline {section}{\numberline {E}Bluetooth Mesh Terminplanung}{19}{appendix.E}%
+\contentsline {section}{\numberline {F}Thread Terminplanung}{20}{appendix.F}%
+\contentsline {section}{\numberline {G}Zigbee Terminplanung}{21}{appendix.G}%
+\contentsline {section}{\numberline {H}Risikoanalyse}{22}{appendix.H}%

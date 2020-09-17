@@ -1,0 +1,79 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\babel@toc {english}{}
+\babel@toc {ngerman}{}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Konzeptschema P2P Testinfrastruktur\relax }}{6}{figure.caption.3}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Messaufbau P2P Testinfrastruktur\relax }}{7}{figure.caption.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Webserver Nodelist View ausgeklappt\relax }}{9}{figure.caption.5}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Webserver Connection View\relax }}{10}{figure.caption.6}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Webserver Nodelist View\relax }}{11}{figure.caption.8}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Webserver Chart View\relax }}{11}{figure.caption.9}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schrittkette P2P Testinfrastruktur\relax }}{12}{figure.caption.10}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Radio States \cite {nordic_semi_nrf_infocenter_radio_states_2020}\relax }}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Sende-Ablauf mit Verknüpfungen \cite {nordic_semi_nrf_infocenter_radio_transmit_sequence_2020}\relax }}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Sende-Ablauf mit CCA Idle}}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Sende-Ablauf mit CCA Busy}}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Empfangs-Ablauf mit Verknüpfungen \cite {nordic_semi_nrf_infocenter_radio_receive_sequence_2020}\relax }}{15}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Zeitsynchronisation über Offset mit Fehler\relax }}{16}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Zeitsynchronisation über Offset mit PPI\relax }}{17}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Verifizierung Zeitsynchronisation mittels Oszilloskop.\relax }}{18}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Django Funktionen \cite {mdn_web_docs_django_2019}\relax }}{19}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Funktionen P2P Webserver\relax }}{20}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Parameter Form\relax }}{22}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Port Form\relax }}{22}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Ablauf Django Serial\relax }}{23}{figure.caption.24}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Konzeptschema für den Ablauf eines Mesh Benchmarks.\relax }}{26}{figure.caption.25}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Anordnung Messumgebung 1: Labor\relax }}{28}{figure.caption.26}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Anordnung Messumgebung 2: Einfamilienhaus\relax }}{29}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Anordnung Messumgebung 3: Wohnung\relax }}{30}{figure.caption.28}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces MAC Adresse nRF52840-Dongle\relax }}{35}{figure.caption.32}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces nRF52840-DK PCA10056}}{38}{figure.caption.35}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces nRF52840-Dongle PCA10059}}{38}{figure.caption.35}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Testnode: nRF52840-Dongle inkl. Batteriepack\relax }}{38}{figure.caption.36}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces PCA10056 Copperplane mit IFA-Antenne}}{39}{figure.caption.37}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces PCA10059 Copperplane mit MIFA-Antenne}}{39}{figure.caption.37}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Abstrahlung in Z-Richtung PCA10056\relax }}{39}{figure.caption.38}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Abstrahlung in Z-Richtung PCA10059\relax }}{39}{figure.caption.38}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Vereinfachte Anbindung der \textit {Shared Library} an die Mesh-Stacks\relax }}{43}{figure.caption.41}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Flowgraph der Statemachine\relax }}{43}{figure.caption.42}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Konzept des Depth-Feld beim Versand einer Control Message\relax }}{46}{figure.caption.43}%
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Ablauf des Reportings mit Handshake zwischen Master und Slave.\relax }}{47}{figure.caption.44}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Parkhaus mit Bluetooth-Mesh}}{52}{figure.caption.45}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Stadion mit Bluetooth-Mesh}}{52}{figure.caption.45}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Client - Server Prinzip Bluetooth Mesh \cite {bluetooth_sig_mesh-technology-overviewpdf_2020}\relax }}{53}{figure.caption.46}%
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Publish - Subscribe Prinzip Bluetooth Mesh \cite {bluetooth_sig_mesh-technology-overviewpdf_2020}\relax }}{54}{figure.caption.47}%
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Beispielhafte Topologie eines Bluetooth-Mesh Netzwerks \cite {bluetooth_sig_mesh_netzwerk_spezifikationen_2020}\relax }}{55}{figure.caption.48}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Bluetooth-Mesh Stack \cite {bluetooth_sig_mesh-technology-overviewpdf_2020}\relax }}{56}{figure.caption.49}%
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Thread Protokoll Layer \cite {erickson_picture_2019}\relax }}{63}{figure.caption.51}%
+\contentsline {figure}{\numberline {15.1}{\ignorespaces Übersicht Thread Protokoll\relax }}{65}{figure.caption.53}%
+\contentsline {figure}{\numberline {15.2}{\ignorespaces Thread Device Roles \cite {openthread_ot-primer-roles_2xpng_2016}\relax }}{67}{figure.caption.56}%
+\contentsline {figure}{\numberline {15.3}{\ignorespaces Thread Device Types \cite {openthread_ot-primer-taxonomy_2xpng_2016}\relax }}{68}{figure.caption.57}%
+\contentsline {figure}{\numberline {15.4}{\ignorespaces IPv6 Adressräume \cite {openthread_ot-primer-scopes_2xpng_2016}\relax }}{69}{figure.caption.58}%
+\contentsline {figure}{\numberline {16.1}{\ignorespaces Channel Bandbreite \cite {zand_fig_nodate}\relax }}{73}{figure.caption.62}%
+\contentsline {figure}{\numberline {16.2}{\ignorespaces Initialisierung Thread Stack\relax }}{73}{figure.caption.63}%
+\contentsline {figure}{\numberline {18.1}{\ignorespaces Zigbee Protokollstack\relax }}{78}{figure.caption.67}%
+\contentsline {figure}{\numberline {19.1}{\ignorespaces Zigbee Baumnetzwerk links und Meshnetzwerk rechts \cite [S.~221]{markus_krause_rainer_konrad_zigbee_2014}\relax }}{79}{figure.caption.68}%
+\contentsline {figure}{\numberline {19.2}{\ignorespaces Architektur des Zigbee Protokoll Stacks\relax }}{80}{figure.caption.69}%
+\contentsline {figure}{\numberline {19.3}{\ignorespaces Zigbee Frame Struktur bei aktivierten Sicherheitsfunktionen \cite [S.~286]{markus_krause_rainer_konrad_zigbee_2014}\relax }}{82}{figure.caption.70}%
+\contentsline {figure}{\numberline {20.1}{\ignorespaces nRF5 SDK for Thread and Zigbee Plattform Design Referenz für Zigbee Applikationen \cite {nordic_semi_nrf_sdk_for_thread_and_zigbee_2020}\relax }}{84}{figure.caption.72}%
+\contentsline {figure}{\numberline {20.2}{\ignorespaces Konkurrenz Zigbee\slash IEEE und WLAN Funkkanäle \cite {markus_krause_rainer_konrad_drahtlose_2014}\relax }}{85}{figure.caption.73}%
+\contentsline {figure}{\numberline {20.3}{\ignorespaces Aufbau APS Datenframe \cite {markus_krause_rainer_konrad_drahtlose_2014}\relax }}{86}{figure.caption.74}%
+\contentsline {figure}{\numberline {22.1}{\ignorespaces Messung 2 Wohnung: Verteilung der Latenzzeiten pro Hop\relax }}{94}{figure.caption.77}%
+\contentsline {figure}{\numberline {22.2}{\ignorespaces Messung 2 Wohnung: Durchschnittliche Latenzzeit pro Hop\relax }}{94}{figure.caption.78}%
+\contentsline {figure}{\numberline {22.3}{\ignorespaces Messung 2 Wohnung: Durchschnittlicher Durchsatz pro Hop\relax }}{94}{figure.caption.78}%
+\contentsline {figure}{\numberline {22.4}{\ignorespaces Messung 2 Wohnung: Durchschnittlicher Paketverlust\relax }}{95}{figure.caption.79}%
+\contentsline {figure}{\numberline {22.5}{\ignorespaces Messung 2 Wohnung: Durchschnittlicher Energieverbrauch\relax }}{95}{figure.caption.79}%
+\contentsline {figure}{\numberline {22.6}{\ignorespaces Messung 2 Wohnung: Ongoing Transactions und Verlauf der Latenzzeiten über die Messdauer.\relax }}{95}{figure.caption.80}%
+\contentsline {figure}{\numberline {22.7}{\ignorespaces Durchschnittliche Latenzzeit pro Hop\relax }}{97}{figure.caption.81}%
+\contentsline {figure}{\numberline {22.8}{\ignorespaces Durchschnittliche Latenzzeit ohne Berücksichtigung der Hops.\relax }}{97}{figure.caption.81}%
+\contentsline {figure}{\numberline {23.1}{\ignorespaces Durchschnittliche Latenzzeit per Hop der einzelnen Messreihen im Vergleich\relax }}{100}{figure.caption.82}%
+\contentsline {figure}{\numberline {23.2}{\ignorespaces Durchschnittlicher Durchsatz per Hop der einzelnen Messreihen im Vergleich\relax }}{101}{figure.caption.83}%
+\contentsline {figure}{\numberline {23.3}{\ignorespaces Durchschnittlicher Paketverlust der einzelnen Messreihen im Vergleich\relax }}{102}{figure.caption.84}%
+\contentsline {figure}{\numberline {23.4}{\ignorespaces Durchschnittlicher Energiebedarf der einzelnen Messreihen im Vergleich\relax }}{103}{figure.caption.85}%
+\contentsline {figure}{\numberline {23.5}{\ignorespaces Durchschnittliche Latenzzeit per Hop der einzelnen Testumgebungen im Vergleich\relax }}{104}{figure.caption.86}%
+\contentsline {figure}{\numberline {23.6}{\ignorespaces Durchschnittlicher Durchsatz per Hop der einzelnen Testumgebungen im Vergleich\relax }}{104}{figure.caption.87}%
+\contentsline {figure}{\numberline {23.7}{\ignorespaces Durchschnittlicher Paketverlust der einzelnen Testumgebungen im Vergleich\relax }}{105}{figure.caption.88}%
+\contentsline {figure}{\numberline {23.8}{\ignorespaces Durchschnittliche Messgrössen im Vergleich inkl. separater Betrachtung der Messergebnisse, welche mit 8-Byte Paketlänge erzielt wurden\relax }}{106}{figure.caption.89}%
+\contentsline {figure}{\numberline {23.9}{\ignorespaces Ongoing Transactions und Latenzzeiten einer Messung mit 32Byte Paketlänge\relax }}{108}{figure.caption.90}%
+\contentsline {figure}{\numberline {G.1}{\ignorespaces Bluetooth-Mesh Stack Upper Layers \cite {bluetooth_sig_mesh_netzwerk_spezifikationen_2020}\relax }}{196}{figure.caption.97}%
+\contentsline {figure}{\numberline {G.2}{\ignorespaces Bluetooth-Mesh Stack Lower Layers \cite {bluetooth_sig_mesh_netzwerk_spezifikationen_2020}\relax }}{197}{figure.caption.98}%

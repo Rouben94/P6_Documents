@@ -1,0 +1,175 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\babel@toc {english}{}
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
+\contentsline {section}{\numberline {2}Übersicht}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Ausgangslage und Aufgabenstellung}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Vorarbeiten P5}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Ziel der Arbeit}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Abgrenzung}{2}{subsection.2.4}%
+\contentsline {part}{I\hspace {1em}Point to Point Testinfrastruktur}{4}{part.1}%
+\contentsline {section}{\numberline {3}Messkonzept}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Definition MAC-Layer}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Anforderungen}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Messgrössen}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Konzept}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Testszenarien}{6}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Messaufbau}{7}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Inbetriebnahme und Bedienung}{8}{section.4}%
+\contentsline {section}{\numberline {5}Soft- und Firmware}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Soft- und Firmware}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Low Level Radio Driver}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Broadcasting Collisions Probability}{16}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Zeitsynchronisation}{16}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Webserver}{18}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Django}{18}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Software Grundlagen}{19}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Aufbau Software}{20}{subsubsection.5.5.3}%
+\contentsline {section}{\numberline {6}Schluss}{24}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Validierung}{24}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Verifizierung}{24}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Fazit}{24}{subsection.6.3}%
+\contentsline {part}{II\hspace {1em}Mesh Benchmark - Konzept und Umsetzung}{25}{part.2}%
+\contentsline {section}{\numberline {7}Benchmark Konzept}{26}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Konzeptschema}{26}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Messages}{27}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Nodes}{27}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Testumgebungen und Messaufbau}{28}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Ablauf Messvorgang}{30}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Vergleichswerte und Messgrössen}{31}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Vergleichswerte}{31}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2}Messgrössen}{31}{subsubsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.5}Messreihe}{32}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Allgemeine Benchmark Parameter}{33}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Traffic Generation}{34}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Messdatenerfassung und Auswertung}{34}{subsection.7.8}%
+\contentsline {subsubsection}{\numberline {7.8.1}Identifizierung Benchmark Slave Node}{35}{subsubsection.7.8.1}%
+\contentsline {subsubsection}{\numberline {7.8.2}Konfiguration Benchmark Slave Node}{35}{subsubsection.7.8.2}%
+\contentsline {subsubsection}{\numberline {7.8.3}Starten einer Messung}{36}{subsubsection.7.8.3}%
+\contentsline {subsubsection}{\numberline {7.8.4}Einholen der Messdaten}{36}{subsubsection.7.8.4}%
+\contentsline {subsection}{\numberline {7.9}Messerwartung}{36}{subsection.7.9}%
+\contentsline {section}{\numberline {8}Hardware Plattform}{37}{section.8}%
+\contentsline {subsection}{\numberline {8.1}System on Chip (SoC)}{37}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Hardware Development Kits}{37}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Aufbau Testnode}{37}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Antenne und Strahlungscharakteristik}{39}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Soft- und Firmware}{41}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Konzept}{41}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Umsetzung}{42}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Shared Library}{42}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Statemachine}{43}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}Timesync}{45}{subsubsection.9.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.3}Control}{45}{subsubsection.9.3.3}%
+\contentsline {subsubsection}{\numberline {9.3.4}Report}{46}{subsubsection.9.3.4}%
+\contentsline {subsubsection}{\numberline {9.3.5}Logging}{47}{subsubsection.9.3.5}%
+\contentsline {subsubsection}{\numberline {9.3.6}Flash Save}{48}{subsubsection.9.3.6}%
+\contentsline {subsubsection}{\numberline {9.3.7}CLI}{48}{subsubsection.9.3.7}%
+\contentsline {subsubsection}{\numberline {9.3.8}Traffic Generator}{49}{subsubsection.9.3.8}%
+\contentsline {subsubsection}{\numberline {9.3.9}Low Level Radio}{49}{subsubsection.9.3.9}%
+\contentsline {subsection}{\numberline {9.4}Benchmark Management}{49}{subsection.9.4}%
+\contentsline {subsubsection}{\numberline {9.4.1}Flasher}{50}{subsubsection.9.4.1}%
+\contentsline {subsubsection}{\numberline {9.4.2}Configurator}{50}{subsubsection.9.4.2}%
+\contentsline {subsubsection}{\numberline {9.4.3}Benchmark and Reporter}{50}{subsubsection.9.4.3}%
+\contentsline {part}{III\hspace {1em}Bluetooth Mesh}{51}{part.3}%
+\contentsline {section}{\numberline {10}Einleitung und Grundlagen}{52}{section.10}%
+\contentsline {section}{\numberline {11}Technische Grundlagen Bluetooth Mesh}{55}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Netzaufbau und Topologie}{55}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Protokoll Stack}{55}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Sicherheit}{56}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Bluetooth Mesh Software Development Kit}{57}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Umsetzung Benchmark}{58}{section.12}%
+\contentsline {subsection}{\numberline {12.1}nRF Connect SDK}{58}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Stack Initialisierung und Konfiguration}{58}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Model Handler}{58}{subsubsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.2}Benchmark und Stack Parameter}{59}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}nRF SDK for Mesh}{59}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Stack Initialisierung und Konfiguration}{60}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Model Handler}{60}{subsubsection.12.3.2}%
+\contentsline {section}{\numberline {13}Analyse Bluetooth Mesh Stack}{61}{section.13}%
+\contentsline {subsubsection}{\numberline {13.0.1}Grenzen des Stacks}{61}{subsubsection.13.0.1}%
+\contentsline {subsubsection}{\numberline {13.0.2}Bluetooth Mesh Implementation in Zephyr}{61}{subsubsection.13.0.2}%
+\contentsline {part}{IV\hspace {1em}Thread}{62}{part.4}%
+\contentsline {section}{\numberline {14}Einleitung}{63}{section.14}%
+\contentsline {section}{\numberline {15}Technische Grundlagen Thread}{65}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Application Layer}{65}{subsection.15.1}%
+\contentsline {subsubsection}{\numberline {15.1.1}CoAP}{65}{subsubsection.15.1.1}%
+\contentsline {subsection}{\numberline {15.2}Thread Protokoll Stack}{66}{subsection.15.2}%
+\contentsline {subsubsection}{\numberline {15.2.1}UDP}{66}{subsubsection.15.2.1}%
+\contentsline {subsubsection}{\numberline {15.2.2}IP Routing}{66}{subsubsection.15.2.2}%
+\contentsline {subsubsection}{\numberline {15.2.3}6LoWPAN}{66}{subsubsection.15.2.3}%
+\contentsline {subsection}{\numberline {15.3}Link und Physical Layer}{66}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Netzaufbau und Topologie}{67}{subsection.15.4}%
+\contentsline {subsubsection}{\numberline {15.4.1}Node Rollen}{67}{subsubsection.15.4.1}%
+\contentsline {subsubsection}{\numberline {15.4.2}Node Typen}{68}{subsubsection.15.4.2}%
+\contentsline {subsubsection}{\numberline {15.4.3}IPv6 Adressierung}{69}{subsubsection.15.4.3}%
+\contentsline {subsubsection}{\numberline {15.4.4}Netzwerk Aufbau}{70}{subsubsection.15.4.4}%
+\contentsline {subsection}{\numberline {15.5}Sicherheit}{71}{subsection.15.5}%
+\contentsline {subsection}{\numberline {15.6}Thread Software Development Kit}{71}{subsection.15.6}%
+\contentsline {section}{\numberline {16}Umsetzung Benchmark}{72}{section.16}%
+\contentsline {subsection}{\numberline {16.1}Openthread Stack Konfiguration}{72}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}Openthread Stack Initialisierung}{73}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}CoAP Benchmark Message}{74}{subsection.16.3}%
+\contentsline {subsection}{\numberline {16.4}IPv6 Adressierung}{75}{subsection.16.4}%
+\contentsline {section}{\numberline {17}Analyse Thread Stack}{76}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Vor- und Nachteile Openthread Stack}{76}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}FreeRTOS Projekt}{76}{subsection.17.2}%
+\contentsline {part}{V\hspace {1em}Zigbee}{77}{part.5}%
+\contentsline {section}{\numberline {18}Einleitung}{78}{section.18}%
+\contentsline {section}{\numberline {19}Technische Grundlagen Zigbee}{79}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Netzaufbau und Topologie}{79}{subsection.19.1}%
+\contentsline {subsection}{\numberline {19.2}Zigbee Protokoll Stack}{80}{subsection.19.2}%
+\contentsline {subsubsection}{\numberline {19.2.1}MAC und PHY Layer}{80}{subsubsection.19.2.1}%
+\contentsline {subsubsection}{\numberline {19.2.2}Network Layer (NWK)}{81}{subsubsection.19.2.2}%
+\contentsline {subsubsection}{\numberline {19.2.3}Application Layer (APL)}{81}{subsubsection.19.2.3}%
+\contentsline {subsubsection}{\numberline {19.2.4}Sicherheit}{82}{subsubsection.19.2.4}%
+\contentsline {section}{\numberline {20}Umsetzung Benchmark}{84}{section.20}%
+\contentsline {subsection}{\numberline {20.1}Zigbee Software Development Kit}{84}{subsection.20.1}%
+\contentsline {subsection}{\numberline {20.2}Stack Implementation}{85}{subsection.20.2}%
+\contentsline {subsubsection}{\numberline {20.2.1}Topologie}{85}{subsubsection.20.2.1}%
+\contentsline {subsubsection}{\numberline {20.2.2}Wahl des Funkkanals}{85}{subsubsection.20.2.2}%
+\contentsline {subsubsection}{\numberline {20.2.3}ZCL Level Cluster}{86}{subsubsection.20.2.3}%
+\contentsline {subsubsection}{\numberline {20.2.4}Endpoint Handler}{86}{subsubsection.20.2.4}%
+\contentsline {subsubsection}{\numberline {20.2.5}APS Frame}{86}{subsubsection.20.2.5}%
+\contentsline {subsubsection}{\numberline {20.2.6}Adressierung}{87}{subsubsection.20.2.6}%
+\contentsline {subsection}{\numberline {20.3}Mesh Node Firmware}{87}{subsection.20.3}%
+\contentsline {subsubsection}{\numberline {20.3.1}Stack Initialisierung und Konfiguration}{87}{subsubsection.20.3.1}%
+\contentsline {subsubsection}{\numberline {20.3.2}Benchmark Handling}{88}{subsubsection.20.3.2}%
+\contentsline {subsubsection}{\numberline {20.3.3}Benchmark und Stack Parameter}{88}{subsubsection.20.3.3}%
+\contentsline {section}{\numberline {21}Analyse Zigbee Stack}{90}{section.21}%
+\contentsline {subsection}{\numberline {21.1}Stärken und Schwächen des Protokollstacks}{90}{subsection.21.1}%
+\contentsline {subsection}{\numberline {21.2}Schwierigkeiten bei der Umsetzung}{90}{subsection.21.2}%
+\contentsline {part}{VI\hspace {1em}Mesh Benchmark - Resultate und Vergleich}{92}{part.6}%
+\contentsline {section}{\numberline {22}Messresultate}{93}{section.22}%
+\contentsline {subsection}{\numberline {22.1}Resultate}{93}{subsection.22.1}%
+\contentsline {subsection}{\numberline {22.2}Validierung}{96}{subsection.22.2}%
+\contentsline {subsection}{\numberline {22.3}Verifizierung}{97}{subsection.22.3}%
+\contentsline {section}{\numberline {23}Vergleich Mesh Netzwerke}{99}{section.23}%
+\contentsline {subsection}{\numberline {23.1}Vergleich der Messreihen}{99}{subsection.23.1}%
+\contentsline {subsubsection}{\numberline {23.1.1}Latenzzeit}{100}{subsubsection.23.1.1}%
+\contentsline {subsubsection}{\numberline {23.1.2}Durchsatz}{100}{subsubsection.23.1.2}%
+\contentsline {subsubsection}{\numberline {23.1.3}Paketverlust}{101}{subsubsection.23.1.3}%
+\contentsline {subsubsection}{\numberline {23.1.4}Energieverbrauch}{102}{subsubsection.23.1.4}%
+\contentsline {subsection}{\numberline {23.2}Vergleich Testumgebungen}{103}{subsection.23.2}%
+\contentsline {subsubsection}{\numberline {23.2.1}Latenzzeit}{103}{subsubsection.23.2.1}%
+\contentsline {subsubsection}{\numberline {23.2.2}Durchsatz}{104}{subsubsection.23.2.2}%
+\contentsline {subsubsection}{\numberline {23.2.3}Paketverlust}{104}{subsubsection.23.2.3}%
+\contentsline {subsection}{\numberline {23.3}Fazit}{105}{subsection.23.3}%
+\contentsline {subsubsection}{\numberline {23.3.1}Thread}{107}{subsubsection.23.3.1}%
+\contentsline {subsubsection}{\numberline {23.3.2}Zigbee}{107}{subsubsection.23.3.2}%
+\contentsline {subsubsection}{\numberline {23.3.3}Bluetooth Mesh}{108}{subsubsection.23.3.3}%
+\contentsline {section}{\numberline {24}Schluss}{110}{section.24}%
+\contentsline {subsection}{\numberline {24.1}Zielerreichung}{110}{subsection.24.1}%
+\contentsline {subsection}{\numberline {24.2}Fazit}{113}{subsection.24.2}%
+\contentsline {subsection}{\numberline {24.3}Ausblick}{114}{subsection.24.3}%
+\contentsline {subsection}{\numberline {24.4}Schlusswort}{114}{subsection.24.4}%
+\contentsline {section}{Literatur}{115}{section*.95}%
+\contentsline {section}{Abbildungsverzeichnis}{117}{section*.96}%
+\contentsline {section}{Anhang}{120}{section*.96}%
+\contentsline {section}{\numberline {A}Aufgabenstellung}{120}{appendix.A}%
+\contentsline {section}{\numberline {B}Pflichtenheft}{125}{appendix.B}%
+\contentsline {section}{\numberline {C}Bericht emv Messung Development Kits}{144}{appendix.C}%
+\contentsline {section}{\numberline {D}Messprotokolle Mesh Benchmark}{157}{appendix.D}%
+\contentsline {section}{\numberline {E}Paper}{187}{appendix.E}%
+\contentsline {section}{\numberline {F}Random Traffic Generation}{195}{appendix.F}%
+\contentsline {section}{\numberline {G}Bluetooth Mesh Stack Layers}{196}{appendix.G}%

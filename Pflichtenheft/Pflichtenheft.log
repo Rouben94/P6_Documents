@@ -1,0 +1,2631 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.25)  24 MAR 2020 08:18
+entering extended mode
+**./Pflichtenheft.tex
+(Pflichtenheft.tex
+LaTeX2e <2020-02-02> patch level 3
+L3 programming layer <2020-02-21> (fhnwreport.cls
+Document Class: fhnwreport 2018/05/06 v2.5 PDF-LaTeX class for FHNW reports
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls
+"
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometr
+y.sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.
+sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.s
+ty"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.st
+y"
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count175
+\Gm@cntv=\count176
+\c@Gm@tempcnt=\count177
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks15
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometr
+y.cfg"))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count178
+\calc@Bcount=\count179
+\calc@Adimen=\dimen143
+\calc@Bdimen=\dimen144
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count180
+\calc@Cskip=\skip51
+) ("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\times.s
+ty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
+x.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
+s.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.st
+y"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\gra
+phics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdf
+tex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen145
+\Gin@req@width=\dimen146
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/chngcntr\chngcnt
+r.sty"
+Package: chngcntr 2018/04/09 v1.1a change counter resetting
+Package chngcntr Info: \counterwithout already defined.
+(chngcntr)             Quitting chngcntr on input line 21.
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tocbibind\tocbib
+ind.sty"
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has section divisions on input line 50.
+
+
+Package tocbibind Note: Using section or other style headings.
+
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperre
+f.sty"
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmd
+s.sty"
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdfte
+xcmds.sty"
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infw
+arerr.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys\kvse
+tkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinekeys\k
+vdefinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdfescape\pdfe
+scape.sty"
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hycolor\hycolor.
+sty"
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/letltxmacro\letl
+txmacro.sty"
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/auxhook\auxhook.
+sty"
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\kvopti
+ons.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen147
+\Hy@linkcounter=\count181
+\Hy@pagecounter=\count182
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.
+def"
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/intcalc\intcal
+c.sty"
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/etexcmds\etexc
+mds.sty"
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count183
+Package hyperref Info: Option `final' set `true' on input line 4421.
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count184
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen148
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bitset\bitset.
+sty"
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bigintcalc\big
+intcalc.sty"
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count185
+\Field@Width=\dimen149
+\Fld@charsize=\dimen150
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/atbegshi\atbeg
+shi.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count186
+\c@Item=\count187
+\c@Hfootnote=\count188
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdftex
+.def"
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/atveryend\atvery
+end.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count189
+\c@bookmark@seq@number=\count190
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/rerunfilecheck\r
+erunfilecheck.sty"
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/uniquecounter\
+uniquecounter.sty"
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip52
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.s
+ty"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\col
+or.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 216.
+
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.
+sty"
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3
+.sty"
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen151
+\captionmargin@=\dimen152
+\captionwidth=\dimen153
+\caption@tempdima=\dimen154
+\caption@indent=\dimen155
+\caption@parindent=\dimen156
+\caption@hangindent=\dimen157
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count191
+\c@continuedfloat=\count192
+Package caption Info: hyperref package is loaded.
+)) (header.tex
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.st
+y"
+Package: babel 2020/02/14 3.40 The Babel package
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.d
+ef"
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cf
+g"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-english\en
+glish.ldf"
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.de
+f"
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count193
+\U@D=\dimen158
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel
+.def")
+\bbl@readstream=\read2
+\bbl@dirlevel=\count194
+)
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language72) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language72) on input line 108.
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\nge
+rman.ldf"
+Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
+phy)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\nge
+rmanb.ldf"
+Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
+aphy)
+Package babel Info: Making " an active character on input line 121.
+)))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fontenc.sty
+"
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 11
+2.
+ ("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd
+"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
+y"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\lmodern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textcomp.st
+y"
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count195
+\float@exts=\toks18
+\float@box=\box45
+\@float@everytoks=\toks19
+\@floatcapt=\box46
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\ifdraft
+.sty"
+Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.st
+y"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\col
+or.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\dvipsna
+m.def"
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquote
+s.sty"
+Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbo
+x.sty"
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count196
+)
+\csq@reset=\count197
+\csq@gtype=\count198
+\csq@glevel=\count199
+\csq@qlevel=\count266
+\csq@maxlvl=\count267
+\csq@tshold=\count268
+\csq@ltx@everypar=\toks20
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquote
+s.def"
+File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquote
+s.cfg"
+File: csquotes.cfg 
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/siunitx\siunitx.
+sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.s
+ty"
+Package: expl3 2020-02-21 L3 programming layer (loader) 
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3back
+end-pdfmode.def"
+File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count269
+\l__pdf_internal_box=\box47
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xpars
+e\xparse.sty"
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count270
+\g__xparse_grabber_int=\count271
+\l__xparse_m_args_int=\count272
+\l__xparse_v_nesting_int=\count273
+)
+Package: siunitx 2020/02/23 v2.8a A comprehensive (SI) units package
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.
+sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.s
+ty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen159
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty"
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen160
+\ar@mcellbox=\box48
+\extrarowheight=\dimen161
+\NC@list=\toks22
+\extratabsurround=\skip53
+\backup@length=\skip54
+\ar@cellbox=\box49
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/l3key
+s2e\l3keys2e.sty"
+Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box50
+\l__siunitx_tmp_dim=\dimen162
+\l__siunitx_tmp_int=\count274
+\l__siunitx_number_mantissa_length_int=\count275
+\l__siunitx_number_uncert_length_int=\count276
+\l__siunitx_round_int=\count277
+\l__siunitx_process_decimal_int=\count278
+\l__siunitx_process_uncertainty_int=\count279
+\l__siunitx_process_fixed_int=\count280
+\l__siunitx_process_integer_min_int=\count281
+\l__siunitx_process_precision_int=\count282
+\l__siunitx_group_min_int=\count283
+\l__siunitx_angle_marker_box=\box51
+\l__siunitx_angle_unit_box=\box52
+\l__siunitx_angle_marker_dim=\dimen163
+\l__siunitx_angle_unit_dim=\dimen164
+\l__siunitx_unit_int=\count284
+\l__siunitx_unit_denominator_int=\count285
+\l__siunitx_unit_numerator_int=\count286
+\l__siunitx_unit_prefix_int=\count287
+\l__siunitx_unit_prefix_base_int=\count288
+\l__siunitx_unit_prefix_gram_int=\count289
+\l__siunitx_number_product_int=\count290
+\c__siunitx_one_fill_skip=\skip55
+\l__siunitx_table_unit_align_skip=\skip56
+\l__siunitx_table_exponent_dim=\dimen165
+\l__siunitx_table_integer_dim=\dimen166
+\l__siunitx_table_mantissa_dim=\dimen167
+\l__siunitx_table_marker_dim=\dimen168
+\l__siunitx_table_result_dim=\dimen169
+\l__siunitx_table_uncert_dim=\dimen170
+\l__siunitx_table_fill_pre_dim=\dimen171
+\l__siunitx_table_fill_post_dim=\dimen172
+\l__siunitx_table_fill_mid_dim=\dimen173
+\l__siunitx_table_pre_box=\box53
+\l__siunitx_table_post_box=\box54
+\l__siunitx_table_mantissa_box=\box55
+\l__siunitx_table_result_box=\box56
+\l__siunitx_table_number_align_skip=\skip57
+\l__siunitx_table_text_align_skip=\skip58
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\trans
+lator.sty"
+Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listing
+s.sty"
+\lst@mode=\count291
+\lst@gtempboxa=\box57
+\lst@token=\toks23
+\lst@length=\count292
+\lst@currlwidth=\dimen174
+\lst@column=\count293
+\lst@pos=\count294
+\lst@lostspace=\dimen175
+\lst@width=\dimen176
+\lst@newlines=\count295
+\lst@lineno=\count296
+\lst@maxwidth=\dimen177
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc
+.sty"
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count297
+\lst@skipnumbers=\count298
+\lst@framebox=\box58
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listing
+s.cfg"
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/footmisc\footmis
+c.sty"
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks24
+\footnotemargin=\dimen178
+\c@pp@next@reset=\count299
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mdwtools\footnot
+e.sty"
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box59
+\fn@width=\dimen179
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\verbatim.s
+ty"
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks25
+\verbatim@line=\toks26
+\verbatim@in@stream=\read3
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/todonotes\todono
+tes.sty"
+Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
+Package: todonotes 2018/11/22
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.
+sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyva
+l.tex"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvuti
+ls.tex"
+\XKV@toks=\toks27
+\XKV@tempa@toks=\toks28
+)
+\XKV@depth=\count300
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/frontendlaye
+r\tikz.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\p
+gf.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pg
+frcs.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\
+pgfutil-common.tex"
+\pgfutil@everybye=\toks29
+\pgfutil@tempdima=\dimen180
+\pgfutil@tempdimb=\dimen181
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\
+pgfutil-common-lists.tex"))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\
+pgfutil-latex.def"
+\pgfutil@abb=\box60
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\
+pgfrcs.code.tex"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf\pgf.revisi
+on.tex")
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\p
+gfcore.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/systemlayer\
+pgfsys.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlaye
+r\pgfsys.code.tex"
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\
+pgfkeys.code.tex"
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\
+pgfkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks32
+))
+\pgf@x=\dimen182
+\pgf@y=\dimen183
+\pgf@xa=\dimen184
+\pgf@ya=\dimen185
+\pgf@xb=\dimen186
+\pgf@yb=\dimen187
+\pgf@xc=\dimen188
+\pgf@yc=\dimen189
+\pgf@xd=\dimen190
+\pgf@yd=\dimen191
+\w@pgf@writea=\write3
+\r@pgf@reada=\read4
+\c@pgf@counta=\count301
+\c@pgf@countb=\count302
+\c@pgf@countc=\count303
+\c@pgf@countd=\count304
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
+\pgf@sys@id@count=\count305
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlaye
+r\pgf.cfg"
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlaye
+r\pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlaye
+r\pgfsys-common-pdf.def"
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+)))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlaye
+r\pgfsyssoftpath.code.tex"
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count306
+\pgfsyssoftpath@bigbuffer@items=\count307
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlaye
+r\pgfsysprotocol.code.tex"
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcore.code.tex"
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+th.code.tex"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thcalc.code.tex"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thutil.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thparser.code.tex"
+\pgfmath@dimen=\dimen192
+\pgfmath@count=\count308
+\pgfmath@box=\box61
+\pgfmath@toks=\toks36
+\pgfmath@stack@operand=\toks37
+\pgfmath@stack@operation=\toks38
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.code.tex"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.basic.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.trigonometric.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.random.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.comparison.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.base.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.round.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.misc.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfunctions.integerarithmetics.code.tex")))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+thfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count309
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfin
+t.code.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorepoints.code.tex"
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen193
+\pgf@picmaxx=\dimen194
+\pgf@picminy=\dimen195
+\pgf@picmaxy=\dimen196
+\pgf@pathminx=\dimen197
+\pgf@pathmaxx=\dimen198
+\pgf@pathminy=\dimen199
+\pgf@pathmaxy=\dimen256
+\pgf@xx=\dimen257
+\pgf@xy=\dimen258
+\pgf@yx=\dimen259
+\pgf@yy=\dimen260
+\pgf@zx=\dimen261
+\pgf@zy=\dimen262
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorepathconstruct.code.tex"
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen263
+\pgf@path@lasty=\dimen264
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorepathusage.code.tex"
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen265
+\pgf@shorten@start@additional=\dimen266
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorescopes.code.tex"
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count310
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcoregraphicstate.code.tex"
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen267
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcoretransformations.code.tex"
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen268
+\pgf@pt@y=\dimen269
+\pgf@pt@temp=\dimen270
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorequick.code.tex"
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcoreobjects.code.tex"
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorepathprocessing.code.tex"
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorearrows.code.tex"
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen271
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen272
+\pgf@sys@shading@range@num=\count311
+\pgf@shadingcount=\count312
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcoreimage.code.tex"
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcoreexternal.code.tex"
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box65
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorelayers.code.tex"
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcoretransparency.code.tex"
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorepatterns.code.tex"
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer
+\pgfcorerdf.code.tex"
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pg
+fmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box66
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pg
+fmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibilit
+y\pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen273
+\pgf@nodesepend=\dimen274
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibilit
+y\pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pg
+ffor.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pg
+fkeys.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\
+pgfkeys.code.tex"))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/math\pgfmath
+.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+th.code.tex"))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\
+pgffor.code.tex"
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfma
+th.code.tex")
+\pgffor@iter=\dimen275
+\pgffor@skip=\dimen276
+\pgffor@stack=\toks39
+\pgffor@toks=\toks40
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz\tikz.code.tex"
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\
+pgflibraryplothandlers.code.tex"
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count313
+\pgfplotmarksize=\dimen277
+)
+\tikz@lastx=\dimen278
+\tikz@lasty=\dimen279
+\tikz@lastxsaved=\dimen280
+\tikz@lastysaved=\dimen281
+\tikz@lastmovetox=\dimen282
+\tikz@lastmovetoy=\dimen283
+\tikzleveldistance=\dimen284
+\tikzsiblingdistance=\dimen285
+\tikz@figbox=\box67
+\tikz@figbox@bg=\box68
+\tikz@tempbox=\box69
+\tikz@tempbox@bg=\box70
+\tikztreelevel=\count314
+\tikznumberofchildren=\count315
+\tikznumberofcurrentchild=\count316
+\tikz@fig@count=\count317
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pg
+fmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count318
+\pgfmatrixcurrentcolumn=\count319
+\pgf@matrix@numberofcolumns=\count320
+)
+\tikz@expandcount=\count321
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibrarypositioning.code.tex"
+File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibraryshadows.code.tex"
+File: tikzlibraryshadows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibraryfadings.code.tex"
+File: tikzlibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\
+pgflibraryfadings.code.tex"
+File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+\c@@todonotes@numberoftodonotes=\count322
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titling\titling.
+sty"
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip59
+\thanksmargin=\skip60
+\droptitle=\skip61
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/standalone\stand
+alone.sty"
+Package: standalone 2018/03/26 v1.3a Package to include TeX sub-files with prea
+mbles
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\shellesc.s
+ty"
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/currfile\currfil
+e.sty"
+Package: currfile 2015/04/23 v0.7c Provides the file path elements of the curre
+nt input file
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/filehook\filehoo
+k.sty"
+Package: filehook 2020/02/03 v0.7 Hooks for input files
+)
+\c@currfiledepth=\count323
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/gincltex\ginclte
+x.sty"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/svn-prov\svn-pro
+v.sty"
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjust
+box.sty"
+Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjcal
+c.sty"
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\trimcl
+ip.sty"
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/collectbox\colle
+ctbox.sty"
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box71
+)
+\tc@llx=\dimen286
+\tc@lly=\dimen287
+\tc@urx=\dimen288
+\tc@ury=\dimen289
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\tc-pdf
+tex.def"
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen290
+\adjbox@Height=\dimen291
+\adjbox@Depth=\dimen292
+\adjbox@Totalheight=\dimen293
+\adjbox@pwidth=\dimen294
+\adjbox@pheight=\dimen295
+\adjbox@pdepth=\dimen296
+\adjbox@ptotalheight=\dimen297
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddp
+age.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count324
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidt
+h.sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box72
+\sift@deathcycles=\count325
+\@vwid@loff=\dimen298
+\@vwid@roff=\dimen299
+))
+\gincltex@box=\box73
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/filemod\filemod-
+expmin.sty"
+Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times
+ (expandable; minimal)
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/circuitikz\circu
+itikz.sty"
+Package: circuitikz 2020/02/22{} The CircuiTikz circuit drawing package version
+ 1.0.1
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibrarycalc.code.tex"
+File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\
+pgflibraryarrows.meta.code.tex"
+File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowinset=\dimen300
+\pgfarrowlength=\dimen301
+\pgfarrowwidth=\dimen302
+\pgfarrowlinewidth=\dimen303
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibrarybending.code.tex"
+File: tikzlibrarybending.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pg
+fmodulebending.code.tex"
+File: pgfmodulebending.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pg
+fmodulenonlineartransformations.code.tex"
+File: pgfmodulenonlineartransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgftransformnonlinearflatness=\dimen304
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\
+pgflibrarycurvilinear.code.tex"
+File: pgflibrarycurvilinear.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@curvilinear@time@a=\dimen305
+\pgf@curvilinear@length@a=\dimen306
+\pgf@curvilinear@length@b=\dimen307
+\pgf@curvilinear@length@c=\dimen308
+\pgf@curvilinear@length@d=\dimen309
+)
+\pgf@arrows@the@rigidity=\dimen310
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibraryfpu.code.tex"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\
+pgflibraryfpu.code.tex"))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circ.defines.tex"
+\pgf@circ@count@a=\count326
+\pgf@circ@count@b=\count327
+\pgf@circ@count@c=\count328
+\pgf@circ@res@up=\dimen311
+\pgf@circ@res@down=\dimen312
+\pgf@circ@res@zero=\dimen313
+\pgf@circ@res@left=\dimen314
+\pgf@circ@res@right=\dimen315
+\pgf@circ@res@other=\dimen316
+\pgf@circ@res@step=\dimen317
+\pgf@circ@res@temp=\dimen318
+\pgfstartlinewidth=\dimen319
+\pgf@circ@Rlen=\dimen320
+\pgf@circ@scaled@Rlen=\dimen321
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circutils.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circshapes.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circmonopoles.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circbipoles.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circtripoles.tex"
+\pgf@circ@res@count=\count329
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circquadpoles.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circmultipoles.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circlabel.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circvoltage.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circcurrent.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circflow.tex")
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/circuitikz\pgf
+circpath.tex")
+
+Package circuitikz Warning: You did not specify one of the voltage directions:
+(circuitikz)                  oldvoltagedirection, nooldvoltagedirection, 
+(circuitikz)                  RPvoltages or EFvoltages 
+(circuitikz)                Default directions may have changed, 
+(circuitikz)                please check the manual.
+
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibraryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\
+pgflibraryarrows.code.tex"
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen322
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibraryintersections.code.tex"
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\
+pgflibraryintersections.code.tex"
+\pgf@intersect@solutions=\count330
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.
+sty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip62
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.s
+ty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen323
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.s
+ty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count331
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count332
+\leftroot@=\count333
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count334
+\DOTSCASE@=\count335
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box74
+\strutbox@=\box75
+\big@size=\dimen324
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count336
+\c@MaxMatrixCols=\count337
+\dotsspace@=\muskip17
+\c@parentequation=\count338
+\dspbrk@lvl=\count339
+\tag@help=\toks41
+\row@=\count340
+\column@=\count341
+\maxfields@=\count342
+\andhelp@=\toks42
+\eqnshift@=\dimen325
+\alignsep@=\dimen326
+\tagshift@=\dimen327
+\tagwidth@=\dimen328
+\totwidth@=\dimen329
+\lineht@=\dimen330
+\@envbody=\toks43
+\multlinegap=\skip63
+\multlinetaggap=\skip64
+\mathdisplay@stack=\toks44
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb
+.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfont
+s.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.st
+y"
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks45
+\thm@bodyfont=\toks46
+\thm@headfont=\toks47
+\thm@notefont=\toks48
+\thm@headpunct=\toks49
+\thm@preskip=\skip65
+\thm@postskip=\skip66
+\thm@headsep=\skip67
+\dth@everypar=\toks50
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\tabularx.s
+ty"
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen331
+\TX@old@table=\dimen332
+\TX@old@col=\dimen333
+\TX@target=\dimen334
+\TX@delta=\dimen335
+\TX@cols=\count343
+\TX@ftn=\toks51
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multiro
+w.sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip68
+\multirow@cntb=\count344
+\multirow@dima=\skip69
+\bigstrutjot=\dimen336
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\multicol.s
+ty"
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count345
+\mult@box=\box76
+\multicol@leftmargin=\dimen337
+\c@unbalance=\count346
+\c@collectmore=\count347
+\doublecol@number=\count348
+\multicoltolerance=\count349
+\multicolpretolerance=\count350
+\full@width=\dimen338
+\page@free=\dimen339
+\premulticols=\dimen340
+\postmulticols=\dimen341
+\multicolsep=\skip70
+\multicolbaselineskip=\skip71
+\partial@page=\box77
+\last@line=\box78
+\maxbalancingoverflow=\dimen342
+\mult@rightbox=\box79
+\mult@grightbox=\box80
+\mult@gfirstbox=\box81
+\mult@firstbox=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\c@minrows=\count351
+\c@columnbadness=\count352
+\c@finalcolumnbadness=\count353
+\last@try=\dimen343
+\multicolovershoot=\dimen344
+\multicolundershoot=\dimen345
+\mult@nat@firstbox=\box120
+\colbreak@box=\box121
+\mc@col@check@num=\count354
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ulem\ulem.sty"
+\UL@box=\box122
+\UL@hyphenbox=\box123
+\UL@skip=\skip72
+\UL@hook=\toks52
+\UL@height=\dimen346
+\UL@pe=\count355
+\UL@pixel=\dimen347
+\ULC@box=\box124
+Package: ulem 2019/11/18
+\ULdepth=\dimen348
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pdfpage
+s.sty"
+Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eso-pic\eso-pic.
+sty"
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+)
+\AM@pagewidth=\dimen349
+\AM@pageheight=\dimen350
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pppdfte
+x.def"
+File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box125
+\AM@global@opts=\toks53
+\AM@pagecnt=\count356
+\AM@toc@title=\toks54
+\c@AM@survey=\count357
+\AM@templatesizebox=\box126
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\pdflsc
+ape.sty"
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\lscape.
+sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfig\subfig.st
+y"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count358
+\sf@farskip=\skip73
+\sf@captopadj=\dimen351
+\sf@capskip=\skip74
+\sf@nearskip=\skip75
+\c@subfigure=\count359
+\c@subfigure@save=\count360
+\c@lofdepth=\count361
+\c@subtable=\count362
+\c@subtable@save=\count363
+\c@lotdepth=\count364
+\sf@top=\skip76
+\sf@bottom=\skip77
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblate
+x.sty"
+Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.st
+y"
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count365
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.de
+f"
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count366
+\c@listtotal=\count367
+\c@listcount=\count368
+\c@liststart=\count369
+\c@liststop=\count370
+\c@citecount=\count371
+\c@citetotal=\count372
+\c@multicitecount=\count373
+\c@multicitetotal=\count374
+\c@instcount=\count375
+\c@maxnames=\count376
+\c@minnames=\count377
+\c@maxitems=\count378
+\c@minitems=\count379
+\c@citecounter=\count380
+\c@maxcitecounter=\count381
+\c@savedcitecounter=\count382
+\c@uniquelist=\count383
+\c@uniquename=\count384
+\c@refsection=\count385
+\c@refsegment=\count386
+\c@maxextratitle=\count387
+\c@maxextratitleyear=\count388
+\c@maxextraname=\count389
+\c@maxextradate=\count390
+\c@maxextraalpha=\count391
+\c@abbrvpenalty=\count392
+\c@highnamepenalty=\count393
+\c@lownamepenalty=\count394
+\c@maxparens=\count395
+\c@parenlevel=\count396
+\blx@tempcnta=\count397
+\blx@tempcntb=\count398
+\blx@tempcntc=\count399
+\blx@maxsection=\count400
+\blx@maxsegment@0=\count401
+\blx@notetype=\count402
+\blx@parenlevel@text=\count403
+\blx@parenlevel@foot=\count404
+\blx@sectionciteorder@0=\count405
+\blx@entrysetcounter=\count406
+\labelnumberwidth=\skip78
+\labelalphawidth=\skip79
+\biblabelsep=\skip80
+\bibitemsep=\skip81
+\bibnamesep=\skip82
+\bibinitsep=\skip83
+\bibparsep=\skip84
+\bibhang=\skip85
+\blx@bcfin=\read5
+\blx@bcfout=\write4
+\blx@langwohyphens=\language78
+\c@mincomprange=\count407
+\c@maxcomprange=\count408
+\c@mincompwidth=\count409
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-dm.
+def"
+File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count410
+\c@savedafterword=\count411
+\c@annotator=\count412
+\c@savedannotator=\count413
+\c@author=\count414
+\c@savedauthor=\count415
+\c@bookauthor=\count416
+\c@savedbookauthor=\count417
+\c@commentator=\count418
+\c@savedcommentator=\count419
+\c@editor=\count420
+\c@savededitor=\count421
+\c@editora=\count422
+\c@savededitora=\count423
+\c@editorb=\count424
+\c@savededitorb=\count425
+\c@editorc=\count426
+\c@savededitorc=\count427
+\c@foreword=\count428
+\c@savedforeword=\count429
+\c@holder=\count430
+\c@savedholder=\count431
+\c@introduction=\count432
+\c@savedintroduction=\count433
+\c@namea=\count434
+\c@savednamea=\count435
+\c@nameb=\count436
+\c@savednameb=\count437
+\c@namec=\count438
+\c@savednamec=\count439
+\c@translator=\count440
+\c@savedtranslator=\count441
+\c@shortauthor=\count442
+\c@savedshortauthor=\count443
+\c@shorteditor=\count444
+\c@savedshorteditor=\count445
+\c@labelname=\count446
+\c@savedlabelname=\count447
+\c@institution=\count448
+\c@savedinstitution=\count449
+\c@lista=\count450
+\c@savedlista=\count451
+\c@listb=\count452
+\c@savedlistb=\count453
+\c@listc=\count454
+\c@savedlistc=\count455
+\c@listd=\count456
+\c@savedlistd=\count457
+\c@liste=\count458
+\c@savedliste=\count459
+\c@listf=\count460
+\c@savedlistf=\count461
+\c@location=\count462
+\c@savedlocation=\count463
+\c@organization=\count464
+\c@savedorganization=\count465
+\c@origlocation=\count466
+\c@savedoriglocation=\count467
+\c@origpublisher=\count468
+\c@savedorigpublisher=\count469
+\c@publisher=\count470
+\c@savedpublisher=\count471
+\c@language=\count472
+\c@savedlanguage=\count473
+\c@origlanguage=\count474
+\c@savedoriglanguage=\count475
+\c@pageref=\count476
+\c@savedpageref=\count477
+\shorthandwidth=\skip86
+\shortjournalwidth=\skip87
+\shortserieswidth=\skip88
+\shorttitlewidth=\skip89
+\shortauthorwidth=\skip90
+\shorteditorwidth=\skip91
+\locallabelnumberwidth=\skip92
+\locallabelalphawidth=\skip93
+\localshorthandwidth=\skip94
+\localshortjournalwidth=\skip95
+\localshortserieswidth=\skip96
+\localshorttitlewidth=\skip97
+\localshortauthorwidth=\skip98
+\localshorteditorwidth=\skip99
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\blx-com
+pat.def"
+File: blx-compat.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblate
+x.def"
+File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
+\c@textcitecount=\count478
+\c@textcitetotal=\count479
+\c@textcitemaxnames=\count480
+\c@biburlbigbreakpenalty=\count481
+\c@biburlbreakpenalty=\count482
+\c@biburlnumpenalty=\count483
+\c@biburlucpenalty=\count484
+\c@biburllcpenalty=\count485
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count486
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex-ieee\ie
+ee.bbx"
+File: ieee.bbx 2019/06/19 v1.3a biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\num
+eric-comp.bbx"
+File: numeric-comp.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\num
+eric.bbx"
+File: numeric.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\sta
+ndard.bbx"
+File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count487
+\c@bbx:relatedtotal=\count488
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex-ieee\ie
+ee.cbx"
+File: ieee.cbx 2019/06/19 v1.3a biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/cbx\num
+eric-comp.cbx"
+File: numeric-comp.cbx 2019/12/01 v3.14 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count489
+\c@cbx@tempcntb=\count490
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblate
+x.cfg"
+File: biblatex.cfg 
+))
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang
+1.sty"
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
+ (Pflichtenheft.aux
+
+LaTeX Warning: Label `subsec:PunktzuPunktTestinfrastruktur' multiply defined.
+
+
+LaTeX Warning: Label `subsec:TestMeshNetzwerke' multiply defined.
+
+
+LaTeX Warning: Label `subsec:SteuerundAuswertesoftware' multiply defined.
+
+(sections/appendix.aux))
+\openout1 = `Pflichtenheft.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 10
+.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13191pt, 455.24408pt, 71.13188pt)
+* v-part:(T,H,B)=(91.04881pt, 685.71141pt, 68.28662pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24408pt
+* \textheight=685.71141pt
+* \oddsidemargin=-1.13808pt
+* \evensidemargin=-1.13808pt
+* \topmargin=-30.20975pt
+* \headheight=12.0pt
+* \headsep=36.98857pt
+* \topskip=10.0pt
+* \footskip=54.06023pt
+* \marginparwidth=56.9055pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp
+-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count491
+\scratchdimen=\dimen352
+\scratchbox=\box127
+\nofMPsegments=\count492
+\nofMParguments=\count493
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count494
+\MPscratchDim=\dimen353
+\MPnumerator=\count495
+\makeMPintoPDFobject=\count496
+\everyMPtoPDFconversion=\toks56
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\eps
+topdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grfext\grfext.st
+y"
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+)
+\AtBeginShipoutBox=\box128
+Package hyperref Info: Link coloring OFF on input line 10.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref
+.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/refcount\refcoun
+t.sty"
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitlestring
+\gettitlestring.sty"
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count497
+)
+LaTeX Info: Redefining \ref on input line 10.
+LaTeX Info: Redefining \pageref on input line 10.
+LaTeX Info: Redefining \nameref on input line 10.
+ (Pflichtenheft.out) (Pflichtenheft.out)
+\@outlinefile=\write5
+\openout5 = `Pflichtenheft.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\trans
+lator-basic-dictionary-English.dict"
+Dictionary: translator-basic-dictionary, Language: English 
+)
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/siunitx\siunitx-
+abbreviations.cfg"
+File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
+)
+\c@lstlisting=\count498
+ ABD: EveryShipout initializing macros
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/lbx\nge
+rman.lbx"
+File: ngerman.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/lbx\ger
+man.lbx"
+File: german.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/lbx\ger
+man.lbx"
+File: german.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+))
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/lbx\eng
+lish.lbx"
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `Pflichtenheft.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'Pflichtenheft.bbl' found.
+ (Pflichtenheft.bbl)
+Package biblatex Info: Reference section=0 on input line 10.
+Package biblatex Info: Reference segment=0 on input line 10.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+0.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+0.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+10.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+10.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 10.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
+"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
+"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+10.
+ ("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmss.fd"
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+10.
+ ("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmtt.fd"
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<graphics/fhnw_ht_logo_de.pdf, id=146, 183.81773pt x 28.4543pt>
+File: graphics/fhnw_ht_logo_de.pdf Graphic file (type pdf)
+<use graphics/fhnw_ht_logo_de.pdf>
+Package pdftex.def Info: graphics/fhnw_ht_logo_de.pdf  used on input line 17.
+(pdftex.def)             Requested size: 183.81728pt x 28.45421pt.
+ [1
+
+{C:/Users/Raffael/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./graphic
+s/fhnw_ht_logo_de.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 5
+3.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmss.fd"
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(Pflichtenheft.toc)
+\tf@toc=\write6
+\openout6 = `Pflichtenheft.toc'.
+
+ [1
+
+] (sections/1_0_Uebersicht.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+5.
+
+("C:\Users\Raffael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))pdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.60 
+      [1
+
+
+] (sections/2_0_Loesungskonzept.tex
+<./graphics/Konzept_Testframework.jpg, id=220, 783.92876pt x 482.80376pt>
+File: ./graphics/Konzept_Testframework.jpg Graphic file (type jpg)
+<use ./graphics/Konzept_Testframework.jpg>
+Package pdftex.def Info: ./graphics/Konzept_Testframework.jpg  used on input li
+ne 7.
+(pdftex.def)             Requested size: 455.24408pt x 280.37999pt.
+ [2
+
+ <./graphics/Konzept_Testframework.jpg>] [3]
+<./graphics/Thread-Konzept.png, id=240, 880.28876pt x 251.94125pt>
+File: ./graphics/Thread-Konzept.png Graphic file (type png)
+<use ./graphics/Thread-Konzept.png>
+Package pdftex.def Info: ./graphics/Thread-Konzept.png  used on input line 60.
+(pdftex.def)             Requested size: 455.24408pt x 130.2913pt.
+ [4 <./graphics/Thread-Konzept.png>]
+
+LaTeX Warning: Reference `fig:EntwurfWebserver' on page 5 undefined on input li
+ne 72.
+
+<./graphics/Web_Mochup_BMS.jpg, id=247, 764.8575pt x 443.6575pt>
+File: ./graphics/Web_Mochup_BMS.jpg Graphic file (type jpg)
+<use ./graphics/Web_Mochup_BMS.jpg>
+Package pdftex.def Info: ./graphics/Web_Mochup_BMS.jpg  used on input line 76.
+(pdftex.def)             Requested size: 455.24408pt x 264.0641pt.
+) [5 <./graphics/Web_Mochup_BMS.jpg>]
+(sections/3_0_Projektziele_und_Lieferobjekte.tex
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/10.95 Kommunikation mit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]|\T1/lmr/m/n/10.95 Senden von MAC-
+ []
+
+
+Underfull \hbox (badness 4467) in paragraph at lines 19--19
+[]|\T1/lmr/m/n/10.95 Rückbestätigung der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\T1/lmr/m/n/10.95 Konfiguration der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+[]|\T1/lmr/m/n/10.95 Einstellbare Fra-me-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+[]|\T1/lmr/m/n/10.95 Einstellbare Frame-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+[]|\T1/lmr/m/n/10.95 Einstellbare Sen-de-
+ []
+
+
+Underfull \hbox (badness 5696) in paragraph at lines 35--35
+[]|\T1/lmr/m/n/10.95 Ein- und Aus-schal-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+[]|\T1/lmr/m/n/10.95 Kommunikation mit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
+[]|\T1/lmr/m/n/10.95 Simulation Sen-sor-
+ []
+
+[6
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
+[]|\T1/lmr/m/n/10.95 Ansteuerung Funk-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+[]|\T1/lmr/m/n/10.95 Visualisierung Pa-ra-
+ []
+
+
+Underfull \hbox (badness 4792) in paragraph at lines 95--95
+[]|\T1/lmr/m/n/10.95 Konfiguration Mesh-
+ []
+
+[7]
+Underfull \hbox (badness 1789) in paragraph at lines 113--113
+[]|\T1/lmr/m/n/10.95 Hardware Test-mo-dul
+ []
+
+) [8] (sections/4_0_Projektmanagement.tex
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]|\T1/lmr/m/n/10.95 Bluetooth
+ []
+
+
+Underfull \hbox (badness 3209) in paragraph at lines 21--21
+\T1/lmr/m/n/10.95 zu Punkt Tes-t-auf-bau so-wie die
+ []
+
+[9
+
+] [10])
+
+LaTeX Warning: Empty bibliography on input line 75.
+
+\openout2 = `sections/appendix.aux'.
+
+(sections/appendix.tex
+<appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, id=301
+, 597.50786pt x 845.01837pt>
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf  used on input line 6.
+(pdftex.def)             Requested size: 597.5064pt x 845.01631pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf  used on input line 6.
+(pdftex.def)             Requested size: 597.5064pt x 845.01631pt.
+<appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, id=304
+, page=1, 597.50786pt x 845.01837pt>
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 1>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page1 used on input line 6.
+(pdftex.def)             Requested size: 597.5064pt x 845.01631pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 1>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page1 used on input line 6.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 1>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page1 used on input line 6.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 1>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page1 used on input line 6.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 1>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page1 used on input line 6.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+ [11
+
+
+
+ <./appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>]
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf  used on input line 8.
+(pdftex.def)             Requested size: 597.5064pt x 845.01631pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf  used on input line 8.
+(pdftex.def)             Requested size: 597.5064pt x 845.01631pt.
+<appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, id=330
+, page=2, 597.50786pt x 845.01837pt>
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 2>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page2 used on input line 8.
+(pdftex.def)             Requested size: 597.5064pt x 845.01631pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 2>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page2 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 2>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page2 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 2>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page2 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 2>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page2 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+ [12 <./appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>
+]
+<appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, id=336
+, page=3, 597.50786pt x 845.01837pt>
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 3>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page3 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 3>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page3 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 3>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page3 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+ [13 <./appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>
+]
+<appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, id=342
+, page=4, 597.50786pt x 845.01837pt>
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 4>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page4 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 4>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page4 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 4>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page4 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+ [14 <./appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>
+]
+<appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, id=348
+, page=5, 597.50786pt x 845.01837pt>
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 5>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page5 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 5>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page5 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+File: appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf Gr
+aphic file (type pdf)
+<use appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf, pa
+ge 5>
+Package pdftex.def Info: appendix/P6_Aufgabenstellung_Wireless_Controller_for_S
+mart_Systems.pdf , page5 used on input line 8.
+(pdftex.def)             Requested size: 537.7521pt x 760.50952pt.
+ [15 <./appendix/P6_Aufgabenstellung_Wireless_Controller_for_Smart_Systems.pdf>
+]
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Test_Kriterien_P2P.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Test_Kriterien_P2P.pdf, id=354, 794.97pt x 614.295pt>
+File: appendix/P6_Test_Kriterien_P2P.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_P2P.pdf>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_P2P.pdf  used on input line
+ 10.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Test_Kriterien_P2P.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: appendix/P6_Test_Kriterien_P2P.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_P2P.pdf>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_P2P.pdf  used on input line
+ 10.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Test_Kriterien_P2P.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Test_Kriterien_P2P.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Test_Kriterien_P2P.pdf, id=357, page=1, 794.97pt x 614.295pt>
+File: appendix/P6_Test_Kriterien_P2P.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_P2P.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_P2P.pdf , page1 used on inp
+ut line 10.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Test_Kriterien_P2P.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_P2P.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_P2P.pdf , page1 used on inp
+ut line 10.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Test_Kriterien_P2P.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_P2P.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_P2P.pdf , page1 used on inp
+ut line 10.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Test_Kriterien_P2P.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_P2P.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_P2P.pdf , page1 used on inp
+ut line 10.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Test_Kriterien_P2P.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_P2P.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_P2P.pdf , page1 used on inp
+ut line 10.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+[16 <./appendix/P6_Test_Kriterien_P2P.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Test_Kriterien_Mesh.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Test_Kriterien_Mesh.pdf, id=379, 794.97pt x 614.295pt>
+File: appendix/P6_Test_Kriterien_Mesh.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_Mesh.pdf>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_Mesh.pdf  used on input lin
+e 12.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Test_Kriterien_Mesh.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: appendix/P6_Test_Kriterien_Mesh.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_Mesh.pdf>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_Mesh.pdf  used on input lin
+e 12.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Test_Kriterien_Mesh.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Test_Kriterien_Mesh.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Test_Kriterien_Mesh.pdf, id=382, page=1, 794.97pt x 614.295pt>
+File: appendix/P6_Test_Kriterien_Mesh.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_Mesh.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_Mesh.pdf , page1 used on in
+put line 12.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Test_Kriterien_Mesh.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_Mesh.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_Mesh.pdf , page1 used on in
+put line 12.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Test_Kriterien_Mesh.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_Mesh.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_Mesh.pdf , page1 used on in
+put line 12.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Test_Kriterien_Mesh.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_Mesh.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_Mesh.pdf , page1 used on in
+put line 12.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Test_Kriterien_Mesh.pdf Graphic file (type pdf)
+<use appendix/P6_Test_Kriterien_Mesh.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Test_Kriterien_Mesh.pdf , page1 used on in
+put line 12.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+[17 <./appendix/P6_Test_Kriterien_Mesh.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Gesamt_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Gesamt_Terminplanung.pdf, id=405, 794.97pt x 614.295pt>
+File: appendix/P6_Gesamt_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Gesamt_Terminplanung.pdf>
+Package pdftex.def Info: appendix/P6_Gesamt_Terminplanung.pdf  used on input li
+ne 15.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Gesamt_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: appendix/P6_Gesamt_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Gesamt_Terminplanung.pdf>
+Package pdftex.def Info: appendix/P6_Gesamt_Terminplanung.pdf  used on input li
+ne 15.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Gesamt_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Gesamt_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Gesamt_Terminplanung.pdf, id=408, page=1, 794.97pt x 614.295pt>
+File: appendix/P6_Gesamt_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Gesamt_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Gesamt_Terminplanung.pdf , page1 used on i
+nput line 15.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Gesamt_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Gesamt_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Gesamt_Terminplanung.pdf , page1 used on i
+nput line 15.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Gesamt_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Gesamt_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Gesamt_Terminplanung.pdf , page1 used on i
+nput line 15.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Gesamt_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Gesamt_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Gesamt_Terminplanung.pdf , page1 used on i
+nput line 15.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Gesamt_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Gesamt_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Gesamt_Terminplanung.pdf , page1 used on i
+nput line 15.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+[18 <./appendix/P6_Gesamt_Terminplanung.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_BLE_MESH_Terminplanung.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_BLE_MESH_Terminplanung.pdf, id=422, 794.97pt x 614.295pt>
+File: appendix/P6_BLE_MESH_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_BLE_MESH_Terminplanung.pdf>
+Package pdftex.def Info: appendix/P6_BLE_MESH_Terminplanung.pdf  used on input 
+line 17.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_BLE_MESH_Terminplanung.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: appendix/P6_BLE_MESH_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_BLE_MESH_Terminplanung.pdf>
+Package pdftex.def Info: appendix/P6_BLE_MESH_Terminplanung.pdf  used on input 
+line 17.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_BLE_MESH_Terminplanung.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_BLE_MESH_Terminplanung.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_BLE_MESH_Terminplanung.pdf, id=425, page=1, 794.97pt x 614.295pt>
+File: appendix/P6_BLE_MESH_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_BLE_MESH_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_BLE_MESH_Terminplanung.pdf , page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_BLE_MESH_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_BLE_MESH_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_BLE_MESH_Terminplanung.pdf , page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_BLE_MESH_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_BLE_MESH_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_BLE_MESH_Terminplanung.pdf , page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_BLE_MESH_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_BLE_MESH_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_BLE_MESH_Terminplanung.pdf , page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_BLE_MESH_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_BLE_MESH_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_BLE_MESH_Terminplanung.pdf , page1 used on
+ input line 17.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+[19 <./appendix/P6_BLE_MESH_Terminplanung.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Thread_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Thread_Terminplanung.pdf, id=439, 794.97pt x 614.295pt>
+File: appendix/P6_Thread_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Thread_Terminplanung.pdf>
+Package pdftex.def Info: appendix/P6_Thread_Terminplanung.pdf  used on input li
+ne 19.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Thread_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: appendix/P6_Thread_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Thread_Terminplanung.pdf>
+Package pdftex.def Info: appendix/P6_Thread_Terminplanung.pdf  used on input li
+ne 19.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Thread_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Thread_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Thread_Terminplanung.pdf, id=442, page=1, 794.97pt x 614.295pt>
+File: appendix/P6_Thread_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Thread_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Thread_Terminplanung.pdf , page1 used on i
+nput line 19.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Thread_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Thread_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Thread_Terminplanung.pdf , page1 used on i
+nput line 19.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Thread_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Thread_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Thread_Terminplanung.pdf , page1 used on i
+nput line 19.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Thread_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Thread_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Thread_Terminplanung.pdf , page1 used on i
+nput line 19.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Thread_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Thread_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Thread_Terminplanung.pdf , page1 used on i
+nput line 19.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+[20 <./appendix/P6_Thread_Terminplanung.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Zigbee_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Zigbee_Terminplanung.pdf, id=456, 794.97pt x 614.295pt>
+File: appendix/P6_Zigbee_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Zigbee_Terminplanung.pdf>
+Package pdftex.def Info: appendix/P6_Zigbee_Terminplanung.pdf  used on input li
+ne 21.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Zigbee_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: appendix/P6_Zigbee_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Zigbee_Terminplanung.pdf>
+Package pdftex.def Info: appendix/P6_Zigbee_Terminplanung.pdf  used on input li
+ne 21.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Zigbee_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./appendix/P6_Zigbee_Terminplanung.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix/P6_Zigbee_Terminplanung.pdf, id=459, page=1, 794.97pt x 614.295pt>
+File: appendix/P6_Zigbee_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Zigbee_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Zigbee_Terminplanung.pdf , page1 used on i
+nput line 21.
+(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+File: appendix/P6_Zigbee_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Zigbee_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Zigbee_Terminplanung.pdf , page1 used on i
+nput line 21.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Zigbee_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Zigbee_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Zigbee_Terminplanung.pdf , page1 used on i
+nput line 21.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Zigbee_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Zigbee_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Zigbee_Terminplanung.pdf , page1 used on i
+nput line 21.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+File: appendix/P6_Zigbee_Terminplanung.pdf Graphic file (type pdf)
+<use appendix/P6_Zigbee_Terminplanung.pdf, page 1>
+Package pdftex.def Info: appendix/P6_Zigbee_Terminplanung.pdf , page1 used on i
+nput line 21.
+(pdftex.def)             Requested size: 755.21722pt x 583.57693pt.
+[21 <./appendix/P6_Zigbee_Terminplanung.pdf>]
+<./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf, id=473, 845.04686pt x 597.50
+786pt>
+File: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf Graphic file (type pdf)
+<use ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf>
+Package pdftex.def Info: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf  used
+ on input line 24.
+(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
+File: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf Graphic file (type pdf)
+<use ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf>
+Package pdftex.def Info: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf  used
+ on input line 24.
+(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
+<./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf, id=476, page=1, 845.04686pt 
+x 597.50786pt>
+File: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf Graphic file (type pdf)
+<use ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf, page 1>
+Package pdftex.def Info: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf , pag
+e1 used on input line 24.
+(pdftex.def)             Requested size: 845.0448pt x 597.5064pt.
+File: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf Graphic file (type pdf)
+<use ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf, page 1>
+Package pdftex.def Info: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf , pag
+e1 used on input line 24.
+(pdftex.def)             Requested size: 802.78998pt x 567.62924pt.
+File: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf Graphic file (type pdf)
+<use ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf, page 1>
+Package pdftex.def Info: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf , pag
+e1 used on input line 24.
+(pdftex.def)             Requested size: 802.78998pt x 567.62924pt.
+File: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf Graphic file (type pdf)
+<use ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf, page 1>
+Package pdftex.def Info: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf , pag
+e1 used on input line 24.
+(pdftex.def)             Requested size: 802.78998pt x 567.62924pt.
+File: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf Graphic file (type pdf)
+<use ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf, page 1>
+Package pdftex.def Info: ./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf , pag
+e1 used on input line 24.
+(pdftex.def)             Requested size: 802.78998pt x 567.62924pt.
+ [22 <./graphics/20FS-pro6E-Risikoanalyse_26022020.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
+ (Pflichtenheft.aux (sections/appendix.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
+
+
+Package rerunfilecheck Warning: File `Pflichtenheft.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Pflichtenheft.out':
+(rerunfilecheck)             Before: 1F25689E8ACE12430580FF264D898A1D;1968
+(rerunfilecheck)             After:  D005BA3FE320EEF4D31438D6A9525477;1968.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package logreq Info: Writing requests to 'Pflichtenheft.run.xml'.
+\openout1 = `Pflichtenheft.run.xml'.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
+ ) 
+Here is how much of TeX's memory you used:
+ 46662 strings out of 481545
+ 1045689 string characters out of 2912552
+ 1851673 words of memory out of 3000000
+ 61017 multiletter control sequences out of 15000+200000
+ 601040 words of font info for 65 fonts, out of 3000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 71i,19n,85p,1140b,2294s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{table.caption.14} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.13} has been referenced but does not 
+exist, replaced by a fixed one
+
+{C:/Users/Raffael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.e
+nc}{C:/Users/Raffael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec
+.enc}<C:/Users/Raffael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/
+lmbx10.pfb><C:/Users/Raffael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmbx12.pfb><C:/Users/Raffael/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/lm/lmcsc10.pfb><C:/Users/Raffael/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/lm/lmr10.pfb><C:/Users/Raffael/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/lm/lmr12.pfb><C:/Users/Raffael/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/Raffael/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/Raffael/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/lm/lmro10.pfb><C:/Users/Raffael/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb>
+Output written on Pflichtenheft.pdf (24 pages, 2487842 bytes).
+PDF statistics:
+ 545 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
+ 551 words of extra memory for PDF output out of 10000 (max. 10000000)
+
