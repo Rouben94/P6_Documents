@@ -16,11 +16,10 @@
     
 
 \fssummary{
-Die Vernetzung von Sensoren und Aktoren im Low-Power Bereich stellt eine grosse Herausforderung dar.
+Die Vernetzung von Sensoren und Aktoren im Low-Power Bereich ist für das Internet der Dinge (IoT) von zentraler Bedeutung.
 Immer öfter werden Systeme in diesem Bereich mit sogenannten \textit{Wireless Sensor Networks} realisiert.
-Mit typischerweise geringen Latenzzeiten, kleinen Datenraten und kleinem Stromverbrauch eignen sich die drei bekanntesten \textit{Low-Power-Mesh-Protokolle} Bluetooth Mesh, Thread und ZigBee perfekt für solche Anwendungen.
-Wo die drei Protokolle ihre Stärken und wo allenfalls Schwächen haben ist nur schwer ersichtlich.
-In einem ausführlichen Performancetest unter ändernden Bedingungen werden nun Unterschiede sowie Vor- und Nachteile aufgezeigt.
+Mit typischerweise geringen Latenzzeiten, kleinen Datenraten und geringem Stromverbrauch eignen sich die drei bekanntesten \textit{Low-Power-Mesh-Protokolle} Bluetooth Mesh, Thread und ZigBee perfekt für solche Anwendungen.
+Wo die drei Protokolle ihre Stärken und wo allenfalls Schwächen haben zeigt dieser ausführliche Performancetest unter ändernden Bedingungen.
 }
 
 \fsgraphics{
@@ -31,26 +30,45 @@ In einem ausführlichen Performancetest unter ändernden Bedingungen werden nun 
 
 \fscontent{
     \section{Konzept}
+    Mithilfe der nRF52840-SoC Plattform von Nordic Semiconductor wurde eine einheitliche Plattform geschaffen auf welcher alle drei Protokolle implementiert werden können. Insgesamt 50 Benchmark Nodes die in Gruppen à max. 5 Teilnehmern konfiguriert werden, tauschen Benchmark Pakete aus und generieren damit die Benchmark Daten: Latenzzeit, Durchsatz, Paketverlust und Energieverbrauch.
+    Diese Messungen wurden in drei verschiedenen Testaufbauten sowie mit acht unterschiedlichen Messreihen durchgeführt.
 
     \newcol
     \section{Umsetzung}
-    \begin{center}
-    \includegraphics[width=0.4\columnwidth]{graphics/Node_picture.png}
-    \end{center}
+    Die Mesh Nodes für den Benchmark wurden aus nRF52840-Dongle Development Kits aufgebaut.
+    Ein Batteriepaket macht den Einsatz der Nodes orts­un­ab­hän­gig.
+    Damit die Plattform für die Messungen tatsächlich einheitlich ist, wurde ein Firmware-Framework entwickelt welches die Steuerungen und Auswertung des Benchmarks übernimmt.
+    Dieses kann unabhängig vom Mesh-Protokoll eingesetzt werden da einheitliche Schnittstellen definiert wurden für die Ansteuerung des Protokollstacks.
+    
+%    \begin{center}
+%    \includegraphics[width=0.4\columnwidth]{graphics/Node_picture.png}
+%    \end{center}
 
     \newcol
     \section{Resultate}
+    Die riesige Flut an Messresultaten wurde mit geeigneten  Tools grafisch aufbereitet und analysiert.
+    Ein Beispiel dafür ist die Abbildung oberhalb.
+    Darin sind die normalisierten Latenzzeiten der drei Protokolle in Abhängigkeit der Häufigkeit dargestellt.
+    Die Grafik zeigt, dass Bluetooth Mesh sehr häufig sehr kleine Latenzzeiten aufweist, jedoch grosse Ausreisser aufweist.
+    Diese kommen bei Thread wie auch bei Zigbee nicht vor.
+    
 }
 
 \infobox{Erkenntnisse}{
-	 \begin{minipage}{0.50\textwidth}
+
+	 \begin{minipage}{0.75\textwidth}
      \setlength\leftmargini{0.5em}
      \raggedright
-     asödasdf asdlfkasd asdfölkasdf asdölfkasdf  asdfljasdfl 
-     
+     	Thread und ZigBee bauen beide auf dem IEEE 802.15.4 Standard für \textit{Wireless Personal Area Networks (WPAN)} auf und bilden eine geroutetes Mesh Netzwerk. Dies ist auch in der Ergebnissen der Messungen bemerkbar denn sie bewegen sich ungefähr im gleichen Rahmen.
+	Bluetooth Mesh hingegen nutzt den \textit{Bluetooth Low Energy (BLE)} Standard und ein Flooding Mesh Prinzip.
+	Dadurch kann bei hohem Networktraffic nicht die Performance von Thread oder ZigBee erreicht werden.
+	Das Gegenteil gilt für geringen Traffic.
+	Hier kann Bluetooth Mesh mit dem performanten MAC Layer (BLE) punkten.
+	Einen klaren Sieger kann aus dem Performancevergleich nicht bestimmt werden. Jedes der drei Protokolle hat je nach Anwendung Vor- und auch Nachteile.
+	Da Thread IPv6 für die Adressierung einsetzt ist es sehr einfach in IoT Anwendungen integrierbar. Das macht den Stack sicherlich zu jenem der in Zukunft die Anwendungen dominieren wird.
     \end{minipage}
     \hfill
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.2\textwidth}
         \includegraphics[width=\textwidth]{graphics/Protocols.png}
         \graphicssource{circuitcellar.com}
     \end{minipage}
