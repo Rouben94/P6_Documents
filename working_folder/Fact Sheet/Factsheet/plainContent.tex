@@ -25,18 +25,18 @@ Die Eigenschaften sowie Stärken und Schwächen der drei Protokolle werden in di
 \fsgraphics{
 \centering
 	\includegraphics[width=\textwidth]{graphics/Latency_2_Wohnung.png}
-    \graphicscaption{Auswertung Messergebnisse Latenzzeiten}
+    \graphicscaption{Auswertung der Latenzzeiten der drei untersuchten Protokolle Bluetooth Mesh, Thread und ZigBee.}
 }
 
 \fscontent{
     \section{Konzept}
-    Mithilfe der nRF52840-SoC Plattform von Nordic Semiconductor wurde eine einheitliche Plattform geschaffen auf welcher alle drei Protokolle implementiert werden können. Insgesamt 50 Benchmark Nodes die in Gruppen à max. 5 Teilnehmern konfiguriert werden, tauschen Benchmark Pakete aus und generieren damit folgende Daten: Latenzzeit, Durchsatz, Paketverlust und Energieverbrauch.
+    Mithilfe des nRF52840-SoC von Nordic Semiconductor wurde eine einheitliche Plattform geschaffen auf welcher alle drei Protokolle implementiert werden können. Insgesamt 50 Benchmark Nodes die in Gruppen à max. 5 Teilnehmern konfiguriert werden, tauschen Benchmark Pakete aus und generieren damit folgende Daten: Latenzzeit, Durchsatz, Paketverlust und Energieverbrauch.
     Diese Messungen wurden in drei verschiedenen Testaufbauten sowie mit acht unterschiedlichen Messreihen durchgeführt.
 
 %    \newcol
     \section{Umsetzung}
     Die Mesh Nodes für den Benchmark wurden aus nRF52840-Dongle Development Kits aufgebaut welche durch ein Batteriepaket gespeist werden.
-    Damit die Plattform für die Messungen tatsächlich einheitlich ist, wurde ein Firmware-Framework entwickelt welches die Steuerungen und Auswertung des Benchmarks übernimmt.
+    Damit die Plattform für die Messungen tatsächlich einheitlich ist, wurde ein Firmware Framework entwickelt welches die Steuerungen und Auswertung des Benchmarks übernimmt.
     Dieses kann unabhängig vom Mesh-Protokoll eingesetzt werden da einheitliche Schnittstellen definiert wurden für die Ansteuerung des Protokollstacks.
     
 %    \begin{center}
@@ -69,8 +69,7 @@ Die Eigenschaften sowie Stärken und Schwächen der drei Protokolle werden in di
      In der Anwendung muss dieses Ergebnis jedoch relativiert werden. Mit ändernden Bedingungen bezüglich Topologie und Einsatzzweck können Bluetooth Mesh und Zigbee auch grosse Vorteile gegenüber Thread haben.
      Besonders das Flooding Mesh Prinzip bei Bluetooth Mesh und der standardisierte Application Layer bei Zigbee haben je nach Anwendung positive Eigenschaften. 
      	
-%	Einen klaren Sieger kann aus dem Performancevergleich nicht bestimmt werden. Jedes der drei Protokolle hat je nach Anwendung Vor- und auch Nachteile.
-%	Da Thread IPv6 für die Adressierung einsetzt ist es sehr einfach in IoT Anwendungen integrierbar. Das macht den Stack sicherlich zu jenem der in Zukunft die Anwendungen dominieren wird.
+
     \end{minipage}
     \hfill
     \begin{minipage}{0.3\textwidth}
